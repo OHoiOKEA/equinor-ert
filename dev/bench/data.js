@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712228934360,
+  "lastUpdate": 1712229021221,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "a71a6dfa90f622408c349eb6edf9e415d2d48f22",
-          "message": "Have lsf_driver specify SIGKILL when bkilling (#7433)\n\nHave lsf_driver specify SIGKILL signal when using bkill",
-          "timestamp": "2024-03-21T07:52:08+01:00",
-          "tree_id": "791e4409e7dc2cad0bc1b9e255c56c64367f1e56",
-          "url": "https://github.com/equinor/ert/commit/a71a6dfa90f622408c349eb6edf9e415d2d48f22"
-        },
-        "date": 1711004119044,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18753827906639295,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01582365382085041",
-            "extra": "mean: 5.332244728800015 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.014376870887572099",
             "extra": "mean: 5.285164258600014 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "c656cb2f372788f70b2157ec324958229ba9666e",
+          "message": "Remove function only called in test",
+          "timestamp": "2024-04-04T13:07:19+02:00",
+          "tree_id": "744834c6d75e9cc85896091b158d66a3765e5739",
+          "url": "https://github.com/equinor/ert/commit/c656cb2f372788f70b2157ec324958229ba9666e"
+        },
+        "date": 1712229020659,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18992724839523206,
+            "unit": "iter/sec",
+            "range": "stddev: 0.015711571332441412",
+            "extra": "mean: 5.265173946599987 sec\nrounds: 5"
           }
         ]
       }
