@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712303549114,
+  "lastUpdate": 1712315354811,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "oyveid@equinor.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "ab421c85be0198656b80fcc7424d0d6f9d00bad7",
-          "message": "Save storage version after migration",
-          "timestamp": "2024-03-22T10:34:32+01:00",
-          "tree_id": "840cd2ee0f70d6ab954a648cdcbb7fa2e391a6cb",
-          "url": "https://github.com/equinor/ert/commit/ab421c85be0198656b80fcc7424d0d6f9d00bad7"
-        },
-        "date": 1711100258217,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18609876219132077,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028961885165049814",
-            "extra": "mean: 5.373490872399998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.031495152516441416",
             "extra": "mean: 5.241834491599991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e2bd7c1e7974a7a6f51400b4cfaa864dbbac04dd",
+          "message": "Add new implementation of get_num_cpu\n\n\r\n\r\nCo-authored-by: Øyvind Eide <44577479+oyvindeide@users.noreply.github.com>",
+          "timestamp": "2024-04-05T13:05:51+02:00",
+          "tree_id": "de2a92fb024a30363284289411ed442b94a43e6a",
+          "url": "https://github.com/equinor/ert/commit/e2bd7c1e7974a7a6f51400b4cfaa864dbbac04dd"
+        },
+        "date": 1712315354250,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19131015908676907,
+            "unit": "iter/sec",
+            "range": "stddev: 0.039822087707115095",
+            "extra": "mean: 5.227113943000006 sec\nrounds: 5"
           }
         ]
       }
