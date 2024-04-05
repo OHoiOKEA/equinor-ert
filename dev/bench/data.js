@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712239756306,
+  "lastUpdate": 1712301709224,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "795982a5ef6658c0674368965aeb831f06cf9249",
-          "message": "Unify returncode values for different drivers when process is killed by\nsignal\n\nThis should fix a bug in azure bleeding.",
-          "timestamp": "2024-03-21T13:28:08+01:00",
-          "tree_id": "938bc6c574589e2e1727abcf5fd2907adc07d47b",
-          "url": "https://github.com/equinor/ert/commit/795982a5ef6658c0674368965aeb831f06cf9249"
-        },
-        "date": 1711024313021,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18739371171325114,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02171807671367211",
-            "extra": "mean: 5.336358359399992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.024505062152851923",
             "extra": "mean: 5.437966529600021 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "b21fab1a816b7bc64d88006e122c3d5f443e7a0a",
+          "message": "Use ruff also as formatter",
+          "timestamp": "2024-04-05T09:18:35+02:00",
+          "tree_id": "ee36f6bd5fd9f23e0d4544ca8170ca4cf412fc8e",
+          "url": "https://github.com/equinor/ert/commit/b21fab1a816b7bc64d88006e122c3d5f443e7a0a"
+        },
+        "date": 1712301708767,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19301884770597844,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03130834653736943",
+            "extra": "mean: 5.18084120740001 sec\nrounds: 5"
           }
         ]
       }
