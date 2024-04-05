@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712315354811,
+  "lastUpdate": 1712315372227,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "692d2afc3ea8ab35e054c2aaa67f60117b93e52f",
-          "message": "Fix single-test-run",
-          "timestamp": "2024-03-22T10:45:31+01:00",
-          "tree_id": "5e5fb7d860e1e6dab2ef31543a0d141c1bd7c232",
-          "url": "https://github.com/equinor/ert/commit/692d2afc3ea8ab35e054c2aaa67f60117b93e52f"
-        },
-        "date": 1711100922194,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19092129969581922,
-            "unit": "iter/sec",
-            "range": "stddev: 0.015281550932992907",
-            "extra": "mean: 5.237760279199994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.039822087707115095",
             "extra": "mean: 5.227113943000006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "b0905379911924f0a08d96890ea50b9d47057439",
+          "message": "Remove deprecated function libres_facade.grid",
+          "timestamp": "2024-04-05T13:06:19+02:00",
+          "tree_id": "5116c5e6335fc272cc20682594f36975438f6a25",
+          "url": "https://github.com/equinor/ert/commit/b0905379911924f0a08d96890ea50b9d47057439"
+        },
+        "date": 1712315371674,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18690918315604518,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027658425508035527",
+            "extra": "mean: 5.350191912000002 sec\nrounds: 5"
           }
         ]
       }
