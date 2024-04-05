@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712301709224,
+  "lastUpdate": 1712303549114,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "39dbee19267a55a48c8f6d2cd24370fad80f11d3",
-          "message": "Add test for bjobs output with no exec_host",
-          "timestamp": "2024-03-22T07:34:59+01:00",
-          "tree_id": "6165561736be7f36454870ba1195c2b519b303d6",
-          "url": "https://github.com/equinor/ert/commit/39dbee19267a55a48c8f6d2cd24370fad80f11d3"
-        },
-        "date": 1711089499396,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19032447707140412,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03740357685161665",
-            "extra": "mean: 5.2541849339999995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03130834653736943",
             "extra": "mean: 5.18084120740001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "a1f9feb7d4783d510c28a692417dfa13ac191bfe",
+          "message": "Add back webviz-ert kwargs",
+          "timestamp": "2024-04-05T09:49:29+02:00",
+          "tree_id": "d3dd15286026e60dae970238fb89576cae91471d",
+          "url": "https://github.com/equinor/ert/commit/a1f9feb7d4783d510c28a692417dfa13ac191bfe"
+        },
+        "date": 1712303548443,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1907729062416019,
+            "unit": "iter/sec",
+            "range": "stddev: 0.031495152516441416",
+            "extra": "mean: 5.241834491599991 sec\nrounds: 5"
           }
         ]
       }
