@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712315372227,
+  "lastUpdate": 1712324101010,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "fdf0c3c2e3e772745b6afc7fdce834a9ac822225",
-          "message": "Remove unused keyword RESULT_PATH",
-          "timestamp": "2024-03-22T10:47:39+01:00",
-          "tree_id": "480e331e5fbf5fe76875fa516d2471b784af05b5",
-          "url": "https://github.com/equinor/ert/commit/fdf0c3c2e3e772745b6afc7fdce834a9ac822225"
-        },
-        "date": 1711101049875,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19077649298930938,
-            "unit": "iter/sec",
-            "range": "stddev: 0.023799184829226314",
-            "extra": "mean: 5.241735941000013 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027658425508035527",
             "extra": "mean: 5.350191912000002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "9c51f1c14a34fc301fac86b6916baf74e04f1454",
+          "message": "Ensure no underflow in parameter_example_test",
+          "timestamp": "2024-04-05T15:31:32+02:00",
+          "tree_id": "9f625cce77f18cd62c2c8836ee3fe827504f701a",
+          "url": "https://github.com/equinor/ert/commit/9c51f1c14a34fc301fac86b6916baf74e04f1454"
+        },
+        "date": 1712324099940,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18562410902464907,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06566112961142546",
+            "extra": "mean: 5.387231245199996 sec\nrounds: 5"
           }
         ]
       }
