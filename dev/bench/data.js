@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712575650208,
+  "lastUpdate": 1712579284537,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "5689a6af4cb3725934c77906cc78c5d4d843eb34",
-          "message": "Combine annotate_cpp with build_and_test",
-          "timestamp": "2024-04-02T10:39:02+02:00",
-          "tree_id": "cb9efb4b83d3170d372dfbb925f0435d4c222bde",
-          "url": "https://github.com/equinor/ert/commit/5689a6af4cb3725934c77906cc78c5d4d843eb34"
-        },
-        "date": 1712047336513,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18649373612563688,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04015112748754158",
-            "extra": "mean: 5.362110389199995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03382066653874906",
             "extra": "mean: 5.13548267220001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "3fdff884848078484828219bf7623f77294515a2",
+          "message": "Split release notes in highlighted changes and change log\n\nWe have previously written highlighted changes and change log per\nrelease. This means each version is split in two, but it will\nbe easier to read the highlighted section, which most users are\ninterested in.",
+          "timestamp": "2024-04-08T14:24:33+02:00",
+          "tree_id": "47660988316bc0e7e9dfc677df61d8573027ccb8",
+          "url": "https://github.com/equinor/ert/commit/3fdff884848078484828219bf7623f77294515a2"
+        },
+        "date": 1712579283539,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19229310940473818,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03457452005655197",
+            "extra": "mean: 5.200394351599994 sec\nrounds: 5"
           }
         ]
       }
