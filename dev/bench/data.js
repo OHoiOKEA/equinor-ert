@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712571721187,
+  "lastUpdate": 1712572249471,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "ef492f029be11b71e114b4e9d1acfbc565594aac",
-          "message": "Skip integration test analysis/test_es_update.py::test_update_multiple_param\n\nThis commit marks the test with `pytest.mark.skip(...)` due to it being very flaky with scheduler, and blocking PRs.",
-          "timestamp": "2024-03-25T15:13:24+01:00",
-          "tree_id": "2177479369cdc3f69f6bab14c9bec6004fc81597",
-          "url": "https://github.com/equinor/ert/commit/ef492f029be11b71e114b4e9d1acfbc565594aac"
-        },
-        "date": 1711376189453,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18930793498487508,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025809488308540313",
-            "extra": "mean: 5.28239875459999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.09158622431868414",
             "extra": "mean: 5.392258559599992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "70122c96c38d5ac4db324de14ca3f23c9ec9dd05",
+          "message": "Solve race condition in lsf_driver for job_ids\n\nIt is possible for self._jobs to be changed throughout the poll() function,\nwe must be sure to compare to the original set before we employ the\nbhist fallback",
+          "timestamp": "2024-04-08T12:27:29+02:00",
+          "tree_id": "9d4d4f4d5b689cf258d969b92e076dd9a75ff9b0",
+          "url": "https://github.com/equinor/ert/commit/70122c96c38d5ac4db324de14ca3f23c9ec9dd05"
+        },
+        "date": 1712572248520,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18303727071634365,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04406758239402076",
+            "extra": "mean: 5.463368176800008 sec\nrounds: 5"
           }
         ]
       }
