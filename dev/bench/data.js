@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712585072502,
+  "lastUpdate": 1712587097879,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "76ee3fe27de07086c96007fb1c8089408af8ef39",
-          "message": "Remove unwanted warning when user is setting ECLBASE and no summary data",
-          "timestamp": "2024-04-02T15:24:37+03:00",
-          "tree_id": "d8d3dbce5a58058fe099edc760744b1ca4479f16",
-          "url": "https://github.com/equinor/ert/commit/76ee3fe27de07086c96007fb1c8089408af8ef39"
-        },
-        "date": 1712060873595,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18731588039583638,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04087032699788489",
-            "extra": "mean: 5.338575661000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02986028082253115",
             "extra": "mean: 5.3661012712 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "aea1d7cb0ac8fe07102f910c756924174ab41904",
+          "message": "Remove unused endpoint",
+          "timestamp": "2024-04-08T16:34:58+02:00",
+          "tree_id": "b5e9967ff8a960f8ec793ca6dfc01e7bbb7503ed",
+          "url": "https://github.com/equinor/ert/commit/aea1d7cb0ac8fe07102f910c756924174ab41904"
+        },
+        "date": 1712587096883,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1836289265033132,
+            "unit": "iter/sec",
+            "range": "stddev: 0.2132922930371747",
+            "extra": "mean: 5.445765103800011 sec\nrounds: 5"
           }
         ]
       }
