@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712583068761,
+  "lastUpdate": 1712583183711,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "98625d61bcd4b212925c61f706eb9c2cddc23e62",
-          "message": "Fix ruff preview option PLC0415 (#7519)\n\n* Fix ruff preview option PLC0415\r\n\r\nThis commit makes the code base ruff PLC0415 compliant. This is related to having imports only at the module's top level scope.\r\n\r\n* code review suggestions",
-          "timestamp": "2024-04-02T10:21:50Z",
-          "tree_id": "3bc349645aae5e151f7d4f6c630c9a26db7a6a79",
-          "url": "https://github.com/equinor/ert/commit/98625d61bcd4b212925c61f706eb9c2cddc23e62"
-        },
-        "date": 1712053493323,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1861976783279171,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04069934064372038",
-            "extra": "mean: 5.370636245199989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022966654203154063",
             "extra": "mean: 5.17468708560001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "b4eedfc04f3135826e4aad4b140f31821fb1f9d4",
+          "message": "Increase timeout for testing of faulty bjobs\n\nThe existing timeout at 0.2 is too small on MacOS when\npytest is run concurrently with -n auto",
+          "timestamp": "2024-04-08T15:30:02+02:00",
+          "tree_id": "2332b3d27fce03ef4eee7e09cb43ed0350ef4f5f",
+          "url": "https://github.com/equinor/ert/commit/b4eedfc04f3135826e4aad4b140f31821fb1f9d4"
+        },
+        "date": 1712583182965,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18881360459517066,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04170398877195173",
+            "extra": "mean: 5.296228532600014 sec\nrounds: 5"
           }
         ]
       }
