@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712324101010,
+  "lastUpdate": 1712557181177,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "5d32021da096a038a5d2fae5095a99190bb5a189",
-          "message": "Add a test for opening empty storage",
-          "timestamp": "2024-03-22T12:04:43+01:00",
-          "tree_id": "64e693c55a241a92a495a13ac95696af95445ccc",
-          "url": "https://github.com/equinor/ert/commit/5d32021da096a038a5d2fae5095a99190bb5a189"
-        },
-        "date": 1711105665606,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1854027183388136,
-            "unit": "iter/sec",
-            "range": "stddev: 0.045628335491161395",
-            "extra": "mean: 5.3936641758000174 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06566112961142546",
             "extra": "mean: 5.387231245199996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "07c2fe041339bb080623cc30b090395ff7c1ca2f",
+          "message": "Display possible error when removing existing runpath\n\nAllow user to continue without deleting the runpath.",
+          "timestamp": "2024-04-08T09:16:04+03:00",
+          "tree_id": "241cfa428438e9dbb229b89cdcf13915652b4ffd",
+          "url": "https://github.com/equinor/ert/commit/07c2fe041339bb080623cc30b090395ff7c1ca2f"
+        },
+        "date": 1712557180065,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18669837689210217,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06300278666258832",
+            "extra": "mean: 5.356232960600005 sec\nrounds: 5"
           }
         ]
       }
