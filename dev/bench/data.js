@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712572249471,
+  "lastUpdate": 1712575650208,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "f4433dcc3ab0acf699506068cec31dc9ed3eb9d3",
-          "message": "Fix ruff preview rule PLC1901\n\nThis commit makes the code base ruff PLC1901 compliant. This is related\nto empty string comparison.",
-          "timestamp": "2024-04-02T09:31:41+02:00",
-          "tree_id": "9991aaa8999a0b4303b93ed50f97ebc6d24de5bd",
-          "url": "https://github.com/equinor/ert/commit/f4433dcc3ab0acf699506068cec31dc9ed3eb9d3"
-        },
-        "date": 1712043297303,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19075189771008558,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02935200814712157",
-            "extra": "mean: 5.242411802999993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04406758239402076",
             "extra": "mean: 5.463368176800008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7145a2924ebd5b9d7f051f42880f54cbfc1f4229",
+          "message": "Test that pbs driver ignores qstat flakiness (#7414)\n\n* Move QSTAT_HEADER stub constants to tests/conftest.py\r\n\r\n* Add tests for PBSDriver ignoring qstat flakiness\r\n\r\nThis commit adds tests that verifies that the OpenPBS driver ignores\r\nqstat flakiness related to \"pbs_iff\" and \"qstat: Invalid credential\"\r\n\r\n* Have qstat mocked binary use wide option\r\n\r\n* Have OpenPBS tests use common QSTAT fixture",
+          "timestamp": "2024-04-08T13:24:25+02:00",
+          "tree_id": "cb0358e9d7adb820f2df982e88007900c0770155",
+          "url": "https://github.com/equinor/ert/commit/7145a2924ebd5b9d7f051f42880f54cbfc1f4229"
+        },
+        "date": 1712575649617,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19472366354448356,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03382066653874906",
+            "extra": "mean: 5.13548267220001 sec\nrounds: 5"
           }
         ]
       }
