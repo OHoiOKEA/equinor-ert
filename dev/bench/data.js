@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712579284537,
+  "lastUpdate": 1712583068761,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "2bb442895759753d08929def9ace9cfa62b686f2",
-          "message": "Remove poly integration test on PBS\n\nWhen tested through Komodo, this will not work as it requires the environment and the\nrunpath to be on a shared disk, which the komodo setup currently does not facilitate.\n\nKomodo testing will still effectively run this integration test through bigpoly.",
-          "timestamp": "2024-04-02T10:46:25+02:00",
-          "tree_id": "5dd505842e929b14420d9b3a1f85690b600be4ae",
-          "url": "https://github.com/equinor/ert/commit/2bb442895759753d08929def9ace9cfa62b686f2"
-        },
-        "date": 1712047778707,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18551184595214265,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027435697886691434",
-            "extra": "mean: 5.39049134500001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03457452005655197",
             "extra": "mean: 5.200394351599994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "4ababea024d3d136039bf627212b8433c726be54",
+          "message": "Eestablish connection and empty the event queue before cancelling tasks\n\n- Add _publisher_done event and CLOSE_PUBLISHER_SENTINEL to make sure that the connection was established and all events were sent before the cancellation happens.\n- Supress CancelledError when task gets cancelled for long running jobs\n- Ignore cancellation in job task\n- Add test for scheduler publishings its events to a websocket with\npublisher_done set Event.\n\nCo-authored-by: Håvard Berland <havb@equinor.com>",
+          "timestamp": "2024-04-08T15:27:54+02:00",
+          "tree_id": "a4ba1a07ed6ccf264237aa2e10370f8086b4196c",
+          "url": "https://github.com/equinor/ert/commit/4ababea024d3d136039bf627212b8433c726be54"
+        },
+        "date": 1712583067611,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19324840004002852,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022966654203154063",
+            "extra": "mean: 5.17468708560001 sec\nrounds: 5"
           }
         ]
       }
