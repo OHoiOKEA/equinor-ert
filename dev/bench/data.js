@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712583183711,
+  "lastUpdate": 1712585072502,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "5bb33aa3df473dd25659fedf9b6e14c1b622dbed",
-          "message": "Implement EXCLUDE_HOST for scheduler lsf driver\n\nThis commit implements the EXCLUDE_HOST keyword for the scheduler LSF driver, the same way it was implemented in C.",
-          "timestamp": "2024-04-02T13:40:12+02:00",
-          "tree_id": "01f4932ed78b935ebd7a8d83800acdfb73f75d66",
-          "url": "https://github.com/equinor/ert/commit/5bb33aa3df473dd25659fedf9b6e14c1b622dbed"
-        },
-        "date": 1712058190702,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18922692977001848,
-            "unit": "iter/sec",
-            "range": "stddev: 0.032838798768478866",
-            "extra": "mean: 5.284660070399991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04170398877195173",
             "extra": "mean: 5.296228532600014 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "85fd3cd47501fd888e8448b279f164e3e7c4794e",
+          "message": "Move ignore check one level higher",
+          "timestamp": "2024-04-08T16:01:24+02:00",
+          "tree_id": "8fc3d341ec9f2f894c3e7c403eac94b8bd6e0e29",
+          "url": "https://github.com/equinor/ert/commit/85fd3cd47501fd888e8448b279f164e3e7c4794e"
+        },
+        "date": 1712585071854,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1863550368247847,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02986028082253115",
+            "extra": "mean: 5.3661012712 sec\nrounds: 5"
           }
         ]
       }
