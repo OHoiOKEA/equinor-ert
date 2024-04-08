@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712565250810,
+  "lastUpdate": 1712571721187,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "42c2fd2557079392817c10e61f2f4c8651ee7bfd",
-          "message": "Increase sleep time flaky integration test\n\nThis commit fixes flakiness in integration test scheduler/test_generic_driver.py::test_kill by increasing sleep time for job to 60 seconds. It might have been flaky in the past due to job finishing before it could be killed.",
-          "timestamp": "2024-03-25T14:47:46+01:00",
-          "tree_id": "5f1e7875d5eda40d9c2c91ba0f59b08f600fb689",
-          "url": "https://github.com/equinor/ert/commit/42c2fd2557079392817c10e61f2f4c8651ee7bfd"
-        },
-        "date": 1711374656710,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18301420180832076,
-            "unit": "iter/sec",
-            "range": "stddev: 0.15123690416542848",
-            "extra": "mean: 5.464056833399991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02180521324240851",
             "extra": "mean: 5.262485745399994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "4ec192af30000cf49ba253f81c7dddd2c7091dc2",
+          "message": "Add SIGKILL to possible returncodes from kill\n\nObserved on PBS",
+          "timestamp": "2024-04-08T12:18:55+02:00",
+          "tree_id": "e7caf9add10b94476ea336ac8411f90bb097eecb",
+          "url": "https://github.com/equinor/ert/commit/4ec192af30000cf49ba253f81c7dddd2c7091dc2"
+        },
+        "date": 1712571720709,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18545104782107888,
+            "unit": "iter/sec",
+            "range": "stddev: 0.09158622431868414",
+            "extra": "mean: 5.392258559599992 sec\nrounds: 5"
           }
         ]
       }
