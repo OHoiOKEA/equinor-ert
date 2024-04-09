@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712638189928,
+  "lastUpdate": 1712649246562,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "3bc1f3050dc61430a8a1fbb7826e6eae39c5981a",
-          "message": "Have lsf driver bkill with SIGKILL after SIGTERM\n\nThis commits makes the LSF driver spawn a non-blocking separate process running `bkill -s SIGKILL` to make sure the job is actually torn down.",
-          "timestamp": "2024-04-02T15:28:14+02:00",
-          "tree_id": "597d9323b343f516cbe17276c473a1f1068c9419",
-          "url": "https://github.com/equinor/ert/commit/3bc1f3050dc61430a8a1fbb7826e6eae39c5981a"
-        },
-        "date": 1712064677552,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18809076322081458,
-            "unit": "iter/sec",
-            "range": "stddev: 0.032444427441272475",
-            "extra": "mean: 5.316582180199998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.021500516442135468",
             "extra": "mean: 5.265243644199984 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "118697112ec5893510d377441e89e5fb52b3cc6f",
+          "message": "Refactor _get_obs_and_measure_data\n\nRename to _get_observations_and_responses\r\nImprove variable names and add docstring.",
+          "timestamp": "2024-04-09T09:50:54+02:00",
+          "tree_id": "62bff5ca90b9c1603b1e1af32aa7c3a1cc7758e9",
+          "url": "https://github.com/equinor/ert/commit/118697112ec5893510d377441e89e5fb52b3cc6f"
+        },
+        "date": 1712649245494,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19114854672193807,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025405954694112134",
+            "extra": "mean: 5.231533365800004 sec\nrounds: 5"
           }
         ]
       }
