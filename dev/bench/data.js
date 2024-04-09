@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712659316633,
+  "lastUpdate": 1712659659977,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "3be64fd3bc375df9686ef5676d2fa919226ebb01",
-          "message": "Add logging to LocalDriver\n\nAligning with logging behaviour in LsfDriver",
-          "timestamp": "2024-04-04T09:27:50+02:00",
-          "tree_id": "16f78ec87260d05677ffaa6f6f3df6801f44b437",
-          "url": "https://github.com/equinor/ert/commit/3be64fd3bc375df9686ef5676d2fa919226ebb01"
-        },
-        "date": 1712215850305,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18807526509631345,
-            "unit": "iter/sec",
-            "range": "stddev: 0.015880883048871405",
-            "extra": "mean: 5.317020286999991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03452675131481622",
             "extra": "mean: 5.228831814800003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "cfad65e85d01a10fe8c57b4e391caefa2868d4dd",
+          "message": "Let mocked bkill support specific kill signal\n\nThe tests sent a -s option to the mock that failed the mock.\nAnother error (missing timeout) let the kill test pass when\nit should not.",
+          "timestamp": "2024-04-09T12:44:28+02:00",
+          "tree_id": "dd1bae833cef7022083bf6ab0918e8aec24994b8",
+          "url": "https://github.com/equinor/ert/commit/cfad65e85d01a10fe8c57b4e391caefa2868d4dd"
+        },
+        "date": 1712659659376,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18662364048283964,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0438916424227959",
+            "extra": "mean: 5.358377949399994 sec\nrounds: 5"
           }
         ]
       }
