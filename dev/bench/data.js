@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712649246562,
+  "lastUpdate": 1712650250519,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "15ff24633c25cc5b93ec6b9343c09651f468e001",
-          "message": "Fix ruff preview rule PLR6301\n\nThis commit makes the code base ruff PLR6301 compliant. This is related\nto unused `self` parameter in method definitions.",
-          "timestamp": "2024-04-02T15:27:53+02:00",
-          "tree_id": "ca3ef7d180a94c2bf408ec40a46a2e704b6dc48b",
-          "url": "https://github.com/equinor/ert/commit/15ff24633c25cc5b93ec6b9343c09651f468e001"
-        },
-        "date": 1712064680722,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16443376512840346,
-            "unit": "iter/sec",
-            "range": "stddev: 0.10796479106615806",
-            "extra": "mean: 6.081476023000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025405954694112134",
             "extra": "mean: 5.231533365800004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "5428155b98bf2878eb9d5148633a74a54c295e43",
+          "message": "Make resdata a dev-dependency",
+          "timestamp": "2024-04-09T10:07:37+02:00",
+          "tree_id": "dcd1e7e293c93e7170d1c8646e1d32a5b8d7941d",
+          "url": "https://github.com/equinor/ert/commit/5428155b98bf2878eb9d5148633a74a54c295e43"
+        },
+        "date": 1712650249571,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18916709688236483,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0489005906447136",
+            "extra": "mean: 5.286331589799988 sec\nrounds: 5"
           }
         ]
       }
