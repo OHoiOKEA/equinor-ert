@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712587097879,
+  "lastUpdate": 1712638189928,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "28b073d2f043d5dbf067f6b983187da6a7c3d875",
-          "message": "Make StorageService constructor match base",
-          "timestamp": "2024-04-02T14:58:13+02:00",
-          "tree_id": "7af9d991089261e40cc7e696d242d0ad78627de6",
-          "url": "https://github.com/equinor/ert/commit/28b073d2f043d5dbf067f6b983187da6a7c3d875"
-        },
-        "date": 1712062875753,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1871866514314095,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025413748866344257",
-            "extra": "mean: 5.342261279599995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.2132922930371747",
             "extra": "mean: 5.445765103800011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "3469d56535315391a5e4424bca3b52e8d9855cf7",
+          "message": "Fix OpenPBS driver logging error when killing finished jobs\n\nThis commit fixes the bug where OpenPBS driver would log `PBS kill failed due to missing jobid for realization` when killing jobs that had already finished successfully or with a failure.",
+          "timestamp": "2024-04-09T06:46:39+02:00",
+          "tree_id": "b37e2982de61ed4dda1bfc9203779f208377796c",
+          "url": "https://github.com/equinor/ert/commit/3469d56535315391a5e4424bca3b52e8d9855cf7"
+        },
+        "date": 1712638189301,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18992473427161657,
+            "unit": "iter/sec",
+            "range": "stddev: 0.021500516442135468",
+            "extra": "mean: 5.265243644199984 sec\nrounds: 5"
           }
         ]
       }
