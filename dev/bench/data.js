@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712659920511,
+  "lastUpdate": 1712677354552,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "cdc90ba3a1c267254d7bccdc957ffe290c2d379a",
-          "message": "Fix integration test lsf driver invalid resource requirement\n\nThis commit fixes the invald resource requirement in /tests/integration_tests/scheduler/test_lsf_driver.py::test_submit_with_resource_requirement",
-          "timestamp": "2024-04-04T12:03:11+02:00",
-          "tree_id": "69e0c40edf5f23da05273334002fa2cd213f9b49",
-          "url": "https://github.com/equinor/ert/commit/cdc90ba3a1c267254d7bccdc957ffe290c2d379a"
-        },
-        "date": 1712225176746,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18813531313711152,
-            "unit": "iter/sec",
-            "range": "stddev: 0.023427344702716568",
-            "extra": "mean: 5.315323228400018 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.032543055003195376",
             "extra": "mean: 5.249708716400005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "6f49e28aa529c7d18de9513954ee848fa04d7b1b",
+          "message": "Protect main branch from git commit with pre-commit\n\nDevelopers should never commit when main branch is checked out.\nCommits must happen on a branch, and then pull requests to main\nbranch.",
+          "timestamp": "2024-04-09T17:39:22+02:00",
+          "tree_id": "fc62283b41438e24895584835c451ea049d75a5b",
+          "url": "https://github.com/equinor/ert/commit/6f49e28aa529c7d18de9513954ee848fa04d7b1b"
+        },
+        "date": 1712677354007,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19040393968843392,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05512972039226968",
+            "extra": "mean: 5.251992168000004 sec\nrounds: 5"
           }
         ]
       }
