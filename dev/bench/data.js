@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712659659977,
+  "lastUpdate": 1712659920511,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "66e7fe541923f354544e0dc3388c6388171967a4",
-          "message": "Avoid calling kill() on each submit\n\nThis cleanup seems redundant, and will give wrong logs.\n\nAlso removes a test that relies on kill() being called upon\neach submit, which we should not rely on.",
-          "timestamp": "2024-04-04T11:54:43+02:00",
-          "tree_id": "de275035231cd2872ddf716c182aeaa7e0788181",
-          "url": "https://github.com/equinor/ert/commit/66e7fe541923f354544e0dc3388c6388171967a4"
-        },
-        "date": 1712224667626,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18718347866193996,
-            "unit": "iter/sec",
-            "range": "stddev: 0.033846476430576",
-            "extra": "mean: 5.342351831199994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0438916424227959",
             "extra": "mean: 5.358377949399994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "f4b0b2448f91a9907f329dd174d51ad37844657d",
+          "message": "Fix hanging cli integration test\n\nThis commit fixes `tests/integration_tests/test_cli.py::test_that_stop_on_workflow_jobs_stop_ert` hanging after finishing tests.\nIt seems like ErtThread with exceptions had some issues with pytest in this case, but it was fixed by monkeypatching `_ert_threading.can_raise = False`",
+          "timestamp": "2024-04-09T12:48:40+02:00",
+          "tree_id": "c84710a7de3c7442935f040b61f567d8b922e162",
+          "url": "https://github.com/equinor/ert/commit/f4b0b2448f91a9907f329dd174d51ad37844657d"
+        },
+        "date": 1712659919509,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19048675917504074,
+            "unit": "iter/sec",
+            "range": "stddev: 0.032543055003195376",
+            "extra": "mean: 5.249708716400005 sec\nrounds: 5"
           }
         ]
       }
