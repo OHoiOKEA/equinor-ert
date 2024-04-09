@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712658941822,
+  "lastUpdate": 1712659316633,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "2b1bf7313767ede60c37d17ca31898e8352c6b2a",
-          "message": "Fix docs about auto scale",
-          "timestamp": "2024-04-03T15:49:16+02:00",
-          "tree_id": "8584e8b3e0b9cd00a67ee04c9ef7e32e17f0ff7b",
-          "url": "https://github.com/equinor/ert/commit/2b1bf7313767ede60c37d17ca31898e8352c6b2a"
-        },
-        "date": 1712152351126,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1855107565629529,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02103395428384992",
-            "extra": "mean: 5.390523000000007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05062910166876855",
             "extra": "mean: 5.3265085437999975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "b4dc96d54f3c2eaa0a8a60f539545887599182e6",
+          "message": "Solve py312 warning on pkgutil.get_loader\n\nUsing importlib instead",
+          "timestamp": "2024-04-09T12:38:39+02:00",
+          "tree_id": "f25be9eab05bdb63cb1e3b4444ef132f3db8a22a",
+          "url": "https://github.com/equinor/ert/commit/b4dc96d54f3c2eaa0a8a60f539545887599182e6"
+        },
+        "date": 1712659316040,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19124730636191803,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03452675131481622",
+            "extra": "mean: 5.228831814800003 sec\nrounds: 5"
           }
         ]
       }
