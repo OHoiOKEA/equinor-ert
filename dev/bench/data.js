@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712651813996,
+  "lastUpdate": 1712651896307,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "b71fdde61f2c3ad7b36bb6a7a5cae8708ba7beb2",
-          "message": "Fix ErtPlugin interface staticmethods\n\nCommit `15ff246` marked interface methods with `@staticmethod` without considering other scripts inheriting the interface.",
-          "timestamp": "2024-04-03T12:11:13+02:00",
-          "tree_id": "6d12589554d8ab602fa4ae5a0d99e1c2defacc65",
-          "url": "https://github.com/equinor/ert/commit/b71fdde61f2c3ad7b36bb6a7a5cae8708ba7beb2"
-        },
-        "date": 1712139318850,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18967211409707477,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03207619691277985",
-            "extra": "mean: 5.27225630800001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026816160991506643",
             "extra": "mean: 5.234577545800005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "8082875060e07e8a9e64bad774bc7300f88349f9",
+          "message": "Implement EXCLUDE_HOST for scheduler lsf driver\n\nThis commit implements the EXCLUDE_HOST keyword for the scheduler LSF\ndriver, the same way it was implemented in C.",
+          "timestamp": "2024-04-09T10:34:50+02:00",
+          "tree_id": "ea33183e9dc047b94f4025cc83959bb22b95965c",
+          "url": "https://github.com/equinor/ert/commit/8082875060e07e8a9e64bad774bc7300f88349f9"
+        },
+        "date": 1712651895739,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18997784896352687,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04542360794685416",
+            "extra": "mean: 5.263771568399989 sec\nrounds: 5"
           }
         ]
       }
