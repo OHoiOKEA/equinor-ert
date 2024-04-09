@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712651896307,
+  "lastUpdate": 1712658202452,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "9d73d9621d00ff81e96a5e4f8d969303779529b3",
-          "message": "Ignore failed test-summary\n\ntest-summary will fail if junit.xml does not exist, which\nhappens when the tests time out. Since this is only\nfor pretty output, we ignore such errors.",
-          "timestamp": "2024-04-03T14:26:02+02:00",
-          "tree_id": "93cdad502f4bf337973f642381336d4ac21cad3b",
-          "url": "https://github.com/equinor/ert/commit/9d73d9621d00ff81e96a5e4f8d969303779529b3"
-        },
-        "date": 1712147354522,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19036686677324172,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03670695651391334",
-            "extra": "mean: 5.253014965 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04542360794685416",
             "extra": "mean: 5.263771568399989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "27a906029e3287634630fd0ff871dc395625ccd2",
+          "message": "Increase timeout in unresponsiveness test",
+          "timestamp": "2024-04-09T12:20:18+02:00",
+          "tree_id": "cae354a1907f5fb2446a95241b3fcd567dbf0fe9",
+          "url": "https://github.com/equinor/ert/commit/27a906029e3287634630fd0ff871dc395625ccd2"
+        },
+        "date": 1712658201855,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19236001899746916,
+            "unit": "iter/sec",
+            "range": "stddev: 0.028431693121145494",
+            "extra": "mean: 5.198585471200005 sec\nrounds: 5"
           }
         ]
       }
