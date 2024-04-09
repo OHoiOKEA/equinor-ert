@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712658202452,
+  "lastUpdate": 1712658941822,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "ade18beaece581e82cdc60c323a35bc3d7a0ec85",
-          "message": "Revert \"Implement EXCLUDE_HOST for scheduler lsf driver\"\n\nThis reverts commit 5bb33aa3df473dd25659fedf9b6e14c1b622dbed.",
-          "timestamp": "2024-04-03T15:27:15+02:00",
-          "tree_id": "dd0d85e92e0ed24578a62a7be87987cbe55f48a1",
-          "url": "https://github.com/equinor/ert/commit/ade18beaece581e82cdc60c323a35bc3d7a0ec85"
-        },
-        "date": 1712151066026,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1861336834583167,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026827057126192055",
-            "extra": "mean: 5.372482730799999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028431693121145494",
             "extra": "mean: 5.198585471200005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "7ba3fb551d7f18fb43b8a4e9500b28a72d364f7c",
+          "message": "Solve deprecation warning from datetime on UTC",
+          "timestamp": "2024-04-09T12:32:32+02:00",
+          "tree_id": "eb89a6d3c76fb305ef0ed8bc5994c5a7bd6ef57a",
+          "url": "https://github.com/equinor/ert/commit/7ba3fb551d7f18fb43b8a4e9500b28a72d364f7c"
+        },
+        "date": 1712658941227,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1877402414315077,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05062910166876855",
+            "extra": "mean: 5.3265085437999975 sec\nrounds: 5"
           }
         ]
       }
