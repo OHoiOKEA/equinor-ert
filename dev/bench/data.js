@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712650250519,
+  "lastUpdate": 1712650954925,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "1c1badd7671e068d83d17885c151455065ec85d2",
-          "message": "Make fallback mechanism for failing bjobs (bhist)\n\nWhenever jobs for which we need running states for are\nmissing in the output from bjobs, it can mean that the information\nhas fallen out of the bjobs cache on the LSF server. A scenario where\nthis can occur is that if Ert for some reason is hanging for a long time\nwithout polling, or maybe for other reasons on the LSF side.\n\nAny time bjobs misses information, one call to `bhist` is done, and its\noutput is stored in the object. The first time bhist is called, the\ndriver is not able to determine any states, but given that the next\nbjobs call also will miss a certain job id, the subsequent bhist call\nwill be able to deduce the running state by comparing the timing values\nin the first and the second bhist call.\n\nThis method is not able to catch job that has failed, it will be marked\nas done.",
-          "timestamp": "2024-04-02T15:58:32+02:00",
-          "tree_id": "c96089349b7404e7ce35f679f3bc25c678d3c7d2",
-          "url": "https://github.com/equinor/ert/commit/1c1badd7671e068d83d17885c151455065ec85d2"
-        },
-        "date": 1712066505268,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18356839558138904,
-            "unit": "iter/sec",
-            "range": "stddev: 0.18720173949273017",
-            "extra": "mean: 5.447560822399998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0489005906447136",
             "extra": "mean: 5.286331589799988 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "0e3f9b5ad606814d1098f0092e1efbfd71cefbaa",
+          "message": "Use macOS-14 runners for ert",
+          "timestamp": "2024-04-09T10:19:17+02:00",
+          "tree_id": "02e631265bda21e993eb37a0ff686ac0b79cabd6",
+          "url": "https://github.com/equinor/ert/commit/0e3f9b5ad606814d1098f0092e1efbfd71cefbaa"
+        },
+        "date": 1712650953968,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18548268382950203,
+            "unit": "iter/sec",
+            "range": "stddev: 0.057163452338775594",
+            "extra": "mean: 5.391338853600007 sec\nrounds: 5"
           }
         ]
       }
