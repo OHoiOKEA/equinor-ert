@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712650954925,
+  "lastUpdate": 1712651813996,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "9deeb1d88c90a0fd34819719ddcdaa74513f68a9",
-          "message": "Fix flaky parameter test",
-          "timestamp": "2024-04-03T08:31:25+02:00",
-          "tree_id": "0f0411909ef6432d64bda9bee1517baacfc9d52f",
-          "url": "https://github.com/equinor/ert/commit/9deeb1d88c90a0fd34819719ddcdaa74513f68a9"
-        },
-        "date": 1712126073151,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1832735585998826,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04987775013257238",
-            "extra": "mean: 5.4563244564000115 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.057163452338775594",
             "extra": "mean: 5.391338853600007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "414bea772d1f89c95fe82211d3e621e446950dc3",
+          "message": "Fix storage instance used outside of storage context",
+          "timestamp": "2024-04-09T10:33:54+02:00",
+          "tree_id": "df64668eef0c81d1de2e8c9668dcd799040a32bc",
+          "url": "https://github.com/equinor/ert/commit/414bea772d1f89c95fe82211d3e621e446950dc3"
+        },
+        "date": 1712651813552,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19103738386727237,
+            "unit": "iter/sec",
+            "range": "stddev: 0.026816160991506643",
+            "extra": "mean: 5.234577545800005 sec\nrounds: 5"
           }
         ]
       }
