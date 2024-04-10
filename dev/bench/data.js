@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712748654494,
+  "lastUpdate": 1712754291140,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "12d4d3df0bb97398497a33ff8fc20a54dedf86de",
-          "message": "Fix two overflow issues in parameter_example_test",
-          "timestamp": "2024-04-08T10:30:50+02:00",
-          "tree_id": "9c4dca2aeff9e8589aeff5f47cadb03b2ea8b558",
-          "url": "https://github.com/equinor/ert/commit/12d4d3df0bb97398497a33ff8fc20a54dedf86de"
-        },
-        "date": 1712565249695,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1900242676902475,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02180521324240851",
-            "extra": "mean: 5.262485745399994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0318388371629208",
             "extra": "mean: 5.1964765844 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "d55e0ef9870dc95aefd8cdaeaccc12c044391b26",
+          "message": "Rename async_utils get_event_loop() to get_running_loop()\n\nThe function has been updated and now uses `asyncio.get_running_loop` instead of `asyncio.get_event_loop`, so this commit changes the function name to reflect this change.",
+          "timestamp": "2024-04-10T15:01:24+02:00",
+          "tree_id": "1fba8844f361d3682a7ddee7666b7c2a6d3c03dd",
+          "url": "https://github.com/equinor/ert/commit/d55e0ef9870dc95aefd8cdaeaccc12c044391b26"
+        },
+        "date": 1712754289989,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18057947696652207,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04903257277708546",
+            "extra": "mean: 5.537727857000005 sec\nrounds: 5"
           }
         ]
       }
