@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712748632071,
+  "lastUpdate": 1712748654494,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "07c2fe041339bb080623cc30b090395ff7c1ca2f",
-          "message": "Display possible error when removing existing runpath\n\nAllow user to continue without deleting the runpath.",
-          "timestamp": "2024-04-08T09:16:04+03:00",
-          "tree_id": "241cfa428438e9dbb229b89cdcf13915652b4ffd",
-          "url": "https://github.com/equinor/ert/commit/07c2fe041339bb080623cc30b090395ff7c1ca2f"
-        },
-        "date": 1712557180065,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18669837689210217,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06300278666258832",
-            "extra": "mean: 5.356232960600005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.060928940177324274",
             "extra": "mean: 5.368440335000014 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "61046df67fa516164388276c2483d89114c78fe8",
+          "message": "Increase timeout for cluster integration tests\n\nThe default timeout at 10 minutes can be too low if the compute cluster\nhas low availability of compute resources, as the time spent waiting in the\nqueue for a compute job is counted. Increasing the timeout to 1 hour only\nwhen running the tests against the real compute cluster.\n\nThe timeout for the test_kill had to be removed, as that test can also\nsuffer the same problem. Note that this can then hide a bug for the LSF\ndriver as the driver cannot distuingish between  which will\nhappen when the job is not killed and the exit code when it is killed.",
+          "timestamp": "2024-04-10T13:27:48+02:00",
+          "tree_id": "d9744e6de3bfaa0e53affd58b29d177e3422f9a0",
+          "url": "https://github.com/equinor/ert/commit/61046df67fa516164388276c2483d89114c78fe8"
+        },
+        "date": 1712748653976,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19243808449017824,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0318388371629208",
+            "extra": "mean: 5.1964765844 sec\nrounds: 5"
           }
         ]
       }
