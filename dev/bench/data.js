@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712734735524,
+  "lastUpdate": 1712734907032,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "e2bd7c1e7974a7a6f51400b4cfaa864dbbac04dd",
-          "message": "Add new implementation of get_num_cpu\n\n\r\n\r\nCo-authored-by: Øyvind Eide <44577479+oyvindeide@users.noreply.github.com>",
-          "timestamp": "2024-04-05T13:05:51+02:00",
-          "tree_id": "de2a92fb024a30363284289411ed442b94a43e6a",
-          "url": "https://github.com/equinor/ert/commit/e2bd7c1e7974a7a6f51400b4cfaa864dbbac04dd"
-        },
-        "date": 1712315354250,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19131015908676907,
-            "unit": "iter/sec",
-            "range": "stddev: 0.039822087707115095",
-            "extra": "mean: 5.227113943000006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020745902598190133",
             "extra": "mean: 5.220419850800004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "20768faedd3de45a7e1f73b609de28884dbbd3ac",
+          "message": "Fix py3.12 asyncio warning in async_utils\n\nThis commit fixes the `DeprecationWarning: There is no current event loop` warning for Python3.12 in the `get_event_loop` function in `async_utils.py`. Prior to this commit, the function used `asyncio.get_event_loop()` which creates a new event loop directly. `asyncio.get_running_loop()` does however raise a RuntimeError when there is no event loop, which is what we want.",
+          "timestamp": "2024-04-10T09:38:39+02:00",
+          "tree_id": "1c73be36b037d7c6bc0ff10133ca2c89e5bf8bda",
+          "url": "https://github.com/equinor/ert/commit/20768faedd3de45a7e1f73b609de28884dbbd3ac"
+        },
+        "date": 1712734906479,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1868711073297286,
+            "unit": "iter/sec",
+            "range": "stddev: 0.026854166737749072",
+            "extra": "mean: 5.35128203760001 sec\nrounds: 5"
           }
         ]
       }
