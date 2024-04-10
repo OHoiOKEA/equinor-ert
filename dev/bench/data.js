@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712732286259,
+  "lastUpdate": 1712732478542,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "ca2e52c12403ae5537a6713d2ba51bca8e059576",
-          "message": "Return none if the parser does not provide scheduler_feature",
-          "timestamp": "2024-04-04T16:05:54+02:00",
-          "tree_id": "e64a72091dde07d1a5cdecef23a08125842f2c55",
-          "url": "https://github.com/equinor/ert/commit/ca2e52c12403ae5537a6713d2ba51bca8e059576"
-        },
-        "date": 1712239755618,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18389226828756391,
-            "unit": "iter/sec",
-            "range": "stddev: 0.024505062152851923",
-            "extra": "mean: 5.437966529600021 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0439954412157879",
             "extra": "mean: 5.242607808999992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "afd2437d33cb404892141b35c14193a350599b09",
+          "message": "Remove pass statement\n\nLeftover after b4dc96d54f3c2eaa0a8a60f539545887599182e6",
+          "timestamp": "2024-04-10T08:58:10+02:00",
+          "tree_id": "79518becfe70b7d5f500a58fde188e7369a509ab",
+          "url": "https://github.com/equinor/ert/commit/afd2437d33cb404892141b35c14193a350599b09"
+        },
+        "date": 1712732477786,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1912863758543016,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06023930596930995",
+            "extra": "mean: 5.2277638464 sec\nrounds: 5"
           }
         ]
       }
