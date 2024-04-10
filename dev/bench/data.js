@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712756467099,
+  "lastUpdate": 1712760077142,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "70122c96c38d5ac4db324de14ca3f23c9ec9dd05",
-          "message": "Solve race condition in lsf_driver for job_ids\n\nIt is possible for self._jobs to be changed throughout the poll() function,\nwe must be sure to compare to the original set before we employ the\nbhist fallback",
-          "timestamp": "2024-04-08T12:27:29+02:00",
-          "tree_id": "9d4d4f4d5b689cf258d969b92e076dd9a75ff9b0",
-          "url": "https://github.com/equinor/ert/commit/70122c96c38d5ac4db324de14ca3f23c9ec9dd05"
-        },
-        "date": 1712572248520,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18303727071634365,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04406758239402076",
-            "extra": "mean: 5.463368176800008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.019181098153772037",
             "extra": "mean: 5.31259465280001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "9d4c966443e39a23eca3239602819d793f05d2d4",
+          "message": "Use the -E flag for qstat to increase performance\n\nThis flag causes qstat to group job status calls going to the same server\ntogether. That makes qstat orders of magnitude faster for calls with many job\nids.",
+          "timestamp": "2024-04-10T16:37:56+02:00",
+          "tree_id": "6687e9c9117f9042aecc76080373ba47038f090c",
+          "url": "https://github.com/equinor/ert/commit/9d4c966443e39a23eca3239602819d793f05d2d4"
+        },
+        "date": 1712760076076,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18234273621164118,
+            "unit": "iter/sec",
+            "range": "stddev: 0.038434112169812344",
+            "extra": "mean: 5.484177877200011 sec\nrounds: 5"
           }
         ]
       }
