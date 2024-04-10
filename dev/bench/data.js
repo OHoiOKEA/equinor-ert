@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712734563401,
+  "lastUpdate": 1712734735524,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "a1f9feb7d4783d510c28a692417dfa13ac191bfe",
-          "message": "Add back webviz-ert kwargs",
-          "timestamp": "2024-04-05T09:49:29+02:00",
-          "tree_id": "d3dd15286026e60dae970238fb89576cae91471d",
-          "url": "https://github.com/equinor/ert/commit/a1f9feb7d4783d510c28a692417dfa13ac191bfe"
-        },
-        "date": 1712303548443,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1907729062416019,
-            "unit": "iter/sec",
-            "range": "stddev: 0.031495152516441416",
-            "extra": "mean: 5.241834491599991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030239981593202202",
             "extra": "mean: 5.295245269199995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "bc992ec461a612af8c31fe630cad4887f41fc3a7",
+          "message": "Rename Job.__call__ to job.run in scheduler",
+          "timestamp": "2024-04-10T09:35:41+02:00",
+          "tree_id": "a3975cdb8f7bca2bdae2002b74dbbd8916d68ac5",
+          "url": "https://github.com/equinor/ert/commit/bc992ec461a612af8c31fe630cad4887f41fc3a7"
+        },
+        "date": 1712734734314,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19155547419174623,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020745902598190133",
+            "extra": "mean: 5.220419850800004 sec\nrounds: 5"
           }
         ]
       }
