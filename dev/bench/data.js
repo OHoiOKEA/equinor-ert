@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712754291140,
+  "lastUpdate": 1712756467099,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "4ec192af30000cf49ba253f81c7dddd2c7091dc2",
-          "message": "Add SIGKILL to possible returncodes from kill\n\nObserved on PBS",
-          "timestamp": "2024-04-08T12:18:55+02:00",
-          "tree_id": "e7caf9add10b94476ea336ac8411f90bb097eecb",
-          "url": "https://github.com/equinor/ert/commit/4ec192af30000cf49ba253f81c7dddd2c7091dc2"
-        },
-        "date": 1712571720709,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18545104782107888,
-            "unit": "iter/sec",
-            "range": "stddev: 0.09158622431868414",
-            "extra": "mean: 5.392258559599992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04903257277708546",
             "extra": "mean: 5.537727857000005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "c600efbbe3b15f441ffdbaae86a2201d1e270828",
+          "message": "Remove start sync event from scheduler job.__call__\n\nThe scheduler job has a synchronization event (`start = asyncio.Event()`) with the purpose of executing job-group start,  and was passed as a parameter to `job.__call__`. It does not seems to be that necessary in the end as `asyncio.BoundedSemaphore` will handle job execution regardless. This commit removes this redundant event.",
+          "timestamp": "2024-04-10T15:37:45+02:00",
+          "tree_id": "84a87c5e94f45dc6bff4658bac5c90fb59a4b65f",
+          "url": "https://github.com/equinor/ert/commit/c600efbbe3b15f441ffdbaae86a2201d1e270828"
+        },
+        "date": 1712756465927,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1882319403896077,
+            "unit": "iter/sec",
+            "range": "stddev: 0.019181098153772037",
+            "extra": "mean: 5.31259465280001 sec\nrounds: 5"
           }
         ]
       }
