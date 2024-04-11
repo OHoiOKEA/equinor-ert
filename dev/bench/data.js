@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712760077142,
+  "lastUpdate": 1712818106866,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "7145a2924ebd5b9d7f051f42880f54cbfc1f4229",
-          "message": "Test that pbs driver ignores qstat flakiness (#7414)\n\n* Move QSTAT_HEADER stub constants to tests/conftest.py\r\n\r\n* Add tests for PBSDriver ignoring qstat flakiness\r\n\r\nThis commit adds tests that verifies that the OpenPBS driver ignores\r\nqstat flakiness related to \"pbs_iff\" and \"qstat: Invalid credential\"\r\n\r\n* Have qstat mocked binary use wide option\r\n\r\n* Have OpenPBS tests use common QSTAT fixture",
-          "timestamp": "2024-04-08T13:24:25+02:00",
-          "tree_id": "cb0358e9d7adb820f2df982e88007900c0770155",
-          "url": "https://github.com/equinor/ert/commit/7145a2924ebd5b9d7f051f42880f54cbfc1f4229"
-        },
-        "date": 1712575649617,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19472366354448356,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03382066653874906",
-            "extra": "mean: 5.13548267220001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.038434112169812344",
             "extra": "mean: 5.484177877200011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "dbafb2cb1fbfbadd974b43e75cddc0f750291a99",
+          "message": "Add test to confirm that the job does not retry when activelly cancelled",
+          "timestamp": "2024-04-11T08:45:11+02:00",
+          "tree_id": "0d39fe12da478ac1edd78ff4f824774e502f34a9",
+          "url": "https://github.com/equinor/ert/commit/dbafb2cb1fbfbadd974b43e75cddc0f750291a99"
+        },
+        "date": 1712818105887,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18690324917327675,
+            "unit": "iter/sec",
+            "range": "stddev: 0.25934157562041293",
+            "extra": "mean: 5.350361774999999 sec\nrounds: 5"
           }
         ]
       }
