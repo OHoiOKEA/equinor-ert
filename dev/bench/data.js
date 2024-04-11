@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712822982386,
+  "lastUpdate": 1712826083552,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "4ababea024d3d136039bf627212b8433c726be54",
-          "message": "Eestablish connection and empty the event queue before cancelling tasks\n\n- Add _publisher_done event and CLOSE_PUBLISHER_SENTINEL to make sure that the connection was established and all events were sent before the cancellation happens.\n- Supress CancelledError when task gets cancelled for long running jobs\n- Ignore cancellation in job task\n- Add test for scheduler publishings its events to a websocket with\npublisher_done set Event.\n\nCo-authored-by: Håvard Berland <havb@equinor.com>",
-          "timestamp": "2024-04-08T15:27:54+02:00",
-          "tree_id": "a4ba1a07ed6ccf264237aa2e10370f8086b4196c",
-          "url": "https://github.com/equinor/ert/commit/4ababea024d3d136039bf627212b8433c726be54"
-        },
-        "date": 1712583067611,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19324840004002852,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022966654203154063",
-            "extra": "mean: 5.17468708560001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029321400484380034",
             "extra": "mean: 5.288714541400003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "01c1f9a9ffcbe663e2e9c79052ba4ff18e74562e",
+          "message": "Change cwd to tmpdir in some tests currently polluting working dir",
+          "timestamp": "2024-04-11T10:58:14+02:00",
+          "tree_id": "82fa676f3f33ac6e457a5961a97e6d06475c1487",
+          "url": "https://github.com/equinor/ert/commit/01c1f9a9ffcbe663e2e9c79052ba4ff18e74562e"
+        },
+        "date": 1712826083034,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18494926117449198,
+            "unit": "iter/sec",
+            "range": "stddev: 0.005445938983244739",
+            "extra": "mean: 5.406888319799998 sec\nrounds: 5"
           }
         ]
       }
