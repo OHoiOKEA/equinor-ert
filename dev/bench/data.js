@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712826083552,
+  "lastUpdate": 1712832344912,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "b4eedfc04f3135826e4aad4b140f31821fb1f9d4",
-          "message": "Increase timeout for testing of faulty bjobs\n\nThe existing timeout at 0.2 is too small on MacOS when\npytest is run concurrently with -n auto",
-          "timestamp": "2024-04-08T15:30:02+02:00",
-          "tree_id": "2332b3d27fce03ef4eee7e09cb43ed0350ef4f5f",
-          "url": "https://github.com/equinor/ert/commit/b4eedfc04f3135826e4aad4b140f31821fb1f9d4"
-        },
-        "date": 1712583182965,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18881360459517066,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04170398877195173",
-            "extra": "mean: 5.296228532600014 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.005445938983244739",
             "extra": "mean: 5.406888319799998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "a15736792c89c69f6d6cb88726eb89af22a3648c",
+          "message": "Missing exception in async_utils",
+          "timestamp": "2024-04-11T12:42:35+02:00",
+          "tree_id": "e2a57e978cca4136f050d464ed8d2063c1e9d03f",
+          "url": "https://github.com/equinor/ert/commit/a15736792c89c69f6d6cb88726eb89af22a3648c"
+        },
+        "date": 1712832344388,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18808660140784975,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0409944119036988",
+            "extra": "mean: 5.3166998208000225 sec\nrounds: 5"
           }
         ]
       }
