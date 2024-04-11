@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712818106866,
+  "lastUpdate": 1712822982386,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "3fdff884848078484828219bf7623f77294515a2",
-          "message": "Split release notes in highlighted changes and change log\n\nWe have previously written highlighted changes and change log per\nrelease. This means each version is split in two, but it will\nbe easier to read the highlighted section, which most users are\ninterested in.",
-          "timestamp": "2024-04-08T14:24:33+02:00",
-          "tree_id": "47660988316bc0e7e9dfc677df61d8573027ccb8",
-          "url": "https://github.com/equinor/ert/commit/3fdff884848078484828219bf7623f77294515a2"
-        },
-        "date": 1712579283539,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19229310940473818,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03457452005655197",
-            "extra": "mean: 5.200394351599994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.25934157562041293",
             "extra": "mean: 5.350361774999999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "21387c147a433e3099d0b7957cefaa142016b95d",
+          "message": "Allow pre-commit to run without failure in CI after merge",
+          "timestamp": "2024-04-11T10:06:20+02:00",
+          "tree_id": "bb9f416c063e04462c8273647115115a41cc3b68",
+          "url": "https://github.com/equinor/ert/commit/21387c147a433e3099d0b7957cefaa142016b95d"
+        },
+        "date": 1712822981868,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1890818633095075,
+            "unit": "iter/sec",
+            "range": "stddev: 0.029321400484380034",
+            "extra": "mean: 5.288714541400003 sec\nrounds: 5"
           }
         ]
       }
