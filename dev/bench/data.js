@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712923266275,
+  "lastUpdate": 1712928657902,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "118697112ec5893510d377441e89e5fb52b3cc6f",
-          "message": "Refactor _get_obs_and_measure_data\n\nRename to _get_observations_and_responses\r\nImprove variable names and add docstring.",
-          "timestamp": "2024-04-09T09:50:54+02:00",
-          "tree_id": "62bff5ca90b9c1603b1e1af32aa7c3a1cc7758e9",
-          "url": "https://github.com/equinor/ert/commit/118697112ec5893510d377441e89e5fb52b3cc6f"
-        },
-        "date": 1712649245494,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19114854672193807,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025405954694112134",
-            "extra": "mean: 5.231533365800004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04075748043924909",
             "extra": "mean: 5.1956730806 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "e5aa0f340607c4266ed34f2d84d1389c7b9386dc",
+          "message": "Fix memory being reported without units in GUI",
+          "timestamp": "2024-04-12T15:27:57+02:00",
+          "tree_id": "c41bbf6570601a0ce90faf44d532826bca2944c9",
+          "url": "https://github.com/equinor/ert/commit/e5aa0f340607c4266ed34f2d84d1389c7b9386dc"
+        },
+        "date": 1712928657377,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18250648283869267,
+            "unit": "iter/sec",
+            "range": "stddev: 0.13468240307683138",
+            "extra": "mean: 5.479257418400005 sec\nrounds: 5"
           }
         ]
       }
