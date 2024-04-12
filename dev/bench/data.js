@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712841085420,
+  "lastUpdate": 1712922966709,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "aea1d7cb0ac8fe07102f910c756924174ab41904",
-          "message": "Remove unused endpoint",
-          "timestamp": "2024-04-08T16:34:58+02:00",
-          "tree_id": "b5e9967ff8a960f8ec793ca6dfc01e7bbb7503ed",
-          "url": "https://github.com/equinor/ert/commit/aea1d7cb0ac8fe07102f910c756924174ab41904"
-        },
-        "date": 1712587096883,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1836289265033132,
-            "unit": "iter/sec",
-            "range": "stddev: 0.2132922930371747",
-            "extra": "mean: 5.445765103800011 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02049272376012959",
             "extra": "mean: 5.376869301200008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "413dec5ebadfb19821e9c01a4d88483687bc3346",
+          "message": "Remove timout on setup steps for Run ert tests github workflow",
+          "timestamp": "2024-04-12T13:52:52+02:00",
+          "tree_id": "518a88cde938f6abe33481600235155c0b8e992f",
+          "url": "https://github.com/equinor/ert/commit/413dec5ebadfb19821e9c01a4d88483687bc3346"
+        },
+        "date": 1712922966257,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19233585599530328,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05691507681946953",
+            "extra": "mean: 5.199238565399992 sec\nrounds: 5"
           }
         ]
       }
