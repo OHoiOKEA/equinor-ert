@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713189254553,
+  "lastUpdate": 1713189289968,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "414bea772d1f89c95fe82211d3e621e446950dc3",
-          "message": "Fix storage instance used outside of storage context",
-          "timestamp": "2024-04-09T10:33:54+02:00",
-          "tree_id": "df64668eef0c81d1de2e8c9668dcd799040a32bc",
-          "url": "https://github.com/equinor/ert/commit/414bea772d1f89c95fe82211d3e621e446950dc3"
-        },
-        "date": 1712651813552,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19103738386727237,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026816160991506643",
-            "extra": "mean: 5.234577545800005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.014098104080526603",
             "extra": "mean: 5.268313980600022 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "8336e5142db31c940a6abc0e9e775f7c0fdd96fa",
+          "message": "Fix runtime-error string in lsf_driver",
+          "timestamp": "2024-04-15T15:51:35+02:00",
+          "tree_id": "ccaf6b2619d0502c3f866c13690be58ef3b59caa",
+          "url": "https://github.com/equinor/ert/commit/8336e5142db31c940a6abc0e9e775f7c0fdd96fa"
+        },
+        "date": 1713189288904,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18758616377439946,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01461169908602252",
+            "extra": "mean: 5.330883578400005 sec\nrounds: 5"
           }
         ]
       }
