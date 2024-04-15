@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713163334802,
+  "lastUpdate": 1713189254553,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "0e3f9b5ad606814d1098f0092e1efbfd71cefbaa",
-          "message": "Use macOS-14 runners for ert",
-          "timestamp": "2024-04-09T10:19:17+02:00",
-          "tree_id": "02e631265bda21e993eb37a0ff686ac0b79cabd6",
-          "url": "https://github.com/equinor/ert/commit/0e3f9b5ad606814d1098f0092e1efbfd71cefbaa"
-        },
-        "date": 1712650953968,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18548268382950203,
-            "unit": "iter/sec",
-            "range": "stddev: 0.057163452338775594",
-            "extra": "mean: 5.391338853600007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.012598388813570203",
             "extra": "mean: 5.3137302158000015 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "9e5fb7165f62fbdcc2d6d5db679ee268df81a5f8",
+          "message": "Ignore stderr for parsing bsub output",
+          "timestamp": "2024-04-15T15:51:03+02:00",
+          "tree_id": "5b3f3cac320f4041dacf269e4fa29447f3abd42b",
+          "url": "https://github.com/equinor/ert/commit/9e5fb7165f62fbdcc2d6d5db679ee268df81a5f8"
+        },
+        "date": 1713189253897,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18981404746990943,
+            "unit": "iter/sec",
+            "range": "stddev: 0.014098104080526603",
+            "extra": "mean: 5.268313980600022 sec\nrounds: 5"
           }
         ]
       }
