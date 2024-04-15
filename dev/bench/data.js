@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1712928657902,
+  "lastUpdate": 1713163334802,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "5428155b98bf2878eb9d5148633a74a54c295e43",
-          "message": "Make resdata a dev-dependency",
-          "timestamp": "2024-04-09T10:07:37+02:00",
-          "tree_id": "dcd1e7e293c93e7170d1c8646e1d32a5b8d7941d",
-          "url": "https://github.com/equinor/ert/commit/5428155b98bf2878eb9d5148633a74a54c295e43"
-        },
-        "date": 1712650249571,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18916709688236483,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0489005906447136",
-            "extra": "mean: 5.286331589799988 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.13468240307683138",
             "extra": "mean: 5.479257418400005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "bb9b46bd31a9df05afe7fb12312454b98fe34828",
+          "message": "Fix GUI RunDialog not expanding details header\n\nThis commit fixes an issue where the RunDialog show details section\nwould not expand the header to fill the width, without having a\nrealization set.",
+          "timestamp": "2024-04-15T08:39:07+02:00",
+          "tree_id": "3d5ca35cb61764431b060f922e17854a0593cb79",
+          "url": "https://github.com/equinor/ert/commit/bb9b46bd31a9df05afe7fb12312454b98fe34828"
+        },
+        "date": 1713163334117,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.188191714556108,
+            "unit": "iter/sec",
+            "range": "stddev: 0.012598388813570203",
+            "extra": "mean: 5.3137302158000015 sec\nrounds: 5"
           }
         ]
       }
