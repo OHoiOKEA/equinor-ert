@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713253313673,
+  "lastUpdate": 1713254035389,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "b4dc96d54f3c2eaa0a8a60f539545887599182e6",
-          "message": "Solve py312 warning on pkgutil.get_loader\n\nUsing importlib instead",
-          "timestamp": "2024-04-09T12:38:39+02:00",
-          "tree_id": "f25be9eab05bdb63cb1e3b4444ef132f3db8a22a",
-          "url": "https://github.com/equinor/ert/commit/b4dc96d54f3c2eaa0a8a60f539545887599182e6"
-        },
-        "date": 1712659316040,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19124730636191803,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03452675131481622",
-            "extra": "mean: 5.228831814800003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06312224583461751",
             "extra": "mean: 5.394431588799989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "57b4398186f3c28e62c75df37c8e6ff4e282f01e",
+          "message": "Reduce timeout in order to speed up tests\n\nFor the test id's that are expected to timeout (5 of them), the\ntest runtime will indeed be the timeout. 0.2 has been proven to\nbe too small (the initial commit) for MacOS runners. 5 seconds\nis proven to be sufficient, but is probably overkill. Try 1 second\nas a middle ground.",
+          "timestamp": "2024-04-16T09:50:37+02:00",
+          "tree_id": "66ccd55422aafd36258f41b80f7f13d6da245b0c",
+          "url": "https://github.com/equinor/ert/commit/57b4398186f3c28e62c75df37c8e6ff4e282f01e"
+        },
+        "date": 1713254034860,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19355265821703932,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02440732353078574",
+            "extra": "mean: 5.166552654000003 sec\nrounds: 5"
           }
         ]
       }
