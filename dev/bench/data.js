@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713254035389,
+  "lastUpdate": 1713255863935,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "cfad65e85d01a10fe8c57b4e391caefa2868d4dd",
-          "message": "Let mocked bkill support specific kill signal\n\nThe tests sent a -s option to the mock that failed the mock.\nAnother error (missing timeout) let the kill test pass when\nit should not.",
-          "timestamp": "2024-04-09T12:44:28+02:00",
-          "tree_id": "dd1bae833cef7022083bf6ab0918e8aec24994b8",
-          "url": "https://github.com/equinor/ert/commit/cfad65e85d01a10fe8c57b4e391caefa2868d4dd"
-        },
-        "date": 1712659659376,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18662364048283964,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0438916424227959",
-            "extra": "mean: 5.358377949399994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02440732353078574",
             "extra": "mean: 5.166552654000003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "907f0b8f2f628416edfbe66ef94ffd3d86ed4ab7",
+          "message": "Fix documentation for LSF memory booking\n\nThis commit updates the documentation for the LSF queue option `LSF_RESOURCE`. The old example used units in the resource string, but that is not supported by LSF9.",
+          "timestamp": "2024-04-16T10:21:18+02:00",
+          "tree_id": "7e4e4dc172fcf2025cf2487a9a5c03ee7712932e",
+          "url": "https://github.com/equinor/ert/commit/907f0b8f2f628416edfbe66ef94ffd3d86ed4ab7"
+        },
+        "date": 1713255863332,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18930089929979224,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04367563270093218",
+            "extra": "mean: 5.282595083799992 sec\nrounds: 5"
           }
         ]
       }
