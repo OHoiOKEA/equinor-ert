@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713189289968,
+  "lastUpdate": 1713251173702,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "8082875060e07e8a9e64bad774bc7300f88349f9",
-          "message": "Implement EXCLUDE_HOST for scheduler lsf driver\n\nThis commit implements the EXCLUDE_HOST keyword for the scheduler LSF\ndriver, the same way it was implemented in C.",
-          "timestamp": "2024-04-09T10:34:50+02:00",
-          "tree_id": "ea33183e9dc047b94f4025cc83959bb22b95965c",
-          "url": "https://github.com/equinor/ert/commit/8082875060e07e8a9e64bad774bc7300f88349f9"
-        },
-        "date": 1712651895739,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18997784896352687,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04542360794685416",
-            "extra": "mean: 5.263771568399989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01461169908602252",
             "extra": "mean: 5.330883578400005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "4e7300ec70b2b83ddcdea7268a33fe7da7bd69bd",
+          "message": "Fix LSF driver logging wrong message when killing\n\nThis commit fixes some minor logging issues in scheduler lsf driver:\n* sigkill fire-and-forget process logged to terminal instead of devnull after sleeping 30s.\n* stdout and stderr from bkill was missing `strip()` so logs were split\n  over multiple lines.\n* bkill can output `Job <id> is being signaled`, but it should not be\n  interpreted as an error.",
+          "timestamp": "2024-04-16T09:03:08+02:00",
+          "tree_id": "1e4bd6d0650ecfa8bfc91f22975a5a577d6e59d2",
+          "url": "https://github.com/equinor/ert/commit/4e7300ec70b2b83ddcdea7268a33fe7da7bd69bd"
+        },
+        "date": 1713251173237,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18711036593012403,
+            "unit": "iter/sec",
+            "range": "stddev: 0.032764764297997684",
+            "extra": "mean: 5.344439336800013 sec\nrounds: 5"
           }
         ]
       }
