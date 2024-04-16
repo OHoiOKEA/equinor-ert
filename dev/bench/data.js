@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713252572298,
+  "lastUpdate": 1713253313673,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "7ba3fb551d7f18fb43b8a4e9500b28a72d364f7c",
-          "message": "Solve deprecation warning from datetime on UTC",
-          "timestamp": "2024-04-09T12:32:32+02:00",
-          "tree_id": "eb89a6d3c76fb305ef0ed8bc5994c5a7bd6ef57a",
-          "url": "https://github.com/equinor/ert/commit/7ba3fb551d7f18fb43b8a4e9500b28a72d364f7c"
-        },
-        "date": 1712658941227,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1877402414315077,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05062910166876855",
-            "extra": "mean: 5.3265085437999975 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03047163846102089",
             "extra": "mean: 5.287537817400005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "1eaed7c83af9159c693f07554bb688d21d99f7ed",
+          "message": "Have async functions use async_utils eventloop\n\nThis commit:\n* Moves async_utils.py to _ert\n* Makes async functions use event loop created by function in\n  async_utils rather than asyncio.",
+          "timestamp": "2024-04-16T09:38:45+02:00",
+          "tree_id": "e688bf69844d22d2f893d9c09cce4d66053f79ce",
+          "url": "https://github.com/equinor/ert/commit/1eaed7c83af9159c693f07554bb688d21d99f7ed"
+        },
+        "date": 1713253312997,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18537634290816052,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06312224583461751",
+            "extra": "mean: 5.394431588799989 sec\nrounds: 5"
           }
         ]
       }
