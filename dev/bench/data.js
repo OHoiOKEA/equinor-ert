@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713260190004,
+  "lastUpdate": 1713263632591,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "6f49e28aa529c7d18de9513954ee848fa04d7b1b",
-          "message": "Protect main branch from git commit with pre-commit\n\nDevelopers should never commit when main branch is checked out.\nCommits must happen on a branch, and then pull requests to main\nbranch.",
-          "timestamp": "2024-04-09T17:39:22+02:00",
-          "tree_id": "fc62283b41438e24895584835c451ea049d75a5b",
-          "url": "https://github.com/equinor/ert/commit/6f49e28aa529c7d18de9513954ee848fa04d7b1b"
-        },
-        "date": 1712677354007,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19040393968843392,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05512972039226968",
-            "extra": "mean: 5.251992168000004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027594473226397787",
             "extra": "mean: 5.301146924199998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "66baedd6d8ee18eb9b45bd80e4deffb0938a6d01",
+          "message": "Make sure to not cancel the job when job is done\n\n- Test that failed realization will not be cancelled",
+          "timestamp": "2024-04-16T12:30:44+02:00",
+          "tree_id": "2d5d804de77b9c3fc01d5a5a76b05c57bd1666a4",
+          "url": "https://github.com/equinor/ert/commit/66baedd6d8ee18eb9b45bd80e4deffb0938a6d01"
+        },
+        "date": 1713263631920,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1878698949766965,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020065089207427406",
+            "extra": "mean: 5.322832591799982 sec\nrounds: 5"
           }
         ]
       }
