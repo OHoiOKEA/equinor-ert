@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713251173702,
+  "lastUpdate": 1713252572298,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "27a906029e3287634630fd0ff871dc395625ccd2",
-          "message": "Increase timeout in unresponsiveness test",
-          "timestamp": "2024-04-09T12:20:18+02:00",
-          "tree_id": "cae354a1907f5fb2446a95241b3fcd567dbf0fe9",
-          "url": "https://github.com/equinor/ert/commit/27a906029e3287634630fd0ff871dc395625ccd2"
-        },
-        "date": 1712658201855,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19236001899746916,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028431693121145494",
-            "extra": "mean: 5.198585471200005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.032764764297997684",
             "extra": "mean: 5.344439336800013 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "decf4ba65c38902839011d23549c9850e0241ddf",
+          "message": "Fix bug where single_test_run could not run after anything else",
+          "timestamp": "2024-04-16T09:26:31+02:00",
+          "tree_id": "e1a22bfee97236c3b0d1598a4891f6dde5ddcc61",
+          "url": "https://github.com/equinor/ert/commit/decf4ba65c38902839011d23549c9850e0241ddf"
+        },
+        "date": 1713252571799,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18912394285091305,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03047163846102089",
+            "extra": "mean: 5.287537817400005 sec\nrounds: 5"
           }
         ]
       }
