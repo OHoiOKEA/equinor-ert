@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713255863935,
+  "lastUpdate": 1713260190004,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "f4b0b2448f91a9907f329dd174d51ad37844657d",
-          "message": "Fix hanging cli integration test\n\nThis commit fixes `tests/integration_tests/test_cli.py::test_that_stop_on_workflow_jobs_stop_ert` hanging after finishing tests.\nIt seems like ErtThread with exceptions had some issues with pytest in this case, but it was fixed by monkeypatching `_ert_threading.can_raise = False`",
-          "timestamp": "2024-04-09T12:48:40+02:00",
-          "tree_id": "c84710a7de3c7442935f040b61f567d8b922e162",
-          "url": "https://github.com/equinor/ert/commit/f4b0b2448f91a9907f329dd174d51ad37844657d"
-        },
-        "date": 1712659919509,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19048675917504074,
-            "unit": "iter/sec",
-            "range": "stddev: 0.032543055003195376",
-            "extra": "mean: 5.249708716400005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04367563270093218",
             "extra": "mean: 5.282595083799992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "330fd7fa7cfcc182e92b56b904f8ac801bf83492",
+          "message": "Add some more logging to auto_scaling",
+          "timestamp": "2024-04-16T11:33:25+02:00",
+          "tree_id": "b81ebbefb518a4e629093bd97c690e67028a920c",
+          "url": "https://github.com/equinor/ert/commit/330fd7fa7cfcc182e92b56b904f8ac801bf83492"
+        },
+        "date": 1713260189304,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18863842377862622,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027594473226397787",
+            "extra": "mean: 5.301146924199998 sec\nrounds: 5"
           }
         ]
       }
