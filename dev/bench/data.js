@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713380423242,
+  "lastUpdate": 1713380452699,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "880886ef8de3f8c066f862d1c478bb6f63bc9c0e",
-          "message": "Fix storage instance used outside of storage context",
-          "timestamp": "2024-04-10T09:33:02+02:00",
-          "tree_id": "f1504368b8b0913cb0094516c2fee6c15897eb7b",
-          "url": "https://github.com/equinor/ert/commit/880886ef8de3f8c066f862d1c478bb6f63bc9c0e"
-        },
-        "date": 1712734562913,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1888486650120892,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030239981593202202",
-            "extra": "mean: 5.295245269199995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03583106570607512",
             "extra": "mean: 5.371220990199992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "e4d8f7f3902013976f54f324e1bf9dd6d08363c4",
+          "message": "Rename JobRunner to ForwardModelRunner\n\nWe no longer call the individual steps in each realization forward model for `Jobs`, and the class name should be changed to reflect that. This commit fixes that.",
+          "timestamp": "2024-04-17T20:57:38+02:00",
+          "tree_id": "19c421e41abaf61febd359dd60275b0a1adf2a3f",
+          "url": "https://github.com/equinor/ert/commit/e4d8f7f3902013976f54f324e1bf9dd6d08363c4"
+        },
+        "date": 1713380452164,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1875997070306097,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04576336559383231",
+            "extra": "mean: 5.330498729600015 sec\nrounds: 5"
           }
         ]
       }
