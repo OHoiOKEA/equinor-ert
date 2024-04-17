@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713340844459,
+  "lastUpdate": 1713348682881,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "c3ee77f07228d2f43d8b3f7a815903c65cdbcee5",
-          "message": "Guard against cancellation errors when cancelling",
-          "timestamp": "2024-04-10T08:55:00+02:00",
-          "tree_id": "d80df876d29a8eb08413c1ca1389a331e9725b1b",
-          "url": "https://github.com/equinor/ert/commit/c3ee77f07228d2f43d8b3f7a815903c65cdbcee5"
-        },
-        "date": 1712732285834,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19074476604626014,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0439954412157879",
-            "extra": "mean: 5.242607808999992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.035891239268949465",
             "extra": "mean: 5.349065703999997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "5ba5b091377fd5d5695597a43594c1d231b0dc53",
+          "message": "Allow reruns on flaky test_update_report",
+          "timestamp": "2024-04-17T12:06:08+02:00",
+          "tree_id": "1f9acf927b6362b3d8e54f73649406362e1af237",
+          "url": "https://github.com/equinor/ert/commit/5ba5b091377fd5d5695597a43594c1d231b0dc53"
+        },
+        "date": 1713348682236,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18315523365910577,
+            "unit": "iter/sec",
+            "range": "stddev: 0.3475576418342753",
+            "extra": "mean: 5.459849440400001 sec\nrounds: 5"
           }
         ]
       }
