@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713348682881,
+  "lastUpdate": 1713380423242,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "afd2437d33cb404892141b35c14193a350599b09",
-          "message": "Remove pass statement\n\nLeftover after b4dc96d54f3c2eaa0a8a60f539545887599182e6",
-          "timestamp": "2024-04-10T08:58:10+02:00",
-          "tree_id": "79518becfe70b7d5f500a58fde188e7369a509ab",
-          "url": "https://github.com/equinor/ert/commit/afd2437d33cb404892141b35c14193a350599b09"
-        },
-        "date": 1712732477786,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1912863758543016,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06023930596930995",
-            "extra": "mean: 5.2277638464 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.3475576418342753",
             "extra": "mean: 5.459849440400001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "29d0fe49a2403af01ada62e271aab04927631ede",
+          "message": "Move duplicate ev_types to ert/event_type_constants.py\n\nThis commit moves duplicate event type constants found in `job_queue/queue.py` and `ensemble_evaluator/identifiers.py` into a common module `ert/event_type_constants.py`",
+          "timestamp": "2024-04-17T20:56:57+02:00",
+          "tree_id": "77b3dcddf4e07835df397fd970d7245163db4cb1",
+          "url": "https://github.com/equinor/ert/commit/29d0fe49a2403af01ada62e271aab04927631ede"
+        },
+        "date": 1713380422260,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18617740767407262,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03583106570607512",
+            "extra": "mean: 5.371220990199992 sec\nrounds: 5"
           }
         ]
       }
