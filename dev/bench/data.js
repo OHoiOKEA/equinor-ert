@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713263632591,
+  "lastUpdate": 1713340844459,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "sonso@equinor.com",
-            "name": "Sondre Sortland",
-            "username": "sondreso"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "076b6d83342ff505f224e70a1e8ba9c0d18f54e0",
-          "message": "Fix test_small_time_mismatches_are_ignored",
-          "timestamp": "2024-04-10T08:31:28+02:00",
-          "tree_id": "a763030e52ffb45241a901c6bd0f3f35bba0227b",
-          "url": "https://github.com/equinor/ert/commit/076b6d83342ff505f224e70a1e8ba9c0d18f54e0"
-        },
-        "date": 1712730877723,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19370552917516984,
-            "unit": "iter/sec",
-            "range": "stddev: 0.024778720333060125",
-            "extra": "mean: 5.162475249199986 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020065089207427406",
             "extra": "mean: 5.322832591799982 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "120de548ff20f21eb0a5d7f1a658b5b0bb7a34f8",
+          "message": "Let jobs failing in LSF be resubmitted\n\nIf the return_code is larger than SIGNAL_OFFSET the associated\njob_task will be cancelled, and the job cannot be resubmitted.\n\nErt will resubmit LSF jobs are killed by users and the bkill\ncommand, in line with the C-driver.",
+          "timestamp": "2024-04-17T09:57:39+02:00",
+          "tree_id": "24e26174b574f61ca9fc92499cb95684f6e49f0c",
+          "url": "https://github.com/equinor/ert/commit/120de548ff20f21eb0a5d7f1a658b5b0bb7a34f8"
+        },
+        "date": 1713340843898,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18694853556429608,
+            "unit": "iter/sec",
+            "range": "stddev: 0.035891239268949465",
+            "extra": "mean: 5.349065703999997 sec\nrounds: 5"
           }
         ]
       }
