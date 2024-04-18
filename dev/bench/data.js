@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713440677018,
+  "lastUpdate": 1713441635224,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "c600efbbe3b15f441ffdbaae86a2201d1e270828",
-          "message": "Remove start sync event from scheduler job.__call__\n\nThe scheduler job has a synchronization event (`start = asyncio.Event()`) with the purpose of executing job-group start,  and was passed as a parameter to `job.__call__`. It does not seems to be that necessary in the end as `asyncio.BoundedSemaphore` will handle job execution regardless. This commit removes this redundant event.",
-          "timestamp": "2024-04-10T15:37:45+02:00",
-          "tree_id": "84a87c5e94f45dc6bff4658bac5c90fb59a4b65f",
-          "url": "https://github.com/equinor/ert/commit/c600efbbe3b15f441ffdbaae86a2201d1e270828"
-        },
-        "date": 1712756465927,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1882319403896077,
-            "unit": "iter/sec",
-            "range": "stddev: 0.019181098153772037",
-            "extra": "mean: 5.31259465280001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.017553725427597935",
             "extra": "mean: 5.282062414599989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "9bd744ef70dfe87ee38c8a0049162f63b630241c",
+          "message": "Fix plotter filter lookup",
+          "timestamp": "2024-04-18T13:57:27+02:00",
+          "tree_id": "5fb40ecf45ab4485b4ef6b9dc7985977ccd2b508",
+          "url": "https://github.com/equinor/ert/commit/9bd744ef70dfe87ee38c8a0049162f63b630241c"
+        },
+        "date": 1713441634587,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1861023397815375,
+            "unit": "iter/sec",
+            "range": "stddev: 0.035976968265574394",
+            "extra": "mean: 5.373387573600008 sec\nrounds: 5"
           }
         ]
       }
