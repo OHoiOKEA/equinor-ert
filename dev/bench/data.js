@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713427190027,
+  "lastUpdate": 1713438340024,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "61046df67fa516164388276c2483d89114c78fe8",
-          "message": "Increase timeout for cluster integration tests\n\nThe default timeout at 10 minutes can be too low if the compute cluster\nhas low availability of compute resources, as the time spent waiting in the\nqueue for a compute job is counted. Increasing the timeout to 1 hour only\nwhen running the tests against the real compute cluster.\n\nThe timeout for the test_kill had to be removed, as that test can also\nsuffer the same problem. Note that this can then hide a bug for the LSF\ndriver as the driver cannot distuingish between  which will\nhappen when the job is not killed and the exit code when it is killed.",
-          "timestamp": "2024-04-10T13:27:48+02:00",
-          "tree_id": "d9744e6de3bfaa0e53affd58b29d177e3422f9a0",
-          "url": "https://github.com/equinor/ert/commit/61046df67fa516164388276c2483d89114c78fe8"
-        },
-        "date": 1712748653976,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19243808449017824,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0318388371629208",
-            "extra": "mean: 5.1964765844 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.017696566814278135",
             "extra": "mean: 5.339533137799992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "0eb422f5bcd6fa63ecc10d5fff09d812515fc0ed",
+          "message": "Log stdout when bhist fails\n\nThis log message has been observed with returncode 255 and empty stderr.\nNeed to see what stdout is, maybe 255 can be ignored.",
+          "timestamp": "2024-04-18T13:02:27+02:00",
+          "tree_id": "d0b6bd0e823da0e96542c42ce1d9929a165f6292",
+          "url": "https://github.com/equinor/ert/commit/0eb422f5bcd6fa63ecc10d5fff09d812515fc0ed"
+        },
+        "date": 1713438339086,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18599913433674117,
+            "unit": "iter/sec",
+            "range": "stddev: 0.1994743825719553",
+            "extra": "mean: 5.376369108200015 sec\nrounds: 5"
           }
         ]
       }
