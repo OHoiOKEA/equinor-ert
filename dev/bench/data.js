@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713438340024,
+  "lastUpdate": 1713440677018,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "d55e0ef9870dc95aefd8cdaeaccc12c044391b26",
-          "message": "Rename async_utils get_event_loop() to get_running_loop()\n\nThe function has been updated and now uses `asyncio.get_running_loop` instead of `asyncio.get_event_loop`, so this commit changes the function name to reflect this change.",
-          "timestamp": "2024-04-10T15:01:24+02:00",
-          "tree_id": "1fba8844f361d3682a7ddee7666b7c2a6d3c03dd",
-          "url": "https://github.com/equinor/ert/commit/d55e0ef9870dc95aefd8cdaeaccc12c044391b26"
-        },
-        "date": 1712754289989,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18057947696652207,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04903257277708546",
-            "extra": "mean: 5.537727857000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.1994743825719553",
             "extra": "mean: 5.376369108200015 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "108a888514e3edd8ad0f18c853348860edf2aba2",
+          "message": "Remove unused code ensemble_evaluator_utils",
+          "timestamp": "2024-04-18T13:41:25+02:00",
+          "tree_id": "259435415984809a1855d7a12cfa07be8cea6d56",
+          "url": "https://github.com/equinor/ert/commit/108a888514e3edd8ad0f18c853348860edf2aba2"
+        },
+        "date": 1713440676518,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18931998933521313,
+            "unit": "iter/sec",
+            "range": "stddev: 0.017553725427597935",
+            "extra": "mean: 5.282062414599989 sec\nrounds: 5"
           }
         ]
       }
