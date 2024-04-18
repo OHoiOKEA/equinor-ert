@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713423514136,
+  "lastUpdate": 1713425006300,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "20768faedd3de45a7e1f73b609de28884dbbd3ac",
-          "message": "Fix py3.12 asyncio warning in async_utils\n\nThis commit fixes the `DeprecationWarning: There is no current event loop` warning for Python3.12 in the `get_event_loop` function in `async_utils.py`. Prior to this commit, the function used `asyncio.get_event_loop()` which creates a new event loop directly. `asyncio.get_running_loop()` does however raise a RuntimeError when there is no event loop, which is what we want.",
-          "timestamp": "2024-04-10T09:38:39+02:00",
-          "tree_id": "1c73be36b037d7c6bc0ff10133ca2c89e5bf8bda",
-          "url": "https://github.com/equinor/ert/commit/20768faedd3de45a7e1f73b609de28884dbbd3ac"
-        },
-        "date": 1712734906479,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1868711073297286,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026854166737749072",
-            "extra": "mean: 5.35128203760001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.08243900238278273",
             "extra": "mean: 5.330534246800016 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "c86ab2db125d49f7e40d4c22413e1d534b5f3e66",
+          "message": "Write reponse as yaml",
+          "timestamp": "2024-04-18T09:20:26+02:00",
+          "tree_id": "86d01a99efa5bba4beaede303df14de7ae359a7b",
+          "url": "https://github.com/equinor/ert/commit/c86ab2db125d49f7e40d4c22413e1d534b5f3e66"
+        },
+        "date": 1713425005611,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19194813060296148,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020629457481501506",
+            "extra": "mean: 5.209740761000001 sec\nrounds: 5"
           }
         ]
       }
