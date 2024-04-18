@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713380452699,
+  "lastUpdate": 1713423514136,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "bc992ec461a612af8c31fe630cad4887f41fc3a7",
-          "message": "Rename Job.__call__ to job.run in scheduler",
-          "timestamp": "2024-04-10T09:35:41+02:00",
-          "tree_id": "a3975cdb8f7bca2bdae2002b74dbbd8916d68ac5",
-          "url": "https://github.com/equinor/ert/commit/bc992ec461a612af8c31fe630cad4887f41fc3a7"
-        },
-        "date": 1712734734314,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19155547419174623,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020745902598190133",
-            "extra": "mean: 5.220419850800004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04576336559383231",
             "extra": "mean: 5.330498729600015 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9e04517a999f7147cbc29dae286018b8d955e70c",
+          "message": "Reflect failed realizations after ert restart",
+          "timestamp": "2024-04-18T08:55:27+02:00",
+          "tree_id": "b22500f4c9c8502e825ac859f95d3eed7d8784fc",
+          "url": "https://github.com/equinor/ert/commit/9e04517a999f7147cbc29dae286018b8d955e70c"
+        },
+        "date": 1713423513604,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1875984570590297,
+            "unit": "iter/sec",
+            "range": "stddev: 0.08243900238278273",
+            "extra": "mean: 5.330534246800016 sec\nrounds: 5"
           }
         ]
       }
