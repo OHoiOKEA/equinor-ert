@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713425792726,
+  "lastUpdate": 1713427190027,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "82db76d96cbb5f43ab20c2c567ba88e730bee1be",
-          "message": "Remove duplicate data",
-          "timestamp": "2024-04-10T13:27:24+02:00",
-          "tree_id": "e204dd592a10d48818f3c768c1bf5d2ac3347f88",
-          "url": "https://github.com/equinor/ert/commit/82db76d96cbb5f43ab20c2c567ba88e730bee1be"
-        },
-        "date": 1712748631543,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1862738407429832,
-            "unit": "iter/sec",
-            "range": "stddev: 0.060928940177324274",
-            "extra": "mean: 5.368440335000014 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02269250750936567",
             "extra": "mean: 5.295598876400004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "d6da82165aaa5444608e8ddeb6f7edba6ed2b3ac",
+          "message": "Make flakiness test for qstat faster\n\nDelete the integration test, the unit test is sufficient. The\nintegration test only asserted the presence of logging statements, this\nis now accomplished in the unit test. Remove the mocked started() and\nfunction supplied to the conftest poll() function, it is not used.\n\nLet the polling period be configurable for tests, in line with lsf_driver\n\nThis cuts the test time from 46 seconds to 1 second",
+          "timestamp": "2024-04-18T09:56:42+02:00",
+          "tree_id": "629d167711345738b6880037996f6e89ea0ede0b",
+          "url": "https://github.com/equinor/ert/commit/d6da82165aaa5444608e8ddeb6f7edba6ed2b3ac"
+        },
+        "date": 1713427189348,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1872822912027141,
+            "unit": "iter/sec",
+            "range": "stddev: 0.017696566814278135",
+            "extra": "mean: 5.339533137799992 sec\nrounds: 5"
           }
         ]
       }
