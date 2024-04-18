@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713425006300,
+  "lastUpdate": 1713425792726,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "aron@hoyer.com",
-            "name": "Aron Høyer",
-            "username": "aronhoyer"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "2600d207bd3d77507ef78340a0b62c2f7cbc851d",
-          "message": "Document storage (#7254)",
-          "timestamp": "2024-04-10T10:31:31+02:00",
-          "tree_id": "d9bd10ba9aa650f0e1ba2d55185911fd4915bae6",
-          "url": "https://github.com/equinor/ert/commit/2600d207bd3d77507ef78340a0b62c2f7cbc851d"
-        },
-        "date": 1712738104665,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18807850872898343,
-            "unit": "iter/sec",
-            "range": "stddev: 0.055838342566440255",
-            "extra": "mean: 5.316928588799987 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020629457481501506",
             "extra": "mean: 5.209740761000001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "fc699f6df4148f8194f814892a3b1cb512879f63",
+          "message": "Check for selected ensemble in evaluate ensemble panel",
+          "timestamp": "2024-04-18T09:33:30+02:00",
+          "tree_id": "e2b9491e3f83fc9be210cb49a130465a9aab0fce",
+          "url": "https://github.com/equinor/ert/commit/fc699f6df4148f8194f814892a3b1cb512879f63"
+        },
+        "date": 1713425792252,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18883605487124983,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02269250750936567",
+            "extra": "mean: 5.295598876400004 sec\nrounds: 5"
           }
         ]
       }
