@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713523111445,
+  "lastUpdate": 1713526777229,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "a15736792c89c69f6d6cb88726eb89af22a3648c",
-          "message": "Missing exception in async_utils",
-          "timestamp": "2024-04-11T12:42:35+02:00",
-          "tree_id": "e2a57e978cca4136f050d464ed8d2063c1e9d03f",
-          "url": "https://github.com/equinor/ert/commit/a15736792c89c69f6d6cb88726eb89af22a3648c"
-        },
-        "date": 1712832344388,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18808660140784975,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0409944119036988",
-            "extra": "mean: 5.3166998208000225 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.055858853152746746",
             "extra": "mean: 5.256797785399987 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "ea34ecce24b2f65b02e5fbaceb841a444ce60bac",
+          "message": "Increase scheduler cancel_job_tasks timeout",
+          "timestamp": "2024-04-19T13:36:36+02:00",
+          "tree_id": "79ae74941e14ea2470381bdcc418a6cda423c002",
+          "url": "https://github.com/equinor/ert/commit/ea34ecce24b2f65b02e5fbaceb841a444ce60bac"
+        },
+        "date": 1713526776576,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18488205687864154,
+            "unit": "iter/sec",
+            "range": "stddev: 0.029162099168085355",
+            "extra": "mean: 5.408853714000003 sec\nrounds: 5"
           }
         ]
       }
