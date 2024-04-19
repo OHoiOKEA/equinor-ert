@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713446302968,
+  "lastUpdate": 1713522896499,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "21387c147a433e3099d0b7957cefaa142016b95d",
-          "message": "Allow pre-commit to run without failure in CI after merge",
-          "timestamp": "2024-04-11T10:06:20+02:00",
-          "tree_id": "bb9f416c063e04462c8273647115115a41cc3b68",
-          "url": "https://github.com/equinor/ert/commit/21387c147a433e3099d0b7957cefaa142016b95d"
-        },
-        "date": 1712822981868,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1890818633095075,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029321400484380034",
-            "extra": "mean: 5.288714541400003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.018461433996161396",
             "extra": "mean: 5.4236302870000035 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "dfabfeaf3c4a76122635260010104d0dd76a322d",
+          "message": "Make sure that rerun jobs do not show an error message in the GUI.",
+          "timestamp": "2024-04-19T13:31:40+03:00",
+          "tree_id": "4a4469e4a67622ec5318a9aa10955f05d2e12626",
+          "url": "https://github.com/equinor/ert/commit/dfabfeaf3c4a76122635260010104d0dd76a322d"
+        },
+        "date": 1713522895882,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18402448362016105,
+            "unit": "iter/sec",
+            "range": "stddev: 0.14348611018282958",
+            "extra": "mean: 5.434059535599988 sec\nrounds: 5"
           }
         ]
       }
