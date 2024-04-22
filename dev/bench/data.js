@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713785910205,
+  "lastUpdate": 1713790714550,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "413dec5ebadfb19821e9c01a4d88483687bc3346",
-          "message": "Remove timout on setup steps for Run ert tests github workflow",
-          "timestamp": "2024-04-12T13:52:52+02:00",
-          "tree_id": "518a88cde938f6abe33481600235155c0b8e992f",
-          "url": "https://github.com/equinor/ert/commit/413dec5ebadfb19821e9c01a4d88483687bc3346"
-        },
-        "date": 1712922966257,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19233585599530328,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05691507681946953",
-            "extra": "mean: 5.199238565399992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03713687254863267",
             "extra": "mean: 5.454373228800006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "544caea887f9ca985787e5e81d3d90a6c63eddd2",
+          "message": "Have ert handle UserWarning from ert_script",
+          "timestamp": "2024-04-22T14:55:27+02:00",
+          "tree_id": "533019d74d52b2daee9e96211a6cfc47d1730a74",
+          "url": "https://github.com/equinor/ert/commit/544caea887f9ca985787e5e81d3d90a6c63eddd2"
+        },
+        "date": 1713790714050,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18944847431880021,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04250155178621867",
+            "extra": "mean: 5.2784800911999925 sec\nrounds: 5"
           }
         ]
       }
