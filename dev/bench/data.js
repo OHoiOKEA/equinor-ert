@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713526777229,
+  "lastUpdate": 1713785910205,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "4496033be04dab7622780034a19d7ace9902a514",
-          "message": "Replace plot selection buttons with qlistwidget items\n\nAdd swap icon from Equinor Design System\nItems are now dragable, and cursor changes to reflect click/drag\nPlotting and colors are still dependant on order top-down",
-          "timestamp": "2024-04-11T15:07:34+02:00",
-          "tree_id": "e6907e5b60b5a5765083032fcf801f1a0c4a4d8c",
-          "url": "https://github.com/equinor/ert/commit/4496033be04dab7622780034a19d7ace9902a514"
-        },
-        "date": 1712841084812,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18598183143057248,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02049272376012959",
-            "extra": "mean: 5.376869301200008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029162099168085355",
             "extra": "mean: 5.408853714000003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sonso@equinor.com",
+            "name": "Sondre Sortland",
+            "username": "sondreso"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "8c16ed9f6455692f9a5e4db2a20b80aa1038ecf1",
+          "message": "Remove tracker and tracker_worker",
+          "timestamp": "2024-04-22T13:35:13+02:00",
+          "tree_id": "0a77ae2cdcca4daee14427b05c838b9c4c864374",
+          "url": "https://github.com/equinor/ert/commit/8c16ed9f6455692f9a5e4db2a20b80aa1038ecf1"
+        },
+        "date": 1713785909178,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18333912221478213,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03713687254863267",
+            "extra": "mean: 5.454373228800006 sec\nrounds: 5"
           }
         ]
       }
