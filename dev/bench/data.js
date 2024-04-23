@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713790714550,
+  "lastUpdate": 1713860344265,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "1065153f210cd65623165f62c0de0c39493a2ab5",
-          "message": "Rename Jobs to Forward Model in GUI",
-          "timestamp": "2024-04-12T13:58:06+02:00",
-          "tree_id": "66e22d3751e46c17a2ac11ffa858671f3877296d",
-          "url": "https://github.com/equinor/ert/commit/1065153f210cd65623165f62c0de0c39493a2ab5"
-        },
-        "date": 1712923265592,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1924678447791252,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04075748043924909",
-            "extra": "mean: 5.1956730806 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04250155178621867",
             "extra": "mean: 5.2784800911999925 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "49159d60b1a161dcd16efd92be092d357e63de17",
+          "message": "Increase tolerance in truncated_normal test",
+          "timestamp": "2024-04-23T10:15:28+02:00",
+          "tree_id": "c8d4449c7e4c218e098467687934457473c58978",
+          "url": "https://github.com/equinor/ert/commit/49159d60b1a161dcd16efd92be092d357e63de17"
+        },
+        "date": 1713860343329,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18209970096987452,
+            "unit": "iter/sec",
+            "range": "stddev: 0.18095137167047828",
+            "extra": "mean: 5.491497211 sec\nrounds: 5"
           }
         ]
       }
