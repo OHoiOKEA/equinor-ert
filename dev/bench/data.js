@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713866529028,
+  "lastUpdate": 1713868121580,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "4e7300ec70b2b83ddcdea7268a33fe7da7bd69bd",
-          "message": "Fix LSF driver logging wrong message when killing\n\nThis commit fixes some minor logging issues in scheduler lsf driver:\n* sigkill fire-and-forget process logged to terminal instead of devnull after sleeping 30s.\n* stdout and stderr from bkill was missing `strip()` so logs were split\n  over multiple lines.\n* bkill can output `Job <id> is being signaled`, but it should not be\n  interpreted as an error.",
-          "timestamp": "2024-04-16T09:03:08+02:00",
-          "tree_id": "1e4bd6d0650ecfa8bfc91f22975a5a577d6e59d2",
-          "url": "https://github.com/equinor/ert/commit/4e7300ec70b2b83ddcdea7268a33fe7da7bd69bd"
-        },
-        "date": 1713251173237,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18711036593012403,
-            "unit": "iter/sec",
-            "range": "stddev: 0.032764764297997684",
-            "extra": "mean: 5.344439336800013 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020074826351616015",
             "extra": "mean: 5.296668016000012 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "012c396a3527e4111bfd68cfe26ef1291e170534",
+          "message": "Add -o option to bsub for stdout from LSF\n\nReplicating behaviour in legacy C driver",
+          "timestamp": "2024-04-23T12:25:31+02:00",
+          "tree_id": "841c824f027c2d257b2ef44a0084c72ec776d5ac",
+          "url": "https://github.com/equinor/ert/commit/012c396a3527e4111bfd68cfe26ef1291e170534"
+        },
+        "date": 1713868120612,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1874055083295523,
+            "unit": "iter/sec",
+            "range": "stddev: 0.029537407259873607",
+            "extra": "mean: 5.33602245159999 sec\nrounds: 5"
           }
         ]
       }
