@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713865079344,
+  "lastUpdate": 1713866529028,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "8336e5142db31c940a6abc0e9e775f7c0fdd96fa",
-          "message": "Fix runtime-error string in lsf_driver",
-          "timestamp": "2024-04-15T15:51:35+02:00",
-          "tree_id": "ccaf6b2619d0502c3f866c13690be58ef3b59caa",
-          "url": "https://github.com/equinor/ert/commit/8336e5142db31c940a6abc0e9e775f7c0fdd96fa"
-        },
-        "date": 1713189288904,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18758616377439946,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01461169908602252",
-            "extra": "mean: 5.330883578400005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.14544577411531778",
             "extra": "mean: 5.425419351799985 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "7e80e17334b967b9d09fa82acb9919b525b9b152",
+          "message": "Add correct return types to MagicMock",
+          "timestamp": "2024-04-23T11:59:05+02:00",
+          "tree_id": "150f0023284562b979279dfb30851c0c84720077",
+          "url": "https://github.com/equinor/ert/commit/7e80e17334b967b9d09fa82acb9919b525b9b152"
+        },
+        "date": 1713866528555,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18879793805827186,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020074826351616015",
+            "extra": "mean: 5.296668016000012 sec\nrounds: 5"
           }
         ]
       }
