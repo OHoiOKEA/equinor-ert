@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713868954351,
+  "lastUpdate": 1713871511525,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "57b4398186f3c28e62c75df37c8e6ff4e282f01e",
-          "message": "Reduce timeout in order to speed up tests\n\nFor the test id's that are expected to timeout (5 of them), the\ntest runtime will indeed be the timeout. 0.2 has been proven to\nbe too small (the initial commit) for MacOS runners. 5 seconds\nis proven to be sufficient, but is probably overkill. Try 1 second\nas a middle ground.",
-          "timestamp": "2024-04-16T09:50:37+02:00",
-          "tree_id": "66ccd55422aafd36258f41b80f7f13d6da245b0c",
-          "url": "https://github.com/equinor/ert/commit/57b4398186f3c28e62c75df37c8e6ff4e282f01e"
-        },
-        "date": 1713254034860,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19355265821703932,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02440732353078574",
-            "extra": "mean: 5.166552654000003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.20328595392139795",
             "extra": "mean: 5.475769961999992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "778db29b0e61e2a60b06a20c08fde81dad190910",
+          "message": "Have scheduler bkill not retry on error `Job already finished`",
+          "timestamp": "2024-04-23T13:21:57+02:00",
+          "tree_id": "7632252a17a72dd78252e88dc05373f71d95d54a",
+          "url": "https://github.com/equinor/ert/commit/778db29b0e61e2a60b06a20c08fde81dad190910"
+        },
+        "date": 1713871510500,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18858192144820615,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06410225763019838",
+            "extra": "mean: 5.302735237399991 sec\nrounds: 5"
           }
         ]
       }
