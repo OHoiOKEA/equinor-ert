@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713868917183,
+  "lastUpdate": 1713868954351,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "1eaed7c83af9159c693f07554bb688d21d99f7ed",
-          "message": "Have async functions use async_utils eventloop\n\nThis commit:\n* Moves async_utils.py to _ert\n* Makes async functions use event loop created by function in\n  async_utils rather than asyncio.",
-          "timestamp": "2024-04-16T09:38:45+02:00",
-          "tree_id": "e688bf69844d22d2f893d9c09cce4d66053f79ce",
-          "url": "https://github.com/equinor/ert/commit/1eaed7c83af9159c693f07554bb688d21d99f7ed"
-        },
-        "date": 1713253312997,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18537634290816052,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06312224583461751",
-            "extra": "mean: 5.394431588799989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.018638371650420343",
             "extra": "mean: 5.2971011801999905 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "890fc3296deb83b68bb3fc3227aea22259e3c64a",
+          "message": "Add check for newer storages",
+          "timestamp": "2024-04-23T12:39:22+02:00",
+          "tree_id": "14d09fb8721122ba998b43b737f5a11539d71bcd",
+          "url": "https://github.com/equinor/ert/commit/890fc3296deb83b68bb3fc3227aea22259e3c64a"
+        },
+        "date": 1713868953799,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18262271916820186,
+            "unit": "iter/sec",
+            "range": "stddev: 0.20328595392139795",
+            "extra": "mean: 5.475769961999992 sec\nrounds: 5"
           }
         ]
       }
