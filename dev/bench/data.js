@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713861106218,
+  "lastUpdate": 1713865079344,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "9e5fb7165f62fbdcc2d6d5db679ee268df81a5f8",
-          "message": "Ignore stderr for parsing bsub output",
-          "timestamp": "2024-04-15T15:51:03+02:00",
-          "tree_id": "5b3f3cac320f4041dacf269e4fa29447f3abd42b",
-          "url": "https://github.com/equinor/ert/commit/9e5fb7165f62fbdcc2d6d5db679ee268df81a5f8"
-        },
-        "date": 1713189253897,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18981404746990943,
-            "unit": "iter/sec",
-            "range": "stddev: 0.014098104080526603",
-            "extra": "mean: 5.268313980600022 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05485394315617746",
             "extra": "mean: 5.33035623320003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bcb3093c92ff8f4fc401f2248c2b95931fd17ffa",
+          "message": "Remove TempStorage",
+          "timestamp": "2024-04-23T11:34:51+02:00",
+          "tree_id": "d284fdb955e0995f7a3c7f1e7a34ace979981471",
+          "url": "https://github.com/equinor/ert/commit/bcb3093c92ff8f4fc401f2248c2b95931fd17ffa"
+        },
+        "date": 1713865078672,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18431754951222917,
+            "unit": "iter/sec",
+            "range": "stddev: 0.14544577411531778",
+            "extra": "mean: 5.425419351799985 sec\nrounds: 5"
           }
         ]
       }
