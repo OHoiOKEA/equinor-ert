@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713860344265,
+  "lastUpdate": 1713860499756,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "e5aa0f340607c4266ed34f2d84d1389c7b9386dc",
-          "message": "Fix memory being reported without units in GUI",
-          "timestamp": "2024-04-12T15:27:57+02:00",
-          "tree_id": "c41bbf6570601a0ce90faf44d532826bca2944c9",
-          "url": "https://github.com/equinor/ert/commit/e5aa0f340607c4266ed34f2d84d1389c7b9386dc"
-        },
-        "date": 1712928657377,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18250648283869267,
-            "unit": "iter/sec",
-            "range": "stddev: 0.13468240307683138",
-            "extra": "mean: 5.479257418400005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.18095137167047828",
             "extra": "mean: 5.491497211 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "6645716e1abca3ee73f3f1a26456b0a444d9df8d",
+          "message": "Have scheduler LSF driver not bhist jobs newer than POLL_PERIOD\n\nThis commit makes lsf driver not bhist jobs submitted after previous polling. This fixes the issue where we would bhist for jobs recently submitted, because sometimes LSF takes a couple of milliseconds to process a submission before answering for it in bjobs.",
+          "timestamp": "2024-04-23T10:18:35+02:00",
+          "tree_id": "d6c428145df0847c26677108d4ebb760599b65f6",
+          "url": "https://github.com/equinor/ert/commit/6645716e1abca3ee73f3f1a26456b0a444d9df8d"
+        },
+        "date": 1713860499168,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18608518794034612,
+            "unit": "iter/sec",
+            "range": "stddev: 0.054325025273765676",
+            "extra": "mean: 5.37388284939999 sec\nrounds: 5"
           }
         ]
       }
