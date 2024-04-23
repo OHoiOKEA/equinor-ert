@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713871511525,
+  "lastUpdate": 1713871907453,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "907f0b8f2f628416edfbe66ef94ffd3d86ed4ab7",
-          "message": "Fix documentation for LSF memory booking\n\nThis commit updates the documentation for the LSF queue option `LSF_RESOURCE`. The old example used units in the resource string, but that is not supported by LSF9.",
-          "timestamp": "2024-04-16T10:21:18+02:00",
-          "tree_id": "7e4e4dc172fcf2025cf2487a9a5c03ee7712932e",
-          "url": "https://github.com/equinor/ert/commit/907f0b8f2f628416edfbe66ef94ffd3d86ed4ab7"
-        },
-        "date": 1713255863332,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18930089929979224,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04367563270093218",
-            "extra": "mean: 5.282595083799992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06410225763019838",
             "extra": "mean: 5.302735237399991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "e55275480cd0911fe7c18728c9d8bd8434ca9644",
+          "message": "Make local_driver kill() robust wrt timing\n\nIf the kill() instruction to the local driver happened before the subprocess\nhad actually started, the driver would raise an exception.\n\nThis commit makes sure that one FinishedEvent is always sent no matter when\nthe kill() instruction is sent.\n\nkill() can happen before the _run() function is started, it can happen when run() is started and\nthe try block is entered, but _init() is not started, and it can happen after the process has been\nstarted.",
+          "timestamp": "2024-04-23T13:28:44+02:00",
+          "tree_id": "d5523fe8e5f0a2a9df566a1b7b91bf655042666f",
+          "url": "https://github.com/equinor/ert/commit/e55275480cd0911fe7c18728c9d8bd8434ca9644"
+        },
+        "date": 1713871906774,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1878120583202574,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03500628310721317",
+            "extra": "mean: 5.324471756200012 sec\nrounds: 5"
           }
         ]
       }
