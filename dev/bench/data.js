@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713860499756,
+  "lastUpdate": 1713861106218,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "bb9b46bd31a9df05afe7fb12312454b98fe34828",
-          "message": "Fix GUI RunDialog not expanding details header\n\nThis commit fixes an issue where the RunDialog show details section\nwould not expand the header to fill the width, without having a\nrealization set.",
-          "timestamp": "2024-04-15T08:39:07+02:00",
-          "tree_id": "3d5ca35cb61764431b060f922e17854a0593cb79",
-          "url": "https://github.com/equinor/ert/commit/bb9b46bd31a9df05afe7fb12312454b98fe34828"
-        },
-        "date": 1713163334117,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.188191714556108,
-            "unit": "iter/sec",
-            "range": "stddev: 0.012598388813570203",
-            "extra": "mean: 5.3137302158000015 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.054325025273765676",
             "extra": "mean: 5.37388284939999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "50d1d18e94103020e07c466ce2e753b7ced41e14",
+          "message": "Fix a lifetime issue of GUILogHandler",
+          "timestamp": "2024-04-23T10:28:42+02:00",
+          "tree_id": "d36cdb55399801efcc29f8591a280ff18b0cfe00",
+          "url": "https://github.com/equinor/ert/commit/50d1d18e94103020e07c466ce2e753b7ced41e14"
+        },
+        "date": 1713861105700,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1876047221331133,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05485394315617746",
+            "extra": "mean: 5.33035623320003 sec\nrounds: 5"
           }
         ]
       }
