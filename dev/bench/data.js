@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713871907453,
+  "lastUpdate": 1713872397813,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "330fd7fa7cfcc182e92b56b904f8ac801bf83492",
-          "message": "Add some more logging to auto_scaling",
-          "timestamp": "2024-04-16T11:33:25+02:00",
-          "tree_id": "b81ebbefb518a4e629093bd97c690e67028a920c",
-          "url": "https://github.com/equinor/ert/commit/330fd7fa7cfcc182e92b56b904f8ac801bf83492"
-        },
-        "date": 1713260189304,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18863842377862622,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027594473226397787",
-            "extra": "mean: 5.301146924199998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03500628310721317",
             "extra": "mean: 5.324471756200012 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "d6ed42713a240ac4fbd5eb7180ce3e5419db460f",
+          "message": "Fix dark storage performance benchmark test not compatible with async_utils event loop",
+          "timestamp": "2024-04-23T13:36:42+02:00",
+          "tree_id": "0870bb6962217fc4eeb8aa1563cc1e2a188b5b4c",
+          "url": "https://github.com/equinor/ert/commit/d6ed42713a240ac4fbd5eb7180ce3e5419db460f"
+        },
+        "date": 1713872396749,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18591631046831775,
+            "unit": "iter/sec",
+            "range": "stddev: 0.010517520308682977",
+            "extra": "mean: 5.37876422720002 sec\nrounds: 5"
           }
         ]
       }
