@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713956383198,
+  "lastUpdate": 1713969070624,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "fc699f6df4148f8194f814892a3b1cb512879f63",
-          "message": "Check for selected ensemble in evaluate ensemble panel",
-          "timestamp": "2024-04-18T09:33:30+02:00",
-          "tree_id": "e2b9491e3f83fc9be210cb49a130465a9aab0fce",
-          "url": "https://github.com/equinor/ert/commit/fc699f6df4148f8194f814892a3b1cb512879f63"
-        },
-        "date": 1713425792252,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18883605487124983,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02269250750936567",
-            "extra": "mean: 5.295598876400004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.023355582847702012",
             "extra": "mean: 5.307101668199993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "0e3209a6bf443dc1f3ec40804eacf63e3c4ab572",
+          "message": "Add DeprecationWarning for TORQUE OPTION `QSTAT_OPTIONS`",
+          "timestamp": "2024-04-24T16:27:53+02:00",
+          "tree_id": "f979b7dc474f2269192777e5c4c410fd57804d62",
+          "url": "https://github.com/equinor/ert/commit/0e3209a6bf443dc1f3ec40804eacf63e3c4ab572"
+        },
+        "date": 1713969069909,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18777296222691262,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04416834660298527",
+            "extra": "mean: 5.325580361200025 sec\nrounds: 5"
           }
         ]
       }
