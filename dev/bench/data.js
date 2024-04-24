@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713948032777,
+  "lastUpdate": 1713951610814,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "e4d8f7f3902013976f54f324e1bf9dd6d08363c4",
-          "message": "Rename JobRunner to ForwardModelRunner\n\nWe no longer call the individual steps in each realization forward model for `Jobs`, and the class name should be changed to reflect that. This commit fixes that.",
-          "timestamp": "2024-04-17T20:57:38+02:00",
-          "tree_id": "19c421e41abaf61febd359dd60275b0a1adf2a3f",
-          "url": "https://github.com/equinor/ert/commit/e4d8f7f3902013976f54f324e1bf9dd6d08363c4"
-        },
-        "date": 1713380452164,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1875997070306097,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04576336559383231",
-            "extra": "mean: 5.330498729600015 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.1866264551241095",
             "extra": "mean: 5.413591827400012 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "cb949eff6b8d9f5211577540f9a2b19af3b44e75",
+          "message": "Replace swap_vertical icon with reorder for plotter selection",
+          "timestamp": "2024-04-24T11:36:31+02:00",
+          "tree_id": "5ef42b8688fb02c3ed89eb596213366dabc2abc0",
+          "url": "https://github.com/equinor/ert/commit/cb949eff6b8d9f5211577540f9a2b19af3b44e75"
+        },
+        "date": 1713951609958,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18859590099668425,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03903537319567945",
+            "extra": "mean: 5.302342175599994 sec\nrounds: 5"
           }
         ]
       }
