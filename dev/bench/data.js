@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713872397813,
+  "lastUpdate": 1713935739457,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "66baedd6d8ee18eb9b45bd80e4deffb0938a6d01",
-          "message": "Make sure to not cancel the job when job is done\n\n- Test that failed realization will not be cancelled",
-          "timestamp": "2024-04-16T12:30:44+02:00",
-          "tree_id": "2d5d804de77b9c3fc01d5a5a76b05c57bd1666a4",
-          "url": "https://github.com/equinor/ert/commit/66baedd6d8ee18eb9b45bd80e4deffb0938a6d01"
-        },
-        "date": 1713263631920,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1878698949766965,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020065089207427406",
-            "extra": "mean: 5.322832591799982 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.010517520308682977",
             "extra": "mean: 5.37876422720002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "50a44210a148234c08baa85bcb1ca34f0581d5e0",
+          "message": "Improve scheduler driver execute_with_retries method to log exit code, stdout, and stderr",
+          "timestamp": "2024-04-24T07:12:26+02:00",
+          "tree_id": "f8a2f283f205ab5a508fae0d1450a512a245c6fe",
+          "url": "https://github.com/equinor/ert/commit/50a44210a148234c08baa85bcb1ca34f0581d5e0"
+        },
+        "date": 1713935738878,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18902272394565997,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04102923239067562",
+            "extra": "mean: 5.290369216600004 sec\nrounds: 5"
           }
         ]
       }
