@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713935739457,
+  "lastUpdate": 1713941524047,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "120de548ff20f21eb0a5d7f1a658b5b0bb7a34f8",
-          "message": "Let jobs failing in LSF be resubmitted\n\nIf the return_code is larger than SIGNAL_OFFSET the associated\njob_task will be cancelled, and the job cannot be resubmitted.\n\nErt will resubmit LSF jobs are killed by users and the bkill\ncommand, in line with the C-driver.",
-          "timestamp": "2024-04-17T09:57:39+02:00",
-          "tree_id": "24e26174b574f61ca9fc92499cb95684f6e49f0c",
-          "url": "https://github.com/equinor/ert/commit/120de548ff20f21eb0a5d7f1a658b5b0bb7a34f8"
-        },
-        "date": 1713340843898,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18694853556429608,
-            "unit": "iter/sec",
-            "range": "stddev: 0.035891239268949465",
-            "extra": "mean: 5.349065703999997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04102923239067562",
             "extra": "mean: 5.290369216600004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "0720112c9a8420c4e918403d794fbe94c4c9c20c",
+          "message": "Have integration tests running towards cluster set job names\n\nThis commit makes the integration tests for the scheduler drivers use the test names as job names when doing `driver.submit`, making it easier to debug.",
+          "timestamp": "2024-04-24T08:48:36+02:00",
+          "tree_id": "013648c085f47c07f683a1609b4c6eeb9831e231",
+          "url": "https://github.com/equinor/ert/commit/0720112c9a8420c4e918403d794fbe94c4c9c20c"
+        },
+        "date": 1713941523409,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18857746150192198,
+            "unit": "iter/sec",
+            "range": "stddev: 0.09606500741733304",
+            "extra": "mean: 5.302860649599995 sec\nrounds: 5"
           }
         ]
       }
