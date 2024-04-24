@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713941524047,
+  "lastUpdate": 1713946985566,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "5ba5b091377fd5d5695597a43594c1d231b0dc53",
-          "message": "Allow reruns on flaky test_update_report",
-          "timestamp": "2024-04-17T12:06:08+02:00",
-          "tree_id": "1f9acf927b6362b3d8e54f73649406362e1af237",
-          "url": "https://github.com/equinor/ert/commit/5ba5b091377fd5d5695597a43594c1d231b0dc53"
-        },
-        "date": 1713348682236,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18315523365910577,
-            "unit": "iter/sec",
-            "range": "stddev: 0.3475576418342753",
-            "extra": "mean: 5.459849440400001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.09606500741733304",
             "extra": "mean: 5.302860649599995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "f3f0b85fd0df1eb75eb7ccb9b1cf7970c640d10a",
+          "message": "Improve codecov coverage lsf_driver polling",
+          "timestamp": "2024-04-24T10:18:42+02:00",
+          "tree_id": "7e69f240c39f0c07a8e5ce8b5715898cbe832ce1",
+          "url": "https://github.com/equinor/ert/commit/f3f0b85fd0df1eb75eb7ccb9b1cf7970c640d10a"
+        },
+        "date": 1713946985073,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18366542540586273,
+            "unit": "iter/sec",
+            "range": "stddev: 0.12723027768390555",
+            "extra": "mean: 5.4446828944000005 sec\nrounds: 5"
           }
         ]
       }
