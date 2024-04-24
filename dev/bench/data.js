@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713946985566,
+  "lastUpdate": 1713948032777,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "29d0fe49a2403af01ada62e271aab04927631ede",
-          "message": "Move duplicate ev_types to ert/event_type_constants.py\n\nThis commit moves duplicate event type constants found in `job_queue/queue.py` and `ensemble_evaluator/identifiers.py` into a common module `ert/event_type_constants.py`",
-          "timestamp": "2024-04-17T20:56:57+02:00",
-          "tree_id": "77b3dcddf4e07835df397fd970d7245163db4cb1",
-          "url": "https://github.com/equinor/ert/commit/29d0fe49a2403af01ada62e271aab04927631ede"
-        },
-        "date": 1713380422260,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18617740767407262,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03583106570607512",
-            "extra": "mean: 5.371220990199992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.12723027768390555",
             "extra": "mean: 5.4446828944000005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "cbe777b8fc459bbdb9b4142f98d7843e40938e50",
+          "message": "Add DeprecationWarning for TORQUE OPTION `QUEUE_QUERY_TIMEOUT`\n\nThis commit adds a deprecation warning for using `TORQUE QUEUE_OPTION QUEUE_QUERY_TIMEOUT`, stating it will be ignored when using the scheduler.",
+          "timestamp": "2024-04-24T10:36:42+02:00",
+          "tree_id": "d934c465c59b436470ed8380832ed34ebdbc3323",
+          "url": "https://github.com/equinor/ert/commit/cbe777b8fc459bbdb9b4142f98d7843e40938e50"
+        },
+        "date": 1713948031714,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18472024339527468,
+            "unit": "iter/sec",
+            "range": "stddev: 0.1866264551241095",
+            "extra": "mean: 5.413591827400012 sec\nrounds: 5"
           }
         ]
       }
