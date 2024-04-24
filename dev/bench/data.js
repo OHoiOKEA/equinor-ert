@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713952031312,
+  "lastUpdate": 1713956383198,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "c86ab2db125d49f7e40d4c22413e1d534b5f3e66",
-          "message": "Write reponse as yaml",
-          "timestamp": "2024-04-18T09:20:26+02:00",
-          "tree_id": "86d01a99efa5bba4beaede303df14de7ae359a7b",
-          "url": "https://github.com/equinor/ert/commit/c86ab2db125d49f7e40d4c22413e1d534b5f3e66"
-        },
-        "date": 1713425005611,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19194813060296148,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020629457481501506",
-            "extra": "mean: 5.209740761000001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06418164777609005",
             "extra": "mean: 5.400219974000004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "941d4c915a92a08ed6c31d68b0bc922756cef241",
+          "message": "Rely on komodo to setup integration tests for queues",
+          "timestamp": "2024-04-24T12:40:03+02:00",
+          "tree_id": "3a6f02f89e1d1551e72f28811597c3213406fdbe",
+          "url": "https://github.com/equinor/ert/commit/941d4c915a92a08ed6c31d68b0bc922756cef241"
+        },
+        "date": 1713956382765,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18842676521385907,
+            "unit": "iter/sec",
+            "range": "stddev: 0.023355582847702012",
+            "extra": "mean: 5.307101668199993 sec\nrounds: 5"
           }
         ]
       }
