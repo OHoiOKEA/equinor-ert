@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714028977747,
+  "lastUpdate": 1714029276203,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "0eb422f5bcd6fa63ecc10d5fff09d812515fc0ed",
-          "message": "Log stdout when bhist fails\n\nThis log message has been observed with returncode 255 and empty stderr.\nNeed to see what stdout is, maybe 255 can be ignored.",
-          "timestamp": "2024-04-18T13:02:27+02:00",
-          "tree_id": "d0b6bd0e823da0e96542c42ce1d9929a165f6292",
-          "url": "https://github.com/equinor/ert/commit/0eb422f5bcd6fa63ecc10d5fff09d812515fc0ed"
-        },
-        "date": 1713438339086,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18599913433674117,
-            "unit": "iter/sec",
-            "range": "stddev: 0.1994743825719553",
-            "extra": "mean: 5.376369108200015 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.28936476451728044",
             "extra": "mean: 5.446689025800003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "de3646cf0b571a21b5ea18ef3985b2bb778688f9",
+          "message": "Reverse ensemble order for plotting",
+          "timestamp": "2024-04-25T09:11:16+02:00",
+          "tree_id": "6768b18abbe780067f08ad735f94d64d7e5c9068",
+          "url": "https://github.com/equinor/ert/commit/de3646cf0b571a21b5ea18ef3985b2bb778688f9"
+        },
+        "date": 1714029275337,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18680086261806478,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03594386755613418",
+            "extra": "mean: 5.353294336999994 sec\nrounds: 5"
           }
         ]
       }
