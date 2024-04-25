@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714033106071,
+  "lastUpdate": 1714033705250,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "13f44c369e5e2fb82796f7997c5ba6470e0acd3a",
-          "message": "Do not cancel the returncode in scheduler\n\nCancellation based on return_code can lead to jobs being able to circumvent resubmission\nbased on return code. This is not functionality we want.",
-          "timestamp": "2024-04-18T14:30:57+02:00",
-          "tree_id": "ba349b8f4cc8dbc7e20ab675ce872904b93bae96",
-          "url": "https://github.com/equinor/ert/commit/13f44c369e5e2fb82796f7997c5ba6470e0acd3a"
-        },
-        "date": 1713443653481,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1849254329838553,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03701176788571505",
-            "extra": "mean: 5.40758501339999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.016560132932042816",
             "extra": "mean: 5.263351908800002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "74e85734cc8d241cb7b01360221f4693ea5d228f",
+          "message": "Hardcode `-x` qstat option in `torque_driver.cpp`\n\nThis commit makes the legacy torque driver better match the scheduler OpenPBSDriver.",
+          "timestamp": "2024-04-25T10:25:08+02:00",
+          "tree_id": "e0665c0dd3462512c3dca0762efd20e44ab4b3f0",
+          "url": "https://github.com/equinor/ert/commit/74e85734cc8d241cb7b01360221f4693ea5d228f"
+        },
+        "date": 1714033704241,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18908854974712433,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03568434517067402",
+            "extra": "mean: 5.288527525000006 sec\nrounds: 5"
           }
         ]
       }
