@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714033705250,
+  "lastUpdate": 1714034756518,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "8548bcd685e05bed0b5b6464fca5595c48ce6bea",
-          "message": "Retry bkill on intermittent ssh failures\n\nUse common functionality for retrying shell commands.\n\nRemove artificial test checking logged output on successes, this is not\nneeded as a special case logging for bkill unless the need is proven",
-          "timestamp": "2024-04-18T15:14:52+02:00",
-          "tree_id": "a7af6884c743c2fb5178b23f098db41b5e18127a",
-          "url": "https://github.com/equinor/ert/commit/8548bcd685e05bed0b5b6464fca5595c48ce6bea"
-        },
-        "date": 1713446302281,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18437834938655717,
-            "unit": "iter/sec",
-            "range": "stddev: 0.018461433996161396",
-            "extra": "mean: 5.4236302870000035 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03568434517067402",
             "extra": "mean: 5.288527525000006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "4dc12ab8292eba9ebf28be201d41a72abf59914e",
+          "message": "Remove parts of LSF example in docs\n\nThese settings are seldom relevant for users.",
+          "timestamp": "2024-04-25T10:42:25+02:00",
+          "tree_id": "6bc67f69bebb4ab8c04fe3b4deb0ae830f8fdd07",
+          "url": "https://github.com/equinor/ert/commit/4dc12ab8292eba9ebf28be201d41a72abf59914e"
+        },
+        "date": 1714034755828,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18641282958919386,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022835478774535758",
+            "extra": "mean: 5.364437641999984 sec\nrounds: 5"
           }
         ]
       }
