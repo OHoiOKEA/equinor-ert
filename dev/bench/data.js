@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714030621028,
+  "lastUpdate": 1714033106071,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "9bd744ef70dfe87ee38c8a0049162f63b630241c",
-          "message": "Fix plotter filter lookup",
-          "timestamp": "2024-04-18T13:57:27+02:00",
-          "tree_id": "5fb40ecf45ab4485b4ef6b9dc7985977ccd2b508",
-          "url": "https://github.com/equinor/ert/commit/9bd744ef70dfe87ee38c8a0049162f63b630241c"
-        },
-        "date": 1713441634587,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1861023397815375,
-            "unit": "iter/sec",
-            "range": "stddev: 0.035976968265574394",
-            "extra": "mean: 5.373387573600008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04907596370168726",
             "extra": "mean: 5.354769860999999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "10faf6a57fee9e4f4f4d0962e4f6f0a4bbbeeb30",
+          "message": "Silence INFO logs from azure.core",
+          "timestamp": "2024-04-25T10:15:13+02:00",
+          "tree_id": "c866b0f2787895a66c41e9665203d90b675c0718",
+          "url": "https://github.com/equinor/ert/commit/10faf6a57fee9e4f4f4d0962e4f6f0a4bbbeeb30"
+        },
+        "date": 1714033105077,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1899929963504932,
+            "unit": "iter/sec",
+            "range": "stddev: 0.016560132932042816",
+            "extra": "mean: 5.263351908800002 sec\nrounds: 5"
           }
         ]
       }
