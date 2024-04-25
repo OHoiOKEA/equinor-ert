@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1713969070624,
+  "lastUpdate": 1714028977747,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "d6da82165aaa5444608e8ddeb6f7edba6ed2b3ac",
-          "message": "Make flakiness test for qstat faster\n\nDelete the integration test, the unit test is sufficient. The\nintegration test only asserted the presence of logging statements, this\nis now accomplished in the unit test. Remove the mocked started() and\nfunction supplied to the conftest poll() function, it is not used.\n\nLet the polling period be configurable for tests, in line with lsf_driver\n\nThis cuts the test time from 46 seconds to 1 second",
-          "timestamp": "2024-04-18T09:56:42+02:00",
-          "tree_id": "629d167711345738b6880037996f6e89ea0ede0b",
-          "url": "https://github.com/equinor/ert/commit/d6da82165aaa5444608e8ddeb6f7edba6ed2b3ac"
-        },
-        "date": 1713427189348,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1872822912027141,
-            "unit": "iter/sec",
-            "range": "stddev: 0.017696566814278135",
-            "extra": "mean: 5.339533137799992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04416834660298527",
             "extra": "mean: 5.325580361200025 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "2e253f48cffbed4a341a30e823e7f74f94db05bc",
+          "message": "Avoid possibility for negative duration in GUI\n\nThere is an underlying problem with the snapshot model not being\nproperly reset when realizations are resubmitted upon failure. This\ncommit makes sure that when invalid end times are picked up from\nprevious runs, they are ignored.",
+          "timestamp": "2024-04-25T09:06:26+02:00",
+          "tree_id": "7cf68d959c341ccd978eb82d9277f537b732b27f",
+          "url": "https://github.com/equinor/ert/commit/2e253f48cffbed4a341a30e823e7f74f94db05bc"
+        },
+        "date": 1714028976897,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1835977775237721,
+            "unit": "iter/sec",
+            "range": "stddev: 0.28936476451728044",
+            "extra": "mean: 5.446689025800003 sec\nrounds: 5"
           }
         ]
       }
