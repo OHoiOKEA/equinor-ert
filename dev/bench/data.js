@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714029276203,
+  "lastUpdate": 1714030621028,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "108a888514e3edd8ad0f18c853348860edf2aba2",
-          "message": "Remove unused code ensemble_evaluator_utils",
-          "timestamp": "2024-04-18T13:41:25+02:00",
-          "tree_id": "259435415984809a1855d7a12cfa07be8cea6d56",
-          "url": "https://github.com/equinor/ert/commit/108a888514e3edd8ad0f18c853348860edf2aba2"
-        },
-        "date": 1713440676518,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18931998933521313,
-            "unit": "iter/sec",
-            "range": "stddev: 0.017553725427597935",
-            "extra": "mean: 5.282062414599989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03594386755613418",
             "extra": "mean: 5.353294336999994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "06ba43effe5ea807aec02c3059c0db1b9f5691ca",
+          "message": "Update error message for GEN_KW PRED",
+          "timestamp": "2024-04-25T09:33:41+02:00",
+          "tree_id": "165c0bf0434e522ae92d5b131c39e131c90aeea2",
+          "url": "https://github.com/equinor/ert/commit/06ba43effe5ea807aec02c3059c0db1b9f5691ca"
+        },
+        "date": 1714030620528,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18674938904157698,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04907596370168726",
+            "extra": "mean: 5.354769860999999 sec\nrounds: 5"
           }
         ]
       }
