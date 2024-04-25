@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714034756518,
+  "lastUpdate": 1714040385727,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "dfabfeaf3c4a76122635260010104d0dd76a322d",
-          "message": "Make sure that rerun jobs do not show an error message in the GUI.",
-          "timestamp": "2024-04-19T13:31:40+03:00",
-          "tree_id": "4a4469e4a67622ec5318a9aa10955f05d2e12626",
-          "url": "https://github.com/equinor/ert/commit/dfabfeaf3c4a76122635260010104d0dd76a322d"
-        },
-        "date": 1713522895882,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18402448362016105,
-            "unit": "iter/sec",
-            "range": "stddev: 0.14348611018282958",
-            "extra": "mean: 5.434059535599988 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022835478774535758",
             "extra": "mean: 5.364437641999984 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "000ebc9b901e1c6392b7c1538b4cf6efb101f09d",
+          "message": "Ensure forward models after running ones are pending\n\nWhen realizations are resubmitted after failures, the snapshot shows\ninformation from the previous run. This commit modifies the forward\nmodel state of forward models following any Running state for a\nrealization to make sure they are set to Start/Pending.\n\nThe GUI will thus show correct colors for these forward models, but\nerror messages from the failed previous run are still available from the\nGUI.",
+          "timestamp": "2024-04-25T12:16:04+02:00",
+          "tree_id": "af649e71272453a805f9c9237d9ff32ac1ad38b7",
+          "url": "https://github.com/equinor/ert/commit/000ebc9b901e1c6392b7c1538b4cf6efb101f09d"
+        },
+        "date": 1714040384302,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1868723641451448,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04179079341681593",
+            "extra": "mean: 5.351246047400002 sec\nrounds: 5"
           }
         ]
       }
