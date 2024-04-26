@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714040385727,
+  "lastUpdate": 1714117052970,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "ba3c68aa8026b35beabfef6175cb2ffd2be9ae4e",
-          "message": "Bump ruff to v0.4.0",
-          "timestamp": "2024-04-19T12:35:05+02:00",
-          "tree_id": "1bf624cba9ef2db261b50ee273791aaf2a496893",
-          "url": "https://github.com/equinor/ert/commit/ba3c68aa8026b35beabfef6175cb2ffd2be9ae4e"
-        },
-        "date": 1713523110940,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1902298777360922,
-            "unit": "iter/sec",
-            "range": "stddev: 0.055858853152746746",
-            "extra": "mean: 5.256797785399987 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04179079341681593",
             "extra": "mean: 5.351246047400002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8004c59ca6f8ac0a2bcddadc5c37a16a3b95ff8b",
+          "message": "Replace temp_storage dict with array",
+          "timestamp": "2024-04-26T09:34:12+02:00",
+          "tree_id": "e7f5fb0e449f0b84e724c462e421d53fd7a96da2",
+          "url": "https://github.com/equinor/ert/commit/8004c59ca6f8ac0a2bcddadc5c37a16a3b95ff8b"
+        },
+        "date": 1714117052116,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1894401058042086,
+            "unit": "iter/sec",
+            "range": "stddev: 0.013721466865766821",
+            "extra": "mean: 5.2787132680000015 sec\nrounds: 5"
           }
         ]
       }
