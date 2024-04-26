@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714117052970,
+  "lastUpdate": 1714136891971,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "ea34ecce24b2f65b02e5fbaceb841a444ce60bac",
-          "message": "Increase scheduler cancel_job_tasks timeout",
-          "timestamp": "2024-04-19T13:36:36+02:00",
-          "tree_id": "79ae74941e14ea2470381bdcc418a6cda423c002",
-          "url": "https://github.com/equinor/ert/commit/ea34ecce24b2f65b02e5fbaceb841a444ce60bac"
-        },
-        "date": 1713526776576,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18488205687864154,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029162099168085355",
-            "extra": "mean: 5.408853714000003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.013721466865766821",
             "extra": "mean: 5.2787132680000015 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "56902de5ff705f99fa13cba4ad8e779d5ad6f411",
+          "message": "Refer to jobs/forward model as forward model step in ert config \n\nRefer to jobs/forward model as forward model step in ert config(internally only)",
+          "timestamp": "2024-04-26T15:04:50+02:00",
+          "tree_id": "afc34b078acd0d6f6d7c40480b2e1680cdbcdbba",
+          "url": "https://github.com/equinor/ert/commit/56902de5ff705f99fa13cba4ad8e779d5ad6f411"
+        },
+        "date": 1714136891471,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18725917538197395,
+            "unit": "iter/sec",
+            "range": "stddev: 0.1920147620004339",
+            "extra": "mean: 5.340192265400003 sec\nrounds: 5"
           }
         ]
       }
