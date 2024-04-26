@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714136891971,
+  "lastUpdate": 1714142931238,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "sonso@equinor.com",
-            "name": "Sondre Sortland",
-            "username": "sondreso"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "8c16ed9f6455692f9a5e4db2a20b80aa1038ecf1",
-          "message": "Remove tracker and tracker_worker",
-          "timestamp": "2024-04-22T13:35:13+02:00",
-          "tree_id": "0a77ae2cdcca4daee14427b05c838b9c4c864374",
-          "url": "https://github.com/equinor/ert/commit/8c16ed9f6455692f9a5e4db2a20b80aa1038ecf1"
-        },
-        "date": 1713785909178,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18333912221478213,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03713687254863267",
-            "extra": "mean: 5.454373228800006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.1920147620004339",
             "extra": "mean: 5.340192265400003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "ddcc6bb5396aca29889c16b954434ac79eb941f6",
+          "message": "Add use_tmpdir to test that pollutes cwd when running tests",
+          "timestamp": "2024-04-26T16:45:22+02:00",
+          "tree_id": "dea85783b303dcebdaae9a2e491f72b69b1b5472",
+          "url": "https://github.com/equinor/ert/commit/ddcc6bb5396aca29889c16b954434ac79eb941f6"
+        },
+        "date": 1714142929804,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18794315275504855,
+            "unit": "iter/sec",
+            "range": "stddev: 0.026778127815274826",
+            "extra": "mean: 5.320757821400003 sec\nrounds: 5"
           }
         ]
       }
