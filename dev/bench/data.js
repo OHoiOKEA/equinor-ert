@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714400395973,
+  "lastUpdate": 1714400575691,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "50d1d18e94103020e07c466ce2e753b7ced41e14",
-          "message": "Fix a lifetime issue of GUILogHandler",
-          "timestamp": "2024-04-23T10:28:42+02:00",
-          "tree_id": "d36cdb55399801efcc29f8591a280ff18b0cfe00",
-          "url": "https://github.com/equinor/ert/commit/50d1d18e94103020e07c466ce2e753b7ced41e14"
-        },
-        "date": 1713861105700,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1876047221331133,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05485394315617746",
-            "extra": "mean: 5.33035623320003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.016721634358593435",
             "extra": "mean: 5.302543009399995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "805be6db18fa3362e48abaac37151e2aa8690f7f",
+          "message": "Implement exit codes in lsf driver",
+          "timestamp": "2024-04-29T16:19:46+02:00",
+          "tree_id": "13ec793703553077b3fcece3380b0060de98ecb1",
+          "url": "https://github.com/equinor/ert/commit/805be6db18fa3362e48abaac37151e2aa8690f7f"
+        },
+        "date": 1714400575219,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18730396006851052,
+            "unit": "iter/sec",
+            "range": "stddev: 0.034670769178769774",
+            "extra": "mean: 5.338915416599991 sec\nrounds: 5"
           }
         ]
       }
