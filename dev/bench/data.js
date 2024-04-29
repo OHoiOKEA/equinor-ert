@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714395217924,
+  "lastUpdate": 1714400395973,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "6645716e1abca3ee73f3f1a26456b0a444d9df8d",
-          "message": "Have scheduler LSF driver not bhist jobs newer than POLL_PERIOD\n\nThis commit makes lsf driver not bhist jobs submitted after previous polling. This fixes the issue where we would bhist for jobs recently submitted, because sometimes LSF takes a couple of milliseconds to process a submission before answering for it in bjobs.",
-          "timestamp": "2024-04-23T10:18:35+02:00",
-          "tree_id": "d6c428145df0847c26677108d4ebb760599b65f6",
-          "url": "https://github.com/equinor/ert/commit/6645716e1abca3ee73f3f1a26456b0a444d9df8d"
-        },
-        "date": 1713860499168,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18608518794034612,
-            "unit": "iter/sec",
-            "range": "stddev: 0.054325025273765676",
-            "extra": "mean: 5.37388284939999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026513928175772042",
             "extra": "mean: 5.385896581799988 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "af9a21094fc3d1a13ef9e70cea28439148329ba6",
+          "message": "Increase number and duration of license retry",
+          "timestamp": "2024-04-29T16:16:44+02:00",
+          "tree_id": "a4d18ef690d27e8d6a35eb882e858ef074ac2ff8",
+          "url": "https://github.com/equinor/ert/commit/af9a21094fc3d1a13ef9e70cea28439148329ba6"
+        },
+        "date": 1714400395129,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1885887579275202,
+            "unit": "iter/sec",
+            "range": "stddev: 0.016721634358593435",
+            "extra": "mean: 5.302543009399995 sec\nrounds: 5"
           }
         ]
       }
