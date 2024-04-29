@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714142931238,
+  "lastUpdate": 1714373027036,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "544caea887f9ca985787e5e81d3d90a6c63eddd2",
-          "message": "Have ert handle UserWarning from ert_script",
-          "timestamp": "2024-04-22T14:55:27+02:00",
-          "tree_id": "533019d74d52b2daee9e96211a6cfc47d1730a74",
-          "url": "https://github.com/equinor/ert/commit/544caea887f9ca985787e5e81d3d90a6c63eddd2"
-        },
-        "date": 1713790714050,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18944847431880021,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04250155178621867",
-            "extra": "mean: 5.2784800911999925 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026778127815274826",
             "extra": "mean: 5.320757821400003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d30a2143ecaa00525fc45690eed7852be873d118",
+          "message": "Rename get_all_ensembles_not_running\n\nIt returns all ensembles whether they are running or not.",
+          "timestamp": "2024-04-29T08:40:13+02:00",
+          "tree_id": "01da52cfbb149b2273241aa2a3c7802eeda312fe",
+          "url": "https://github.com/equinor/ert/commit/d30a2143ecaa00525fc45690eed7852be873d118"
+        },
+        "date": 1714373026145,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18983124752687644,
+            "unit": "iter/sec",
+            "range": "stddev: 0.012662444466058981",
+            "extra": "mean: 5.267836633999991 sec\nrounds: 5"
           }
         ]
       }
