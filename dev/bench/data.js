@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714400575691,
+  "lastUpdate": 1714401768616,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "bcb3093c92ff8f4fc401f2248c2b95931fd17ffa",
-          "message": "Remove TempStorage",
-          "timestamp": "2024-04-23T11:34:51+02:00",
-          "tree_id": "d284fdb955e0995f7a3c7f1e7a34ace979981471",
-          "url": "https://github.com/equinor/ert/commit/bcb3093c92ff8f4fc401f2248c2b95931fd17ffa"
-        },
-        "date": 1713865078672,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18431754951222917,
-            "unit": "iter/sec",
-            "range": "stddev: 0.14544577411531778",
-            "extra": "mean: 5.425419351799985 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.034670769178769774",
             "extra": "mean: 5.338915416599991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "ed89624ab6d4bfa51d1ad211f2c4c8f2a28c3f3e",
+          "message": "Remove dead code in plotter",
+          "timestamp": "2024-04-29T16:39:39+02:00",
+          "tree_id": "0baf88b675a6a80c788f5d0fc04ba58f4d144b3f",
+          "url": "https://github.com/equinor/ert/commit/ed89624ab6d4bfa51d1ad211f2c4c8f2a28c3f3e"
+        },
+        "date": 1714401767979,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19068932698072197,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04502763781844777",
+            "extra": "mean: 5.244131991199993 sec\nrounds: 5"
           }
         ]
       }
