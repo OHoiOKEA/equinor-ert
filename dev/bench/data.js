@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714458852966,
+  "lastUpdate": 1714461522665,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "012c396a3527e4111bfd68cfe26ef1291e170534",
-          "message": "Add -o option to bsub for stdout from LSF\n\nReplicating behaviour in legacy C driver",
-          "timestamp": "2024-04-23T12:25:31+02:00",
-          "tree_id": "841c824f027c2d257b2ef44a0084c72ec776d5ac",
-          "url": "https://github.com/equinor/ert/commit/012c396a3527e4111bfd68cfe26ef1291e170534"
-        },
-        "date": 1713868120612,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1874055083295523,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029537407259873607",
-            "extra": "mean: 5.33602245159999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025145285781001638",
             "extra": "mean: 5.266593950800006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "586d6ca2f36536a8f48070096d1be93f621af195",
+          "message": "Add a tab for std_dev image in plotter",
+          "timestamp": "2024-04-30T09:15:39+02:00",
+          "tree_id": "e2d3bc3df6c4dfa9a43578268e87d0022aa7c2e0",
+          "url": "https://github.com/equinor/ert/commit/586d6ca2f36536a8f48070096d1be93f621af195"
+        },
+        "date": 1714461521994,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18922799790097605,
+            "unit": "iter/sec",
+            "range": "stddev: 0.07287134970200071",
+            "extra": "mean: 5.284630240199999 sec\nrounds: 5"
           }
         ]
       }
