@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714401768616,
+  "lastUpdate": 1714458852966,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "7e80e17334b967b9d09fa82acb9919b525b9b152",
-          "message": "Add correct return types to MagicMock",
-          "timestamp": "2024-04-23T11:59:05+02:00",
-          "tree_id": "150f0023284562b979279dfb30851c0c84720077",
-          "url": "https://github.com/equinor/ert/commit/7e80e17334b967b9d09fa82acb9919b525b9b152"
-        },
-        "date": 1713866528555,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18879793805827186,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020074826351616015",
-            "extra": "mean: 5.296668016000012 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04502763781844777",
             "extra": "mean: 5.244131991199993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "22e03328570738c404a3b4c8ffbeafc2abe679b5",
+          "message": "Fix CSV export",
+          "timestamp": "2024-04-30T08:31:08+02:00",
+          "tree_id": "ac9bb43a941af90f2148d0b8881f5b96f6a6a114",
+          "url": "https://github.com/equinor/ert/commit/22e03328570738c404a3b4c8ffbeafc2abe679b5"
+        },
+        "date": 1714458852460,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.189876039303941,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025145285781001638",
+            "extra": "mean: 5.266593950800006 sec\nrounds: 5"
           }
         ]
       }
