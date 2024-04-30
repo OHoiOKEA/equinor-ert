@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714465575051,
+  "lastUpdate": 1714473754385,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "890fc3296deb83b68bb3fc3227aea22259e3c64a",
-          "message": "Add check for newer storages",
-          "timestamp": "2024-04-23T12:39:22+02:00",
-          "tree_id": "14d09fb8721122ba998b43b737f5a11539d71bcd",
-          "url": "https://github.com/equinor/ert/commit/890fc3296deb83b68bb3fc3227aea22259e3c64a"
-        },
-        "date": 1713868953799,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18262271916820186,
-            "unit": "iter/sec",
-            "range": "stddev: 0.20328595392139795",
-            "extra": "mean: 5.475769961999992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01615813787536445",
             "extra": "mean: 5.252140185799988 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "288530ffc881b96a61ad536fd1207bb3845bc293",
+          "message": "Set default state of ensemble to INITIALIZED if no parameters",
+          "timestamp": "2024-04-30T12:38:59+02:00",
+          "tree_id": "d6385106675e46c4b7191bb394cdbffccea87ed5",
+          "url": "https://github.com/equinor/ert/commit/288530ffc881b96a61ad536fd1207bb3845bc293"
+        },
+        "date": 1714473753463,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18490514210150275,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0767011760243102",
+            "extra": "mean: 5.408178423999994 sec\nrounds: 5"
           }
         ]
       }
