@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714474952510,
+  "lastUpdate": 1714490280001,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "e55275480cd0911fe7c18728c9d8bd8434ca9644",
-          "message": "Make local_driver kill() robust wrt timing\n\nIf the kill() instruction to the local driver happened before the subprocess\nhad actually started, the driver would raise an exception.\n\nThis commit makes sure that one FinishedEvent is always sent no matter when\nthe kill() instruction is sent.\n\nkill() can happen before the _run() function is started, it can happen when run() is started and\nthe try block is entered, but _init() is not started, and it can happen after the process has been\nstarted.",
-          "timestamp": "2024-04-23T13:28:44+02:00",
-          "tree_id": "d5523fe8e5f0a2a9df566a1b7b91bf655042666f",
-          "url": "https://github.com/equinor/ert/commit/e55275480cd0911fe7c18728c9d8bd8434ca9644"
-        },
-        "date": 1713871906774,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1878120583202574,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03500628310721317",
-            "extra": "mean: 5.324471756200012 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04782107027061702",
             "extra": "mean: 5.258876315999975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "181ab29bd0829f4318134c10bb204ead1e6e905c",
+          "message": "Fix flaky csv-export test",
+          "timestamp": "2024-04-30T17:14:56+02:00",
+          "tree_id": "aec0edc164d20581acbf3c086a66f746f3926577",
+          "url": "https://github.com/equinor/ert/commit/181ab29bd0829f4318134c10bb204ead1e6e905c"
+        },
+        "date": 1714490279487,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18841894490879535,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03566230071821977",
+            "extra": "mean: 5.30732193880001 sec\nrounds: 5"
           }
         ]
       }
