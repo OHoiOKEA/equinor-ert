@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714461522665,
+  "lastUpdate": 1714465575051,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "fc932a7242f4056120d334773003316c8bee9e1d",
-          "message": "Disable experiment name editing in restart mode",
-          "timestamp": "2024-04-23T12:38:43+02:00",
-          "tree_id": "bd4cca4662fdd7bd9229fc6471c74a0386c329d8",
-          "url": "https://github.com/equinor/ert/commit/fc932a7242f4056120d334773003316c8bee9e1d"
-        },
-        "date": 1713868916467,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18878249932961358,
-            "unit": "iter/sec",
-            "range": "stddev: 0.018638371650420343",
-            "extra": "mean: 5.2971011801999905 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.07287134970200071",
             "extra": "mean: 5.284630240199999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "69707616bd0b491ebf5fd8d88e13f54cba7829a2",
+          "message": "Remove unused fields from EnsembleOut",
+          "timestamp": "2024-04-30T10:23:11+02:00",
+          "tree_id": "fa11f31b18504d5f44a57c619b6ee6c1b93b5717",
+          "url": "https://github.com/equinor/ert/commit/69707616bd0b491ebf5fd8d88e13f54cba7829a2"
+        },
+        "date": 1714465574622,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19039857365263443,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01615813787536445",
+            "extra": "mean: 5.252140185799988 sec\nrounds: 5"
           }
         ]
       }
