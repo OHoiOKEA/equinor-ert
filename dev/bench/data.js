@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714643814216,
+  "lastUpdate": 1714649748047,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "0720112c9a8420c4e918403d794fbe94c4c9c20c",
-          "message": "Have integration tests running towards cluster set job names\n\nThis commit makes the integration tests for the scheduler drivers use the test names as job names when doing `driver.submit`, making it easier to debug.",
-          "timestamp": "2024-04-24T08:48:36+02:00",
-          "tree_id": "013648c085f47c07f683a1609b4c6eeb9831e231",
-          "url": "https://github.com/equinor/ert/commit/0720112c9a8420c4e918403d794fbe94c4c9c20c"
-        },
-        "date": 1713941523409,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18857746150192198,
-            "unit": "iter/sec",
-            "range": "stddev: 0.09606500741733304",
-            "extra": "mean: 5.302860649599995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.036138843279390945",
             "extra": "mean: 5.2293150674 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "2b32f0b6fa965e094347462340bebedbee96dce5",
+          "message": "Skip snapshot test",
+          "timestamp": "2024-05-02T13:32:45+02:00",
+          "tree_id": "a91618b2ef819f838ec3b68b32edce699c48f17e",
+          "url": "https://github.com/equinor/ert/commit/2b32f0b6fa965e094347462340bebedbee96dce5"
+        },
+        "date": 1714649747543,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19053173212375005,
+            "unit": "iter/sec",
+            "range": "stddev: 0.07880871613494933",
+            "extra": "mean: 5.24846957960001 sec\nrounds: 5"
           }
         ]
       }
