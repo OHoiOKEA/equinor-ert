@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714636449283,
+  "lastUpdate": 1714643814216,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "50a44210a148234c08baa85bcb1ca34f0581d5e0",
-          "message": "Improve scheduler driver execute_with_retries method to log exit code, stdout, and stderr",
-          "timestamp": "2024-04-24T07:12:26+02:00",
-          "tree_id": "f8a2f283f205ab5a508fae0d1450a512a245c6fe",
-          "url": "https://github.com/equinor/ert/commit/50a44210a148234c08baa85bcb1ca34f0581d5e0"
-        },
-        "date": 1713935738878,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18902272394565997,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04102923239067562",
-            "extra": "mean: 5.290369216600004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04092621949468263",
             "extra": "mean: 5.2582494926000205 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aron@hoyer.com",
+            "name": "Aron Høyer",
+            "username": "aronhoyer"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "0b7e5901b22ad1c8f409cbb4d3c9eac6f8ec2937",
+          "message": "Move log statement to addNode",
+          "timestamp": "2024-05-02T11:53:44+02:00",
+          "tree_id": "801b5ea5e3c41cd43de907d219d577f673566231",
+          "url": "https://github.com/equinor/ert/commit/0b7e5901b22ad1c8f409cbb4d3c9eac6f8ec2937"
+        },
+        "date": 1714643813695,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19122963277429697,
+            "unit": "iter/sec",
+            "range": "stddev: 0.036138843279390945",
+            "extra": "mean: 5.2293150674 sec\nrounds: 5"
           }
         ]
       }
