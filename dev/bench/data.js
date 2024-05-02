@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714649748047,
+  "lastUpdate": 1714655311302,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "f3f0b85fd0df1eb75eb7ccb9b1cf7970c640d10a",
-          "message": "Improve codecov coverage lsf_driver polling",
-          "timestamp": "2024-04-24T10:18:42+02:00",
-          "tree_id": "7e69f240c39f0c07a8e5ce8b5715898cbe832ce1",
-          "url": "https://github.com/equinor/ert/commit/f3f0b85fd0df1eb75eb7ccb9b1cf7970c640d10a"
-        },
-        "date": 1713946985073,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18366542540586273,
-            "unit": "iter/sec",
-            "range": "stddev: 0.12723027768390555",
-            "extra": "mean: 5.4446828944000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.07880871613494933",
             "extra": "mean: 5.24846957960001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "92ff4bae808cf2b958557a6d0d4c54ed4455f686",
+          "message": "Iterate ensembles to look for history to plot",
+          "timestamp": "2024-05-02T15:05:02+02:00",
+          "tree_id": "875cf5b3a2545a6ae5722628c690481ef7fdd8f4",
+          "url": "https://github.com/equinor/ert/commit/92ff4bae808cf2b958557a6d0d4c54ed4455f686"
+        },
+        "date": 1714655310739,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18911219209169056,
+            "unit": "iter/sec",
+            "range": "stddev: 0.09958879961654699",
+            "extra": "mean: 5.287866366199978 sec\nrounds: 5"
           }
         ]
       }
