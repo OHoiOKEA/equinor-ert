@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714655311302,
+  "lastUpdate": 1714658528150,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "cbe777b8fc459bbdb9b4142f98d7843e40938e50",
-          "message": "Add DeprecationWarning for TORQUE OPTION `QUEUE_QUERY_TIMEOUT`\n\nThis commit adds a deprecation warning for using `TORQUE QUEUE_OPTION QUEUE_QUERY_TIMEOUT`, stating it will be ignored when using the scheduler.",
-          "timestamp": "2024-04-24T10:36:42+02:00",
-          "tree_id": "d934c465c59b436470ed8380832ed34ebdbc3323",
-          "url": "https://github.com/equinor/ert/commit/cbe777b8fc459bbdb9b4142f98d7843e40938e50"
-        },
-        "date": 1713948031714,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18472024339527468,
-            "unit": "iter/sec",
-            "range": "stddev: 0.1866264551241095",
-            "extra": "mean: 5.413591827400012 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.09958879961654699",
             "extra": "mean: 5.287866366199978 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "3a418a7e13ca2bf4f50df55394faa205ace01f38",
+          "message": "Replace Monitor with async Monitor\n\nMain features:\n- removal of sync_ws_duplexer!\n- Reconnections are handled in monitor directly\n- using asyncio.Queue to store events and provide them in await fashion\n- Add test_monitor with basic unit tests",
+          "timestamp": "2024-05-02T15:58:54+02:00",
+          "tree_id": "8d8c6674c8b8b08c18a5f933f564abc26376ca64",
+          "url": "https://github.com/equinor/ert/commit/3a418a7e13ca2bf4f50df55394faa205ace01f38"
+        },
+        "date": 1714658527134,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18800208893031378,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05960508603218225",
+            "extra": "mean: 5.319089834000022 sec\nrounds: 5"
           }
         ]
       }
