@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714490280001,
+  "lastUpdate": 1714636449283,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "d6ed42713a240ac4fbd5eb7180ce3e5419db460f",
-          "message": "Fix dark storage performance benchmark test not compatible with async_utils event loop",
-          "timestamp": "2024-04-23T13:36:42+02:00",
-          "tree_id": "0870bb6962217fc4eeb8aa1563cc1e2a188b5b4c",
-          "url": "https://github.com/equinor/ert/commit/d6ed42713a240ac4fbd5eb7180ce3e5419db460f"
-        },
-        "date": 1713872396749,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18591631046831775,
-            "unit": "iter/sec",
-            "range": "stddev: 0.010517520308682977",
-            "extra": "mean: 5.37876422720002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03566230071821977",
             "extra": "mean: 5.30732193880001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "a4c5d858bf81110beecaae50e1cfd923452d9be8",
+          "message": "Add timeout to test",
+          "timestamp": "2024-05-02T09:50:42+02:00",
+          "tree_id": "6c930136e2cae04fc6541d7053d5eeb30045df23",
+          "url": "https://github.com/equinor/ert/commit/a4c5d858bf81110beecaae50e1cfd923452d9be8"
+        },
+        "date": 1714636448788,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19017735872124525,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04092621949468263",
+            "extra": "mean: 5.2582494926000205 sec\nrounds: 5"
           }
         ]
       }
