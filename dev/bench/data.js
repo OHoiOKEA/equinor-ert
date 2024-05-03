@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714658528150,
+  "lastUpdate": 1714713228308,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "cb949eff6b8d9f5211577540f9a2b19af3b44e75",
-          "message": "Replace swap_vertical icon with reorder for plotter selection",
-          "timestamp": "2024-04-24T11:36:31+02:00",
-          "tree_id": "5ef42b8688fb02c3ed89eb596213366dabc2abc0",
-          "url": "https://github.com/equinor/ert/commit/cb949eff6b8d9f5211577540f9a2b19af3b44e75"
-        },
-        "date": 1713951609958,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18859590099668425,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03903537319567945",
-            "extra": "mean: 5.302342175599994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05960508603218225",
             "extra": "mean: 5.319089834000022 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "1e7789ee956b1d484d55f2f56946c80b264f65b2",
+          "message": "Move snapshot headerData logic for realizations to job_list.py",
+          "timestamp": "2024-05-03T07:10:19+02:00",
+          "tree_id": "2f3c7818d30a738d5d0b8b1bca17e6f63ab0f8a3",
+          "url": "https://github.com/equinor/ert/commit/1e7789ee956b1d484d55f2f56946c80b264f65b2"
+        },
+        "date": 1714713227839,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18905274515596196,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04900614616348158",
+            "extra": "mean: 5.289529116200003 sec\nrounds: 5"
           }
         ]
       }
