@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714723815940,
+  "lastUpdate": 1714725733887,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "0e3209a6bf443dc1f3ec40804eacf63e3c4ab572",
-          "message": "Add DeprecationWarning for TORQUE OPTION `QSTAT_OPTIONS`",
-          "timestamp": "2024-04-24T16:27:53+02:00",
-          "tree_id": "f979b7dc474f2269192777e5c4c410fd57804d62",
-          "url": "https://github.com/equinor/ert/commit/0e3209a6bf443dc1f3ec40804eacf63e3c4ab572"
-        },
-        "date": 1713969069909,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18777296222691262,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04416834660298527",
-            "extra": "mean: 5.325580361200025 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06370359144565205",
             "extra": "mean: 5.360950948600009 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "993e03a64d5ebbd80752674208172a6bf9fd7b61",
+          "message": "Add workflow to test against everest",
+          "timestamp": "2024-05-03T10:39:00+02:00",
+          "tree_id": "a453e37ae78eead083c1a12fbee2d61582e66efc",
+          "url": "https://github.com/equinor/ert/commit/993e03a64d5ebbd80752674208172a6bf9fd7b61"
+        },
+        "date": 1714725733236,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1884711181208225,
+            "unit": "iter/sec",
+            "range": "stddev: 0.044346795205026844",
+            "extra": "mean: 5.305852748000007 sec\nrounds: 5"
           }
         ]
       }
