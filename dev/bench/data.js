@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714725733887,
+  "lastUpdate": 1714726216668,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "2e253f48cffbed4a341a30e823e7f74f94db05bc",
-          "message": "Avoid possibility for negative duration in GUI\n\nThere is an underlying problem with the snapshot model not being\nproperly reset when realizations are resubmitted upon failure. This\ncommit makes sure that when invalid end times are picked up from\nprevious runs, they are ignored.",
-          "timestamp": "2024-04-25T09:06:26+02:00",
-          "tree_id": "7cf68d959c341ccd978eb82d9277f537b732b27f",
-          "url": "https://github.com/equinor/ert/commit/2e253f48cffbed4a341a30e823e7f74f94db05bc"
-        },
-        "date": 1714028976897,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1835977775237721,
-            "unit": "iter/sec",
-            "range": "stddev: 0.28936476451728044",
-            "extra": "mean: 5.446689025800003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.044346795205026844",
             "extra": "mean: 5.305852748000007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "089de2e869a4a88f977418a7fd5b59099fe18594",
+          "message": "Update pre-commit hooks",
+          "timestamp": "2024-05-03T10:46:58+02:00",
+          "tree_id": "35b10ea55c800e5eb516b20e2007e621d3a22c8e",
+          "url": "https://github.com/equinor/ert/commit/089de2e869a4a88f977418a7fd5b59099fe18594"
+        },
+        "date": 1714726215623,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1917610386133882,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03889253880220726",
+            "extra": "mean: 5.214823653600002 sec\nrounds: 5"
           }
         ]
       }
