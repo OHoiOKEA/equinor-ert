@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714722437701,
+  "lastUpdate": 1714723815940,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "941d4c915a92a08ed6c31d68b0bc922756cef241",
-          "message": "Rely on komodo to setup integration tests for queues",
-          "timestamp": "2024-04-24T12:40:03+02:00",
-          "tree_id": "3a6f02f89e1d1551e72f28811597c3213406fdbe",
-          "url": "https://github.com/equinor/ert/commit/941d4c915a92a08ed6c31d68b0bc922756cef241"
-        },
-        "date": 1713956382765,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18842676521385907,
-            "unit": "iter/sec",
-            "range": "stddev: 0.023355582847702012",
-            "extra": "mean: 5.307101668199993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.023299774338900018",
             "extra": "mean: 5.218585039599998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "d79aed50ad8c718ffd30a62cd3bd7a8fd003fa32",
+          "message": "Fix an issue with finding smspec files",
+          "timestamp": "2024-05-03T10:07:06+02:00",
+          "tree_id": "989ff9aeccfabe68e0a558946d8cd78d83db3e70",
+          "url": "https://github.com/equinor/ert/commit/d79aed50ad8c718ffd30a62cd3bd7a8fd003fa32"
+        },
+        "date": 1714723815434,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18653407009089423,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06370359144565205",
+            "extra": "mean: 5.360950948600009 sec\nrounds: 5"
           }
         ]
       }
