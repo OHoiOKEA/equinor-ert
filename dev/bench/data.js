@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714976952525,
+  "lastUpdate": 1714994864204,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "74e85734cc8d241cb7b01360221f4693ea5d228f",
-          "message": "Hardcode `-x` qstat option in `torque_driver.cpp`\n\nThis commit makes the legacy torque driver better match the scheduler OpenPBSDriver.",
-          "timestamp": "2024-04-25T10:25:08+02:00",
-          "tree_id": "e0665c0dd3462512c3dca0762efd20e44ab4b3f0",
-          "url": "https://github.com/equinor/ert/commit/74e85734cc8d241cb7b01360221f4693ea5d228f"
-        },
-        "date": 1714033704241,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18908854974712433,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03568434517067402",
-            "extra": "mean: 5.288527525000006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.036837294679070626",
             "extra": "mean: 5.4365968508000035 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "e5350a67d30eaa70ac6490d85ff2b9f1ff45be9b",
+          "message": "Pin git for linux in workflows",
+          "timestamp": "2024-05-06T13:24:37+02:00",
+          "tree_id": "84f80f39ab5de7942ef66b927866d58741c22749",
+          "url": "https://github.com/equinor/ert/commit/e5350a67d30eaa70ac6490d85ff2b9f1ff45be9b"
+        },
+        "date": 1714994863646,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1856772839716614,
+            "unit": "iter/sec",
+            "range": "stddev: 0.021692134666189227",
+            "extra": "mean: 5.385688429999993 sec\nrounds: 5"
           }
         ]
       }
