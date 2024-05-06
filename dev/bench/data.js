@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714994864204,
+  "lastUpdate": 1714996982904,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "4dc12ab8292eba9ebf28be201d41a72abf59914e",
-          "message": "Remove parts of LSF example in docs\n\nThese settings are seldom relevant for users.",
-          "timestamp": "2024-04-25T10:42:25+02:00",
-          "tree_id": "6bc67f69bebb4ab8c04fe3b4deb0ae830f8fdd07",
-          "url": "https://github.com/equinor/ert/commit/4dc12ab8292eba9ebf28be201d41a72abf59914e"
-        },
-        "date": 1714034755828,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18641282958919386,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022835478774535758",
-            "extra": "mean: 5.364437641999984 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.021692134666189227",
             "extra": "mean: 5.385688429999993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "966cfc9db3fd5b5fc6dfc22e4f2a6832146b998e",
+          "message": "Simplify how we call and parse bjobs\n\nUse the -o option to specify which columns we are interested in.\nAdd the -noheader option to remove the header from output.",
+          "timestamp": "2024-05-06T13:59:31+02:00",
+          "tree_id": "608cb67349afa53ab8ac0db83e5255a29410405b",
+          "url": "https://github.com/equinor/ert/commit/966cfc9db3fd5b5fc6dfc22e4f2a6832146b998e"
+        },
+        "date": 1714996981924,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1854526854906219,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0468397987982307",
+            "extra": "mean: 5.392210942400015 sec\nrounds: 5"
           }
         ]
       }
