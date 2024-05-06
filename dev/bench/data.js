@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714996982904,
+  "lastUpdate": 1715002023479,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "000ebc9b901e1c6392b7c1538b4cf6efb101f09d",
-          "message": "Ensure forward models after running ones are pending\n\nWhen realizations are resubmitted after failures, the snapshot shows\ninformation from the previous run. This commit modifies the forward\nmodel state of forward models following any Running state for a\nrealization to make sure they are set to Start/Pending.\n\nThe GUI will thus show correct colors for these forward models, but\nerror messages from the failed previous run are still available from the\nGUI.",
-          "timestamp": "2024-04-25T12:16:04+02:00",
-          "tree_id": "af649e71272453a805f9c9237d9ff32ac1ad38b7",
-          "url": "https://github.com/equinor/ert/commit/000ebc9b901e1c6392b7c1538b4cf6efb101f09d"
-        },
-        "date": 1714040384302,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1868723641451448,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04179079341681593",
-            "extra": "mean: 5.351246047400002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0468397987982307",
             "extra": "mean: 5.392210942400015 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "aa01aa9f6d32878676952742cd5f3e0df1645552",
+          "message": "Pin linux docker image",
+          "timestamp": "2024-05-06T15:23:19+02:00",
+          "tree_id": "fb12c4bb7bf1222e610145cf36dc8f55032dbbaf",
+          "url": "https://github.com/equinor/ert/commit/aa01aa9f6d32878676952742cd5f3e0df1645552"
+        },
+        "date": 1715002022437,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18479159754105073,
+            "unit": "iter/sec",
+            "range": "stddev: 0.08909549379311876",
+            "extra": "mean: 5.411501460599982 sec\nrounds: 5"
           }
         ]
       }
