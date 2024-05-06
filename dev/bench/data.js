@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1714974484846,
+  "lastUpdate": 1714976952525,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "10faf6a57fee9e4f4f4d0962e4f6f0a4bbbeeb30",
-          "message": "Silence INFO logs from azure.core",
-          "timestamp": "2024-04-25T10:15:13+02:00",
-          "tree_id": "c866b0f2787895a66c41e9665203d90b675c0718",
-          "url": "https://github.com/equinor/ert/commit/10faf6a57fee9e4f4f4d0962e4f6f0a4bbbeeb30"
-        },
-        "date": 1714033105077,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1899929963504932,
-            "unit": "iter/sec",
-            "range": "stddev: 0.016560132932042816",
-            "extra": "mean: 5.263351908800002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05097960814872291",
             "extra": "mean: 5.315698619199987 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "47f0580ff9b1ed3cb8dbd2f58c14434a19621496",
+          "message": "Revert skipping test",
+          "timestamp": "2024-05-06T08:25:54+02:00",
+          "tree_id": "4a3d510f6250c40225b7b4fa9a41f6db4b429569",
+          "url": "https://github.com/equinor/ert/commit/47f0580ff9b1ed3cb8dbd2f58c14434a19621496"
+        },
+        "date": 1714976951901,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18393859751672564,
+            "unit": "iter/sec",
+            "range": "stddev: 0.036837294679070626",
+            "extra": "mean: 5.4365968508000035 sec\nrounds: 5"
           }
         ]
       }
