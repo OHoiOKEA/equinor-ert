@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715069083045,
+  "lastUpdate": 1715076628393,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "ddcc6bb5396aca29889c16b954434ac79eb941f6",
-          "message": "Add use_tmpdir to test that pollutes cwd when running tests",
-          "timestamp": "2024-04-26T16:45:22+02:00",
-          "tree_id": "dea85783b303dcebdaae9a2e491f72b69b1b5472",
-          "url": "https://github.com/equinor/ert/commit/ddcc6bb5396aca29889c16b954434ac79eb941f6"
-        },
-        "date": 1714142929804,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18794315275504855,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026778127815274826",
-            "extra": "mean: 5.320757821400003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0671621370643921",
             "extra": "mean: 5.29515523299998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "6a40702e50b30b5810008ea65e1fa74de6d188c7",
+          "message": "Unpin linux docker image",
+          "timestamp": "2024-05-07T12:07:02+02:00",
+          "tree_id": "71e759d99fac1064942e1d217c66e88e8820b0f0",
+          "url": "https://github.com/equinor/ert/commit/6a40702e50b30b5810008ea65e1fa74de6d188c7"
+        },
+        "date": 1715076627506,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18394946816311386,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0851457795549432",
+            "extra": "mean: 5.436275570600008 sec\nrounds: 5"
           }
         ]
       }
