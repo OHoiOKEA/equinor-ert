@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715076628393,
+  "lastUpdate": 1715081355953,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "d30a2143ecaa00525fc45690eed7852be873d118",
-          "message": "Rename get_all_ensembles_not_running\n\nIt returns all ensembles whether they are running or not.",
-          "timestamp": "2024-04-29T08:40:13+02:00",
-          "tree_id": "01da52cfbb149b2273241aa2a3c7802eeda312fe",
-          "url": "https://github.com/equinor/ert/commit/d30a2143ecaa00525fc45690eed7852be873d118"
-        },
-        "date": 1714373026145,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18983124752687644,
-            "unit": "iter/sec",
-            "range": "stddev: 0.012662444466058981",
-            "extra": "mean: 5.267836633999991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0851457795549432",
             "extra": "mean: 5.436275570600008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "b95fea52dae0455759d8d7073f612d0e10a0264c",
+          "message": "Fix flaky test_new_monitor_can_pick_up_where_we_left_off",
+          "timestamp": "2024-05-07T13:26:11+02:00",
+          "tree_id": "af4b611c833f616dc1dfc9c9db3f3f50ac31d5d3",
+          "url": "https://github.com/equinor/ert/commit/b95fea52dae0455759d8d7073f612d0e10a0264c"
+        },
+        "date": 1715081355443,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1899366194105223,
+            "unit": "iter/sec",
+            "range": "stddev: 0.08309212044359801",
+            "extra": "mean: 5.264914175599995 sec\nrounds: 5"
           }
         ]
       }
