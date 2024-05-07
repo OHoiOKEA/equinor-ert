@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715067301269,
+  "lastUpdate": 1715069083045,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "56902de5ff705f99fa13cba4ad8e779d5ad6f411",
-          "message": "Refer to jobs/forward model as forward model step in ert config \n\nRefer to jobs/forward model as forward model step in ert config(internally only)",
-          "timestamp": "2024-04-26T15:04:50+02:00",
-          "tree_id": "afc34b078acd0d6f6d7c40480b2e1680cdbcdbba",
-          "url": "https://github.com/equinor/ert/commit/56902de5ff705f99fa13cba4ad8e779d5ad6f411"
-        },
-        "date": 1714136891471,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18725917538197395,
-            "unit": "iter/sec",
-            "range": "stddev: 0.1920147620004339",
-            "extra": "mean: 5.340192265400003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05182414467248908",
             "extra": "mean: 5.363849532999995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0249f3fa2c5f65a55735a952eea2cbe74fcc8dae",
+          "message": "Simplify test_check_if_runpath_exists\n\nEnsembleExperiment no longer uses facade",
+          "timestamp": "2024-05-07T10:01:05+02:00",
+          "tree_id": "6b6f49a0ee9306e6d8e52cd851044882f6caeaef",
+          "url": "https://github.com/equinor/ert/commit/0249f3fa2c5f65a55735a952eea2cbe74fcc8dae"
+        },
+        "date": 1715069082548,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18885187610136372,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0671621370643921",
+            "extra": "mean: 5.29515523299998 sec\nrounds: 5"
           }
         ]
       }
