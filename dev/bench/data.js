@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715002023479,
+  "lastUpdate": 1715067301269,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "8004c59ca6f8ac0a2bcddadc5c37a16a3b95ff8b",
-          "message": "Replace temp_storage dict with array",
-          "timestamp": "2024-04-26T09:34:12+02:00",
-          "tree_id": "e7f5fb0e449f0b84e724c462e421d53fd7a96da2",
-          "url": "https://github.com/equinor/ert/commit/8004c59ca6f8ac0a2bcddadc5c37a16a3b95ff8b"
-        },
-        "date": 1714117052116,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1894401058042086,
-            "unit": "iter/sec",
-            "range": "stddev: 0.013721466865766821",
-            "extra": "mean: 5.2787132680000015 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.08909549379311876",
             "extra": "mean: 5.411501460599982 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "698b81447f46a67985175c50cd2779aa3cf4be09",
+          "message": "Avoid redundant plot update when refreshing tabs in gui plots",
+          "timestamp": "2024-05-07T09:31:54+02:00",
+          "tree_id": "3ac7c70cc20ebc3cd3cd434e07938982b955eddc",
+          "url": "https://github.com/equinor/ert/commit/698b81447f46a67985175c50cd2779aa3cf4be09"
+        },
+        "date": 1715067300769,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18643326846655614,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05182414467248908",
+            "extra": "mean: 5.363849532999995 sec\nrounds: 5"
           }
         ]
       }
