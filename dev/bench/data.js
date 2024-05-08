@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715184988399,
+  "lastUpdate": 1715205504491,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "22e03328570738c404a3b4c8ffbeafc2abe679b5",
-          "message": "Fix CSV export",
-          "timestamp": "2024-04-30T08:31:08+02:00",
-          "tree_id": "ac9bb43a941af90f2148d0b8881f5b96f6a6a114",
-          "url": "https://github.com/equinor/ert/commit/22e03328570738c404a3b4c8ffbeafc2abe679b5"
-        },
-        "date": 1714458852460,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.189876039303941,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025145285781001638",
-            "extra": "mean: 5.266593950800006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06478147929431237",
             "extra": "mean: 5.233400032599991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "parulek@gmail.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "9b2c5669697557e21f04926a15ef7a0d8118f4f2",
+          "message": "Monitor track should exit without evaluator terminated message\n\n - Add explicit sentinel to stop receiver either when signalling cancel or done to EE\n - Test that monitor tracker can exit without the terminated event",
+          "timestamp": "2024-05-08T23:55:13+02:00",
+          "tree_id": "ab7a95c2c469612fef5a5a3bb5f01a932efd5eaf",
+          "url": "https://github.com/equinor/ert/commit/9b2c5669697557e21f04926a15ef7a0d8118f4f2"
+        },
+        "date": 1715205503848,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18722478064431528,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06873507059059794",
+            "extra": "mean: 5.341173302799985 sec\nrounds: 5"
           }
         ]
       }
