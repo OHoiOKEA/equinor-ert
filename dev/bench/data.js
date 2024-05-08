@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715169028165,
+  "lastUpdate": 1715174707113,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "805be6db18fa3362e48abaac37151e2aa8690f7f",
-          "message": "Implement exit codes in lsf driver",
-          "timestamp": "2024-04-29T16:19:46+02:00",
-          "tree_id": "13ec793703553077b3fcece3380b0060de98ecb1",
-          "url": "https://github.com/equinor/ert/commit/805be6db18fa3362e48abaac37151e2aa8690f7f"
-        },
-        "date": 1714400575219,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18730396006851052,
-            "unit": "iter/sec",
-            "range": "stddev: 0.034670769178769774",
-            "extra": "mean: 5.338915416599991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03932294520084003",
             "extra": "mean: 5.396043382799997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "19f8c4693e8287a8d7de074a3385a0b1db086f20",
+          "message": "Fix problem with bjobs command",
+          "timestamp": "2024-05-08T15:21:50+02:00",
+          "tree_id": "eb8ec9772097c6c2374571b6928424a61bc7af4d",
+          "url": "https://github.com/equinor/ert/commit/19f8c4693e8287a8d7de074a3385a0b1db086f20"
+        },
+        "date": 1715174706151,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18914857261276377,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06582596016655345",
+            "extra": "mean: 5.286849306800002 sec\nrounds: 5"
           }
         ]
       }
