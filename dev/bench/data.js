@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715088775642,
+  "lastUpdate": 1715169028165,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "af9a21094fc3d1a13ef9e70cea28439148329ba6",
-          "message": "Increase number and duration of license retry",
-          "timestamp": "2024-04-29T16:16:44+02:00",
-          "tree_id": "a4d18ef690d27e8d6a35eb882e858ef074ac2ff8",
-          "url": "https://github.com/equinor/ert/commit/af9a21094fc3d1a13ef9e70cea28439148329ba6"
-        },
-        "date": 1714400395129,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1885887579275202,
-            "unit": "iter/sec",
-            "range": "stddev: 0.016721634358593435",
-            "extra": "mean: 5.302543009399995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.024978438985606147",
             "extra": "mean: 5.3583756087999745 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "aron@hoyer.com",
+            "name": "Aron Høyer",
+            "username": "aronhoyer"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "5371acb914ef34680f0879cca36b99e2adcb8d71",
+          "message": "Add realizations to Ensemble manager tree view",
+          "timestamp": "2024-05-08T13:47:19+02:00",
+          "tree_id": "b2c2eaa6148dab9d1ab7d9358f81b2315eb07d26",
+          "url": "https://github.com/equinor/ert/commit/5371acb914ef34680f0879cca36b99e2adcb8d71"
+        },
+        "date": 1715169027527,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18532097113739326,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03932294520084003",
+            "extra": "mean: 5.396043382799997 sec\nrounds: 5"
           }
         ]
       }
