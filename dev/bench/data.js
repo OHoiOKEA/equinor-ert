@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715174707113,
+  "lastUpdate": 1715184988399,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "ed89624ab6d4bfa51d1ad211f2c4c8f2a28c3f3e",
-          "message": "Remove dead code in plotter",
-          "timestamp": "2024-04-29T16:39:39+02:00",
-          "tree_id": "0baf88b675a6a80c788f5d0fc04ba58f4d144b3f",
-          "url": "https://github.com/equinor/ert/commit/ed89624ab6d4bfa51d1ad211f2c4c8f2a28c3f3e"
-        },
-        "date": 1714401767979,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19068932698072197,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04502763781844777",
-            "extra": "mean: 5.244131991199993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06582596016655345",
             "extra": "mean: 5.286849306800002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "4b9f66d7bb55c96b4986e4152c39a336b5331af6",
+          "message": "Fix flaky test_restarted_jobs_do_not_have_error_msgs",
+          "timestamp": "2024-05-08T18:13:14+02:00",
+          "tree_id": "14f5c9e73b32d332d93a73e73e2a88ef6b5efd2e",
+          "url": "https://github.com/equinor/ert/commit/4b9f66d7bb55c96b4986e4152c39a336b5331af6"
+        },
+        "date": 1715184987757,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19108036721266897,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06478147929431237",
+            "extra": "mean: 5.233400032599991 sec\nrounds: 5"
           }
         ]
       }
