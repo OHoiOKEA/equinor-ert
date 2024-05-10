@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715205504491,
+  "lastUpdate": 1715347744903,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "586d6ca2f36536a8f48070096d1be93f621af195",
-          "message": "Add a tab for std_dev image in plotter",
-          "timestamp": "2024-04-30T09:15:39+02:00",
-          "tree_id": "e2d3bc3df6c4dfa9a43578268e87d0022aa7c2e0",
-          "url": "https://github.com/equinor/ert/commit/586d6ca2f36536a8f48070096d1be93f621af195"
-        },
-        "date": 1714461521994,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18922799790097605,
-            "unit": "iter/sec",
-            "range": "stddev: 0.07287134970200071",
-            "extra": "mean: 5.284630240199999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06873507059059794",
             "extra": "mean: 5.341173302799985 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "e55f0d35a3c80934ea993d140daec131c1e05433",
+          "message": "Add a CSV logger for memory time profiling pr. realization\n\nLogs rss, oom_score and free memory on the compute side throughout the\ncourse of a forward model run into \"logs\" directory in runpath.\n\nrss is summed over all the subprocesses, and oom_score is max.",
+          "timestamp": "2024-05-10T15:25:37+02:00",
+          "tree_id": "d55e0aa9f8218eda259b25deaa0f1432a05e4fce",
+          "url": "https://github.com/equinor/ert/commit/e55f0d35a3c80934ea993d140daec131c1e05433"
+        },
+        "date": 1715347744213,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18913407431969803,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02661190813535818",
+            "extra": "mean: 5.287254576399993 sec\nrounds: 5"
           }
         ]
       }
