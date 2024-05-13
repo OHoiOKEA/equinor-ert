@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715588228470,
+  "lastUpdate": 1715595074541,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "181ab29bd0829f4318134c10bb204ead1e6e905c",
-          "message": "Fix flaky csv-export test",
-          "timestamp": "2024-04-30T17:14:56+02:00",
-          "tree_id": "aec0edc164d20581acbf3c086a66f746f3926577",
-          "url": "https://github.com/equinor/ert/commit/181ab29bd0829f4318134c10bb204ead1e6e905c"
-        },
-        "date": 1714490279487,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18841894490879535,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03566230071821977",
-            "extra": "mean: 5.30732193880001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04675555537103975",
             "extra": "mean: 5.285815072399975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bd52a3785cfbc8e677e6834b86975c2ab3d2786f",
+          "message": "Move mode definitions to separate module",
+          "timestamp": "2024-05-13T12:08:06+02:00",
+          "tree_id": "c1d73104b7075b8cef1df5b36c1cd1aeceb9b727",
+          "url": "https://github.com/equinor/ert/commit/bd52a3785cfbc8e677e6834b86975c2ab3d2786f"
+        },
+        "date": 1715595073872,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19019455256365195,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03141349633314996",
+            "extra": "mean: 5.257774139799994 sec\nrounds: 5"
           }
         ]
       }
