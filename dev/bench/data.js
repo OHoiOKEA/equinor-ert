@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715586792671,
+  "lastUpdate": 1715588228470,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "5ebcdba65d9bf79069e0fce2e8692716f488e96f",
-          "message": "Allow empty active realizations",
-          "timestamp": "2024-04-30T12:59:23+02:00",
-          "tree_id": "1c03e9cbe9cfaa8c2c80c882db6b685ad6b8bab2",
-          "url": "https://github.com/equinor/ert/commit/5ebcdba65d9bf79069e0fce2e8692716f488e96f"
-        },
-        "date": 1714474951552,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19015469083338765,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04782107027061702",
-            "extra": "mean: 5.258876315999975 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.011307503354466545",
             "extra": "mean: 5.33412322759998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "160077a0534c04a2a9aae192b44a9836863d73e0",
+          "message": "Avoid (unlikely) chance of all success\n\nMake gui tests more predictable by avoiding a random chance of no\nrealizations failing where the tests expect at least one failure.",
+          "timestamp": "2024-05-13T10:13:51+02:00",
+          "tree_id": "5a7bf64c7b7b6bc595505ce3014550b0ca36a7c3",
+          "url": "https://github.com/equinor/ert/commit/160077a0534c04a2a9aae192b44a9836863d73e0"
+        },
+        "date": 1715588227904,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18918558184555617,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04675555537103975",
+            "extra": "mean: 5.285815072399975 sec\nrounds: 5"
           }
         ]
       }
