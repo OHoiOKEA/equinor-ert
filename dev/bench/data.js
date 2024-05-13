@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715601097429,
+  "lastUpdate": 1715601708639,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "aron@hoyer.com",
-            "name": "Aron Høyer",
-            "username": "aronhoyer"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "0b7e5901b22ad1c8f409cbb4d3c9eac6f8ec2937",
-          "message": "Move log statement to addNode",
-          "timestamp": "2024-05-02T11:53:44+02:00",
-          "tree_id": "801b5ea5e3c41cd43de907d219d577f673566231",
-          "url": "https://github.com/equinor/ert/commit/0b7e5901b22ad1c8f409cbb4d3c9eac6f8ec2937"
-        },
-        "date": 1714643813695,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19122963277429697,
-            "unit": "iter/sec",
-            "range": "stddev: 0.036138843279390945",
-            "extra": "mean: 5.2293150674 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04401007260116538",
             "extra": "mean: 5.27492792139999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "2f77b62a54f71976f928106796578e3bdc40ee67",
+          "message": "Deprecate LSF QUEUE_OPTION LSF_SERVER",
+          "timestamp": "2024-05-13T13:58:38+02:00",
+          "tree_id": "c632154aa105cdee701f83d35e4cac22de815851",
+          "url": "https://github.com/equinor/ert/commit/2f77b62a54f71976f928106796578e3bdc40ee67"
+        },
+        "date": 1715601708086,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19145075500237507,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025240166167938474",
+            "extra": "mean: 5.22327530120001 sec\nrounds: 5"
           }
         ]
       }
