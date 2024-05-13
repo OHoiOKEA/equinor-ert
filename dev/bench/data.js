@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715595074541,
+  "lastUpdate": 1715601097429,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "a4c5d858bf81110beecaae50e1cfd923452d9be8",
-          "message": "Add timeout to test",
-          "timestamp": "2024-05-02T09:50:42+02:00",
-          "tree_id": "6c930136e2cae04fc6541d7053d5eeb30045df23",
-          "url": "https://github.com/equinor/ert/commit/a4c5d858bf81110beecaae50e1cfd923452d9be8"
-        },
-        "date": 1714636448788,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19017735872124525,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04092621949468263",
-            "extra": "mean: 5.2582494926000205 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03141349633314996",
             "extra": "mean: 5.257774139799994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "624224511be382ef68d868911679105e2bdab038",
+          "message": "Log more from scheduler when killing jobs",
+          "timestamp": "2024-05-13T13:48:29+02:00",
+          "tree_id": "851fcd380811b0ac7a7f0a56ff9004f8084aa477",
+          "url": "https://github.com/equinor/ert/commit/624224511be382ef68d868911679105e2bdab038"
+        },
+        "date": 1715601096878,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18957605011872758,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04401007260116538",
+            "extra": "mean: 5.27492792139999 sec\nrounds: 5"
           }
         ]
       }
