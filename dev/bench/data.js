@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715670920016,
+  "lastUpdate": 1715673666014,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "1e7789ee956b1d484d55f2f56946c80b264f65b2",
-          "message": "Move snapshot headerData logic for realizations to job_list.py",
-          "timestamp": "2024-05-03T07:10:19+02:00",
-          "tree_id": "2f3c7818d30a738d5d0b8b1bca17e6f63ab0f8a3",
-          "url": "https://github.com/equinor/ert/commit/1e7789ee956b1d484d55f2f56946c80b264f65b2"
-        },
-        "date": 1714713227839,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18905274515596196,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04900614616348158",
-            "extra": "mean: 5.289529116200003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03662457698694072",
             "extra": "mean: 5.293361006200001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "55bfd52fce41dbb97bdddbbfec545b6177b3e26f",
+          "message": "Reduce flakiness in memory profiling\n\nSpending some extra time (increased from 0.4s to 2s test time) to allow for\nprofiling to happen.",
+          "timestamp": "2024-05-14T09:57:50+02:00",
+          "tree_id": "454f72638115b4278cadfb000658b2ea326fab63",
+          "url": "https://github.com/equinor/ert/commit/55bfd52fce41dbb97bdddbbfec545b6177b3e26f"
+        },
+        "date": 1715673665111,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19039457872127644,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03592829270925797",
+            "extra": "mean: 5.252250388200002 sec\nrounds: 5"
           }
         ]
       }
