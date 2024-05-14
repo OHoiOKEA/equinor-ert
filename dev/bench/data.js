@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715676367165,
+  "lastUpdate": 1715687192322,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "993e03a64d5ebbd80752674208172a6bf9fd7b61",
-          "message": "Add workflow to test against everest",
-          "timestamp": "2024-05-03T10:39:00+02:00",
-          "tree_id": "a453e37ae78eead083c1a12fbee2d61582e66efc",
-          "url": "https://github.com/equinor/ert/commit/993e03a64d5ebbd80752674208172a6bf9fd7b61"
-        },
-        "date": 1714725733236,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1884711181208225,
-            "unit": "iter/sec",
-            "range": "stddev: 0.044346795205026844",
-            "extra": "mean: 5.305852748000007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.014733333377816373",
             "extra": "mean: 5.298113826399981 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "faa45eb497a9c3ea746326663c878f50e3071343",
+          "message": "Fix misleading logging statement\n\nThis log statement happens after all jobs have been stopped, so\nit should reflect what has happened correctly.",
+          "timestamp": "2024-05-14T13:43:18+02:00",
+          "tree_id": "9baaac857d3be5b2c07efe9cb427df5cb6793580",
+          "url": "https://github.com/equinor/ert/commit/faa45eb497a9c3ea746326663c878f50e3071343"
+        },
+        "date": 1715687191691,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1916722228834251,
+            "unit": "iter/sec",
+            "range": "stddev: 0.029061365637152645",
+            "extra": "mean: 5.217240062000007 sec\nrounds: 5"
           }
         ]
       }
