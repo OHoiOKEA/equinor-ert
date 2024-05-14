@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715608790288,
+  "lastUpdate": 1715669131067,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "92ff4bae808cf2b958557a6d0d4c54ed4455f686",
-          "message": "Iterate ensembles to look for history to plot",
-          "timestamp": "2024-05-02T15:05:02+02:00",
-          "tree_id": "875cf5b3a2545a6ae5722628c690481ef7fdd8f4",
-          "url": "https://github.com/equinor/ert/commit/92ff4bae808cf2b958557a6d0d4c54ed4455f686"
-        },
-        "date": 1714655310739,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18911219209169056,
-            "unit": "iter/sec",
-            "range": "stddev: 0.09958879961654699",
-            "extra": "mean: 5.287866366199978 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04865654359230059",
             "extra": "mean: 5.349643016999994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "13975dbbc479a02262262c97cf3e4a8898e96958",
+          "message": "Instruct LSF to dump stderr of submitted job to runpath\n\nThis information should not be lost, can be crucial for debugging",
+          "timestamp": "2024-05-14T08:42:08+02:00",
+          "tree_id": "be17ff96f67f71d460897e943885a2edc578760f",
+          "url": "https://github.com/equinor/ert/commit/13975dbbc479a02262262c97cf3e4a8898e96958"
+        },
+        "date": 1715669130190,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18445137077885237,
+            "unit": "iter/sec",
+            "range": "stddev: 0.041797717841137554",
+            "extra": "mean: 5.421483157199998 sec\nrounds: 5"
           }
         ]
       }
