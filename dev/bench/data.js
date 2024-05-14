@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715669131067,
+  "lastUpdate": 1715670920016,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "3a418a7e13ca2bf4f50df55394faa205ace01f38",
-          "message": "Replace Monitor with async Monitor\n\nMain features:\n- removal of sync_ws_duplexer!\n- Reconnections are handled in monitor directly\n- using asyncio.Queue to store events and provide them in await fashion\n- Add test_monitor with basic unit tests",
-          "timestamp": "2024-05-02T15:58:54+02:00",
-          "tree_id": "8d8c6674c8b8b08c18a5f933f564abc26376ca64",
-          "url": "https://github.com/equinor/ert/commit/3a418a7e13ca2bf4f50df55394faa205ace01f38"
-        },
-        "date": 1714658527134,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18800208893031378,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05960508603218225",
-            "extra": "mean: 5.319089834000022 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.041797717841137554",
             "extra": "mean: 5.421483157199998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "7cd3f71a922f3669e5f8bddb0ec2a0bc925ef9ac",
+          "message": "Improve memory usage reporting in GUI\n\nThis commit improves memory usage reporting in GUI by:\n* Having RealizationDelegate be hoverable, and displaying usage in tooltip\n* Displaying current and maximum memory usage in status bar",
+          "timestamp": "2024-05-14T09:12:05+02:00",
+          "tree_id": "01f5a12c5c62e97d588540081bba5a409d0943fa",
+          "url": "https://github.com/equinor/ert/commit/7cd3f71a922f3669e5f8bddb0ec2a0bc925ef9ac"
+        },
+        "date": 1715670919135,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18891588894630865,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03662457698694072",
+            "extra": "mean: 5.293361006200001 sec\nrounds: 5"
           }
         ]
       }
