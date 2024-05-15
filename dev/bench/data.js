@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715769880770,
+  "lastUpdate": 1715779828593,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "47f0580ff9b1ed3cb8dbd2f58c14434a19621496",
-          "message": "Revert skipping test",
-          "timestamp": "2024-05-06T08:25:54+02:00",
-          "tree_id": "4a3d510f6250c40225b7b4fa9a41f6db4b429569",
-          "url": "https://github.com/equinor/ert/commit/47f0580ff9b1ed3cb8dbd2f58c14434a19621496"
-        },
-        "date": 1714976951901,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18393859751672564,
-            "unit": "iter/sec",
-            "range": "stddev: 0.036837294679070626",
-            "extra": "mean: 5.4365968508000035 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03858054248073091",
             "extra": "mean: 5.487004711600013 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "46f3006e4c388541773630f9c0ea7db202c8385d",
+          "message": "Make start and stop time more explicit",
+          "timestamp": "2024-05-15T15:27:07+02:00",
+          "tree_id": "92d864fe02ecbd1bfd4ce7b4975cc304cfca06e9",
+          "url": "https://github.com/equinor/ert/commit/46f3006e4c388541773630f9c0ea7db202c8385d"
+        },
+        "date": 1715779827636,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18762090312573856,
+            "unit": "iter/sec",
+            "range": "stddev: 0.031319306115182424",
+            "extra": "mean: 5.329896527199992 sec\nrounds: 5"
           }
         ]
       }
