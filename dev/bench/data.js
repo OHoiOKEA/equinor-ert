@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715687192322,
+  "lastUpdate": 1715758001321,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "089de2e869a4a88f977418a7fd5b59099fe18594",
-          "message": "Update pre-commit hooks",
-          "timestamp": "2024-05-03T10:46:58+02:00",
-          "tree_id": "35b10ea55c800e5eb516b20e2007e621d3a22c8e",
-          "url": "https://github.com/equinor/ert/commit/089de2e869a4a88f977418a7fd5b59099fe18594"
-        },
-        "date": 1714726215623,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1917610386133882,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03889253880220726",
-            "extra": "mean: 5.214823653600002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029061365637152645",
             "extra": "mean: 5.217240062000007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "338202e7e475452641e1f59df97738eb81194881",
+          "message": "Trim jobs.json content",
+          "timestamp": "2024-05-15T09:23:33+02:00",
+          "tree_id": "cc72d39e4fd9478e1e151e1e1d82cb3fc0ccfbec",
+          "url": "https://github.com/equinor/ert/commit/338202e7e475452641e1f59df97738eb81194881"
+        },
+        "date": 1715758000803,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18917861489712168,
+            "unit": "iter/sec",
+            "range": "stddev: 0.059733031515944716",
+            "extra": "mean: 5.286009734999993 sec\nrounds: 5"
           }
         ]
       }
