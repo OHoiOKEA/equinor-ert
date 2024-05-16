@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715860774951,
+  "lastUpdate": 1715870208526,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "0249f3fa2c5f65a55735a952eea2cbe74fcc8dae",
-          "message": "Simplify test_check_if_runpath_exists\n\nEnsembleExperiment no longer uses facade",
-          "timestamp": "2024-05-07T10:01:05+02:00",
-          "tree_id": "6b6f49a0ee9306e6d8e52cd851044882f6caeaef",
-          "url": "https://github.com/equinor/ert/commit/0249f3fa2c5f65a55735a952eea2cbe74fcc8dae"
-        },
-        "date": 1715069082548,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18885187610136372,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0671621370643921",
-            "extra": "mean: 5.29515523299998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03901948365399913",
             "extra": "mean: 5.287028816999998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "0e4105900a6bfdae3f62794b7961bb4f934c3910",
+          "message": "Remove stray print statement",
+          "timestamp": "2024-05-16T16:33:41+02:00",
+          "tree_id": "b4ad0f03401cee65832bddb4a5df033eed370a90",
+          "url": "https://github.com/equinor/ert/commit/0e4105900a6bfdae3f62794b7961bb4f934c3910"
+        },
+        "date": 1715870208007,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18886084696756925,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03634952978487769",
+            "extra": "mean: 5.294903713800022 sec\nrounds: 5"
           }
         ]
       }
