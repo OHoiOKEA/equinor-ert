@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715857979093,
+  "lastUpdate": 1715860774951,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "698b81447f46a67985175c50cd2779aa3cf4be09",
-          "message": "Avoid redundant plot update when refreshing tabs in gui plots",
-          "timestamp": "2024-05-07T09:31:54+02:00",
-          "tree_id": "3ac7c70cc20ebc3cd3cd434e07938982b955eddc",
-          "url": "https://github.com/equinor/ert/commit/698b81447f46a67985175c50cd2779aa3cf4be09"
-        },
-        "date": 1715067300769,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18643326846655614,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05182414467248908",
-            "extra": "mean: 5.363849532999995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.009197376536691797",
             "extra": "mean: 5.282546398999995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "4681ad78fdaee34f95cab3e34a3f8cfa80dc8869",
+          "message": "Remove step_id from forward_model_runner Init message",
+          "timestamp": "2024-05-16T13:56:22+02:00",
+          "tree_id": "1e6fa64ad335fa478b2401d85d0e5a41339e9ec8",
+          "url": "https://github.com/equinor/ert/commit/4681ad78fdaee34f95cab3e34a3f8cfa80dc8869"
+        },
+        "date": 1715860774316,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1891421504616324,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03901948365399913",
+            "extra": "mean: 5.287028816999998 sec\nrounds: 5"
           }
         ]
       }
