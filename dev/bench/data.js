@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715779828593,
+  "lastUpdate": 1715844351996,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "e5350a67d30eaa70ac6490d85ff2b9f1ff45be9b",
-          "message": "Pin git for linux in workflows",
-          "timestamp": "2024-05-06T13:24:37+02:00",
-          "tree_id": "84f80f39ab5de7942ef66b927866d58741c22749",
-          "url": "https://github.com/equinor/ert/commit/e5350a67d30eaa70ac6490d85ff2b9f1ff45be9b"
-        },
-        "date": 1714994863646,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1856772839716614,
-            "unit": "iter/sec",
-            "range": "stddev: 0.021692134666189227",
-            "extra": "mean: 5.385688429999993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.031319306115182424",
             "extra": "mean: 5.329896527199992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "0937f010fffe85f4ccd6fcf0ca95cf526659741a",
+          "message": "Fix crash when FIELD has no data",
+          "timestamp": "2024-05-16T09:22:38+02:00",
+          "tree_id": "023771323555e72d8470c9fd73395424fc0900ea",
+          "url": "https://github.com/equinor/ert/commit/0937f010fffe85f4ccd6fcf0ca95cf526659741a"
+        },
+        "date": 1715844351541,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18825824196280497,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022562162599267698",
+            "extra": "mean: 5.311852429799989 sec\nrounds: 5"
           }
         ]
       }
