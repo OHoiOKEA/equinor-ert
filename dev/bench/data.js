@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715847177342,
+  "lastUpdate": 1715857979093,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "aa01aa9f6d32878676952742cd5f3e0df1645552",
-          "message": "Pin linux docker image",
-          "timestamp": "2024-05-06T15:23:19+02:00",
-          "tree_id": "fb12c4bb7bf1222e610145cf36dc8f55032dbbaf",
-          "url": "https://github.com/equinor/ert/commit/aa01aa9f6d32878676952742cd5f3e0df1645552"
-        },
-        "date": 1715002022437,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18479159754105073,
-            "unit": "iter/sec",
-            "range": "stddev: 0.08909549379311876",
-            "extra": "mean: 5.411501460599982 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04290379251026209",
             "extra": "mean: 5.264424456200009 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "4bb652e71a0f14e0dd7b4b0c205750644c59b71c",
+          "message": "Refactor gui node to use dataclasses\n\nThis commit refactors the nodes in GUI (RootNode, IterNode, RealNode,\nForwardModelNode) to use explicit dataclasses for each type instead of\nhaving the type as a field.",
+          "timestamp": "2024-05-16T13:09:30+02:00",
+          "tree_id": "1ca6e14b7289d93874d0d9e4e689184deea90836",
+          "url": "https://github.com/equinor/ert/commit/4bb652e71a0f14e0dd7b4b0c205750644c59b71c"
+        },
+        "date": 1715857978631,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18930264392742555,
+            "unit": "iter/sec",
+            "range": "stddev: 0.009197376536691797",
+            "extra": "mean: 5.282546398999995 sec\nrounds: 5"
           }
         ]
       }
