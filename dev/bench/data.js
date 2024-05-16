@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715844351996,
+  "lastUpdate": 1715847177342,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "966cfc9db3fd5b5fc6dfc22e4f2a6832146b998e",
-          "message": "Simplify how we call and parse bjobs\n\nUse the -o option to specify which columns we are interested in.\nAdd the -noheader option to remove the header from output.",
-          "timestamp": "2024-05-06T13:59:31+02:00",
-          "tree_id": "608cb67349afa53ab8ac0db83e5255a29410405b",
-          "url": "https://github.com/equinor/ert/commit/966cfc9db3fd5b5fc6dfc22e4f2a6832146b998e"
-        },
-        "date": 1714996981924,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1854526854906219,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0468397987982307",
-            "extra": "mean: 5.392210942400015 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022562162599267698",
             "extra": "mean: 5.311852429799989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "010ac789ae7977b260f85bd25e65f93b1cb17920",
+          "message": "Add a TransformFunctionDefinition dataclass",
+          "timestamp": "2024-05-16T10:09:40+02:00",
+          "tree_id": "62598a3a76bab65f63006087a028a9428b8a6ee7",
+          "url": "https://github.com/equinor/ert/commit/010ac789ae7977b260f85bd25e65f93b1cb17920"
+        },
+        "date": 1715847176456,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18995428813158893,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04290379251026209",
+            "extra": "mean: 5.264424456200009 sec\nrounds: 5"
           }
         ]
       }
