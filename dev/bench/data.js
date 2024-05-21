@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716286539064,
+  "lastUpdate": 1716291111092,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "4b9f66d7bb55c96b4986e4152c39a336b5331af6",
-          "message": "Fix flaky test_restarted_jobs_do_not_have_error_msgs",
-          "timestamp": "2024-05-08T18:13:14+02:00",
-          "tree_id": "14f5c9e73b32d332d93a73e73e2a88ef6b5efd2e",
-          "url": "https://github.com/equinor/ert/commit/4b9f66d7bb55c96b4986e4152c39a336b5331af6"
-        },
-        "date": 1715184987757,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19108036721266897,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06478147929431237",
-            "extra": "mean: 5.233400032599991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03081320633187811",
             "extra": "mean: 5.4445210428 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "hnfo@equinor.com",
+            "name": "Helena Nandi Formentin",
+            "username": "hnformentin"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "9ecf5d2fac3be417d816c5fcbe9fa5c09f178a3e",
+          "message": "Fix typo in AUTO_SCALE_OBSERVATIONS keyword documentation",
+          "timestamp": "2024-05-21T13:28:42+02:00",
+          "tree_id": "3d3d211b30185a9594ac666a16fde4ebd353a35a",
+          "url": "https://github.com/equinor/ert/commit/9ecf5d2fac3be417d816c5fcbe9fa5c09f178a3e"
+        },
+        "date": 1716291110515,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1859869908911458,
+            "unit": "iter/sec",
+            "range": "stddev: 0.019132612345426393",
+            "extra": "mean: 5.3767201416000034 sec\nrounds: 5"
           }
         ]
       }
