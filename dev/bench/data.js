@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1715870208526,
+  "lastUpdate": 1716270646788,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "6a40702e50b30b5810008ea65e1fa74de6d188c7",
-          "message": "Unpin linux docker image",
-          "timestamp": "2024-05-07T12:07:02+02:00",
-          "tree_id": "71e759d99fac1064942e1d217c66e88e8820b0f0",
-          "url": "https://github.com/equinor/ert/commit/6a40702e50b30b5810008ea65e1fa74de6d188c7"
-        },
-        "date": 1715076627506,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18394946816311386,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0851457795549432",
-            "extra": "mean: 5.436275570600008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03634952978487769",
             "extra": "mean: 5.294903713800022 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "4f015a6d74550caffba3bd61b7fa45ad1a316247",
+          "message": "Use correct plural form for zero\n\nIf there are no forward_model_steps, we should write '0 steps', not '0 step'",
+          "timestamp": "2024-05-21T07:47:17+02:00",
+          "tree_id": "0273974faca890b8c504a7e2c4ec9310b19abf28",
+          "url": "https://github.com/equinor/ert/commit/4f015a6d74550caffba3bd61b7fa45ad1a316247"
+        },
+        "date": 1716270645822,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18900721355276748,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03241451570191564",
+            "extra": "mean: 5.290803357200002 sec\nrounds: 5"
           }
         ]
       }
