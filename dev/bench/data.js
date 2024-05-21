@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716291111092,
+  "lastUpdate": 1716323100255,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "parulek@gmail.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "9b2c5669697557e21f04926a15ef7a0d8118f4f2",
-          "message": "Monitor track should exit without evaluator terminated message\n\n - Add explicit sentinel to stop receiver either when signalling cancel or done to EE\n - Test that monitor tracker can exit without the terminated event",
-          "timestamp": "2024-05-08T23:55:13+02:00",
-          "tree_id": "ab7a95c2c469612fef5a5a3bb5f01a932efd5eaf",
-          "url": "https://github.com/equinor/ert/commit/9b2c5669697557e21f04926a15ef7a0d8118f4f2"
-        },
-        "date": 1715205503848,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18722478064431528,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06873507059059794",
-            "extra": "mean: 5.341173302799985 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.019132612345426393",
             "extra": "mean: 5.3767201416000034 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "398bae891a1b5c30048ec688d6e4b930c9a41384",
+          "message": "Unpin xarray\n\nSet dimensions order on conversion to dataframe.",
+          "timestamp": "2024-05-21T22:21:45+02:00",
+          "tree_id": "03b5ad23296c54a543c5e7a6aebf72213d4db700",
+          "url": "https://github.com/equinor/ert/commit/398bae891a1b5c30048ec688d6e4b930c9a41384"
+        },
+        "date": 1716323099779,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18536110546509618,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0594710428393394",
+            "extra": "mean: 5.3948750332000035 sec\nrounds: 5"
           }
         ]
       }
