@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716274625361,
+  "lastUpdate": 1716284902815,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "aron@hoyer.com",
-            "name": "Aron Høyer",
-            "username": "aronhoyer"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "5371acb914ef34680f0879cca36b99e2adcb8d71",
-          "message": "Add realizations to Ensemble manager tree view",
-          "timestamp": "2024-05-08T13:47:19+02:00",
-          "tree_id": "b2c2eaa6148dab9d1ab7d9358f81b2315eb07d26",
-          "url": "https://github.com/equinor/ert/commit/5371acb914ef34680f0879cca36b99e2adcb8d71"
-        },
-        "date": 1715169027527,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18532097113739326,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03932294520084003",
-            "extra": "mean: 5.396043382799997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027993440949721504",
             "extra": "mean: 5.322958762200005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "536a5adf86900bdac12717f1e787f2b5b6a1daf8",
+          "message": "Change order of data in update view",
+          "timestamp": "2024-05-21T11:44:57+02:00",
+          "tree_id": "f5fae5d67c227b15a3a6d76f81debb8e7e97afa7",
+          "url": "https://github.com/equinor/ert/commit/536a5adf86900bdac12717f1e787f2b5b6a1daf8"
+        },
+        "date": 1716284902344,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1886912033708599,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06357072641641152",
+            "extra": "mean: 5.299664118599992 sec\nrounds: 5"
           }
         ]
       }
