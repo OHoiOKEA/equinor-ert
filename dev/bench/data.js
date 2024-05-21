@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716273470338,
+  "lastUpdate": 1716274625361,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "1fed69081ea569337eb5710216a01802d49f8ec7",
-          "message": "Increase tolerance in test_parameter_example",
-          "timestamp": "2024-05-07T15:29:33+02:00",
-          "tree_id": "4059a2e1e85696cba489abcf05010e6d916b6684",
-          "url": "https://github.com/equinor/ert/commit/1fed69081ea569337eb5710216a01802d49f8ec7"
-        },
-        "date": 1715088775158,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18662372200218963,
-            "unit": "iter/sec",
-            "range": "stddev: 0.024978438985606147",
-            "extra": "mean: 5.3583756087999745 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.012694467593841267",
             "extra": "mean: 5.23084476460001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "4a91161b6851a02e96be0f714c5b1def71788c73",
+          "message": "Use private simulation arguments in base run model",
+          "timestamp": "2024-05-21T08:53:51+02:00",
+          "tree_id": "e406f0b2ae6936083be2e66bccc9d2476f6851df",
+          "url": "https://github.com/equinor/ert/commit/4a91161b6851a02e96be0f714c5b1def71788c73"
+        },
+        "date": 1716274624864,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1878654418856882,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027993440949721504",
+            "extra": "mean: 5.322958762200005 sec\nrounds: 5"
           }
         ]
       }
