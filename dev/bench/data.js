@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716323100255,
+  "lastUpdate": 1716352048942,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "e55f0d35a3c80934ea993d140daec131c1e05433",
-          "message": "Add a CSV logger for memory time profiling pr. realization\n\nLogs rss, oom_score and free memory on the compute side throughout the\ncourse of a forward model run into \"logs\" directory in runpath.\n\nrss is summed over all the subprocesses, and oom_score is max.",
-          "timestamp": "2024-05-10T15:25:37+02:00",
-          "tree_id": "d55e0aa9f8218eda259b25deaa0f1432a05e4fce",
-          "url": "https://github.com/equinor/ert/commit/e55f0d35a3c80934ea993d140daec131c1e05433"
-        },
-        "date": 1715347744213,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18913407431969803,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02661190813535818",
-            "extra": "mean: 5.287254576399993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0594710428393394",
             "extra": "mean: 5.3948750332000035 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "1a8f31f3abb926a494d206ab9ed39a531c5909d5",
+          "message": "Have scheduler lsf driver dump bhist summary to runpath",
+          "timestamp": "2024-05-22T06:24:21+02:00",
+          "tree_id": "47fb7133612ee74ef73ef7496ad9b402378ae759",
+          "url": "https://github.com/equinor/ert/commit/1a8f31f3abb926a494d206ab9ed39a531c5909d5"
+        },
+        "date": 1716352048502,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.185598040905714,
+            "unit": "iter/sec",
+            "range": "stddev: 0.11131655703357478",
+            "extra": "mean: 5.387987907200011 sec\nrounds: 5"
           }
         ]
       }
