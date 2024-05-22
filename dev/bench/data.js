@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716373726813,
+  "lastUpdate": 1716377889078,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "624224511be382ef68d868911679105e2bdab038",
-          "message": "Log more from scheduler when killing jobs",
-          "timestamp": "2024-05-13T13:48:29+02:00",
-          "tree_id": "851fcd380811b0ac7a7f0a56ff9004f8084aa477",
-          "url": "https://github.com/equinor/ert/commit/624224511be382ef68d868911679105e2bdab038"
-        },
-        "date": 1715601096878,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18957605011872758,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04401007260116538",
-            "extra": "mean: 5.27492792139999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03173656213193764",
             "extra": "mean: 5.37442052959999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "0ec73be5edd7a606bd0fb5d3adeebffb19ecf488",
+          "message": "Pattern match correct casing of analysis module algorithm",
+          "timestamp": "2024-05-22T13:35:02+02:00",
+          "tree_id": "eb5ded44fb9f74f42078a3b20f85303f7174ae21",
+          "url": "https://github.com/equinor/ert/commit/0ec73be5edd7a606bd0fb5d3adeebffb19ecf488"
+        },
+        "date": 1716377888568,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18934853954564265,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02601750173722124",
+            "extra": "mean: 5.281265978600004 sec\nrounds: 5"
           }
         ]
       }
