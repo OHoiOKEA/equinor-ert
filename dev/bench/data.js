@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716364361145,
+  "lastUpdate": 1716370563428,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "160077a0534c04a2a9aae192b44a9836863d73e0",
-          "message": "Avoid (unlikely) chance of all success\n\nMake gui tests more predictable by avoiding a random chance of no\nrealizations failing where the tests expect at least one failure.",
-          "timestamp": "2024-05-13T10:13:51+02:00",
-          "tree_id": "5a7bf64c7b7b6bc595505ce3014550b0ca36a7c3",
-          "url": "https://github.com/equinor/ert/commit/160077a0534c04a2a9aae192b44a9836863d73e0"
-        },
-        "date": 1715588227904,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18918558184555617,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04675555537103975",
-            "extra": "mean: 5.285815072399975 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020073809687723123",
             "extra": "mean: 5.355021143199997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "1ff5826dc7ba63b19822e048e6768340c93fefdd",
+          "message": "Dynamically load ert.gui in workflows\n\nert.gui modifies matplotlib backend so loading these workflows would\nmake `ErtConfig.from_file` change matplotlib settings.",
+          "timestamp": "2024-05-22T11:32:54+02:00",
+          "tree_id": "4d223e5008418ffd3dfbd72c0967581d49841140",
+          "url": "https://github.com/equinor/ert/commit/1ff5826dc7ba63b19822e048e6768340c93fefdd"
+        },
+        "date": 1716370562960,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18836977073141944,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04085978758645089",
+            "extra": "mean: 5.308707422200007 sec\nrounds: 5"
           }
         ]
       }
