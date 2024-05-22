@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716352048942,
+  "lastUpdate": 1716363311476,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "a451a46d8d96e225a83edff0aaadb800b6fbef8b",
-          "message": "Pin xarray",
-          "timestamp": "2024-05-13T09:39:20+02:00",
-          "tree_id": "95551dfe13041fdb90f619df9e99a2a2bb370b23",
-          "url": "https://github.com/equinor/ert/commit/a451a46d8d96e225a83edff0aaadb800b6fbef8b"
-        },
-        "date": 1715586153959,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1932392881091307,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025550184789223027",
-            "extra": "mean: 5.174931090800004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.11131655703357478",
             "extra": "mean: 5.387987907200011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "a01366649f64bea59b52ef93c8cfc60d4863ad6b",
+          "message": "Remove C Torque driver and tests",
+          "timestamp": "2024-05-22T09:31:56+02:00",
+          "tree_id": "10a3fe7a2010085e2103f4ae8292d53bdec1afa4",
+          "url": "https://github.com/equinor/ert/commit/a01366649f64bea59b52ef93c8cfc60d4863ad6b"
+        },
+        "date": 1716363310994,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18490561637833433,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03379906561656856",
+            "extra": "mean: 5.408164552200003 sec\nrounds: 5"
           }
         ]
       }
