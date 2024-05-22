@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716377889078,
+  "lastUpdate": 1716381740925,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "2f77b62a54f71976f928106796578e3bdc40ee67",
-          "message": "Deprecate LSF QUEUE_OPTION LSF_SERVER",
-          "timestamp": "2024-05-13T13:58:38+02:00",
-          "tree_id": "c632154aa105cdee701f83d35e4cac22de815851",
-          "url": "https://github.com/equinor/ert/commit/2f77b62a54f71976f928106796578e3bdc40ee67"
-        },
-        "date": 1715601708086,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19145075500237507,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025240166167938474",
-            "extra": "mean: 5.22327530120001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02601750173722124",
             "extra": "mean: 5.281265978600004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "b63ebb1767feb9dd51018bd668934047e0b61f07",
+          "message": "Add an index column to the update log table",
+          "timestamp": "2024-05-22T14:39:11+02:00",
+          "tree_id": "718607ec3960c129369fabb710376f0e08b043e8",
+          "url": "https://github.com/equinor/ert/commit/b63ebb1767feb9dd51018bd668934047e0b61f07"
+        },
+        "date": 1716381740255,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1830265481671458,
+            "unit": "iter/sec",
+            "range": "stddev: 0.1066166499800446",
+            "extra": "mean: 5.463688246400011 sec\nrounds: 5"
           }
         ]
       }
