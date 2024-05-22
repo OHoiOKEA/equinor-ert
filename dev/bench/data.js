@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716370563428,
+  "lastUpdate": 1716373726813,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "bd52a3785cfbc8e677e6834b86975c2ab3d2786f",
-          "message": "Move mode definitions to separate module",
-          "timestamp": "2024-05-13T12:08:06+02:00",
-          "tree_id": "c1d73104b7075b8cef1df5b36c1cd1aeceb9b727",
-          "url": "https://github.com/equinor/ert/commit/bd52a3785cfbc8e677e6834b86975c2ab3d2786f"
-        },
-        "date": 1715595073872,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19019455256365195,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03141349633314996",
-            "extra": "mean: 5.257774139799994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04085978758645089",
             "extra": "mean: 5.308707422200007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "51bfb3ca7684a98cb8151321b4f2235637722ec3",
+          "message": "Fix `_get_oom_score_for_processtree(...)` not ignoring `ProcessLookupError` in `_ert_forward_model_runner/job.py`",
+          "timestamp": "2024-05-22T12:25:33+02:00",
+          "tree_id": "37ee6f1b040c3da29f81202d5fa3ab993e39189b",
+          "url": "https://github.com/equinor/ert/commit/51bfb3ca7684a98cb8151321b4f2235637722ec3"
+        },
+        "date": 1716373726205,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18606657117589354,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03173656213193764",
+            "extra": "mean: 5.37442052959999 sec\nrounds: 5"
           }
         ]
       }
