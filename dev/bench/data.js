@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716447765643,
+  "lastUpdate": 1716449421803,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "7cd3f71a922f3669e5f8bddb0ec2a0bc925ef9ac",
-          "message": "Improve memory usage reporting in GUI\n\nThis commit improves memory usage reporting in GUI by:\n* Having RealizationDelegate be hoverable, and displaying usage in tooltip\n* Displaying current and maximum memory usage in status bar",
-          "timestamp": "2024-05-14T09:12:05+02:00",
-          "tree_id": "01f5a12c5c62e97d588540081bba5a409d0943fa",
-          "url": "https://github.com/equinor/ert/commit/7cd3f71a922f3669e5f8bddb0ec2a0bc925ef9ac"
-        },
-        "date": 1715670919135,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18891588894630865,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03662457698694072",
-            "extra": "mean: 5.293361006200001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.038088784100511246",
             "extra": "mean: 5.350950553599989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "bf6d58c0eb3286244fd6393c754e1746904b88ee",
+          "message": "Allow larger columns for treeview in manage experiments",
+          "timestamp": "2024-05-23T09:27:12+02:00",
+          "tree_id": "72cc880f5565d5f9786921bdd0f51020902cc8ab",
+          "url": "https://github.com/equinor/ert/commit/bf6d58c0eb3286244fd6393c754e1746904b88ee"
+        },
+        "date": 1716449421386,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19072265070629196,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02705144004464792",
+            "extra": "mean: 5.243215718200008 sec\nrounds: 5"
           }
         ]
       }
