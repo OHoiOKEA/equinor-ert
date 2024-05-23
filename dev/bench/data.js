@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716445424599,
+  "lastUpdate": 1716447765643,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "13975dbbc479a02262262c97cf3e4a8898e96958",
-          "message": "Instruct LSF to dump stderr of submitted job to runpath\n\nThis information should not be lost, can be crucial for debugging",
-          "timestamp": "2024-05-14T08:42:08+02:00",
-          "tree_id": "be17ff96f67f71d460897e943885a2edc578760f",
-          "url": "https://github.com/equinor/ert/commit/13975dbbc479a02262262c97cf3e4a8898e96958"
-        },
-        "date": 1715669130190,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18445137077885237,
-            "unit": "iter/sec",
-            "range": "stddev: 0.041797717841137554",
-            "extra": "mean: 5.421483157199998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02548414476803908",
             "extra": "mean: 5.234595320400013 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "2589eb39cb4c3cc0f6c0a74191082208a9c8475a",
+          "message": "Plot observation if found",
+          "timestamp": "2024-05-23T08:59:28+02:00",
+          "tree_id": "6e3b168516fc1a11e50379e11ccae8767c64c4ed",
+          "url": "https://github.com/equinor/ert/commit/2589eb39cb4c3cc0f6c0a74191082208a9c8475a"
+        },
+        "date": 1716447764727,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18688268373685948,
+            "unit": "iter/sec",
+            "range": "stddev: 0.038088784100511246",
+            "extra": "mean: 5.350950553599989 sec\nrounds: 5"
           }
         ]
       }
