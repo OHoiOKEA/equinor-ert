@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716381740925,
+  "lastUpdate": 1716445424599,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "a02d71d91e48b8df1ebdcf4326c3ad68f1a1a19a",
-          "message": "Enable Scheduler for LSF Queue by default\n\n- Explicitly disable scheduler for job_queue test",
-          "timestamp": "2024-05-13T15:56:29+02:00",
-          "tree_id": "018900a552c6d66bbc1a528689709132f924aeec",
-          "url": "https://github.com/equinor/ert/commit/a02d71d91e48b8df1ebdcf4326c3ad68f1a1a19a"
-        },
-        "date": 1715608789227,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18692836079383596,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04865654359230059",
-            "extra": "mean: 5.349643016999994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.1066166499800446",
             "extra": "mean: 5.463688246400011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "2c5831e574cf72697ea36dddfbcbeebec8ac1410",
+          "message": "Fix restart enabling logic",
+          "timestamp": "2024-05-23T08:20:11+02:00",
+          "tree_id": "1ea288d106400a93aaced9fdabd30f3dbb4d4f66",
+          "url": "https://github.com/equinor/ert/commit/2c5831e574cf72697ea36dddfbcbeebec8ac1410"
+        },
+        "date": 1716445423965,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1910367351804347,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02548414476803908",
+            "extra": "mean: 5.234595320400013 sec\nrounds: 5"
           }
         ]
       }
