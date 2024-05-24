@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716554763995,
+  "lastUpdate": 1716559489992,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "faa45eb497a9c3ea746326663c878f50e3071343",
-          "message": "Fix misleading logging statement\n\nThis log statement happens after all jobs have been stopped, so\nit should reflect what has happened correctly.",
-          "timestamp": "2024-05-14T13:43:18+02:00",
-          "tree_id": "9baaac857d3be5b2c07efe9cb427df5cb6793580",
-          "url": "https://github.com/equinor/ert/commit/faa45eb497a9c3ea746326663c878f50e3071343"
-        },
-        "date": 1715687191691,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1916722228834251,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029061365637152645",
-            "extra": "mean: 5.217240062000007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.07899567312985205",
             "extra": "mean: 5.365897490399982 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "parulek@gmail.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "11196173684c072e31437f50f0df614869721f4c",
+          "message": "Add driver status message when job fails\n\nThis includes a log from the actual submit command and the output of the\njob files; ie. append logging information from the LSF-out and LSF-err\nfiles into the logging.",
+          "timestamp": "2024-05-24T16:01:48+02:00",
+          "tree_id": "8be4f3229890971754aacc65b7d41f76796e52dd",
+          "url": "https://github.com/equinor/ert/commit/11196173684c072e31437f50f0df614869721f4c"
+        },
+        "date": 1716559489472,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18723856859796786,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02348117473376272",
+            "extra": "mean: 5.340779987199994 sec\nrounds: 5"
           }
         ]
       }
