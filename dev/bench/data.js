@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716449421803,
+  "lastUpdate": 1716539146137,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "55bfd52fce41dbb97bdddbbfec545b6177b3e26f",
-          "message": "Reduce flakiness in memory profiling\n\nSpending some extra time (increased from 0.4s to 2s test time) to allow for\nprofiling to happen.",
-          "timestamp": "2024-05-14T09:57:50+02:00",
-          "tree_id": "454f72638115b4278cadfb000658b2ea326fab63",
-          "url": "https://github.com/equinor/ert/commit/55bfd52fce41dbb97bdddbbfec545b6177b3e26f"
-        },
-        "date": 1715673665111,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19039457872127644,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03592829270925797",
-            "extra": "mean: 5.252250388200002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02705144004464792",
             "extra": "mean: 5.243215718200008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "oyveid@equinor.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "4acd828598dd76d5a9e7fd2e5ae72a29bd64f8d6",
+          "message": "Update docs for GEN_KW",
+          "timestamp": "2024-05-24T10:21:52+02:00",
+          "tree_id": "2bfbc2e4c6c4f4fded993d04055e88c3000eeaa8",
+          "url": "https://github.com/equinor/ert/commit/4acd828598dd76d5a9e7fd2e5ae72a29bd64f8d6"
+        },
+        "date": 1716539145469,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18801107915793464,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03282934732803246",
+            "extra": "mean: 5.318835488199989 sec\nrounds: 5"
           }
         ]
       }
