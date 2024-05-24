@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716539146137,
+  "lastUpdate": 1716548195098,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "helena.formentin@gmail.com",
-            "name": "hnformentin",
-            "username": "hnformentin"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "01dce18fafbf874f691938b3e6eb3ca343d937c5",
-          "message": "Fix typos in release notes ert 9.0",
-          "timestamp": "2024-05-14T10:26:19+02:00",
-          "tree_id": "8e231d4fae19fbb4d40a1137a2e9b090af88c7d6",
-          "url": "https://github.com/equinor/ert/commit/01dce18fafbf874f691938b3e6eb3ca343d937c5"
-        },
-        "date": 1715675391200,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18942983942674568,
-            "unit": "iter/sec",
-            "range": "stddev: 0.013677516461224243",
-            "extra": "mean: 5.278999354199999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03282934732803246",
             "extra": "mean: 5.318835488199989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "7203e03adab656a5465f6e37e1b0cb426ee70338",
+          "message": "Update block_storage hash",
+          "timestamp": "2024-05-24T12:53:30+02:00",
+          "tree_id": "2e2849196c12efd998e99fdfb4ee975cec3553d8",
+          "url": "https://github.com/equinor/ert/commit/7203e03adab656a5465f6e37e1b0cb426ee70338"
+        },
+        "date": 1716548194652,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18960196696623852,
+            "unit": "iter/sec",
+            "range": "stddev: 0.10436338026735494",
+            "extra": "mean: 5.274206887199989 sec\nrounds: 5"
           }
         ]
       }
