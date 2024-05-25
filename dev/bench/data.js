@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716559489992,
+  "lastUpdate": 1716671593141,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "338202e7e475452641e1f59df97738eb81194881",
-          "message": "Trim jobs.json content",
-          "timestamp": "2024-05-15T09:23:33+02:00",
-          "tree_id": "cc72d39e4fd9478e1e151e1e1d82cb3fc0ccfbec",
-          "url": "https://github.com/equinor/ert/commit/338202e7e475452641e1f59df97738eb81194881"
-        },
-        "date": 1715758000803,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18917861489712168,
-            "unit": "iter/sec",
-            "range": "stddev: 0.059733031515944716",
-            "extra": "mean: 5.286009734999993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02348117473376272",
             "extra": "mean: 5.340779987199994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "23fc482bb2366576fc0b154f3df2406bdde40108",
+          "message": "Change default MAX_SUBMIT to 1\n\nWe do not want resubmission to happen by default for realizations that\nfail. Forward model setups may or may not be compatible with\nresubmissions, and flakyness should not be assumed by default.",
+          "timestamp": "2024-05-25T23:10:13+02:00",
+          "tree_id": "c16a95ce046a11a6e6c5e6a849bc6dfbffd40c2e",
+          "url": "https://github.com/equinor/ert/commit/23fc482bb2366576fc0b154f3df2406bdde40108"
+        },
+        "date": 1716671592663,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1924993703646856,
+            "unit": "iter/sec",
+            "range": "stddev: 0.023383957460333626",
+            "extra": "mean: 5.194822186200002 sec\nrounds: 5"
           }
         ]
       }
