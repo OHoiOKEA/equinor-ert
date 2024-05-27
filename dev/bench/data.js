@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716815456803,
+  "lastUpdate": 1716815673100,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "010ac789ae7977b260f85bd25e65f93b1cb17920",
-          "message": "Add a TransformFunctionDefinition dataclass",
-          "timestamp": "2024-05-16T10:09:40+02:00",
-          "tree_id": "62598a3a76bab65f63006087a028a9428b8a6ee7",
-          "url": "https://github.com/equinor/ert/commit/010ac789ae7977b260f85bd25e65f93b1cb17920"
-        },
-        "date": 1715847176456,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18995428813158893,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04290379251026209",
-            "extra": "mean: 5.264424456200009 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02281427511570736",
             "extra": "mean: 5.301104103800003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "e6997464dc8a43a99b67615d521ee7f2edef303d",
+          "message": "Simplify onKeyPress logic",
+          "timestamp": "2024-05-27T15:10:58+02:00",
+          "tree_id": "2df4da057d50368c5ccb328678f6d88349f2c5f3",
+          "url": "https://github.com/equinor/ert/commit/e6997464dc8a43a99b67615d521ee7f2edef303d"
+        },
+        "date": 1716815672144,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18573150135393912,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04062006256907303",
+            "extra": "mean: 5.384116279199998 sec\nrounds: 5"
           }
         ]
       }
