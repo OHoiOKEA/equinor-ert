@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716803909963,
+  "lastUpdate": 1716809541370,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "46f3006e4c388541773630f9c0ea7db202c8385d",
-          "message": "Make start and stop time more explicit",
-          "timestamp": "2024-05-15T15:27:07+02:00",
-          "tree_id": "92d864fe02ecbd1bfd4ce7b4975cc304cfca06e9",
-          "url": "https://github.com/equinor/ert/commit/46f3006e4c388541773630f9c0ea7db202c8385d"
-        },
-        "date": 1715779827636,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18762090312573856,
-            "unit": "iter/sec",
-            "range": "stddev: 0.031319306115182424",
-            "extra": "mean: 5.329896527199992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.014595440938869038",
             "extra": "mean: 5.250619615200003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "706806d3f1d14a55aab73608a5b57c43ce228d3a",
+          "message": "Add created at for experiment in GUI",
+          "timestamp": "2024-05-27T13:29:16+02:00",
+          "tree_id": "27bb02dccca4160279e6f62a000ce96317cabdf0",
+          "url": "https://github.com/equinor/ert/commit/706806d3f1d14a55aab73608a5b57c43ce228d3a"
+        },
+        "date": 1716809540830,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18735262057857777,
+            "unit": "iter/sec",
+            "range": "stddev: 0.015201454741138628",
+            "extra": "mean: 5.337528756800009 sec\nrounds: 5"
           }
         ]
       }
