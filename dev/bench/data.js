@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716809541370,
+  "lastUpdate": 1716815456803,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "0937f010fffe85f4ccd6fcf0ca95cf526659741a",
-          "message": "Fix crash when FIELD has no data",
-          "timestamp": "2024-05-16T09:22:38+02:00",
-          "tree_id": "023771323555e72d8470c9fd73395424fc0900ea",
-          "url": "https://github.com/equinor/ert/commit/0937f010fffe85f4ccd6fcf0ca95cf526659741a"
-        },
-        "date": 1715844351541,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18825824196280497,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022562162599267698",
-            "extra": "mean: 5.311852429799989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.015201454741138628",
             "extra": "mean: 5.337528756800009 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "a5e3d53aa6bdafa0e5ded7377a9bd8439e130da0",
+          "message": "Change which lines are ignored in coverage",
+          "timestamp": "2024-05-27T15:07:47+02:00",
+          "tree_id": "e353f196fb582fd29584b63cdbdbe92a41b4f2a5",
+          "url": "https://github.com/equinor/ert/commit/a5e3d53aa6bdafa0e5ded7377a9bd8439e130da0"
+        },
+        "date": 1716815456310,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18863994753152794,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02281427511570736",
+            "extra": "mean: 5.301104103800003 sec\nrounds: 5"
           }
         ]
       }
