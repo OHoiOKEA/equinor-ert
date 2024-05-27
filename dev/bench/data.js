@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716825634483,
+  "lastUpdate": 1716835639083,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "0e4105900a6bfdae3f62794b7961bb4f934c3910",
-          "message": "Remove stray print statement",
-          "timestamp": "2024-05-16T16:33:41+02:00",
-          "tree_id": "b4ad0f03401cee65832bddb4a5df033eed370a90",
-          "url": "https://github.com/equinor/ert/commit/0e4105900a6bfdae3f62794b7961bb4f934c3910"
-        },
-        "date": 1715870208007,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18886084696756925,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03634952978487769",
-            "extra": "mean: 5.294903713800022 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.21576818155222338",
             "extra": "mean: 5.396087687800002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "53503e1a238b08536036d3d2b9377ada1c70aa0b",
+          "message": "Move get_machine_name to a more public place\n\nAs this function is used outside of ert, it should not be hidden below\nensemble_evalutor.config.\n\nport_handler.py serves as a placeholder for the code, but the function\nbut exposed and should be used as ert.shared.get_machine.name()",
+          "timestamp": "2024-05-27T20:44:01+02:00",
+          "tree_id": "0c94da6711cbafe0509af9063e5513f3f477f054",
+          "url": "https://github.com/equinor/ert/commit/53503e1a238b08536036d3d2b9377ada1c70aa0b"
+        },
+        "date": 1716835638210,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18820287299590832,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027588123933779244",
+            "extra": "mean: 5.313415167800019 sec\nrounds: 5"
           }
         ]
       }
