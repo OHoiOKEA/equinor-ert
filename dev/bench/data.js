@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716816909936,
+  "lastUpdate": 1716825634483,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "4681ad78fdaee34f95cab3e34a3f8cfa80dc8869",
-          "message": "Remove step_id from forward_model_runner Init message",
-          "timestamp": "2024-05-16T13:56:22+02:00",
-          "tree_id": "1e6fa64ad335fa478b2401d85d0e5a41339e9ec8",
-          "url": "https://github.com/equinor/ert/commit/4681ad78fdaee34f95cab3e34a3f8cfa80dc8869"
-        },
-        "date": 1715860774316,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1891421504616324,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03901948365399913",
-            "extra": "mean: 5.287028816999998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0399643459484822",
             "extra": "mean: 5.259538888999998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "0a55f0a194b6f3cf1aa1de46ffe6ca8bfc5167d2",
+          "message": "Let monitor emit optional heartbeats\n\nThis allows the base_run_model to also being able to\ncheck regularly if there are other tasks at hand, like terminating\nthe experiment.",
+          "timestamp": "2024-05-27T17:57:29+02:00",
+          "tree_id": "36df374dfd1c9d01edef85672a36967697f0b52d",
+          "url": "https://github.com/equinor/ert/commit/0a55f0a194b6f3cf1aa1de46ffe6ca8bfc5167d2"
+        },
+        "date": 1716825633986,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18531944954506518,
+            "unit": "iter/sec",
+            "range": "stddev: 0.21576818155222338",
+            "extra": "mean: 5.396087687800002 sec\nrounds: 5"
           }
         ]
       }
