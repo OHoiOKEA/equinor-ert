@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716815673100,
+  "lastUpdate": 1716816909936,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "4bb652e71a0f14e0dd7b4b0c205750644c59b71c",
-          "message": "Refactor gui node to use dataclasses\n\nThis commit refactors the nodes in GUI (RootNode, IterNode, RealNode,\nForwardModelNode) to use explicit dataclasses for each type instead of\nhaving the type as a field.",
-          "timestamp": "2024-05-16T13:09:30+02:00",
-          "tree_id": "1ca6e14b7289d93874d0d9e4e689184deea90836",
-          "url": "https://github.com/equinor/ert/commit/4bb652e71a0f14e0dd7b4b0c205750644c59b71c"
-        },
-        "date": 1715857978631,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18930264392742555,
-            "unit": "iter/sec",
-            "range": "stddev: 0.009197376536691797",
-            "extra": "mean: 5.282546398999995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04062006256907303",
             "extra": "mean: 5.384116279199998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "9e4fb6aed0d2650f90fa59a24ba2e7e7cac19a0c",
+          "message": "Avoid using abspath for commands\n\nIf the user specifies a command we would like to avoid\nhardcoding the path to it in case job_dispatch.py runs\nin a different environment.",
+          "timestamp": "2024-05-27T15:32:05+02:00",
+          "tree_id": "3481ea712376b969cb2ba3537be08181bb675f27",
+          "url": "https://github.com/equinor/ert/commit/9e4fb6aed0d2650f90fa59a24ba2e7e7cac19a0c"
+        },
+        "date": 1716816909453,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19013073600262534,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0399643459484822",
+            "extra": "mean: 5.259538888999998 sec\nrounds: 5"
           }
         ]
       }
