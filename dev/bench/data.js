@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716835639083,
+  "lastUpdate": 1716881013877,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "4f015a6d74550caffba3bd61b7fa45ad1a316247",
-          "message": "Use correct plural form for zero\n\nIf there are no forward_model_steps, we should write '0 steps', not '0 step'",
-          "timestamp": "2024-05-21T07:47:17+02:00",
-          "tree_id": "0273974faca890b8c504a7e2c4ec9310b19abf28",
-          "url": "https://github.com/equinor/ert/commit/4f015a6d74550caffba3bd61b7fa45ad1a316247"
-        },
-        "date": 1716270645822,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18900721355276748,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03241451570191564",
-            "extra": "mean: 5.290803357200002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027588123933779244",
             "extra": "mean: 5.313415167800019 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "a5273b53fcd5869e42b4b5df7c7fc79acd82a028",
+          "message": "Combine obs & ds",
+          "timestamp": "2024-05-28T09:19:47+02:00",
+          "tree_id": "a6b4debbf7b837282d021702b06a2637082dc9b1",
+          "url": "https://github.com/equinor/ert/commit/a5273b53fcd5869e42b4b5df7c7fc79acd82a028"
+        },
+        "date": 1716881013217,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16593640890068945,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0184637985756995",
+            "extra": "mean: 6.0264049742 sec\nrounds: 5"
           }
         ]
       }
