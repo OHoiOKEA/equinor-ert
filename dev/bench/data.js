@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716881013877,
+  "lastUpdate": 1716881179971,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "72e5ea7a125754c695a98cfc9915cc70a1087bd9",
-          "message": "Add version 10 highlights to release notes",
-          "timestamp": "2024-05-21T08:34:42+02:00",
-          "tree_id": "5fdfd93434960564e64193fafe70cce64ad12efb",
-          "url": "https://github.com/equinor/ert/commit/72e5ea7a125754c695a98cfc9915cc70a1087bd9"
-        },
-        "date": 1716273469823,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19117370998419744,
-            "unit": "iter/sec",
-            "range": "stddev: 0.012694467593841267",
-            "extra": "mean: 5.23084476460001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0184637985756995",
             "extra": "mean: 6.0264049742 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "9f9307b7eec9e7db8ed38218c37aad6570ab097f",
+          "message": "Log queue system used when logging orchestrator",
+          "timestamp": "2024-05-28T09:22:50+02:00",
+          "tree_id": "edc5a8242b3ee852e171f9114d433603fac6a3e3",
+          "url": "https://github.com/equinor/ert/commit/9f9307b7eec9e7db8ed38218c37aad6570ab097f"
+        },
+        "date": 1716881179245,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16615404285242097,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02789107777258859",
+            "extra": "mean: 6.0185113936000105 sec\nrounds: 5"
           }
         ]
       }
