@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716881275382,
+  "lastUpdate": 1716881676153,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "536a5adf86900bdac12717f1e787f2b5b6a1daf8",
-          "message": "Change order of data in update view",
-          "timestamp": "2024-05-21T11:44:57+02:00",
-          "tree_id": "f5fae5d67c227b15a3a6d76f81debb8e7e97afa7",
-          "url": "https://github.com/equinor/ert/commit/536a5adf86900bdac12717f1e787f2b5b6a1daf8"
-        },
-        "date": 1716284902344,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1886912033708599,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06357072641641152",
-            "extra": "mean: 5.299664118599992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02449556846425206",
             "extra": "mean: 6.04836856280001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "24f69370232dc86110502c5e8fd1d076c7560768",
+          "message": "Simplify calculation of weights to run in ES-MDA",
+          "timestamp": "2024-05-28T09:31:06+02:00",
+          "tree_id": "b171b5bd41f59ccbdfff62e71ab951863b12fe7a",
+          "url": "https://github.com/equinor/ert/commit/24f69370232dc86110502c5e8fd1d076c7560768"
+        },
+        "date": 1716881675482,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16561984072603428,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03292258098446924",
+            "extra": "mean: 6.037923932400008 sec\nrounds: 5"
           }
         ]
       }
