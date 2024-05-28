@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716895218869,
+  "lastUpdate": 1716895586792,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "1a8f31f3abb926a494d206ab9ed39a531c5909d5",
-          "message": "Have scheduler lsf driver dump bhist summary to runpath",
-          "timestamp": "2024-05-22T06:24:21+02:00",
-          "tree_id": "47fb7133612ee74ef73ef7496ad9b402378ae759",
-          "url": "https://github.com/equinor/ert/commit/1a8f31f3abb926a494d206ab9ed39a531c5909d5"
-        },
-        "date": 1716352048502,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.185598040905714,
-            "unit": "iter/sec",
-            "range": "stddev: 0.11131655703357478",
-            "extra": "mean: 5.387987907200011 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0139784009324507",
             "extra": "mean: 6.008982237400005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c2dcf4027c743284114bb16a85eac247bc958693",
+          "message": "Significant correlations\n\nSave cross correlations for genkw",
+          "timestamp": "2024-05-28T13:22:58+02:00",
+          "tree_id": "c06da354172a50900da0c8c75df2160e4db8dcc2",
+          "url": "https://github.com/equinor/ert/commit/c2dcf4027c743284114bb16a85eac247bc958693"
+        },
+        "date": 1716895586081,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16536975521579753,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06171677007115376",
+            "extra": "mean: 6.047054968999987 sec\nrounds: 5"
           }
         ]
       }
