@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716895586792,
+  "lastUpdate": 1716907537791,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "a01366649f64bea59b52ef93c8cfc60d4863ad6b",
-          "message": "Remove C Torque driver and tests",
-          "timestamp": "2024-05-22T09:31:56+02:00",
-          "tree_id": "10a3fe7a2010085e2103f4ae8292d53bdec1afa4",
-          "url": "https://github.com/equinor/ert/commit/a01366649f64bea59b52ef93c8cfc60d4863ad6b"
-        },
-        "date": 1716363310994,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18490561637833433,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03379906561656856",
-            "extra": "mean: 5.408164552200003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06171677007115376",
             "extra": "mean: 6.047054968999987 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "b134a136bc787e2c34d8aa6cfbfacf81349716bb",
+          "message": "Use split over rsplit to handle comments in gen_kw_config",
+          "timestamp": "2024-05-28T16:42:14+02:00",
+          "tree_id": "566438c7b3557a8337dab6f330d72f2f8a325afa",
+          "url": "https://github.com/equinor/ert/commit/b134a136bc787e2c34d8aa6cfbfacf81349716bb"
+        },
+        "date": 1716907537133,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16411504698861334,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05656193015030776",
+            "extra": "mean: 6.093286498400005 sec\nrounds: 5"
           }
         ]
       }
