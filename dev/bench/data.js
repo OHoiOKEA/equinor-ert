@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716889835392,
+  "lastUpdate": 1716895218869,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "398bae891a1b5c30048ec688d6e4b930c9a41384",
-          "message": "Unpin xarray\n\nSet dimensions order on conversion to dataframe.",
-          "timestamp": "2024-05-21T22:21:45+02:00",
-          "tree_id": "03b5ad23296c54a543c5e7a6aebf72213d4db700",
-          "url": "https://github.com/equinor/ert/commit/398bae891a1b5c30048ec688d6e4b930c9a41384"
-        },
-        "date": 1716323099779,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18536110546509618,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0594710428393394",
-            "extra": "mean: 5.3948750332000035 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05309656711778124",
             "extra": "mean: 6.1328551287999975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5fdde19cfc17ce41f5e357f278d9c89c8efcefc0",
+          "message": "Fix logic in _get_response_name_for_obs_name",
+          "timestamp": "2024-05-28T13:16:58+02:00",
+          "tree_id": "44edb460c4ab10ab679d96cc5c01de4f201addcf",
+          "url": "https://github.com/equinor/ert/commit/5fdde19cfc17ce41f5e357f278d9c89c8efcefc0"
+        },
+        "date": 1716895217960,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16641753303512588,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0139784009324507",
+            "extra": "mean: 6.008982237400005 sec\nrounds: 5"
           }
         ]
       }
