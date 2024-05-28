@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716881676153,
+  "lastUpdate": 1716882948396,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "1e6c0fc58810d47872a87842f99fa49528ba3c44",
-          "message": "Update config guide with more observations\n\nCo-authored-by: Øyvind Eide <44577479+oyvindeide@users.noreply.github.com>",
-          "timestamp": "2024-05-21T12:12:20+02:00",
-          "tree_id": "5b09f329672631f29a29732b548114539082474d",
-          "url": "https://github.com/equinor/ert/commit/1e6c0fc58810d47872a87842f99fa49528ba3c44"
-        },
-        "date": 1716286538216,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18367088530632653,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03081320633187811",
-            "extra": "mean: 5.4445210428 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03292258098446924",
             "extra": "mean: 6.037923932400008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "d8f401241d02893e2e5ec03ca4d1d8eca7c8e219",
+          "message": "Add test for new cmd behavior",
+          "timestamp": "2024-05-28T09:52:27+02:00",
+          "tree_id": "cb3a62556dd9b3967fccdbc98d9513f5b51835ac",
+          "url": "https://github.com/equinor/ert/commit/d8f401241d02893e2e5ec03ca4d1d8eca7c8e219"
+        },
+        "date": 1716882947447,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16456132595671227,
+            "unit": "iter/sec",
+            "range": "stddev: 0.012013310259034226",
+            "extra": "mean: 6.076761925599999 sec\nrounds: 5"
           }
         ]
       }
