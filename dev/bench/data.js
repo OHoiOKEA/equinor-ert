@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716882948396,
+  "lastUpdate": 1716889835392,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "hnfo@equinor.com",
-            "name": "Helena Nandi Formentin",
-            "username": "hnformentin"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "9ecf5d2fac3be417d816c5fcbe9fa5c09f178a3e",
-          "message": "Fix typo in AUTO_SCALE_OBSERVATIONS keyword documentation",
-          "timestamp": "2024-05-21T13:28:42+02:00",
-          "tree_id": "3d3d211b30185a9594ac666a16fde4ebd353a35a",
-          "url": "https://github.com/equinor/ert/commit/9ecf5d2fac3be417d816c5fcbe9fa5c09f178a3e"
-        },
-        "date": 1716291110515,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1859869908911458,
-            "unit": "iter/sec",
-            "range": "stddev: 0.019132612345426393",
-            "extra": "mean: 5.3767201416000034 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.012013310259034226",
             "extra": "mean: 6.076761925599999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "c4df16ac0b3838ba21dd0f5d9497e26f36f28506",
+          "message": "Add icon to ert",
+          "timestamp": "2024-05-28T11:46:56+02:00",
+          "tree_id": "be292ced5c773971046ddbf307973c5c8270884c",
+          "url": "https://github.com/equinor/ert/commit/c4df16ac0b3838ba21dd0f5d9497e26f36f28506"
+        },
+        "date": 1716889834689,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1630561914472726,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05309656711778124",
+            "extra": "mean: 6.1328551287999975 sec\nrounds: 5"
           }
         ]
       }
