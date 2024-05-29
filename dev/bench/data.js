@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716971947056,
+  "lastUpdate": 1716976355547,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "51bfb3ca7684a98cb8151321b4f2235637722ec3",
-          "message": "Fix `_get_oom_score_for_processtree(...)` not ignoring `ProcessLookupError` in `_ert_forward_model_runner/job.py`",
-          "timestamp": "2024-05-22T12:25:33+02:00",
-          "tree_id": "37ee6f1b040c3da29f81202d5fa3ab993e39189b",
-          "url": "https://github.com/equinor/ert/commit/51bfb3ca7684a98cb8151321b4f2235637722ec3"
-        },
-        "date": 1716373726205,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18606657117589354,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03173656213193764",
-            "extra": "mean: 5.37442052959999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03260041906627047",
             "extra": "mean: 6.044470543800003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "70a8272d3579a4bb496d0c85bcc7b3262fd9e82d",
+          "message": "Add heartbeat to test_run_and_cancel_legacy_ensemble",
+          "timestamp": "2024-05-29T11:49:27+02:00",
+          "tree_id": "6ff4bd1d7668fedc5594233643134bc1310d906b",
+          "url": "https://github.com/equinor/ert/commit/70a8272d3579a4bb496d0c85bcc7b3262fd9e82d"
+        },
+        "date": 1716976355013,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16749169771793035,
+            "unit": "iter/sec",
+            "range": "stddev: 0.011759748362695456",
+            "extra": "mean: 5.970445183999994 sec\nrounds: 5"
           }
         ]
       }
