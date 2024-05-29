@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716976623633,
+  "lastUpdate": 1716980593899,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "b63ebb1767feb9dd51018bd668934047e0b61f07",
-          "message": "Add an index column to the update log table",
-          "timestamp": "2024-05-22T14:39:11+02:00",
-          "tree_id": "718607ec3960c129369fabb710376f0e08b043e8",
-          "url": "https://github.com/equinor/ert/commit/b63ebb1767feb9dd51018bd668934047e0b61f07"
-        },
-        "date": 1716381740255,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1830265481671458,
-            "unit": "iter/sec",
-            "range": "stddev: 0.1066166499800446",
-            "extra": "mean: 5.463688246400011 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03015486474888436",
             "extra": "mean: 6.1478588241999885 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "7051849dd1824542dd1180f0c53b0374b8d21881",
+          "message": "Add out-of-memory detection\n\nWhenever a realization fails the output of dmesg is checked to see if there\nare any signs of known pids having been killed by the operating system\n\nAdd an integration test that will exhaust all available memory (by\ndefault, this test is not active) and assert that Ert picks up the cause\nof the realization failing.",
+          "timestamp": "2024-05-29T12:59:56+02:00",
+          "tree_id": "fcfd0e07cfefe4b8c9fdc057954f10c7c4571fd0",
+          "url": "https://github.com/equinor/ert/commit/7051849dd1824542dd1180f0c53b0374b8d21881"
+        },
+        "date": 1716980592944,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16761853883056493,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06406676983223913",
+            "extra": "mean: 5.965927199800001 sec\nrounds: 5"
           }
         ]
       }
