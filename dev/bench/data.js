@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716976355547,
+  "lastUpdate": 1716976623633,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "0ec73be5edd7a606bd0fb5d3adeebffb19ecf488",
-          "message": "Pattern match correct casing of analysis module algorithm",
-          "timestamp": "2024-05-22T13:35:02+02:00",
-          "tree_id": "eb5ded44fb9f74f42078a3b20f85303f7174ae21",
-          "url": "https://github.com/equinor/ert/commit/0ec73be5edd7a606bd0fb5d3adeebffb19ecf488"
-        },
-        "date": 1716377888568,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18934853954564265,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02601750173722124",
-            "extra": "mean: 5.281265978600004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.011759748362695456",
             "extra": "mean: 5.970445183999994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "976f5b2f537284d407ffc86b5ff6c812a400b710",
+          "message": "Add application name to gui initialization",
+          "timestamp": "2024-05-29T11:53:44+02:00",
+          "tree_id": "cb39611fa5e8fb87b71c6aaeec7cb61a73ff117e",
+          "url": "https://github.com/equinor/ert/commit/976f5b2f537284d407ffc86b5ff6c812a400b710"
+        },
+        "date": 1716976622901,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16265825689810443,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03015486474888436",
+            "extra": "mean: 6.1478588241999885 sec\nrounds: 5"
           }
         ]
       }
