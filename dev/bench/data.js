@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716988869495,
+  "lastUpdate": 1716988914824,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "2589eb39cb4c3cc0f6c0a74191082208a9c8475a",
-          "message": "Plot observation if found",
-          "timestamp": "2024-05-23T08:59:28+02:00",
-          "tree_id": "6e3b168516fc1a11e50379e11ccae8767c64c4ed",
-          "url": "https://github.com/equinor/ert/commit/2589eb39cb4c3cc0f6c0a74191082208a9c8475a"
-        },
-        "date": 1716447764727,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18688268373685948,
-            "unit": "iter/sec",
-            "range": "stddev: 0.038088784100511246",
-            "extra": "mean: 5.350950553599989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.044761461029902014",
             "extra": "mean: 6.046861521200003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "863208e04734bb183677981ae393216ae70a9717",
+          "message": "Close websocket connection once the receiver task was cancelled\n\nMonitor should cancel the receiver task before closing the websockets.",
+          "timestamp": "2024-05-29T15:18:36+02:00",
+          "tree_id": "58a70ce2a8569b1d9e297730ab9cc6ce407abe42",
+          "url": "https://github.com/equinor/ert/commit/863208e04734bb183677981ae393216ae70a9717"
+        },
+        "date": 1716988914288,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16522993582199513,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0028119159219041835",
+            "extra": "mean: 6.052172053599998 sec\nrounds: 5"
           }
         ]
       }
