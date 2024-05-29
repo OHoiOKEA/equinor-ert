@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716960155568,
+  "lastUpdate": 1716971947056,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "1ff5826dc7ba63b19822e048e6768340c93fefdd",
-          "message": "Dynamically load ert.gui in workflows\n\nert.gui modifies matplotlib backend so loading these workflows would\nmake `ErtConfig.from_file` change matplotlib settings.",
-          "timestamp": "2024-05-22T11:32:54+02:00",
-          "tree_id": "4d223e5008418ffd3dfbd72c0967581d49841140",
-          "url": "https://github.com/equinor/ert/commit/1ff5826dc7ba63b19822e048e6768340c93fefdd"
-        },
-        "date": 1716370562960,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18836977073141944,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04085978758645089",
-            "extra": "mean: 5.308707422200007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020591306895854117",
             "extra": "mean: 5.9374677668 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "36979af6117b59ea33af2b6e26f83f029cab73ac",
+          "message": "Round export misfit snapshot to 10 decimals \n\nOlder pandas version produces slightly different results, this nullifies that difference",
+          "timestamp": "2024-05-29T10:35:52+02:00",
+          "tree_id": "549f7f5ce7f86a7397b2a286b107a424b9934702",
+          "url": "https://github.com/equinor/ert/commit/36979af6117b59ea33af2b6e26f83f029cab73ac"
+        },
+        "date": 1716971946172,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16544046211387867,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03260041906627047",
+            "extra": "mean: 6.044470543800003 sec\nrounds: 5"
           }
         ]
       }
