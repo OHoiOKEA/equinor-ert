@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717064832949,
+  "lastUpdate": 1717076986149,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "parulek@gmail.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "11196173684c072e31437f50f0df614869721f4c",
-          "message": "Add driver status message when job fails\n\nThis includes a log from the actual submit command and the output of the\njob files; ie. append logging information from the LSF-out and LSF-err\nfiles into the logging.",
-          "timestamp": "2024-05-24T16:01:48+02:00",
-          "tree_id": "8be4f3229890971754aacc65b7d41f76796e52dd",
-          "url": "https://github.com/equinor/ert/commit/11196173684c072e31437f50f0df614869721f4c"
-        },
-        "date": 1716559489472,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18723856859796786,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02348117473376272",
-            "extra": "mean: 5.340779987199994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028123414649589906",
             "extra": "mean: 6.097588713200014 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c89d84aae401ffbc1a6e05b10a2d20ad6306f636",
+          "message": "Sort measured data by obs name -> index\n\n(Previous sort was response type -> obs_name -> index)",
+          "timestamp": "2024-05-30T15:46:34+02:00",
+          "tree_id": "44fadcaaef79542e32158c1e3491e0feaf6d9904",
+          "url": "https://github.com/equinor/ert/commit/c89d84aae401ffbc1a6e05b10a2d20ad6306f636"
+        },
+        "date": 1717076985641,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1627964415531186,
+            "unit": "iter/sec",
+            "range": "stddev: 0.041763308054360106",
+            "extra": "mean: 6.142640406999999 sec\nrounds: 5"
           }
         ]
       }
