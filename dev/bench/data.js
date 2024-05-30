@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717054863183,
+  "lastUpdate": 1717064832949,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "9a9713ba9793bba70567053455844e1a4fa16c9d",
-          "message": "Fix typo parmeter -> parameter",
-          "timestamp": "2024-05-24T14:42:14+02:00",
-          "tree_id": "179b8d9819e6b90035ba518de5d4791bffb0689e",
-          "url": "https://github.com/equinor/ert/commit/9a9713ba9793bba70567053455844e1a4fa16c9d"
-        },
-        "date": 1716554763330,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18636211403387404,
-            "unit": "iter/sec",
-            "range": "stddev: 0.07899567312985205",
-            "extra": "mean: 5.365897490399982 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.021833650404586274",
             "extra": "mean: 6.064510107000001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "85338ab752536951d9ba413577f8dff435687983",
+          "message": "Ensure group is escaped in glob",
+          "timestamp": "2024-05-30T12:23:45+02:00",
+          "tree_id": "8359dd0b26ec3e122b44a8ec97c34a5354d94a11",
+          "url": "https://github.com/equinor/ert/commit/85338ab752536951d9ba413577f8dff435687983"
+        },
+        "date": 1717064832313,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1639992539731661,
+            "unit": "iter/sec",
+            "range": "stddev: 0.028123414649589906",
+            "extra": "mean: 6.097588713200014 sec\nrounds: 5"
           }
         ]
       }
