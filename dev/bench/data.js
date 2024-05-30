@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717051875520,
+  "lastUpdate": 1717054863183,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "7203e03adab656a5465f6e37e1b0cb426ee70338",
-          "message": "Update block_storage hash",
-          "timestamp": "2024-05-24T12:53:30+02:00",
-          "tree_id": "2e2849196c12efd998e99fdfb4ee975cec3553d8",
-          "url": "https://github.com/equinor/ert/commit/7203e03adab656a5465f6e37e1b0cb426ee70338"
-        },
-        "date": 1716548194652,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18960196696623852,
-            "unit": "iter/sec",
-            "range": "stddev: 0.10436338026735494",
-            "extra": "mean: 5.274206887199989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029110740862462608",
             "extra": "mean: 6.065272857000002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2c8bf9267a53ac9919de7253200a740beadd0d0a",
+          "message": "Raise error if no gen kws specified",
+          "timestamp": "2024-05-30T09:37:39+02:00",
+          "tree_id": "d2d44a46d9515bf56d35cecb01d5935dc2b9cc68",
+          "url": "https://github.com/equinor/ert/commit/2c8bf9267a53ac9919de7253200a740beadd0d0a"
+        },
+        "date": 1717054862190,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16489378075992378,
+            "unit": "iter/sec",
+            "range": "stddev: 0.021833650404586274",
+            "extra": "mean: 6.064510107000001 sec\nrounds: 5"
           }
         ]
       }
