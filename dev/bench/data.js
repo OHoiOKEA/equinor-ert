@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717048990527,
+  "lastUpdate": 1717051875520,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "oyveid@equinor.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "4acd828598dd76d5a9e7fd2e5ae72a29bd64f8d6",
-          "message": "Update docs for GEN_KW",
-          "timestamp": "2024-05-24T10:21:52+02:00",
-          "tree_id": "2bfbc2e4c6c4f4fded993d04055e88c3000eeaa8",
-          "url": "https://github.com/equinor/ert/commit/4acd828598dd76d5a9e7fd2e5ae72a29bd64f8d6"
-        },
-        "date": 1716539145469,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18801107915793464,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03282934732803246",
-            "extra": "mean: 5.318835488199989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01610068224747549",
             "extra": "mean: 6.1279591656000205 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "0bb4839507367b1947ace78409c36678708b73ca",
+          "message": "Reduce the use of ensemble_by_name()",
+          "timestamp": "2024-05-30T08:48:01+02:00",
+          "tree_id": "c27f79f0ffec7e8daa9e59f0ac32a67c55f033b4",
+          "url": "https://github.com/equinor/ert/commit/0bb4839507367b1947ace78409c36678708b73ca"
+        },
+        "date": 1717051875048,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16487304422683777,
+            "unit": "iter/sec",
+            "range": "stddev: 0.029110740862462608",
+            "extra": "mean: 6.065272857000002 sec\nrounds: 5"
           }
         ]
       }
