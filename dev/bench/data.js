@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1716988914824,
+  "lastUpdate": 1717048990527,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "bf6d58c0eb3286244fd6393c754e1746904b88ee",
-          "message": "Allow larger columns for treeview in manage experiments",
-          "timestamp": "2024-05-23T09:27:12+02:00",
-          "tree_id": "72cc880f5565d5f9786921bdd0f51020902cc8ab",
-          "url": "https://github.com/equinor/ert/commit/bf6d58c0eb3286244fd6393c754e1746904b88ee"
-        },
-        "date": 1716449421386,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19072265070629196,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02705144004464792",
-            "extra": "mean: 5.243215718200008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0028119159219041835",
             "extra": "mean: 6.052172053599998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a7ccaf7eaf9448b0cfffcbf467b8425b62da3bc7",
+          "message": "Rename simulation mode to experiment type",
+          "timestamp": "2024-05-30T07:59:40+02:00",
+          "tree_id": "afdea5fca8cc6eee6996535d578a55ca0aa5b9f0",
+          "url": "https://github.com/equinor/ert/commit/a7ccaf7eaf9448b0cfffcbf467b8425b62da3bc7"
+        },
+        "date": 1717048990057,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16318646599566314,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01610068224747549",
+            "extra": "mean: 6.1279591656000205 sec\nrounds: 5"
           }
         ]
       }
