@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717149990709,
+  "lastUpdate": 1717155331203,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "706806d3f1d14a55aab73608a5b57c43ce228d3a",
-          "message": "Add created at for experiment in GUI",
-          "timestamp": "2024-05-27T13:29:16+02:00",
-          "tree_id": "27bb02dccca4160279e6f62a000ce96317cabdf0",
-          "url": "https://github.com/equinor/ert/commit/706806d3f1d14a55aab73608a5b57c43ce228d3a"
-        },
-        "date": 1716809540830,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18735262057857777,
-            "unit": "iter/sec",
-            "range": "stddev: 0.015201454741138628",
-            "extra": "mean: 5.337528756800009 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.023253078150424416",
             "extra": "mean: 6.172943565799983 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "36c89fb536e585b5a5c7844e81d54f1bef184e44",
+          "message": "Make mocked LSF and OpenPBS systems able to kill\n\nFor LSF it is necessary to manually loop over grandchildren in\nthe mocked runner to pass the added test. For OpenPBS the test\nwill pass without the loop over grandchildren, but it was added\nnonetheless.",
+          "timestamp": "2024-05-31T13:32:11+02:00",
+          "tree_id": "c90383d267fd193226fb5681b2ff9420d820fcd8",
+          "url": "https://github.com/equinor/ert/commit/36c89fb536e585b5a5c7844e81d54f1bef184e44"
+        },
+        "date": 1717155330717,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16271712778230052,
+            "unit": "iter/sec",
+            "range": "stddev: 0.026938664017357155",
+            "extra": "mean: 6.145634535399995 sec\nrounds: 5"
           }
         ]
       }
