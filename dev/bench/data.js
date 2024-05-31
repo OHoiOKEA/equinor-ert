@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717143865289,
+  "lastUpdate": 1717149788468,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "oyveid@equinor.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "a073b78526304f885e7d2429c86300afaa5584b6",
-          "message": "Propagate debug logs from callbacks",
-          "timestamp": "2024-05-27T09:11:58+02:00",
-          "tree_id": "4ca1b6865d22f1e1735e7ce735c053c324d62487",
-          "url": "https://github.com/equinor/ert/commit/a073b78526304f885e7d2429c86300afaa5584b6"
-        },
-        "date": 1716794115604,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18584075851098575,
-            "unit": "iter/sec",
-            "range": "stddev: 0.11830389249444241",
-            "extra": "mean: 5.380950917399997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03225941220699162",
             "extra": "mean: 6.127246476599998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "c72f389ff006e8765e485487ab0ad8666f964c0a",
+          "message": "Catch migration exception and send as response",
+          "timestamp": "2024-05-31T11:59:39+02:00",
+          "tree_id": "ebc931df8e40a87ec43b558fc079a4b6323d71fd",
+          "url": "https://github.com/equinor/ert/commit/c72f389ff006e8765e485487ab0ad8666f964c0a"
+        },
+        "date": 1717149787973,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16778480203706103,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02773399239539426",
+            "extra": "mean: 5.960015376000001 sec\nrounds: 5"
           }
         ]
       }
