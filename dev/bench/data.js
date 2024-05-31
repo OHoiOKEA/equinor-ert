@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717076986149,
+  "lastUpdate": 1717143865289,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "23fc482bb2366576fc0b154f3df2406bdde40108",
-          "message": "Change default MAX_SUBMIT to 1\n\nWe do not want resubmission to happen by default for realizations that\nfail. Forward model setups may or may not be compatible with\nresubmissions, and flakyness should not be assumed by default.",
-          "timestamp": "2024-05-25T23:10:13+02:00",
-          "tree_id": "c16a95ce046a11a6e6c5e6a849bc6dfbffd40c2e",
-          "url": "https://github.com/equinor/ert/commit/23fc482bb2366576fc0b154f3df2406bdde40108"
-        },
-        "date": 1716671592663,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1924993703646856,
-            "unit": "iter/sec",
-            "range": "stddev: 0.023383957460333626",
-            "extra": "mean: 5.194822186200002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.041763308054360106",
             "extra": "mean: 6.142640406999999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "670de15e880ea58f4914ba482b0cc2a8838f083f",
+          "message": "Fix RealNodeData subscriptable\n\nChange typehinting to match actual usage\nAdd tests for verifying correct colors for queue and forward model status\nExtend tests to cover forward_model_steps",
+          "timestamp": "2024-05-31T10:21:04+02:00",
+          "tree_id": "c8582a25c5ffcdd36cd93933c42b971b947e7910",
+          "url": "https://github.com/equinor/ert/commit/670de15e880ea58f4914ba482b0cc2a8838f083f"
+        },
+        "date": 1717143864351,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1632054469848745,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03225941220699162",
+            "extra": "mean: 6.127246476599998 sec\nrounds: 5"
           }
         ]
       }
