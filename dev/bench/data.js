@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717149788468,
+  "lastUpdate": 1717149990709,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "fd5ee1928ccc8c83d33f407e76afb82980c728af",
-          "message": "Add migration feedback",
-          "timestamp": "2024-05-27T11:55:25+02:00",
-          "tree_id": "9d9dc76cd67eec2650772eea34dbd8b27dbed7a9",
-          "url": "https://github.com/equinor/ert/commit/fd5ee1928ccc8c83d33f407e76afb82980c728af"
-        },
-        "date": 1716803909453,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1904537127589862,
-            "unit": "iter/sec",
-            "range": "stddev: 0.014595440938869038",
-            "extra": "mean: 5.250619615200003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02773399239539426",
             "extra": "mean: 5.960015376000001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "bb4944f87bbacc2977630031c043506d947b574f",
+          "message": "Add logging of ert.shared.plugins to Azure",
+          "timestamp": "2024-05-31T12:03:13+02:00",
+          "tree_id": "d19a6ae26243d30351ee957671c756b1da954174",
+          "url": "https://github.com/equinor/ert/commit/bb4944f87bbacc2977630031c043506d947b574f"
+        },
+        "date": 1717149989860,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16199726910518175,
+            "unit": "iter/sec",
+            "range": "stddev: 0.023253078150424416",
+            "extra": "mean: 6.172943565799983 sec\nrounds: 5"
           }
         ]
       }
