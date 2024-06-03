@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717402668685,
+  "lastUpdate": 1717409756267,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "0a55f0a194b6f3cf1aa1de46ffe6ca8bfc5167d2",
-          "message": "Let monitor emit optional heartbeats\n\nThis allows the base_run_model to also being able to\ncheck regularly if there are other tasks at hand, like terminating\nthe experiment.",
-          "timestamp": "2024-05-27T17:57:29+02:00",
-          "tree_id": "36df374dfd1c9d01edef85672a36967697f0b52d",
-          "url": "https://github.com/equinor/ert/commit/0a55f0a194b6f3cf1aa1de46ffe6ca8bfc5167d2"
-        },
-        "date": 1716825633986,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18531944954506518,
-            "unit": "iter/sec",
-            "range": "stddev: 0.21576818155222338",
-            "extra": "mean: 5.396087687800002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029063921707327006",
             "extra": "mean: 6.006954563799991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "1d111e99b757541785f0192c1f4dabd77b4c3d74",
+          "message": "Fix copyablelabel not crashing if no clipboard\n\nSome nonstandard graphical systems and many non-graphical\nsystems may not have a clipboard causing QApplication.clipboard()\nto return None",
+          "timestamp": "2024-06-03T12:12:41+02:00",
+          "tree_id": "43f0565caca79c65d87628d11a04b0760ae1983c",
+          "url": "https://github.com/equinor/ert/commit/1d111e99b757541785f0192c1f4dabd77b4c3d74"
+        },
+        "date": 1717409755805,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16026878447056514,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022381141745645934",
+            "extra": "mean: 6.239518214999999 sec\nrounds: 5"
           }
         ]
       }
