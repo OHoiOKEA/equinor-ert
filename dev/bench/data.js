@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717155331203,
+  "lastUpdate": 1717393925204,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "a5e3d53aa6bdafa0e5ded7377a9bd8439e130da0",
-          "message": "Change which lines are ignored in coverage",
-          "timestamp": "2024-05-27T15:07:47+02:00",
-          "tree_id": "e353f196fb582fd29584b63cdbdbe92a41b4f2a5",
-          "url": "https://github.com/equinor/ert/commit/a5e3d53aa6bdafa0e5ded7377a9bd8439e130da0"
-        },
-        "date": 1716815456310,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18863994753152794,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02281427511570736",
-            "extra": "mean: 5.301104103800003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026938664017357155",
             "extra": "mean: 6.145634535399995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ceda74fdd18d8df31685288578cfa2b034d839b2",
+          "message": "Add forward models as plugins\n\nAdd possiblity to specify forward models as plugins\r\n\r\nCo-authored-by: Yngve S. Kristiansen <yngve.s.kristiansen@webstep.no>\r\nCo-authored-by: Eivind Jahren <ejah@equinor.com>",
+          "timestamp": "2024-06-03T07:48:45+02:00",
+          "tree_id": "da7ce786ee3a02cbbb0cb012c84a009054caf491",
+          "url": "https://github.com/equinor/ert/commit/ceda74fdd18d8df31685288578cfa2b034d839b2"
+        },
+        "date": 1717393924560,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1659671984179004,
+            "unit": "iter/sec",
+            "range": "stddev: 0.017395487711158612",
+            "extra": "mean: 6.025286981600004 sec\nrounds: 5"
           }
         ]
       }
