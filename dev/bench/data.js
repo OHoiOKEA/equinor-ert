@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717402367427,
+  "lastUpdate": 1717402668685,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "9e4fb6aed0d2650f90fa59a24ba2e7e7cac19a0c",
-          "message": "Avoid using abspath for commands\n\nIf the user specifies a command we would like to avoid\nhardcoding the path to it in case job_dispatch.py runs\nin a different environment.",
-          "timestamp": "2024-05-27T15:32:05+02:00",
-          "tree_id": "3481ea712376b969cb2ba3537be08181bb675f27",
-          "url": "https://github.com/equinor/ert/commit/9e4fb6aed0d2650f90fa59a24ba2e7e7cac19a0c"
-        },
-        "date": 1716816909453,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19013073600262534,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0399643459484822",
-            "extra": "mean: 5.259538888999998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.08137059243752044",
             "extra": "mean: 6.128688470999992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0e0c9ad95b2952371ad42e0d18a12b19ceae4265",
+          "message": "Initialize ensemble config lastly",
+          "timestamp": "2024-06-03T10:14:17+02:00",
+          "tree_id": "f0f9308c175b6d34d9d21dc4e4fb08001507b84c",
+          "url": "https://github.com/equinor/ert/commit/0e0c9ad95b2952371ad42e0d18a12b19ceae4265"
+        },
+        "date": 1717402667571,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16647370799612,
+            "unit": "iter/sec",
+            "range": "stddev: 0.029063921707327006",
+            "extra": "mean: 6.006954563799991 sec\nrounds: 5"
           }
         ]
       }
