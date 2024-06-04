@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717501768028,
+  "lastUpdate": 1717501786844,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "9f9307b7eec9e7db8ed38218c37aad6570ab097f",
-          "message": "Log queue system used when logging orchestrator",
-          "timestamp": "2024-05-28T09:22:50+02:00",
-          "tree_id": "edc5a8242b3ee852e171f9114d433603fac6a3e3",
-          "url": "https://github.com/equinor/ert/commit/9f9307b7eec9e7db8ed38218c37aad6570ab097f"
-        },
-        "date": 1716881179245,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16615404285242097,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02789107777258859",
-            "extra": "mean: 6.0185113936000105 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030105557950392624",
             "extra": "mean: 6.134748808400002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "71fc882704af6157a315585812dc671c6cffb9fc",
+          "message": "Rename to get_realization_with_responses and return array\n\nUpdate docstrings",
+          "timestamp": "2024-06-04T13:46:33+02:00",
+          "tree_id": "3c4057b854ea26985631c5fa0ceaf4ac53d0842a",
+          "url": "https://github.com/equinor/ert/commit/71fc882704af6157a315585812dc671c6cffb9fc"
+        },
+        "date": 1717501785768,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16691076368285265,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04316780123173143",
+            "extra": "mean: 5.9912253586000075 sec\nrounds: 5"
           }
         ]
       }
