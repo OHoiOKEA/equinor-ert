@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717505885411,
+  "lastUpdate": 1717507255918,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "24f69370232dc86110502c5e8fd1d076c7560768",
-          "message": "Simplify calculation of weights to run in ES-MDA",
-          "timestamp": "2024-05-28T09:31:06+02:00",
-          "tree_id": "b171b5bd41f59ccbdfff62e71ab951863b12fe7a",
-          "url": "https://github.com/equinor/ert/commit/24f69370232dc86110502c5e8fd1d076c7560768"
-        },
-        "date": 1716881675482,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16561984072603428,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03292258098446924",
-            "extra": "mean: 6.037923932400008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.021771811173644167",
             "extra": "mean: 6.0670926819999975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9e4c1448fca5a150811d460af11f0ccafd774dab",
+          "message": "New LSF driver should allocate correct number of cpus based on config  (#8061)\n\n* Specify number of cpus to allocate on LSF in new driver\r\n\r\n* Add integration test for num_cpu on lsf\r\n\r\n* Add -n into mocked bsub\r\n\r\n---------\r\n\r\nCo-authored-by: xjules <jparu@equinor.com>",
+          "timestamp": "2024-06-04T15:17:23+02:00",
+          "tree_id": "cfc143ec621ff5f1a27f0ca955c5d58e47c2cc34",
+          "url": "https://github.com/equinor/ert/commit/9e4c1448fca5a150811d460af11f0ccafd774dab"
+        },
+        "date": 1717507255276,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16499252589467475,
+            "unit": "iter/sec",
+            "range": "stddev: 0.013104353271791942",
+            "extra": "mean: 6.060880603999988 sec\nrounds: 5"
           }
         ]
       }
