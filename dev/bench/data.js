@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717409756267,
+  "lastUpdate": 1717489015640,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "53503e1a238b08536036d3d2b9377ada1c70aa0b",
-          "message": "Move get_machine_name to a more public place\n\nAs this function is used outside of ert, it should not be hidden below\nensemble_evalutor.config.\n\nport_handler.py serves as a placeholder for the code, but the function\nbut exposed and should be used as ert.shared.get_machine.name()",
-          "timestamp": "2024-05-27T20:44:01+02:00",
-          "tree_id": "0c94da6711cbafe0509af9063e5513f3f477f054",
-          "url": "https://github.com/equinor/ert/commit/53503e1a238b08536036d3d2b9377ada1c70aa0b"
-        },
-        "date": 1716835638210,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18820287299590832,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027588123933779244",
-            "extra": "mean: 5.313415167800019 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022381141745645934",
             "extra": "mean: 6.239518214999999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5eee4ce53dbfbb2bd0e3f949a0506c5c37199a69",
+          "message": "Use plugin fm steps in LibresFacade",
+          "timestamp": "2024-06-04T10:13:40+02:00",
+          "tree_id": "46a6a7dcd4230bf28e4ad17ee54cc7f73414020a",
+          "url": "https://github.com/equinor/ert/commit/5eee4ce53dbfbb2bd0e3f949a0506c5c37199a69"
+        },
+        "date": 1717489015049,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16791872332532481,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04721040293112835",
+            "extra": "mean: 5.955262046999996 sec\nrounds: 5"
           }
         ]
       }
