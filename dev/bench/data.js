@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717572570582,
+  "lastUpdate": 1717580054989,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "c4df16ac0b3838ba21dd0f5d9497e26f36f28506",
-          "message": "Add icon to ert",
-          "timestamp": "2024-05-28T11:46:56+02:00",
-          "tree_id": "be292ced5c773971046ddbf307973c5c8270884c",
-          "url": "https://github.com/equinor/ert/commit/c4df16ac0b3838ba21dd0f5d9497e26f36f28506"
-        },
-        "date": 1716889834689,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1630561914472726,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05309656711778124",
-            "extra": "mean: 6.1328551287999975 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027036358929211527",
             "extra": "mean: 6.020530721599994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "3c3796ef0197dce4e50866dd0fb71bc73dbaf5a0",
+          "message": "Avoid creating two random seeds",
+          "timestamp": "2024-06-05T11:30:50+02:00",
+          "tree_id": "055d2d19aadf8be7b948d4a24f51a41e44d96b4f",
+          "url": "https://github.com/equinor/ert/commit/3c3796ef0197dce4e50866dd0fb71bc73dbaf5a0"
+        },
+        "date": 1717580054451,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16614617154440847,
+            "unit": "iter/sec",
+            "range": "stddev: 0.035595701876233225",
+            "extra": "mean: 6.0187965254000115 sec\nrounds: 5"
           }
         ]
       }
