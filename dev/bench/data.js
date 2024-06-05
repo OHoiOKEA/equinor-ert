@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717580054989,
+  "lastUpdate": 1717580477846,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "5fdde19cfc17ce41f5e357f278d9c89c8efcefc0",
-          "message": "Fix logic in _get_response_name_for_obs_name",
-          "timestamp": "2024-05-28T13:16:58+02:00",
-          "tree_id": "44edb460c4ab10ab679d96cc5c01de4f201addcf",
-          "url": "https://github.com/equinor/ert/commit/5fdde19cfc17ce41f5e357f278d9c89c8efcefc0"
-        },
-        "date": 1716895217960,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16641753303512588,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0139784009324507",
-            "extra": "mean: 6.008982237400005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.035595701876233225",
             "extra": "mean: 6.0187965254000115 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "836cc1bad2866bd573c5a08b12628f35a926df2e",
+          "message": "Rename methods in ObservationsAndResponses",
+          "timestamp": "2024-06-05T11:38:04+02:00",
+          "tree_id": "678ff9916e08838ac9f9abf3250f49629ac17ad0",
+          "url": "https://github.com/equinor/ert/commit/836cc1bad2866bd573c5a08b12628f35a926df2e"
+        },
+        "date": 1717580477352,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16919294233360033,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01956559596996017",
+            "extra": "mean: 5.910412019599994 sec\nrounds: 5"
           }
         ]
       }
