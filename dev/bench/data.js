@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717507255918,
+  "lastUpdate": 1717572570582,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "d8f401241d02893e2e5ec03ca4d1d8eca7c8e219",
-          "message": "Add test for new cmd behavior",
-          "timestamp": "2024-05-28T09:52:27+02:00",
-          "tree_id": "cb3a62556dd9b3967fccdbc98d9513f5b51835ac",
-          "url": "https://github.com/equinor/ert/commit/d8f401241d02893e2e5ec03ca4d1d8eca7c8e219"
-        },
-        "date": 1716882947447,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16456132595671227,
-            "unit": "iter/sec",
-            "range": "stddev: 0.012013310259034226",
-            "extra": "mean: 6.076761925599999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.013104353271791942",
             "extra": "mean: 6.060880603999988 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7fc50c7d1ff401e684a04bb8b8b6cd1f62d08a60",
+          "message": "Get lsf jobid at the right time (#8068)\n\nGet lsf jobid directly after driver.submit",
+          "timestamp": "2024-06-05T09:26:02+02:00",
+          "tree_id": "05be2767bb7f0852e7cf1fb00034b4d99f0edeb4",
+          "url": "https://github.com/equinor/ert/commit/7fc50c7d1ff401e684a04bb8b8b6cd1f62d08a60"
+        },
+        "date": 1717572569621,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16609831362744773,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027036358929211527",
+            "extra": "mean: 6.020530721599994 sec\nrounds: 5"
           }
         ]
       }
