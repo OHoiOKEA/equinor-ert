@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717587205609,
+  "lastUpdate": 1717594192120,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "58fa26453a3149b0cfe607700d02d333768cb1aa",
-          "message": "Reduce size of storage test data",
-          "timestamp": "2024-05-29T07:19:19+02:00",
-          "tree_id": "5342b05275024df5fbdcb07d57f5567927febbff",
-          "url": "https://github.com/equinor/ert/commit/58fa26453a3149b0cfe607700d02d333768cb1aa"
-        },
-        "date": 1716960154909,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16842196695224337,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020591306895854117",
-            "extra": "mean: 5.9374677668 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02873800624412254",
             "extra": "mean: 6.054691217799996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "314d52cb24ba54b261c5a714c665982616011b8a",
+          "message": "Don't cast array to np.array",
+          "timestamp": "2024-06-05T15:26:38+02:00",
+          "tree_id": "a2d5d5f091926c4aa05ff6c54d4b6ee64e7eaf1b",
+          "url": "https://github.com/equinor/ert/commit/314d52cb24ba54b261c5a714c665982616011b8a"
+        },
+        "date": 1717594191592,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16536011539663317,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06745773063322387",
+            "extra": "mean: 6.047407487600003 sec\nrounds: 5"
           }
         ]
       }
