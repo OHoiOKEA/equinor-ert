@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717580477846,
+  "lastUpdate": 1717584527585,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "c2dcf4027c743284114bb16a85eac247bc958693",
-          "message": "Significant correlations\n\nSave cross correlations for genkw",
-          "timestamp": "2024-05-28T13:22:58+02:00",
-          "tree_id": "c06da354172a50900da0c8c75df2160e4db8dcc2",
-          "url": "https://github.com/equinor/ert/commit/c2dcf4027c743284114bb16a85eac247bc958693"
-        },
-        "date": 1716895586081,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16536975521579753,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06171677007115376",
-            "extra": "mean: 6.047054968999987 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01956559596996017",
             "extra": "mean: 5.910412019599994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "65b7afe9f27f0517ca42eef79f8bc2f189eef1a1",
+          "message": "Clarify error when unified dataset not found",
+          "timestamp": "2024-06-05T12:45:43+02:00",
+          "tree_id": "4e7a9348158775ddb1a6e6cc3cf1e6c0ae6790b5",
+          "url": "https://github.com/equinor/ert/commit/65b7afe9f27f0517ca42eef79f8bc2f189eef1a1"
+        },
+        "date": 1717584526937,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16928267716145518,
+            "unit": "iter/sec",
+            "range": "stddev: 0.09825622361013447",
+            "extra": "mean: 5.907278977200008 sec\nrounds: 5"
           }
         ]
       }
