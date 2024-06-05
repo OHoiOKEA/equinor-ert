@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717584527585,
+  "lastUpdate": 1717587205609,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "b134a136bc787e2c34d8aa6cfbfacf81349716bb",
-          "message": "Use split over rsplit to handle comments in gen_kw_config",
-          "timestamp": "2024-05-28T16:42:14+02:00",
-          "tree_id": "566438c7b3557a8337dab6f330d72f2f8a325afa",
-          "url": "https://github.com/equinor/ert/commit/b134a136bc787e2c34d8aa6cfbfacf81349716bb"
-        },
-        "date": 1716907537133,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16411504698861334,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05656193015030776",
-            "extra": "mean: 6.093286498400005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.09825622361013447",
             "extra": "mean: 5.907278977200008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "99a29f629939f41c77250fb086a151f8431ee0e8",
+          "message": "Remove unneeded lsf_server checks in queue_config",
+          "timestamp": "2024-06-05T13:30:10+02:00",
+          "tree_id": "b886c93c649e88e127eddc5da2bcfa809958dee3",
+          "url": "https://github.com/equinor/ert/commit/99a29f629939f41c77250fb086a151f8431ee0e8"
+        },
+        "date": 1717587205085,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1651611889075584,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02873800624412254",
+            "extra": "mean: 6.054691217799996 sec\nrounds: 5"
           }
         ]
       }
