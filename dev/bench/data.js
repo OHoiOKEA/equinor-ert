@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717671735127,
+  "lastUpdate": 1717673580291,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "70a8272d3579a4bb496d0c85bcc7b3262fd9e82d",
-          "message": "Add heartbeat to test_run_and_cancel_legacy_ensemble",
-          "timestamp": "2024-05-29T11:49:27+02:00",
-          "tree_id": "6ff4bd1d7668fedc5594233643134bc1310d906b",
-          "url": "https://github.com/equinor/ert/commit/70a8272d3579a4bb496d0c85bcc7b3262fd9e82d"
-        },
-        "date": 1716976355013,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16749169771793035,
-            "unit": "iter/sec",
-            "range": "stddev: 0.011759748362695456",
-            "extra": "mean: 5.970445183999994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03514636159208648",
             "extra": "mean: 6.136044903999993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "dc7d4e83ed3690f2591abf30397600e5fc5b418b",
+          "message": "Fix flaky integration test `test_generic_driver.py::test_kill_actually_kills`",
+          "timestamp": "2024-06-06T13:29:33+02:00",
+          "tree_id": "66efe1afefb4087bde8ef0200fd223625525254e",
+          "url": "https://github.com/equinor/ert/commit/dc7d4e83ed3690f2591abf30397600e5fc5b418b"
+        },
+        "date": 1717673579382,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.15964701692058267,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05594196994769429",
+            "extra": "mean: 6.263818887999991 sec\nrounds: 5"
           }
         ]
       }
