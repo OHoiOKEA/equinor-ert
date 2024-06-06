@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717673580291,
+  "lastUpdate": 1717673871367,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "976f5b2f537284d407ffc86b5ff6c812a400b710",
-          "message": "Add application name to gui initialization",
-          "timestamp": "2024-05-29T11:53:44+02:00",
-          "tree_id": "cb39611fa5e8fb87b71c6aaeec7cb61a73ff117e",
-          "url": "https://github.com/equinor/ert/commit/976f5b2f537284d407ffc86b5ff6c812a400b710"
-        },
-        "date": 1716976622901,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16265825689810443,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03015486474888436",
-            "extra": "mean: 6.1478588241999885 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05594196994769429",
             "extra": "mean: 6.263818887999991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "10cfe53863fc0147b252254a4a0796cc034e2714",
+          "message": "Raise a better exception when starting the api with no storage",
+          "timestamp": "2024-06-06T13:34:14+02:00",
+          "tree_id": "d946187a72ff720b9837a61cd21bfae010ad9df3",
+          "url": "https://github.com/equinor/ert/commit/10cfe53863fc0147b252254a4a0796cc034e2714"
+        },
+        "date": 1717673870383,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1652940340374279,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03329853157516826",
+            "extra": "mean: 6.049825124199993 sec\nrounds: 5"
           }
         ]
       }
