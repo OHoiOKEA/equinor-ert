@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717673871367,
+  "lastUpdate": 1717674261218,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "7051849dd1824542dd1180f0c53b0374b8d21881",
-          "message": "Add out-of-memory detection\n\nWhenever a realization fails the output of dmesg is checked to see if there\nare any signs of known pids having been killed by the operating system\n\nAdd an integration test that will exhaust all available memory (by\ndefault, this test is not active) and assert that Ert picks up the cause\nof the realization failing.",
-          "timestamp": "2024-05-29T12:59:56+02:00",
-          "tree_id": "fcfd0e07cfefe4b8c9fdc057954f10c7c4571fd0",
-          "url": "https://github.com/equinor/ert/commit/7051849dd1824542dd1180f0c53b0374b8d21881"
-        },
-        "date": 1716980592944,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16761853883056493,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06406676983223913",
-            "extra": "mean: 5.965927199800001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03329853157516826",
             "extra": "mean: 6.049825124199993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ba78c6b6ddfee131633c8266839a42ebe7d5aa51",
+          "message": "Fix resizing of experiment manager on macos (#8039)\n\n* Fix resizing of experiment manager on macos\r\n\r\n* Fix tests",
+          "timestamp": "2024-06-06T13:41:05+02:00",
+          "tree_id": "29b113ab6546216c1091603d859e8b050eb1eaaa",
+          "url": "https://github.com/equinor/ert/commit/ba78c6b6ddfee131633c8266839a42ebe7d5aa51"
+        },
+        "date": 1717674260735,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16261921351953776,
+            "unit": "iter/sec",
+            "range": "stddev: 0.012837474914677073",
+            "extra": "mean: 6.149334868599988 sec\nrounds: 5"
           }
         ]
       }
