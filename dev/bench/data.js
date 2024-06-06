@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717679851739,
+  "lastUpdate": 1717681323419,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "a7ccaf7eaf9448b0cfffcbf467b8425b62da3bc7",
-          "message": "Rename simulation mode to experiment type",
-          "timestamp": "2024-05-30T07:59:40+02:00",
-          "tree_id": "afdea5fca8cc6eee6996535d578a55ca0aa5b9f0",
-          "url": "https://github.com/equinor/ert/commit/a7ccaf7eaf9448b0cfffcbf467b8425b62da3bc7"
-        },
-        "date": 1717048990057,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16318646599566314,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01610068224747549",
-            "extra": "mean: 6.1279591656000205 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026559649687277323",
             "extra": "mean: 6.119357776799996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "3aa9c85dd21ccdf48920f44973312286f74cc5c4",
+          "message": "Let LSFDriver pick num_cpu from the realization object",
+          "timestamp": "2024-06-06T15:38:20+02:00",
+          "tree_id": "07cd516d89f9c87d3a87095030ccf98b5aa3a2dd",
+          "url": "https://github.com/equinor/ert/commit/3aa9c85dd21ccdf48920f44973312286f74cc5c4"
+        },
+        "date": 1717681322762,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16455037463390823,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02597971444248209",
+            "extra": "mean: 6.07716635239999 sec\nrounds: 5"
           }
         ]
       }
