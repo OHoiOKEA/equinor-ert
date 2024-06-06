@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717674261218,
+  "lastUpdate": 1717674621824,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "31a0d55e6d4765db2f935a051bee5d0f67749fe9",
-          "message": "Remove extra character from the output message",
-          "timestamp": "2024-05-29T15:17:42+02:00",
-          "tree_id": "9777ef0f23403fd001ef6a0d55eaab1740dd0368",
-          "url": "https://github.com/equinor/ert/commit/31a0d55e6d4765db2f935a051bee5d0f67749fe9"
-        },
-        "date": 1716988868988,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16537504563219257,
-            "unit": "iter/sec",
-            "range": "stddev: 0.044761461029902014",
-            "extra": "mean: 6.046861521200003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.012837474914677073",
             "extra": "mean: 6.149334868599988 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "56de727322971844e59874a46b9dee151815d792",
+          "message": "Add positive_int validation schema for NUM_CPU and MAX_SUBMIT (#8082)\n\nAdd positive_int validation schema for NUM_CPU and MAX_SUBMIT\r\n\r\n* Add test for wrong num_cpu\r\n\r\n* Add test for wrong max_submit\r\n\r\n* Raise ValueError when scheduler gets negative max_submit attribute",
+          "timestamp": "2024-06-06T13:47:11+02:00",
+          "tree_id": "8b7c7109bcf65da8f9b362dcc19c0e59f0806221",
+          "url": "https://github.com/equinor/ert/commit/56de727322971844e59874a46b9dee151815d792"
+        },
+        "date": 1717674621305,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16491293821901326,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02774509748323822",
+            "extra": "mean: 6.063805610399993 sec\nrounds: 5"
           }
         ]
       }
