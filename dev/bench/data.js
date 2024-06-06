@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717674621824,
+  "lastUpdate": 1717679851739,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "863208e04734bb183677981ae393216ae70a9717",
-          "message": "Close websocket connection once the receiver task was cancelled\n\nMonitor should cancel the receiver task before closing the websockets.",
-          "timestamp": "2024-05-29T15:18:36+02:00",
-          "tree_id": "58a70ce2a8569b1d9e297730ab9cc6ce407abe42",
-          "url": "https://github.com/equinor/ert/commit/863208e04734bb183677981ae393216ae70a9717"
-        },
-        "date": 1716988914288,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16522993582199513,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0028119159219041835",
-            "extra": "mean: 6.052172053599998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02774509748323822",
             "extra": "mean: 6.063805610399993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "77ff126773da3c18b2e5e900437827d6ebf8000d",
+          "message": "Make sure to log Realization status after completed run as info (#8074)\n\n* Make sure to log Realization status after completed run as info\r\n\r\n* Change logger.error to logger.info when kill does not execute\r\n\r\n* Set log_level to INFO in test",
+          "timestamp": "2024-06-06T15:13:47+02:00",
+          "tree_id": "607a531977830b74d1fd08172713e6460f4ac7cf",
+          "url": "https://github.com/equinor/ert/commit/77ff126773da3c18b2e5e900437827d6ebf8000d"
+        },
+        "date": 1717679850777,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1634158414125169,
+            "unit": "iter/sec",
+            "range": "stddev: 0.026559649687277323",
+            "extra": "mean: 6.119357776799996 sec\nrounds: 5"
           }
         ]
       }
