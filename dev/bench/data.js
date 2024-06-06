@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717594192120,
+  "lastUpdate": 1717671735127,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "36979af6117b59ea33af2b6e26f83f029cab73ac",
-          "message": "Round export misfit snapshot to 10 decimals \n\nOlder pandas version produces slightly different results, this nullifies that difference",
-          "timestamp": "2024-05-29T10:35:52+02:00",
-          "tree_id": "549f7f5ce7f86a7397b2a286b107a424b9934702",
-          "url": "https://github.com/equinor/ert/commit/36979af6117b59ea33af2b6e26f83f029cab73ac"
-        },
-        "date": 1716971946172,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16544046211387867,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03260041906627047",
-            "extra": "mean: 6.044470543800003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06745773063322387",
             "extra": "mean: 6.047407487600003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "56dc74a9f72e3a806000eee55e5471f647219d00",
+          "message": "Add some type hints to gui",
+          "timestamp": "2024-06-06T12:58:57+02:00",
+          "tree_id": "c5ac842be1b05995c2a79735fa5cd796e936a345",
+          "url": "https://github.com/equinor/ert/commit/56dc74a9f72e3a806000eee55e5471f647219d00"
+        },
+        "date": 1717671734261,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1629714279548566,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03514636159208648",
+            "extra": "mean: 6.136044903999993 sec\nrounds: 5"
           }
         ]
       }
