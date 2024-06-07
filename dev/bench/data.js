@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717764428916,
+  "lastUpdate": 1717764557921,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "c89d84aae401ffbc1a6e05b10a2d20ad6306f636",
-          "message": "Sort measured data by obs name -> index\n\n(Previous sort was response type -> obs_name -> index)",
-          "timestamp": "2024-05-30T15:46:34+02:00",
-          "tree_id": "44fadcaaef79542e32158c1e3491e0feaf6d9904",
-          "url": "https://github.com/equinor/ert/commit/c89d84aae401ffbc1a6e05b10a2d20ad6306f636"
-        },
-        "date": 1717076985641,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1627964415531186,
-            "unit": "iter/sec",
-            "range": "stddev: 0.041763308054360106",
-            "extra": "mean: 6.142640406999999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04562949702955377",
             "extra": "mean: 6.171812779199991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6d613041af2fcaa5224654aadd8b4477ab62a210",
+          "message": "Increate grace time for kill and change logger.error to logger.debug (#8107)\n\nIncreate grace time for kill and change logger.erro to logger.debug",
+          "timestamp": "2024-06-07T12:45:59Z",
+          "tree_id": "2b7d35b8a6e69a175e3fe89aa4d8a7998064e45c",
+          "url": "https://github.com/equinor/ert/commit/6d613041af2fcaa5224654aadd8b4477ab62a210"
+        },
+        "date": 1717764556813,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16881181299058676,
+            "unit": "iter/sec",
+            "range": "stddev: 0.039683280658523876",
+            "extra": "mean: 5.923756058799995 sec\nrounds: 5"
           }
         ]
       }
