@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717681323419,
+  "lastUpdate": 1717748764820,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "0bb4839507367b1947ace78409c36678708b73ca",
-          "message": "Reduce the use of ensemble_by_name()",
-          "timestamp": "2024-05-30T08:48:01+02:00",
-          "tree_id": "c27f79f0ffec7e8daa9e59f0ac32a67c55f033b4",
-          "url": "https://github.com/equinor/ert/commit/0bb4839507367b1947ace78409c36678708b73ca"
-        },
-        "date": 1717051875048,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16487304422683777,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029110740862462608",
-            "extra": "mean: 6.065272857000002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02597971444248209",
             "extra": "mean: 6.07716635239999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "97f6b400f2dd76f9cbc7fe518967632081b7de15",
+          "message": "Fix num_cpu LSF integration test\n\nContained three bugs:\n* Missing -l\n* int vs string comparison for num_cpu\n* stdout from bhist has line breaks and whitespace indentation at random places",
+          "timestamp": "2024-06-07T10:22:58+02:00",
+          "tree_id": "7aceb05e5fc173a5a5f23884a4ec094f4ad993c6",
+          "url": "https://github.com/equinor/ert/commit/97f6b400f2dd76f9cbc7fe518967632081b7de15"
+        },
+        "date": 1717748764343,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1685410052875344,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01821874274335326",
+            "extra": "mean: 5.933274209999991 sec\nrounds: 5"
           }
         ]
       }
