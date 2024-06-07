@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717760619803,
+  "lastUpdate": 1717764428916,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "85338ab752536951d9ba413577f8dff435687983",
-          "message": "Ensure group is escaped in glob",
-          "timestamp": "2024-05-30T12:23:45+02:00",
-          "tree_id": "8359dd0b26ec3e122b44a8ec97c34a5354d94a11",
-          "url": "https://github.com/equinor/ert/commit/85338ab752536951d9ba413577f8dff435687983"
-        },
-        "date": 1717064832313,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1639992539731661,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028123414649589906",
-            "extra": "mean: 6.097588713200014 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04590180385060584",
             "extra": "mean: 6.101685266599998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "c2fca21a7c18f66b20f3344b99fde7de3b27355a",
+          "message": "Remove current memory usage from run details view\n\nAlso adds the string 'realization' to the displayed string to remind that this\nis not about the usage of the Ert mother process.\n\nCurrent memory usage quickly becomes a very random uninteresting number when realization\neventually get staggered in time. Maximum is the only thing that really matters.",
+          "timestamp": "2024-06-07T14:43:44+02:00",
+          "tree_id": "992980fd6ac53b75c6c1574ade6cb93a76316350",
+          "url": "https://github.com/equinor/ert/commit/c2fca21a7c18f66b20f3344b99fde7de3b27355a"
+        },
+        "date": 1717764428214,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.162026949905247,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04562949702955377",
+            "extra": "mean: 6.171812779199991 sec\nrounds: 5"
           }
         ]
       }
