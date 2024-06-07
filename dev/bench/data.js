@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717764670166,
+  "lastUpdate": 1717767876643,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "c72f389ff006e8765e485487ab0ad8666f964c0a",
-          "message": "Catch migration exception and send as response",
-          "timestamp": "2024-05-31T11:59:39+02:00",
-          "tree_id": "ebc931df8e40a87ec43b558fc079a4b6323d71fd",
-          "url": "https://github.com/equinor/ert/commit/c72f389ff006e8765e485487ab0ad8666f964c0a"
-        },
-        "date": 1717149787973,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16778480203706103,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02773399239539426",
-            "extra": "mean: 5.960015376000001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01910665573538315",
             "extra": "mean: 5.953403861800007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "48c3341be570009364d74d2e54062c91c03b809a",
+          "message": "Make top level gui directory type checked",
+          "timestamp": "2024-06-07T15:41:20+02:00",
+          "tree_id": "360014d8470c88b100d5e3e8e2e42be6b3457e2c",
+          "url": "https://github.com/equinor/ert/commit/48c3341be570009364d74d2e54062c91c03b809a"
+        },
+        "date": 1717767876116,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16649391458437116,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03860913758639573",
+            "extra": "mean: 6.006225527799984 sec\nrounds: 5"
           }
         ]
       }
