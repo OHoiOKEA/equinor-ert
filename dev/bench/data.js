@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717764557921,
+  "lastUpdate": 1717764670166,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "670de15e880ea58f4914ba482b0cc2a8838f083f",
-          "message": "Fix RealNodeData subscriptable\n\nChange typehinting to match actual usage\nAdd tests for verifying correct colors for queue and forward model status\nExtend tests to cover forward_model_steps",
-          "timestamp": "2024-05-31T10:21:04+02:00",
-          "tree_id": "c8582a25c5ffcdd36cd93933c42b971b947e7910",
-          "url": "https://github.com/equinor/ert/commit/670de15e880ea58f4914ba482b0cc2a8838f083f"
-        },
-        "date": 1717143864351,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1632054469848745,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03225941220699162",
-            "extra": "mean: 6.127246476599998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.039683280658523876",
             "extra": "mean: 5.923756058799995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "c649826e5393a55243ae4326a7e43f0ee25a4ea2",
+          "message": "Fix lsf integration test\n\nThere is a difference in how the mocked LSF driver in test and the real LSF system\nworks in this corner-case.",
+          "timestamp": "2024-06-07T14:47:56+02:00",
+          "tree_id": "e0852c16fe2155afe0c177864e923588fb7a9fc8",
+          "url": "https://github.com/equinor/ert/commit/c649826e5393a55243ae4326a7e43f0ee25a4ea2"
+        },
+        "date": 1717764669626,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16797113436508082,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01910665573538315",
+            "extra": "mean: 5.953403861800007 sec\nrounds: 5"
           }
         ]
       }
