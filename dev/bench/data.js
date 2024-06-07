@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717767876643,
+  "lastUpdate": 1717769547877,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "bb4944f87bbacc2977630031c043506d947b574f",
-          "message": "Add logging of ert.shared.plugins to Azure",
-          "timestamp": "2024-05-31T12:03:13+02:00",
-          "tree_id": "d19a6ae26243d30351ee957671c756b1da954174",
-          "url": "https://github.com/equinor/ert/commit/bb4944f87bbacc2977630031c043506d947b574f"
-        },
-        "date": 1717149989860,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16199726910518175,
-            "unit": "iter/sec",
-            "range": "stddev: 0.023253078150424416",
-            "extra": "mean: 6.172943565799983 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03860913758639573",
             "extra": "mean: 6.006225527799984 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "f5b2a86aea12d4ed2f8f8e704d37cab22124a3cb",
+          "message": "Fix an issue where the about_panel didn't work",
+          "timestamp": "2024-06-07T16:09:10+02:00",
+          "tree_id": "dfae071a03d62ee4ad99ab806c35b3b43ce7b5f3",
+          "url": "https://github.com/equinor/ert/commit/f5b2a86aea12d4ed2f8f8e704d37cab22124a3cb"
+        },
+        "date": 1717769547203,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1635268670178552,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04789550688423724",
+            "extra": "mean: 6.115203074800007 sec\nrounds: 5"
           }
         ]
       }
