@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1717769547877,
+  "lastUpdate": 1718003529640,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "36c89fb536e585b5a5c7844e81d54f1bef184e44",
-          "message": "Make mocked LSF and OpenPBS systems able to kill\n\nFor LSF it is necessary to manually loop over grandchildren in\nthe mocked runner to pass the added test. For OpenPBS the test\nwill pass without the loop over grandchildren, but it was added\nnonetheless.",
-          "timestamp": "2024-05-31T13:32:11+02:00",
-          "tree_id": "c90383d267fd193226fb5681b2ff9420d820fcd8",
-          "url": "https://github.com/equinor/ert/commit/36c89fb536e585b5a5c7844e81d54f1bef184e44"
-        },
-        "date": 1717155330717,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16271712778230052,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026938664017357155",
-            "extra": "mean: 6.145634535399995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04789550688423724",
             "extra": "mean: 6.115203074800007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "a3906833373c158b6276b94b8facb9dfab79e233",
+          "message": "Ensure WAITING state is always set\n\nUpon resubmissions, this state did not get set, as it before was only\nset in __init__, with the result that the GUI showed wrong state\n(RUNNING) before the realization was submitted.",
+          "timestamp": "2024-06-10T09:08:56+02:00",
+          "tree_id": "1346fa9b63a3fe74ef477f50dd74f5fd396bb694",
+          "url": "https://github.com/equinor/ert/commit/a3906833373c158b6276b94b8facb9dfab79e233"
+        },
+        "date": 1718003529132,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16513308233633198,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020730863471242946",
+            "extra": "mean: 6.055721760000017 sec\nrounds: 5"
           }
         ]
       }
