@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718003529640,
+  "lastUpdate": 1718012049393,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "ceda74fdd18d8df31685288578cfa2b034d839b2",
-          "message": "Add forward models as plugins\n\nAdd possiblity to specify forward models as plugins\r\n\r\nCo-authored-by: Yngve S. Kristiansen <yngve.s.kristiansen@webstep.no>\r\nCo-authored-by: Eivind Jahren <ejah@equinor.com>",
-          "timestamp": "2024-06-03T07:48:45+02:00",
-          "tree_id": "da7ce786ee3a02cbbb0cb012c84a009054caf491",
-          "url": "https://github.com/equinor/ert/commit/ceda74fdd18d8df31685288578cfa2b034d839b2"
-        },
-        "date": 1717393924560,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1659671984179004,
-            "unit": "iter/sec",
-            "range": "stddev: 0.017395487711158612",
-            "extra": "mean: 6.025286981600004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020730863471242946",
             "extra": "mean: 6.055721760000017 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "3f42de1b5a7025f8cd231f5af8a36b1450c1f37f",
+          "message": "Remove un-used VariableInfo type",
+          "timestamp": "2024-06-10T12:30:44+03:00",
+          "tree_id": "ce4ed3042e60323c42478fe513d20730347ff80d",
+          "url": "https://github.com/equinor/ert/commit/3f42de1b5a7025f8cd231f5af8a36b1450c1f37f"
+        },
+        "date": 1718012048420,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16311490727518463,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03252294030905305",
+            "extra": "mean: 6.130647509200003 sec\nrounds: 5"
           }
         ]
       }
