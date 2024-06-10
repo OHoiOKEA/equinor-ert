@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718017908474,
+  "lastUpdate": 1718022443526,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "0e0c9ad95b2952371ad42e0d18a12b19ceae4265",
-          "message": "Initialize ensemble config lastly",
-          "timestamp": "2024-06-03T10:14:17+02:00",
-          "tree_id": "f0f9308c175b6d34d9d21dc4e4fb08001507b84c",
-          "url": "https://github.com/equinor/ert/commit/0e0c9ad95b2952371ad42e0d18a12b19ceae4265"
-        },
-        "date": 1717402667571,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16647370799612,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029063921707327006",
-            "extra": "mean: 6.006954563799991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.008854874156157723",
             "extra": "mean: 6.041795112800008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "48ab658ce25a1675e58459ad7ad14622d18ef6b9",
+          "message": "Show ert version/komodo version in GUI",
+          "timestamp": "2024-06-10T14:22:59+02:00",
+          "tree_id": "a7a0b748e8637fe9522e77472cb4499956880753",
+          "url": "https://github.com/equinor/ert/commit/48ab658ce25a1675e58459ad7ad14622d18ef6b9"
+        },
+        "date": 1718022442991,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16781311837793675,
+            "unit": "iter/sec",
+            "range": "stddev: 0.029419166960692748",
+            "extra": "mean: 5.959009698800014 sec\nrounds: 5"
           }
         ]
       }
