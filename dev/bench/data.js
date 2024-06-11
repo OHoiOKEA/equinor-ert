@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718107003495,
+  "lastUpdate": 1718110826109,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "9e4c1448fca5a150811d460af11f0ccafd774dab",
-          "message": "New LSF driver should allocate correct number of cpus based on config  (#8061)\n\n* Specify number of cpus to allocate on LSF in new driver\r\n\r\n* Add integration test for num_cpu on lsf\r\n\r\n* Add -n into mocked bsub\r\n\r\n---------\r\n\r\nCo-authored-by: xjules <jparu@equinor.com>",
-          "timestamp": "2024-06-04T15:17:23+02:00",
-          "tree_id": "cfc143ec621ff5f1a27f0ca955c5d58e47c2cc34",
-          "url": "https://github.com/equinor/ert/commit/9e4c1448fca5a150811d460af11f0ccafd774dab"
-        },
-        "date": 1717507255276,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16499252589467475,
-            "unit": "iter/sec",
-            "range": "stddev: 0.013104353271791942",
-            "extra": "mean: 6.060880603999988 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029451319984811326",
             "extra": "mean: 6.047524278600008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "37c4d20e858a87199bef66477cbf32fbe7254185",
+          "message": "Add test for workflow tool",
+          "timestamp": "2024-06-11T14:57:04+02:00",
+          "tree_id": "9906be396d722e4716918b9a794d27ba9b503705",
+          "url": "https://github.com/equinor/ert/commit/37c4d20e858a87199bef66477cbf32fbe7254185"
+        },
+        "date": 1718110825198,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16877843214822072,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04352456227030669",
+            "extra": "mean: 5.9249276538 sec\nrounds: 5"
           }
         ]
       }
