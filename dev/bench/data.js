@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718101740761,
+  "lastUpdate": 1718102214177,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "5eee4ce53dbfbb2bd0e3f949a0506c5c37199a69",
-          "message": "Use plugin fm steps in LibresFacade",
-          "timestamp": "2024-06-04T10:13:40+02:00",
-          "tree_id": "46a6a7dcd4230bf28e4ad17ee54cc7f73414020a",
-          "url": "https://github.com/equinor/ert/commit/5eee4ce53dbfbb2bd0e3f949a0506c5c37199a69"
-        },
-        "date": 1717489015049,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16791872332532481,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04721040293112835",
-            "extra": "mean: 5.955262046999996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.035614870729851325",
             "extra": "mean: 6.042059180200022 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "0092588b623376ccaf03e7713975c1b56d18332c",
+          "message": "Update tooltip text for plot ensemble selector",
+          "timestamp": "2024-06-11T12:33:42+02:00",
+          "tree_id": "8b43f3f8b7bced6d1eeca7fc4044cdb5e5ff9118",
+          "url": "https://github.com/equinor/ert/commit/0092588b623376ccaf03e7713975c1b56d18332c"
+        },
+        "date": 1718102213505,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1622691637819986,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030584672310551442",
+            "extra": "mean: 6.162600315999998 sec\nrounds: 5"
           }
         ]
       }
