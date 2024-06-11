@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718022443526,
+  "lastUpdate": 1718101740761,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "1d111e99b757541785f0192c1f4dabd77b4c3d74",
-          "message": "Fix copyablelabel not crashing if no clipboard\n\nSome nonstandard graphical systems and many non-graphical\nsystems may not have a clipboard causing QApplication.clipboard()\nto return None",
-          "timestamp": "2024-06-03T12:12:41+02:00",
-          "tree_id": "43f0565caca79c65d87628d11a04b0760ae1983c",
-          "url": "https://github.com/equinor/ert/commit/1d111e99b757541785f0192c1f4dabd77b4c3d74"
-        },
-        "date": 1717409755805,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16026878447056514,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022381141745645934",
-            "extra": "mean: 6.239518214999999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029419166960692748",
             "extra": "mean: 5.959009698800014 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "ded8131cf840a57a21eaf4650e88c4723f00c570",
+          "message": "Refactor snapshot metadata to be typeddict",
+          "timestamp": "2024-06-11T12:25:13+02:00",
+          "tree_id": "1b808c8f939774f558100f1c3f1ec8a6990d2d95",
+          "url": "https://github.com/equinor/ert/commit/ded8131cf840a57a21eaf4650e88c4723f00c570"
+        },
+        "date": 1718101739843,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1655064887939239,
+            "unit": "iter/sec",
+            "range": "stddev: 0.035614870729851325",
+            "extra": "mean: 6.042059180200022 sec\nrounds: 5"
           }
         ]
       }
