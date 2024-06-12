@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718180758106,
+  "lastUpdate": 1718187332463,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "3c3796ef0197dce4e50866dd0fb71bc73dbaf5a0",
-          "message": "Avoid creating two random seeds",
-          "timestamp": "2024-06-05T11:30:50+02:00",
-          "tree_id": "055d2d19aadf8be7b948d4a24f51a41e44d96b4f",
-          "url": "https://github.com/equinor/ert/commit/3c3796ef0197dce4e50866dd0fb71bc73dbaf5a0"
-        },
-        "date": 1717580054451,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16614617154440847,
-            "unit": "iter/sec",
-            "range": "stddev: 0.035595701876233225",
-            "extra": "mean: 6.0187965254000115 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022635519096958982",
             "extra": "mean: 5.979941755400023 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "8b1a379cc941615cf3ae05c0d38d986507b19e1f",
+          "message": "Validate number of arguments for workflows",
+          "timestamp": "2024-06-12T12:12:19+02:00",
+          "tree_id": "1f81ba43e256d1f06139b909da28ede91bca7755",
+          "url": "https://github.com/equinor/ert/commit/8b1a379cc941615cf3ae05c0d38d986507b19e1f"
+        },
+        "date": 1718187331779,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16421379479175982,
+            "unit": "iter/sec",
+            "range": "stddev: 0.061854542639158974",
+            "extra": "mean: 6.089622380800006 sec\nrounds: 5"
           }
         ]
       }
