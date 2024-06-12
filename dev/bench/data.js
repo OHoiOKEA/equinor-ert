@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718187332463,
+  "lastUpdate": 1718190384890,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "836cc1bad2866bd573c5a08b12628f35a926df2e",
-          "message": "Rename methods in ObservationsAndResponses",
-          "timestamp": "2024-06-05T11:38:04+02:00",
-          "tree_id": "678ff9916e08838ac9f9abf3250f49629ac17ad0",
-          "url": "https://github.com/equinor/ert/commit/836cc1bad2866bd573c5a08b12628f35a926df2e"
-        },
-        "date": 1717580477352,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16919294233360033,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01956559596996017",
-            "extra": "mean: 5.910412019599994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.061854542639158974",
             "extra": "mean: 6.089622380800006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "6e02dfe29b1cb70c8f4e31d26e29c94338c898fc",
+          "message": "Remove unused depth axis type",
+          "timestamp": "2024-06-12T13:02:50+02:00",
+          "tree_id": "61c4b353c583492b64defce58935818d94ecbb4f",
+          "url": "https://github.com/equinor/ert/commit/6e02dfe29b1cb70c8f4e31d26e29c94338c898fc"
+        },
+        "date": 1718190384197,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16353182557671755,
+            "unit": "iter/sec",
+            "range": "stddev: 0.012143104244953445",
+            "extra": "mean: 6.115017651599999 sec\nrounds: 5"
           }
         ]
       }
