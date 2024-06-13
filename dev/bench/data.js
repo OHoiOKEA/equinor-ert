@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718197412680,
+  "lastUpdate": 1718259889032,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "314d52cb24ba54b261c5a714c665982616011b8a",
-          "message": "Don't cast array to np.array",
-          "timestamp": "2024-06-05T15:26:38+02:00",
-          "tree_id": "a2d5d5f091926c4aa05ff6c54d4b6ee64e7eaf1b",
-          "url": "https://github.com/equinor/ert/commit/314d52cb24ba54b261c5a714c665982616011b8a"
-        },
-        "date": 1717594191592,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16536011539663317,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06745773063322387",
-            "extra": "mean: 6.047407487600003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.046039400621343665",
             "extra": "mean: 6.1923383604000035 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "6b38af3ae1011a53e68722a18d88a1fa941863ef",
+          "message": "Simplify base run model validation\n\nMost run models dont use current case, and there is no problem\nwith duplicate ensemble names anymore, so this restriction\ncan be lifted.",
+          "timestamp": "2024-06-13T08:20:57+02:00",
+          "tree_id": "b52f7c256ae2baa7c4e2487108f21ac26c7aa187",
+          "url": "https://github.com/equinor/ert/commit/6b38af3ae1011a53e68722a18d88a1fa941863ef"
+        },
+        "date": 1718259888150,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16246107768872992,
+            "unit": "iter/sec",
+            "range": "stddev: 0.054634449024664446",
+            "extra": "mean: 6.155320488000006 sec\nrounds: 5"
           }
         ]
       }
