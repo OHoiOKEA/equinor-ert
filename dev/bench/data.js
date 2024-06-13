@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718274778555,
+  "lastUpdate": 1718275421970,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "10cfe53863fc0147b252254a4a0796cc034e2714",
-          "message": "Raise a better exception when starting the api with no storage",
-          "timestamp": "2024-06-06T13:34:14+02:00",
-          "tree_id": "d946187a72ff720b9837a61cd21bfae010ad9df3",
-          "url": "https://github.com/equinor/ert/commit/10cfe53863fc0147b252254a4a0796cc034e2714"
-        },
-        "date": 1717673870383,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1652940340374279,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03329853157516826",
-            "extra": "mean: 6.049825124199993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.042339359618573956",
             "extra": "mean: 6.106466327399994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "b844a0550388c9a44078976e45e245c1d1f4f6c5",
+          "message": "Type check ert.gui.plottery",
+          "timestamp": "2024-06-13T12:40:28+02:00",
+          "tree_id": "95d1e92f914051c3cc4ab1ccd0c758a3768c26f5",
+          "url": "https://github.com/equinor/ert/commit/b844a0550388c9a44078976e45e245c1d1f4f6c5"
+        },
+        "date": 1718275421348,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1648087824263823,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025255450505610462",
+            "extra": "mean: 6.06763781200001 sec\nrounds: 5"
           }
         ]
       }
