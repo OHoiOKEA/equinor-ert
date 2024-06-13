@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718272763004,
+  "lastUpdate": 1718274778555,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "dc7d4e83ed3690f2591abf30397600e5fc5b418b",
-          "message": "Fix flaky integration test `test_generic_driver.py::test_kill_actually_kills`",
-          "timestamp": "2024-06-06T13:29:33+02:00",
-          "tree_id": "66efe1afefb4087bde8ef0200fd223625525254e",
-          "url": "https://github.com/equinor/ert/commit/dc7d4e83ed3690f2591abf30397600e5fc5b418b"
-        },
-        "date": 1717673579382,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.15964701692058267,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05594196994769429",
-            "extra": "mean: 6.263818887999991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02261912524369543",
             "extra": "mean: 6.027077571799998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "634792cb7e7bf865fae26fdd8464f6edff9f5d82",
+          "message": "Fix the snake_oil mpl test",
+          "timestamp": "2024-06-13T12:29:43+02:00",
+          "tree_id": "53acb8fd3a3233b236566e169333b0349421fb0b",
+          "url": "https://github.com/equinor/ert/commit/634792cb7e7bf865fae26fdd8464f6edff9f5d82"
+        },
+        "date": 1718274777931,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1637608309592987,
+            "unit": "iter/sec",
+            "range": "stddev: 0.042339359618573956",
+            "extra": "mean: 6.106466327399994 sec\nrounds: 5"
           }
         ]
       }
