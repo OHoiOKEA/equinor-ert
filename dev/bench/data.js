@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718259889032,
+  "lastUpdate": 1718272763004,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "56dc74a9f72e3a806000eee55e5471f647219d00",
-          "message": "Add some type hints to gui",
-          "timestamp": "2024-06-06T12:58:57+02:00",
-          "tree_id": "c5ac842be1b05995c2a79735fa5cd796e936a345",
-          "url": "https://github.com/equinor/ert/commit/56dc74a9f72e3a806000eee55e5471f647219d00"
-        },
-        "date": 1717671734261,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1629714279548566,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03514636159208648",
-            "extra": "mean: 6.136044903999993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.054634449024664446",
             "extra": "mean: 6.155320488000006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "091a179db827473fcd860fd53c6e1564c0d3f024",
+          "message": "Remove concept indeterminate",
+          "timestamp": "2024-06-13T11:56:15+02:00",
+          "tree_id": "ed4a7665ec272c15af170bd8c2ba5a5d81dc37eb",
+          "url": "https://github.com/equinor/ert/commit/091a179db827473fcd860fd53c6e1564c0d3f024"
+        },
+        "date": 1718272762556,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16591789106529586,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02261912524369543",
+            "extra": "mean: 6.027077571799998 sec\nrounds: 5"
           }
         ]
       }
