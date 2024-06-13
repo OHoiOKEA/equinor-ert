@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718275421970,
+  "lastUpdate": 1718279289991,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "ba78c6b6ddfee131633c8266839a42ebe7d5aa51",
-          "message": "Fix resizing of experiment manager on macos (#8039)\n\n* Fix resizing of experiment manager on macos\r\n\r\n* Fix tests",
-          "timestamp": "2024-06-06T13:41:05+02:00",
-          "tree_id": "29b113ab6546216c1091603d859e8b050eb1eaaa",
-          "url": "https://github.com/equinor/ert/commit/ba78c6b6ddfee131633c8266839a42ebe7d5aa51"
-        },
-        "date": 1717674260735,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16261921351953776,
-            "unit": "iter/sec",
-            "range": "stddev: 0.012837474914677073",
-            "extra": "mean: 6.149334868599988 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025255450505610462",
             "extra": "mean: 6.06763781200001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "2b214021f128d81045780321b7e6923a692a9f78",
+          "message": "Remove the RMS forward model",
+          "timestamp": "2024-06-13T13:44:51+02:00",
+          "tree_id": "22f0692b75ccb00394801781881dc08d92a68f85",
+          "url": "https://github.com/equinor/ert/commit/2b214021f128d81045780321b7e6923a692a9f78"
+        },
+        "date": 1718279289313,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1610473841653496,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02256866121695675",
+            "extra": "mean: 6.209352639800011 sec\nrounds: 5"
           }
         ]
       }
