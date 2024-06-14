@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718359101457,
+  "lastUpdate": 1718366970113,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "b803b915a167762ebb67ff3e1da0298e971d2438",
-          "message": "Add comment",
-          "timestamp": "2024-06-07T13:40:19+02:00",
-          "tree_id": "113a90b88a7410e867541fb7aa5060c82aaca36b",
-          "url": "https://github.com/equinor/ert/commit/b803b915a167762ebb67ff3e1da0298e971d2438"
-        },
-        "date": 1717760619162,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1638891480479824,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04590180385060584",
-            "extra": "mean: 6.101685266599998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.015552686252868844",
             "extra": "mean: 5.924475355399994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f29176bfdecbb2584e1e461b4f000f915ea7da6a",
+          "message": "Bugfix: unswap key_index and obs_name",
+          "timestamp": "2024-06-14T14:06:14+02:00",
+          "tree_id": "b089c4f3fb6cd45aaff4b40bef977e42ef728162",
+          "url": "https://github.com/equinor/ert/commit/f29176bfdecbb2584e1e461b4f000f915ea7da6a"
+        },
+        "date": 1718366969473,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16497958596502116,
+            "unit": "iter/sec",
+            "range": "stddev: 0.028035655220886215",
+            "extra": "mean: 6.061355980199994 sec\nrounds: 5"
           }
         ]
       }
