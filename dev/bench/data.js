@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718353772471,
+  "lastUpdate": 1718354388450,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "77ff126773da3c18b2e5e900437827d6ebf8000d",
-          "message": "Make sure to log Realization status after completed run as info (#8074)\n\n* Make sure to log Realization status after completed run as info\r\n\r\n* Change logger.error to logger.info when kill does not execute\r\n\r\n* Set log_level to INFO in test",
-          "timestamp": "2024-06-06T15:13:47+02:00",
-          "tree_id": "607a531977830b74d1fd08172713e6460f4ac7cf",
-          "url": "https://github.com/equinor/ert/commit/77ff126773da3c18b2e5e900437827d6ebf8000d"
-        },
-        "date": 1717679850777,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1634158414125169,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026559649687277323",
-            "extra": "mean: 6.119357776799996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01315950920077687",
             "extra": "mean: 5.9137924172 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "c24268bdaae518c731d1dd09f53438beb7bef2da",
+          "message": "Show more info for experiment observations",
+          "timestamp": "2024-06-14T10:36:36+02:00",
+          "tree_id": "88efa48e798098942cfa0dce6288714c5965d80e",
+          "url": "https://github.com/equinor/ert/commit/c24268bdaae518c731d1dd09f53438beb7bef2da"
+        },
+        "date": 1718354387780,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16764793757869514,
+            "unit": "iter/sec",
+            "range": "stddev: 0.047228815132849614",
+            "extra": "mean: 5.964881014599973 sec\nrounds: 5"
           }
         ]
       }
