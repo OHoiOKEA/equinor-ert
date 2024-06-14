@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718354388450,
+  "lastUpdate": 1718358140848,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "3aa9c85dd21ccdf48920f44973312286f74cc5c4",
-          "message": "Let LSFDriver pick num_cpu from the realization object",
-          "timestamp": "2024-06-06T15:38:20+02:00",
-          "tree_id": "07cd516d89f9c87d3a87095030ccf98b5aa3a2dd",
-          "url": "https://github.com/equinor/ert/commit/3aa9c85dd21ccdf48920f44973312286f74cc5c4"
-        },
-        "date": 1717681322762,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16455037463390823,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02597971444248209",
-            "extra": "mean: 6.07716635239999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.047228815132849614",
             "extra": "mean: 5.964881014599973 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b6977ce8c0b9332773d4a64d7ad1933817cb50d5",
+          "message": "Drop nans along name dim for single obs datasets",
+          "timestamp": "2024-06-14T11:38:54+02:00",
+          "tree_id": "2b579594cca6ba5baf6730910d7d9d2207667404",
+          "url": "https://github.com/equinor/ert/commit/b6977ce8c0b9332773d4a64d7ad1933817cb50d5"
+        },
+        "date": 1718358140063,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16337530275811288,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05887327125315794",
+            "extra": "mean: 6.120876185800012 sec\nrounds: 5"
           }
         ]
       }
