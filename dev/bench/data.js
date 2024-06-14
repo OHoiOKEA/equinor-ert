@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718279289991,
+  "lastUpdate": 1718353772471,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "56de727322971844e59874a46b9dee151815d792",
-          "message": "Add positive_int validation schema for NUM_CPU and MAX_SUBMIT (#8082)\n\nAdd positive_int validation schema for NUM_CPU and MAX_SUBMIT\r\n\r\n* Add test for wrong num_cpu\r\n\r\n* Add test for wrong max_submit\r\n\r\n* Raise ValueError when scheduler gets negative max_submit attribute",
-          "timestamp": "2024-06-06T13:47:11+02:00",
-          "tree_id": "8b7c7109bcf65da8f9b362dcc19c0e59f0806221",
-          "url": "https://github.com/equinor/ert/commit/56de727322971844e59874a46b9dee151815d792"
-        },
-        "date": 1717674621305,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16491293821901326,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02774509748323822",
-            "extra": "mean: 6.063805610399993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02256866121695675",
             "extra": "mean: 6.209352639800011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "77fa511421ef1a08aa71272a80674562d8067236",
+          "message": "Fix signature of overrides from QAbstractItemModel\n\nAlso fixes some typing issues in ert.gui.model so that type checking can\r\nbe turned on for parts of it.",
+          "timestamp": "2024-06-14T10:26:08+02:00",
+          "tree_id": "97b89665c8224810e072763e5e7335252e842aff",
+          "url": "https://github.com/equinor/ert/commit/77fa511421ef1a08aa71272a80674562d8067236"
+        },
+        "date": 1718353771561,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16909622953479816,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01315950920077687",
+            "extra": "mean: 5.9137924172 sec\nrounds: 5"
           }
         ]
       }
