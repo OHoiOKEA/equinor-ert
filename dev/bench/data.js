@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718626089343,
+  "lastUpdate": 1718631118410,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "f5b2a86aea12d4ed2f8f8e704d37cab22124a3cb",
-          "message": "Fix an issue where the about_panel didn't work",
-          "timestamp": "2024-06-07T16:09:10+02:00",
-          "tree_id": "dfae071a03d62ee4ad99ab806c35b3b43ce7b5f3",
-          "url": "https://github.com/equinor/ert/commit/f5b2a86aea12d4ed2f8f8e704d37cab22124a3cb"
-        },
-        "date": 1717769547203,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1635268670178552,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04789550688423724",
-            "extra": "mean: 6.115203074800007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026522485724710894",
             "extra": "mean: 5.987930535800013 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c38f6c620eb5717096dea3ab6c759248ceaa449a",
+          "message": "Simplify alignment check in get_observations_and_responses",
+          "timestamp": "2024-06-17T15:28:28+02:00",
+          "tree_id": "65e898ed1980df82cb8b2361d66070dbc2c5cbfe",
+          "url": "https://github.com/equinor/ert/commit/c38f6c620eb5717096dea3ab6c759248ceaa449a"
+        },
+        "date": 1718631117829,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16538904281621342,
+            "unit": "iter/sec",
+            "range": "stddev: 0.035746120193221285",
+            "extra": "mean: 6.046349764000013 sec\nrounds: 5"
           }
         ]
       }
