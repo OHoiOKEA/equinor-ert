@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718366970113,
+  "lastUpdate": 1718611052453,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "c2fca21a7c18f66b20f3344b99fde7de3b27355a",
-          "message": "Remove current memory usage from run details view\n\nAlso adds the string 'realization' to the displayed string to remind that this\nis not about the usage of the Ert mother process.\n\nCurrent memory usage quickly becomes a very random uninteresting number when realization\neventually get staggered in time. Maximum is the only thing that really matters.",
-          "timestamp": "2024-06-07T14:43:44+02:00",
-          "tree_id": "992980fd6ac53b75c6c1574ade6cb93a76316350",
-          "url": "https://github.com/equinor/ert/commit/c2fca21a7c18f66b20f3344b99fde7de3b27355a"
-        },
-        "date": 1717764428214,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.162026949905247,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04562949702955377",
-            "extra": "mean: 6.171812779199991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028035655220886215",
             "extra": "mean: 6.061355980199994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "90998f2feeca8c1a41793fe4dfddbb9142b8268e",
+          "message": "Combine error and warning boxes that have the same message",
+          "timestamp": "2024-06-17T09:54:17+02:00",
+          "tree_id": "eef87fd353c77df67a6a2f54929695295cabf631",
+          "url": "https://github.com/equinor/ert/commit/90998f2feeca8c1a41793fe4dfddbb9142b8268e"
+        },
+        "date": 1718611051882,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16521293488971855,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03305332677102909",
+            "extra": "mean: 6.0527948412 sec\nrounds: 5"
           }
         ]
       }
