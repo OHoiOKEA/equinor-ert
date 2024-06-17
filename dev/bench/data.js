@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718611052453,
+  "lastUpdate": 1718624845765,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "6d613041af2fcaa5224654aadd8b4477ab62a210",
-          "message": "Increate grace time for kill and change logger.error to logger.debug (#8107)\n\nIncreate grace time for kill and change logger.erro to logger.debug",
-          "timestamp": "2024-06-07T12:45:59Z",
-          "tree_id": "2b7d35b8a6e69a175e3fe89aa4d8a7998064e45c",
-          "url": "https://github.com/equinor/ert/commit/6d613041af2fcaa5224654aadd8b4477ab62a210"
-        },
-        "date": 1717764556813,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16881181299058676,
-            "unit": "iter/sec",
-            "range": "stddev: 0.039683280658523876",
-            "extra": "mean: 5.923756058799995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03305332677102909",
             "extra": "mean: 6.0527948412 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "03b296d48682fb41cdbcbfc0604d2fd9e34c8d63",
+          "message": "Remove websocket DEBUG logging\n\nBy going from logging DEBUG messages to INFO and above, we shave 95% off the log\nsize when doing the poly-example. Logging has been proven to be a bottleneck\nso this change could actually improve perceived application speed.\n\nNot opting to filter out INFO as well for the moment, meaning we will still log\nwhenever the connection is closed and reopened (which we don't want to happen\nso it makes sense to log it).",
+          "timestamp": "2024-06-17T13:44:09+02:00",
+          "tree_id": "e83bc204dd7ba4eb00c8cb33010466120eea4735",
+          "url": "https://github.com/equinor/ert/commit/03b296d48682fb41cdbcbfc0604d2fd9e34c8d63"
+        },
+        "date": 1718624845142,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16899579075363294,
+            "unit": "iter/sec",
+            "range": "stddev: 0.024331987344029932",
+            "extra": "mean: 5.917307144400001 sec\nrounds: 5"
           }
         ]
       }
