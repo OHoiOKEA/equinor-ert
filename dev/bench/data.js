@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718625486410,
+  "lastUpdate": 1718626089343,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "48c3341be570009364d74d2e54062c91c03b809a",
-          "message": "Make top level gui directory type checked",
-          "timestamp": "2024-06-07T15:41:20+02:00",
-          "tree_id": "360014d8470c88b100d5e3e8e2e42be6b3457e2c",
-          "url": "https://github.com/equinor/ert/commit/48c3341be570009364d74d2e54062c91c03b809a"
-        },
-        "date": 1717767876116,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16649391458437116,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03860913758639573",
-            "extra": "mean: 6.006225527799984 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0374783418684659",
             "extra": "mean: 6.010644532599997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "054d9aaf5fc8a206f83e7fb0213bd9f18e1b3d9c",
+          "message": "Change order of data vars in test to reflect reality\n\nThis is the order we get when interacting with storage.",
+          "timestamp": "2024-06-17T14:04:28+02:00",
+          "tree_id": "581bdfeead4eafe98a7e1fbf8e1472126cf3562b",
+          "url": "https://github.com/equinor/ert/commit/054d9aaf5fc8a206f83e7fb0213bd9f18e1b3d9c"
+        },
+        "date": 1718626088303,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16700260532771793,
+            "unit": "iter/sec",
+            "range": "stddev: 0.026522485724710894",
+            "extra": "mean: 5.987930535800013 sec\nrounds: 5"
           }
         ]
       }
