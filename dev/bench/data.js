@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718624845765,
+  "lastUpdate": 1718625486410,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "c649826e5393a55243ae4326a7e43f0ee25a4ea2",
-          "message": "Fix lsf integration test\n\nThere is a difference in how the mocked LSF driver in test and the real LSF system\nworks in this corner-case.",
-          "timestamp": "2024-06-07T14:47:56+02:00",
-          "tree_id": "e0852c16fe2155afe0c177864e923588fb7a9fc8",
-          "url": "https://github.com/equinor/ert/commit/c649826e5393a55243ae4326a7e43f0ee25a4ea2"
-        },
-        "date": 1717764669626,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16797113436508082,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01910665573538315",
-            "extra": "mean: 5.953403861800007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.024331987344029932",
             "extra": "mean: 5.917307144400001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "e6c455c5bf2e2e847a4cf2e8c24875a8dd817917",
+          "message": "Ignore SIGNAL_OFFSET when asserting LSF exit_code\n\nIt is not guaranteed that LSF will always add SIGNAL_OFFSET (128) to the exit code\nfrom the job, it depends at least on shell types (csh vs bash) and you can also\nhave a mix of these when bash encapsulates csh. This is not something we want\nto track.",
+          "timestamp": "2024-06-17T13:54:43+02:00",
+          "tree_id": "4b760329f392e9aca91d4d24bc8264850e05b581",
+          "url": "https://github.com/equinor/ert/commit/e6c455c5bf2e2e847a4cf2e8c24875a8dd817917"
+        },
+        "date": 1718625485518,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16637150884173724,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0374783418684659",
+            "extra": "mean: 6.010644532599997 sec\nrounds: 5"
           }
         ]
       }
