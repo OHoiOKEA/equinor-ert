@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718631118410,
+  "lastUpdate": 1718692382636,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "a3906833373c158b6276b94b8facb9dfab79e233",
-          "message": "Ensure WAITING state is always set\n\nUpon resubmissions, this state did not get set, as it before was only\nset in __init__, with the result that the GUI showed wrong state\n(RUNNING) before the realization was submitted.",
-          "timestamp": "2024-06-10T09:08:56+02:00",
-          "tree_id": "1346fa9b63a3fe74ef477f50dd74f5fd396bb694",
-          "url": "https://github.com/equinor/ert/commit/a3906833373c158b6276b94b8facb9dfab79e233"
-        },
-        "date": 1718003529132,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16513308233633198,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020730863471242946",
-            "extra": "mean: 6.055721760000017 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.035746120193221285",
             "extra": "mean: 6.046349764000013 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "14dcf00dac38cd4b7441c82c57818a61d7860a7c",
+          "message": "Replacing progress view with progress widget",
+          "timestamp": "2024-06-18T08:29:50+02:00",
+          "tree_id": "c8710bc98e9514c1e3b98099f345eb2c5fef6e18",
+          "url": "https://github.com/equinor/ert/commit/14dcf00dac38cd4b7441c82c57818a61d7860a7c"
+        },
+        "date": 1718692382143,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16484800920511097,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04786365116828981",
+            "extra": "mean: 6.066193973599991 sec\nrounds: 5"
           }
         ]
       }
