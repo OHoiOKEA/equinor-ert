@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718692382636,
+  "lastUpdate": 1718693748326,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "3f42de1b5a7025f8cd231f5af8a36b1450c1f37f",
-          "message": "Remove un-used VariableInfo type",
-          "timestamp": "2024-06-10T12:30:44+03:00",
-          "tree_id": "ce4ed3042e60323c42478fe513d20730347ff80d",
-          "url": "https://github.com/equinor/ert/commit/3f42de1b5a7025f8cd231f5af8a36b1450c1f37f"
-        },
-        "date": 1718012048420,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16311490727518463,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03252294030905305",
-            "extra": "mean: 6.130647509200003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04786365116828981",
             "extra": "mean: 6.066193973599991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "d73eb5ec0abf07bc3fefa4f0c98a3275f16c277c",
+          "message": "Fix bug where uninitialized ensemble crashes gui",
+          "timestamp": "2024-06-18T08:52:37+02:00",
+          "tree_id": "0008f8d44fab3f684f428829a964915c1ba5e777",
+          "url": "https://github.com/equinor/ert/commit/d73eb5ec0abf07bc3fefa4f0c98a3275f16c277c"
+        },
+        "date": 1718693747803,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16519169592134875,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02505850197173178",
+            "extra": "mean: 6.053573059000018 sec\nrounds: 5"
           }
         ]
       }
