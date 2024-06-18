@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718714586057,
+  "lastUpdate": 1718716104778,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "ded8131cf840a57a21eaf4650e88c4723f00c570",
-          "message": "Refactor snapshot metadata to be typeddict",
-          "timestamp": "2024-06-11T12:25:13+02:00",
-          "tree_id": "1b808c8f939774f558100f1c3f1ec8a6990d2d95",
-          "url": "https://github.com/equinor/ert/commit/ded8131cf840a57a21eaf4650e88c4723f00c570"
-        },
-        "date": 1718101739843,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1655064887939239,
-            "unit": "iter/sec",
-            "range": "stddev: 0.035614870729851325",
-            "extra": "mean: 6.042059180200022 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.019465330462990007",
             "extra": "mean: 5.971731647799993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "f458eeccd9905fb02eeba6f11180ac90f415b5ea",
+          "message": "Enable ruff preview checks\n\nThis extends the number of checks to pass for the ruff linter\nconsiderably, by including rules that are currently only marked\nfor preview in ruff. These rules are in preview due to the automatic\nfix not being ready, but it does not mean that the rule is not\nvalid.\n\nAll existing issues found by enabling this are currently marked\nas exceptions, to be solved one by one. At least, enabling this\nat least ensure that no new issues can be introduced unknowingly\ninto the code base",
+          "timestamp": "2024-06-18T15:04:20+02:00",
+          "tree_id": "d6bb4878eb0ec42f6b7b0c4fd6f4b078ceef1cf8",
+          "url": "https://github.com/equinor/ert/commit/f458eeccd9905fb02eeba6f11180ac90f415b5ea"
+        },
+        "date": 1718716103761,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16371175282472014,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01733763701663877",
+            "extra": "mean: 6.108296947200006 sec\nrounds: 5"
           }
         ]
       }
