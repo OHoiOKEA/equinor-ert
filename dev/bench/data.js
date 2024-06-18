@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718697268146,
+  "lastUpdate": 1718714586057,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "48ab658ce25a1675e58459ad7ad14622d18ef6b9",
-          "message": "Show ert version/komodo version in GUI",
-          "timestamp": "2024-06-10T14:22:59+02:00",
-          "tree_id": "a7a0b748e8637fe9522e77472cb4499956880753",
-          "url": "https://github.com/equinor/ert/commit/48ab658ce25a1675e58459ad7ad14622d18ef6b9"
-        },
-        "date": 1718022442991,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16781311837793675,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029419166960692748",
-            "extra": "mean: 5.959009698800014 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06558822446922219",
             "extra": "mean: 5.969387999599985 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "94d69118da346e2d2fe1fc77a92a4a96f5c41315",
+          "message": "Fix typo reviced -> received",
+          "timestamp": "2024-06-18T14:39:37+02:00",
+          "tree_id": "65124026b9458e0e393a41e625391e340da85df3",
+          "url": "https://github.com/equinor/ert/commit/94d69118da346e2d2fe1fc77a92a4a96f5c41315"
+        },
+        "date": 1718714585585,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1674556157205094,
+            "unit": "iter/sec",
+            "range": "stddev: 0.019465330462990007",
+            "extra": "mean: 5.971731647799993 sec\nrounds: 5"
           }
         ]
       }
