@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718716104778,
+  "lastUpdate": 1718717897795,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "0092588b623376ccaf03e7713975c1b56d18332c",
-          "message": "Update tooltip text for plot ensemble selector",
-          "timestamp": "2024-06-11T12:33:42+02:00",
-          "tree_id": "8b43f3f8b7bced6d1eeca7fc4044cdb5e5ff9118",
-          "url": "https://github.com/equinor/ert/commit/0092588b623376ccaf03e7713975c1b56d18332c"
-        },
-        "date": 1718102213505,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1622691637819986,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030584672310551442",
-            "extra": "mean: 6.162600315999998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01733763701663877",
             "extra": "mean: 6.108296947200006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "1da8a7114468667e0f7fd39766fac9d679b05572",
+          "message": "Test NUM_CPU from config to built ensemble\n\nThis added test will ensure that a NUM_CPU setting in the configuration\nfile will propagate to the built ensemble inside the BaseRunModel.\n\nThe num_cpu number in the Ensemble object is what is used by\nscheduler/job.py to set the correct CPU count for the compute cluster.",
+          "timestamp": "2024-06-18T15:34:29+02:00",
+          "tree_id": "0e7f4739cadfc88e5df9390fb0a790fc13e9794e",
+          "url": "https://github.com/equinor/ert/commit/1da8a7114468667e0f7fd39766fac9d679b05572"
+        },
+        "date": 1718717896799,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16813962716426184,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04532946053324322",
+            "extra": "mean: 5.947437952999996 sec\nrounds: 5"
           }
         ]
       }
