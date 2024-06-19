@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718781899934,
+  "lastUpdate": 1718782709823,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "37c4d20e858a87199bef66477cbf32fbe7254185",
-          "message": "Add test for workflow tool",
-          "timestamp": "2024-06-11T14:57:04+02:00",
-          "tree_id": "9906be396d722e4716918b9a794d27ba9b503705",
-          "url": "https://github.com/equinor/ert/commit/37c4d20e858a87199bef66477cbf32fbe7254185"
-        },
-        "date": 1718110825198,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16877843214822072,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04352456227030669",
-            "extra": "mean: 5.9249276538 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.031087034726152617",
             "extra": "mean: 5.810125417000018 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "383d3cc338b885281dd11a6e97430989949954cf",
+          "message": "Move model factory to run models\n\nModel factory is used by both cli and gui.",
+          "timestamp": "2024-06-19T09:34:53+02:00",
+          "tree_id": "0c4a2d4fc09a80814c3fcd7b09e495af9f0c9be9",
+          "url": "https://github.com/equinor/ert/commit/383d3cc338b885281dd11a6e97430989949954cf"
+        },
+        "date": 1718782708891,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1659678529914811,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03995248587779266",
+            "extra": "mean: 6.025263217999987 sec\nrounds: 5"
           }
         ]
       }
