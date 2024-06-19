@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718787450426,
+  "lastUpdate": 1718801201201,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "8b1a379cc941615cf3ae05c0d38d986507b19e1f",
-          "message": "Validate number of arguments for workflows",
-          "timestamp": "2024-06-12T12:12:19+02:00",
-          "tree_id": "1f81ba43e256d1f06139b909da28ede91bca7755",
-          "url": "https://github.com/equinor/ert/commit/8b1a379cc941615cf3ae05c0d38d986507b19e1f"
-        },
-        "date": 1718187331779,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16421379479175982,
-            "unit": "iter/sec",
-            "range": "stddev: 0.061854542639158974",
-            "extra": "mean: 6.089622380800006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05153747297927566",
             "extra": "mean: 5.967390926399991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "3f3e682156516d15ccded659adefb3730da43e83",
+          "message": "Remove EnKFMain and replace usage with fixtures\n\nThis removes the EnKFMain class, and replaces the remaning\nusage with pytest style fixtures. The current usage was mostly\nas a facade to ErtConfig, and it held state for the workflows.",
+          "timestamp": "2024-06-19T14:43:11+02:00",
+          "tree_id": "e90ffaeea561b86ac3c60022160ecc77c62a348e",
+          "url": "https://github.com/equinor/ert/commit/3f3e682156516d15ccded659adefb3730da43e83"
+        },
+        "date": 1718801200732,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16345156331250027,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0347770280804156",
+            "extra": "mean: 6.1180204075999995 sec\nrounds: 5"
           }
         ]
       }
