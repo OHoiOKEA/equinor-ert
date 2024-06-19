@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718717897795,
+  "lastUpdate": 1718775460879,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "7440057aba8c767c7c50a5c88cfc9e4bbc11cdb4",
-          "message": "Move report writing to client",
-          "timestamp": "2024-06-11T12:53:59+02:00",
-          "tree_id": "4c5d16d0a1b08440b58790e01cf03c627cf34fb4",
-          "url": "https://github.com/equinor/ert/commit/7440057aba8c767c7c50a5c88cfc9e4bbc11cdb4"
-        },
-        "date": 1718103429608,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1665506272804569,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03106437983670446",
-            "extra": "mean: 6.004180328400002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04532946053324322",
             "extra": "mean: 5.947437952999996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "dd858fad2bb8095084379648cae19149dd53d80c",
+          "message": "Use qtpy for qt imports",
+          "timestamp": "2024-06-19T07:34:11+02:00",
+          "tree_id": "c215f4e9bcb071f25cfd668ffe908339f184ac8d",
+          "url": "https://github.com/equinor/ert/commit/dd858fad2bb8095084379648cae19149dd53d80c"
+        },
+        "date": 1718775459939,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16832869585430857,
+            "unit": "iter/sec",
+            "range": "stddev: 0.017961634553308656",
+            "extra": "mean: 5.940757723600006 sec\nrounds: 5"
           }
         ]
       }
