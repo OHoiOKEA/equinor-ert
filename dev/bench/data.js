@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718801201201,
+  "lastUpdate": 1718870065176,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "6e02dfe29b1cb70c8f4e31d26e29c94338c898fc",
-          "message": "Remove unused depth axis type",
-          "timestamp": "2024-06-12T13:02:50+02:00",
-          "tree_id": "61c4b353c583492b64defce58935818d94ecbb4f",
-          "url": "https://github.com/equinor/ert/commit/6e02dfe29b1cb70c8f4e31d26e29c94338c898fc"
-        },
-        "date": 1718190384197,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16353182557671755,
-            "unit": "iter/sec",
-            "range": "stddev: 0.012143104244953445",
-            "extra": "mean: 6.115017651599999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0347770280804156",
             "extra": "mean: 6.1180204075999995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "4f363cc0257b658d01c71125118fca6b654a578d",
+          "message": "Add handling for docs to plugin manager",
+          "timestamp": "2024-06-20T09:50:59+02:00",
+          "tree_id": "6e976b785ab581b148249bc22d3c43d31babc47b",
+          "url": "https://github.com/equinor/ert/commit/4f363cc0257b658d01c71125118fca6b654a578d"
+        },
+        "date": 1718870064643,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16771824254884468,
+            "unit": "iter/sec",
+            "range": "stddev: 0.00965672836152631",
+            "extra": "mean: 5.962380625999998 sec\nrounds: 5"
           }
         ]
       }
