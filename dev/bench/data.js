@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718870065176,
+  "lastUpdate": 1718876720889,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "c5b64a90226b8f7d0ee7f6c8bcd19ad4f950fba6",
-          "message": "Remove unused pytest markers",
-          "timestamp": "2024-06-12T13:38:47+02:00",
-          "tree_id": "5d883154c3f1d91e01bbfd7b96a6bd53145f81d6",
-          "url": "https://github.com/equinor/ert/commit/c5b64a90226b8f7d0ee7f6c8bcd19ad4f950fba6"
-        },
-        "date": 1718192593856,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16240285311021344,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03359581231632761",
-            "extra": "mean: 6.1575272899999955 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.00965672836152631",
             "extra": "mean: 5.962380625999998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "399136cedc6ac82bbc7388502eec8187b7afb5ae",
+          "message": "Use gen data config for gen data (#8196)\n\nCo-authored-by: Yngve S. Kristiansen <yngve.s.kristiansen@webstep.no>",
+          "timestamp": "2024-06-20T11:41:54+02:00",
+          "tree_id": "a3dd1a4dfee44671c04ab425c8ea3baf6371c1f8",
+          "url": "https://github.com/equinor/ert/commit/399136cedc6ac82bbc7388502eec8187b7afb5ae"
+        },
+        "date": 1718876719940,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16733683999011384,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02440937587280698",
+            "extra": "mean: 5.9759703843999885 sec\nrounds: 5"
           }
         ]
       }
