@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718876835744,
+  "lastUpdate": 1718885456528,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "6b38af3ae1011a53e68722a18d88a1fa941863ef",
-          "message": "Simplify base run model validation\n\nMost run models dont use current case, and there is no problem\nwith duplicate ensemble names anymore, so this restriction\ncan be lifted.",
-          "timestamp": "2024-06-13T08:20:57+02:00",
-          "tree_id": "b52f7c256ae2baa7c4e2487108f21ac26c7aa187",
-          "url": "https://github.com/equinor/ert/commit/6b38af3ae1011a53e68722a18d88a1fa941863ef"
-        },
-        "date": 1718259888150,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16246107768872992,
-            "unit": "iter/sec",
-            "range": "stddev: 0.054634449024664446",
-            "extra": "mean: 6.155320488000006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02142578678456297",
             "extra": "mean: 5.896191213400004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "05addf9ed41308889c8d9e1f25c6b2eeeff19ddf",
+          "message": "Refactor Lsf driver to use dataclasses\n\nThis commit refactors lsf driver from using pydantic classes to dataclasses,\nas pydantic was overkill for our usage.\nWe will not be getting any pydantic validation, so invalid job_states\nsuch as `QueuedJob(job_state=bogus_state)` will not be caught.",
+          "timestamp": "2024-06-20T14:07:25+02:00",
+          "tree_id": "30694b9fa0d7af2f88fba774b13e530b28d6446f",
+          "url": "https://github.com/equinor/ert/commit/05addf9ed41308889c8d9e1f25c6b2eeeff19ddf"
+        },
+        "date": 1718885456004,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16834606384073483,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03075955675432799",
+            "extra": "mean: 5.940144825400006 sec\nrounds: 5"
           }
         ]
       }
