@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718876720889,
+  "lastUpdate": 1718876835744,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "f4a9a2aef7e3904038ef12bdf30b66401db8aab8",
-          "message": "Delete template model concept from docs\n\nThis is not a concept that is in use.",
-          "timestamp": "2024-06-12T14:59:58+02:00",
-          "tree_id": "159695ed477bd3ec47e9523125c9c1a3e73d5a58",
-          "url": "https://github.com/equinor/ert/commit/f4a9a2aef7e3904038ef12bdf30b66401db8aab8"
-        },
-        "date": 1718197412116,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1614898834332114,
-            "unit": "iter/sec",
-            "range": "stddev: 0.046039400621343665",
-            "extra": "mean: 6.1923383604000035 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02440937587280698",
             "extra": "mean: 5.9759703843999885 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "d3859627b9dd66b714826c280e2e6efd070bee78",
+          "message": "Reset endtime when restarting simulations",
+          "timestamp": "2024-06-20T11:43:53+02:00",
+          "tree_id": "769323b6efc0f569602583103377466d8db7d396",
+          "url": "https://github.com/equinor/ert/commit/d3859627b9dd66b714826c280e2e6efd070bee78"
+        },
+        "date": 1718876834724,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16960101255321328,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02142578678456297",
+            "extra": "mean: 5.896191213400004 sec\nrounds: 5"
           }
         ]
       }
