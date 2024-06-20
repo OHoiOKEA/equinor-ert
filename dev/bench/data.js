@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718885456528,
+  "lastUpdate": 1718887851992,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "091a179db827473fcd860fd53c6e1564c0d3f024",
-          "message": "Remove concept indeterminate",
-          "timestamp": "2024-06-13T11:56:15+02:00",
-          "tree_id": "ed4a7665ec272c15af170bd8c2ba5a5d81dc37eb",
-          "url": "https://github.com/equinor/ert/commit/091a179db827473fcd860fd53c6e1564c0d3f024"
-        },
-        "date": 1718272762556,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16591789106529586,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02261912524369543",
-            "extra": "mean: 6.027077571799998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03075955675432799",
             "extra": "mean: 5.940144825400006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "761b07012717abe6d567cd9cb7d75130f03b122c",
+          "message": "Refactor OpenPBS driver to use dataclasses\n\nThis commit refactors the OpenPBS driver from using pydantic classes to\ndataclasses, as pydantic was overkill for our usage.",
+          "timestamp": "2024-06-20T14:46:47+02:00",
+          "tree_id": "e4ebc8d3d232c530956253740a8d72424ad0aa8c",
+          "url": "https://github.com/equinor/ert/commit/761b07012717abe6d567cd9cb7d75130f03b122c"
+        },
+        "date": 1718887851081,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1672855122912538,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02274126162684763",
+            "extra": "mean: 5.977803973000016 sec\nrounds: 5"
           }
         ]
       }
