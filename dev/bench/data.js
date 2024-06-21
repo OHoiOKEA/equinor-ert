@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718959037699,
+  "lastUpdate": 1718959308401,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "77fa511421ef1a08aa71272a80674562d8067236",
-          "message": "Fix signature of overrides from QAbstractItemModel\n\nAlso fixes some typing issues in ert.gui.model so that type checking can\r\nbe turned on for parts of it.",
-          "timestamp": "2024-06-14T10:26:08+02:00",
-          "tree_id": "97b89665c8224810e072763e5e7335252e842aff",
-          "url": "https://github.com/equinor/ert/commit/77fa511421ef1a08aa71272a80674562d8067236"
-        },
-        "date": 1718353771561,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16909622953479816,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01315950920077687",
-            "extra": "mean: 5.9137924172 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.017770484058972292",
             "extra": "mean: 6.078079670600005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "29a067c803f48262110ccca5d63dc578ca148b19",
+          "message": "Set max_submit to 1 in job.py\n\nThis has been changed from 2 to 1 in all (?) other places\nin Ert already, so this particular place has just been forgotten.",
+          "timestamp": "2024-06-21T10:38:34+02:00",
+          "tree_id": "d5808d9d3a44241e54c675f9cbb17927d7678c7a",
+          "url": "https://github.com/equinor/ert/commit/29a067c803f48262110ccca5d63dc578ca148b19"
+        },
+        "date": 1718959307727,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.17097259770241993,
+            "unit": "iter/sec",
+            "range": "stddev: 0.015927984232167892",
+            "extra": "mean: 5.8488904855999975 sec\nrounds: 5"
           }
         ]
       }
