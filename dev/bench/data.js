@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718959308401,
+  "lastUpdate": 1718970680118,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "c24268bdaae518c731d1dd09f53438beb7bef2da",
-          "message": "Show more info for experiment observations",
-          "timestamp": "2024-06-14T10:36:36+02:00",
-          "tree_id": "88efa48e798098942cfa0dce6288714c5965d80e",
-          "url": "https://github.com/equinor/ert/commit/c24268bdaae518c731d1dd09f53438beb7bef2da"
-        },
-        "date": 1718354387780,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16764793757869514,
-            "unit": "iter/sec",
-            "range": "stddev: 0.047228815132849614",
-            "extra": "mean: 5.964881014599973 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.015927984232167892",
             "extra": "mean: 5.8488904855999975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "216a6e5402db7edf604ea1aeab9f8744a808200a",
+          "message": "Deprecate NUM_NODES and NUM_CPUS_PER_NODE\n\nNUM_NODES is for submitting multi-machine jobs, which is out of scope\nfor Ert. This feature is to be removed. Following that NUM_CPUS_PER_NODE\nbecomes equivalent to NUM_CPU which is what the users should migrate to.",
+          "timestamp": "2024-06-21T13:48:08+02:00",
+          "tree_id": "e3227e6c436a667a6501e173b1cea55bce8ebfd7",
+          "url": "https://github.com/equinor/ert/commit/216a6e5402db7edf604ea1aeab9f8744a808200a"
+        },
+        "date": 1718970679439,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16993132511829634,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06308192517426102",
+            "extra": "mean: 5.884730194999998 sec\nrounds: 5"
           }
         ]
       }
