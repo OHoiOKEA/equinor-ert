@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718970680118,
+  "lastUpdate": 1718971105581,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "b6977ce8c0b9332773d4a64d7ad1933817cb50d5",
-          "message": "Drop nans along name dim for single obs datasets",
-          "timestamp": "2024-06-14T11:38:54+02:00",
-          "tree_id": "2b579594cca6ba5baf6730910d7d9d2207667404",
-          "url": "https://github.com/equinor/ert/commit/b6977ce8c0b9332773d4a64d7ad1933817cb50d5"
-        },
-        "date": 1718358140063,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16337530275811288,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05887327125315794",
-            "extra": "mean: 6.120876185800012 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06308192517426102",
             "extra": "mean: 5.884730194999998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "d577b9bfe74ebe8db2fe3f80782f259574098f74",
+          "message": "Remove type spec for run models",
+          "timestamp": "2024-06-21T13:55:11+02:00",
+          "tree_id": "27a29141f413df4e535720475f90429ce0a9edc0",
+          "url": "https://github.com/equinor/ert/commit/d577b9bfe74ebe8db2fe3f80782f259574098f74"
+        },
+        "date": 1718971105113,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16738146175620064,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05418120660540095",
+            "extra": "mean: 5.9743772668000075 sec\nrounds: 5"
           }
         ]
       }
