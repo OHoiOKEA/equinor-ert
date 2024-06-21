@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718948097607,
+  "lastUpdate": 1718958830570,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "b844a0550388c9a44078976e45e245c1d1f4f6c5",
-          "message": "Type check ert.gui.plottery",
-          "timestamp": "2024-06-13T12:40:28+02:00",
-          "tree_id": "95d1e92f914051c3cc4ab1ccd0c758a3768c26f5",
-          "url": "https://github.com/equinor/ert/commit/b844a0550388c9a44078976e45e245c1d1f4f6c5"
-        },
-        "date": 1718275421348,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1648087824263823,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025255450505610462",
-            "extra": "mean: 6.06763781200001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030857522069539383",
             "extra": "mean: 5.938326136199999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "6ece58fc5dab6577f88bf51bd92c8fd2a1b3ba44",
+          "message": "Put expected value to the right in assert\n\nAvoiding yoda-conditions.",
+          "timestamp": "2024-06-21T10:30:24+02:00",
+          "tree_id": "3fdf44525ceb9a209b3fd89f90cc7bdbfc817b56",
+          "url": "https://github.com/equinor/ert/commit/6ece58fc5dab6577f88bf51bd92c8fd2a1b3ba44"
+        },
+        "date": 1718958829619,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16987970936457844,
+            "unit": "iter/sec",
+            "range": "stddev: 0.033481158124732534",
+            "extra": "mean: 5.886518194200005 sec\nrounds: 5"
           }
         ]
       }
