@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718976263022,
+  "lastUpdate": 1718989783432,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "f29176bfdecbb2584e1e461b4f000f915ea7da6a",
-          "message": "Bugfix: unswap key_index and obs_name",
-          "timestamp": "2024-06-14T14:06:14+02:00",
-          "tree_id": "b089c4f3fb6cd45aaff4b40bef977e42ef728162",
-          "url": "https://github.com/equinor/ert/commit/f29176bfdecbb2584e1e461b4f000f915ea7da6a"
-        },
-        "date": 1718366969473,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16497958596502116,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028035655220886215",
-            "extra": "mean: 6.061355980199994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029413495762882748",
             "extra": "mean: 5.981278390399984 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "67b0e46b4a467bf12292112dd04ba0e593538320",
+          "message": "Convert dict access of ForwardModel to get to avoid segfaults",
+          "timestamp": "2024-06-21T19:06:22+02:00",
+          "tree_id": "8d17bca9b22dd1617a15f115446764318d43739c",
+          "url": "https://github.com/equinor/ert/commit/67b0e46b4a467bf12292112dd04ba0e593538320"
+        },
+        "date": 1718989782449,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16270349563787181,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03384127830535646",
+            "extra": "mean: 6.146149448600011 sec\nrounds: 5"
           }
         ]
       }
