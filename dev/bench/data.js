@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718958830570,
+  "lastUpdate": 1718959037699,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "2b214021f128d81045780321b7e6923a692a9f78",
-          "message": "Remove the RMS forward model",
-          "timestamp": "2024-06-13T13:44:51+02:00",
-          "tree_id": "22f0692b75ccb00394801781881dc08d92a68f85",
-          "url": "https://github.com/equinor/ert/commit/2b214021f128d81045780321b7e6923a692a9f78"
-        },
-        "date": 1718279289313,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1610473841653496,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02256866121695675",
-            "extra": "mean: 6.209352639800011 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.033481158124732534",
             "extra": "mean: 5.886518194200005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "4404e4bdf360ca38724fbb27c9307b370d315cff",
+          "message": "Fix bug where number of iterations were wrong",
+          "timestamp": "2024-06-21T10:33:28+02:00",
+          "tree_id": "554de62ef3459b202a91c826eaf4f7d8f6a0742f",
+          "url": "https://github.com/equinor/ert/commit/4404e4bdf360ca38724fbb27c9307b370d315cff"
+        },
+        "date": 1718959037073,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16452564859211263,
+            "unit": "iter/sec",
+            "range": "stddev: 0.017770484058972292",
+            "extra": "mean: 6.078079670600005 sec\nrounds: 5"
           }
         ]
       }
