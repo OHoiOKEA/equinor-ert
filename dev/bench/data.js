@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718971105581,
+  "lastUpdate": 1718976263022,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "658f45e69478911c40ec42f38739f659e09f8f35",
-          "message": "Fix typing",
-          "timestamp": "2024-06-14T11:55:10+02:00",
-          "tree_id": "cd9a421a17cb39a9b3f08feb60e2c7443c939a0a",
-          "url": "https://github.com/equinor/ert/commit/658f45e69478911c40ec42f38739f659e09f8f35"
-        },
-        "date": 1718359100771,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1687913173760657,
-            "unit": "iter/sec",
-            "range": "stddev: 0.015552686252868844",
-            "extra": "mean: 5.924475355399994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05418120660540095",
             "extra": "mean: 5.9743772668000075 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "56899c1c59725d23ffbace8ba4810f5d8dc6c797",
+          "message": "Remove EnsembleBuilder",
+          "timestamp": "2024-06-21T15:20:57+02:00",
+          "tree_id": "c0b5d8bab58c5b256cf29576e62f28b1e6a106d0",
+          "url": "https://github.com/equinor/ert/commit/56899c1c59725d23ffbace8ba4810f5d8dc6c797"
+        },
+        "date": 1718976262014,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16718833913582934,
+            "unit": "iter/sec",
+            "range": "stddev: 0.029413495762882748",
+            "extra": "mean: 5.981278390399984 sec\nrounds: 5"
           }
         ]
       }
