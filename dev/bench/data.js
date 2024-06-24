@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719231212729,
+  "lastUpdate": 1719232057090,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "e6c455c5bf2e2e847a4cf2e8c24875a8dd817917",
-          "message": "Ignore SIGNAL_OFFSET when asserting LSF exit_code\n\nIt is not guaranteed that LSF will always add SIGNAL_OFFSET (128) to the exit code\nfrom the job, it depends at least on shell types (csh vs bash) and you can also\nhave a mix of these when bash encapsulates csh. This is not something we want\nto track.",
-          "timestamp": "2024-06-17T13:54:43+02:00",
-          "tree_id": "4b760329f392e9aca91d4d24bc8264850e05b581",
-          "url": "https://github.com/equinor/ert/commit/e6c455c5bf2e2e847a4cf2e8c24875a8dd817917"
-        },
-        "date": 1718625485518,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16637150884173724,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0374783418684659",
-            "extra": "mean: 6.010644532599997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025426155558969477",
             "extra": "mean: 5.904058403800002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "839a23ba0ad6796d2985617f2a091adb1f870712",
+          "message": "Type check ert.gui",
+          "timestamp": "2024-06-24T12:24:21Z",
+          "tree_id": "7dcf4784616c4cee4852ccb05bfe7543ddf6237e",
+          "url": "https://github.com/equinor/ert/commit/839a23ba0ad6796d2985617f2a091adb1f870712"
+        },
+        "date": 1719232056631,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1691621117084615,
+            "unit": "iter/sec",
+            "range": "stddev: 0.005382480128510347",
+            "extra": "mean: 5.911489221199997 sec\nrounds: 5"
           }
         ]
       }
