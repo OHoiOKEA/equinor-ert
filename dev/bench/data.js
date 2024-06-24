@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719232057090,
+  "lastUpdate": 1719235178916,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "054d9aaf5fc8a206f83e7fb0213bd9f18e1b3d9c",
-          "message": "Change order of data vars in test to reflect reality\n\nThis is the order we get when interacting with storage.",
-          "timestamp": "2024-06-17T14:04:28+02:00",
-          "tree_id": "581bdfeead4eafe98a7e1fbf8e1472126cf3562b",
-          "url": "https://github.com/equinor/ert/commit/054d9aaf5fc8a206f83e7fb0213bd9f18e1b3d9c"
-        },
-        "date": 1718626088303,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16700260532771793,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026522485724710894",
-            "extra": "mean: 5.987930535800013 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.005382480128510347",
             "extra": "mean: 5.911489221199997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "621423d7e4e9d7ce06a187f43c10a922683959c7",
+          "message": "Use existing fns to check if params/responses exist",
+          "timestamp": "2024-06-24T15:16:17+02:00",
+          "tree_id": "51d6376eb95d4e3ec5a6aa3dbc44b70f6ae877dd",
+          "url": "https://github.com/equinor/ert/commit/621423d7e4e9d7ce06a187f43c10a922683959c7"
+        },
+        "date": 1719235178426,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16961910185527876,
+            "unit": "iter/sec",
+            "range": "stddev: 0.013268229965529468",
+            "extra": "mean: 5.895562404600002 sec\nrounds: 5"
           }
         ]
       }
