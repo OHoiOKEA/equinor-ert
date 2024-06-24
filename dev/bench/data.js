@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719208308527,
+  "lastUpdate": 1719231212729,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "03b296d48682fb41cdbcbfc0604d2fd9e34c8d63",
-          "message": "Remove websocket DEBUG logging\n\nBy going from logging DEBUG messages to INFO and above, we shave 95% off the log\nsize when doing the poly-example. Logging has been proven to be a bottleneck\nso this change could actually improve perceived application speed.\n\nNot opting to filter out INFO as well for the moment, meaning we will still log\nwhenever the connection is closed and reopened (which we don't want to happen\nso it makes sense to log it).",
-          "timestamp": "2024-06-17T13:44:09+02:00",
-          "tree_id": "e83bc204dd7ba4eb00c8cb33010466120eea4735",
-          "url": "https://github.com/equinor/ert/commit/03b296d48682fb41cdbcbfc0604d2fd9e34c8d63"
-        },
-        "date": 1718624845142,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16899579075363294,
-            "unit": "iter/sec",
-            "range": "stddev: 0.024331987344029932",
-            "extra": "mean: 5.917307144400001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.019695774394983486",
             "extra": "mean: 5.9173976297999955 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "50552e5e6b92e13607da1b65ef57ff85d24aca01",
+          "message": "Add slurm driver for scheduler",
+          "timestamp": "2024-06-24T14:10:16+02:00",
+          "tree_id": "09cab0ca70569a03992ad7dbd891195672eae4fa",
+          "url": "https://github.com/equinor/ert/commit/50552e5e6b92e13607da1b65ef57ff85d24aca01"
+        },
+        "date": 1719231212199,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16937501826817544,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025426155558969477",
+            "extra": "mean: 5.904058403800002 sec\nrounds: 5"
           }
         ]
       }
