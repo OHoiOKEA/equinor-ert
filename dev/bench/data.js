@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1718989783432,
+  "lastUpdate": 1719208308527,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "90998f2feeca8c1a41793fe4dfddbb9142b8268e",
-          "message": "Combine error and warning boxes that have the same message",
-          "timestamp": "2024-06-17T09:54:17+02:00",
-          "tree_id": "eef87fd353c77df67a6a2f54929695295cabf631",
-          "url": "https://github.com/equinor/ert/commit/90998f2feeca8c1a41793fe4dfddbb9142b8268e"
-        },
-        "date": 1718611051882,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16521293488971855,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03305332677102909",
-            "extra": "mean: 6.0527948412 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03384127830535646",
             "extra": "mean: 6.146149448600011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "06412db9ffe4a54a0ce81751ebea7da0f24f8cf2",
+          "message": "Create unique experiment names for GUI",
+          "timestamp": "2024-06-24T07:48:20+02:00",
+          "tree_id": "3040e2ff7c814ce21a4cf832f735b2b031789a7e",
+          "url": "https://github.com/equinor/ert/commit/06412db9ffe4a54a0ce81751ebea7da0f24f8cf2"
+        },
+        "date": 1719208307586,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16899320656837444,
+            "unit": "iter/sec",
+            "range": "stddev: 0.019695774394983486",
+            "extra": "mean: 5.9173976297999955 sec\nrounds: 5"
           }
         ]
       }
