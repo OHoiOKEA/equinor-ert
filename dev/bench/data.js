@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719235178916,
+  "lastUpdate": 1719300226249,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "c38f6c620eb5717096dea3ab6c759248ceaa449a",
-          "message": "Simplify alignment check in get_observations_and_responses",
-          "timestamp": "2024-06-17T15:28:28+02:00",
-          "tree_id": "65e898ed1980df82cb8b2361d66070dbc2c5cbfe",
-          "url": "https://github.com/equinor/ert/commit/c38f6c620eb5717096dea3ab6c759248ceaa449a"
-        },
-        "date": 1718631117829,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16538904281621342,
-            "unit": "iter/sec",
-            "range": "stddev: 0.035746120193221285",
-            "extra": "mean: 6.046349764000013 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.013268229965529468",
             "extra": "mean: 5.895562404600002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "68a360f7da2eae0f90996c5a9970bfdaeaaced5f",
+          "message": "Restructure ensemble evaluator",
+          "timestamp": "2024-06-25T09:20:30+02:00",
+          "tree_id": "ce9aba91e8f98ef12aecfcd4187c14d1154789b8",
+          "url": "https://github.com/equinor/ert/commit/68a360f7da2eae0f90996c5a9970bfdaeaaced5f"
+        },
+        "date": 1719300225720,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.17109835638953788,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022721392345337082",
+            "extra": "mean: 5.844591503400011 sec\nrounds: 5"
           }
         ]
       }
