@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719300283525,
+  "lastUpdate": 1719302220431,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "e10fdc1511ef0ae6a902fb461deb88dec55de224",
-          "message": "Pin netCDF4",
-          "timestamp": "2024-06-18T09:51:00+02:00",
-          "tree_id": "6babdc4a8009c0d4b2b7472a75bb606744fb15de",
-          "url": "https://github.com/equinor/ert/commit/e10fdc1511ef0ae6a902fb461deb88dec55de224"
-        },
-        "date": 1718697267261,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1675213606599221,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06558822446922219",
-            "extra": "mean: 5.969387999599985 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025490262380036387",
             "extra": "mean: 5.968910579199985 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "204b3f0eecdacd3df7a710d90ebbe4724af319ab",
+          "message": "Move driver option names to queue_config\n\nThe drivers should not be responsible for defining how the drivers should\nbe configured in the config system, they should only expose an API",
+          "timestamp": "2024-06-25T09:53:45+02:00",
+          "tree_id": "03ec051e95ad80022ab3d767c257be49c3194a53",
+          "url": "https://github.com/equinor/ert/commit/204b3f0eecdacd3df7a710d90ebbe4724af319ab"
+        },
+        "date": 1719302219916,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16756251024280144,
+            "unit": "iter/sec",
+            "range": "stddev: 0.043873882986427984",
+            "extra": "mean: 5.967922052199981 sec\nrounds: 5"
           }
         ]
       }
