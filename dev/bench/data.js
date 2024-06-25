@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719300249977,
+  "lastUpdate": 1719300283525,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "d73eb5ec0abf07bc3fefa4f0c98a3275f16c277c",
-          "message": "Fix bug where uninitialized ensemble crashes gui",
-          "timestamp": "2024-06-18T08:52:37+02:00",
-          "tree_id": "0008f8d44fab3f684f428829a964915c1ba5e777",
-          "url": "https://github.com/equinor/ert/commit/d73eb5ec0abf07bc3fefa4f0c98a3275f16c277c"
-        },
-        "date": 1718693747803,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16519169592134875,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02505850197173178",
-            "extra": "mean: 6.053573059000018 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022057538856138502",
             "extra": "mean: 6.027723063999997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "930dbcde0db295a27cfb533d72d0a8aaad55bacb",
+          "message": "Remove dead test utility code\n\nThis class is not used, looks like a remnant from Slurm testing",
+          "timestamp": "2024-06-25T09:21:10+02:00",
+          "tree_id": "f27023669954480437d10d5ec7d2eefd44e723c9",
+          "url": "https://github.com/equinor/ert/commit/930dbcde0db295a27cfb533d72d0a8aaad55bacb"
+        },
+        "date": 1719300282405,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1675347597742083,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025490262380036387",
+            "extra": "mean: 5.968910579199985 sec\nrounds: 5"
           }
         ]
       }
