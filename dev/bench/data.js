@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719300226249,
+  "lastUpdate": 1719300249977,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "14dcf00dac38cd4b7441c82c57818a61d7860a7c",
-          "message": "Replacing progress view with progress widget",
-          "timestamp": "2024-06-18T08:29:50+02:00",
-          "tree_id": "c8710bc98e9514c1e3b98099f345eb2c5fef6e18",
-          "url": "https://github.com/equinor/ert/commit/14dcf00dac38cd4b7441c82c57818a61d7860a7c"
-        },
-        "date": 1718692382143,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16484800920511097,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04786365116828981",
-            "extra": "mean: 6.066193973599991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022721392345337082",
             "extra": "mean: 5.844591503400011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e1e3281197d57a0c540ecb1a3a219c8b25a45524",
+          "message": "Update docs of FIELD keyword",
+          "timestamp": "2024-06-25T09:20:52+02:00",
+          "tree_id": "6dcb66736d61c9c8f6e3d723ad3f95f016b2881e",
+          "url": "https://github.com/equinor/ert/commit/e1e3281197d57a0c540ecb1a3a219c8b25a45524"
+        },
+        "date": 1719300249462,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.165900123377002,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022057538856138502",
+            "extra": "mean: 6.027723063999997 sec\nrounds: 5"
           }
         ]
       }
