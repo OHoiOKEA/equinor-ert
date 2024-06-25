@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719302919512,
+  "lastUpdate": 1719309362665,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "f458eeccd9905fb02eeba6f11180ac90f415b5ea",
-          "message": "Enable ruff preview checks\n\nThis extends the number of checks to pass for the ruff linter\nconsiderably, by including rules that are currently only marked\nfor preview in ruff. These rules are in preview due to the automatic\nfix not being ready, but it does not mean that the rule is not\nvalid.\n\nAll existing issues found by enabling this are currently marked\nas exceptions, to be solved one by one. At least, enabling this\nat least ensure that no new issues can be introduced unknowingly\ninto the code base",
-          "timestamp": "2024-06-18T15:04:20+02:00",
-          "tree_id": "d6bb4878eb0ec42f6b7b0c4fd6f4b078ceef1cf8",
-          "url": "https://github.com/equinor/ert/commit/f458eeccd9905fb02eeba6f11180ac90f415b5ea"
-        },
-        "date": 1718716103761,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16371175282472014,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01733763701663877",
-            "extra": "mean: 6.108296947200006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04536608043902957",
             "extra": "mean: 5.9170739626 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7281a9340f7d31a1835b11af849d98740bdfa2de",
+          "message": "Refactor realization delegate\n\nUse circular delegate, with queue color in middle and progress for fm-steps",
+          "timestamp": "2024-06-25T11:52:37+02:00",
+          "tree_id": "49c1a2a8521414648392e93e9c1c2184dcd1c4a2",
+          "url": "https://github.com/equinor/ert/commit/7281a9340f7d31a1835b11af849d98740bdfa2de"
+        },
+        "date": 1719309362029,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16421107428461795,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02652365600001236",
+            "extra": "mean: 6.089723268400007 sec\nrounds: 5"
           }
         ]
       }
