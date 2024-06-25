@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719309362665,
+  "lastUpdate": 1719326850814,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "1da8a7114468667e0f7fd39766fac9d679b05572",
-          "message": "Test NUM_CPU from config to built ensemble\n\nThis added test will ensure that a NUM_CPU setting in the configuration\nfile will propagate to the built ensemble inside the BaseRunModel.\n\nThe num_cpu number in the Ensemble object is what is used by\nscheduler/job.py to set the correct CPU count for the compute cluster.",
-          "timestamp": "2024-06-18T15:34:29+02:00",
-          "tree_id": "0e7f4739cadfc88e5df9390fb0a790fc13e9794e",
-          "url": "https://github.com/equinor/ert/commit/1da8a7114468667e0f7fd39766fac9d679b05572"
-        },
-        "date": 1718717896799,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16813962716426184,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04532946053324322",
-            "extra": "mean: 5.947437952999996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02652365600001236",
             "extra": "mean: 6.089723268400007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "51c751ab9b2445520e87097f67fdeaf4056c8228",
+          "message": "Add NPY to ruff rules with some numpy 2 support",
+          "timestamp": "2024-06-25T16:44:19+02:00",
+          "tree_id": "ce41b95b53a57be71e703575ac0efea67b1b9ab2",
+          "url": "https://github.com/equinor/ert/commit/51c751ab9b2445520e87097f67fdeaf4056c8228"
+        },
+        "date": 1719326850340,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1699616952143663,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022927937456007175",
+            "extra": "mean: 5.883678665000002 sec\nrounds: 5"
           }
         ]
       }
