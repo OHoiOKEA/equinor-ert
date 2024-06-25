@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719302220431,
+  "lastUpdate": 1719302919512,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "94d69118da346e2d2fe1fc77a92a4a96f5c41315",
-          "message": "Fix typo reviced -> received",
-          "timestamp": "2024-06-18T14:39:37+02:00",
-          "tree_id": "65124026b9458e0e393a41e625391e340da85df3",
-          "url": "https://github.com/equinor/ert/commit/94d69118da346e2d2fe1fc77a92a4a96f5c41315"
-        },
-        "date": 1718714585585,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1674556157205094,
-            "unit": "iter/sec",
-            "range": "stddev: 0.019465330462990007",
-            "extra": "mean: 5.971731647799993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.043873882986427984",
             "extra": "mean: 5.967922052199981 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d5edb15b22192ece78f6c803786ea0b8a1c94fa8",
+          "message": "Sort output of expand wildards and add tests",
+          "timestamp": "2024-06-25T10:05:22+02:00",
+          "tree_id": "1bb2fb6f42839c75f751fb50e4e30050e1d34193",
+          "url": "https://github.com/equinor/ert/commit/d5edb15b22192ece78f6c803786ea0b8a1c94fa8"
+        },
+        "date": 1719302918509,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16900245058971575,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04536608043902957",
+            "extra": "mean: 5.9170739626 sec\nrounds: 5"
           }
         ]
       }
