@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719482537240,
+  "lastUpdate": 1719489580496,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "047ee468b992b25257d3984eaa9a596752993b58",
-          "message": "Use pandas for getting obs and responses (#8156)\n\nMainly for readability\r\nSmall diff likely due to removal of conversion from string to float.",
-          "timestamp": "2024-06-19T10:54:01+02:00",
-          "tree_id": "4a48b866e88d10c5488442f5399eff269cf6e2e0",
-          "url": "https://github.com/equinor/ert/commit/047ee468b992b25257d3984eaa9a596752993b58"
-        },
-        "date": 1718787449942,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1675774240926562,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05153747297927566",
-            "extra": "mean: 5.967390926399991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01963591057403041",
             "extra": "mean: 5.921668925200026 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "ff9cf1844f07b3a6b7d403d505e06eead90b0b0d",
+          "message": "Fix phase count for es_mda",
+          "timestamp": "2024-06-27T13:56:23+02:00",
+          "tree_id": "d84994c3cc81a696fab1cc457afa18dc5171d0d8",
+          "url": "https://github.com/equinor/ert/commit/ff9cf1844f07b3a6b7d403d505e06eead90b0b0d"
+        },
+        "date": 1719489579892,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16827289933848588,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01606521519919624",
+            "extra": "mean: 5.942727580799987 sec\nrounds: 5"
           }
         ]
       }
