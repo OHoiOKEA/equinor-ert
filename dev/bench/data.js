@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719481378049,
+  "lastUpdate": 1719482537240,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "383d3cc338b885281dd11a6e97430989949954cf",
-          "message": "Move model factory to run models\n\nModel factory is used by both cli and gui.",
-          "timestamp": "2024-06-19T09:34:53+02:00",
-          "tree_id": "0c4a2d4fc09a80814c3fcd7b09e495af9f0c9be9",
-          "url": "https://github.com/equinor/ert/commit/383d3cc338b885281dd11a6e97430989949954cf"
-        },
-        "date": 1718782708891,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1659678529914811,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03995248587779266",
-            "extra": "mean: 6.025263217999987 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0288007683355679",
             "extra": "mean: 6.033355836800001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "1703a30a0dbfaf2f627259f9c2659373e3f451c4",
+          "message": "Remove function only called in test",
+          "timestamp": "2024-06-27T11:59:00+02:00",
+          "tree_id": "9a8b0e6db71cb2b843aff6f22cf08cf59b16ff98",
+          "url": "https://github.com/equinor/ert/commit/1703a30a0dbfaf2f627259f9c2659373e3f451c4"
+        },
+        "date": 1719482536680,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16887131189392207,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01963591057403041",
+            "extra": "mean: 5.921668925200026 sec\nrounds: 5"
           }
         ]
       }
