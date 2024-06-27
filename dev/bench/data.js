@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719390251732,
+  "lastUpdate": 1719472651118,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "390c62b5488efe30c6db9f69573cb811a78abb67",
-          "message": "Add migration check for newer storage",
-          "timestamp": "2024-06-19T08:10:35+02:00",
-          "tree_id": "c7f0235d6482e6d1c32cdd92c0b3b49ba7ab7f64",
-          "url": "https://github.com/equinor/ert/commit/390c62b5488efe30c6db9f69573cb811a78abb67"
-        },
-        "date": 1718777655043,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16749414697306023,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02420562733132496",
-            "extra": "mean: 5.970357878600021 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02631761339656019",
             "extra": "mean: 5.895876168400003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "8a2fa40d366b85ff1650c7b9d9ebf749f1f59670",
+          "message": "Fix max_memory updated correctly",
+          "timestamp": "2024-06-27T09:13:52+02:00",
+          "tree_id": "43c178b2a8604b5e9aa215977629a32bcc3124c0",
+          "url": "https://github.com/equinor/ert/commit/8a2fa40d366b85ff1650c7b9d9ebf749f1f59670"
+        },
+        "date": 1719472650517,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1664705423880731,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0900404626342827",
+            "extra": "mean: 6.007068792199993 sec\nrounds: 5"
           }
         ]
       }
