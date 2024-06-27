@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719472651118,
+  "lastUpdate": 1719481378049,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "098d07f4e953036d16ef98c8935e179644ec2606",
-          "message": "Add ctrl+c copy in update report",
-          "timestamp": "2024-06-19T09:21:53+02:00",
-          "tree_id": "4cc7aee2493db630764c98b7a9da6f4088950af3",
-          "url": "https://github.com/equinor/ert/commit/098d07f4e953036d16ef98c8935e179644ec2606"
-        },
-        "date": 1718781899432,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1721133242793814,
-            "unit": "iter/sec",
-            "range": "stddev: 0.031087034726152617",
-            "extra": "mean: 5.810125417000018 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0900404626342827",
             "extra": "mean: 6.007068792199993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "parulek@gmail.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "20fbc2bde52e11196925e90bd7f64bb4e8a6583e",
+          "message": "Set default exit code to 1 in LocalDriver\n\nSince the exceptions are handled only in the driver.finish, this has\ncaused realizations to be flagged as completed ragardless. Here we\nadditionally log the exception if it happens.\nAdditionally this moves driver finish to try section in monitoring the jobs in order to allow for background tasks to finish if exception happens.",
+          "timestamp": "2024-06-27T11:39:39+02:00",
+          "tree_id": "a56a4342713fab155794aacd2e5d119593e1ba5b",
+          "url": "https://github.com/equinor/ert/commit/20fbc2bde52e11196925e90bd7f64bb4e8a6583e"
+        },
+        "date": 1719481377632,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16574523814766154,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0288007683355679",
+            "extra": "mean: 6.033355836800001 sec\nrounds: 5"
           }
         ]
       }
