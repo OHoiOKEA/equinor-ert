@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719489580496,
+  "lastUpdate": 1719489682292,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "3f3e682156516d15ccded659adefb3730da43e83",
-          "message": "Remove EnKFMain and replace usage with fixtures\n\nThis removes the EnKFMain class, and replaces the remaning\nusage with pytest style fixtures. The current usage was mostly\nas a facade to ErtConfig, and it held state for the workflows.",
-          "timestamp": "2024-06-19T14:43:11+02:00",
-          "tree_id": "e90ffaeea561b86ac3c60022160ecc77c62a348e",
-          "url": "https://github.com/equinor/ert/commit/3f3e682156516d15ccded659adefb3730da43e83"
-        },
-        "date": 1718801200732,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16345156331250027,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0347770280804156",
-            "extra": "mean: 6.1180204075999995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01606521519919624",
             "extra": "mean: 5.942727580799987 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "2ce20800e12006202828c3e7e657c13fb96e0c6f",
+          "message": "Add blue color and underscore to STDOUT and STDERR in job view",
+          "timestamp": "2024-06-27T13:58:11+02:00",
+          "tree_id": "585ff1dae84ea555c2a5e3b07aa43f296a1a8c22",
+          "url": "https://github.com/equinor/ert/commit/2ce20800e12006202828c3e7e657c13fb96e0c6f"
+        },
+        "date": 1719489681638,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16861260493384803,
+            "unit": "iter/sec",
+            "range": "stddev: 0.031629463909139524",
+            "extra": "mean: 5.930754704799983 sec\nrounds: 5"
           }
         ]
       }
