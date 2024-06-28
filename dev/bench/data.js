@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719558312554,
+  "lastUpdate": 1719560585683,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "d3859627b9dd66b714826c280e2e6efd070bee78",
-          "message": "Reset endtime when restarting simulations",
-          "timestamp": "2024-06-20T11:43:53+02:00",
-          "tree_id": "769323b6efc0f569602583103377466d8db7d396",
-          "url": "https://github.com/equinor/ert/commit/d3859627b9dd66b714826c280e2e6efd070bee78"
-        },
-        "date": 1718876834724,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16960101255321328,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02142578678456297",
-            "extra": "mean: 5.896191213400004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04456094428427689",
             "extra": "mean: 5.919643274200007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "2193e75abd1f72a620f16d0edd73049dbda0c42c",
+          "message": "Fix pydantic warning in snapshot test",
+          "timestamp": "2024-06-28T09:39:51+02:00",
+          "tree_id": "6f5f2f8d8313d9257c900af82301b8c6933c133d",
+          "url": "https://github.com/equinor/ert/commit/2193e75abd1f72a620f16d0edd73049dbda0c42c"
+        },
+        "date": 1719560584858,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16897790138611304,
+            "unit": "iter/sec",
+            "range": "stddev: 0.040274184331937836",
+            "extra": "mean: 5.917933598399998 sec\nrounds: 5"
           }
         ]
       }
