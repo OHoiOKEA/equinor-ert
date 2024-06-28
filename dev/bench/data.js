@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719556784631,
+  "lastUpdate": 1719558312554,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "399136cedc6ac82bbc7388502eec8187b7afb5ae",
-          "message": "Use gen data config for gen data (#8196)\n\nCo-authored-by: Yngve S. Kristiansen <yngve.s.kristiansen@webstep.no>",
-          "timestamp": "2024-06-20T11:41:54+02:00",
-          "tree_id": "a3dd1a4dfee44671c04ab425c8ea3baf6371c1f8",
-          "url": "https://github.com/equinor/ert/commit/399136cedc6ac82bbc7388502eec8187b7afb5ae"
-        },
-        "date": 1718876719940,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16733683999011384,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02440937587280698",
-            "extra": "mean: 5.9759703843999885 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.034855123510583806",
             "extra": "mean: 5.896776438199993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "4633f65c312c4558271436a42a53290c458219ab",
+          "message": "Fix bug in LSF driver resource manipulation\n\nIf both select and rusage was part of the existing resource string,\nand some hosts were attempted excluded, the previous code would inject\nthe exclusion string at the wrong spot, failing to locate the correct\nend of the select statement.\n\nAdded tests that triggers the original bug.",
+          "timestamp": "2024-06-28T09:02:04+02:00",
+          "tree_id": "dbbd101945169baaf2e239db8c7eb56445d51bc0",
+          "url": "https://github.com/equinor/ert/commit/4633f65c312c4558271436a42a53290c458219ab"
+        },
+        "date": 1719558312101,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1689290982040032,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04456094428427689",
+            "extra": "mean: 5.919643274200007 sec\nrounds: 5"
           }
         ]
       }
