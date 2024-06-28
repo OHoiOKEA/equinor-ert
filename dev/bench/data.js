@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719489682292,
+  "lastUpdate": 1719556784631,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "4f363cc0257b658d01c71125118fca6b654a578d",
-          "message": "Add handling for docs to plugin manager",
-          "timestamp": "2024-06-20T09:50:59+02:00",
-          "tree_id": "6e976b785ab581b148249bc22d3c43d31babc47b",
-          "url": "https://github.com/equinor/ert/commit/4f363cc0257b658d01c71125118fca6b654a578d"
-        },
-        "date": 1718870064643,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16771824254884468,
-            "unit": "iter/sec",
-            "range": "stddev: 0.00965672836152631",
-            "extra": "mean: 5.962380625999998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.031629463909139524",
             "extra": "mean: 5.930754704799983 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "ae913f7cf9da08c3632ea347f29e94bda53fa354",
+          "message": "Add top-level exports for everest & semeio",
+          "timestamp": "2024-06-28T08:36:33+02:00",
+          "tree_id": "9ba318d5ad8550f81f7852504b3a0eadde2da384",
+          "url": "https://github.com/equinor/ert/commit/ae913f7cf9da08c3632ea347f29e94bda53fa354"
+        },
+        "date": 1719556784227,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1695841805230881,
+            "unit": "iter/sec",
+            "range": "stddev: 0.034855123510583806",
+            "extra": "mean: 5.896776438199993 sec\nrounds: 5"
           }
         ]
       }
