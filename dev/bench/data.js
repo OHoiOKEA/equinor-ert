@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719579436698,
+  "lastUpdate": 1719580559484,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "29a067c803f48262110ccca5d63dc578ca148b19",
-          "message": "Set max_submit to 1 in job.py\n\nThis has been changed from 2 to 1 in all (?) other places\nin Ert already, so this particular place has just been forgotten.",
-          "timestamp": "2024-06-21T10:38:34+02:00",
-          "tree_id": "d5808d9d3a44241e54c675f9cbb17927d7678c7a",
-          "url": "https://github.com/equinor/ert/commit/29a067c803f48262110ccca5d63dc578ca148b19"
-        },
-        "date": 1718959307727,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.17097259770241993,
-            "unit": "iter/sec",
-            "range": "stddev: 0.015927984232167892",
-            "extra": "mean: 5.8488904855999975 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.015037742398529152",
             "extra": "mean: 5.814429079200011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "a9db74173eabd8b897129811f86048d02b48e478",
+          "message": "Mitigate flakyness in test_slurm_driver\n\nThe flakyness was easily reproducible with --count=100 -n 16, but after\nadding reruns the flakyness cannot be reproduced, so assuming reruns is\nsufficient (this was with mocked Slurm system, not with the --slurm\noption to pytest).\n\nSince we have added reruns, we can reduce the job_kill_window when doing\nreal integration tests also.",
+          "timestamp": "2024-06-28T15:12:40+02:00",
+          "tree_id": "0bc5363297843636fa590bdae82709e1c939453b",
+          "url": "https://github.com/equinor/ert/commit/a9db74173eabd8b897129811f86048d02b48e478"
+        },
+        "date": 1719580558921,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16751443025067705,
+            "unit": "iter/sec",
+            "range": "stddev: 0.047306154960501064",
+            "extra": "mean: 5.96963496520001 sec\nrounds: 5"
           }
         ]
       }
