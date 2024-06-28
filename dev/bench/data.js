@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719560585683,
+  "lastUpdate": 1719571062504,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "05addf9ed41308889c8d9e1f25c6b2eeeff19ddf",
-          "message": "Refactor Lsf driver to use dataclasses\n\nThis commit refactors lsf driver from using pydantic classes to dataclasses,\nas pydantic was overkill for our usage.\nWe will not be getting any pydantic validation, so invalid job_states\nsuch as `QueuedJob(job_state=bogus_state)` will not be caught.",
-          "timestamp": "2024-06-20T14:07:25+02:00",
-          "tree_id": "30694b9fa0d7af2f88fba774b13e530b28d6446f",
-          "url": "https://github.com/equinor/ert/commit/05addf9ed41308889c8d9e1f25c6b2eeeff19ddf"
-        },
-        "date": 1718885456004,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16834606384073483,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03075955675432799",
-            "extra": "mean: 5.940144825400006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.040274184331937836",
             "extra": "mean: 5.917933598399998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "b3b595022862b4131a2357053e307368ff507494",
+          "message": "Align Slurm polling period with LSF, 2 seconds\n\n10 seconds is quite conservative, and makes integration tests go slow",
+          "timestamp": "2024-06-28T12:34:31+02:00",
+          "tree_id": "5de7fb223e6d944160b3e4543989c612d5b547a0",
+          "url": "https://github.com/equinor/ert/commit/b3b595022862b4131a2357053e307368ff507494"
+        },
+        "date": 1719571062085,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16495510740615596,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01889182208777844",
+            "extra": "mean: 6.062255456800005 sec\nrounds: 5"
           }
         ]
       }
