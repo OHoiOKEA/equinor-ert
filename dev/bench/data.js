@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719578732452,
+  "lastUpdate": 1719579436698,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "4404e4bdf360ca38724fbb27c9307b370d315cff",
-          "message": "Fix bug where number of iterations were wrong",
-          "timestamp": "2024-06-21T10:33:28+02:00",
-          "tree_id": "554de62ef3459b202a91c826eaf4f7d8f6a0742f",
-          "url": "https://github.com/equinor/ert/commit/4404e4bdf360ca38724fbb27c9307b370d315cff"
-        },
-        "date": 1718959037073,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16452564859211263,
-            "unit": "iter/sec",
-            "range": "stddev: 0.017770484058972292",
-            "extra": "mean: 6.078079670600005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02781107773699959",
             "extra": "mean: 6.028594249199978 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "251537eb58f3fe4617b898f69456cd6c1d5a51f7",
+          "message": "Make circles more antialiased and allow dark mode",
+          "timestamp": "2024-06-28T14:54:10+02:00",
+          "tree_id": "c45143d0059f7742e712d57e7ab97d44a965cb82",
+          "url": "https://github.com/equinor/ert/commit/251537eb58f3fe4617b898f69456cd6c1d5a51f7"
+        },
+        "date": 1719579436131,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.17198593127179168,
+            "unit": "iter/sec",
+            "range": "stddev: 0.015037742398529152",
+            "extra": "mean: 5.814429079200011 sec\nrounds: 5"
           }
         ]
       }
