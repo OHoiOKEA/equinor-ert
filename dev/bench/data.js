@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719571062504,
+  "lastUpdate": 1719573069136,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "761b07012717abe6d567cd9cb7d75130f03b122c",
-          "message": "Refactor OpenPBS driver to use dataclasses\n\nThis commit refactors the OpenPBS driver from using pydantic classes to\ndataclasses, as pydantic was overkill for our usage.",
-          "timestamp": "2024-06-20T14:46:47+02:00",
-          "tree_id": "e4ebc8d3d232c530956253740a8d72424ad0aa8c",
-          "url": "https://github.com/equinor/ert/commit/761b07012717abe6d567cd9cb7d75130f03b122c"
-        },
-        "date": 1718887851081,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1672855122912538,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02274126162684763",
-            "extra": "mean: 5.977803973000016 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01889182208777844",
             "extra": "mean: 6.062255456800005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "01edfa95385ba4420ba9f9116562cca242bf4224",
+          "message": "Catch XML errors when logging error file\n\nIt is not critical that this ERROR file is valid XML, it just means the user\nparsing the log must decipher XML manually.",
+          "timestamp": "2024-06-28T13:08:07+02:00",
+          "tree_id": "ce3c63c4fa869f696e26dfb2b210b905d5f150f7",
+          "url": "https://github.com/equinor/ert/commit/01edfa95385ba4420ba9f9116562cca242bf4224"
+        },
+        "date": 1719573068645,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16367552078110428,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0545871176727262",
+            "extra": "mean: 6.109649110799995 sec\nrounds: 5"
           }
         ]
       }
