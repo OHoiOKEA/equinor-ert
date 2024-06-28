@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719575348376,
+  "lastUpdate": 1719578732452,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "6ece58fc5dab6577f88bf51bd92c8fd2a1b3ba44",
-          "message": "Put expected value to the right in assert\n\nAvoiding yoda-conditions.",
-          "timestamp": "2024-06-21T10:30:24+02:00",
-          "tree_id": "3fdf44525ceb9a209b3fd89f90cc7bdbfc817b56",
-          "url": "https://github.com/equinor/ert/commit/6ece58fc5dab6577f88bf51bd92c8fd2a1b3ba44"
-        },
-        "date": 1718958829619,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16987970936457844,
-            "unit": "iter/sec",
-            "range": "stddev: 0.033481158124732534",
-            "extra": "mean: 5.886518194200005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.037562846534819276",
             "extra": "mean: 6.022659512199982 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "892f91e327eabc5356689d51d11c6c21262924fd",
+          "message": "Add validation for FIELD parameter name",
+          "timestamp": "2024-06-28T14:39:59+02:00",
+          "tree_id": "b274cbb0df34cba82c9c513f6f2b0a400cb2f63e",
+          "url": "https://github.com/equinor/ert/commit/892f91e327eabc5356689d51d11c6c21262924fd"
+        },
+        "date": 1719578731654,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16587614934156575,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02781107773699959",
+            "extra": "mean: 6.028594249199978 sec\nrounds: 5"
           }
         ]
       }
