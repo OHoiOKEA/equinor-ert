@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719815224637,
+  "lastUpdate": 1719833228620,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "d577b9bfe74ebe8db2fe3f80782f259574098f74",
-          "message": "Remove type spec for run models",
-          "timestamp": "2024-06-21T13:55:11+02:00",
-          "tree_id": "27a29141f413df4e535720475f90429ce0a9edc0",
-          "url": "https://github.com/equinor/ert/commit/d577b9bfe74ebe8db2fe3f80782f259574098f74"
-        },
-        "date": 1718971105113,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16738146175620064,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05418120660540095",
-            "extra": "mean: 5.9743772668000075 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03370597068134903",
             "extra": "mean: 6.007778959599989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "f9dc451d9dc4348d36b99abfca11fd0470bb95cf",
+          "message": "Add C4 and ASYNC to ruff rules\n\n- Also updates the pre-commit hooks",
+          "timestamp": "2024-07-01T13:23:52+02:00",
+          "tree_id": "b3e8de1957c51ef4189240678bd9e60ce88afb21",
+          "url": "https://github.com/equinor/ert/commit/f9dc451d9dc4348d36b99abfca11fd0470bb95cf"
+        },
+        "date": 1719833228223,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1686595672334705,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01877289409120892",
+            "extra": "mean: 5.929103319799992 sec\nrounds: 5"
           }
         ]
       }
