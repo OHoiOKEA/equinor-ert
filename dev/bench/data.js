@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719580559484,
+  "lastUpdate": 1719815224637,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "216a6e5402db7edf604ea1aeab9f8744a808200a",
-          "message": "Deprecate NUM_NODES and NUM_CPUS_PER_NODE\n\nNUM_NODES is for submitting multi-machine jobs, which is out of scope\nfor Ert. This feature is to be removed. Following that NUM_CPUS_PER_NODE\nbecomes equivalent to NUM_CPU which is what the users should migrate to.",
-          "timestamp": "2024-06-21T13:48:08+02:00",
-          "tree_id": "e3227e6c436a667a6501e173b1cea55bce8ebfd7",
-          "url": "https://github.com/equinor/ert/commit/216a6e5402db7edf604ea1aeab9f8744a808200a"
-        },
-        "date": 1718970679439,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16993132511829634,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06308192517426102",
-            "extra": "mean: 5.884730194999998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.047306154960501064",
             "extra": "mean: 5.96963496520001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3838267b629f9c0b0ff741bc72f967efa60886d3",
+          "message": "Document auto scaling",
+          "timestamp": "2024-07-01T08:23:37+02:00",
+          "tree_id": "033875f7223eb1fa1dc7b8a867020c744c02b4ff",
+          "url": "https://github.com/equinor/ert/commit/3838267b629f9c0b0ff741bc72f967efa60886d3"
+        },
+        "date": 1719815223761,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16645086424194644,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03370597068134903",
+            "extra": "mean: 6.007778959599989 sec\nrounds: 5"
           }
         ]
       }
