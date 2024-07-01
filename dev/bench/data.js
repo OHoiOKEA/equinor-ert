@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719833228620,
+  "lastUpdate": 1719840268352,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "56899c1c59725d23ffbace8ba4810f5d8dc6c797",
-          "message": "Remove EnsembleBuilder",
-          "timestamp": "2024-06-21T15:20:57+02:00",
-          "tree_id": "c0b5d8bab58c5b256cf29576e62f28b1e6a106d0",
-          "url": "https://github.com/equinor/ert/commit/56899c1c59725d23ffbace8ba4810f5d8dc6c797"
-        },
-        "date": 1718976262014,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16718833913582934,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029413495762882748",
-            "extra": "mean: 5.981278390399984 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01877289409120892",
             "extra": "mean: 5.929103319799992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "7c532dcd1d0a5f21087394d68aab67a338f9fe21",
+          "message": "Output the number of reals running in existing runpaths",
+          "timestamp": "2024-07-01T15:21:09+02:00",
+          "tree_id": "71329b9795b9ab13ca717691e1150c97a4408a9c",
+          "url": "https://github.com/equinor/ert/commit/7c532dcd1d0a5f21087394d68aab67a338f9fe21"
+        },
+        "date": 1719840267446,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16862149072423022,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03306761816989064",
+            "extra": "mean: 5.930442173799998 sec\nrounds: 5"
           }
         ]
       }
