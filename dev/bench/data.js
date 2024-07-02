@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719907940767,
+  "lastUpdate": 1719927732416,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "50552e5e6b92e13607da1b65ef57ff85d24aca01",
-          "message": "Add slurm driver for scheduler",
-          "timestamp": "2024-06-24T14:10:16+02:00",
-          "tree_id": "09cab0ca70569a03992ad7dbd891195672eae4fa",
-          "url": "https://github.com/equinor/ert/commit/50552e5e6b92e13607da1b65ef57ff85d24aca01"
-        },
-        "date": 1719231212199,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16937501826817544,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025426155558969477",
-            "extra": "mean: 5.904058403800002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022699518320138504",
             "extra": "mean: 5.994264793000002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "3dfffc2cc22008e2cec0d31bb09a9dbd6e6768e5",
+          "message": "Avoid imports from job_queue\n\njob_queue module is going away soon.",
+          "timestamp": "2024-07-02T15:38:47+02:00",
+          "tree_id": "90ec4d50078277140d8d81a08ea8d8c7f3569c65",
+          "url": "https://github.com/equinor/ert/commit/3dfffc2cc22008e2cec0d31bb09a9dbd6e6768e5"
+        },
+        "date": 1719927731939,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1715129349503157,
+            "unit": "iter/sec",
+            "range": "stddev: 0.028807641455352834",
+            "extra": "mean: 5.8304640421999805 sec\nrounds: 5"
           }
         ]
       }
