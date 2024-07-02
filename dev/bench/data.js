@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719840268352,
+  "lastUpdate": 1719901934748,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "67b0e46b4a467bf12292112dd04ba0e593538320",
-          "message": "Convert dict access of ForwardModel to get to avoid segfaults",
-          "timestamp": "2024-06-21T19:06:22+02:00",
-          "tree_id": "8d17bca9b22dd1617a15f115446764318d43739c",
-          "url": "https://github.com/equinor/ert/commit/67b0e46b4a467bf12292112dd04ba0e593538320"
-        },
-        "date": 1718989782449,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16270349563787181,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03384127830535646",
-            "extra": "mean: 6.146149448600011 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03306761816989064",
             "extra": "mean: 5.930442173799998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a22774ececbf2ab3edaa2065d3ea3f8d1562fec9",
+          "message": "Make sure adaptive localization works with single observation\n\nMake sure adaptive localization works with single observation",
+          "timestamp": "2024-07-02T08:29:08+02:00",
+          "tree_id": "4dc04c12b3ced29d5200367c3a203655d3a1e0a8",
+          "url": "https://github.com/equinor/ert/commit/a22774ececbf2ab3edaa2065d3ea3f8d1562fec9"
+        },
+        "date": 1719901934187,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16925498171835124,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05394041582656107",
+            "extra": "mean: 5.908245594000005 sec\nrounds: 5"
           }
         ]
       }
