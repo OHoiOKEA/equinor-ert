@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719927732416,
+  "lastUpdate": 1719928124648,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "839a23ba0ad6796d2985617f2a091adb1f870712",
-          "message": "Type check ert.gui",
-          "timestamp": "2024-06-24T12:24:21Z",
-          "tree_id": "7dcf4784616c4cee4852ccb05bfe7543ddf6237e",
-          "url": "https://github.com/equinor/ert/commit/839a23ba0ad6796d2985617f2a091adb1f870712"
-        },
-        "date": 1719232056631,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1691621117084615,
-            "unit": "iter/sec",
-            "range": "stddev: 0.005382480128510347",
-            "extra": "mean: 5.911489221199997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028807641455352834",
             "extra": "mean: 5.8304640421999805 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "939e661f6b4b011fd90c30d5da16cb379241af8e",
+          "message": "Avoid unused varibles in test_slurm_driver",
+          "timestamp": "2024-07-02T15:45:25+02:00",
+          "tree_id": "68d011736ea73ccc0745764bd956e5624c298647",
+          "url": "https://github.com/equinor/ert/commit/939e661f6b4b011fd90c30d5da16cb379241af8e"
+        },
+        "date": 1719928123785,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16724514252789935,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0430715670160223",
+            "extra": "mean: 5.979246899999998 sec\nrounds: 5"
           }
         ]
       }
