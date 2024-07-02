@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719901934748,
+  "lastUpdate": 1719907940767,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "06412db9ffe4a54a0ce81751ebea7da0f24f8cf2",
-          "message": "Create unique experiment names for GUI",
-          "timestamp": "2024-06-24T07:48:20+02:00",
-          "tree_id": "3040e2ff7c814ce21a4cf832f735b2b031789a7e",
-          "url": "https://github.com/equinor/ert/commit/06412db9ffe4a54a0ce81751ebea7da0f24f8cf2"
-        },
-        "date": 1719208307586,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16899320656837444,
-            "unit": "iter/sec",
-            "range": "stddev: 0.019695774394983486",
-            "extra": "mean: 5.9173976297999955 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05394041582656107",
             "extra": "mean: 5.908245594000005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "f529971b9dcaf19c7f786ffa3e39c5d4eebda853",
+          "message": "Fix restart for ensemble experiment",
+          "timestamp": "2024-07-02T10:08:52+02:00",
+          "tree_id": "04ac9255656284347a6ef976a0f2121183cced59",
+          "url": "https://github.com/equinor/ert/commit/f529971b9dcaf19c7f786ffa3e39c5d4eebda853"
+        },
+        "date": 1719907939909,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.166826130398474,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022699518320138504",
+            "extra": "mean: 5.994264793000002 sec\nrounds: 5"
           }
         ]
       }
