@@ -15,6 +15,7 @@ from typing import (
     List,
     Literal,
     Optional,
+    Set,
     Tuple,
     Union,
 )
@@ -106,6 +107,96 @@ class ObservationsAndResponsesData:
         return self._observations_and_responses.iloc[:, 4:].values
 
 
+class RealizationState:
+    def __init__(self) -> None:
+        self._states: Dict[int, Set[Tuple[str, str, bool]]] = {}
+
+    def __eq__(self, other: object) -> bool:
+        if isinstance(other, RealizationState):
+            return self._states == other._states
+
+        return False
+
+    def clear_entry(self, realization: int, key: str) -> None:
+        if realization not in self._states:
+            return
+
+        state_for_real = self._states[realization]
+
+        to_remove = []
+        for tup in state_for_real:
+            _group, _key, _value = tup
+
+            if key in {_group, _key}:
+                to_remove.append(tup)
+
+        for tup in to_remove:
+            state_for_real.remove(tup)
+
+    @staticmethod
+    def from_file(path: Path) -> RealizationState:
+        with open(path, "r") as f:
+            return RealizationState.from_json(json.load(f))
+
+    @staticmethod
+    def from_json(data: Dict[str, List[Tuple[str, str, bool]]]) -> RealizationState:
+        the_state = RealizationState()
+        for realization, entries in data.items():
+            the_state._states[int(realization)] = {
+                (str(group), str(key), bool(value)) for group, key, value in entries
+            }
+
+        return the_state
+
+    def _to_json(self) -> Dict[int, List[Tuple[str, str, bool]]]:
+        return {i: list(states) for i, states in self._states.items()}
+
+    def to_file(self, path: Path) -> None:
+        with open(path, "w+") as f:
+            json.dump(self._to_json(), f)
+
+    def add(self, realization: int, entries: Set[Tuple[str, str, bool]]) -> None:
+        if realization not in self._states:
+            self._states[realization] = set()
+
+        real_state = self._states[realization]
+        assert real_state is not None
+
+        for entry in entries:
+            group, key, value = entry
+            if (group, key, not value) in real_state:
+                real_state.remove((group, key, not value))
+
+        real_state.update(entries)
+
+    def has(self, realization: int, key: str) -> bool:
+        if realization not in self._states:
+            return False
+
+        state = self._states[realization]
+
+        return (
+            (key, key, True) in state
+            or any(_has_it and key == _group for _group, _, _has_it in state)
+            or any(_has_it and key == _key for _, _key, _has_it in state)
+        )
+
+    def has_entry(self, realization: int, key: str) -> bool:
+        if realization not in self._states:
+            return False
+
+        state = self._states[realization]
+
+        result = (
+            (key, key, True) in state
+            or (key, key, False) in state
+            or any(key == _group for _group, _, _ in state)
+            or any(key == _key for _, _key, _ in state)
+        )
+
+        return result
+
+
 class LocalEnsemble(BaseMode):
     """
     Represents an ensemble within the local storage system of ERT.
@@ -132,7 +223,6 @@ class LocalEnsemble(BaseMode):
         mode : Mode
             Access mode for the ensemble (read/write).
         """
-
         super().__init__(mode)
         self._storage = storage
         self._path = path
@@ -146,6 +236,42 @@ class LocalEnsemble(BaseMode):
             return self._path / f"realization-{realization}"
 
         self._realization_dir = create_realization_dir
+
+        self._realization_states = (
+            RealizationState.from_file(self._path / "state_map.json")
+            if os.path.exists(self._path / "state_map.json")
+            else RealizationState()
+        )
+
+        self.__response_states_need_update = False  # Tmp
+        self.__parameter_states_need_update = False  # Tmp
+        self._has_invoked_refresh_statemap = False
+
+    @property
+    def _response_states_need_update(self) -> bool:
+        return self.__response_states_need_update
+
+    @_response_states_need_update.setter
+    def _response_states_need_update(self, val: bool):
+        if val and self._has_invoked_refresh_statemap:
+            # Temp, all tests should pass without
+            # hitting this line
+            pass  # raise AssertionError("Expected this line to never be hit")
+
+        self.__response_states_need_update = val
+
+    @property
+    def _parameter_states_need_update(self) -> bool:
+        return self.__parameter_states_need_update
+
+    @_parameter_states_need_update.setter
+    def _parameter_states_need_update(self, val: bool):
+        if val and self._has_invoked_refresh_statemap:
+            # Temp, all tests should pass without
+            # hitting this line
+            pass
+
+        self.__parameter_states_need_update = val
 
     @classmethod
     def create(
@@ -343,14 +469,11 @@ class LocalEnsemble(BaseMode):
         """
         if not self.experiment.parameter_configuration:
             return True
-        path = self._realization_dir(realization)
+
+        self.refresh_parameters_state_if_needed()
+
         return all(
-            (
-                self.has_combined_parameter_dataset(parameter)
-                and realization
-                in self._load_combined_parameter_dataset(parameter)["realizations"]
-            )
-            or (path / f"{parameter}.nc").exists()
+            self._realization_states.has(realization, parameter)
             for parameter in self.experiment.parameter_configuration
         )
 
@@ -376,6 +499,30 @@ class LocalEnsemble(BaseMode):
 
         return unified_ds
 
+    def refresh_responses_state_if_needed(self) -> None:
+        if self._response_states_need_update:
+            raise AssertionError("Expected this line to never be hit")
+            self._response_states_need_update = False
+            self._refresh_all_responses_state_for_all_realizations()
+
+            self._realization_states.to_file(self._path / "state_map.json")
+
+    def refresh_parameters_state_if_needed(self) -> None:
+        if self._parameter_states_need_update:
+            raise AssertionError("Expected this line to never be hit")
+            self._parameter_states_need_update = False
+            self._refresh_all_parameters_state_for_all_realizations()
+            assert self._realization_states is not None
+            self._realization_states.to_file(self._path / "state_map.json")
+
+    def refresh_statemap(self):
+        self._refresh_all_responses_state_for_all_realizations()
+        self._refresh_all_parameters_state_for_all_realizations()
+        self._parameter_states_need_update = False
+        self._response_states_need_update = False
+        self._has_invoked_refresh_statemap = True
+        self._realization_states.to_file(self._path / "state_map.json")
+
     def _responses_exist_for_realization(
         self, realization: int, key: Optional[str] = None
     ) -> bool:
@@ -398,27 +545,18 @@ class LocalEnsemble(BaseMode):
             otherwise, `False`.
         """
 
+        self.refresh_responses_state_if_needed()
+        assert self._realization_states is not None
+
         if not self.experiment.response_configuration:
             return True
 
-        real_dir = self._realization_dir(realization)
-        if key:
-            if self.has_combined_response_dataset(key):
-                return (
-                    realization
-                    in self._load_combined_response_dataset(key)["realization"]
-                )
-            else:
-                return (real_dir / f"{key}.nc").exists()
+        if key is not None:
+            return self._realization_states.has(realization, key)
 
         return all(
-            (real_dir / f"{response}.nc").exists()
-            or (
-                self.has_combined_response_dataset(response)
-                and realization
-                in self._load_combined_response_dataset(response)["realization"].values
-            )
-            for response in self.experiment.response_configuration
+            self._realization_states.has(realization, response_key)
+            for response_key in self.experiment.response_configuration
         )
 
     def is_initalized(self) -> List[int]:
@@ -543,6 +681,15 @@ class LocalEnsemble(BaseMode):
         filename: Path = self._realization_dir(realization) / self._error_log_name
         if filename.exists():
             filename.unlink()
+
+        for response_key in self.experiment.response_configuration:
+            self._realization_states.clear_entry(realization, response_key)
+
+        for parameter_group_key in self.experiment.parameter_configuration:
+            self._realization_states.clear_entry(realization, parameter_group_key)
+
+        self._refresh_all_responses_state_for_realization(realization)
+        self._refresh_all_parameters_state_for_realization(realization)
 
     def has_failure(self, realization: int) -> bool:
         """
@@ -1045,6 +1192,9 @@ class LocalEnsemble(BaseMode):
 
         dataset.to_netcdf(path, engine="scipy")
 
+        self._realization_states.clear_entry(realization, group)
+        self._parameter_states_need_update = True
+
     @require_write
     def save_response(self, group: str, data: xr.Dataset, realization: int) -> None:
         """
@@ -1078,6 +1228,94 @@ class LocalEnsemble(BaseMode):
         Path.mkdir(output_path, parents=True, exist_ok=True)
 
         data.to_netcdf(output_path / f"{group}.nc", engine="scipy")
+        self._response_states_need_update = True
+        self._realization_states.clear_entry(realization, group)
+
+    def _refresh_all_parameters_state_for_all_realizations(self) -> None:
+        for real in range(self.ensemble_size):
+            self._refresh_all_parameters_state_for_realization(realization=real)
+
+        assert self._realization_states is not None
+        self._realization_states.to_file(self._path / "state_map.json")
+
+    def _refresh_all_responses_state_for_all_realizations(self) -> None:
+        for real in range(self.ensemble_size):
+            self._refresh_all_responses_state_for_realization(realization=real)
+
+        self._realization_states.to_file(self._path / "state_map.json")
+
+    def _refresh_all_responses_state_for_realization(self, realization: int) -> None:
+        for response_key in self.experiment.response_configuration:
+            self._refresh_response_state(response_key, realization)
+
+    def _refresh_all_parameters_state_for_realization(self, realization: int) -> None:
+        for parameter_key in self.experiment.parameter_configuration:
+            self._refresh_parameter_state(parameter_key, realization)
+
+    def _refresh_parameter_state(self, parameter_key: str, realization: int) -> None:
+        if self._realization_states.has_entry(realization, parameter_key):
+            return
+
+        self._realization_states.add(
+            realization,
+            {
+                (
+                    parameter_key,
+                    parameter_key,
+                    os.path.exists(
+                        self._realization_dir(realization) / f"{parameter_key}.nc"
+                    ),
+                )
+            },
+        )
+
+    def _refresh_response_state(self, response_key: str, realization: int) -> None:
+        if self._realization_states.has_entry(realization, response_key):
+            return
+
+        combined_ds_key = self._find_unified_dataset_for_response(response_key)
+
+        # We assume we will never receive "sub-keys" for grouped datasets
+        if combined_ds_key == "summary" and response_key != combined_ds_key:
+            raise KeyError("Did not expect sub-key for grouped dataset")
+
+        # ex: combined_ds_key == gen_data, response_key = WOPR_OP1
+        # ex2: response_key = summary, combined_ds_key = summary
+        is_grouped_ds = combined_ds_key == response_key
+        has_realization_dir = os.path.exists(self._realization_dir(realization))
+
+        if not has_realization_dir:
+            self._realization_states.add(
+                realization,
+                {
+                    (
+                        combined_ds_key,
+                        combined_ds_key if is_grouped_ds else response_key,
+                        False,
+                    )
+                },
+            )
+            return
+
+        if is_grouped_ds and os.path.exists(
+            self._realization_dir(realization) / f"{combined_ds_key}.nc"
+        ):
+            self._realization_states.add(
+                realization, {(combined_ds_key, combined_ds_key, True)}
+            )
+        else:
+            self._realization_states.add(
+                realization,
+                {
+                    (
+                        combined_ds_key,
+                        response_key,
+                        os.path.exists(
+                            self._realization_dir(realization) / f"{response_key}.nc"
+                        ),
+                    )
+                },
+            )
 
     def calculate_std_dev_for_parameter(self, parameter_group: str) -> xr.Dataset:
         if not parameter_group in self.experiment.parameter_configuration:
