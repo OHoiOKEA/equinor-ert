@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720013816026,
+  "lastUpdate": 1720016675977,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "51c751ab9b2445520e87097f67fdeaf4056c8228",
-          "message": "Add NPY to ruff rules with some numpy 2 support",
-          "timestamp": "2024-06-25T16:44:19+02:00",
-          "tree_id": "ce41b95b53a57be71e703575ac0efea67b1b9ab2",
-          "url": "https://github.com/equinor/ert/commit/51c751ab9b2445520e87097f67fdeaf4056c8228"
-        },
-        "date": 1719326850340,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1699616952143663,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022927937456007175",
-            "extra": "mean: 5.883678665000002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01627305559063679",
             "extra": "mean: 5.327433371600011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "6be9385517e08fcad77868c56f6454493f3b351b",
+          "message": "Avoid false positive ruff issue by noqa\n\n__setattr__ should be used here as variable_name is an incoming parameter",
+          "timestamp": "2024-07-03T16:21:23+02:00",
+          "tree_id": "e09a4f176c273f3096a11b80e2b26f2f47c89f71",
+          "url": "https://github.com/equinor/ert/commit/6be9385517e08fcad77868c56f6454493f3b351b"
+        },
+        "date": 1720016675513,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1861735039312572,
+            "unit": "iter/sec",
+            "range": "stddev: 0.026040568414246183",
+            "extra": "mean: 5.371333615599997 sec\nrounds: 5"
           }
         ]
       }
