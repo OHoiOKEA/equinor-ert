@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719985327632,
+  "lastUpdate": 1719992939819,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "68a360f7da2eae0f90996c5a9970bfdaeaaced5f",
-          "message": "Restructure ensemble evaluator",
-          "timestamp": "2024-06-25T09:20:30+02:00",
-          "tree_id": "ce9aba91e8f98ef12aecfcd4187c14d1154789b8",
-          "url": "https://github.com/equinor/ert/commit/68a360f7da2eae0f90996c5a9970bfdaeaaced5f"
-        },
-        "date": 1719300225720,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.17109835638953788,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022721392345337082",
-            "extra": "mean: 5.844591503400011 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.055433575318829954",
             "extra": "mean: 5.9744167520000016 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "41774aabdeda39c4f3215fbae5b668e4e99fc1ea",
+          "message": "Remove validator for ensemble name",
+          "timestamp": "2024-07-03T09:45:39+02:00",
+          "tree_id": "62cb2d6b8f73e2ecd05ac715684604896c6cb777",
+          "url": "https://github.com/equinor/ert/commit/41774aabdeda39c4f3215fbae5b668e4e99fc1ea"
+        },
+        "date": 1719992939201,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16443150395445866,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0411642085969246",
+            "extra": "mean: 6.081559652199997 sec\nrounds: 5"
           }
         ]
       }
