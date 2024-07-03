@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719999500629,
+  "lastUpdate": 1720002319963,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "204b3f0eecdacd3df7a710d90ebbe4724af319ab",
-          "message": "Move driver option names to queue_config\n\nThe drivers should not be responsible for defining how the drivers should\nbe configured in the config system, they should only expose an API",
-          "timestamp": "2024-06-25T09:53:45+02:00",
-          "tree_id": "03ec051e95ad80022ab3d767c257be49c3194a53",
-          "url": "https://github.com/equinor/ert/commit/204b3f0eecdacd3df7a710d90ebbe4724af319ab"
-        },
-        "date": 1719302219916,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16756251024280144,
-            "unit": "iter/sec",
-            "range": "stddev: 0.043873882986427984",
-            "extra": "mean: 5.967922052199981 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04225792375605515",
             "extra": "mean: 5.375283174399999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0529b5ca0ba1b88e7cd7dcdd35c2fa1cb31c6845",
+          "message": "Simplify Snapshot model\n\n* Remove unused memory variables\r\n* Remove concept JOB\r\n* Remove NodeTypes and reduce COLUMN\r\n* Remove sorted_forward_model_step_ids_by_realization_id\r\n* Remove sorted_realization_ids\r\n* Combine RootNodeData with RootNode\r\n* Remove meaningless emit\r\n* Only redraw altered realizations in the view\r\n* Fix incorrect inheritance in _Node for data\r\n* Remove unused code from row() and deduplicate\r\n* Simplify add_child in _Node\r\n\r\nCo-authored-by: Jon Holba <jholba@equinor.com>",
+          "timestamp": "2024-07-03T12:22:11+02:00",
+          "tree_id": "519b2a3ee72dd04c9c01e694a72c0e1c90389807",
+          "url": "https://github.com/equinor/ert/commit/0529b5ca0ba1b88e7cd7dcdd35c2fa1cb31c6845"
+        },
+        "date": 1720002319412,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18473240207883856,
+            "unit": "iter/sec",
+            "range": "stddev: 0.032696424716454696",
+            "extra": "mean: 5.413235516599997 sec\nrounds: 5"
           }
         ]
       }
