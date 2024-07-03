@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720002319963,
+  "lastUpdate": 1720004710541,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "d5edb15b22192ece78f6c803786ea0b8a1c94fa8",
-          "message": "Sort output of expand wildards and add tests",
-          "timestamp": "2024-06-25T10:05:22+02:00",
-          "tree_id": "1bb2fb6f42839c75f751fb50e4e30050e1d34193",
-          "url": "https://github.com/equinor/ert/commit/d5edb15b22192ece78f6c803786ea0b8a1c94fa8"
-        },
-        "date": 1719302918509,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16900245058971575,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04536608043902957",
-            "extra": "mean: 5.9170739626 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.032696424716454696",
             "extra": "mean: 5.413235516599997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "3d4a430ea43b1d6a3711822b8f591ce7e1247024",
+          "message": "Add PROJECT_CODE to queue options when jobs forward model contain known simulators\n\nAdd PROJECT_CODE support for LSF,OpenPBS and TORQUE Drivers.",
+          "timestamp": "2024-07-03T13:02:10+02:00",
+          "tree_id": "f075fe1094e423979ffac7f9a3764a4aaeab7ca9",
+          "url": "https://github.com/equinor/ert/commit/3d4a430ea43b1d6a3711822b8f591ce7e1247024"
+        },
+        "date": 1720004710133,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18694151235335668,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020851279125997997",
+            "extra": "mean: 5.349266663199989 sec\nrounds: 5"
           }
         ]
       }
