@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719992939819,
+  "lastUpdate": 1719993966308,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "e1e3281197d57a0c540ecb1a3a219c8b25a45524",
-          "message": "Update docs of FIELD keyword",
-          "timestamp": "2024-06-25T09:20:52+02:00",
-          "tree_id": "6dcb66736d61c9c8f6e3d723ad3f95f016b2881e",
-          "url": "https://github.com/equinor/ert/commit/e1e3281197d57a0c540ecb1a3a219c8b25a45524"
-        },
-        "date": 1719300249462,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.165900123377002,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022057538856138502",
-            "extra": "mean: 6.027723063999997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0411642085969246",
             "extra": "mean: 6.081559652199997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5105f4a1fa315b15aefe850c1246ebf9a88ae458",
+          "message": "Revert \"Add validation for FIELD parameter name\"\n\nThis reverts commit 892f91e327eabc5356689d51d11c6c21262924fd.\r\n\r\nNot everyone is using Eclipse.\r\nFor example, Intersert does not have a limitation of 8 characters.",
+          "timestamp": "2024-07-03T10:02:54+02:00",
+          "tree_id": "a10ad1bfdba005d214bbaef5c1e1049ade68b86e",
+          "url": "https://github.com/equinor/ert/commit/5105f4a1fa315b15aefe850c1246ebf9a88ae458"
+        },
+        "date": 1719993965690,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16317157895556283,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03577879132714757",
+            "extra": "mean: 6.128518253000015 sec\nrounds: 5"
           }
         ]
       }
