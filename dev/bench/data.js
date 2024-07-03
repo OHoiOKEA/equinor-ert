@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719928124648,
+  "lastUpdate": 1719985327632,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "621423d7e4e9d7ce06a187f43c10a922683959c7",
-          "message": "Use existing fns to check if params/responses exist",
-          "timestamp": "2024-06-24T15:16:17+02:00",
-          "tree_id": "51d6376eb95d4e3ec5a6aa3dbc44b70f6ae877dd",
-          "url": "https://github.com/equinor/ert/commit/621423d7e4e9d7ce06a187f43c10a922683959c7"
-        },
-        "date": 1719235178426,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16961910185527876,
-            "unit": "iter/sec",
-            "range": "stddev: 0.013268229965529468",
-            "extra": "mean: 5.895562404600002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0430715670160223",
             "extra": "mean: 5.979246899999998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "b27fda40833a99645b47389a056d74b79020691c",
+          "message": "Have ensemble evaluator methods return early instead of if-else",
+          "timestamp": "2024-07-03T07:38:37+02:00",
+          "tree_id": "281db1ed2d31f9fd81188188be3b78995a218cb3",
+          "url": "https://github.com/equinor/ert/commit/b27fda40833a99645b47389a056d74b79020691c"
+        },
+        "date": 1719985327164,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16738035552428426,
+            "unit": "iter/sec",
+            "range": "stddev: 0.055433575318829954",
+            "extra": "mean: 5.9744167520000016 sec\nrounds: 5"
           }
         ]
       }
