@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720004710541,
+  "lastUpdate": 1720013816026,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "7281a9340f7d31a1835b11af849d98740bdfa2de",
-          "message": "Refactor realization delegate\n\nUse circular delegate, with queue color in middle and progress for fm-steps",
-          "timestamp": "2024-06-25T11:52:37+02:00",
-          "tree_id": "49c1a2a8521414648392e93e9c1c2184dcd1c4a2",
-          "url": "https://github.com/equinor/ert/commit/7281a9340f7d31a1835b11af849d98740bdfa2de"
-        },
-        "date": 1719309362029,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16421107428461795,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02652365600001236",
-            "extra": "mean: 6.089723268400007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020851279125997997",
             "extra": "mean: 5.349266663199989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "ab33f3d47e7be3e3433b307fb5bd602de1305c76",
+          "message": "Remove unused dependencies\n\n-beartype\n-deprecated\n-sortedcontainers",
+          "timestamp": "2024-07-03T15:33:49+02:00",
+          "tree_id": "a161d5d5fc53e529799ef78be393f4216b2e05e7",
+          "url": "https://github.com/equinor/ert/commit/ab33f3d47e7be3e3433b307fb5bd602de1305c76"
+        },
+        "date": 1720013814567,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1877076502412766,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01627305559063679",
+            "extra": "mean: 5.327433371600011 sec\nrounds: 5"
           }
         ]
       }
