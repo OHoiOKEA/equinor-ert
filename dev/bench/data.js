@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1719993966308,
+  "lastUpdate": 1719999500629,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "930dbcde0db295a27cfb533d72d0a8aaad55bacb",
-          "message": "Remove dead test utility code\n\nThis class is not used, looks like a remnant from Slurm testing",
-          "timestamp": "2024-06-25T09:21:10+02:00",
-          "tree_id": "f27023669954480437d10d5ec7d2eefd44e723c9",
-          "url": "https://github.com/equinor/ert/commit/930dbcde0db295a27cfb533d72d0a8aaad55bacb"
-        },
-        "date": 1719300282405,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1675347597742083,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025490262380036387",
-            "extra": "mean: 5.968910579199985 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03577879132714757",
             "extra": "mean: 6.128518253000015 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "225bd6df2b27fab16dc15b0fe8ab5be3226c9028",
+          "message": "Revert combine datasets\n\nThis is being reverted because the checking of the state takes\ntoo long, causing the start up time for ert to become too slow.\n\nThis blocks stable releases, so will be reverted to unblock that,\nand can be reinstated at a later time.\n\nThis revert commit will slow down the plotting significantly, as\nthat was the main benefit of having unified datasets.",
+          "timestamp": "2024-07-03T11:35:08+02:00",
+          "tree_id": "ebc6de162547a05e3f4b5c3d21cc7c3df36a1903",
+          "url": "https://github.com/equinor/ert/commit/225bd6df2b27fab16dc15b0fe8ab5be3226c9028"
+        },
+        "date": 1719999500056,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1860367105425329,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04225792375605515",
+            "extra": "mean: 5.375283174399999 sec\nrounds: 5"
           }
         ]
       }
