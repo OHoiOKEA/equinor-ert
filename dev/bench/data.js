@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720078957561,
+  "lastUpdate": 1720080789950,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "1703a30a0dbfaf2f627259f9c2659373e3f451c4",
-          "message": "Remove function only called in test",
-          "timestamp": "2024-06-27T11:59:00+02:00",
-          "tree_id": "9a8b0e6db71cb2b843aff6f22cf08cf59b16ff98",
-          "url": "https://github.com/equinor/ert/commit/1703a30a0dbfaf2f627259f9c2659373e3f451c4"
-        },
-        "date": 1719482536680,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16887131189392207,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01963591057403041",
-            "extra": "mean: 5.921668925200026 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022858283825285968",
             "extra": "mean: 5.273629384600008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "bbabc28acbd46abd7401477bccb31b9fa42bdcb1",
+          "message": "Fix the 'initialize from scratch' tab",
+          "timestamp": "2024-07-04T10:09:48+02:00",
+          "tree_id": "678c943f711f72e359d186a55ff480f71bb3da88",
+          "url": "https://github.com/equinor/ert/commit/bbabc28acbd46abd7401477bccb31b9fa42bdcb1"
+        },
+        "date": 1720080789553,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1882308279253752,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01494027174517906",
+            "extra": "mean: 5.312626050799997 sec\nrounds: 5"
           }
         ]
       }
