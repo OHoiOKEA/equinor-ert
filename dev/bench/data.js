@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720077226593,
+  "lastUpdate": 1720078957561,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "parulek@gmail.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "20fbc2bde52e11196925e90bd7f64bb4e8a6583e",
-          "message": "Set default exit code to 1 in LocalDriver\n\nSince the exceptions are handled only in the driver.finish, this has\ncaused realizations to be flagged as completed ragardless. Here we\nadditionally log the exception if it happens.\nAdditionally this moves driver finish to try section in monitoring the jobs in order to allow for background tasks to finish if exception happens.",
-          "timestamp": "2024-06-27T11:39:39+02:00",
-          "tree_id": "a56a4342713fab155794aacd2e5d119593e1ba5b",
-          "url": "https://github.com/equinor/ert/commit/20fbc2bde52e11196925e90bd7f64bb4e8a6583e"
-        },
-        "date": 1719481377632,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16574523814766154,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0288007683355679",
-            "extra": "mean: 6.033355836800001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.042840876429896806",
             "extra": "mean: 5.435357656799999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "153d739de1d5dd12818303396291e4d86ae47e4c",
+          "message": "Fix small GUI error in create_experiment",
+          "timestamp": "2024-07-04T09:39:29+02:00",
+          "tree_id": "a6ac640fbac2d203766d2ecaccee9d354afa2e86",
+          "url": "https://github.com/equinor/ert/commit/153d739de1d5dd12818303396291e4d86ae47e4c"
+        },
+        "date": 1720078957129,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18962272982629164,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022858283825285968",
+            "extra": "mean: 5.273629384600008 sec\nrounds: 5"
           }
         ]
       }
