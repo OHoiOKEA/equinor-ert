@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720168720688,
+  "lastUpdate": 1720173194200,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "2ce20800e12006202828c3e7e657c13fb96e0c6f",
-          "message": "Add blue color and underscore to STDOUT and STDERR in job view",
-          "timestamp": "2024-06-27T13:58:11+02:00",
-          "tree_id": "585ff1dae84ea555c2a5e3b07aa43f296a1a8c22",
-          "url": "https://github.com/equinor/ert/commit/2ce20800e12006202828c3e7e657c13fb96e0c6f"
-        },
-        "date": 1719489681638,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16861260493384803,
-            "unit": "iter/sec",
-            "range": "stddev: 0.031629463909139524",
-            "extra": "mean: 5.930754704799983 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.051157267040871306",
             "extra": "mean: 5.31306496520001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "5c8d1e24bc0bcad4cde239ac9f1f98e39c74ecbc",
+          "message": "Rename EnsembleInitializationConfigurationPanel",
+          "timestamp": "2024-07-05T11:49:41+02:00",
+          "tree_id": "9f9d87c6f89deb787d04a2ae330ce2652238379a",
+          "url": "https://github.com/equinor/ert/commit/5c8d1e24bc0bcad4cde239ac9f1f98e39c74ecbc"
+        },
+        "date": 1720173193686,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.16403168187754386,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0935173025194353",
+            "extra": "mean: 6.096383263000007 sec\nrounds: 5"
           }
         ]
       }
