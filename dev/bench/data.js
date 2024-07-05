@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720177408287,
+  "lastUpdate": 1720190671810,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "4633f65c312c4558271436a42a53290c458219ab",
-          "message": "Fix bug in LSF driver resource manipulation\n\nIf both select and rusage was part of the existing resource string,\nand some hosts were attempted excluded, the previous code would inject\nthe exclusion string at the wrong spot, failing to locate the correct\nend of the select statement.\n\nAdded tests that triggers the original bug.",
-          "timestamp": "2024-06-28T09:02:04+02:00",
-          "tree_id": "dbbd101945169baaf2e239db8c7eb56445d51bc0",
-          "url": "https://github.com/equinor/ert/commit/4633f65c312c4558271436a42a53290c458219ab"
-        },
-        "date": 1719558312101,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1689290982040032,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04456094428427689",
-            "extra": "mean: 5.919643274200007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.054180609484872355",
             "extra": "mean: 5.297024159399996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f0d6e531b457817841a7688bc932273321071075",
+          "message": "Elevate generic queue options to global keyword",
+          "timestamp": "2024-07-05T17:41:22+03:00",
+          "tree_id": "d8870551216576f2ae1dcb87bf528e94252826e1",
+          "url": "https://github.com/equinor/ert/commit/f0d6e531b457817841a7688bc932273321071075"
+        },
+        "date": 1720190671185,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18458167605526396,
+            "unit": "iter/sec",
+            "range": "stddev: 0.026135964731252143",
+            "extra": "mean: 5.41765586580002 sec\nrounds: 5"
           }
         ]
       }
