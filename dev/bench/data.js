@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720080789950,
+  "lastUpdate": 1720168720688,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "ff9cf1844f07b3a6b7d403d505e06eead90b0b0d",
-          "message": "Fix phase count for es_mda",
-          "timestamp": "2024-06-27T13:56:23+02:00",
-          "tree_id": "d84994c3cc81a696fab1cc457afa18dc5171d0d8",
-          "url": "https://github.com/equinor/ert/commit/ff9cf1844f07b3a6b7d403d505e06eead90b0b0d"
-        },
-        "date": 1719489579892,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16827289933848588,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01606521519919624",
-            "extra": "mean: 5.942727580799987 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01494027174517906",
             "extra": "mean: 5.312626050799997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "665a2558e14719b66502944f3729e61f32f52e92",
+          "message": "Fix color selection in plotter (#8302)\n\n* Fix saving of observation alpha in plot\r\n\r\n* Fix saving of ensemble alpha in plot",
+          "timestamp": "2024-07-05T10:35:28+02:00",
+          "tree_id": "50c24809555a33d92fa48f905fb3b44a0cdf362f",
+          "url": "https://github.com/equinor/ert/commit/665a2558e14719b66502944f3729e61f32f52e92"
+        },
+        "date": 1720168719797,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18821527810216698,
+            "unit": "iter/sec",
+            "range": "stddev: 0.051157267040871306",
+            "extra": "mean: 5.31306496520001 sec\nrounds: 5"
           }
         ]
       }
