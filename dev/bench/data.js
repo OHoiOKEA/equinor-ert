@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720436552482,
+  "lastUpdate": 1720443266994,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "98c9b5dd84907f6413bed7472ccbf24ae56f1a3a",
-          "message": "Ensure unique parameter & response names in test",
-          "timestamp": "2024-06-28T13:45:59+02:00",
-          "tree_id": "dbdc1fae74de5fa19029c7faa9ffcb0dbba63839",
-          "url": "https://github.com/equinor/ert/commit/98c9b5dd84907f6413bed7472ccbf24ae56f1a3a"
-        },
-        "date": 1719575347519,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16603960392818484,
-            "unit": "iter/sec",
-            "range": "stddev: 0.037562846534819276",
-            "extra": "mean: 6.022659512199982 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.012969286165811568",
             "extra": "mean: 5.253137793999974 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "9ade4e58a131e1082cc38bc0c30f2b9086c2da5d",
+          "message": "Simplify _estimate_duration in snapshot.py",
+          "timestamp": "2024-07-08T14:50:03+02:00",
+          "tree_id": "86903a1c182c68631e7dfd9a7327b8d0ffae2835",
+          "url": "https://github.com/equinor/ert/commit/9ade4e58a131e1082cc38bc0c30f2b9086c2da5d"
+        },
+        "date": 1720443266151,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18661634276611583,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05248126583588658",
+            "extra": "mean: 5.358587491200001 sec\nrounds: 5"
           }
         ]
       }
