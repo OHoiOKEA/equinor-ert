@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720190671810,
+  "lastUpdate": 1720421961046,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "2193e75abd1f72a620f16d0edd73049dbda0c42c",
-          "message": "Fix pydantic warning in snapshot test",
-          "timestamp": "2024-06-28T09:39:51+02:00",
-          "tree_id": "6f5f2f8d8313d9257c900af82301b8c6933c133d",
-          "url": "https://github.com/equinor/ert/commit/2193e75abd1f72a620f16d0edd73049dbda0c42c"
-        },
-        "date": 1719560584858,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16897790138611304,
-            "unit": "iter/sec",
-            "range": "stddev: 0.040274184331937836",
-            "extra": "mean: 5.917933598399998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026135964731252143",
             "extra": "mean: 5.41765586580002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "d5a06b2e27c8951f6dd9841cc3322e2f893e8cbf",
+          "message": "Reduce restart wait to 20sec",
+          "timestamp": "2024-07-08T08:55:58+02:00",
+          "tree_id": "63abbdcd27b5ca6d900152c5fdfdda256aec0e9c",
+          "url": "https://github.com/equinor/ert/commit/d5a06b2e27c8951f6dd9841cc3322e2f893e8cbf"
+        },
+        "date": 1720421960155,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18635195027518772,
+            "unit": "iter/sec",
+            "range": "stddev: 0.19112138016557814",
+            "extra": "mean: 5.366190149999989 sec\nrounds: 5"
           }
         ]
       }
