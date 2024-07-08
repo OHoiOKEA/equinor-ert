@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720443266994,
+  "lastUpdate": 1720470957245,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "892f91e327eabc5356689d51d11c6c21262924fd",
-          "message": "Add validation for FIELD parameter name",
-          "timestamp": "2024-06-28T14:39:59+02:00",
-          "tree_id": "b274cbb0df34cba82c9c513f6f2b0a400cb2f63e",
-          "url": "https://github.com/equinor/ert/commit/892f91e327eabc5356689d51d11c6c21262924fd"
-        },
-        "date": 1719578731654,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16587614934156575,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02781107773699959",
-            "extra": "mean: 6.028594249199978 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05248126583588658",
             "extra": "mean: 5.358587491200001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "f41fb0cd2eed28bbe5b3fcff45bc26412a1412a5",
+          "message": "Solve ruff collapsible-else-if\n\nThis reduces indentation.",
+          "timestamp": "2024-07-08T22:32:54+02:00",
+          "tree_id": "714c5550d3ff051565c0eee05a95980e21380e73",
+          "url": "https://github.com/equinor/ert/commit/f41fb0cd2eed28bbe5b3fcff45bc26412a1412a5"
+        },
+        "date": 1720470956778,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19225330728543713,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02465825697968032",
+            "extra": "mean: 5.201470987000016 sec\nrounds: 5"
           }
         ]
       }
