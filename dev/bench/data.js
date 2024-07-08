@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720421961046,
+  "lastUpdate": 1720434137649,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "b3b595022862b4131a2357053e307368ff507494",
-          "message": "Align Slurm polling period with LSF, 2 seconds\n\n10 seconds is quite conservative, and makes integration tests go slow",
-          "timestamp": "2024-06-28T12:34:31+02:00",
-          "tree_id": "5de7fb223e6d944160b3e4543989c612d5b547a0",
-          "url": "https://github.com/equinor/ert/commit/b3b595022862b4131a2357053e307368ff507494"
-        },
-        "date": 1719571062085,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16495510740615596,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01889182208777844",
-            "extra": "mean: 6.062255456800005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.19112138016557814",
             "extra": "mean: 5.366190149999989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "9ac8a3373cc45fcc25092658b36aba0ab2dfd7ff",
+          "message": "Fix and enforce usage of encoding when writing text files",
+          "timestamp": "2024-07-08T12:18:32+02:00",
+          "tree_id": "1c1b82520d867d65915e9bb98775e9395e0b4298",
+          "url": "https://github.com/equinor/ert/commit/9ac8a3373cc45fcc25092658b36aba0ab2dfd7ff"
+        },
+        "date": 1720434136782,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18445757417966452,
+            "unit": "iter/sec",
+            "range": "stddev: 0.028832970921317636",
+            "extra": "mean: 5.42130082999999 sec\nrounds: 5"
           }
         ]
       }
