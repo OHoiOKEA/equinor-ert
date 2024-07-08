@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720434137649,
+  "lastUpdate": 1720436552482,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "01edfa95385ba4420ba9f9116562cca242bf4224",
-          "message": "Catch XML errors when logging error file\n\nIt is not critical that this ERROR file is valid XML, it just means the user\nparsing the log must decipher XML manually.",
-          "timestamp": "2024-06-28T13:08:07+02:00",
-          "tree_id": "ce3c63c4fa869f696e26dfb2b210b905d5f150f7",
-          "url": "https://github.com/equinor/ert/commit/01edfa95385ba4420ba9f9116562cca242bf4224"
-        },
-        "date": 1719573068645,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16367552078110428,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0545871176727262",
-            "extra": "mean: 6.109649110799995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028832970921317636",
             "extra": "mean: 5.42130082999999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "6ad5642ca5ab3b2ce01f3db759212dd04b5b9a5a",
+          "message": "Cache result of row in _Node\n\nrow() used a significant amount of time when profiling",
+          "timestamp": "2024-07-08T12:59:17+02:00",
+          "tree_id": "0808bb72be36d191abbfa61293942745cf65cff2",
+          "url": "https://github.com/equinor/ert/commit/6ad5642ca5ab3b2ce01f3db759212dd04b5b9a5a"
+        },
+        "date": 1720436552024,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1903624156103766,
+            "unit": "iter/sec",
+            "range": "stddev: 0.012969286165811568",
+            "extra": "mean: 5.253137793999974 sec\nrounds: 5"
           }
         ]
       }
