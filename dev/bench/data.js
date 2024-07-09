@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720470957245,
+  "lastUpdate": 1720517144042,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "251537eb58f3fe4617b898f69456cd6c1d5a51f7",
-          "message": "Make circles more antialiased and allow dark mode",
-          "timestamp": "2024-06-28T14:54:10+02:00",
-          "tree_id": "c45143d0059f7742e712d57e7ab97d44a965cb82",
-          "url": "https://github.com/equinor/ert/commit/251537eb58f3fe4617b898f69456cd6c1d5a51f7"
-        },
-        "date": 1719579436131,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.17198593127179168,
-            "unit": "iter/sec",
-            "range": "stddev: 0.015037742398529152",
-            "extra": "mean: 5.814429079200011 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02465825697968032",
             "extra": "mean: 5.201470987000016 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "2b05c45b93ae4f65056ac1b70eac3038ef8efe0c",
+          "message": "Fix typing errors\n\nAdd Final annotation to states\nChange literal to str in lookup tables\nAdd None checks to satisfy mypy\nRemove mypy ignores that are not needed",
+          "timestamp": "2024-07-09T11:22:33+02:00",
+          "tree_id": "e617035355776df8116545a1a2410deed691446d",
+          "url": "https://github.com/equinor/ert/commit/2b05c45b93ae4f65056ac1b70eac3038ef8efe0c"
+        },
+        "date": 1720517143622,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18633830718308322,
+            "unit": "iter/sec",
+            "range": "stddev: 0.023904049625589934",
+            "extra": "mean: 5.366583045199979 sec\nrounds: 5"
           }
         ]
       }
