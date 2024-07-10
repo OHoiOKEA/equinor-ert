@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720517144042,
+  "lastUpdate": 1720609010667,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "a9db74173eabd8b897129811f86048d02b48e478",
-          "message": "Mitigate flakyness in test_slurm_driver\n\nThe flakyness was easily reproducible with --count=100 -n 16, but after\nadding reruns the flakyness cannot be reproduced, so assuming reruns is\nsufficient (this was with mocked Slurm system, not with the --slurm\noption to pytest).\n\nSince we have added reruns, we can reduce the job_kill_window when doing\nreal integration tests also.",
-          "timestamp": "2024-06-28T15:12:40+02:00",
-          "tree_id": "0bc5363297843636fa590bdae82709e1c939453b",
-          "url": "https://github.com/equinor/ert/commit/a9db74173eabd8b897129811f86048d02b48e478"
-        },
-        "date": 1719580558921,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16751443025067705,
-            "unit": "iter/sec",
-            "range": "stddev: 0.047306154960501064",
-            "extra": "mean: 5.96963496520001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.023904049625589934",
             "extra": "mean: 5.366583045199979 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "ed3ba44d5e46142fd4900b0b50037cbd7b0a8573",
+          "message": "Increase timeout",
+          "timestamp": "2024-07-10T12:53:44+02:00",
+          "tree_id": "60c7703c012d606e39500cb7dbd82384443f89bc",
+          "url": "https://github.com/equinor/ert/commit/ed3ba44d5e46142fd4900b0b50037cbd7b0a8573"
+        },
+        "date": 1720609010276,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1856776765857917,
+            "unit": "iter/sec",
+            "range": "stddev: 0.021373913542607963",
+            "extra": "mean: 5.385677042000003 sec\nrounds: 5"
           }
         ]
       }
