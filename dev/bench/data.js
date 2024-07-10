@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720609010667,
+  "lastUpdate": 1720609037403,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "3838267b629f9c0b0ff741bc72f967efa60886d3",
-          "message": "Document auto scaling",
-          "timestamp": "2024-07-01T08:23:37+02:00",
-          "tree_id": "033875f7223eb1fa1dc7b8a867020c744c02b4ff",
-          "url": "https://github.com/equinor/ert/commit/3838267b629f9c0b0ff741bc72f967efa60886d3"
-        },
-        "date": 1719815223761,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16645086424194644,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03370597068134903",
-            "extra": "mean: 6.007778959599989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.021373913542607963",
             "extra": "mean: 5.385677042000003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "3b2f306bb6cd6401752e7a7706825693d86a1262",
+          "message": "Make ErtConfig fetch its own plugins",
+          "timestamp": "2024-07-10T12:54:15+02:00",
+          "tree_id": "28badcd265f81ad96847f8668803ff231f4fb0f8",
+          "url": "https://github.com/equinor/ert/commit/3b2f306bb6cd6401752e7a7706825693d86a1262"
+        },
+        "date": 1720609037009,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1885014826515884,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030838037746676806",
+            "extra": "mean: 5.30499806119999 sec\nrounds: 5"
           }
         ]
       }
