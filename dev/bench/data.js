@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720609037403,
+  "lastUpdate": 1720773470058,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "f9dc451d9dc4348d36b99abfca11fd0470bb95cf",
-          "message": "Add C4 and ASYNC to ruff rules\n\n- Also updates the pre-commit hooks",
-          "timestamp": "2024-07-01T13:23:52+02:00",
-          "tree_id": "b3e8de1957c51ef4189240678bd9e60ce88afb21",
-          "url": "https://github.com/equinor/ert/commit/f9dc451d9dc4348d36b99abfca11fd0470bb95cf"
-        },
-        "date": 1719833228223,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1686595672334705,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01877289409120892",
-            "extra": "mean: 5.929103319799992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030838037746676806",
             "extra": "mean: 5.30499806119999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "dc3687047defb4e365fb53f5e789c331e9cd1180",
+          "message": "Fix typing issues in remaining gui code\n\nAdded casts where needed\nChanged method params to match overridden method\nAdded None check\nTyping added to function signatures\nRemoved the rest of the mypy ignores for gui",
+          "timestamp": "2024-07-12T10:34:49+02:00",
+          "tree_id": "83a07782e3d4ae403471bff1074afce15e0938ae",
+          "url": "https://github.com/equinor/ert/commit/dc3687047defb4e365fb53f5e789c331e9cd1180"
+        },
+        "date": 1720773469593,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18875513174088304,
+            "unit": "iter/sec",
+            "range": "stddev: 0.028525443704025266",
+            "extra": "mean: 5.297869206400003 sec\nrounds: 5"
           }
         ]
       }
