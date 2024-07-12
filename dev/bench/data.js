@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720773470058,
+  "lastUpdate": 1720809655464,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "7c532dcd1d0a5f21087394d68aab67a338f9fe21",
-          "message": "Output the number of reals running in existing runpaths",
-          "timestamp": "2024-07-01T15:21:09+02:00",
-          "tree_id": "71329b9795b9ab13ca717691e1150c97a4408a9c",
-          "url": "https://github.com/equinor/ert/commit/7c532dcd1d0a5f21087394d68aab67a338f9fe21"
-        },
-        "date": 1719840267446,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16862149072423022,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03306761816989064",
-            "extra": "mean: 5.930442173799998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028525443704025266",
             "extra": "mean: 5.297869206400003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "9987504293d8fc26582820e3ee4f4550f1f3277d",
+          "message": "Have driver.__init__(...) exceptions propagate",
+          "timestamp": "2024-07-12T20:37:49+02:00",
+          "tree_id": "9ba435b9f3dd6ec1f04e6265443ccb1cb0a1a2d1",
+          "url": "https://github.com/equinor/ert/commit/9987504293d8fc26582820e3ee4f4550f1f3277d"
+        },
+        "date": 1720809654938,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18884558849439392,
+            "unit": "iter/sec",
+            "range": "stddev: 0.035741181233151766",
+            "extra": "mean: 5.295331535000014 sec\nrounds: 5"
           }
         ]
       }
