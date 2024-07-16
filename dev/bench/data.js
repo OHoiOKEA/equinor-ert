@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1720809655464,
+  "lastUpdate": 1721117680637,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "a22774ececbf2ab3edaa2065d3ea3f8d1562fec9",
-          "message": "Make sure adaptive localization works with single observation\n\nMake sure adaptive localization works with single observation",
-          "timestamp": "2024-07-02T08:29:08+02:00",
-          "tree_id": "4dc04c12b3ced29d5200367c3a203655d3a1e0a8",
-          "url": "https://github.com/equinor/ert/commit/a22774ececbf2ab3edaa2065d3ea3f8d1562fec9"
-        },
-        "date": 1719901934187,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16925498171835124,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05394041582656107",
-            "extra": "mean: 5.908245594000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.035741181233151766",
             "extra": "mean: 5.295331535000014 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "99cd99b214e6075af772cdec1c42f7d15f6cc0b5",
+          "message": "Remove LOCAL driver as option in hanging job_queue tests\n\n- Also removes dead test code for job queue TORQUE driver",
+          "timestamp": "2024-07-16T10:11:08+02:00",
+          "tree_id": "a4cef97ca6a1ef0af69b80eb2d73c686aa87ce1f",
+          "url": "https://github.com/equinor/ert/commit/99cd99b214e6075af772cdec1c42f7d15f6cc0b5"
+        },
+        "date": 1721117680205,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1844631247655288,
+            "unit": "iter/sec",
+            "range": "stddev: 0.013140607704144863",
+            "extra": "mean: 5.421137700400015 sec\nrounds: 5"
           }
         ]
       }
