@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721117680637,
+  "lastUpdate": 1721127109387,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "f529971b9dcaf19c7f786ffa3e39c5d4eebda853",
-          "message": "Fix restart for ensemble experiment",
-          "timestamp": "2024-07-02T10:08:52+02:00",
-          "tree_id": "04ac9255656284347a6ef976a0f2121183cced59",
-          "url": "https://github.com/equinor/ert/commit/f529971b9dcaf19c7f786ffa3e39c5d4eebda853"
-        },
-        "date": 1719907939909,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.166826130398474,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022699518320138504",
-            "extra": "mean: 5.994264793000002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.013140607704144863",
             "extra": "mean: 5.421137700400015 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "a22daa8069c1a281bb873ae4699d38b44a1134d4",
+          "message": "Use from datetime import datetime\n\nJust a small fix to shorten datetime.datetime type to datetime.",
+          "timestamp": "2024-07-16T12:48:13+02:00",
+          "tree_id": "2f6b98216a1453a7bfe49332a168afa6a04de06c",
+          "url": "https://github.com/equinor/ert/commit/a22daa8069c1a281bb873ae4699d38b44a1134d4"
+        },
+        "date": 1721127108496,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1890196903234726,
+            "unit": "iter/sec",
+            "range": "stddev: 0.045434076327474725",
+            "extra": "mean: 5.290454123000006 sec\nrounds: 5"
           }
         ]
       }
