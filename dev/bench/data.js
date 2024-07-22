@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721310375378,
+  "lastUpdate": 1721647060558,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "939e661f6b4b011fd90c30d5da16cb379241af8e",
-          "message": "Avoid unused varibles in test_slurm_driver",
-          "timestamp": "2024-07-02T15:45:25+02:00",
-          "tree_id": "68d011736ea73ccc0745764bd956e5624c298647",
-          "url": "https://github.com/equinor/ert/commit/939e661f6b4b011fd90c30d5da16cb379241af8e"
-        },
-        "date": 1719928123785,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16724514252789935,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0430715670160223",
-            "extra": "mean: 5.979246899999998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0608449468117058",
             "extra": "mean: 5.458430047800016 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "a21015db7a89e01ea6a2ed69ff10cdc87da4eea6",
+          "message": "Clean up running child process in test",
+          "timestamp": "2024-07-22T13:14:33+02:00",
+          "tree_id": "d2d10f610971011dc824604c89031d1ed30097e3",
+          "url": "https://github.com/equinor/ert/commit/a21015db7a89e01ea6a2ed69ff10cdc87da4eea6"
+        },
+        "date": 1721647060076,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18827082631742423,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02627320969076109",
+            "extra": "mean: 5.311497376199975 sec\nrounds: 5"
           }
         ]
       }
