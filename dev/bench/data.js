@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721647060558,
+  "lastUpdate": 1721652529265,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "b27fda40833a99645b47389a056d74b79020691c",
-          "message": "Have ensemble evaluator methods return early instead of if-else",
-          "timestamp": "2024-07-03T07:38:37+02:00",
-          "tree_id": "281db1ed2d31f9fd81188188be3b78995a218cb3",
-          "url": "https://github.com/equinor/ert/commit/b27fda40833a99645b47389a056d74b79020691c"
-        },
-        "date": 1719985327164,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16738035552428426,
-            "unit": "iter/sec",
-            "range": "stddev: 0.055433575318829954",
-            "extra": "mean: 5.9744167520000016 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02627320969076109",
             "extra": "mean: 5.311497376199975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "5dea0fc5295d7f0c71342f7a8b39c1843a24f03e",
+          "message": "Make sure that scheduler send all events when jobs are finished\n\nWe include scheduler._events.join() and SENTINEL object to make\nsure that the events left in the qeueu will be proccessed once the\njobs are done. To makes sure we won't wait for the queue and\nSENTINEL indefinitely this introduces self._queue_timeout attribute.",
+          "timestamp": "2024-07-22T14:45:41+02:00",
+          "tree_id": "aaec094e1232426ad48eb4a536b616bc5b2adeec",
+          "url": "https://github.com/equinor/ert/commit/5dea0fc5295d7f0c71342f7a8b39c1843a24f03e"
+        },
+        "date": 1721652528821,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1876443445629644,
+            "unit": "iter/sec",
+            "range": "stddev: 0.044874088223317336",
+            "extra": "mean: 5.3292306908 sec\nrounds: 5"
           }
         ]
       }
