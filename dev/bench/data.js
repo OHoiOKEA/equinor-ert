@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721652529265,
+  "lastUpdate": 1721656078832,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "41774aabdeda39c4f3215fbae5b668e4e99fc1ea",
-          "message": "Remove validator for ensemble name",
-          "timestamp": "2024-07-03T09:45:39+02:00",
-          "tree_id": "62cb2d6b8f73e2ecd05ac715684604896c6cb777",
-          "url": "https://github.com/equinor/ert/commit/41774aabdeda39c4f3215fbae5b668e4e99fc1ea"
-        },
-        "date": 1719992939201,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16443150395445866,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0411642085969246",
-            "extra": "mean: 6.081559652199997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.044874088223317336",
             "extra": "mean: 5.3292306908 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "245f4f5aaf6a3ef3d7f2b7e19a73f5c981a18bf0",
+          "message": "Fix missed renames from Simulations -> Experiment in phase strings",
+          "timestamp": "2024-07-22T15:44:48+02:00",
+          "tree_id": "005531e1ab2e63277ba046ab6ab529ac7edc57e4",
+          "url": "https://github.com/equinor/ert/commit/245f4f5aaf6a3ef3d7f2b7e19a73f5c981a18bf0"
+        },
+        "date": 1721656078388,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1876788378484879,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02802803768216247",
+            "extra": "mean: 5.328251237400002 sec\nrounds: 5"
           }
         ]
       }
