@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721722380676,
+  "lastUpdate": 1721723140503,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "225bd6df2b27fab16dc15b0fe8ab5be3226c9028",
-          "message": "Revert combine datasets\n\nThis is being reverted because the checking of the state takes\ntoo long, causing the start up time for ert to become too slow.\n\nThis blocks stable releases, so will be reverted to unblock that,\nand can be reinstated at a later time.\n\nThis revert commit will slow down the plotting significantly, as\nthat was the main benefit of having unified datasets.",
-          "timestamp": "2024-07-03T11:35:08+02:00",
-          "tree_id": "ebc6de162547a05e3f4b5c3d21cc7c3df36a1903",
-          "url": "https://github.com/equinor/ert/commit/225bd6df2b27fab16dc15b0fe8ab5be3226c9028"
-        },
-        "date": 1719999500056,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1860367105425329,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04225792375605515",
-            "extra": "mean: 5.375283174399999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.044611591121604156",
             "extra": "mean: 5.4517287855999825 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "20a237ab0109c024a86cacdc97357ddbfec5f2ae",
+          "message": "Remove test_run_analysis\n\nThe test mocks a lot of objects which ends up creating unexpected\nfailures in some environments.",
+          "timestamp": "2024-07-23T10:22:26+02:00",
+          "tree_id": "6a565f2a9f23f0a5b8ee5e250cea06baea47395f",
+          "url": "https://github.com/equinor/ert/commit/20a237ab0109c024a86cacdc97357ddbfec5f2ae"
+        },
+        "date": 1721723139933,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19107648585610795,
+            "unit": "iter/sec",
+            "range": "stddev: 0.024402108634873083",
+            "extra": "mean: 5.2335063392 sec\nrounds: 5"
           }
         ]
       }
