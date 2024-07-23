@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721656078832,
+  "lastUpdate": 1721722380676,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "5105f4a1fa315b15aefe850c1246ebf9a88ae458",
-          "message": "Revert \"Add validation for FIELD parameter name\"\n\nThis reverts commit 892f91e327eabc5356689d51d11c6c21262924fd.\r\n\r\nNot everyone is using Eclipse.\r\nFor example, Intersert does not have a limitation of 8 characters.",
-          "timestamp": "2024-07-03T10:02:54+02:00",
-          "tree_id": "a10ad1bfdba005d214bbaef5c1e1049ade68b86e",
-          "url": "https://github.com/equinor/ert/commit/5105f4a1fa315b15aefe850c1246ebf9a88ae458"
-        },
-        "date": 1719993965690,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16317157895556283,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03577879132714757",
-            "extra": "mean: 6.128518253000015 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02802803768216247",
             "extra": "mean: 5.328251237400002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7c829fbd936e61afdf5216098157443e295cfb19",
+          "message": "Add traceback information to ErtThreadError",
+          "timestamp": "2024-07-23T11:09:36+03:00",
+          "tree_id": "032130c3a7660103c70b42cd4b274dae305ef253",
+          "url": "https://github.com/equinor/ert/commit/7c829fbd936e61afdf5216098157443e295cfb19"
+        },
+        "date": 1721722380105,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18342805361876532,
+            "unit": "iter/sec",
+            "range": "stddev: 0.044611591121604156",
+            "extra": "mean: 5.4517287855999825 sec\nrounds: 5"
           }
         ]
       }
