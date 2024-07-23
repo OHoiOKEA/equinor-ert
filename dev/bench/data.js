@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721723140503,
+  "lastUpdate": 1721733165855,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "0529b5ca0ba1b88e7cd7dcdd35c2fa1cb31c6845",
-          "message": "Simplify Snapshot model\n\n* Remove unused memory variables\r\n* Remove concept JOB\r\n* Remove NodeTypes and reduce COLUMN\r\n* Remove sorted_forward_model_step_ids_by_realization_id\r\n* Remove sorted_realization_ids\r\n* Combine RootNodeData with RootNode\r\n* Remove meaningless emit\r\n* Only redraw altered realizations in the view\r\n* Fix incorrect inheritance in _Node for data\r\n* Remove unused code from row() and deduplicate\r\n* Simplify add_child in _Node\r\n\r\nCo-authored-by: Jon Holba <jholba@equinor.com>",
-          "timestamp": "2024-07-03T12:22:11+02:00",
-          "tree_id": "519b2a3ee72dd04c9c01e694a72c0e1c90389807",
-          "url": "https://github.com/equinor/ert/commit/0529b5ca0ba1b88e7cd7dcdd35c2fa1cb31c6845"
-        },
-        "date": 1720002319412,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18473240207883856,
-            "unit": "iter/sec",
-            "range": "stddev: 0.032696424716454696",
-            "extra": "mean: 5.413235516599997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.024402108634873083",
             "extra": "mean: 5.2335063392 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "a27ea66224bb8861405681095c19dc8b96a93e9d",
+          "message": "Remove unnecessary mypy ignore",
+          "timestamp": "2024-07-23T13:09:42+02:00",
+          "tree_id": "21a9a9fb928cff61d0ccf6059189f8fa8b41f1c4",
+          "url": "https://github.com/equinor/ert/commit/a27ea66224bb8861405681095c19dc8b96a93e9d"
+        },
+        "date": 1721733165441,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1914197055700464,
+            "unit": "iter/sec",
+            "range": "stddev: 0.028533925976381522",
+            "extra": "mean: 5.224122547999997 sec\nrounds: 5"
           }
         ]
       }
