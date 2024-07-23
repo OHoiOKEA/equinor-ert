@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721733165855,
+  "lastUpdate": 1721759417370,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "3d4a430ea43b1d6a3711822b8f591ce7e1247024",
-          "message": "Add PROJECT_CODE to queue options when jobs forward model contain known simulators\n\nAdd PROJECT_CODE support for LSF,OpenPBS and TORQUE Drivers.",
-          "timestamp": "2024-07-03T13:02:10+02:00",
-          "tree_id": "f075fe1094e423979ffac7f9a3764a4aaeab7ca9",
-          "url": "https://github.com/equinor/ert/commit/3d4a430ea43b1d6a3711822b8f591ce7e1247024"
-        },
-        "date": 1720004710133,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18694151235335668,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020851279125997997",
-            "extra": "mean: 5.349266663199989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028533925976381522",
             "extra": "mean: 5.224122547999997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "7ad5dc0f8829975c85e7fb61c9c394fda30d480b",
+          "message": "Warn on duplicate workflows jobs",
+          "timestamp": "2024-07-23T20:26:53+02:00",
+          "tree_id": "96c772c08aac4f7c1298bf3d501f4c4c083df10a",
+          "url": "https://github.com/equinor/ert/commit/7ad5dc0f8829975c85e7fb61c9c394fda30d480b"
+        },
+        "date": 1721759416869,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18913331643492212,
+            "unit": "iter/sec",
+            "range": "stddev: 0.12804214127365068",
+            "extra": "mean: 5.2872757632 sec\nrounds: 5"
           }
         ]
       }
