@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721829141187,
+  "lastUpdate": 1721832418506,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "153d739de1d5dd12818303396291e4d86ae47e4c",
-          "message": "Fix small GUI error in create_experiment",
-          "timestamp": "2024-07-04T09:39:29+02:00",
-          "tree_id": "a6ac640fbac2d203766d2ecaccee9d354afa2e86",
-          "url": "https://github.com/equinor/ert/commit/153d739de1d5dd12818303396291e4d86ae47e4c"
-        },
-        "date": 1720078957129,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18962272982629164,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022858283825285968",
-            "extra": "mean: 5.273629384600008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.034356584787478016",
             "extra": "mean: 5.139581082599989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "a51790cf893de69bac5440a69791248981f60951",
+          "message": "Remove unneeded build dependencies and run_ert_ctest.sh",
+          "timestamp": "2024-07-24T16:44:17+02:00",
+          "tree_id": "93ddfcf58375773be0ebf764e2c155447c93b06b",
+          "url": "https://github.com/equinor/ert/commit/a51790cf893de69bac5440a69791248981f60951"
+        },
+        "date": 1721832417563,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18902366786897892,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0745125762121717",
+            "extra": "mean: 5.290342798199992 sec\nrounds: 5"
           }
         ]
       }
