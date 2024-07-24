@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721808107517,
+  "lastUpdate": 1721811051980,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "6be9385517e08fcad77868c56f6454493f3b351b",
-          "message": "Avoid false positive ruff issue by noqa\n\n__setattr__ should be used here as variable_name is an incoming parameter",
-          "timestamp": "2024-07-03T16:21:23+02:00",
-          "tree_id": "e09a4f176c273f3096a11b80e2b26f2f47c89f71",
-          "url": "https://github.com/equinor/ert/commit/6be9385517e08fcad77868c56f6454493f3b351b"
-        },
-        "date": 1720016675513,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1861735039312572,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026040568414246183",
-            "extra": "mean: 5.371333615599997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.11681503112291718",
             "extra": "mean: 5.261869712600003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "147c2e67a2db5b426eaf73a414e05c66bf5195f4",
+          "message": "Adjust logger config for new plugin_manager location",
+          "timestamp": "2024-07-24T10:47:32+02:00",
+          "tree_id": "7bf19a5c5c9b06d1cfabd61db36c806d792984f8",
+          "url": "https://github.com/equinor/ert/commit/147c2e67a2db5b426eaf73a414e05c66bf5195f4"
+        },
+        "date": 1721811051470,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1869186169111875,
+            "unit": "iter/sec",
+            "range": "stddev: 0.008752148339800299",
+            "extra": "mean: 5.349921888599999 sec\nrounds: 5"
           }
         ]
       }
