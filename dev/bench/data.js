@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721903733265,
+  "lastUpdate": 1721916004467,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "665a2558e14719b66502944f3729e61f32f52e92",
-          "message": "Fix color selection in plotter (#8302)\n\n* Fix saving of observation alpha in plot\r\n\r\n* Fix saving of ensemble alpha in plot",
-          "timestamp": "2024-07-05T10:35:28+02:00",
-          "tree_id": "50c24809555a33d92fa48f905fb3b44a0cdf362f",
-          "url": "https://github.com/equinor/ert/commit/665a2558e14719b66502944f3729e61f32f52e92"
-        },
-        "date": 1720168719797,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18821527810216698,
-            "unit": "iter/sec",
-            "range": "stddev: 0.051157267040871306",
-            "extra": "mean: 5.31306496520001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.09153870938033008",
             "extra": "mean: 5.257677471000011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "509c224a99b0cedb785fac6eaed9b05e020ad71d",
+          "message": "Implement async version of EnsembleEvaluator\n\nThere are two functions in base_run_model (run_ensemble_evaluator_async and run_ensemble_evaluator). run_ensemble_evaluator is a sync vrapper for EnsembleEvaluatorAsync.\nAsync ensemble evaluator follows a similar pattern to Scheduler; ie. uses a set of background tasks responsible for running the ee server, processing events, sending snapshots updates, etc.\nAsync evaluator does not use BatchingDispatcher, although the events are still processed in batches.",
+          "timestamp": "2024-07-25T15:57:36+02:00",
+          "tree_id": "f91b3f034ea4e939525473fc22436b029d5803b2",
+          "url": "https://github.com/equinor/ert/commit/509c224a99b0cedb785fac6eaed9b05e020ad71d"
+        },
+        "date": 1721916003967,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19240069186091285,
+            "unit": "iter/sec",
+            "range": "stddev: 0.016818304528414547",
+            "extra": "mean: 5.197486507600002 sec\nrounds: 5"
           }
         ]
       }
