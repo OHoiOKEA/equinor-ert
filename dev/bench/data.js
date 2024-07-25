@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721832418506,
+  "lastUpdate": 1721903733265,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "bbabc28acbd46abd7401477bccb31b9fa42bdcb1",
-          "message": "Fix the 'initialize from scratch' tab",
-          "timestamp": "2024-07-04T10:09:48+02:00",
-          "tree_id": "678c943f711f72e359d186a55ff480f71bb3da88",
-          "url": "https://github.com/equinor/ert/commit/bbabc28acbd46abd7401477bccb31b9fa42bdcb1"
-        },
-        "date": 1720080789553,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1882308279253752,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01494027174517906",
-            "extra": "mean: 5.312626050799997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0745125762121717",
             "extra": "mean: 5.290342798199992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "1fecbdbecd957afc81a0ef94964556a40155563d",
+          "message": "Simplify openpbs job states",
+          "timestamp": "2024-07-25T12:33:09+02:00",
+          "tree_id": "0568259ed0ac74840c28db65214e458b4a4693f0",
+          "url": "https://github.com/equinor/ert/commit/1fecbdbecd957afc81a0ef94964556a40155563d"
+        },
+        "date": 1721903732794,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1901980495220069,
+            "unit": "iter/sec",
+            "range": "stddev: 0.09153870938033008",
+            "extra": "mean: 5.257677471000011 sec\nrounds: 5"
           }
         ]
       }
