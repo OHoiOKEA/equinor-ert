@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721916004467,
+  "lastUpdate": 1721992391361,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "5c8d1e24bc0bcad4cde239ac9f1f98e39c74ecbc",
-          "message": "Rename EnsembleInitializationConfigurationPanel",
-          "timestamp": "2024-07-05T11:49:41+02:00",
-          "tree_id": "9f9d87c6f89deb787d04a2ae330ce2652238379a",
-          "url": "https://github.com/equinor/ert/commit/5c8d1e24bc0bcad4cde239ac9f1f98e39c74ecbc"
-        },
-        "date": 1720173193686,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.16403168187754386,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0935173025194353",
-            "extra": "mean: 6.096383263000007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.016818304528414547",
             "extra": "mean: 5.197486507600002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "08f449e102128a7248a85a033713e77253d4c543",
+          "message": "Fix invalid grid file raising uncaught exception",
+          "timestamp": "2024-07-26T13:10:34+02:00",
+          "tree_id": "407d0059eb657c32d1f841282b60091828450888",
+          "url": "https://github.com/equinor/ert/commit/08f449e102128a7248a85a033713e77253d4c543"
+        },
+        "date": 1721992390949,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19602987155232504,
+            "unit": "iter/sec",
+            "range": "stddev: 0.018912078871834142",
+            "extra": "mean: 5.101263353800016 sec\nrounds: 5"
           }
         ]
       }
