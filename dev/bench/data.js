@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721992391361,
+  "lastUpdate": 1721993622351,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "a76e74db907e295da6d054d495e3099b1283539d",
-          "message": "Refactor JobList & RealList ProxyModels\n\n* Refactor real_list rowCount\r\n* Refactor real_list index\r\n* Refactor real_list hasChildren\r\n* Refactor real_list mapToSource\r\n* Refactor real_list _accept_index\r\n* Refactor real_list connect & disconnect\r\n* Remove real_list unused signal iter_changed\r\n* Refactor real_list _source_data_changed\r\n* Refactor real_list _source_rows_about_to_be_inserted\r\n* Refactor real_list _source_rows_inserted\r\n* Refactor real_list mapFromSource\r\n* Have real_list ColumnCount return one\r\n* Refactor job_list rowCount\r\n* Refactor job_list _accept_index\r\n* Refactor job_list _source_data_changed\r\n* Refactor job_list mapFromSource\r\n* Refactor job_list mapToSource\r\n* Refactor job_list index\r\n* Refactor job_list headerData\r\n* Rename job_list real variable for consistency\r\n* Refactor __init__ signatures",
-          "timestamp": "2024-07-05T13:00:09+02:00",
-          "tree_id": "a159d6d36a4cc65f5732a14a376f640557dfc4fe",
-          "url": "https://github.com/equinor/ert/commit/a76e74db907e295da6d054d495e3099b1283539d"
-        },
-        "date": 1720177407815,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18878524430088156,
-            "unit": "iter/sec",
-            "range": "stddev: 0.054180609484872355",
-            "extra": "mean: 5.297024159399996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.018912078871834142",
             "extra": "mean: 5.101263353800016 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "708f38a0677e80fe0b70fe4a42207032f5047a83",
+          "message": "Fix GUILogHandler lifetime\n\nseparates out the logging.Handler part as the logging module\nkeeps around a weak reference until application exit.",
+          "timestamp": "2024-07-26T13:31:11+02:00",
+          "tree_id": "0611af0837e530fe261a38dbf1b848e208c780a7",
+          "url": "https://github.com/equinor/ert/commit/708f38a0677e80fe0b70fe4a42207032f5047a83"
+        },
+        "date": 1721993621766,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1925498117504744,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022145480219506828",
+            "extra": "mean: 5.193461322600001 sec\nrounds: 5"
           }
         ]
       }
