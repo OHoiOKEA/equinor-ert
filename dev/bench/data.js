@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1721993622351,
+  "lastUpdate": 1722251924314,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "f0d6e531b457817841a7688bc932273321071075",
-          "message": "Elevate generic queue options to global keyword",
-          "timestamp": "2024-07-05T17:41:22+03:00",
-          "tree_id": "d8870551216576f2ae1dcb87bf528e94252826e1",
-          "url": "https://github.com/equinor/ert/commit/f0d6e531b457817841a7688bc932273321071075"
-        },
-        "date": 1720190671185,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18458167605526396,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026135964731252143",
-            "extra": "mean: 5.41765586580002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022145480219506828",
             "extra": "mean: 5.193461322600001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "7d073f230d0794f24efae3b2d12f86e997fb5d11",
+          "message": "Test that no ee config will raise when running evaluator",
+          "timestamp": "2024-07-29T13:16:16+02:00",
+          "tree_id": "04ef279318c9ec94eb6dec04cfa8a94c4318238f",
+          "url": "https://github.com/equinor/ert/commit/7d073f230d0794f24efae3b2d12f86e997fb5d11"
+        },
+        "date": 1722251923702,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19372647598411571,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02589785799995746",
+            "extra": "mean: 5.161917052999991 sec\nrounds: 5"
           }
         ]
       }
