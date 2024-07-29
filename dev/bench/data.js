@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722251924314,
+  "lastUpdate": 1722259390576,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "d5a06b2e27c8951f6dd9841cc3322e2f893e8cbf",
-          "message": "Reduce restart wait to 20sec",
-          "timestamp": "2024-07-08T08:55:58+02:00",
-          "tree_id": "63abbdcd27b5ca6d900152c5fdfdda256aec0e9c",
-          "url": "https://github.com/equinor/ert/commit/d5a06b2e27c8951f6dd9841cc3322e2f893e8cbf"
-        },
-        "date": 1720421960155,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18635195027518772,
-            "unit": "iter/sec",
-            "range": "stddev: 0.19112138016557814",
-            "extra": "mean: 5.366190149999989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02589785799995746",
             "extra": "mean: 5.161917052999991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "257ecf0de363e1900ebe479fe7085d14b542cdbe",
+          "message": "Rename EnsembleEvaluator._stop -> stop and remove async\n\nThis renames EnsembleEvaluator._stop to EnsembleEvaluator.stop. Function stop() is part of the pubic API.\nAdditionally, it removes async keyword as the function does not need to be async now. The same goes for the _signal_cancel().",
+          "timestamp": "2024-07-29T15:20:33+02:00",
+          "tree_id": "2931dbea878ef33d1cebc1b96cd9d817f6d8e045",
+          "url": "https://github.com/equinor/ert/commit/257ecf0de363e1900ebe479fe7085d14b542cdbe"
+        },
+        "date": 1722259390120,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1936170339262147,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04078945913370897",
+            "extra": "mean: 5.164834827399995 sec\nrounds: 5"
           }
         ]
       }
