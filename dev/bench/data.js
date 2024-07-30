@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722324927596,
+  "lastUpdate": 1722327813869,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "6ad5642ca5ab3b2ce01f3db759212dd04b5b9a5a",
-          "message": "Cache result of row in _Node\n\nrow() used a significant amount of time when profiling",
-          "timestamp": "2024-07-08T12:59:17+02:00",
-          "tree_id": "0808bb72be36d191abbfa61293942745cf65cff2",
-          "url": "https://github.com/equinor/ert/commit/6ad5642ca5ab3b2ce01f3db759212dd04b5b9a5a"
-        },
-        "date": 1720436552024,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1903624156103766,
-            "unit": "iter/sec",
-            "range": "stddev: 0.012969286165811568",
-            "extra": "mean: 5.253137793999974 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03977326505669294",
             "extra": "mean: 5.174782354800004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "d098d7dd2f909bb39e752aaf9431054adaada7ad",
+          "message": "Add test of about dialog",
+          "timestamp": "2024-07-30T10:20:57+02:00",
+          "tree_id": "7c81e88e6b55f667a996533cf8e24cd21544a019",
+          "url": "https://github.com/equinor/ert/commit/d098d7dd2f909bb39e752aaf9431054adaada7ad"
+        },
+        "date": 1722327813312,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1918236564377485,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0136806681979455",
+            "extra": "mean: 5.213121356200008 sec\nrounds: 5"
           }
         ]
       }
