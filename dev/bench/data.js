@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722259390576,
+  "lastUpdate": 1722324927596,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "9ac8a3373cc45fcc25092658b36aba0ab2dfd7ff",
-          "message": "Fix and enforce usage of encoding when writing text files",
-          "timestamp": "2024-07-08T12:18:32+02:00",
-          "tree_id": "1c1b82520d867d65915e9bb98775e9395e0b4298",
-          "url": "https://github.com/equinor/ert/commit/9ac8a3373cc45fcc25092658b36aba0ab2dfd7ff"
-        },
-        "date": 1720434136782,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18445757417966452,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028832970921317636",
-            "extra": "mean: 5.42130082999999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04078945913370897",
             "extra": "mean: 5.164834827399995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "b5ce0939f9294c73f4acd559f98f39c23480f161",
+          "message": "Fix copy button crashing in plot error window",
+          "timestamp": "2024-07-30T09:32:57+02:00",
+          "tree_id": "4add61cbb3df59ef10e42172eb48b4cad2ea82fd",
+          "url": "https://github.com/equinor/ert/commit/b5ce0939f9294c73f4acd559f98f39c23480f161"
+        },
+        "date": 1722324927049,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19324484228257907,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03977326505669294",
+            "extra": "mean: 5.174782354800004 sec\nrounds: 5"
           }
         ]
       }
