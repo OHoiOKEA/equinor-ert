@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722421907098,
+  "lastUpdate": 1722426484505,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "2b05c45b93ae4f65056ac1b70eac3038ef8efe0c",
-          "message": "Fix typing errors\n\nAdd Final annotation to states\nChange literal to str in lookup tables\nAdd None checks to satisfy mypy\nRemove mypy ignores that are not needed",
-          "timestamp": "2024-07-09T11:22:33+02:00",
-          "tree_id": "e617035355776df8116545a1a2410deed691446d",
-          "url": "https://github.com/equinor/ert/commit/2b05c45b93ae4f65056ac1b70eac3038ef8efe0c"
-        },
-        "date": 1720517143622,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18633830718308322,
-            "unit": "iter/sec",
-            "range": "stddev: 0.023904049625589934",
-            "extra": "mean: 5.366583045199979 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02528045803326657",
             "extra": "mean: 5.2588134104 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "23b7c9bc2cfa44ac88874f317e43e2a80f0e59ac",
+          "message": "Wait for socket to be closed before trying to send done signal\n\nThis test has been flaky and this is an attempt to fix that.\nWith the new event we are sure that the websocket is closed before we\nsend signal_done from test.",
+          "timestamp": "2024-07-31T13:45:26+02:00",
+          "tree_id": "9df63924c4515cee45d39f646e70722f3d4b4d5d",
+          "url": "https://github.com/equinor/ert/commit/23b7c9bc2cfa44ac88874f317e43e2a80f0e59ac"
+        },
+        "date": 1722426483618,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19122901969347897,
+            "unit": "iter/sec",
+            "range": "stddev: 0.041367644008016",
+            "extra": "mean: 5.229331832599991 sec\nrounds: 5"
           }
         ]
       }
