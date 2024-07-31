@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722339401814,
+  "lastUpdate": 1722421907098,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "f41fb0cd2eed28bbe5b3fcff45bc26412a1412a5",
-          "message": "Solve ruff collapsible-else-if\n\nThis reduces indentation.",
-          "timestamp": "2024-07-08T22:32:54+02:00",
-          "tree_id": "714c5550d3ff051565c0eee05a95980e21380e73",
-          "url": "https://github.com/equinor/ert/commit/f41fb0cd2eed28bbe5b3fcff45bc26412a1412a5"
-        },
-        "date": 1720470956778,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19225330728543713,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02465825697968032",
-            "extra": "mean: 5.201470987000016 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026394351307507526",
             "extra": "mean: 5.163330462399983 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "7fc572d2f803656f6e1a9dd4d03677862e909b42",
+          "message": "Remove unused variable",
+          "timestamp": "2024-07-31T12:29:17+02:00",
+          "tree_id": "fa54b7c9526b360eea661828bb526b92ea91f034",
+          "url": "https://github.com/equinor/ert/commit/7fc572d2f803656f6e1a9dd4d03677862e909b42"
+        },
+        "date": 1722421906696,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19015696545201005,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02528045803326657",
+            "extra": "mean: 5.2588134104 sec\nrounds: 5"
           }
         ]
       }
