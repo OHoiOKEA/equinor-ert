@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722496477777,
+  "lastUpdate": 1722498199222,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "3b2f306bb6cd6401752e7a7706825693d86a1262",
-          "message": "Make ErtConfig fetch its own plugins",
-          "timestamp": "2024-07-10T12:54:15+02:00",
-          "tree_id": "28badcd265f81ad96847f8668803ff231f4fb0f8",
-          "url": "https://github.com/equinor/ert/commit/3b2f306bb6cd6401752e7a7706825693d86a1262"
-        },
-        "date": 1720609037009,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1885014826515884,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030838037746676806",
-            "extra": "mean: 5.30499806119999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.049128102354384626",
             "extra": "mean: 5.1711826257999975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "d99779f70bc886c6371270787044e86369ec814b",
+          "message": "Remove unused timeout_queue varuable",
+          "timestamp": "2024-08-01T09:40:45+02:00",
+          "tree_id": "284dd282abc714f69ab75edebf35fa46ddf3da67",
+          "url": "https://github.com/equinor/ert/commit/d99779f70bc886c6371270787044e86369ec814b"
+        },
+        "date": 1722498198769,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19018740331534248,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02768264062558892",
+            "extra": "mean: 5.257971782400006 sec\nrounds: 5"
           }
         ]
       }
