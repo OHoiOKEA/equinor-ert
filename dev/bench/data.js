@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722426484505,
+  "lastUpdate": 1722496477777,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "ed3ba44d5e46142fd4900b0b50037cbd7b0a8573",
-          "message": "Increase timeout",
-          "timestamp": "2024-07-10T12:53:44+02:00",
-          "tree_id": "60c7703c012d606e39500cb7dbd82384443f89bc",
-          "url": "https://github.com/equinor/ert/commit/ed3ba44d5e46142fd4900b0b50037cbd7b0a8573"
-        },
-        "date": 1720609010276,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1856776765857917,
-            "unit": "iter/sec",
-            "range": "stddev: 0.021373913542607963",
-            "extra": "mean: 5.385677042000003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.041367644008016",
             "extra": "mean: 5.229331832599991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86219529+AugustoMagalhaes@users.noreply.github.com",
+            "name": "AugustoMagalhaes",
+            "username": "AugustoMagalhaes"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "121970a497d60006242686adcb93b879cdf5cc36",
+          "message": "Mark empty stdout/stderr files in simulation",
+          "timestamp": "2024-08-01T09:11:56+02:00",
+          "tree_id": "68706c0d2e7291e270346f483c5f7f43a24a12f3",
+          "url": "https://github.com/equinor/ert/commit/121970a497d60006242686adcb93b879cdf5cc36"
+        },
+        "date": 1722496476965,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19337936258735341,
+            "unit": "iter/sec",
+            "range": "stddev: 0.049128102354384626",
+            "extra": "mean: 5.1711826257999975 sec\nrounds: 5"
           }
         ]
       }
