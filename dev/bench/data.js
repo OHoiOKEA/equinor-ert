@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722537613875,
+  "lastUpdate": 1722537717113,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "99cd99b214e6075af772cdec1c42f7d15f6cc0b5",
-          "message": "Remove LOCAL driver as option in hanging job_queue tests\n\n- Also removes dead test code for job queue TORQUE driver",
-          "timestamp": "2024-07-16T10:11:08+02:00",
-          "tree_id": "a4cef97ca6a1ef0af69b80eb2d73c686aa87ce1f",
-          "url": "https://github.com/equinor/ert/commit/99cd99b214e6075af772cdec1c42f7d15f6cc0b5"
-        },
-        "date": 1721117680205,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1844631247655288,
-            "unit": "iter/sec",
-            "range": "stddev: 0.013140607704144863",
-            "extra": "mean: 5.421137700400015 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04266250327657179",
             "extra": "mean: 5.205044614600001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "78549a34ca4f439bdd775677af60e37c4acd8c58",
+          "message": "Fix user warning about to_datetime conversion",
+          "timestamp": "2024-08-01T20:37:22+02:00",
+          "tree_id": "222a9a88b52b715ed8efba9b4fede5511e0bbc5c",
+          "url": "https://github.com/equinor/ert/commit/78549a34ca4f439bdd775677af60e37c4acd8c58"
+        },
+        "date": 1722537716183,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18956234097695798,
+            "unit": "iter/sec",
+            "range": "stddev: 0.048867049343616416",
+            "extra": "mean: 5.275309403999995 sec\nrounds: 5"
           }
         ]
       }
