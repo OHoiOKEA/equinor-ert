@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722537717113,
+  "lastUpdate": 1722586690998,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "a22daa8069c1a281bb873ae4699d38b44a1134d4",
-          "message": "Use from datetime import datetime\n\nJust a small fix to shorten datetime.datetime type to datetime.",
-          "timestamp": "2024-07-16T12:48:13+02:00",
-          "tree_id": "2f6b98216a1453a7bfe49332a168afa6a04de06c",
-          "url": "https://github.com/equinor/ert/commit/a22daa8069c1a281bb873ae4699d38b44a1134d4"
-        },
-        "date": 1721127108496,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1890196903234726,
-            "unit": "iter/sec",
-            "range": "stddev: 0.045434076327474725",
-            "extra": "mean: 5.290454123000006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.048867049343616416",
             "extra": "mean: 5.275309403999995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "bc8cf11ef4a89a854452ec3953c6aee190d152bc",
+          "message": "Add SearchBar to the event viewer",
+          "timestamp": "2024-08-02T10:15:08+02:00",
+          "tree_id": "d0b7b18bb2fab2ed4ad3c8033502523e5de38eb2",
+          "url": "https://github.com/equinor/ert/commit/bc8cf11ef4a89a854452ec3953c6aee190d152bc"
+        },
+        "date": 1722586689985,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19360905356688413,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0246922091551914",
+            "extra": "mean: 5.165047716399999 sec\nrounds: 5"
           }
         ]
       }
