@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722602673537,
+  "lastUpdate": 1722605389638,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "245f4f5aaf6a3ef3d7f2b7e19a73f5c981a18bf0",
-          "message": "Fix missed renames from Simulations -> Experiment in phase strings",
-          "timestamp": "2024-07-22T15:44:48+02:00",
-          "tree_id": "005531e1ab2e63277ba046ab6ab529ac7edc57e4",
-          "url": "https://github.com/equinor/ert/commit/245f4f5aaf6a3ef3d7f2b7e19a73f5c981a18bf0"
-        },
-        "date": 1721656078388,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1876788378484879,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02802803768216247",
-            "extra": "mean: 5.328251237400002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020405540186098754",
             "extra": "mean: 5.171145622600011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cf02f45022a6add4dda27befdc9ae97440d99ab4",
+          "message": "Add MOVE_DIRECTORY forward model job (#8374)",
+          "timestamp": "2024-08-02T16:27:21+03:00",
+          "tree_id": "52824e26a4c5d63bfb9e1db8c58761b89ee18a9a",
+          "url": "https://github.com/equinor/ert/commit/cf02f45022a6add4dda27befdc9ae97440d99ab4"
+        },
+        "date": 1722605389041,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19031111081244934,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022528567030774344",
+            "extra": "mean: 5.254553955000006 sec\nrounds: 5"
           }
         ]
       }
