@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722591238851,
+  "lastUpdate": 1722599542700,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "a21015db7a89e01ea6a2ed69ff10cdc87da4eea6",
-          "message": "Clean up running child process in test",
-          "timestamp": "2024-07-22T13:14:33+02:00",
-          "tree_id": "d2d10f610971011dc824604c89031d1ed30097e3",
-          "url": "https://github.com/equinor/ert/commit/a21015db7a89e01ea6a2ed69ff10cdc87da4eea6"
-        },
-        "date": 1721647060076,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18827082631742423,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02627320969076109",
-            "extra": "mean: 5.311497376199975 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01783867971514269",
             "extra": "mean: 5.196635481600003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "36d5af7fb6e087515f3cd414ef5885cc57b11987",
+          "message": "Set experiment complete in EndEvent based on fail status",
+          "timestamp": "2024-08-02T13:50:01+02:00",
+          "tree_id": "565f5817a87f319b295eed536dba138d6b7d1ea8",
+          "url": "https://github.com/equinor/ert/commit/36d5af7fb6e087515f3cd414ef5885cc57b11987"
+        },
+        "date": 1722599542266,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1902682409881039,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02394858375921118",
+            "extra": "mean: 5.255737871999997 sec\nrounds: 5"
           }
         ]
       }
