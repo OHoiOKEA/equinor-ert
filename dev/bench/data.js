@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722599542700,
+  "lastUpdate": 1722602673537,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "5dea0fc5295d7f0c71342f7a8b39c1843a24f03e",
-          "message": "Make sure that scheduler send all events when jobs are finished\n\nWe include scheduler._events.join() and SENTINEL object to make\nsure that the events left in the qeueu will be proccessed once the\njobs are done. To makes sure we won't wait for the queue and\nSENTINEL indefinitely this introduces self._queue_timeout attribute.",
-          "timestamp": "2024-07-22T14:45:41+02:00",
-          "tree_id": "aaec094e1232426ad48eb4a536b616bc5b2adeec",
-          "url": "https://github.com/equinor/ert/commit/5dea0fc5295d7f0c71342f7a8b39c1843a24f03e"
-        },
-        "date": 1721652528821,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1876443445629644,
-            "unit": "iter/sec",
-            "range": "stddev: 0.044874088223317336",
-            "extra": "mean: 5.3292306908 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02394858375921118",
             "extra": "mean: 5.255737871999997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "7bb49a6ee21062f579bf7049d025cf2403d940ff",
+          "message": "Add plot testing of STD_DEV",
+          "timestamp": "2024-08-02T14:42:04+02:00",
+          "tree_id": "483e5c76fa4f6d8bed727e438533e548d2447656",
+          "url": "https://github.com/equinor/ert/commit/7bb49a6ee21062f579bf7049d025cf2403d940ff"
+        },
+        "date": 1722602673093,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19338074635330188,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020405540186098754",
+            "extra": "mean: 5.171145622600011 sec\nrounds: 5"
           }
         ]
       }
