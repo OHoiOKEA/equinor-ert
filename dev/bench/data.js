@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722853526858,
+  "lastUpdate": 1722853566669,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "42d6fc3d06eca9ebea6f45e852f9bbd09f020bbb",
-          "message": "Move ert.shared.plugins to ert.plugins",
-          "timestamp": "2024-07-24T09:58:41+02:00",
-          "tree_id": "e4fc281c5302c23e92f9f133f8d36cebb6787e16",
-          "url": "https://github.com/equinor/ert/commit/42d6fc3d06eca9ebea6f45e852f9bbd09f020bbb"
-        },
-        "date": 1721808106927,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1900465147598416,
-            "unit": "iter/sec",
-            "range": "stddev: 0.11681503112291718",
-            "extra": "mean: 5.261869712600003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027148344158851125",
             "extra": "mean: 5.275155138999997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "7c5022e2f1e1f09282cc98729f0d1938131a5704",
+          "message": "Add list of children in snapshotnodes to index faster\n\nCreating a list of the \"children\" dict every time we call index is\nreally slow.",
+          "timestamp": "2024-08-05T12:23:43+02:00",
+          "tree_id": "5fe05b95c6ed306e94d494d30140fc85111249b0",
+          "url": "https://github.com/equinor/ert/commit/7c5022e2f1e1f09282cc98729f0d1938131a5704"
+        },
+        "date": 1722853566187,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19158389659918518,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030612131365154366",
+            "extra": "mean: 5.219645376000005 sec\nrounds: 5"
           }
         ]
       }
