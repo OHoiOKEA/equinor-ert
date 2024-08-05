@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722857348368,
+  "lastUpdate": 1722860024834,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "10b9104bc9b8ba8c202ade0b621ddd54604af43a",
-          "message": "Due to compatibility in testing we re-export ErtPluginManager",
-          "timestamp": "2024-07-24T15:49:39+02:00",
-          "tree_id": "c9866c2c70fd579c16f950afbd7e08911ef3022b",
-          "url": "https://github.com/equinor/ert/commit/10b9104bc9b8ba8c202ade0b621ddd54604af43a"
-        },
-        "date": 1721829140750,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1945683867865208,
-            "unit": "iter/sec",
-            "range": "stddev: 0.034356584787478016",
-            "extra": "mean: 5.139581082599989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.021988225592438296",
             "extra": "mean: 5.212857281600003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "033559527b95f384001ea0259f0ce830fdca6ffd",
+          "message": "Add generic driver test for num_cpu\n\nTest all drivers that there are remnants in the compute\nenvironment from the number of cpus requested.",
+          "timestamp": "2024-08-05T14:11:20+02:00",
+          "tree_id": "51284b30a5e420d113353e96c0cb26e0af32be6f",
+          "url": "https://github.com/equinor/ert/commit/033559527b95f384001ea0259f0ce830fdca6ffd"
+        },
+        "date": 1722860024387,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19040517430758905,
+            "unit": "iter/sec",
+            "range": "stddev: 0.016572337636702163",
+            "extra": "mean: 5.251958113199987 sec\nrounds: 5"
           }
         ]
       }
