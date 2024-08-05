@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722850627385,
+  "lastUpdate": 1722851310306,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "20a237ab0109c024a86cacdc97357ddbfec5f2ae",
-          "message": "Remove test_run_analysis\n\nThe test mocks a lot of objects which ends up creating unexpected\nfailures in some environments.",
-          "timestamp": "2024-07-23T10:22:26+02:00",
-          "tree_id": "6a565f2a9f23f0a5b8ee5e250cea06baea47395f",
-          "url": "https://github.com/equinor/ert/commit/20a237ab0109c024a86cacdc97357ddbfec5f2ae"
-        },
-        "date": 1721723139933,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19107648585610795,
-            "unit": "iter/sec",
-            "range": "stddev: 0.024402108634873083",
-            "extra": "mean: 5.2335063392 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04222647651338398",
             "extra": "mean: 5.349766980399977 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "936ef6b70c182d5bb26eed6e5f7a2d95da8465f0",
+          "message": "Fix test_search_bar running onprem and azure.",
+          "timestamp": "2024-08-05T11:45:56+02:00",
+          "tree_id": "6f3f8c13b294a79138860e621f7f708b52fdd308",
+          "url": "https://github.com/equinor/ert/commit/936ef6b70c182d5bb26eed6e5f7a2d95da8465f0"
+        },
+        "date": 1722851309416,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18907043581038865,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04101448846050413",
+            "extra": "mean: 5.289034193600003 sec\nrounds: 5"
           }
         ]
       }
