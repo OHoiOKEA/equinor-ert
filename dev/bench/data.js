@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722605389638,
+  "lastUpdate": 1722850627385,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "7c829fbd936e61afdf5216098157443e295cfb19",
-          "message": "Add traceback information to ErtThreadError",
-          "timestamp": "2024-07-23T11:09:36+03:00",
-          "tree_id": "032130c3a7660103c70b42cd4b274dae305ef253",
-          "url": "https://github.com/equinor/ert/commit/7c829fbd936e61afdf5216098157443e295cfb19"
-        },
-        "date": 1721722380105,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18342805361876532,
-            "unit": "iter/sec",
-            "range": "stddev: 0.044611591121604156",
-            "extra": "mean: 5.4517287855999825 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022528567030774344",
             "extra": "mean: 5.254553955000006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "e831d2a7a8fa98c295020fdcc9945a2a722d8606",
+          "message": "Avoid import outside top-level\n\nKeeping as exception at one spot due to circular dependency and\none spot due to measurable time-loss to do top-level import.",
+          "timestamp": "2024-08-05T11:34:10+02:00",
+          "tree_id": "2c29c0ade0080249c495a69b76e491986124a416",
+          "url": "https://github.com/equinor/ert/commit/e831d2a7a8fa98c295020fdcc9945a2a722d8606"
+        },
+        "date": 1722850626977,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18692402933879462,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04222647651338398",
+            "extra": "mean: 5.349766980399977 sec\nrounds: 5"
           }
         ]
       }
