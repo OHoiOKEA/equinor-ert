@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722853566669,
+  "lastUpdate": 1722856692082,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "147c2e67a2db5b426eaf73a414e05c66bf5195f4",
-          "message": "Adjust logger config for new plugin_manager location",
-          "timestamp": "2024-07-24T10:47:32+02:00",
-          "tree_id": "7bf19a5c5c9b06d1cfabd61db36c806d792984f8",
-          "url": "https://github.com/equinor/ert/commit/147c2e67a2db5b426eaf73a414e05c66bf5195f4"
-        },
-        "date": 1721811051470,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1869186169111875,
-            "unit": "iter/sec",
-            "range": "stddev: 0.008752148339800299",
-            "extra": "mean: 5.349921888599999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030612131365154366",
             "extra": "mean: 5.219645376000005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "110b4668a0432a7cbfdee1a868f772dc1a77a5f0",
+          "message": "Remove statement with no effect",
+          "timestamp": "2024-08-05T13:15:49+02:00",
+          "tree_id": "ef93cd950235caaff0633571de0f30e89b76b3f7",
+          "url": "https://github.com/equinor/ert/commit/110b4668a0432a7cbfdee1a868f772dc1a77a5f0"
+        },
+        "date": 1722856691683,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1928812266380976,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02812611183094862",
+            "extra": "mean: 5.184537746000013 sec\nrounds: 5"
           }
         ]
       }
