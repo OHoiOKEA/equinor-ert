@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722852274418,
+  "lastUpdate": 1722853526858,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "7ad5dc0f8829975c85e7fb61c9c394fda30d480b",
-          "message": "Warn on duplicate workflows jobs",
-          "timestamp": "2024-07-23T20:26:53+02:00",
-          "tree_id": "96c772c08aac4f7c1298bf3d501f4c4c083df10a",
-          "url": "https://github.com/equinor/ert/commit/7ad5dc0f8829975c85e7fb61c9c394fda30d480b"
-        },
-        "date": 1721759416869,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18913331643492212,
-            "unit": "iter/sec",
-            "range": "stddev: 0.12804214127365068",
-            "extra": "mean: 5.2872757632 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.07676021151935446",
             "extra": "mean: 5.384759022000003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "52af2629f312e72f3398fa8e0d6738941adb34f6",
+          "message": "Solve ruff issue non-augmented assignment",
+          "timestamp": "2024-08-05T12:22:58+02:00",
+          "tree_id": "f40b083a94fddf8939fcb6378412391f35654689",
+          "url": "https://github.com/equinor/ert/commit/52af2629f312e72f3398fa8e0d6738941adb34f6"
+        },
+        "date": 1722853526272,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18956788447923606,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027148344158851125",
+            "extra": "mean: 5.275155138999997 sec\nrounds: 5"
           }
         ]
       }
