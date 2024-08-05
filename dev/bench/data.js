@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722851310306,
+  "lastUpdate": 1722852274418,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "a27ea66224bb8861405681095c19dc8b96a93e9d",
-          "message": "Remove unnecessary mypy ignore",
-          "timestamp": "2024-07-23T13:09:42+02:00",
-          "tree_id": "21a9a9fb928cff61d0ccf6059189f8fa8b41f1c4",
-          "url": "https://github.com/equinor/ert/commit/a27ea66224bb8861405681095c19dc8b96a93e9d"
-        },
-        "date": 1721733165441,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1914197055700464,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028533925976381522",
-            "extra": "mean: 5.224122547999997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04101448846050413",
             "extra": "mean: 5.289034193600003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "50a9869ef4a1971f39c8ced2f3c97b97ec79e34a",
+          "message": "Update kalman smoother innovation term",
+          "timestamp": "2024-08-05T12:02:01+02:00",
+          "tree_id": "2a87074c16a30d69ada5c2ebd9c72098fbec910c",
+          "url": "https://github.com/equinor/ert/commit/50a9869ef4a1971f39c8ced2f3c97b97ec79e34a"
+        },
+        "date": 1722852273567,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1857093318223516,
+            "unit": "iter/sec",
+            "range": "stddev: 0.07676021151935446",
+            "extra": "mean: 5.384759022000003 sec\nrounds: 5"
           }
         ]
       }
