@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722947129392,
+  "lastUpdate": 1722949576324,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "b5ce0939f9294c73f4acd559f98f39c23480f161",
-          "message": "Fix copy button crashing in plot error window",
-          "timestamp": "2024-07-30T09:32:57+02:00",
-          "tree_id": "4add61cbb3df59ef10e42172eb48b4cad2ea82fd",
-          "url": "https://github.com/equinor/ert/commit/b5ce0939f9294c73f4acd559f98f39c23480f161"
-        },
-        "date": 1722324927049,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19324484228257907,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03977326505669294",
-            "extra": "mean: 5.174782354800004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06340562521421057",
             "extra": "mean: 5.228848395600039 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "7cdbbd79eaea2d4eb254bbc9cd9ffc3226db482e",
+          "message": "Avoid unneeded lambda functions",
+          "timestamp": "2024-08-06T15:03:47+02:00",
+          "tree_id": "522c75acb003c9a11b0077b1a584753ae235c8ef",
+          "url": "https://github.com/equinor/ert/commit/7cdbbd79eaea2d4eb254bbc9cd9ffc3226db482e"
+        },
+        "date": 1722949575686,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19142096862566907,
+            "unit": "iter/sec",
+            "range": "stddev: 0.039226059006524934",
+            "extra": "mean: 5.224088077599992 sec\nrounds: 5"
           }
         ]
       }
