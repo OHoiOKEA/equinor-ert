@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722937739022,
+  "lastUpdate": 1722937819750,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "08f449e102128a7248a85a033713e77253d4c543",
-          "message": "Fix invalid grid file raising uncaught exception",
-          "timestamp": "2024-07-26T13:10:34+02:00",
-          "tree_id": "407d0059eb657c32d1f841282b60091828450888",
-          "url": "https://github.com/equinor/ert/commit/08f449e102128a7248a85a033713e77253d4c543"
-        },
-        "date": 1721992390949,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19602987155232504,
-            "unit": "iter/sec",
-            "range": "stddev: 0.018912078871834142",
-            "extra": "mean: 5.101263353800016 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04053382314384006",
             "extra": "mean: 5.149259583799994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "5652b191c7af550df1af9c21ff801c377a4d625a",
+          "message": "Disable validation of experiment name on restart",
+          "timestamp": "2024-08-06T11:47:54+02:00",
+          "tree_id": "cdde93fe067030a07e216ef535666a956eebe895",
+          "url": "https://github.com/equinor/ert/commit/5652b191c7af550df1af9c21ff801c377a4d625a"
+        },
+        "date": 1722937819137,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19264239834627392,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022742662921874365",
+            "extra": "mean: 5.190965273400013 sec\nrounds: 5"
           }
         ]
       }
