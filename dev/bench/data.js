@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722949576324,
+  "lastUpdate": 1722951070528,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "d098d7dd2f909bb39e752aaf9431054adaada7ad",
-          "message": "Add test of about dialog",
-          "timestamp": "2024-07-30T10:20:57+02:00",
-          "tree_id": "7c81e88e6b55f667a996533cf8e24cd21544a019",
-          "url": "https://github.com/equinor/ert/commit/d098d7dd2f909bb39e752aaf9431054adaada7ad"
-        },
-        "date": 1722327813312,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1918236564377485,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0136806681979455",
-            "extra": "mean: 5.213121356200008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.039226059006524934",
             "extra": "mean: 5.224088077599992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "b09469648d1153f5e9b270db8ecd2e570cd6db25",
+          "message": "Allow a lambda to satisfy mypy",
+          "timestamp": "2024-08-06T15:28:45+02:00",
+          "tree_id": "e754a334cef2c79c7fe6abb99acf65c9d33e449b",
+          "url": "https://github.com/equinor/ert/commit/b09469648d1153f5e9b270db8ecd2e570cd6db25"
+        },
+        "date": 1722951070069,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1895125277985933,
+            "unit": "iter/sec",
+            "range": "stddev: 0.055240868477332235",
+            "extra": "mean: 5.276696013800006 sec\nrounds: 5"
           }
         ]
       }
