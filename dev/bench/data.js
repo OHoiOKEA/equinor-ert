@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722926178731,
+  "lastUpdate": 1722937739022,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "509c224a99b0cedb785fac6eaed9b05e020ad71d",
-          "message": "Implement async version of EnsembleEvaluator\n\nThere are two functions in base_run_model (run_ensemble_evaluator_async and run_ensemble_evaluator). run_ensemble_evaluator is a sync vrapper for EnsembleEvaluatorAsync.\nAsync ensemble evaluator follows a similar pattern to Scheduler; ie. uses a set of background tasks responsible for running the ee server, processing events, sending snapshots updates, etc.\nAsync evaluator does not use BatchingDispatcher, although the events are still processed in batches.",
-          "timestamp": "2024-07-25T15:57:36+02:00",
-          "tree_id": "f91b3f034ea4e939525473fc22436b029d5803b2",
-          "url": "https://github.com/equinor/ert/commit/509c224a99b0cedb785fac6eaed9b05e020ad71d"
-        },
-        "date": 1721916003967,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19240069186091285,
-            "unit": "iter/sec",
-            "range": "stddev: 0.016818304528414547",
-            "extra": "mean: 5.197486507600002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.033834191597869163",
             "extra": "mean: 5.369894078000004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "727394424905033838c9ded7117e7904dd0c0cdc",
+          "message": "Fix filter popup not closing",
+          "timestamp": "2024-08-06T11:46:32+02:00",
+          "tree_id": "462fd6be517f735b89b099892c5f3813d4b6d832",
+          "url": "https://github.com/equinor/ert/commit/727394424905033838c9ded7117e7904dd0c0cdc"
+        },
+        "date": 1722937738604,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19420267782694128,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04053382314384006",
+            "extra": "mean: 5.149259583799994 sec\nrounds: 5"
           }
         ]
       }
