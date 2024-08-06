@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722937819750,
+  "lastUpdate": 1722939465244,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "708f38a0677e80fe0b70fe4a42207032f5047a83",
-          "message": "Fix GUILogHandler lifetime\n\nseparates out the logging.Handler part as the logging module\nkeeps around a weak reference until application exit.",
-          "timestamp": "2024-07-26T13:31:11+02:00",
-          "tree_id": "0611af0837e530fe261a38dbf1b848e208c780a7",
-          "url": "https://github.com/equinor/ert/commit/708f38a0677e80fe0b70fe4a42207032f5047a83"
-        },
-        "date": 1721993621766,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1925498117504744,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022145480219506828",
-            "extra": "mean: 5.193461322600001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022742662921874365",
             "extra": "mean: 5.190965273400013 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "ac458b703f97842753281473664a8b913fe3d475",
+          "message": "Fix get_number_of_existing_runpaths()",
+          "timestamp": "2024-08-06T12:15:11+02:00",
+          "tree_id": "f07c00ed773441a3da9e9ebe26345ce785c70b46",
+          "url": "https://github.com/equinor/ert/commit/ac458b703f97842753281473664a8b913fe3d475"
+        },
+        "date": 1722939464700,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19097147336273396,
+            "unit": "iter/sec",
+            "range": "stddev: 0.046633820677518846",
+            "extra": "mean: 5.2363841697999876 sec\nrounds: 5"
           }
         ]
       }
