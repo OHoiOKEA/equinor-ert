@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722940332437,
+  "lastUpdate": 1722947129392,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "257ecf0de363e1900ebe479fe7085d14b542cdbe",
-          "message": "Rename EnsembleEvaluator._stop -> stop and remove async\n\nThis renames EnsembleEvaluator._stop to EnsembleEvaluator.stop. Function stop() is part of the pubic API.\nAdditionally, it removes async keyword as the function does not need to be async now. The same goes for the _signal_cancel().",
-          "timestamp": "2024-07-29T15:20:33+02:00",
-          "tree_id": "2931dbea878ef33d1cebc1b96cd9d817f6d8e045",
-          "url": "https://github.com/equinor/ert/commit/257ecf0de363e1900ebe479fe7085d14b542cdbe"
-        },
-        "date": 1722259390120,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1936170339262147,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04078945913370897",
-            "extra": "mean: 5.164834827399995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022445418237246387",
             "extra": "mean: 5.2340417783999955 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "b46c893e411d3f128be577c629298cb0b4c3a802",
+          "message": "Inline delete run path check",
+          "timestamp": "2024-08-06T14:22:55+02:00",
+          "tree_id": "462fb4b08ad3afeebf8ed41782412d0786d9e405",
+          "url": "https://github.com/equinor/ert/commit/b46c893e411d3f128be577c629298cb0b4c3a802"
+        },
+        "date": 1722947128919,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19124669991225562,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06340562521421057",
+            "extra": "mean: 5.228848395600039 sec\nrounds: 5"
           }
         ]
       }
