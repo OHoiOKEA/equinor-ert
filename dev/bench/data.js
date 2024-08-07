@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723027540043,
+  "lastUpdate": 1723031340722,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "8928cd8488885f0445e2ed3be543589cf3c777a3",
-          "message": "Move information about iteration",
-          "timestamp": "2024-08-02T11:31:33+02:00",
-          "tree_id": "97ef497b020bb3d96719f4434f76d477fcffa51a",
-          "url": "https://github.com/equinor/ert/commit/8928cd8488885f0445e2ed3be543589cf3c777a3"
-        },
-        "date": 1722591238239,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19243220032283423,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01783867971514269",
-            "extra": "mean: 5.196635481600003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0272999371746833",
             "extra": "mean: 5.20441175599999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "c8a76a0c2a05459049d698673efde2ec3f76604d",
+          "message": "Fix focus for color selector",
+          "timestamp": "2024-08-07T13:46:29+02:00",
+          "tree_id": "2f5f23d806d77b9d7961982b78ab8fc22d3909d0",
+          "url": "https://github.com/equinor/ert/commit/c8a76a0c2a05459049d698673efde2ec3f76604d"
+        },
+        "date": 1723031339831,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19392570742738363,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027438541177719027",
+            "extra": "mean: 5.156613907799999 sec\nrounds: 5"
           }
         ]
       }
