@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723025230804,
+  "lastUpdate": 1723026330462,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "e27780afa13e4dfd209e177fcb4cab19d116c222",
-          "message": "Display experiment and ensemble name next to drag icon.",
-          "timestamp": "2024-08-01T20:37:46+02:00",
-          "tree_id": "f2cad1967fe97cdc69ab428ecc76af8de11476c9",
-          "url": "https://github.com/equinor/ert/commit/e27780afa13e4dfd209e177fcb4cab19d116c222"
-        },
-        "date": 1722537613382,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19212131192786103,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04266250327657179",
-            "extra": "mean: 5.205044614600001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.10295691301253929",
             "extra": "mean: 5.184318346800007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "df363f750d8bf0e9809d5858e1423803afe01e98",
+          "message": "Avoid asyncio.get_event_loop\n\nThis function change behaviour in the future (after Python 3.12), and in order to\navoid a possible deprecation warning, we just return the loop we just created",
+          "timestamp": "2024-08-07T12:23:03+02:00",
+          "tree_id": "01ce99c99bef54bd7a24cb3d9fac18005bc2f052",
+          "url": "https://github.com/equinor/ert/commit/df363f750d8bf0e9809d5858e1423803afe01e98"
+        },
+        "date": 1723026329807,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19000325230961015,
+            "unit": "iter/sec",
+            "range": "stddev: 0.034474766748856564",
+            "extra": "mean: 5.263067804600001 sec\nrounds: 5"
           }
         ]
       }
