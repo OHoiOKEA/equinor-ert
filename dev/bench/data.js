@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723027505239,
+  "lastUpdate": 1723027540043,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "bc8cf11ef4a89a854452ec3953c6aee190d152bc",
-          "message": "Add SearchBar to the event viewer",
-          "timestamp": "2024-08-02T10:15:08+02:00",
-          "tree_id": "d0b7b18bb2fab2ed4ad3c8033502523e5de38eb2",
-          "url": "https://github.com/equinor/ert/commit/bc8cf11ef4a89a854452ec3953c6aee190d152bc"
-        },
-        "date": 1722586689985,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19360905356688413,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0246922091551914",
-            "extra": "mean: 5.165047716399999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02428798085378905",
             "extra": "mean: 5.241539476599991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "8cba19d21bfa058b4769aa1663c5014685f21e7e",
+          "message": "Add new keyword REALIZATION_MEMORY\n\nThis keyword instructs Ert to supply the associated value to the chosen\nqueuing system as the amount of memory to reserve each realization\n\nFor OpenPBS, this is already supported through MEMORY_PER_JOB and we\nmust raise an exception is both are specified. For Slurm, this\noverlaps with the queue option MEMORY, and an exception is raised\nif both are specified.",
+          "timestamp": "2024-08-07T12:43:17+02:00",
+          "tree_id": "f35bce7c719ef684b10ff634660bf256381fa7c6",
+          "url": "https://github.com/equinor/ert/commit/8cba19d21bfa058b4769aa1663c5014685f21e7e"
+        },
+        "date": 1723027539518,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19214467395803836,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0272999371746833",
+            "extra": "mean: 5.20441175599999 sec\nrounds: 5"
           }
         ]
       }
