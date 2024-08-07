@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723019787119,
+  "lastUpdate": 1723021279696,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "d99779f70bc886c6371270787044e86369ec814b",
-          "message": "Remove unused timeout_queue varuable",
-          "timestamp": "2024-08-01T09:40:45+02:00",
-          "tree_id": "284dd282abc714f69ab75edebf35fa46ddf3da67",
-          "url": "https://github.com/equinor/ert/commit/d99779f70bc886c6371270787044e86369ec814b"
-        },
-        "date": 1722498198769,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19018740331534248,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02768264062558892",
-            "extra": "mean: 5.257971782400006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03523397339992019",
             "extra": "mean: 5.2564251554000005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c2c02b2f71efab5a071534702076fc43085e82f5",
+          "message": "Start Run Dialog with open details view by default",
+          "timestamp": "2024-08-07T11:58:45+03:00",
+          "tree_id": "223b57041e45ca5844d93097b760e6f72e014b2e",
+          "url": "https://github.com/equinor/ert/commit/c2c02b2f71efab5a071534702076fc43085e82f5"
+        },
+        "date": 1723021278711,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1917887650791346,
+            "unit": "iter/sec",
+            "range": "stddev: 0.021786954810923673",
+            "extra": "mean: 5.214069758400012 sec\nrounds: 5"
           }
         ]
       }
