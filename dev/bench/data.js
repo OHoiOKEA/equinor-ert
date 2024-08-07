@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1722951070528,
+  "lastUpdate": 1723007858553,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "90fcc8186f0b35f1197e35d40bc068bba42ab864",
-          "message": "Fix unused ignore",
-          "timestamp": "2024-07-30T13:34:12+02:00",
-          "tree_id": "2925b99177fb737ecde03115d55a38ee8bf77e12",
-          "url": "https://github.com/equinor/ert/commit/90fcc8186f0b35f1197e35d40bc068bba42ab864"
-        },
-        "date": 1722339401339,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19367344532412262,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026394351307507526",
-            "extra": "mean: 5.163330462399983 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.055240868477332235",
             "extra": "mean: 5.276696013800006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "cfd7535df991d83c2cf67293ad78022964280f30",
+          "message": "Fix flaky test test_memory_profile_in_running_events",
+          "timestamp": "2024-08-07T07:15:05+02:00",
+          "tree_id": "dea2a0adfaa8cf455f0f562b8e3d0fc9c6814443",
+          "url": "https://github.com/equinor/ert/commit/cfd7535df991d83c2cf67293ad78022964280f30"
+        },
+        "date": 1723007857749,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19066437260930674,
+            "unit": "iter/sec",
+            "range": "stddev: 0.010266061890367831",
+            "extra": "mean: 5.2448183492000116 sec\nrounds: 5"
           }
         ]
       }
