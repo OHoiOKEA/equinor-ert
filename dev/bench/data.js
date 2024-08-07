@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723031340722,
+  "lastUpdate": 1723035530356,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "36d5af7fb6e087515f3cd414ef5885cc57b11987",
-          "message": "Set experiment complete in EndEvent based on fail status",
-          "timestamp": "2024-08-02T13:50:01+02:00",
-          "tree_id": "565f5817a87f319b295eed536dba138d6b7d1ea8",
-          "url": "https://github.com/equinor/ert/commit/36d5af7fb6e087515f3cd414ef5885cc57b11987"
-        },
-        "date": 1722599542266,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1902682409881039,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02394858375921118",
-            "extra": "mean: 5.255737871999997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027438541177719027",
             "extra": "mean: 5.156613907799999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "1a50d1322d32d190623a2cf494fbb25b58599f72",
+          "message": "Use codecov flags feature\n\nThis can group the coverage reports by the test categorization\nthat is already in place.",
+          "timestamp": "2024-08-07T14:56:15+02:00",
+          "tree_id": "cd8bd99ce33a31f4985bd08ecc76907e142b2307",
+          "url": "https://github.com/equinor/ert/commit/1a50d1322d32d190623a2cf494fbb25b58599f72"
+        },
+        "date": 1723035529802,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19183085332371455,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03145879262165235",
+            "extra": "mean: 5.212925776400004 sec\nrounds: 5"
           }
         ]
       }
