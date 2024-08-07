@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723026330462,
+  "lastUpdate": 1723027505239,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "78549a34ca4f439bdd775677af60e37c4acd8c58",
-          "message": "Fix user warning about to_datetime conversion",
-          "timestamp": "2024-08-01T20:37:22+02:00",
-          "tree_id": "222a9a88b52b715ed8efba9b4fede5511e0bbc5c",
-          "url": "https://github.com/equinor/ert/commit/78549a34ca4f439bdd775677af60e37c4acd8c58"
-        },
-        "date": 1722537716183,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18956234097695798,
-            "unit": "iter/sec",
-            "range": "stddev: 0.048867049343616416",
-            "extra": "mean: 5.275309403999995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.034474766748856564",
             "extra": "mean: 5.263067804600001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "104e1ee05ac69051d5f4a86466ed8ed6aa51c611",
+          "message": "Improve documentation for NUM_CPU\n\nDon't mention any longer requirements for Torque, which\nare now deprecated.",
+          "timestamp": "2024-08-07T12:42:30+02:00",
+          "tree_id": "16b0868af7e538ac638285e8d39907491f9dd976",
+          "url": "https://github.com/equinor/ert/commit/104e1ee05ac69051d5f4a86466ed8ed6aa51c611"
+        },
+        "date": 1723027504308,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19078364371084852,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02428798085378905",
+            "extra": "mean: 5.241539476599991 sec\nrounds: 5"
           }
         ]
       }
