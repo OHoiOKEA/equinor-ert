@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723035530356,
+  "lastUpdate": 1723038585656,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "7bb49a6ee21062f579bf7049d025cf2403d940ff",
-          "message": "Add plot testing of STD_DEV",
-          "timestamp": "2024-08-02T14:42:04+02:00",
-          "tree_id": "483e5c76fa4f6d8bed727e438533e548d2447656",
-          "url": "https://github.com/equinor/ert/commit/7bb49a6ee21062f579bf7049d025cf2403d940ff"
-        },
-        "date": 1722602673093,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19338074635330188,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020405540186098754",
-            "extra": "mean: 5.171145622600011 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03145879262165235",
             "extra": "mean: 5.212925776400004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "2fa9ec17a8a2d73d4487534d67450cff9ba9f8d0",
+          "message": "Remove irrelevant comment on job_queue\n\njob_queue with multiple threads is now replaced with async scheduler.",
+          "timestamp": "2024-08-07T15:47:03+02:00",
+          "tree_id": "0eb07887cf36f7bae01b1b9ffb09a2b4f4c90694",
+          "url": "https://github.com/equinor/ert/commit/2fa9ec17a8a2d73d4487534d67450cff9ba9f8d0"
+        },
+        "date": 1723038584762,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1900594252795338,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0635079984332986",
+            "extra": "mean: 5.261512279800013 sec\nrounds: 5"
           }
         ]
       }
