@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723013181925,
+  "lastUpdate": 1723013227475,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "23b7c9bc2cfa44ac88874f317e43e2a80f0e59ac",
-          "message": "Wait for socket to be closed before trying to send done signal\n\nThis test has been flaky and this is an attempt to fix that.\nWith the new event we are sure that the websocket is closed before we\nsend signal_done from test.",
-          "timestamp": "2024-07-31T13:45:26+02:00",
-          "tree_id": "9df63924c4515cee45d39f646e70722f3d4b4d5d",
-          "url": "https://github.com/equinor/ert/commit/23b7c9bc2cfa44ac88874f317e43e2a80f0e59ac"
-        },
-        "date": 1722426483618,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19122901969347897,
-            "unit": "iter/sec",
-            "range": "stddev: 0.041367644008016",
-            "extra": "mean: 5.229331832599991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028464491204694065",
             "extra": "mean: 5.1984991750000065 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "f760d4cd65b852275af22a499a59dcc959b5fef4",
+          "message": "Avoid unused variable names\n\nFrom now on enforced using ruff.",
+          "timestamp": "2024-08-07T08:44:38+02:00",
+          "tree_id": "80c0bd1257ea0ff350898493fed54ee065cd06c7",
+          "url": "https://github.com/equinor/ert/commit/f760d4cd65b852275af22a499a59dcc959b5fef4"
+        },
+        "date": 1723013227014,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19303703623460314,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04427972498748978",
+            "extra": "mean: 5.18035305300001 sec\nrounds: 5"
           }
         ]
       }
