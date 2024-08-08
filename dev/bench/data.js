@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723098240243,
+  "lastUpdate": 1723099830788,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "936ef6b70c182d5bb26eed6e5f7a2d95da8465f0",
-          "message": "Fix test_search_bar running onprem and azure.",
-          "timestamp": "2024-08-05T11:45:56+02:00",
-          "tree_id": "6f3f8c13b294a79138860e621f7f708b52fdd308",
-          "url": "https://github.com/equinor/ert/commit/936ef6b70c182d5bb26eed6e5f7a2d95da8465f0"
-        },
-        "date": 1722851309416,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18907043581038865,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04101448846050413",
-            "extra": "mean: 5.289034193600003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04345406426177972",
             "extra": "mean: 5.088219649600012 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "17e01cc0acafba5ac4e72015b1c2c74775a08c68",
+          "message": "Deprecate slurm queue option MEMORY_PER_CPU",
+          "timestamp": "2024-08-08T08:47:51+02:00",
+          "tree_id": "3305d54db392f5f5c8cab590016086a9eb8087e2",
+          "url": "https://github.com/equinor/ert/commit/17e01cc0acafba5ac4e72015b1c2c74775a08c68"
+        },
+        "date": 1723099829876,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19132799267780184,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05933445462127801",
+            "extra": "mean: 5.226626726200015 sec\nrounds: 5"
           }
         ]
       }
