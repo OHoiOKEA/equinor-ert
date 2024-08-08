@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723099830788,
+  "lastUpdate": 1723106821360,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "50a9869ef4a1971f39c8ced2f3c97b97ec79e34a",
-          "message": "Update kalman smoother innovation term",
-          "timestamp": "2024-08-05T12:02:01+02:00",
-          "tree_id": "2a87074c16a30d69ada5c2ebd9c72098fbec910c",
-          "url": "https://github.com/equinor/ert/commit/50a9869ef4a1971f39c8ced2f3c97b97ec79e34a"
-        },
-        "date": 1722852273567,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1857093318223516,
-            "unit": "iter/sec",
-            "range": "stddev: 0.07676021151935446",
-            "extra": "mean: 5.384759022000003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05933445462127801",
             "extra": "mean: 5.226626726200015 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "e589a508626ffe46befade475d03ce251d97a365",
+          "message": "Remove unused function",
+          "timestamp": "2024-08-08T10:44:26+02:00",
+          "tree_id": "2ea4f4632ded35459ca35d3f4a91f0883270e3f1",
+          "url": "https://github.com/equinor/ert/commit/e589a508626ffe46befade475d03ce251d97a365"
+        },
+        "date": 1723106820932,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1904141050178733,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03991016885160019",
+            "extra": "mean: 5.251711788399996 sec\nrounds: 5"
           }
         ]
       }
