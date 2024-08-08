@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723106821360,
+  "lastUpdate": 1723115370366,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "52af2629f312e72f3398fa8e0d6738941adb34f6",
-          "message": "Solve ruff issue non-augmented assignment",
-          "timestamp": "2024-08-05T12:22:58+02:00",
-          "tree_id": "f40b083a94fddf8939fcb6378412391f35654689",
-          "url": "https://github.com/equinor/ert/commit/52af2629f312e72f3398fa8e0d6738941adb34f6"
-        },
-        "date": 1722853526272,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18956788447923606,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027148344158851125",
-            "extra": "mean: 5.275155138999997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03991016885160019",
             "extra": "mean: 5.251711788399996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "9cd683ba9114a52618a08e968a1f094fe86e0792",
+          "message": "Try to mitigate flakiness in driver test\n\nIf the echo command takes more than 0.1 sec, this could yield flakiness, so change the\nlogic to avoid that pitfall.",
+          "timestamp": "2024-08-08T13:07:00+02:00",
+          "tree_id": "3f78bb0be7451ef63d8e76021a8c278b409be351",
+          "url": "https://github.com/equinor/ert/commit/9cd683ba9114a52618a08e968a1f094fe86e0792"
+        },
+        "date": 1723115369916,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1912737542676981,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04586396467454097",
+            "extra": "mean: 5.228108810999993 sec\nrounds: 5"
           }
         ]
       }
