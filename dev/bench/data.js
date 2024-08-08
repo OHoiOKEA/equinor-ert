@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723038585656,
+  "lastUpdate": 1723094813845,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "cf02f45022a6add4dda27befdc9ae97440d99ab4",
-          "message": "Add MOVE_DIRECTORY forward model job (#8374)",
-          "timestamp": "2024-08-02T16:27:21+03:00",
-          "tree_id": "52824e26a4c5d63bfb9e1db8c58761b89ee18a9a",
-          "url": "https://github.com/equinor/ert/commit/cf02f45022a6add4dda27befdc9ae97440d99ab4"
-        },
-        "date": 1722605389041,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19031111081244934,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022528567030774344",
-            "extra": "mean: 5.254553955000006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0635079984332986",
             "extra": "mean: 5.261512279800013 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ee9b68d50a9eaa17dbe428b5f32ce75646d52913",
+          "message": "Add heat equation to test-data\n\nThe heat equation provides a natural way to test ert with fields and surfaces.",
+          "timestamp": "2024-08-08T07:24:26+02:00",
+          "tree_id": "5568c6b4e2ab26be22422d5d2cb88c4504778efd",
+          "url": "https://github.com/equinor/ert/commit/ee9b68d50a9eaa17dbe428b5f32ce75646d52913"
+        },
+        "date": 1723094813375,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19225207534249553,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05192898574071544",
+            "extra": "mean: 5.2015043177999924 sec\nrounds: 5"
           }
         ]
       }
