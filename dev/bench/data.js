@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723115370366,
+  "lastUpdate": 1723186115632,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "7c5022e2f1e1f09282cc98729f0d1938131a5704",
-          "message": "Add list of children in snapshotnodes to index faster\n\nCreating a list of the \"children\" dict every time we call index is\nreally slow.",
-          "timestamp": "2024-08-05T12:23:43+02:00",
-          "tree_id": "5fe05b95c6ed306e94d494d30140fc85111249b0",
-          "url": "https://github.com/equinor/ert/commit/7c5022e2f1e1f09282cc98729f0d1938131a5704"
-        },
-        "date": 1722853566187,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19158389659918518,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030612131365154366",
-            "extra": "mean: 5.219645376000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04586396467454097",
             "extra": "mean: 5.228108810999993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "45b839b26c1a634db44dc0549af9f7a61b587e4b",
+          "message": "Fix waiting cursor in load results manually panel",
+          "timestamp": "2024-08-09T08:45:52+02:00",
+          "tree_id": "fa85dc63a0d712e900a120e00da2f6ab45273f9d",
+          "url": "https://github.com/equinor/ert/commit/45b839b26c1a634db44dc0549af9f7a61b587e4b"
+        },
+        "date": 1723186115237,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19295172790607443,
+            "unit": "iter/sec",
+            "range": "stddev: 0.08390540876332278",
+            "extra": "mean: 5.182643404399999 sec\nrounds: 5"
           }
         ]
       }
