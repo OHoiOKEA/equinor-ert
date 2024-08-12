@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723470409870,
+  "lastUpdate": 1723470911030,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "727394424905033838c9ded7117e7904dd0c0cdc",
-          "message": "Fix filter popup not closing",
-          "timestamp": "2024-08-06T11:46:32+02:00",
-          "tree_id": "462fd6be517f735b89b099892c5f3813d4b6d832",
-          "url": "https://github.com/equinor/ert/commit/727394424905033838c9ded7117e7904dd0c0cdc"
-        },
-        "date": 1722937738604,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19420267782694128,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04053382314384006",
-            "extra": "mean: 5.149259583799994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01972413278625882",
             "extra": "mean: 5.225912853600005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "0ecb7e30c5a45cfb13f5c3b001dc1da618f16fca",
+          "message": "Do not wait for wheel builds in github workflows\n\n- Due to removal of c code we do not need to build individual\nwheels for each os, so we only build and store wheels once per\npython version.",
+          "timestamp": "2024-08-12T15:52:37+02:00",
+          "tree_id": "a238591669a4e34d4a7abf83fbe2773786db8d53",
+          "url": "https://github.com/equinor/ert/commit/0ecb7e30c5a45cfb13f5c3b001dc1da618f16fca"
+        },
+        "date": 1723470910168,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19020294986731087,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04074696913732038",
+            "extra": "mean: 5.257542013399996 sec\nrounds: 5"
           }
         ]
       }
