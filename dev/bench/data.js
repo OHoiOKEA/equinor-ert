@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723208346331,
+  "lastUpdate": 1723456552848,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "033559527b95f384001ea0259f0ce830fdca6ffd",
-          "message": "Add generic driver test for num_cpu\n\nTest all drivers that there are remnants in the compute\nenvironment from the number of cpus requested.",
-          "timestamp": "2024-08-05T14:11:20+02:00",
-          "tree_id": "51284b30a5e420d113353e96c0cb26e0af32be6f",
-          "url": "https://github.com/equinor/ert/commit/033559527b95f384001ea0259f0ce830fdca6ffd"
-        },
-        "date": 1722860024387,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19040517430758905,
-            "unit": "iter/sec",
-            "range": "stddev: 0.016572337636702163",
-            "extra": "mean: 5.251958113199987 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.036705964199265674",
             "extra": "mean: 5.2518024831999925 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ef5f5e28edaac002698fb6e0686dcd0926e1afb6",
+          "message": "Limit numpy to one thread in heat equation",
+          "timestamp": "2024-08-12T11:53:25+02:00",
+          "tree_id": "2589862504f08671de15115c02e3554965eee938",
+          "url": "https://github.com/equinor/ert/commit/ef5f5e28edaac002698fb6e0686dcd0926e1afb6"
+        },
+        "date": 1723456552464,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19412861099581968,
+            "unit": "iter/sec",
+            "range": "stddev: 0.031683792251080985",
+            "extra": "mean: 5.151224205800008 sec\nrounds: 5"
           }
         ]
       }
