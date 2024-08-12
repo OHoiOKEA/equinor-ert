@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723461165006,
+  "lastUpdate": 1723470409870,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "840f483535c4d53d22902e584970ffb85329c546",
-          "message": "Fix typo",
-          "timestamp": "2024-08-06T08:33:53+02:00",
-          "tree_id": "130a8216c28a0dd9f1ab91d2e5370833f855b1d7",
-          "url": "https://github.com/equinor/ert/commit/840f483535c4d53d22902e584970ffb85329c546"
-        },
-        "date": 1722926178279,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1862234125058284,
-            "unit": "iter/sec",
-            "range": "stddev: 0.033834191597869163",
-            "extra": "mean: 5.369894078000004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03299084992607",
             "extra": "mean: 5.2211913984000144 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "ebc4b0411cd55cc58286ff123dc7af4dd6b2c9d3",
+          "message": "Reformat starting_iteration in model_factory by ruff suggestion",
+          "timestamp": "2024-08-12T15:44:19+02:00",
+          "tree_id": "a6ec85ed0cf58534badd9eb72c02ab9fddaff955",
+          "url": "https://github.com/equinor/ert/commit/ebc4b0411cd55cc58286ff123dc7af4dd6b2c9d3"
+        },
+        "date": 1723470409427,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1913541285540428,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01972413278625882",
+            "extra": "mean: 5.225912853600005 sec\nrounds: 5"
           }
         ]
       }
