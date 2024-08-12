@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723456552848,
+  "lastUpdate": 1723461165006,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "86219529+AugustoMagalhaes@users.noreply.github.com",
-            "name": "AugustoMagalhaes",
-            "username": "AugustoMagalhaes"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "7f39d51338d324f5cf1378cb10c76ef910ca3972",
-          "message": "Log only once per unique forward model job name",
-          "timestamp": "2024-08-05T14:53:41+02:00",
-          "tree_id": "93d4218727ad7a2ca89c8bc2fb1bc76330625375",
-          "url": "https://github.com/equinor/ert/commit/7f39d51338d324f5cf1378cb10c76ef910ca3972"
-        },
-        "date": 1722862565422,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19650634431230019,
-            "unit": "iter/sec",
-            "range": "stddev: 0.019231680894035492",
-            "extra": "mean: 5.088894221199991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.031683792251080985",
             "extra": "mean: 5.151224205800008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "10f9df62b53d679a0b07f1b9d01ae93865f5770a",
+          "message": "Fix indentation in docs",
+          "timestamp": "2024-08-12T13:10:11+02:00",
+          "tree_id": "2651c70027c13f447310c82e9c20ce7cfe7594f6",
+          "url": "https://github.com/equinor/ert/commit/10f9df62b53d679a0b07f1b9d01ae93865f5770a"
+        },
+        "date": 1723461164425,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19152716759367233,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03299084992607",
+            "extra": "mean: 5.2211913984000144 sec\nrounds: 5"
           }
         ]
       }
