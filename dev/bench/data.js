@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723536526134,
+  "lastUpdate": 1723537069578,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "b46c893e411d3f128be577c629298cb0b4c3a802",
-          "message": "Inline delete run path check",
-          "timestamp": "2024-08-06T14:22:55+02:00",
-          "tree_id": "462fb4b08ad3afeebf8ed41782412d0786d9e405",
-          "url": "https://github.com/equinor/ert/commit/b46c893e411d3f128be577c629298cb0b4c3a802"
-        },
-        "date": 1722947128919,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19124669991225562,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06340562521421057",
-            "extra": "mean: 5.228848395600039 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03384199249509492",
             "extra": "mean: 5.308603107200002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "2b6b2f60d778b6c96267e35547610cbf9c410169",
+          "message": "Use a plain dict for queue system options\n\nThis was previously a list of 2-tuples of strings, owing to compatibility with the C drivers which are now purged",
+          "timestamp": "2024-08-13T10:15:29+02:00",
+          "tree_id": "e09f38720aa72d0478ba82fe05981b75fb505c23",
+          "url": "https://github.com/equinor/ert/commit/2b6b2f60d778b6c96267e35547610cbf9c410169"
+        },
+        "date": 1723537069122,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19624406703696654,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02110598102578341",
+            "extra": "mean: 5.0956954526 sec\nrounds: 5"
           }
         ]
       }
