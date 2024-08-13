@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723552765911,
+  "lastUpdate": 1723553744734,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "f760d4cd65b852275af22a499a59dcc959b5fef4",
-          "message": "Avoid unused variable names\n\nFrom now on enforced using ruff.",
-          "timestamp": "2024-08-07T08:44:38+02:00",
-          "tree_id": "80c0bd1257ea0ff350898493fed54ee065cd06c7",
-          "url": "https://github.com/equinor/ert/commit/f760d4cd65b852275af22a499a59dcc959b5fef4"
-        },
-        "date": 1723013227014,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19303703623460314,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04427972498748978",
-            "extra": "mean: 5.18035305300001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01785987406493105",
             "extra": "mean: 5.252561173999993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "c132f70c8a854c94ebfcd32c1a90532c2114c378",
+          "message": "Remove RunArguments",
+          "timestamp": "2024-08-13T14:53:16+02:00",
+          "tree_id": "942ae65d3f6e06ee8eb6c86f8fc8ac63890ff24e",
+          "url": "https://github.com/equinor/ert/commit/c132f70c8a854c94ebfcd32c1a90532c2114c378"
+        },
+        "date": 1723553743796,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19132919129601356,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04266253416669997",
+            "extra": "mean: 5.226593982999998 sec\nrounds: 5"
           }
         ]
       }
