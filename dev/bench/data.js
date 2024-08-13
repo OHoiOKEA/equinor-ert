@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723536487820,
+  "lastUpdate": 1723536526134,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "62240435+hnformentin@users.noreply.github.com",
-            "name": "Helena Nandi Formentin",
-            "username": "hnformentin"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "99012eabed0acd48f9d4066bc16d7f4f78f7d83b",
-          "message": "Fix typos in RUNPATH_FILE description",
-          "timestamp": "2024-08-06T12:29:44+02:00",
-          "tree_id": "c77e898472859f0097b8a4513ff6db2e5dcb559f",
-          "url": "https://github.com/equinor/ert/commit/99012eabed0acd48f9d4066bc16d7f4f78f7d83b"
-        },
-        "date": 1722940331598,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1910569388511247,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022445418237246387",
-            "extra": "mean: 5.2340417783999955 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03100114944531122",
             "extra": "mean: 5.097943064800006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "425d45807f7aaed7261b810b4c02729b178518b4",
+          "message": "Remove check locale function",
+          "timestamp": "2024-08-13T10:06:16+02:00",
+          "tree_id": "81cee963c3011581f40a5180a607f283be2a6060",
+          "url": "https://github.com/equinor/ert/commit/425d45807f7aaed7261b810b4c02729b178518b4"
+        },
+        "date": 1723536525417,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18837347223108666,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03384199249509492",
+            "extra": "mean: 5.308603107200002 sec\nrounds: 5"
           }
         ]
       }
