@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723553744734,
+  "lastUpdate": 1723556768751,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "4b4875391e8ba88db3473c6139aff2964a6e638f",
-          "message": "Fix bug in std dev plot\n\nFixed a bug in std dev plot where color gradiant range was always 0 to 1 & two corner cells where always white \r\n\r\n---------\r\n\r\nCo-authored-by: Feda Curic <feda.curic@gmail.com>",
-          "timestamp": "2024-08-07T10:33:53+02:00",
-          "tree_id": "a0eb97f26a80636221d11039779adffe98eb89fa",
-          "url": "https://github.com/equinor/ert/commit/4b4875391e8ba88db3473c6139aff2964a6e638f"
-        },
-        "date": 1723019786229,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19024336320525476,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03523397339992019",
-            "extra": "mean: 5.2564251554000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04266253416669997",
             "extra": "mean: 5.226593982999998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "e0611cf0837016d356897c4f0ff01d195321f773",
+          "message": "Remove iteration label\n\nThis had very little effect, as only the last one set before\nthe ensemble evaluater started was actully propagated to the gui",
+          "timestamp": "2024-08-13T15:43:43+02:00",
+          "tree_id": "4e6b940978e8df89bfc5a2905814efe3a960ca39",
+          "url": "https://github.com/equinor/ert/commit/e0611cf0837016d356897c4f0ff01d195321f773"
+        },
+        "date": 1723556768237,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19061477682986933,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0425535245934838",
+            "extra": "mean: 5.246182990800008 sec\nrounds: 5"
           }
         ]
       }
