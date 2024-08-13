@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723538027962,
+  "lastUpdate": 1723545402889,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "b09469648d1153f5e9b270db8ecd2e570cd6db25",
-          "message": "Allow a lambda to satisfy mypy",
-          "timestamp": "2024-08-06T15:28:45+02:00",
-          "tree_id": "e754a334cef2c79c7fe6abb99acf65c9d33e449b",
-          "url": "https://github.com/equinor/ert/commit/b09469648d1153f5e9b270db8ecd2e570cd6db25"
-        },
-        "date": 1722951070069,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1895125277985933,
-            "unit": "iter/sec",
-            "range": "stddev: 0.055240868477332235",
-            "extra": "mean: 5.276696013800006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03252500457091845",
             "extra": "mean: 5.163470716400013 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "68271c492cf7d0409c7671ff9a3243d04366dcbb",
+          "message": "Add descriptions to experiment types",
+          "timestamp": "2024-08-13T12:34:07+02:00",
+          "tree_id": "f85746c2343243adc333fbb6012f25682638f9ed",
+          "url": "https://github.com/equinor/ert/commit/68271c492cf7d0409c7671ff9a3243d04366dcbb"
+        },
+        "date": 1723545401878,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19602581673649808,
+            "unit": "iter/sec",
+            "range": "stddev: 0.058215244127022066",
+            "extra": "mean: 5.101368874000002 sec\nrounds: 5"
           }
         ]
       }
