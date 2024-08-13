@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723470911030,
+  "lastUpdate": 1723535794831,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "5652b191c7af550df1af9c21ff801c377a4d625a",
-          "message": "Disable validation of experiment name on restart",
-          "timestamp": "2024-08-06T11:47:54+02:00",
-          "tree_id": "cdde93fe067030a07e216ef535666a956eebe895",
-          "url": "https://github.com/equinor/ert/commit/5652b191c7af550df1af9c21ff801c377a4d625a"
-        },
-        "date": 1722937819137,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19264239834627392,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022742662921874365",
-            "extra": "mean: 5.190965273400013 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04074696913732038",
             "extra": "mean: 5.257542013399996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "c4de0c5f1a9ec8b1f2704637f77997a402d05cd7",
+          "message": "Run snake oil field storage in same xdist group",
+          "timestamp": "2024-08-13T09:54:10+02:00",
+          "tree_id": "62be5876c44f4a1d70b7ce8d9bcd0ca9a8343022",
+          "url": "https://github.com/equinor/ert/commit/c4de0c5f1a9ec8b1f2704637f77997a402d05cd7"
+        },
+        "date": 1723535794392,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.191350906525987,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04659270361549354",
+            "extra": "mean: 5.226000849200011 sec\nrounds: 5"
           }
         ]
       }
