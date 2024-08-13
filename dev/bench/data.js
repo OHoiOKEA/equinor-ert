@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723545402889,
+  "lastUpdate": 1723550368754,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "cfd7535df991d83c2cf67293ad78022964280f30",
-          "message": "Fix flaky test test_memory_profile_in_running_events",
-          "timestamp": "2024-08-07T07:15:05+02:00",
-          "tree_id": "dea2a0adfaa8cf455f0f562b8e3d0fc9c6814443",
-          "url": "https://github.com/equinor/ert/commit/cfd7535df991d83c2cf67293ad78022964280f30"
-        },
-        "date": 1723007857749,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19066437260930674,
-            "unit": "iter/sec",
-            "range": "stddev: 0.010266061890367831",
-            "extra": "mean: 5.2448183492000116 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.058215244127022066",
             "extra": "mean: 5.101368874000002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "6e4454d42f0f1a320b354c5287844a6899780a28",
+          "message": "Change focus to active tab",
+          "timestamp": "2024-08-13T13:56:56+02:00",
+          "tree_id": "73de3d774fa2eca922f6e28b4b36f6c5e20cc5f4",
+          "url": "https://github.com/equinor/ert/commit/6e4454d42f0f1a320b354c5287844a6899780a28"
+        },
+        "date": 1723550367869,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19127015965620597,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025512951517897408",
+            "extra": "mean: 5.2282070648 sec\nrounds: 5"
           }
         ]
       }
