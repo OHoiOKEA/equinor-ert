@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723537069578,
+  "lastUpdate": 1723538027962,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "7cdbbd79eaea2d4eb254bbc9cd9ffc3226db482e",
-          "message": "Avoid unneeded lambda functions",
-          "timestamp": "2024-08-06T15:03:47+02:00",
-          "tree_id": "522c75acb003c9a11b0077b1a584753ae235c8ef",
-          "url": "https://github.com/equinor/ert/commit/7cdbbd79eaea2d4eb254bbc9cd9ffc3226db482e"
-        },
-        "date": 1722949575686,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19142096862566907,
-            "unit": "iter/sec",
-            "range": "stddev: 0.039226059006524934",
-            "extra": "mean: 5.224088077599992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02110598102578341",
             "extra": "mean: 5.0956954526 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7751ee0282d3858f4af147eac2689b85556e6d2f",
+          "message": "Concatenate observations for selected ensembles\n\n* Do not unset observations if found\r\n* Concatenate observations from ensembles",
+          "timestamp": "2024-08-13T10:31:17+02:00",
+          "tree_id": "20d3a45cf8cd74ba7cea0b3ee9292e930c83438a",
+          "url": "https://github.com/equinor/ert/commit/7751ee0282d3858f4af147eac2689b85556e6d2f"
+        },
+        "date": 1723538027333,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19366818462315263,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03252500457091845",
+            "extra": "mean: 5.163470716400013 sec\nrounds: 5"
           }
         ]
       }
