@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723550368754,
+  "lastUpdate": 1723552765911,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "d02e9ba18311d7a0474a7ce9007c4941659deaa1",
-          "message": "Improve bug template",
-          "timestamp": "2024-08-07T08:43:42+02:00",
-          "tree_id": "1cae4fdf1189c3ce0f88e5f75add3f1a9b294336",
-          "url": "https://github.com/equinor/ert/commit/d02e9ba18311d7a0474a7ce9007c4941659deaa1"
-        },
-        "date": 1723013181015,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1923632122149945,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028464491204694065",
-            "extra": "mean: 5.1984991750000065 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025512951517897408",
             "extra": "mean: 5.2282070648 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "acfc8c9d675e5625bd9aaaa44156cd01d2ace63a",
+          "message": "Merge Snapshot and PartialSnapshot",
+          "timestamp": "2024-08-13T14:36:59+02:00",
+          "tree_id": "2fb3cd1a38ce0419a7e337a36931cb4b1e418ad0",
+          "url": "https://github.com/equinor/ert/commit/acfc8c9d675e5625bd9aaaa44156cd01d2ace63a"
+        },
+        "date": 1723552765410,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19038331337290604,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01785987406493105",
+            "extra": "mean: 5.252561173999993 sec\nrounds: 5"
           }
         ]
       }
