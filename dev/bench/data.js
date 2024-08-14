@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723623809389,
+  "lastUpdate": 1723639008678,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "df363f750d8bf0e9809d5858e1423803afe01e98",
-          "message": "Avoid asyncio.get_event_loop\n\nThis function change behaviour in the future (after Python 3.12), and in order to\navoid a possible deprecation warning, we just return the loop we just created",
-          "timestamp": "2024-08-07T12:23:03+02:00",
-          "tree_id": "01ce99c99bef54bd7a24cb3d9fac18005bc2f052",
-          "url": "https://github.com/equinor/ert/commit/df363f750d8bf0e9809d5858e1423803afe01e98"
-        },
-        "date": 1723026329807,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19000325230961015,
-            "unit": "iter/sec",
-            "range": "stddev: 0.034474766748856564",
-            "extra": "mean: 5.263067804600001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027322348651253738",
             "extra": "mean: 5.212720371399996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "c27d36869bd070706f9aec7d3392e3b0b6d7944f",
+          "message": "Change look&feel of simulation mode combobox",
+          "timestamp": "2024-08-14T14:34:16+02:00",
+          "tree_id": "04f23e639fdb68fef7cb84b53902a26fd59a0771",
+          "url": "https://github.com/equinor/ert/commit/c27d36869bd070706f9aec7d3392e3b0b6d7944f"
+        },
+        "date": 1723639008214,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19155012020204867,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01833807418026119",
+            "extra": "mean: 5.220565765999998 sec\nrounds: 5"
           }
         ]
       }
