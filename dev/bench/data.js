@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723639008678,
+  "lastUpdate": 1723661935277,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "104e1ee05ac69051d5f4a86466ed8ed6aa51c611",
-          "message": "Improve documentation for NUM_CPU\n\nDon't mention any longer requirements for Torque, which\nare now deprecated.",
-          "timestamp": "2024-08-07T12:42:30+02:00",
-          "tree_id": "16b0868af7e538ac638285e8d39907491f9dd976",
-          "url": "https://github.com/equinor/ert/commit/104e1ee05ac69051d5f4a86466ed8ed6aa51c611"
-        },
-        "date": 1723027504308,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19078364371084852,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02428798085378905",
-            "extra": "mean: 5.241539476599991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01833807418026119",
             "extra": "mean: 5.220565765999998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "fb702fbb11e5b9290d0e568bc90979f83828c985",
+          "message": "Add splitter to run_dialog to facilitate adjustments",
+          "timestamp": "2024-08-14T20:56:07+02:00",
+          "tree_id": "910a563e1bacbb52276ca035365fae5ce27ed7c4",
+          "url": "https://github.com/equinor/ert/commit/fb702fbb11e5b9290d0e568bc90979f83828c985"
+        },
+        "date": 1723661934080,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18730266539682,
+            "unit": "iter/sec",
+            "range": "stddev: 0.07909525382225101",
+            "extra": "mean: 5.338952320200019 sec\nrounds: 5"
           }
         ]
       }
