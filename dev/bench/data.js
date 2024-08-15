@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723721285108,
+  "lastUpdate": 1723727182631,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "c8a76a0c2a05459049d698673efde2ec3f76604d",
-          "message": "Fix focus for color selector",
-          "timestamp": "2024-08-07T13:46:29+02:00",
-          "tree_id": "2f5f23d806d77b9d7961982b78ab8fc22d3909d0",
-          "url": "https://github.com/equinor/ert/commit/c8a76a0c2a05459049d698673efde2ec3f76604d"
-        },
-        "date": 1723031339831,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19392570742738363,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027438541177719027",
-            "extra": "mean: 5.156613907799999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02128875218679238",
             "extra": "mean: 5.2103880410000105 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "bb5b4fc1919ee4ad62a80bf1765b88be6d52f901",
+          "message": "Fix bug in heat equation example\n\nOnly write grdecl file for iteration 0,\r\notherwise the updated field will be overwritten.\r\nChange seed to create prior that makes the problem easier to solve.",
+          "timestamp": "2024-08-15T15:03:55+02:00",
+          "tree_id": "d55520f21988cd8de1d6c01a7284065067175039",
+          "url": "https://github.com/equinor/ert/commit/bb5b4fc1919ee4ad62a80bf1765b88be6d52f901"
+        },
+        "date": 1723727182209,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19529145061016712,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030513076933549207",
+            "extra": "mean: 5.120551856600008 sec\nrounds: 5"
           }
         ]
       }
