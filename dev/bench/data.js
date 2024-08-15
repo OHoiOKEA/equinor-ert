@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723727182631,
+  "lastUpdate": 1723729320982,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "1a50d1322d32d190623a2cf494fbb25b58599f72",
-          "message": "Use codecov flags feature\n\nThis can group the coverage reports by the test categorization\nthat is already in place.",
-          "timestamp": "2024-08-07T14:56:15+02:00",
-          "tree_id": "cd8bd99ce33a31f4985bd08ecc76907e142b2307",
-          "url": "https://github.com/equinor/ert/commit/1a50d1322d32d190623a2cf494fbb25b58599f72"
-        },
-        "date": 1723035529802,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19183085332371455,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03145879262165235",
-            "extra": "mean: 5.212925776400004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030513076933549207",
             "extra": "mean: 5.120551856600008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1819a8e6d01d5785550015bfac43db392c434b46",
+          "message": "Use load_parameters when calculating std",
+          "timestamp": "2024-08-15T15:39:36+02:00",
+          "tree_id": "97eaa93daed974bfa594a4cabb7999f2bb2b066d",
+          "url": "https://github.com/equinor/ert/commit/1819a8e6d01d5785550015bfac43db392c434b46"
+        },
+        "date": 1723729320583,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19228601685904645,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022476243522145518",
+            "extra": "mean: 5.200586170199995 sec\nrounds: 5"
           }
         ]
       }
