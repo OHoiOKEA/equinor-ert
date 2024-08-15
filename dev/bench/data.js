@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723661935277,
+  "lastUpdate": 1723721285108,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "8cba19d21bfa058b4769aa1663c5014685f21e7e",
-          "message": "Add new keyword REALIZATION_MEMORY\n\nThis keyword instructs Ert to supply the associated value to the chosen\nqueuing system as the amount of memory to reserve each realization\n\nFor OpenPBS, this is already supported through MEMORY_PER_JOB and we\nmust raise an exception is both are specified. For Slurm, this\noverlaps with the queue option MEMORY, and an exception is raised\nif both are specified.",
-          "timestamp": "2024-08-07T12:43:17+02:00",
-          "tree_id": "f35bce7c719ef684b10ff634660bf256381fa7c6",
-          "url": "https://github.com/equinor/ert/commit/8cba19d21bfa058b4769aa1663c5014685f21e7e"
-        },
-        "date": 1723027539518,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19214467395803836,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0272999371746833",
-            "extra": "mean: 5.20441175599999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.07909525382225101",
             "extra": "mean: 5.338952320200019 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "aad5994b713fde7291fb3250eb35ee880fb80fe7",
+          "message": "Remove ITER_RETRY_COUNT",
+          "timestamp": "2024-08-15T13:25:42+02:00",
+          "tree_id": "847c5164e0405bd848f1c3f1de1fcc6c2104f9f5",
+          "url": "https://github.com/equinor/ert/commit/aad5994b713fde7291fb3250eb35ee880fb80fe7"
+        },
+        "date": 1723721284657,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19192428512638643,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02128875218679238",
+            "extra": "mean: 5.2103880410000105 sec\nrounds: 5"
           }
         ]
       }
