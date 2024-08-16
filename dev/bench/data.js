@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723795834805,
+  "lastUpdate": 1723797409271,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "9ccd528fd7b5013b5f7a67563e317ca5c92e7b59",
-          "message": "Fix type error",
-          "timestamp": "2024-08-09T14:56:41+02:00",
-          "tree_id": "2626b21d0f7f75c40faf58f8a500cce2e0ed19fb",
-          "url": "https://github.com/equinor/ert/commit/9ccd528fd7b5013b5f7a67563e317ca5c92e7b59"
-        },
-        "date": 1723208345863,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1904108167051033,
-            "unit": "iter/sec",
-            "range": "stddev: 0.036705964199265674",
-            "extra": "mean: 5.2518024831999925 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05684919878035646",
             "extra": "mean: 5.123980320599998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "7e64413521646f6b6731abe25db0dc15c615d721",
+          "message": "Remove translation between JobState and JobStatus\n\nThis commit moves and renames the legacy jobstatus to\nDeprecatedJobStatus to stay compatible with everest. This should later\nbe removed after everest changes to using the new states from scheduler.",
+          "timestamp": "2024-08-16T10:34:18+02:00",
+          "tree_id": "2bb22ef3a6fb1ea511f6ed0e0170de6fe800352a",
+          "url": "https://github.com/equinor/ert/commit/7e64413521646f6b6731abe25db0dc15c615d721"
+        },
+        "date": 1723797408353,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19073379946942076,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03688515540061629",
+            "extra": "mean: 5.242909241999996 sec\nrounds: 5"
           }
         ]
       }
