@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723729320982,
+  "lastUpdate": 1723789563940,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "2fa9ec17a8a2d73d4487534d67450cff9ba9f8d0",
-          "message": "Remove irrelevant comment on job_queue\n\njob_queue with multiple threads is now replaced with async scheduler.",
-          "timestamp": "2024-08-07T15:47:03+02:00",
-          "tree_id": "0eb07887cf36f7bae01b1b9ffb09a2b4f4c90694",
-          "url": "https://github.com/equinor/ert/commit/2fa9ec17a8a2d73d4487534d67450cff9ba9f8d0"
-        },
-        "date": 1723038584762,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1900594252795338,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0635079984332986",
-            "extra": "mean: 5.261512279800013 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022476243522145518",
             "extra": "mean: 5.200586170199995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "17360a2f6ac61f37d9440c4e407bb5d3a304bf44",
+          "message": "Resize columns to content and guarantee min size",
+          "timestamp": "2024-08-16T08:23:41+02:00",
+          "tree_id": "2bb66ec6df56eb8dd1e5a31b733d4c44e8066b08",
+          "url": "https://github.com/equinor/ert/commit/17360a2f6ac61f37d9440c4e407bb5d3a304bf44"
+        },
+        "date": 1723789563506,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19821246990959965,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0470384657364428",
+            "extra": "mean: 5.045091262199992 sec\nrounds: 5"
           }
         ]
       }
