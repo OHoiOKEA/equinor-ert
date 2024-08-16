@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723790309304,
+  "lastUpdate": 1723791280108,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "17e01cc0acafba5ac4e72015b1c2c74775a08c68",
-          "message": "Deprecate slurm queue option MEMORY_PER_CPU",
-          "timestamp": "2024-08-08T08:47:51+02:00",
-          "tree_id": "3305d54db392f5f5c8cab590016086a9eb8087e2",
-          "url": "https://github.com/equinor/ert/commit/17e01cc0acafba5ac4e72015b1c2c74775a08c68"
-        },
-        "date": 1723099829876,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19132799267780184,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05933445462127801",
-            "extra": "mean: 5.226626726200015 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04022274206295612",
             "extra": "mean: 5.23457750460002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "1336b7c34ccd195abd167d3b7f1f4db5ff4b1c5d",
+          "message": "Remove the UI elements that show current memory usage",
+          "timestamp": "2024-08-16T08:52:16+02:00",
+          "tree_id": "81278d9069a2574d60414031eebbc49b98ffa2af",
+          "url": "https://github.com/equinor/ert/commit/1336b7c34ccd195abd167d3b7f1f4db5ff4b1c5d"
+        },
+        "date": 1723791279564,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1905134366731752,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04400704741524055",
+            "extra": "mean: 5.248973602399997 sec\nrounds: 5"
           }
         ]
       }
