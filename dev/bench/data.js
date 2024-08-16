@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723806243656,
+  "lastUpdate": 1723806329804,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "ebc4b0411cd55cc58286ff123dc7af4dd6b2c9d3",
-          "message": "Reformat starting_iteration in model_factory by ruff suggestion",
-          "timestamp": "2024-08-12T15:44:19+02:00",
-          "tree_id": "a6ec85ed0cf58534badd9eb72c02ab9fddaff955",
-          "url": "https://github.com/equinor/ert/commit/ebc4b0411cd55cc58286ff123dc7af4dd6b2c9d3"
-        },
-        "date": 1723470409427,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1913541285540428,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01972413278625882",
-            "extra": "mean: 5.225912853600005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.07542440018194917",
             "extra": "mean: 5.3195228157999965 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5b268b413e6adac434938aec2abc1acd4ef3725e",
+          "message": "Reverse ensemble order for plotting (#8486)\n\n* Reverse ensemble order for plotting\r\n* update_snapshot\r\n\r\n---------\r\n\r\nCo-authored-by: Eivind Jahren <ejah@equinor.com>",
+          "timestamp": "2024-08-16T11:03:10Z",
+          "tree_id": "be24100d2a0846050702d2b3f0d2f4d2b94e032d",
+          "url": "https://github.com/equinor/ert/commit/5b268b413e6adac434938aec2abc1acd4ef3725e"
+        },
+        "date": 1723806329365,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1928743043071339,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0424217562717542",
+            "extra": "mean: 5.184723821 sec\nrounds: 5"
           }
         ]
       }
