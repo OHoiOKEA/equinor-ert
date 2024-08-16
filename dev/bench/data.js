@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723806329804,
+  "lastUpdate": 1723807895998,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "0ecb7e30c5a45cfb13f5c3b001dc1da618f16fca",
-          "message": "Do not wait for wheel builds in github workflows\n\n- Due to removal of c code we do not need to build individual\nwheels for each os, so we only build and store wheels once per\npython version.",
-          "timestamp": "2024-08-12T15:52:37+02:00",
-          "tree_id": "a238591669a4e34d4a7abf83fbe2773786db8d53",
-          "url": "https://github.com/equinor/ert/commit/0ecb7e30c5a45cfb13f5c3b001dc1da618f16fca"
-        },
-        "date": 1723470910168,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19020294986731087,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04074696913732038",
-            "extra": "mean: 5.257542013399996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0424217562717542",
             "extra": "mean: 5.184723821 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "24d9d2d844d36ee99f539a1cf4465f940f4b620f",
+          "message": "Enforce minimum size on update report widget",
+          "timestamp": "2024-08-16T13:29:11+02:00",
+          "tree_id": "0b5245da7cda3aef3196a95b898d9cd792644044",
+          "url": "https://github.com/equinor/ert/commit/24d9d2d844d36ee99f539a1cf4465f940f4b620f"
+        },
+        "date": 1723807895468,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1925941602468562,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04496319125843844",
+            "extra": "mean: 5.192265428600001 sec\nrounds: 5"
           }
         ]
       }
