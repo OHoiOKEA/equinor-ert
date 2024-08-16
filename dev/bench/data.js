@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723793404134,
+  "lastUpdate": 1723794764052,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "45b839b26c1a634db44dc0549af9f7a61b587e4b",
-          "message": "Fix waiting cursor in load results manually panel",
-          "timestamp": "2024-08-09T08:45:52+02:00",
-          "tree_id": "fa85dc63a0d712e900a120e00da2f6ab45273f9d",
-          "url": "https://github.com/equinor/ert/commit/45b839b26c1a634db44dc0549af9f7a61b587e4b"
-        },
-        "date": 1723186115237,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19295172790607443,
-            "unit": "iter/sec",
-            "range": "stddev: 0.08390540876332278",
-            "extra": "mean: 5.182643404399999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.057962378801618905",
             "extra": "mean: 5.165982648799991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f09843abd34dfe3c762d97f3d917dcf4232146ae",
+          "message": "Copy parts of grdecl_io to heat-eq for speed\n\nDon't import ert in heat-eq forward model\r\n\r\nImporting ert increases runtime of ES-MDA from 50s to 2min 30s.",
+          "timestamp": "2024-08-16T09:50:15+02:00",
+          "tree_id": "d7855253a4704d541161cbe35b80e5a37e37df38",
+          "url": "https://github.com/equinor/ert/commit/f09843abd34dfe3c762d97f3d917dcf4232146ae"
+        },
+        "date": 1723794763436,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19508436979347613,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05142387113676318",
+            "extra": "mean: 5.125987289799991 sec\nrounds: 5"
           }
         ]
       }
