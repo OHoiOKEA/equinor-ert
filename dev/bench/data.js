@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723803542442,
+  "lastUpdate": 1723806243656,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "10f9df62b53d679a0b07f1b9d01ae93865f5770a",
-          "message": "Fix indentation in docs",
-          "timestamp": "2024-08-12T13:10:11+02:00",
-          "tree_id": "2651c70027c13f447310c82e9c20ce7cfe7594f6",
-          "url": "https://github.com/equinor/ert/commit/10f9df62b53d679a0b07f1b9d01ae93865f5770a"
-        },
-        "date": 1723461164425,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19152716759367233,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03299084992607",
-            "extra": "mean: 5.2211913984000144 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03372304465176374",
             "extra": "mean: 5.275770668799998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "46119ce3cb3fb2ba6c3287d449be78296fc2adeb",
+          "message": "Allow user to inhibit tab changes during simulation",
+          "timestamp": "2024-08-16T13:01:39+02:00",
+          "tree_id": "83d1c933b0f8cadfc303048c21aed35d0644371a",
+          "url": "https://github.com/equinor/ert/commit/46119ce3cb3fb2ba6c3287d449be78296fc2adeb"
+        },
+        "date": 1723806243131,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1879867865271316,
+            "unit": "iter/sec",
+            "range": "stddev: 0.07542440018194917",
+            "extra": "mean: 5.3195228157999965 sec\nrounds: 5"
           }
         ]
       }
