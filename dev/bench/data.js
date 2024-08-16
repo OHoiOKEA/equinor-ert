@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723793330179,
+  "lastUpdate": 1723793404134,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "9cd683ba9114a52618a08e968a1f094fe86e0792",
-          "message": "Try to mitigate flakiness in driver test\n\nIf the echo command takes more than 0.1 sec, this could yield flakiness, so change the\nlogic to avoid that pitfall.",
-          "timestamp": "2024-08-08T13:07:00+02:00",
-          "tree_id": "3f78bb0be7451ef63d8e76021a8c278b409be351",
-          "url": "https://github.com/equinor/ert/commit/9cd683ba9114a52618a08e968a1f094fe86e0792"
-        },
-        "date": 1723115369916,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1912737542676981,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04586396467454097",
-            "extra": "mean: 5.228108810999993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03448609315183564",
             "extra": "mean: 5.2002282428 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "d9d98b103b5532fd3da8faedc3e1ca10737f4cfd",
+          "message": "Rename jobqueue_file -> scheduler_file",
+          "timestamp": "2024-08-16T09:27:43+02:00",
+          "tree_id": "5c8a3b91264d04f2faa56bb7d007d9cb6db7dec1",
+          "url": "https://github.com/equinor/ert/commit/d9d98b103b5532fd3da8faedc3e1ca10737f4cfd"
+        },
+        "date": 1723793403653,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1935740144679523,
+            "unit": "iter/sec",
+            "range": "stddev: 0.057962378801618905",
+            "extra": "mean: 5.165982648799991 sec\nrounds: 5"
           }
         ]
       }
