@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723789599690,
+  "lastUpdate": 1723790309304,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "33de7d282b05f3a0de75c59794239733569190bb",
-          "message": "Make forward_model_ok an async function\n\nforward_model_ok() is in any case called in an async context, but it\ntakes a long time to complete, too long to be sensible in an async\ncontext making the async loop non-responsive as long as it runs.\n\nBy making it async, and including some asyncio.sleep(0) we will\neffectively split up its sync part into smaller parts and make the\nasync loop more responsive than before.\n\nThis commit only mitigates the problem, it does not solve it. A better\nsolution would to run the IO-bound loading parts into async IO, and the\nCPU-bound tasks should be offloaded to different processes to avoid\nPythons GIL.",
-          "timestamp": "2024-08-08T08:21:20+02:00",
-          "tree_id": "7121ae779967e2f20bef1a97262132c3536ecaf8",
-          "url": "https://github.com/equinor/ert/commit/33de7d282b05f3a0de75c59794239733569190bb"
-        },
-        "date": 1723098239171,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19653239617488028,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04345406426177972",
-            "extra": "mean: 5.088219649600012 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03619927292463398",
             "extra": "mean: 5.162755730200002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "73b2710fd0341b1d99b12f9106b5a5ca97f6fe93",
+          "message": "Remove unused and deprecated queue_options",
+          "timestamp": "2024-08-16T08:35:55+02:00",
+          "tree_id": "2b38133f6de0c2f582cd86d3933049cb91943455",
+          "url": "https://github.com/equinor/ert/commit/73b2710fd0341b1d99b12f9106b5a5ca97f6fe93"
+        },
+        "date": 1723790308493,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19103738537087744,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04022274206295612",
+            "extra": "mean: 5.23457750460002 sec\nrounds: 5"
           }
         ]
       }
