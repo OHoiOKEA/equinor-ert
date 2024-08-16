@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723794764052,
+  "lastUpdate": 1723795834805,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "e5468950b6adbc925113fad1fbe58f33879665f0",
-          "message": "Remove unused properties",
-          "timestamp": "2024-08-09T09:34:04+02:00",
-          "tree_id": "253024e86ec0be9a88e707a5dc32d11a18083f92",
-          "url": "https://github.com/equinor/ert/commit/e5468950b6adbc925113fad1fbe58f33879665f0"
-        },
-        "date": 1723188993125,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19505916243252572,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025058530067766788",
-            "extra": "mean: 5.126649717599998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05142387113676318",
             "extra": "mean: 5.125987289799991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0da5c9c07cfe7932084ce4e59e73e50d5beaf42d",
+          "message": "Fix bug where std dev plots were clipped to 0-1 range\n\nDelete unused ImageOut schema\r\n---------\r\n\r\nCo-authored-by: Eivind Jahren <ejah@equinor.com>",
+          "timestamp": "2024-08-16T10:08:11+02:00",
+          "tree_id": "c46c10d261b1a363847939e0a2d22eaa82f7f755",
+          "url": "https://github.com/equinor/ert/commit/0da5c9c07cfe7932084ce4e59e73e50d5beaf42d"
+        },
+        "date": 1723795834372,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.195160780766407,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05684919878035646",
+            "extra": "mean: 5.123980320599998 sec\nrounds: 5"
           }
         ]
       }
