@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723797409271,
+  "lastUpdate": 1723803542442,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "ef5f5e28edaac002698fb6e0686dcd0926e1afb6",
-          "message": "Limit numpy to one thread in heat equation",
-          "timestamp": "2024-08-12T11:53:25+02:00",
-          "tree_id": "2589862504f08671de15115c02e3554965eee938",
-          "url": "https://github.com/equinor/ert/commit/ef5f5e28edaac002698fb6e0686dcd0926e1afb6"
-        },
-        "date": 1723456552464,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19412861099581968,
-            "unit": "iter/sec",
-            "range": "stddev: 0.031683792251080985",
-            "extra": "mean: 5.151224205800008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03688515540061629",
             "extra": "mean: 5.242909241999996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "40ef8c690ad34105fa95d943352ee0b6584e040f",
+          "message": "Remove duplicate property",
+          "timestamp": "2024-08-16T12:16:28+02:00",
+          "tree_id": "882213a2634d1c547f00215bfd42fc949334c7b6",
+          "url": "https://github.com/equinor/ert/commit/40ef8c690ad34105fa95d943352ee0b6584e040f"
+        },
+        "date": 1723803541524,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18954576739163972,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03372304465176374",
+            "extra": "mean: 5.275770668799998 sec\nrounds: 5"
           }
         ]
       }
