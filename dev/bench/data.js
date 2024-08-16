@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723789563940,
+  "lastUpdate": 1723789599690,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "ee9b68d50a9eaa17dbe428b5f32ce75646d52913",
-          "message": "Add heat equation to test-data\n\nThe heat equation provides a natural way to test ert with fields and surfaces.",
-          "timestamp": "2024-08-08T07:24:26+02:00",
-          "tree_id": "5568c6b4e2ab26be22422d5d2cb88c4504778efd",
-          "url": "https://github.com/equinor/ert/commit/ee9b68d50a9eaa17dbe428b5f32ce75646d52913"
-        },
-        "date": 1723094813375,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19225207534249553,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05192898574071544",
-            "extra": "mean: 5.2015043177999924 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0470384657364428",
             "extra": "mean: 5.045091262199992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "5bdb0ab985940ef30e78a81b87a1f26d9138eaec",
+          "message": "Hide suggestor location if location not specified",
+          "timestamp": "2024-08-16T08:24:12+02:00",
+          "tree_id": "2e5abc685d2f9b6bb519c876af04d02aa999fe08",
+          "url": "https://github.com/equinor/ert/commit/5bdb0ab985940ef30e78a81b87a1f26d9138eaec"
+        },
+        "date": 1723789599201,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19369500558595298,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03619927292463398",
+            "extra": "mean: 5.162755730200002 sec\nrounds: 5"
           }
         ]
       }
