@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723791280108,
+  "lastUpdate": 1723793330179,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "e589a508626ffe46befade475d03ce251d97a365",
-          "message": "Remove unused function",
-          "timestamp": "2024-08-08T10:44:26+02:00",
-          "tree_id": "2ea4f4632ded35459ca35d3f4a91f0883270e3f1",
-          "url": "https://github.com/equinor/ert/commit/e589a508626ffe46befade475d03ce251d97a365"
-        },
-        "date": 1723106820932,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1904141050178733,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03991016885160019",
-            "extra": "mean: 5.251711788399996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04400704741524055",
             "extra": "mean: 5.248973602399997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "78e3450ecaf87a2004e7fbed430ec44c57213075",
+          "message": "Fix crash in ClosableDialog on pressing esc",
+          "timestamp": "2024-08-16T09:26:18+02:00",
+          "tree_id": "e507cedb3fb64be485545ff07159a4e98ad00a9a",
+          "url": "https://github.com/equinor/ert/commit/78e3450ecaf87a2004e7fbed430ec44c57213075"
+        },
+        "date": 1723793329222,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1922992517462199,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03448609315183564",
+            "extra": "mean: 5.2002282428 sec\nrounds: 5"
           }
         ]
       }
