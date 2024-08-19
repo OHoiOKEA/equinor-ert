@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724065748780,
+  "lastUpdate": 1724078181001,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "6e4454d42f0f1a320b354c5287844a6899780a28",
-          "message": "Change focus to active tab",
-          "timestamp": "2024-08-13T13:56:56+02:00",
-          "tree_id": "73de3d774fa2eca922f6e28b4b36f6c5e20cc5f4",
-          "url": "https://github.com/equinor/ert/commit/6e4454d42f0f1a320b354c5287844a6899780a28"
-        },
-        "date": 1723550367869,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19127015965620597,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025512951517897408",
-            "extra": "mean: 5.2282070648 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.007871007668487823",
             "extra": "mean: 5.163864821200008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sonso@equinor.com",
+            "name": "Sondre Sortland",
+            "username": "sondreso"
+          },
+          "committer": {
+            "email": "sondreso@users.noreply.github.com",
+            "name": "Sondre Sortland",
+            "username": "sondreso"
+          },
+          "distinct": true,
+          "id": "cd8d5c9be623582ba077ac47b9f3eb26000cf70b",
+          "message": "Remove use of root logger",
+          "timestamp": "2024-08-19T16:33:47+02:00",
+          "tree_id": "06c2f1e6fecb9b192a373518fa204d41afde9b49",
+          "url": "https://github.com/equinor/ert/commit/cd8d5c9be623582ba077ac47b9f3eb26000cf70b"
+        },
+        "date": 1724078180196,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1912002742547668,
+            "unit": "iter/sec",
+            "range": "stddev: 0.018172054721082354",
+            "extra": "mean: 5.23011802100001 sec\nrounds: 5"
           }
         ]
       }
