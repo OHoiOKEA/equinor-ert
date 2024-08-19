@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724049636395,
+  "lastUpdate": 1724050845343,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "2b6b2f60d778b6c96267e35547610cbf9c410169",
-          "message": "Use a plain dict for queue system options\n\nThis was previously a list of 2-tuples of strings, owing to compatibility with the C drivers which are now purged",
-          "timestamp": "2024-08-13T10:15:29+02:00",
-          "tree_id": "e09f38720aa72d0478ba82fe05981b75fb505c23",
-          "url": "https://github.com/equinor/ert/commit/2b6b2f60d778b6c96267e35547610cbf9c410169"
-        },
-        "date": 1723537069122,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19624406703696654,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02110598102578341",
-            "extra": "mean: 5.0956954526 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.012595093869435562",
             "extra": "mean: 5.167295711599991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "050498ea76a63fb7085d49f19690df2e936bf20c",
+          "message": "Use CSV_EXPORT instead of 2 for export tool",
+          "timestamp": "2024-08-19T08:58:23+02:00",
+          "tree_id": "215579f712d87db47a0a628219bd7f0abedc4c8a",
+          "url": "https://github.com/equinor/ert/commit/050498ea76a63fb7085d49f19690df2e936bf20c"
+        },
+        "date": 1724050844927,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1925660238725768,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03985177011057388",
+            "extra": "mean: 5.193024085399986 sec\nrounds: 5"
           }
         ]
       }
