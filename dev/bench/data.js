@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1723815626803,
+  "lastUpdate": 1724049636395,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "425d45807f7aaed7261b810b4c02729b178518b4",
-          "message": "Remove check locale function",
-          "timestamp": "2024-08-13T10:06:16+02:00",
-          "tree_id": "81cee963c3011581f40a5180a607f283be2a6060",
-          "url": "https://github.com/equinor/ert/commit/425d45807f7aaed7261b810b4c02729b178518b4"
-        },
-        "date": 1723536525417,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18837347223108666,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03384199249509492",
-            "extra": "mean: 5.308603107200002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.024956801855298676",
             "extra": "mean: 5.276882556800001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6b6ef5c5e1a31bca23be6ad6443c0b49e9ef524d",
+          "message": "Remove hide details button in rundialog\n\n* Remove hide details button in rundialog\r\n* Remove test_that_gui_runs_a_minimal_example",
+          "timestamp": "2024-08-19T08:38:05+02:00",
+          "tree_id": "1c780bba0ecdc02617c990f64bdc0d2c1f4c2327",
+          "url": "https://github.com/equinor/ert/commit/6b6ef5c5e1a31bca23be6ad6443c0b49e9ef524d"
+        },
+        "date": 1724049635571,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19352482532693335,
+            "unit": "iter/sec",
+            "range": "stddev: 0.012595093869435562",
+            "extra": "mean: 5.167295711599991 sec\nrounds: 5"
           }
         ]
       }
