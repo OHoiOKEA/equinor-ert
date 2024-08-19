@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724050845343,
+  "lastUpdate": 1724065594614,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "7751ee0282d3858f4af147eac2689b85556e6d2f",
-          "message": "Concatenate observations for selected ensembles\n\n* Do not unset observations if found\r\n* Concatenate observations from ensembles",
-          "timestamp": "2024-08-13T10:31:17+02:00",
-          "tree_id": "20d3a45cf8cd74ba7cea0b3ee9292e930c83438a",
-          "url": "https://github.com/equinor/ert/commit/7751ee0282d3858f4af147eac2689b85556e6d2f"
-        },
-        "date": 1723538027333,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19366818462315263,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03252500457091845",
-            "extra": "mean: 5.163470716400013 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03985177011057388",
             "extra": "mean: 5.193024085399986 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "9354a00a3cb2ca29e595739d50b871e376857d7e",
+          "message": "Fix flaky config generator",
+          "timestamp": "2024-08-19T13:04:09+02:00",
+          "tree_id": "9f8203b6d7cd4f1eb15b2bb9eb56d70c1dcc1868",
+          "url": "https://github.com/equinor/ert/commit/9354a00a3cb2ca29e595739d50b871e376857d7e"
+        },
+        "date": 1724065594144,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19391363309286283,
+            "unit": "iter/sec",
+            "range": "stddev: 0.041951187449714614",
+            "extra": "mean: 5.156934992400005 sec\nrounds: 5"
           }
         ]
       }
