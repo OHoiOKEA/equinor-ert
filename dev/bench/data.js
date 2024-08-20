@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724146999386,
+  "lastUpdate": 1724158765155,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "0ffc8ddf47d64cbfc76ac893625d27f55f63ca00",
-          "message": "Fix bug where iteration was hard coded",
-          "timestamp": "2024-08-14T09:50:52+02:00",
-          "tree_id": "07057ed641f8055de1ef87577a01c159055a3297",
-          "url": "https://github.com/equinor/ert/commit/0ffc8ddf47d64cbfc76ac893625d27f55f63ca00"
-        },
-        "date": 1723621996512,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1945756728613658,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0513384116777423",
-            "extra": "mean: 5.139388625999999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.018247041324481135",
             "extra": "mean: 5.221089939999996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "7aeb428888741a0c172183aa04cd561f6f5fa12e",
+          "message": "Remove facade from base run model",
+          "timestamp": "2024-08-20T14:57:02+02:00",
+          "tree_id": "a07a0699f5a7b2002264f11e24facd846efedfc8",
+          "url": "https://github.com/equinor/ert/commit/7aeb428888741a0c172183aa04cd561f6f5fa12e"
+        },
+        "date": 1724158764744,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19261128648414047,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02581026528619214",
+            "extra": "mean: 5.191803752800018 sec\nrounds: 5"
           }
         ]
       }
