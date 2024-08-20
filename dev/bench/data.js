@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724141829047,
+  "lastUpdate": 1724146999386,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "e0611cf0837016d356897c4f0ff01d195321f773",
-          "message": "Remove iteration label\n\nThis had very little effect, as only the last one set before\nthe ensemble evaluater started was actully propagated to the gui",
-          "timestamp": "2024-08-13T15:43:43+02:00",
-          "tree_id": "4e6b940978e8df89bfc5a2905814efe3a960ca39",
-          "url": "https://github.com/equinor/ert/commit/e0611cf0837016d356897c4f0ff01d195321f773"
-        },
-        "date": 1723556768237,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19061477682986933,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0425535245934838",
-            "extra": "mean: 5.246182990800008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02127247516730854",
             "extra": "mean: 5.116786052200007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "7f0d9b8090b7d4c1c1c962a08205fad4cd21ce5e",
+          "message": "Simplify creating deprecation warnings",
+          "timestamp": "2024-08-20T09:40:53Z",
+          "tree_id": "f1e0a86dc8bb314c828f3def9de3b3b1e1d30800",
+          "url": "https://github.com/equinor/ert/commit/7f0d9b8090b7d4c1c1c962a08205fad4cd21ce5e"
+        },
+        "date": 1724146998508,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19153088942957391,
+            "unit": "iter/sec",
+            "range": "stddev: 0.018247041324481135",
+            "extra": "mean: 5.221089939999996 sec\nrounds: 5"
           }
         ]
       }
