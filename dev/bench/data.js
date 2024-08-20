@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724159250503,
+  "lastUpdate": 1724160781227,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "c27d36869bd070706f9aec7d3392e3b0b6d7944f",
-          "message": "Change look&feel of simulation mode combobox",
-          "timestamp": "2024-08-14T14:34:16+02:00",
-          "tree_id": "04f23e639fdb68fef7cb84b53902a26fd59a0771",
-          "url": "https://github.com/equinor/ert/commit/c27d36869bd070706f9aec7d3392e3b0b6d7944f"
-        },
-        "date": 1723639008214,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19155012020204867,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01833807418026119",
-            "extra": "mean: 5.220565765999998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03160374953173058",
             "extra": "mean: 5.245520733799981 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ddf23d1210fce1ecce771bd3be49cdd18acce389",
+          "message": "Allow users without ert-configuration to run ert with FLOW simulator.",
+          "timestamp": "2024-08-20T16:30:33+03:00",
+          "tree_id": "74b716c015f7bdf08a3ad5ccdb939a319f2c760d",
+          "url": "https://github.com/equinor/ert/commit/ddf23d1210fce1ecce771bd3be49cdd18acce389"
+        },
+        "date": 1724160780851,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1860551035452831,
+            "unit": "iter/sec",
+            "range": "stddev: 0.010912232128954709",
+            "extra": "mean: 5.374751785599983 sec\nrounds: 5"
           }
         ]
       }
