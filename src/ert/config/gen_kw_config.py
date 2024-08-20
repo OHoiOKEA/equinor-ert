@@ -105,12 +105,13 @@ class GenKwConfig(ParameterConfig):
 
         if len(positional_args) == 2:
             parameter_file = _get_abs_path(positional_args[1])
+            parameter_file_context = positional_args[1]
             template_file = None
             output_file = None
         elif len(positional_args) == 4:
             output_file = positional_args[2]
             parameter_file = _get_abs_path(positional_args[3])
-
+            parameter_file_context = positional_args[3]
             template_file = _get_abs_path(positional_args[1])
             if not os.path.isfile(template_file):
                 errors.append(
@@ -118,6 +119,18 @@ class GenKwConfig(ParameterConfig):
                         f"No such template file: {template_file}", positional_args[1]
                     )
                 )
+            elif Path(template_file).stat().st_size == 0:
+                token = (
+                    parameter_file_context.token
+                    if hasattr(parameter_file_context, "token")
+                    else parameter_file_context
+                )
+                ConfigWarning.deprecation_warn(
+                    f"The template file for GEN_KW ({gen_kw_key}) is empty. If templating is not needed, you "
+                    f"can use GEN_KW with just the distribution file instead: GEN_KW {gen_kw_key} {token}",
+                    positional_args[1],
+                )
+
         else:
             raise ConfigValidationError(
                 f"Unexpected positional arguments: {positional_args}"
@@ -125,7 +138,14 @@ class GenKwConfig(ParameterConfig):
         if not os.path.isfile(parameter_file):
             errors.append(
                 ConfigValidationError.with_context(
-                    f"No such parameter file: {parameter_file}", positional_args[3]
+                    f"No such parameter file: {parameter_file}", parameter_file_context
+                )
+            )
+        elif Path(parameter_file).stat().st_size == 0:
+            errors.append(
+                ConfigValidationError.with_context(
+                    f"No parameters specified in {parameter_file}",
+                    parameter_file_context,
                 )
             )
 
@@ -162,7 +182,7 @@ class GenKwConfig(ParameterConfig):
                     )
 
         if gen_kw_key == "PRED" and update_parameter:
-            ConfigWarning.ert_context_warn(
+            ConfigWarning.warn(
                 "GEN_KW PRED used to hold a special meaning and be "
                 "excluded from being updated.\n If the intention was "
                 "to exclude this from updates, set UPDATE:FALSE.\n",

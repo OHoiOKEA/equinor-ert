@@ -10,7 +10,6 @@ from enum import Enum
 from pathlib import Path
 from typing import TYPE_CHECKING, Dict, List, Optional
 
-from cloudevents.conversion import to_json
 from cloudevents.http import CloudEvent
 from lxml import etree
 
@@ -146,7 +145,7 @@ class Job:
                 break
 
             if self.returncode.result() == 0:
-                if self._scheduler.wait_for_checksum():
+                if self._scheduler._manifest_queue is not None:
                     await self._verify_checksum()
                 await self._handle_finished_forward_model()
                 break
@@ -173,13 +172,13 @@ class Job:
             }
         )
         assert self._scheduler._events is not None
-        await self._scheduler._events.put(to_json(timeout_event))
+        await self._scheduler._events.put(timeout_event)
         logger.error(
             f"Realization {self.iens} stopped due to MAX_RUNTIME={self.real.max_runtime} seconds"
         )
         self.returncode.cancel()
 
-    async def _verify_checksum(self, timeout: int = 120) -> None:
+    async def _verify_checksum(self, timeout: int = 120) -> None:  # noqa: ASYNC109
         # Wait for job runpath to be in the checksum dictionary
         runpath = self.real.run_arg.runpath
         while runpath not in self._scheduler.checksum:
@@ -290,7 +289,7 @@ class Job:
             },
             event_data,
         )
-        await self._scheduler._events.put(to_json(event))
+        await self._scheduler._events.put(event)
 
 
 def log_info_from_exit_file(exit_file_path: Path) -> None:

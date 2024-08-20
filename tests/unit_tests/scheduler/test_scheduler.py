@@ -8,8 +8,6 @@ from pathlib import Path
 from typing import List
 
 import pytest
-import websockets
-from cloudevents.http import from_json
 
 from ert.config import QueueConfig
 from ert.constant_filenames import CERT_FILE
@@ -21,7 +19,7 @@ from ert.event_type_constants import (
 from ert.load_status import LoadResult, LoadStatus
 from ert.run_arg import RunArg
 from ert.scheduler import LsfDriver, OpenPBSDriver, create_driver, job, scheduler
-from ert.scheduler.job import JobState
+from ert.scheduler.job import EVTYPE_REALIZATION_TIMEOUT, JobState
 
 
 def create_jobs_json(realization: Realization) -> None:
@@ -224,7 +222,7 @@ async def test_max_runtime(realization, mock_driver, caplog):
     timeouteventfound = False
     while not timeouteventfound and not sch._events.empty():
         event = await sch._events.get()
-        if from_json(event)["type"] == "com.equinor.ert.realization.timeout":
+        if event["type"] == EVTYPE_REALIZATION_TIMEOUT:
             timeouteventfound = True
     assert timeouteventfound
 
@@ -324,7 +322,7 @@ async def test_max_runtime_while_killing(realization, mock_driver):
     timeouteventfound = False
     while not timeouteventfound and not sch._events.empty():
         event = await sch._events.get()
-        if from_json(event)["type"] == "com.equinor.ert.realization.timeout":
+        if event["type"] == EVTYPE_REALIZATION_TIMEOUT:
             timeouteventfound = True
 
     # Assert that a timeout_event is actually emitted, because killing took a
@@ -374,7 +372,7 @@ async def test_that_job_does_not_retry_when_killed_by_scheduler(
     while not sch._events.empty():
         event = await sch._events.get()
     assert event is not None
-    assert from_json(event)["type"] == "com.equinor.ert.realization.failure"
+    assert event["type"] == "com.equinor.ert.realization.failure"
 
 
 async def test_is_active(mock_driver, realization):
@@ -475,7 +473,9 @@ async def test_that_long_running_jobs_were_stopped(storage, tmp_path, mock_drive
     ]
 
     sch = scheduler.Scheduler(
-        mock_driver(wait=wait, kill=kill), realizations, max_running=ensemble_size
+        mock_driver(wait=wait, kill=kill),
+        realizations,
+        max_running=ensemble_size,
     )
 
     assert await sch.execute(min_required_realizations=5) == EVTYPE_ENSEMBLE_SUCCEEDED
@@ -513,7 +513,10 @@ async def test_submit_sleep(
     ]
 
     sch = scheduler.Scheduler(
-        mock_driver(wait=wait), realizations, submit_sleep=submit_sleep, max_running=0
+        mock_driver(wait=wait),
+        realizations,
+        submit_sleep=submit_sleep,
+        max_running=0,
     )
     await sch.execute()
 
@@ -576,71 +579,6 @@ async def mock_failure(message, *args, **kwargs):
     raise RuntimeError(message)
 
 
-async def _mock_ws(set_when_done: asyncio.Event, handler, port: int):
-    async with websockets.server.serve(handler, "127.0.0.1", port):
-        await set_when_done.wait()
-
-
-async def test_scheduler_publishes_to_websocket(
-    mock_driver, realization, unused_tcp_port
-):
-    set_when_done = asyncio.Event()
-
-    events_received: List[str] = []
-
-    async def mock_ws_event_handler(websocket):
-        nonlocal events_received
-        async for message in websocket:
-            events_received.append(message)
-        await websocket.close()
-
-    websocket_server_task = asyncio.create_task(
-        _mock_ws(set_when_done, mock_ws_event_handler, unused_tcp_port)
-    )
-
-    driver = mock_driver()
-    sch = scheduler.Scheduler(
-        driver, [realization], ee_uri=f"ws://127.0.0.1:{unused_tcp_port}"
-    )
-    await sch.execute()
-
-    # publisher_done is set only if CLOSE_PUBLISHER_SENTINEL was received
-    assert sch._publisher_done.is_set()
-
-    set_when_done.set()
-    await websocket_server_task
-    assert [
-        json.loads(event)["data"]["queue_event_type"] for event in events_received
-    ] == ["WAITING", "SUBMITTING", "PENDING", "RUNNING", "COMPLETED"]
-
-    assert (
-        sch._events.empty()
-    ), "Schedulers internal event queue must be empty before finish"
-
-
-async def test_scheduler_finish_when_evaluator_quits_prematurely(
-    mock_driver, realization, unused_tcp_port, caplog
-):
-    set_when_done = asyncio.Event()
-
-    websocket_server_task = asyncio.create_task(
-        _mock_ws(set_when_done, None, unused_tcp_port)
-    )
-
-    driver = mock_driver()
-    sch = scheduler.Scheduler(
-        driver, [realization], ee_uri=f"ws://127.0.0.1:{unused_tcp_port}"
-    )
-    scheduler._queue_timeout = 0.1
-    set_when_done.set()
-    await sch.execute()
-
-    await websocket_server_task
-
-    assert sch._events.qsize() == 6  # we expect 5 events + the sentinel object
-    assert "6 items left unprocessed in the queue!" in caplog.text
-
-
 @pytest.mark.timeout(5)
 async def test_that_driver_poll_exceptions_are_propagated(mock_driver, realization):
     driver = mock_driver()
@@ -701,7 +639,8 @@ def test_scheduler_create_lsf_driver():
         ],
     }
     queue_config = QueueConfig.from_dict(queue_config_dict)
-    driver: LsfDriver = create_driver(queue_config)
+    driver = create_driver(queue_config)
+    assert isinstance(driver, LsfDriver)
     assert str(driver._bsub_cmd) == bsub_cmd
     assert str(driver._bkill_cmd) == bkill_cmd
     assert str(driver._bjobs_cmd) == bjobs_cmd
@@ -709,7 +648,7 @@ def test_scheduler_create_lsf_driver():
     assert driver._queue_name == queue_name
     assert driver._resource_requirement == lsf_resource
     assert driver._exclude_hosts == ["host1", "host2"]
-    assert driver._project_code == queue_config.selected_queue_options["PROJECT_CODE"]
+    assert driver._project_code == queue_config.queue_options.project_code
 
 
 def test_scheduler_create_openpbs_driver():
@@ -740,7 +679,8 @@ def test_scheduler_create_openpbs_driver():
         ],
     }
     queue_config = QueueConfig.from_dict(queue_config_dict)
-    driver: OpenPBSDriver = create_driver(queue_config)
+    driver = create_driver(queue_config)
+    assert isinstance(driver, OpenPBSDriver)
     assert driver._queue_name == queue_name
     assert driver._keep_qsub_output == True if keep_qsub_output == "True" else False
     assert driver._memory_per_job == memory_per_job
@@ -751,7 +691,7 @@ def test_scheduler_create_openpbs_driver():
     assert str(driver._qsub_cmd) == qsub_cmd
     assert str(driver._qstat_cmd) == qstat_cmd
     assert str(driver._qdel_cmd) == qdel_cmd
-    assert driver._project_code == queue_config.selected_queue_options["PROJECT_CODE"]
+    assert driver._project_code == queue_config.queue_options.project_code
 
 
 async def test_callback_status_message_present_in_event_on_load_failure(
@@ -777,4 +717,4 @@ async def test_callback_status_message_present_in_event_on_load_failure(
     while not sch._events.empty():
         event = await sch._events.get()
 
-    assert expected_error in from_json(event).data["callback_status_message"]
+    assert expected_error in event.data["callback_status_message"]

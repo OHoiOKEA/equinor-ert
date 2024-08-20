@@ -9,6 +9,11 @@ from ert.run_models import BaseRunModel
 from ert.substitution_list import SubstitutionList
 
 
+@pytest.fixture(autouse=True)
+def patch_abstractmethods(monkeypatch):
+    monkeypatch.setattr(BaseRunModel, "__abstractmethods__", set())
+
+
 def test_base_run_model_supports_restart(minimum_case):
     BaseRunModel.validate = MagicMock()
     brm = BaseRunModel(minimum_case, None, None, minimum_case.queue_config, [True])
@@ -96,9 +101,6 @@ def test_check_if_runpath_exists(
         start_iteration=start_iteration,
         total_iterations=number_of_iterations,
     )
-    brm.facade = MagicMock(
-        run_path=run_path,
-    )
     assert brm.check_if_runpath_exists() == expected
 
 
@@ -128,9 +130,6 @@ def test_get_number_of_existing_runpaths(
         queue_config=MagicMock(),
         status_queue=MagicMock(),
         active_realizations=active_realizations_mask,
-    )
-    brm.facade = MagicMock(
-        run_path=run_path,
     )
     assert brm.get_number_of_existing_runpaths() == expected_number
 

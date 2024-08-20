@@ -18,6 +18,7 @@ from qtpy.QtWidgets import (
     QAbstractItemView,
     QDialog,
     QDialogButtonBox,
+    QFrame,
     QHBoxLayout,
     QHeaderView,
     QLabel,
@@ -194,7 +195,6 @@ class RunDialog(QDialog):
         self._event_queue = event_queue
         self._notifier = notifier
 
-        self._isDetailedDialog = True
         self._minimum_width = 1200
         self._minimum_height = 800
 
@@ -236,8 +236,6 @@ class RunDialog(QDialog):
         self.done_button.setHidden(True)
         self.restart_button = QPushButton("Restart")
         self.restart_button.setHidden(True)
-        self.show_details_button = QPushButton("Show details")
-        self.show_details_button.setCheckable(True)
 
         size = 20
         spin_movie = QMovie("img:loading.gif")
@@ -256,7 +254,6 @@ class RunDialog(QDialog):
         button_layout.addStretch()
         button_layout.addWidget(self.memory_usage)
         button_layout.addStretch()
-        button_layout.addWidget(self.show_details_button)
         button_layout.addWidget(self.plot_button)
         button_layout.addWidget(self.kill_button)
         button_layout.addWidget(self.done_button)
@@ -270,13 +267,27 @@ class RunDialog(QDialog):
         layout.addWidget(self._total_progress_bar)
         layout.addWidget(self._iteration_progress_label)
         layout.addWidget(self._progress_widget)
-        layout.addWidget(self._job_label)
 
         adjustable_splitter_layout = QSplitter()
         adjustable_splitter_layout.setOrientation(Qt.Orientation.Vertical)
         adjustable_splitter_layout.addWidget(self._tab_widget)
-        adjustable_splitter_layout.addWidget(self._job_overview)
 
+        adjustable_splitter_layout.setStyleSheet("""
+            QSplitter::handle {
+                image: url(img:drag_handle.svg);
+                height: 13px;
+                background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0,
+                   stop: 0.1 #10FFFFFF, stop: 0.5 #D3D3D3, stop: 0.9 #10FFFFFF);
+            }
+         """)
+
+        self.job_frame = QFrame(self)
+        job_frame_layout = QVBoxLayout(self.job_frame)
+        job_frame_layout.setContentsMargins(0, 0, 0, 0)
+        job_frame_layout.addWidget(self._job_label)
+        job_frame_layout.addWidget(self._job_overview)
+
+        adjustable_splitter_layout.addWidget(self.job_frame)
         layout.addWidget(adjustable_splitter_layout)
         layout.addWidget(button_widget_container)
 
@@ -285,36 +296,16 @@ class RunDialog(QDialog):
         self.kill_button.clicked.connect(self.killJobs)  # type: ignore
         self.done_button.clicked.connect(self.accept)
         self.restart_button.clicked.connect(self.restart_failed_realizations)
-        self.show_details_button.clicked.connect(self.toggle_detailed_progress)
         self.simulation_done.connect(self._on_simulation_done)
 
         self.setMinimumSize(self._minimum_width, self._minimum_height)
-        self._setDetailedDialog()
         self.finished.connect(self._on_finished)
 
         self.on_run_model_event.connect(self._on_event)
 
     def _current_tab_changed(self, index: int) -> None:
-        # Clear the selection in the other tabs
-        for i in range(0, self._tab_widget.count()):
-            if i != index:
-                widget = self._tab_widget.widget(i)
-                if isinstance(widget, RealizationWidget):
-                    widget.clearSelection()
-
-    def _setSimpleDialog(self) -> None:
-        self._isDetailedDialog = False
-        self._tab_widget.setVisible(False)
-        self._job_label.setVisible(False)
-        self._job_overview.setVisible(False)
-        self.show_details_button.setText("Show details")
-
-    def _setDetailedDialog(self) -> None:
-        self._isDetailedDialog = True
-        self._tab_widget.setVisible(True)
-        self._job_label.setVisible(True)
-        self._job_overview.setVisible(True)
-        self.show_details_button.setText("Hide details")
+        widget = self._tab_widget.widget(index)
+        self.job_frame.setHidden(isinstance(widget, UpdateWidget))
 
     @Slot(QModelIndex, int, int)
     def on_snapshot_new_iteration(
@@ -329,8 +320,8 @@ class RunDialog(QDialog):
 
             widget = RealizationWidget(iter_row)
             widget.setSnapshotModel(self._snapshot_model)
-            widget.currentChanged.connect(self._select_real)
-            widget.currentChanged.emit(widget._real_list_model.index(0, 0))
+            widget.itemClicked.connect(self._select_real)
+            widget.itemClicked.emit(widget._real_list_model.index(0, 0))
             tab_index = self._tab_widget.addTab(
                 widget, f"Realizations for iteration {index.internalPointer().id_}"
             )
@@ -524,15 +515,6 @@ class RunDialog(QDialog):
             self.kill_button.setVisible(True)
             self.done_button.setVisible(False)
             self.run_experiment(restart=True)
-
-    @Slot()
-    def toggle_detailed_progress(self) -> None:
-        if self._isDetailedDialog:
-            self._setSimpleDialog()
-        else:
-            self._setDetailedDialog()
-
-        self.adjustSize()
 
     def _on_finished(self) -> None:
         for file_dialog in self.findChildren(FileDialog):
