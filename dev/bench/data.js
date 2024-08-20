@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724078181001,
+  "lastUpdate": 1724135410008,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "acfc8c9d675e5625bd9aaaa44156cd01d2ace63a",
-          "message": "Merge Snapshot and PartialSnapshot",
-          "timestamp": "2024-08-13T14:36:59+02:00",
-          "tree_id": "2fb3cd1a38ce0419a7e337a36931cb4b1e418ad0",
-          "url": "https://github.com/equinor/ert/commit/acfc8c9d675e5625bd9aaaa44156cd01d2ace63a"
-        },
-        "date": 1723552765410,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19038331337290604,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01785987406493105",
-            "extra": "mean: 5.252561173999993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.018172054721082354",
             "extra": "mean: 5.23011802100001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "02f996b70594a9af4debda386efae8f8735cc54e",
+          "message": "Fix job label not updating when selecting same index\n\n* Fix job label not updating when same index\r\n* Place job_label with job_overview\r\n* Update tests accordingly",
+          "timestamp": "2024-08-20T08:27:36+02:00",
+          "tree_id": "ca246b748ed0b81124436456e897c8f80c1dd46f",
+          "url": "https://github.com/equinor/ert/commit/02f996b70594a9af4debda386efae8f8735cc54e"
+        },
+        "date": 1724135409166,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.196034723824157,
+            "unit": "iter/sec",
+            "range": "stddev: 0.008699792571930456",
+            "extra": "mean: 5.1011370867999855 sec\nrounds: 5"
           }
         ]
       }
