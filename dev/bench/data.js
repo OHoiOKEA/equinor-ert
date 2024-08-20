@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724161337423,
+  "lastUpdate": 1724161646258,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "aad5994b713fde7291fb3250eb35ee880fb80fe7",
-          "message": "Remove ITER_RETRY_COUNT",
-          "timestamp": "2024-08-15T13:25:42+02:00",
-          "tree_id": "847c5164e0405bd848f1c3f1de1fcc6c2104f9f5",
-          "url": "https://github.com/equinor/ert/commit/aad5994b713fde7291fb3250eb35ee880fb80fe7"
-        },
-        "date": 1723721284657,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19192428512638643,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02128875218679238",
-            "extra": "mean: 5.2103880410000105 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029318460219096443",
             "extra": "mean: 5.143768435599986 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "e79cd87c55530fd9f452083adfb66f2d9500cca4",
+          "message": "Remove websockets communication between scheduler and ensemble evaluator\n\nIt is replaced by two message queues, which are provided in LegacyEnsemble.evaluate function\nby the ensemble evaluator and passed over to scheduler:\n- ensemble_evaluator_queue: responsible for providing CloudEvent (representing realization and driver events) for evaluator\n- manifest_queue: responsible for providing CloudEvent (representing notification manifest checksum Event) for scheduler",
+          "timestamp": "2024-08-20T15:45:06+02:00",
+          "tree_id": "ebc432f7dbd2aaf76ee15a548ea30868895950f2",
+          "url": "https://github.com/equinor/ert/commit/e79cd87c55530fd9f452083adfb66f2d9500cca4"
+        },
+        "date": 1724161645824,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19685168066127498,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03693948324977196",
+            "extra": "mean: 5.079966788400003 sec\nrounds: 5"
           }
         ]
       }
