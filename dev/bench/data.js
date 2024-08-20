@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724160781227,
+  "lastUpdate": 1724161337423,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "fb702fbb11e5b9290d0e568bc90979f83828c985",
-          "message": "Add splitter to run_dialog to facilitate adjustments",
-          "timestamp": "2024-08-14T20:56:07+02:00",
-          "tree_id": "910a563e1bacbb52276ca035365fae5ce27ed7c4",
-          "url": "https://github.com/equinor/ert/commit/fb702fbb11e5b9290d0e568bc90979f83828c985"
-        },
-        "date": 1723661934080,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18730266539682,
-            "unit": "iter/sec",
-            "range": "stddev: 0.07909525382225101",
-            "extra": "mean: 5.338952320200019 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.010912232128954709",
             "extra": "mean: 5.374751785599983 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "37f08712d6cac2ff997674848664498603ba1388",
+          "message": "Remove skipped out-of-memory test\n\nThis test has been moved elsewhere where it is run regularly. Should\nnot keep a test in the repository that is skipped by default, as it is likely\nto not be able to catch regressions",
+          "timestamp": "2024-08-20T15:39:54+02:00",
+          "tree_id": "5a7fe4c3a0d5799b724172c077ee72a0090154b2",
+          "url": "https://github.com/equinor/ert/commit/37f08712d6cac2ff997674848664498603ba1388"
+        },
+        "date": 1724161337009,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19440999580754972,
+            "unit": "iter/sec",
+            "range": "stddev: 0.029318460219096443",
+            "extra": "mean: 5.143768435599986 sec\nrounds: 5"
           }
         ]
       }
