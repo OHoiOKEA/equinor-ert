@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724240938128,
+  "lastUpdate": 1724242917803,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "7e64413521646f6b6731abe25db0dc15c615d721",
-          "message": "Remove translation between JobState and JobStatus\n\nThis commit moves and renames the legacy jobstatus to\nDeprecatedJobStatus to stay compatible with everest. This should later\nbe removed after everest changes to using the new states from scheduler.",
-          "timestamp": "2024-08-16T10:34:18+02:00",
-          "tree_id": "2bb22ef3a6fb1ea511f6ed0e0170de6fe800352a",
-          "url": "https://github.com/equinor/ert/commit/7e64413521646f6b6731abe25db0dc15c615d721"
-        },
-        "date": 1723797408353,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19073379946942076,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03688515540061629",
-            "extra": "mean: 5.242909241999996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04146376234096767",
             "extra": "mean: 5.20270857559998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "bdc92ab9ca36583c740efec111dd35c22d87e224",
+          "message": "Set progress_bar_label to Failed on error",
+          "timestamp": "2024-08-21T14:19:04+02:00",
+          "tree_id": "4992825908b94aeacf103a1203e41c7d20ad7d71",
+          "url": "https://github.com/equinor/ert/commit/bdc92ab9ca36583c740efec111dd35c22d87e224"
+        },
+        "date": 1724242916307,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.194626714616028,
+            "unit": "iter/sec",
+            "range": "stddev: 0.021720356449967684",
+            "extra": "mean: 5.138040797599979 sec\nrounds: 5"
           }
         ]
       }
