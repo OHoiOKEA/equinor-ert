@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724235106959,
+  "lastUpdate": 1724236176818,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "1336b7c34ccd195abd167d3b7f1f4db5ff4b1c5d",
-          "message": "Remove the UI elements that show current memory usage",
-          "timestamp": "2024-08-16T08:52:16+02:00",
-          "tree_id": "81278d9069a2574d60414031eebbc49b98ffa2af",
-          "url": "https://github.com/equinor/ert/commit/1336b7c34ccd195abd167d3b7f1f4db5ff4b1c5d"
-        },
-        "date": 1723791279564,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1905134366731752,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04400704741524055",
-            "extra": "mean: 5.248973602399997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03268915047981502",
             "extra": "mean: 5.115150558600004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "749835abb317826d3b5f78497e172a8bdf32863d",
+          "message": "Clarify docs on gen data RESULT_FILE",
+          "timestamp": "2024-08-21T12:27:00+02:00",
+          "tree_id": "9383892477058e4f92b4b6bcf09888f968d0991e",
+          "url": "https://github.com/equinor/ert/commit/749835abb317826d3b5f78497e172a8bdf32863d"
+        },
+        "date": 1724236175835,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1848200498483121,
+            "unit": "iter/sec",
+            "range": "stddev: 0.26100865955485103",
+            "extra": "mean: 5.41066838160001 sec\nrounds: 5"
           }
         ]
       }
