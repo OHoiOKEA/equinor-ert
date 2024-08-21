@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724221593177,
+  "lastUpdate": 1724228984097,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "17360a2f6ac61f37d9440c4e407bb5d3a304bf44",
-          "message": "Resize columns to content and guarantee min size",
-          "timestamp": "2024-08-16T08:23:41+02:00",
-          "tree_id": "2bb66ec6df56eb8dd1e5a31b733d4c44e8066b08",
-          "url": "https://github.com/equinor/ert/commit/17360a2f6ac61f37d9440c4e407bb5d3a304bf44"
-        },
-        "date": 1723789563506,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19821246990959965,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0470384657364428",
-            "extra": "mean: 5.045091262199992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.045694413664982135",
             "extra": "mean: 5.214390879799998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "b1c50621bb722b39d9ca6b4381b76d52ec2477be",
+          "message": "Sort exports through __all__\n\nSorting done with archived tool asort, which is getting into ruff",
+          "timestamp": "2024-08-21T10:27:17+02:00",
+          "tree_id": "6e3197970b55f1bedb4561e334e351e6e3506be5",
+          "url": "https://github.com/equinor/ert/commit/b1c50621bb722b39d9ca6b4381b76d52ec2477be"
+        },
+        "date": 1724228983668,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19072577579579778,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02240892795639569",
+            "extra": "mean: 5.243129806799994 sec\nrounds: 5"
           }
         ]
       }
