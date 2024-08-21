@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724238818825,
+  "lastUpdate": 1724240332242,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "f09843abd34dfe3c762d97f3d917dcf4232146ae",
-          "message": "Copy parts of grdecl_io to heat-eq for speed\n\nDon't import ert in heat-eq forward model\r\n\r\nImporting ert increases runtime of ES-MDA from 50s to 2min 30s.",
-          "timestamp": "2024-08-16T09:50:15+02:00",
-          "tree_id": "d7855253a4704d541161cbe35b80e5a37e37df38",
-          "url": "https://github.com/equinor/ert/commit/f09843abd34dfe3c762d97f3d917dcf4232146ae"
-        },
-        "date": 1723794763436,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19508436979347613,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05142387113676318",
-            "extra": "mean: 5.125987289799991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026432136861438",
             "extra": "mean: 5.246989040000005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "2544c6ae1a4ad786a2394e3434eab85f21c429d3",
+          "message": "Allow empty field for ensemble smoother and manual",
+          "timestamp": "2024-08-21T13:36:18+02:00",
+          "tree_id": "4cb54ca7cce6d7a4cfc5207b9d10dd9576b0d3b5",
+          "url": "https://github.com/equinor/ert/commit/2544c6ae1a4ad786a2394e3434eab85f21c429d3"
+        },
+        "date": 1724240331446,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1920003354310372,
+            "unit": "iter/sec",
+            "range": "stddev: 0.028140050542555178",
+            "extra": "mean: 5.208324234200001 sec\nrounds: 5"
           }
         ]
       }
