@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724245294677,
+  "lastUpdate": 1724246768736,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "46119ce3cb3fb2ba6c3287d449be78296fc2adeb",
-          "message": "Allow user to inhibit tab changes during simulation",
-          "timestamp": "2024-08-16T13:01:39+02:00",
-          "tree_id": "83d1c933b0f8cadfc303048c21aed35d0644371a",
-          "url": "https://github.com/equinor/ert/commit/46119ce3cb3fb2ba6c3287d449be78296fc2adeb"
-        },
-        "date": 1723806243131,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1879867865271316,
-            "unit": "iter/sec",
-            "range": "stddev: 0.07542440018194917",
-            "extra": "mean: 5.3195228157999965 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.10678749491036586",
             "extra": "mean: 5.308316864200014 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "ef647361ed57212136108d61f4e2e5e6909d0449",
+          "message": "Rename variable state_kw -> response_key",
+          "timestamp": "2024-08-21T15:23:12+02:00",
+          "tree_id": "6bd9c267b0b752f46e565f03dd6bf3d9da8b02ef",
+          "url": "https://github.com/equinor/ert/commit/ef647361ed57212136108d61f4e2e5e6909d0449"
+        },
+        "date": 1724246768096,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1830888658708036,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04449695302251617",
+            "extra": "mean: 5.461828578400002 sec\nrounds: 5"
           }
         ]
       }
