@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724228984097,
+  "lastUpdate": 1724234937131,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "5bdb0ab985940ef30e78a81b87a1f26d9138eaec",
-          "message": "Hide suggestor location if location not specified",
-          "timestamp": "2024-08-16T08:24:12+02:00",
-          "tree_id": "2e5abc685d2f9b6bb519c876af04d02aa999fe08",
-          "url": "https://github.com/equinor/ert/commit/5bdb0ab985940ef30e78a81b87a1f26d9138eaec"
-        },
-        "date": 1723789599201,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19369500558595298,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03619927292463398",
-            "extra": "mean: 5.162755730200002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02240892795639569",
             "extra": "mean: 5.243129806799994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "a8f681abb8ae2a8cc6b33e7324339218ff20cd66",
+          "message": "Disallow QUEUE_SYSTEM GENERIC\n\nThis was previously accepted by the config system\nbecause GENERIC was a QueueSystem, again because it is a valid\nQueueSystem for usage together with QUEUE_OPTION.\n\nIf a user requested the GENERIC queue system, it would return\na LOCAL queue system. Not a very bad thing, but this was previously\na hard error so it should be kept like that.\n\nThus, QueueSystem is separated between the QueueSystem values\nthat are valid for QUEUE_SYSTEM and those that are valid\nfor QUEUE_OPTION.",
+          "timestamp": "2024-08-21T12:06:20+02:00",
+          "tree_id": "f68f13dbcdda35b9d449f6eff17f59e9673f05be",
+          "url": "https://github.com/equinor/ert/commit/a8f681abb8ae2a8cc6b33e7324339218ff20cd66"
+        },
+        "date": 1724234936288,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1899096511656133,
+            "unit": "iter/sec",
+            "range": "stddev: 0.046707604298810664",
+            "extra": "mean: 5.265661823200003 sec\nrounds: 5"
           }
         ]
       }
