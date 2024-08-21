@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724240332242,
+  "lastUpdate": 1724240938128,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "0da5c9c07cfe7932084ce4e59e73e50d5beaf42d",
-          "message": "Fix bug where std dev plots were clipped to 0-1 range\n\nDelete unused ImageOut schema\r\n---------\r\n\r\nCo-authored-by: Eivind Jahren <ejah@equinor.com>",
-          "timestamp": "2024-08-16T10:08:11+02:00",
-          "tree_id": "c46c10d261b1a363847939e0a2d22eaa82f7f755",
-          "url": "https://github.com/equinor/ert/commit/0da5c9c07cfe7932084ce4e59e73e50d5beaf42d"
-        },
-        "date": 1723795834372,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.195160780766407,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05684919878035646",
-            "extra": "mean: 5.123980320599998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028140050542555178",
             "extra": "mean: 5.208324234200001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "c6f30910854d902e118f2470a2ac53d55d0a14ef",
+          "message": "Fix bug where seed was not set for manual initialization",
+          "timestamp": "2024-08-21T13:45:55+02:00",
+          "tree_id": "e1895b5e92c14d1b2d9d02eb7aa9bc9b2ce469d3",
+          "url": "https://github.com/equinor/ert/commit/c6f30910854d902e118f2470a2ac53d55d0a14ef"
+        },
+        "date": 1724240937524,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1922075752406869,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04146376234096767",
+            "extra": "mean: 5.20270857559998 sec\nrounds: 5"
           }
         ]
       }
