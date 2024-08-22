@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724321098487,
+  "lastUpdate": 1724322523884,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "22f5f71aa63e3ad3842027442136dae1990dca01",
-          "message": "Remove repr and eq\n\nThese are provided by dataclass",
-          "timestamp": "2024-08-16T15:37:40+02:00",
-          "tree_id": "a9476dbf7752ba1e4295f58c361ba8ed7e810e6a",
-          "url": "https://github.com/equinor/ert/commit/22f5f71aa63e3ad3842027442136dae1990dca01"
-        },
-        "date": 1723815626417,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18950582834392632,
-            "unit": "iter/sec",
-            "range": "stddev: 0.024956801855298676",
-            "extra": "mean: 5.276882556800001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06117474612986903",
             "extra": "mean: 5.240466398599994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "9add0ee195f03b341acabe05d90821faf24670b3",
+          "message": "Add pyrightconfig.json to gitignore\n\nDeleted ignores that are no longer needed\nTheir origin is described below\n\nFrom when we compiled python modules\n*.o # object files\n*.so # compiled libs\n/src/build\n/cmake.sh # script that ran cmake\n/dist\n/_skbuild # scikit-build folder\n.libs # created by libtool when compiling/linking\n/compile_commands.json # c/c++ compilation database\n\nCompiled python code. Could not find after pip installing with and\nwithout -e in clean repo\n*.pyc\n\nOld source code management tool\n.svn/\n*/.svn/\n\nVisual Studio files (not vs code)\n*.user\n*.user.*\n\nNot used any more\n/test-data/Equinor\n\nProtobuf files\n*_pb2.py\n*_pb2.pyi",
+          "timestamp": "2024-08-22T12:26:13+02:00",
+          "tree_id": "d6a927f008a5058a3d5945e1889c7b277448ead2",
+          "url": "https://github.com/equinor/ert/commit/9add0ee195f03b341acabe05d90821faf24670b3"
+        },
+        "date": 1724322522996,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18991101041852407,
+            "unit": "iter/sec",
+            "range": "stddev: 0.07548567987325172",
+            "extra": "mean: 5.265624135200005 sec\nrounds: 5"
           }
         ]
       }
