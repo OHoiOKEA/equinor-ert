@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724246768736,
+  "lastUpdate": 1724309345060,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "5b268b413e6adac434938aec2abc1acd4ef3725e",
-          "message": "Reverse ensemble order for plotting (#8486)\n\n* Reverse ensemble order for plotting\r\n* update_snapshot\r\n\r\n---------\r\n\r\nCo-authored-by: Eivind Jahren <ejah@equinor.com>",
-          "timestamp": "2024-08-16T11:03:10Z",
-          "tree_id": "be24100d2a0846050702d2b3f0d2f4d2b94e032d",
-          "url": "https://github.com/equinor/ert/commit/5b268b413e6adac434938aec2abc1acd4ef3725e"
-        },
-        "date": 1723806329365,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1928743043071339,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0424217562717542",
-            "extra": "mean: 5.184723821 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04449695302251617",
             "extra": "mean: 5.461828578400002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "20399448cc0ee2c23c2061dbfc773f57025a6861",
+          "message": "Fix broken ert test_run\n\nThe commit 4013764 introduced a regression such that `ert test_run`\nwould fail on any configs that sets a queue system other than \"local\".\n\nThis was due to the function `create_local_copy()` not having been\nupdated to yield the correct QueueOptions object after refactoring.",
+          "timestamp": "2024-08-22T08:46:35+02:00",
+          "tree_id": "f4fe62d65796edf18fe8210274b2cf903a42bb01",
+          "url": "https://github.com/equinor/ert/commit/20399448cc0ee2c23c2061dbfc773f57025a6861"
+        },
+        "date": 1724309344643,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1884228711660813,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03866829174565568",
+            "extra": "mean: 5.307211347600003 sec\nrounds: 5"
           }
         ]
       }
