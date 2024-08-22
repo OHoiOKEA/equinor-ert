@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724318513591,
+  "lastUpdate": 1724321098487,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "5d016d9f2f6b9be425e590890f84ff6ff04ae095",
-          "message": "Have GUI output callback error  on realization hover",
-          "timestamp": "2024-08-16T14:46:41+02:00",
-          "tree_id": "f0fb095e95d02c61422533fb22eeed4c7ad6a84f",
-          "url": "https://github.com/equinor/ert/commit/5d016d9f2f6b9be425e590890f84ff6ff04ae095"
-        },
-        "date": 1723812545006,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18996671920235547,
-            "unit": "iter/sec",
-            "range": "stddev: 0.033584059351694874",
-            "extra": "mean: 5.264079961999999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04486527948314862",
             "extra": "mean: 5.20433428259999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "3c36be5b2ef4dfc544aa30eec13b5b41e163c57b",
+          "message": "Better handling of faulty Eclipse versions",
+          "timestamp": "2024-08-22T13:02:21+03:00",
+          "tree_id": "ae7667d753af3340343f60931d5392ef3b9fea9a",
+          "url": "https://github.com/equinor/ert/commit/3c36be5b2ef4dfc544aa30eec13b5b41e163c57b"
+        },
+        "date": 1724321097473,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19082271002961737,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06117474612986903",
+            "extra": "mean: 5.240466398599994 sec\nrounds: 5"
           }
         ]
       }
