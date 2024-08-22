@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724322523884,
+  "lastUpdate": 1724358273859,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "6b6ef5c5e1a31bca23be6ad6443c0b49e9ef524d",
-          "message": "Remove hide details button in rundialog\n\n* Remove hide details button in rundialog\r\n* Remove test_that_gui_runs_a_minimal_example",
-          "timestamp": "2024-08-19T08:38:05+02:00",
-          "tree_id": "1c780bba0ecdc02617c990f64bdc0d2c1f4c2327",
-          "url": "https://github.com/equinor/ert/commit/6b6ef5c5e1a31bca23be6ad6443c0b49e9ef524d"
-        },
-        "date": 1724049635571,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19352482532693335,
-            "unit": "iter/sec",
-            "range": "stddev: 0.012595093869435562",
-            "extra": "mean: 5.167295711599991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.07548567987325172",
             "extra": "mean: 5.265624135200005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "fbfd095bd1018563d07ae73526cec562e918c4bd",
+          "message": "Remove redudant experiment_id from ensemble",
+          "timestamp": "2024-08-22T22:22:03+02:00",
+          "tree_id": "264995c28865955cf767f2df4f5514c8ec5950fa",
+          "url": "https://github.com/equinor/ert/commit/fbfd095bd1018563d07ae73526cec562e918c4bd"
+        },
+        "date": 1724358273426,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1929940172681822,
+            "unit": "iter/sec",
+            "range": "stddev: 0.048453354323046746",
+            "extra": "mean: 5.1815077697999925 sec\nrounds: 5"
           }
         ]
       }
