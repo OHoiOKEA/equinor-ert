@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724358273859,
+  "lastUpdate": 1724401632789,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "050498ea76a63fb7085d49f19690df2e936bf20c",
-          "message": "Use CSV_EXPORT instead of 2 for export tool",
-          "timestamp": "2024-08-19T08:58:23+02:00",
-          "tree_id": "215579f712d87db47a0a628219bd7f0abedc4c8a",
-          "url": "https://github.com/equinor/ert/commit/050498ea76a63fb7085d49f19690df2e936bf20c"
-        },
-        "date": 1724050844927,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1925660238725768,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03985177011057388",
-            "extra": "mean: 5.193024085399986 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.048453354323046746",
             "extra": "mean: 5.1815077697999925 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "4f1d77b787a049c359f3346239e2e78fa0175af2",
+          "message": "Fix eclipse version config validation on komodo tests",
+          "timestamp": "2024-08-23T10:24:44+02:00",
+          "tree_id": "b5dfb583cf6e652cf90decf1805e8f0bc78f7952",
+          "url": "https://github.com/equinor/ert/commit/4f1d77b787a049c359f3346239e2e78fa0175af2"
+        },
+        "date": 1724401632210,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.190475207573326,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04054070964534557",
+            "extra": "mean: 5.2500270914 sec\nrounds: 5"
           }
         ]
       }
