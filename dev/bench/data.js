@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724412475194,
+  "lastUpdate": 1724412570662,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "02f996b70594a9af4debda386efae8f8735cc54e",
-          "message": "Fix job label not updating when selecting same index\n\n* Fix job label not updating when same index\r\n* Place job_label with job_overview\r\n* Update tests accordingly",
-          "timestamp": "2024-08-20T08:27:36+02:00",
-          "tree_id": "ca246b748ed0b81124436456e897c8f80c1dd46f",
-          "url": "https://github.com/equinor/ert/commit/02f996b70594a9af4debda386efae8f8735cc54e"
-        },
-        "date": 1724135409166,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.196034723824157,
-            "unit": "iter/sec",
-            "range": "stddev: 0.008699792571930456",
-            "extra": "mean: 5.1011370867999855 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03993206294543141",
             "extra": "mean: 5.145505158399999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "8b9694f6edc0c2aed90c72ebcd5974bf0219fd6a",
+          "message": "Mute asserted warnings in schema deprecations\n\nSeemingly pytest also catches the warnings that warnings.catch_warnings() catch,\nso let us use pytest.warns instead. Otherwise these expected warnings are hard to\nmute.",
+          "timestamp": "2024-08-23T13:27:03+02:00",
+          "tree_id": "537a4dc24b6098e5e4ed20e14b17637e4e4e7911",
+          "url": "https://github.com/equinor/ert/commit/8b9694f6edc0c2aed90c72ebcd5974bf0219fd6a"
+        },
+        "date": 1724412570017,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19160433435911742,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05289205546458976",
+            "extra": "mean: 5.219088614799989 sec\nrounds: 5"
           }
         ]
       }
