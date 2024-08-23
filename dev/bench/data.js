@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724412570662,
+  "lastUpdate": 1724414612380,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "96c6d320ce40cbd3c71141ab032900bc539d322d",
-          "message": "Fix bug where template file was interpreted as parameters file",
-          "timestamp": "2024-08-20T10:14:26+02:00",
-          "tree_id": "f0eb998ca138ff8764f2f2269dc1b3df7d1bdb4e",
-          "url": "https://github.com/equinor/ert/commit/96c6d320ce40cbd3c71141ab032900bc539d322d"
-        },
-        "date": 1724141828086,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19543517938766294,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02127247516730854",
-            "extra": "mean: 5.116786052200007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05289205546458976",
             "extra": "mean: 5.219088614799989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "31d3aa260ed19c96b40529618e56f66ea245ce4e",
+          "message": "Do not run gui tests in parallel",
+          "timestamp": "2024-08-23T14:01:00+02:00",
+          "tree_id": "a8f9cc40b8f150bc7e3159d103cf945127407454",
+          "url": "https://github.com/equinor/ert/commit/31d3aa260ed19c96b40529618e56f66ea245ce4e"
+        },
+        "date": 1724414611922,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19243725145698523,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06210454746643151",
+            "extra": "mean: 5.196499079199986 sec\nrounds: 5"
           }
         ]
       }
