@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724402234201,
+  "lastUpdate": 1724408881698,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "ccc2479f40c20761aad5fb854f51ba2107e7f34a",
-          "message": "Upgrade pre-commits, ruff 0.5.0 -> 0.6.1",
-          "timestamp": "2024-08-19T13:06:47+02:00",
-          "tree_id": "e82754f9272cbf2143f86d70b8cfaa49ddd7e583",
-          "url": "https://github.com/equinor/ert/commit/ccc2479f40c20761aad5fb854f51ba2107e7f34a"
-        },
-        "date": 1724065748304,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1936534039184268,
-            "unit": "iter/sec",
-            "range": "stddev: 0.007871007668487823",
-            "extra": "mean: 5.163864821200008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.042858979653875674",
             "extra": "mean: 5.234454560599988 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "357dcef3ad39d4a9ef7b3f7c9ab107d0d9ca32fd",
+          "message": "Remove unused infer iteration from rft csv export",
+          "timestamp": "2024-08-23T12:25:34+02:00",
+          "tree_id": "f7b8b689fff9f8f756760c0960539c6a0284b9ef",
+          "url": "https://github.com/equinor/ert/commit/357dcef3ad39d4a9ef7b3f7c9ab107d0d9ca32fd"
+        },
+        "date": 1724408880834,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19466536883483318,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03897615889675194",
+            "extra": "mean: 5.137020549599993 sec\nrounds: 5"
           }
         ]
       }
