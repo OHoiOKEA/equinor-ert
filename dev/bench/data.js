@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724414612380,
+  "lastUpdate": 1724657343622,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "7f0d9b8090b7d4c1c1c962a08205fad4cd21ce5e",
-          "message": "Simplify creating deprecation warnings",
-          "timestamp": "2024-08-20T09:40:53Z",
-          "tree_id": "f1e0a86dc8bb314c828f3def9de3b3b1e1d30800",
-          "url": "https://github.com/equinor/ert/commit/7f0d9b8090b7d4c1c1c962a08205fad4cd21ce5e"
-        },
-        "date": 1724146998508,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19153088942957391,
-            "unit": "iter/sec",
-            "range": "stddev: 0.018247041324481135",
-            "extra": "mean: 5.221089939999996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06210454746643151",
             "extra": "mean: 5.196499079199986 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "db9f1cd9c12b66dd10f1fac3d831f8d436009def",
+          "message": "Change style for disabled simulation modes",
+          "timestamp": "2024-08-26T09:26:36+02:00",
+          "tree_id": "1430e7c6e5eec46fda0a984ac82166b22d41c4e2",
+          "url": "https://github.com/equinor/ert/commit/db9f1cd9c12b66dd10f1fac3d831f8d436009def"
+        },
+        "date": 1724657343189,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1919516696309861,
+            "unit": "iter/sec",
+            "range": "stddev: 0.048641524513337746",
+            "extra": "mean: 5.20964470859999 sec\nrounds: 5"
           }
         ]
       }
