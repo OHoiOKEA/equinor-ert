@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724657343622,
+  "lastUpdate": 1724657768578,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "7aeb428888741a0c172183aa04cd561f6f5fa12e",
-          "message": "Remove facade from base run model",
-          "timestamp": "2024-08-20T14:57:02+02:00",
-          "tree_id": "a07a0699f5a7b2002264f11e24facd846efedfc8",
-          "url": "https://github.com/equinor/ert/commit/7aeb428888741a0c172183aa04cd561f6f5fa12e"
-        },
-        "date": 1724158764744,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19261128648414047,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02581026528619214",
-            "extra": "mean: 5.191803752800018 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.048641524513337746",
             "extra": "mean: 5.20964470859999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "78c736f97c41ea9733004dcbf7e6c79960964ddf",
+          "message": "Fix pytests argument in testkomodo",
+          "timestamp": "2024-08-26T09:33:46+02:00",
+          "tree_id": "ca1104445ab005d684ef89e91c006f450257bfaf",
+          "url": "https://github.com/equinor/ert/commit/78c736f97c41ea9733004dcbf7e6c79960964ddf"
+        },
+        "date": 1724657768143,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19115175866484677,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04380803657501059",
+            "extra": "mean: 5.231445459800011 sec\nrounds: 5"
           }
         ]
       }
