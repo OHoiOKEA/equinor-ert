@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724667775045,
+  "lastUpdate": 1724676641741,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "ddf23d1210fce1ecce771bd3be49cdd18acce389",
-          "message": "Allow users without ert-configuration to run ert with FLOW simulator.",
-          "timestamp": "2024-08-20T16:30:33+03:00",
-          "tree_id": "74b716c015f7bdf08a3ad5ccdb939a319f2c760d",
-          "url": "https://github.com/equinor/ert/commit/ddf23d1210fce1ecce771bd3be49cdd18acce389"
-        },
-        "date": 1724160780851,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1860551035452831,
-            "unit": "iter/sec",
-            "range": "stddev: 0.010912232128954709",
-            "extra": "mean: 5.374751785599983 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04029767012125265",
             "extra": "mean: 5.151165563400002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "802c89786640d701549a7381af0562d0b68667b4",
+          "message": "Mute possible warnings when randomly generating config files\n\nWe can't say upfront of the randomly generated config files will trigger\nConfigWarning, so mute all instead of doing pytest.warns.",
+          "timestamp": "2024-08-26T14:48:16+02:00",
+          "tree_id": "0227f413e5f18936302c9a146d6806baf7726b27",
+          "url": "https://github.com/equinor/ert/commit/802c89786640d701549a7381af0562d0b68667b4"
+        },
+        "date": 1724676641326,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18912422402967774,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04609406521550082",
+            "extra": "mean: 5.287529956199995 sec\nrounds: 5"
           }
         ]
       }
