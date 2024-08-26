@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724676641741,
+  "lastUpdate": 1724681678026,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "37f08712d6cac2ff997674848664498603ba1388",
-          "message": "Remove skipped out-of-memory test\n\nThis test has been moved elsewhere where it is run regularly. Should\nnot keep a test in the repository that is skipped by default, as it is likely\nto not be able to catch regressions",
-          "timestamp": "2024-08-20T15:39:54+02:00",
-          "tree_id": "5a7fe4c3a0d5799b724172c077ee72a0090154b2",
-          "url": "https://github.com/equinor/ert/commit/37f08712d6cac2ff997674848664498603ba1388"
-        },
-        "date": 1724161337009,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19440999580754972,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029318460219096443",
-            "extra": "mean: 5.143768435599986 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04609406521550082",
             "extra": "mean: 5.287529956199995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "4bbfd5c00899e8c3f9faca9bff264bad0e6b3af5",
+          "message": "Use asyncio.Lock for forward_model_ok\n\nThis makes sure that we will not run more than 1 internalization job at a time.",
+          "timestamp": "2024-08-26T16:12:07+02:00",
+          "tree_id": "f5835ce6a6bf54b2ba329548be1a5312d8ec2a29",
+          "url": "https://github.com/equinor/ert/commit/4bbfd5c00899e8c3f9faca9bff264bad0e6b3af5"
+        },
+        "date": 1724681677191,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.192125815960646,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03596978480103256",
+            "extra": "mean: 5.204922591999997 sec\nrounds: 5"
           }
         ]
       }
