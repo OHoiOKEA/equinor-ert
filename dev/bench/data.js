@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724657768578,
+  "lastUpdate": 1724667775045,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "a36ddf3986c71bb7518b8cd26f969163502665de",
-          "message": "Add suggestion on empty template file",
-          "timestamp": "2024-08-20T15:05:03+02:00",
-          "tree_id": "5f443a6f0b7f5344aa83723a4c3fabbd38a5f1be",
-          "url": "https://github.com/equinor/ert/commit/a36ddf3986c71bb7518b8cd26f969163502665de"
-        },
-        "date": 1724159250133,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19063884230909828,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03160374953173058",
-            "extra": "mean: 5.245520733799981 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04380803657501059",
             "extra": "mean: 5.231445459800011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "86c523598d1100cb091bda1a498b5b31286fb1ce",
+          "message": "Add gendata output file for each report step to the output files manifest.",
+          "timestamp": "2024-08-26T12:20:24+02:00",
+          "tree_id": "010e9fd61dbc228ed8e53884c455f3d7a4206a52",
+          "url": "https://github.com/equinor/ert/commit/86c523598d1100cb091bda1a498b5b31286fb1ce"
+        },
+        "date": 1724667774434,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19413082101363383,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04029767012125265",
+            "extra": "mean: 5.151165563400002 sec\nrounds: 5"
           }
         ]
       }
