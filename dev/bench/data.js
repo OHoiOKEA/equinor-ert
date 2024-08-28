@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724681678026,
+  "lastUpdate": 1724834563618,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "e79cd87c55530fd9f452083adfb66f2d9500cca4",
-          "message": "Remove websockets communication between scheduler and ensemble evaluator\n\nIt is replaced by two message queues, which are provided in LegacyEnsemble.evaluate function\nby the ensemble evaluator and passed over to scheduler:\n- ensemble_evaluator_queue: responsible for providing CloudEvent (representing realization and driver events) for evaluator\n- manifest_queue: responsible for providing CloudEvent (representing notification manifest checksum Event) for scheduler",
-          "timestamp": "2024-08-20T15:45:06+02:00",
-          "tree_id": "ebc432f7dbd2aaf76ee15a548ea30868895950f2",
-          "url": "https://github.com/equinor/ert/commit/e79cd87c55530fd9f452083adfb66f2d9500cca4"
-        },
-        "date": 1724161645824,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19685168066127498,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03693948324977196",
-            "extra": "mean: 5.079966788400003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03596978480103256",
             "extra": "mean: 5.204922591999997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "c6c77d185831eae8351d5bb683c427485a08a15d",
+          "message": "Expose run information as env variables in the forward-model step environment",
+          "timestamp": "2024-08-28T10:40:11+02:00",
+          "tree_id": "a65290933b39edcfeb1977693b7dfbb833a50563",
+          "url": "https://github.com/equinor/ert/commit/c6c77d185831eae8351d5bb683c427485a08a15d"
+        },
+        "date": 1724834562754,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19571807942003977,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03950920264409892",
+            "extra": "mean: 5.109390011200003 sec\nrounds: 5"
           }
         ]
       }
