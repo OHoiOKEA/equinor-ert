@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724834563618,
+  "lastUpdate": 1724852752385,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "4013764fbfffbad4acbdd8e4893476ecc23467c9",
-          "message": "Refactor queue options to use Pydantic dataclasses\n\nThis offloads the validation of the queue option objects\nto a (pretty) standard library. This gives us a single point\nof definition for which arguments each queue system can take, with\nstrict typing. The translation of queue-options to driver\narguments are is also the responsibility of the dataclass.\n\nMinor changes to queue options incurred in this:\n* If a string option has a nonempty string as default, it\n  will not be possible to set it empty. This is not a problem\n  as of now, as the need is not there. To be solved later\n  should the problem occur.\n* Some error messages are altered, but they still convey the\n  same meaning. Eg. when a string with characters is submitted\n  for a float, we don't need to say that it is not positive.\n\nA test integrating QueueOptions with driver initialization\nhas been added. This should have been present before, but testing\nrevealed it was not.\n\nType changes in driver arguments (these were inproperly typed due to\nreasons..)\n* squeue_timeout and max_runtime in the Slurm driver are now floats.\n* keep_qsub_output in the OpenPBSDriver is now a bool",
-          "timestamp": "2024-08-20T16:04:26+02:00",
-          "tree_id": "790131008b77df27ea31e8aa92b5126970bd25ec",
-          "url": "https://github.com/equinor/ert/commit/4013764fbfffbad4acbdd8e4893476ecc23467c9"
-        },
-        "date": 1724162808489,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18864668300753976,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022322628574559463",
-            "extra": "mean: 5.300914832200005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03950920264409892",
             "extra": "mean: 5.109390011200003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "26d537642ccd35e1711e757ddd4b48303cc66ef0",
+          "message": "Replace json with orjson\n\nstdlibs json is really slow.\nIt is especially noticable in _ert_forward_model_runner as the status file is\nupdated quite often.",
+          "timestamp": "2024-08-28T15:43:15+02:00",
+          "tree_id": "b9b20e99e597b3960529e86e5d59a8fe06988539",
+          "url": "https://github.com/equinor/ert/commit/26d537642ccd35e1711e757ddd4b48303cc66ef0"
+        },
+        "date": 1724852751531,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1906112857130125,
+            "unit": "iter/sec",
+            "range": "stddev: 0.07462418355309468",
+            "extra": "mean: 5.24627907659999 sec\nrounds: 5"
           }
         ]
       }
