@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724940717642,
+  "lastUpdate": 1724962319660,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "a8f681abb8ae2a8cc6b33e7324339218ff20cd66",
-          "message": "Disallow QUEUE_SYSTEM GENERIC\n\nThis was previously accepted by the config system\nbecause GENERIC was a QueueSystem, again because it is a valid\nQueueSystem for usage together with QUEUE_OPTION.\n\nIf a user requested the GENERIC queue system, it would return\na LOCAL queue system. Not a very bad thing, but this was previously\na hard error so it should be kept like that.\n\nThus, QueueSystem is separated between the QueueSystem values\nthat are valid for QUEUE_SYSTEM and those that are valid\nfor QUEUE_OPTION.",
-          "timestamp": "2024-08-21T12:06:20+02:00",
-          "tree_id": "f68f13dbcdda35b9d449f6eff17f59e9673f05be",
-          "url": "https://github.com/equinor/ert/commit/a8f681abb8ae2a8cc6b33e7324339218ff20cd66"
-        },
-        "date": 1724234936288,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1899096511656133,
-            "unit": "iter/sec",
-            "range": "stddev: 0.046707604298810664",
-            "extra": "mean: 5.265661823200003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025456053523523578",
             "extra": "mean: 5.294311434399998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "24488753f27cab17336be634f8e31f58209dab5c",
+          "message": "Remove children_list as it shadows children\n\nRemove unused RealStatusColorHint\nFix get_successful_realizations",
+          "timestamp": "2024-08-29T22:09:23+02:00",
+          "tree_id": "9415a5cea9b64921f5c9b2758ec507f26848d9fe",
+          "url": "https://github.com/equinor/ert/commit/24488753f27cab17336be634f8e31f58209dab5c"
+        },
+        "date": 1724962319118,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1887764592540372,
+            "unit": "iter/sec",
+            "range": "stddev: 0.24204838787617938",
+            "extra": "mean: 5.297270665799999 sec\nrounds: 5"
           }
         ]
       }
