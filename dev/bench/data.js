@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724852752385,
+  "lastUpdate": 1724916802827,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "e32805c6fb334d5015273e21fcdf336aded8d5a2",
-          "message": "Allow empty field for target ensemble format",
-          "timestamp": "2024-08-21T08:24:03+02:00",
-          "tree_id": "6d658133806dd2cbe007cb580606c8cc6607c7f6",
-          "url": "https://github.com/equinor/ert/commit/e32805c6fb334d5015273e21fcdf336aded8d5a2"
-        },
-        "date": 1724221592381,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19177695402043884,
-            "unit": "iter/sec",
-            "range": "stddev: 0.045694413664982135",
-            "extra": "mean: 5.214390879799998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.07462418355309468",
             "extra": "mean: 5.24627907659999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "51f40c739b60dc8ca479fa1f3b4dbb46e7a7ed2d",
+          "message": "Combine rss and oom_score checker in fm_runner\n\nCalling process.children is noticeably slow when the running quick\nforward model steps.\nCombined the two so that children only gets called once.",
+          "timestamp": "2024-08-29T09:30:52+02:00",
+          "tree_id": "460ea3615de64d712f001af9800c632137ced259",
+          "url": "https://github.com/equinor/ert/commit/51f40c739b60dc8ca479fa1f3b4dbb46e7a7ed2d"
+        },
+        "date": 1724916801996,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19319147184023888,
+            "unit": "iter/sec",
+            "range": "stddev: 0.034117845452463866",
+            "extra": "mean: 5.1762119231999915 sec\nrounds: 5"
           }
         ]
       }
