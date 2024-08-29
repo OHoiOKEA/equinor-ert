@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724916802827,
+  "lastUpdate": 1724940717642,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "b1c50621bb722b39d9ca6b4381b76d52ec2477be",
-          "message": "Sort exports through __all__\n\nSorting done with archived tool asort, which is getting into ruff",
-          "timestamp": "2024-08-21T10:27:17+02:00",
-          "tree_id": "6e3197970b55f1bedb4561e334e351e6e3506be5",
-          "url": "https://github.com/equinor/ert/commit/b1c50621bb722b39d9ca6b4381b76d52ec2477be"
-        },
-        "date": 1724228983668,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19072577579579778,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02240892795639569",
-            "extra": "mean: 5.243129806799994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.034117845452463866",
             "extra": "mean: 5.1762119231999915 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "3bbf85147c2a6271b9f915ac52809c6ce384c055",
+          "message": "Fix test that could give false positive\n\nAdded the expected memory increase to the asserts in the test.\nWithout the increase the test would randomly pass due to variance in\nmemory used in each run even if we did not manage to read the rss of the\nprocess' grandchildren.",
+          "timestamp": "2024-08-29T16:09:29+02:00",
+          "tree_id": "fd3abb0555c6dc36bf41dda7f6e6584d59d9846d",
+          "url": "https://github.com/equinor/ert/commit/3bbf85147c2a6271b9f915ac52809c6ce384c055"
+        },
+        "date": 1724940717122,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18888197500102855,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025456053523523578",
+            "extra": "mean: 5.294311434399998 sec\nrounds: 5"
           }
         ]
       }
