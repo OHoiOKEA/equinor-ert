@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725022718802,
+  "lastUpdate": 1725026347959,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "c6f30910854d902e118f2470a2ac53d55d0a14ef",
-          "message": "Fix bug where seed was not set for manual initialization",
-          "timestamp": "2024-08-21T13:45:55+02:00",
-          "tree_id": "e1895b5e92c14d1b2d9d02eb7aa9bc9b2ce469d3",
-          "url": "https://github.com/equinor/ert/commit/c6f30910854d902e118f2470a2ac53d55d0a14ef"
-        },
-        "date": 1724240937524,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1922075752406869,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04146376234096767",
-            "extra": "mean: 5.20270857559998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.037374244479541595",
             "extra": "mean: 5.279504387799989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "26b93a2a9299aee6d552c9f614550f62fae9b9a0",
+          "message": "Use pydantic for messages sent over websockets\n\nThis replaces the cloudevents library we used before.\nThis was done both because cloudevents does not give any benefit to us\nand because the python cloudevents library is quite slow.",
+          "timestamp": "2024-08-30T15:56:44+02:00",
+          "tree_id": "febd025adb61c6188d02940802d35b21ffa18813",
+          "url": "https://github.com/equinor/ert/commit/26b93a2a9299aee6d552c9f614550f62fae9b9a0"
+        },
+        "date": 1725026347516,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19779383298362974,
+            "unit": "iter/sec",
+            "range": "stddev: 0.09753597187148991",
+            "extra": "mean: 5.055769357999975 sec\nrounds: 5"
           }
         ]
       }
