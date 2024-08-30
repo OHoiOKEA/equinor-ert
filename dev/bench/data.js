@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725003852584,
+  "lastUpdate": 1725011915584,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "749835abb317826d3b5f78497e172a8bdf32863d",
-          "message": "Clarify docs on gen data RESULT_FILE",
-          "timestamp": "2024-08-21T12:27:00+02:00",
-          "tree_id": "9383892477058e4f92b4b6bcf09888f968d0991e",
-          "url": "https://github.com/equinor/ert/commit/749835abb317826d3b5f78497e172a8bdf32863d"
-        },
-        "date": 1724236175835,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1848200498483121,
-            "unit": "iter/sec",
-            "range": "stddev: 0.26100865955485103",
-            "extra": "mean: 5.41066838160001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.033610311756791376",
             "extra": "mean: 5.127463965200002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "09cdd6b536775b52347904a4d97fd090a29695fb",
+          "message": "Migrate from websockets legacy functionality",
+          "timestamp": "2024-08-30T11:56:06+02:00",
+          "tree_id": "e483bdaabbc6b0887624c1f80fc5f78461e32b6e",
+          "url": "https://github.com/equinor/ert/commit/09cdd6b536775b52347904a4d97fd090a29695fb"
+        },
+        "date": 1725011914989,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19422496097940256,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03465455722941815",
+            "extra": "mean: 5.148668816599991 sec\nrounds: 5"
           }
         ]
       }
