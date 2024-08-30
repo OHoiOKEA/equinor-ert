@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725016729545,
+  "lastUpdate": 1725022718802,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "2544c6ae1a4ad786a2394e3434eab85f21c429d3",
-          "message": "Allow empty field for ensemble smoother and manual",
-          "timestamp": "2024-08-21T13:36:18+02:00",
-          "tree_id": "4cb54ca7cce6d7a4cfc5207b9d10dd9576b0d3b5",
-          "url": "https://github.com/equinor/ert/commit/2544c6ae1a4ad786a2394e3434eab85f21c429d3"
-        },
-        "date": 1724240331446,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1920003354310372,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028140050542555178",
-            "extra": "mean: 5.208324234200001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03349155904741177",
             "extra": "mean: 5.245291661599998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "c158c6a660e5ff730b2dd9b344fef7119aa6c3af",
+          "message": "Increase reruns for flaky test_repeated_submit_same_iens to 10",
+          "timestamp": "2024-08-30T14:56:13+02:00",
+          "tree_id": "1c1ea45846068dd72def370d45fe25c8677d9011",
+          "url": "https://github.com/equinor/ert/commit/c158c6a660e5ff730b2dd9b344fef7119aa6c3af"
+        },
+        "date": 1725022718316,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18941171870428314,
+            "unit": "iter/sec",
+            "range": "stddev: 0.037374244479541595",
+            "extra": "mean: 5.279504387799989 sec\nrounds: 5"
           }
         ]
       }
