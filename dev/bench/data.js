@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1724962319660,
+  "lastUpdate": 1725003852584,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "784c5d638d4794f48930a630cc1baca69de9c712",
-          "message": "Mitigate specific LSF test flakyness\n\nTesting that it is always possible to kill a submitted realization\ninvolves some flakyness, and we hereby give up to make a perfect\nsolution for this on a busy system.\n\nTo provoke flakyness, add @pytest.mark.repeat(100) to the\nfunction changed in this PR and then run all integration_tests on\nall available cpu cores. With this change, that procedure will pass,\nwithout, it seems to always fail.\n\nIf the system is not busy, this test should never be flaky, but that\ncondition is hard to add programmatically.",
-          "timestamp": "2024-08-21T12:09:20+02:00",
-          "tree_id": "00ff6d7cd30afb2b5e13a894d8b519f9bc8451f1",
-          "url": "https://github.com/equinor/ert/commit/784c5d638d4794f48930a630cc1baca69de9c712"
-        },
-        "date": 1724235106562,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.195497666890512,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03268915047981502",
-            "extra": "mean: 5.115150558600004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.24204838787617938",
             "extra": "mean: 5.297270665799999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cc2f1a87cb9a4955be55213df3c39a9a0e59859e",
+          "message": "Add get_experiment_by_name to storage\n\nExperiment names are unique and its easier to get by name than by uuid.\r\nAlso adding get_ensemble_by_name to experiment class because ensembles names\r\nare unique within an experiment.",
+          "timestamp": "2024-08-30T09:41:34+02:00",
+          "tree_id": "7aee0275ac5ced2fa089b8b62c7fb1d4de2733e5",
+          "url": "https://github.com/equinor/ert/commit/cc2f1a87cb9a4955be55213df3c39a9a0e59859e"
+        },
+        "date": 1725003851576,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1950281867970171,
+            "unit": "iter/sec",
+            "range": "stddev: 0.033610311756791376",
+            "extra": "mean: 5.127463965200002 sec\nrounds: 5"
           }
         ]
       }
