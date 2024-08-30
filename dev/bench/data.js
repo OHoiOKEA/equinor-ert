@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725011915584,
+  "lastUpdate": 1725016694908,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "9050ca58fe0e152924e247b216d7bea209249ac8",
-          "message": "Write eclbase to runpath_list if present",
-          "timestamp": "2024-08-21T13:01:58+02:00",
-          "tree_id": "3f5053cecf134ab2d23a03ae57407492cd6c3891",
-          "url": "https://github.com/equinor/ert/commit/9050ca58fe0e152924e247b216d7bea209249ac8"
-        },
-        "date": 1724238266161,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19485359908618008,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04599446738247961",
-            "extra": "mean: 5.1320581436 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03465455722941815",
             "extra": "mean: 5.148668816599991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "f4ffb68e3bf0c4f645bb254d64f79b2143ee2d59",
+          "message": "Create and provide asyncio.Lock directly in scheduler.execute\n\nTo make sure that the forward_model_ok_lock is assigned to the correct running loop, this creates and provide the lock to the job directly.",
+          "timestamp": "2024-08-30T13:15:48+02:00",
+          "tree_id": "1f9a156c4a300c1c2f0f74299f8b191844e1d9e3",
+          "url": "https://github.com/equinor/ert/commit/f4ffb68e3bf0c4f645bb254d64f79b2143ee2d59"
+        },
+        "date": 1725016694296,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19242727673468923,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01360115239727486",
+            "extra": "mean: 5.196768446600004 sec\nrounds: 5"
           }
         ]
       }
