@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725016694908,
+  "lastUpdate": 1725016729545,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "e41d78cfb2e6b1b7bc641a03a9a522740cbc7961",
-          "message": "Rename test_migrate_gen_kw->test_migrate_responses\n\nRename test_migrate_gen_kw->test_migrate_responses",
-          "timestamp": "2024-08-21T13:11:13+02:00",
-          "tree_id": "f69f3e3a30bc6be624dca88d059160e8a717b808",
-          "url": "https://github.com/equinor/ert/commit/e41d78cfb2e6b1b7bc641a03a9a522740cbc7961"
-        },
-        "date": 1724238818389,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1905854943428658,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026432136861438",
-            "extra": "mean: 5.246989040000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01360115239727486",
             "extra": "mean: 5.196768446600004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "e68b3be8adc927961d124ab193d6324dfc2a35b3",
+          "message": "Change driver `retries` param to `total_attempts`",
+          "timestamp": "2024-08-30T13:16:20+02:00",
+          "tree_id": "4a7eca5a50413202f959b2b8b7530f208a31f7bf",
+          "url": "https://github.com/equinor/ert/commit/e68b3be8adc927961d124ab193d6324dfc2a35b3"
+        },
+        "date": 1725016728582,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19064716788216976,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03349155904741177",
+            "extra": "mean: 5.245291661599998 sec\nrounds: 5"
           }
         ]
       }
