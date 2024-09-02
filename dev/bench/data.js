@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725026347959,
+  "lastUpdate": 1725259683640,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "bdc92ab9ca36583c740efec111dd35c22d87e224",
-          "message": "Set progress_bar_label to Failed on error",
-          "timestamp": "2024-08-21T14:19:04+02:00",
-          "tree_id": "4992825908b94aeacf103a1203e41c7d20ad7d71",
-          "url": "https://github.com/equinor/ert/commit/bdc92ab9ca36583c740efec111dd35c22d87e224"
-        },
-        "date": 1724242916307,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.194626714616028,
-            "unit": "iter/sec",
-            "range": "stddev: 0.021720356449967684",
-            "extra": "mean: 5.138040797599979 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.09753597187148991",
             "extra": "mean: 5.055769357999975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "e9c4a9247782ec13197cf7581e68598bfc88fdea",
+          "message": "Add test for autoscaling",
+          "timestamp": "2024-09-02T08:45:38+02:00",
+          "tree_id": "7af47da2b2b8ba3b6a8a15c6d85e446e823345bb",
+          "url": "https://github.com/equinor/ert/commit/e9c4a9247782ec13197cf7581e68598bfc88fdea"
+        },
+        "date": 1725259683186,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19339122017320384,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04582009257908865",
+            "extra": "mean: 5.170865560000015 sec\nrounds: 5"
           }
         ]
       }
