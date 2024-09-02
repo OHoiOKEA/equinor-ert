@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725283462905,
+  "lastUpdate": 1725284445243,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "04d8d617b26282d31ebd0b0336f38bedf2489374",
-          "message": "Add test for * in csv_export",
-          "timestamp": "2024-08-22T11:19:27+02:00",
-          "tree_id": "8e51e553135b1073f9822f19b441b50c7fcacedc",
-          "url": "https://github.com/equinor/ert/commit/04d8d617b26282d31ebd0b0336f38bedf2489374"
-        },
-        "date": 1724318513121,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19214753428567588,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04486527948314862",
-            "extra": "mean: 5.20433428259999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.034715315897166324",
             "extra": "mean: 5.177063819000011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "266007da8db36ccb4b987916d291a159ed2e4626",
+          "message": "Make tests runnable from git worktree",
+          "timestamp": "2024-09-02T15:38:17+02:00",
+          "tree_id": "b48efe89eaaef717574bdcfa733df69c23745b54",
+          "url": "https://github.com/equinor/ert/commit/266007da8db36ccb4b987916d291a159ed2e4626"
+        },
+        "date": 1725284444706,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1889624970355442,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06552830614688263",
+            "extra": "mean: 5.292055385000009 sec\nrounds: 5"
           }
         ]
       }
