@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725279999848,
+  "lastUpdate": 1725283462905,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "20399448cc0ee2c23c2061dbfc773f57025a6861",
-          "message": "Fix broken ert test_run\n\nThe commit 4013764 introduced a regression such that `ert test_run`\nwould fail on any configs that sets a queue system other than \"local\".\n\nThis was due to the function `create_local_copy()` not having been\nupdated to yield the correct QueueOptions object after refactoring.",
-          "timestamp": "2024-08-22T08:46:35+02:00",
-          "tree_id": "f4fe62d65796edf18fe8210274b2cf903a42bb01",
-          "url": "https://github.com/equinor/ert/commit/20399448cc0ee2c23c2061dbfc773f57025a6861"
-        },
-        "date": 1724309344643,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1884228711660813,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03866829174565568",
-            "extra": "mean: 5.307211347600003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.043642575014206264",
             "extra": "mean: 5.313276532200007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "3e21e15bb10cc82af5f5d32697624be4656204f1",
+          "message": "Fix incorrect varname in test",
+          "timestamp": "2024-09-02T15:21:49+02:00",
+          "tree_id": "a0ebdcb1dd947f39bfe9d165fa9abb1051d5769f",
+          "url": "https://github.com/equinor/ert/commit/3e21e15bb10cc82af5f5d32697624be4656204f1"
+        },
+        "date": 1725283462354,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1931596818122975,
+            "unit": "iter/sec",
+            "range": "stddev: 0.034715315897166324",
+            "extra": "mean: 5.177063819000011 sec\nrounds: 5"
           }
         ]
       }
