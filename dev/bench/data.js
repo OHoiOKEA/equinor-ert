@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725259683640,
+  "lastUpdate": 1725273942231,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "ccfad8fa20d45231edbd27fcd39a329cceabc834",
-          "message": "Convert to dataclass",
-          "timestamp": "2024-08-21T14:58:57+02:00",
-          "tree_id": "918db2468843cad409691bfb07751e6d8f1d648a",
-          "url": "https://github.com/equinor/ert/commit/ccfad8fa20d45231edbd27fcd39a329cceabc834"
-        },
-        "date": 1724245293822,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18838362998714925,
-            "unit": "iter/sec",
-            "range": "stddev: 0.10678749491036586",
-            "extra": "mean: 5.308316864200014 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04582009257908865",
             "extra": "mean: 5.170865560000015 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "fde81ca904a087fef7aa93827de682c15289a2b1",
+          "message": "Remove false positiv runpath check",
+          "timestamp": "2024-09-02T12:43:13+02:00",
+          "tree_id": "2922acf417ce81beeb0ed43be76bf07b057e9384",
+          "url": "https://github.com/equinor/ert/commit/fde81ca904a087fef7aa93827de682c15289a2b1"
+        },
+        "date": 1725273941792,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19129256685611518,
+            "unit": "iter/sec",
+            "range": "stddev: 0.048609591483407606",
+            "extra": "mean: 5.227594654800003 sec\nrounds: 5"
           }
         ]
       }
