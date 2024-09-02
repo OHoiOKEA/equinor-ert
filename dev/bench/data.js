@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725273942231,
+  "lastUpdate": 1725279999848,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "ef647361ed57212136108d61f4e2e5e6909d0449",
-          "message": "Rename variable state_kw -> response_key",
-          "timestamp": "2024-08-21T15:23:12+02:00",
-          "tree_id": "6bd9c267b0b752f46e565f03dd6bf3d9da8b02ef",
-          "url": "https://github.com/equinor/ert/commit/ef647361ed57212136108d61f4e2e5e6909d0449"
-        },
-        "date": 1724246768096,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1830888658708036,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04449695302251617",
-            "extra": "mean: 5.461828578400002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.048609591483407606",
             "extra": "mean: 5.227594654800003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6d2094ebbc132d3618cd48f186c5638bc6a8d332",
+          "message": "Have restart weights stored in metadata json\n\nUpdate relative weights if restart toggled\r\nStore relative weights in metadata.json file",
+          "timestamp": "2024-09-02T14:24:09+02:00",
+          "tree_id": "422de6eb1218cc33fcdffc22db04a44531408cd8",
+          "url": "https://github.com/equinor/ert/commit/6d2094ebbc132d3618cd48f186c5638bc6a8d332"
+        },
+        "date": 1725279999285,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1882077836415455,
+            "unit": "iter/sec",
+            "range": "stddev: 0.043642575014206264",
+            "extra": "mean: 5.313276532200007 sec\nrounds: 5"
           }
         ]
       }
