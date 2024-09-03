@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725361764970,
+  "lastUpdate": 1725362297145,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "4f1d77b787a049c359f3346239e2e78fa0175af2",
-          "message": "Fix eclipse version config validation on komodo tests",
-          "timestamp": "2024-08-23T10:24:44+02:00",
-          "tree_id": "b5dfb583cf6e652cf90decf1805e8f0bc78f7952",
-          "url": "https://github.com/equinor/ert/commit/4f1d77b787a049c359f3346239e2e78fa0175af2"
-        },
-        "date": 1724401632210,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.190475207573326,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04054070964534557",
-            "extra": "mean: 5.2500270914 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04275056803361811",
             "extra": "mean: 5.207150729799997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "89d13ad5e607d5dc452c8d650b1ca863b93ca9f5",
+          "message": "Fix bug checksum failures\n\nThis commit fixes the bug where multiple realizations try to read checksum\nat the same time, leading it to grind to a halt.\nThe issue was fixed by moving the forward_model_ok_lock up a level, so\nthat only one realization can call `verify_checksum` at a time. This\nalso solved the issue where jobs would be shown as stuck in pending even though\nall forward model steps had completed. This was probably due to\nchecksums all being checked and verified at the same time, which can be\nIO intensive.",
+          "timestamp": "2024-09-03T13:15:41+02:00",
+          "tree_id": "9b10364c5f0b04055c7b8784441beeb522e1df59",
+          "url": "https://github.com/equinor/ert/commit/89d13ad5e607d5dc452c8d650b1ca863b93ca9f5"
+        },
+        "date": 1725362296271,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18907019714521503,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05300772271942814",
+            "extra": "mean: 5.289040870000003 sec\nrounds: 5"
           }
         ]
       }
