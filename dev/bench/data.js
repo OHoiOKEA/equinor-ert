@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725367617583,
+  "lastUpdate": 1725368355618,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "065ab306df501cb4bfb45e8c2bfc3ea29148ecf0",
-          "message": "Remove mark applied to a fixture\n\nThis never did anything and is now deprecated in pytest.\n\n$ pytest -sxv -W error\nImportError while loading conftest '/data/projects/ert/tests/conftest.py'.\ntests/conftest.py:213: in <module>\n    @pytest.fixture(\n/data/venv/311/lib64/python3.11/site-packages/_hypothesis_pytestplugin.py:442: in _ban_given_call\n    return _orig_call(self, function)\nE   pytest.PytestRemovedIn9Warning: Marks applied to fixtures have no effect\nE   See docs: https://docs.pytest.org/en/stable/deprecations.html#applying-a-mark-to-a-fixture-function",
-          "timestamp": "2024-08-23T13:25:31+02:00",
-          "tree_id": "243ec2878299016f586855e0068aed5261811672",
-          "url": "https://github.com/equinor/ert/commit/065ab306df501cb4bfb45e8c2bfc3ea29148ecf0"
-        },
-        "date": 1724412474728,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19434437809619284,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03993206294543141",
-            "extra": "mean: 5.145505158399999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04321687666801048",
             "extra": "mean: 5.204402510399996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8395bbf017a16e3eab024badf84dd907cf1eef78",
+          "message": "Delete unused fixture get_ensemble",
+          "timestamp": "2024-09-03T14:56:51+02:00",
+          "tree_id": "de84d5976d0d00e42d17118da2944a716a730228",
+          "url": "https://github.com/equinor/ert/commit/8395bbf017a16e3eab024badf84dd907cf1eef78"
+        },
+        "date": 1725368355025,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19467792518865204,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030571635833279327",
+            "extra": "mean: 5.136689221599999 sec\nrounds: 5"
           }
         ]
       }
