@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725366433059,
+  "lastUpdate": 1725367617583,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "357dcef3ad39d4a9ef7b3f7c9ab107d0d9ca32fd",
-          "message": "Remove unused infer iteration from rft csv export",
-          "timestamp": "2024-08-23T12:25:34+02:00",
-          "tree_id": "f7b8b689fff9f8f756760c0960539c6a0284b9ef",
-          "url": "https://github.com/equinor/ert/commit/357dcef3ad39d4a9ef7b3f7c9ab107d0d9ca32fd"
-        },
-        "date": 1724408880834,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19466536883483318,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03897615889675194",
-            "extra": "mean: 5.137020549599993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.07107997850810462",
             "extra": "mean: 5.243062837600002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "f2c5ca08adfb78e232dd3d7cdbafa17a25691ea9",
+          "message": "Catch FileNotFoundError in driver._execute_with_retry\n\nThis commit makes the drivers handle FileNotFound exceptions in `driver._execute_with_retry(...)` and `driver.poll()` for the various drivers. The driver will now return early and avoid retrying invalid shell commands.",
+          "timestamp": "2024-09-03T14:44:32+02:00",
+          "tree_id": "02792f6aebc7fdfc35720c10a66fa81c48e7cdb8",
+          "url": "https://github.com/equinor/ert/commit/f2c5ca08adfb78e232dd3d7cdbafa17a25691ea9"
+        },
+        "date": 1725367617161,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19214501530227393,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04321687666801048",
+            "extra": "mean: 5.204402510399996 sec\nrounds: 5"
           }
         ]
       }
