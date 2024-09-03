@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725345241327,
+  "lastUpdate": 1725359960272,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "9add0ee195f03b341acabe05d90821faf24670b3",
-          "message": "Add pyrightconfig.json to gitignore\n\nDeleted ignores that are no longer needed\nTheir origin is described below\n\nFrom when we compiled python modules\n*.o # object files\n*.so # compiled libs\n/src/build\n/cmake.sh # script that ran cmake\n/dist\n/_skbuild # scikit-build folder\n.libs # created by libtool when compiling/linking\n/compile_commands.json # c/c++ compilation database\n\nCompiled python code. Could not find after pip installing with and\nwithout -e in clean repo\n*.pyc\n\nOld source code management tool\n.svn/\n*/.svn/\n\nVisual Studio files (not vs code)\n*.user\n*.user.*\n\nNot used any more\n/test-data/Equinor\n\nProtobuf files\n*_pb2.py\n*_pb2.pyi",
-          "timestamp": "2024-08-22T12:26:13+02:00",
-          "tree_id": "d6a927f008a5058a3d5945e1889c7b277448ead2",
-          "url": "https://github.com/equinor/ert/commit/9add0ee195f03b341acabe05d90821faf24670b3"
-        },
-        "date": 1724322522996,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18991101041852407,
-            "unit": "iter/sec",
-            "range": "stddev: 0.07548567987325172",
-            "extra": "mean: 5.265624135200005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.09763555061607619",
             "extra": "mean: 5.407775289200009 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "fc846ba125bf1ba3baaac96800ae109e4d93dc39",
+          "message": "Fix issues highlighted by pyright\n\nAdded one if that is actually needed and made a change to make pyright\nhappy even though it was not a real problem.",
+          "timestamp": "2024-09-03T12:36:54+02:00",
+          "tree_id": "1cf1ac0e39b661ff7311fe1b9a978332557acad9",
+          "url": "https://github.com/equinor/ert/commit/fc846ba125bf1ba3baaac96800ae109e4d93dc39"
+        },
+        "date": 1725359959901,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19095848690646863,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05292303776340517",
+            "extra": "mean: 5.236740279000008 sec\nrounds: 5"
           }
         ]
       }
