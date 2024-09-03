@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725368355618,
+  "lastUpdate": 1725370739818,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "8b9694f6edc0c2aed90c72ebcd5974bf0219fd6a",
-          "message": "Mute asserted warnings in schema deprecations\n\nSeemingly pytest also catches the warnings that warnings.catch_warnings() catch,\nso let us use pytest.warns instead. Otherwise these expected warnings are hard to\nmute.",
-          "timestamp": "2024-08-23T13:27:03+02:00",
-          "tree_id": "537a4dc24b6098e5e4ed20e14b17637e4e4e7911",
-          "url": "https://github.com/equinor/ert/commit/8b9694f6edc0c2aed90c72ebcd5974bf0219fd6a"
-        },
-        "date": 1724412570017,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19160433435911742,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05289205546458976",
-            "extra": "mean: 5.219088614799989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030571635833279327",
             "extra": "mean: 5.136689221599999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "6cac4c0ef502a1468138515834120edecb62afe6",
+          "message": "Avoid deprecation warning from pytest-asyncio\n\nThis deprecation warning pops up from pytest-asyncio==0.24",
+          "timestamp": "2024-09-03T15:36:28+02:00",
+          "tree_id": "20df283c1d7c830d853bf9c5ee0f1017e44d2069",
+          "url": "https://github.com/equinor/ert/commit/6cac4c0ef502a1468138515834120edecb62afe6"
+        },
+        "date": 1725370739357,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19175925222453966,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04668515751125608",
+            "extra": "mean: 5.214872233799985 sec\nrounds: 5"
           }
         ]
       }
