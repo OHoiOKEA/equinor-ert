@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725370739818,
+  "lastUpdate": 1725371378162,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "31d3aa260ed19c96b40529618e56f66ea245ce4e",
-          "message": "Do not run gui tests in parallel",
-          "timestamp": "2024-08-23T14:01:00+02:00",
-          "tree_id": "a8f9cc40b8f150bc7e3159d103cf945127407454",
-          "url": "https://github.com/equinor/ert/commit/31d3aa260ed19c96b40529618e56f66ea245ce4e"
-        },
-        "date": 1724414611922,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19243725145698523,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06210454746643151",
-            "extra": "mean: 5.196499079199986 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04668515751125608",
             "extra": "mean: 5.214872233799985 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "a96c6f295768bd45694d74a59697fb29d347daa9",
+          "message": "Remove unused progress fixture",
+          "timestamp": "2024-09-03T15:47:06+02:00",
+          "tree_id": "689bc328bca8c27bfd700cf863f6dadf4606fd61",
+          "url": "https://github.com/equinor/ert/commit/a96c6f295768bd45694d74a59697fb29d347daa9"
+        },
+        "date": 1725371377526,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19295477038259673,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05631412951521444",
+            "extra": "mean: 5.182561685399998 sec\nrounds: 5"
           }
         ]
       }
