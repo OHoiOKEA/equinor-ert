@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725359960272,
+  "lastUpdate": 1725361764970,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "fbfd095bd1018563d07ae73526cec562e918c4bd",
-          "message": "Remove redudant experiment_id from ensemble",
-          "timestamp": "2024-08-22T22:22:03+02:00",
-          "tree_id": "264995c28865955cf767f2df4f5514c8ec5950fa",
-          "url": "https://github.com/equinor/ert/commit/fbfd095bd1018563d07ae73526cec562e918c4bd"
-        },
-        "date": 1724358273426,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1929940172681822,
-            "unit": "iter/sec",
-            "range": "stddev: 0.048453354323046746",
-            "extra": "mean: 5.1815077697999925 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05292303776340517",
             "extra": "mean: 5.236740279000008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e1b0f3ea46791347c9d52810a20d7f206004d29b",
+          "message": "Don't return duplicate data from export tool\n\nHappens when there are multiple experiments that have ensembles with same names.",
+          "timestamp": "2024-09-03T13:06:53+02:00",
+          "tree_id": "94eb05b8a5fc242d93232da25b07d2c09cc958d3",
+          "url": "https://github.com/equinor/ert/commit/e1b0f3ea46791347c9d52810a20d7f206004d29b"
+        },
+        "date": 1725361764347,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1920436053976892,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04275056803361811",
+            "extra": "mean: 5.207150729799997 sec\nrounds: 5"
           }
         ]
       }
