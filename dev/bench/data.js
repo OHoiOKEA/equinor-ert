@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725446633259,
+  "lastUpdate": 1725449120241,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "4bbfd5c00899e8c3f9faca9bff264bad0e6b3af5",
-          "message": "Use asyncio.Lock for forward_model_ok\n\nThis makes sure that we will not run more than 1 internalization job at a time.",
-          "timestamp": "2024-08-26T16:12:07+02:00",
-          "tree_id": "f5835ce6a6bf54b2ba329548be1a5312d8ec2a29",
-          "url": "https://github.com/equinor/ert/commit/4bbfd5c00899e8c3f9faca9bff264bad0e6b3af5"
-        },
-        "date": 1724681677191,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.192125815960646,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03596978480103256",
-            "extra": "mean: 5.204922591999997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04787970305199948",
             "extra": "mean: 5.308954252399997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "08c3f6cfd6334dbe8bed2b84bdb1423b3971893c",
+          "message": "Only install hdf5 for python<3.10 on mac in github workflows",
+          "timestamp": "2024-09-04T13:22:50+02:00",
+          "tree_id": "7329444944c17155761b0a69d9527a0a794bfce6",
+          "url": "https://github.com/equinor/ert/commit/08c3f6cfd6334dbe8bed2b84bdb1423b3971893c"
+        },
+        "date": 1725449119773,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18889170659025373,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06508753217179183",
+            "extra": "mean: 5.294038674600006 sec\nrounds: 5"
           }
         ]
       }
