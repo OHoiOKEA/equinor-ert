@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725434721453,
+  "lastUpdate": 1725445752796,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "86c523598d1100cb091bda1a498b5b31286fb1ce",
-          "message": "Add gendata output file for each report step to the output files manifest.",
-          "timestamp": "2024-08-26T12:20:24+02:00",
-          "tree_id": "010e9fd61dbc228ed8e53884c455f3d7a4206a52",
-          "url": "https://github.com/equinor/ert/commit/86c523598d1100cb091bda1a498b5b31286fb1ce"
-        },
-        "date": 1724667774434,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19413082101363383,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04029767012125265",
-            "extra": "mean: 5.151165563400002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04039352141588251",
             "extra": "mean: 5.284038336599991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "1a93470b4aec334bfbf17d3a8bbf2554ae1193af",
+          "message": "Make figure snapshot tests faster",
+          "timestamp": "2024-09-04T12:26:49+02:00",
+          "tree_id": "1cb55d381c774f3a332d48ef0b10c3c54d2d9b5d",
+          "url": "https://github.com/equinor/ert/commit/1a93470b4aec334bfbf17d3a8bbf2554ae1193af"
+        },
+        "date": 1725445752369,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1923369544593418,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0413552417329648",
+            "extra": "mean: 5.199208871799987 sec\nrounds: 5"
           }
         ]
       }
