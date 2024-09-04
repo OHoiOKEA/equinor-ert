@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725449120241,
+  "lastUpdate": 1725451224737,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "c6c77d185831eae8351d5bb683c427485a08a15d",
-          "message": "Expose run information as env variables in the forward-model step environment",
-          "timestamp": "2024-08-28T10:40:11+02:00",
-          "tree_id": "a65290933b39edcfeb1977693b7dfbb833a50563",
-          "url": "https://github.com/equinor/ert/commit/c6c77d185831eae8351d5bb683c427485a08a15d"
-        },
-        "date": 1724834562754,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19571807942003977,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03950920264409892",
-            "extra": "mean: 5.109390011200003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06508753217179183",
             "extra": "mean: 5.294038674600006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "0303a8ae343994cde6d0a949c3777643569862c5",
+          "message": "Add proper validation to load results manually tool",
+          "timestamp": "2024-09-04T13:57:58+02:00",
+          "tree_id": "b23cadd03dd801616217344174cb5fef6e0573bf",
+          "url": "https://github.com/equinor/ert/commit/0303a8ae343994cde6d0a949c3777643569862c5"
+        },
+        "date": 1725451224183,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19332835025283113,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04794355201067079",
+            "extra": "mean: 5.172547113199999 sec\nrounds: 5"
           }
         ]
       }
