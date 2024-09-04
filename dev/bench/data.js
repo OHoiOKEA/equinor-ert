@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725371378162,
+  "lastUpdate": 1725427508861,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "db9f1cd9c12b66dd10f1fac3d831f8d436009def",
-          "message": "Change style for disabled simulation modes",
-          "timestamp": "2024-08-26T09:26:36+02:00",
-          "tree_id": "1430e7c6e5eec46fda0a984ac82166b22d41c4e2",
-          "url": "https://github.com/equinor/ert/commit/db9f1cd9c12b66dd10f1fac3d831f8d436009def"
-        },
-        "date": 1724657343189,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1919516696309861,
-            "unit": "iter/sec",
-            "range": "stddev: 0.048641524513337746",
-            "extra": "mean: 5.20964470859999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05631412951521444",
             "extra": "mean: 5.182561685399998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "8e62a2d136c858073b06ca119c78cfbac84a63ce",
+          "message": "Log more usage statistics\n\nSince the string 'Peak memory use' is kept, this should be ok'ish with\nrespect to backwards compatible search statements in the log",
+          "timestamp": "2024-09-04T07:22:43+02:00",
+          "tree_id": "cec8810192384827f8bf020b21bb9c9ed3149380",
+          "url": "https://github.com/equinor/ert/commit/8e62a2d136c858073b06ca119c78cfbac84a63ce"
+        },
+        "date": 1725427508407,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19352092542370383,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04148932620199354",
+            "extra": "mean: 5.167399844800002 sec\nrounds: 5"
           }
         ]
       }
