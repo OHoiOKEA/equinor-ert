@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725445752796,
+  "lastUpdate": 1725446633259,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "802c89786640d701549a7381af0562d0b68667b4",
-          "message": "Mute possible warnings when randomly generating config files\n\nWe can't say upfront of the randomly generated config files will trigger\nConfigWarning, so mute all instead of doing pytest.warns.",
-          "timestamp": "2024-08-26T14:48:16+02:00",
-          "tree_id": "0227f413e5f18936302c9a146d6806baf7726b27",
-          "url": "https://github.com/equinor/ert/commit/802c89786640d701549a7381af0562d0b68667b4"
-        },
-        "date": 1724676641326,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18912422402967774,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04609406521550082",
-            "extra": "mean: 5.287529956199995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0413552417329648",
             "extra": "mean: 5.199208871799987 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "be9a54a85cd5326cb8e239f064564ad437c27da4",
+          "message": "Fix typo fligure -> figure",
+          "timestamp": "2024-09-04T12:41:27+02:00",
+          "tree_id": "493704233598ed41714323a94dcd3e0f470e6544",
+          "url": "https://github.com/equinor/ert/commit/be9a54a85cd5326cb8e239f064564ad437c27da4"
+        },
+        "date": 1725446632701,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1883610128205445,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04787970305199948",
+            "extra": "mean: 5.308954252399997 sec\nrounds: 5"
           }
         ]
       }
