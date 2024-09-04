@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725451224737,
+  "lastUpdate": 1725453492762,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "26d537642ccd35e1711e757ddd4b48303cc66ef0",
-          "message": "Replace json with orjson\n\nstdlibs json is really slow.\nIt is especially noticable in _ert_forward_model_runner as the status file is\nupdated quite often.",
-          "timestamp": "2024-08-28T15:43:15+02:00",
-          "tree_id": "b9b20e99e597b3960529e86e5d59a8fe06988539",
-          "url": "https://github.com/equinor/ert/commit/26d537642ccd35e1711e757ddd4b48303cc66ef0"
-        },
-        "date": 1724852751531,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1906112857130125,
-            "unit": "iter/sec",
-            "range": "stddev: 0.07462418355309468",
-            "extra": "mean: 5.24627907659999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04794355201067079",
             "extra": "mean: 5.172547113199999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "cb5ea322fb6fc8a2577f6bd9e903df40f5e00ff3",
+          "message": "Use plot() instead of deprecated plot_date()\n\nplot_date() has been discouraged since matplotlib 3.5, and deprecated from 3.9. Instead\nwe use plot() directly, and the datatype of the first argument (the x-data) will\ndetermine the kind of plot.",
+          "timestamp": "2024-09-04T14:35:47+02:00",
+          "tree_id": "ded5cccca730804eed26c2a6da17007ace709e52",
+          "url": "https://github.com/equinor/ert/commit/cb5ea322fb6fc8a2577f6bd9e903df40f5e00ff3"
+        },
+        "date": 1725453492324,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18508683718288718,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04161998789890466",
+            "extra": "mean: 5.402869351599998 sec\nrounds: 5"
           }
         ]
       }
