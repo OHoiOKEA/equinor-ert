@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725530770117,
+  "lastUpdate": 1725537939586,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "3bbf85147c2a6271b9f915ac52809c6ce384c055",
-          "message": "Fix test that could give false positive\n\nAdded the expected memory increase to the asserts in the test.\nWithout the increase the test would randomly pass due to variance in\nmemory used in each run even if we did not manage to read the rss of the\nprocess' grandchildren.",
-          "timestamp": "2024-08-29T16:09:29+02:00",
-          "tree_id": "fd3abb0555c6dc36bf41dda7f6e6584d59d9846d",
-          "url": "https://github.com/equinor/ert/commit/3bbf85147c2a6271b9f915ac52809c6ce384c055"
-        },
-        "date": 1724940717122,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18888197500102855,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025456053523523578",
-            "extra": "mean: 5.294311434399998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0723848096866378",
             "extra": "mean: 5.186293312600009 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0c23813e9e19962053afecaf6fac293fda5c40d7",
+          "message": "Avoid stack trace in ecl_run errors",
+          "timestamp": "2024-09-05T12:03:07Z",
+          "tree_id": "78b977855025f1c94393a4275e96fa12ade4e635",
+          "url": "https://github.com/equinor/ert/commit/0c23813e9e19962053afecaf6fac293fda5c40d7"
+        },
+        "date": 1725537938533,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.194085121175011,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05516166019526279",
+            "extra": "mean: 5.152378471599979 sec\nrounds: 5"
           }
         ]
       }
