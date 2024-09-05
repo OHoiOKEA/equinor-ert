@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725453492762,
+  "lastUpdate": 1725530770117,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "51f40c739b60dc8ca479fa1f3b4dbb46e7a7ed2d",
-          "message": "Combine rss and oom_score checker in fm_runner\n\nCalling process.children is noticeably slow when the running quick\nforward model steps.\nCombined the two so that children only gets called once.",
-          "timestamp": "2024-08-29T09:30:52+02:00",
-          "tree_id": "460ea3615de64d712f001af9800c632137ced259",
-          "url": "https://github.com/equinor/ert/commit/51f40c739b60dc8ca479fa1f3b4dbb46e7a7ed2d"
-        },
-        "date": 1724916801996,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19319147184023888,
-            "unit": "iter/sec",
-            "range": "stddev: 0.034117845452463866",
-            "extra": "mean: 5.1762119231999915 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04161998789890466",
             "extra": "mean: 5.402869351599998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "e5140388547d6a2842555000cbf1846236dc13e1",
+          "message": "Add default value for ERROR_MIN to docs",
+          "timestamp": "2024-09-05T12:03:41+02:00",
+          "tree_id": "e4c02023e430381d53dc841ba385bddc0d938276",
+          "url": "https://github.com/equinor/ert/commit/e5140388547d6a2842555000cbf1846236dc13e1"
+        },
+        "date": 1725530769705,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19281593610807116,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0723848096866378",
+            "extra": "mean: 5.186293312600009 sec\nrounds: 5"
           }
         ]
       }
