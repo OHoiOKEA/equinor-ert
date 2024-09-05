@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725541076937,
+  "lastUpdate": 1725542312917,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "09cdd6b536775b52347904a4d97fd090a29695fb",
-          "message": "Migrate from websockets legacy functionality",
-          "timestamp": "2024-08-30T11:56:06+02:00",
-          "tree_id": "e483bdaabbc6b0887624c1f80fc5f78461e32b6e",
-          "url": "https://github.com/equinor/ert/commit/09cdd6b536775b52347904a4d97fd090a29695fb"
-        },
-        "date": 1725011914989,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19422496097940256,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03465455722941815",
-            "extra": "mean: 5.148668816599991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05188494379158667",
             "extra": "mean: 5.410036798199997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "f60497ead0cf78938d2d0556c3b59605f6eaefee",
+          "message": "Use continuous update for target ensemble",
+          "timestamp": "2024-09-05T15:16:01+02:00",
+          "tree_id": "1f17d875cebdbdf8c0ad52be43191bb8a8d0af7d",
+          "url": "https://github.com/equinor/ert/commit/f60497ead0cf78938d2d0556c3b59605f6eaefee"
+        },
+        "date": 1725542312319,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1946394235375652,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0436176399777298",
+            "extra": "mean: 5.137705310800004 sec\nrounds: 5"
           }
         ]
       }
