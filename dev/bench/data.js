@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725537939586,
+  "lastUpdate": 1725539358115,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "24488753f27cab17336be634f8e31f58209dab5c",
-          "message": "Remove children_list as it shadows children\n\nRemove unused RealStatusColorHint\nFix get_successful_realizations",
-          "timestamp": "2024-08-29T22:09:23+02:00",
-          "tree_id": "9415a5cea9b64921f5c9b2758ec507f26848d9fe",
-          "url": "https://github.com/equinor/ert/commit/24488753f27cab17336be634f8e31f58209dab5c"
-        },
-        "date": 1724962319118,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1887764592540372,
-            "unit": "iter/sec",
-            "range": "stddev: 0.24204838787617938",
-            "extra": "mean: 5.297270665799999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05516166019526279",
             "extra": "mean: 5.152378471599979 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e33136f1c94adf04749590561a89d7a5158c5317",
+          "message": "Get ensembles by id in dark storage\n\n Get ensembles by id in dark storage",
+          "timestamp": "2024-09-05T14:26:50+02:00",
+          "tree_id": "5a8d1025f477c53e0ca6c6eddf2946c6642def4d",
+          "url": "https://github.com/equinor/ert/commit/e33136f1c94adf04749590561a89d7a5158c5317"
+        },
+        "date": 1725539357630,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19422728056218924,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05259578635276615",
+            "extra": "mean: 5.148607328000002 sec\nrounds: 5"
           }
         ]
       }
