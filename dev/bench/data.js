@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725542312917,
+  "lastUpdate": 1725544588816,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "f4ffb68e3bf0c4f645bb254d64f79b2143ee2d59",
-          "message": "Create and provide asyncio.Lock directly in scheduler.execute\n\nTo make sure that the forward_model_ok_lock is assigned to the correct running loop, this creates and provide the lock to the job directly.",
-          "timestamp": "2024-08-30T13:15:48+02:00",
-          "tree_id": "1f9a156c4a300c1c2f0f74299f8b191844e1d9e3",
-          "url": "https://github.com/equinor/ert/commit/f4ffb68e3bf0c4f645bb254d64f79b2143ee2d59"
-        },
-        "date": 1725016694296,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19242727673468923,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01360115239727486",
-            "extra": "mean: 5.196768446600004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0436176399777298",
             "extra": "mean: 5.137705310800004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "2d21583bae5f52a367c3ea492b2b76bbf07608cc",
+          "message": "Fix bug manual update step does not stop progress bar indicator",
+          "timestamp": "2024-09-05T15:53:58+02:00",
+          "tree_id": "074f6db4883ed5f6d1500a554a9711c96156c8a0",
+          "url": "https://github.com/equinor/ert/commit/2d21583bae5f52a367c3ea492b2b76bbf07608cc"
+        },
+        "date": 1725544588341,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18885615548848841,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04821946818053506",
+            "extra": "mean: 5.295035247399994 sec\nrounds: 5"
           }
         ]
       }
