@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725539358115,
+  "lastUpdate": 1725541076937,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "cc2f1a87cb9a4955be55213df3c39a9a0e59859e",
-          "message": "Add get_experiment_by_name to storage\n\nExperiment names are unique and its easier to get by name than by uuid.\r\nAlso adding get_ensemble_by_name to experiment class because ensembles names\r\nare unique within an experiment.",
-          "timestamp": "2024-08-30T09:41:34+02:00",
-          "tree_id": "7aee0275ac5ced2fa089b8b62c7fb1d4de2733e5",
-          "url": "https://github.com/equinor/ert/commit/cc2f1a87cb9a4955be55213df3c39a9a0e59859e"
-        },
-        "date": 1725003851576,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1950281867970171,
-            "unit": "iter/sec",
-            "range": "stddev: 0.033610311756791376",
-            "extra": "mean: 5.127463965200002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05259578635276615",
             "extra": "mean: 5.148607328000002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "63c6c9a2b3e044db49595e9bad8ee46f53c89f4d",
+          "message": "Delete get_ensemble_by_name from `LocalStorage`\n\nEnsemble names are only unique within a single experiment.",
+          "timestamp": "2024-09-05T14:55:23+02:00",
+          "tree_id": "49645f2932fd228f2a43f463c33b2ba181cbb0a9",
+          "url": "https://github.com/equinor/ert/commit/63c6c9a2b3e044db49595e9bad8ee46f53c89f4d"
+        },
+        "date": 1725541076081,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18484162627742487,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05188494379158667",
+            "extra": "mean: 5.410036798199997 sec\nrounds: 5"
           }
         ]
       }
