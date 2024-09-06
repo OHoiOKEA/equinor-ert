@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725544588816,
+  "lastUpdate": 1725623756511,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "e68b3be8adc927961d124ab193d6324dfc2a35b3",
-          "message": "Change driver `retries` param to `total_attempts`",
-          "timestamp": "2024-08-30T13:16:20+02:00",
-          "tree_id": "4a7eca5a50413202f959b2b8b7530f208a31f7bf",
-          "url": "https://github.com/equinor/ert/commit/e68b3be8adc927961d124ab193d6324dfc2a35b3"
-        },
-        "date": 1725016728582,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19064716788216976,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03349155904741177",
-            "extra": "mean: 5.245291661599998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04821946818053506",
             "extra": "mean: 5.295035247399994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "0e8f31e12d80a7c8abe47a25f4ad1433c22860f0",
+          "message": "Remove unreachable code in test",
+          "timestamp": "2024-09-06T13:53:22+02:00",
+          "tree_id": "ac1ac0c5b00d1d853b5ccca2b358f25ff3abf790",
+          "url": "https://github.com/equinor/ert/commit/0e8f31e12d80a7c8abe47a25f4ad1433c22860f0"
+        },
+        "date": 1725623755940,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1918202593737818,
+            "unit": "iter/sec",
+            "range": "stddev: 0.11295037800848402",
+            "extra": "mean: 5.213213678600004 sec\nrounds: 5"
           }
         ]
       }
