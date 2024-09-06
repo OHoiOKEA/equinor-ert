@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725623773246,
+  "lastUpdate": 1725624821407,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "26b93a2a9299aee6d552c9f614550f62fae9b9a0",
-          "message": "Use pydantic for messages sent over websockets\n\nThis replaces the cloudevents library we used before.\nThis was done both because cloudevents does not give any benefit to us\nand because the python cloudevents library is quite slow.",
-          "timestamp": "2024-08-30T15:56:44+02:00",
-          "tree_id": "febd025adb61c6188d02940802d35b21ffa18813",
-          "url": "https://github.com/equinor/ert/commit/26b93a2a9299aee6d552c9f614550f62fae9b9a0"
-        },
-        "date": 1725026347516,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19779383298362974,
-            "unit": "iter/sec",
-            "range": "stddev: 0.09753597187148991",
-            "extra": "mean: 5.055769357999975 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03202817922393435",
             "extra": "mean: 5.278298151799999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "eb8410d0b7cc66de864f77ff4893d701efd803d0",
+          "message": "Only disable weights when weights have been found in storage",
+          "timestamp": "2024-09-06T14:11:15+02:00",
+          "tree_id": "bff562dbeda6abca0cb0aa8c788355218279f889",
+          "url": "https://github.com/equinor/ert/commit/eb8410d0b7cc66de864f77ff4893d701efd803d0"
+        },
+        "date": 1725624820998,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1951669469381839,
+            "unit": "iter/sec",
+            "range": "stddev: 0.007301565015716859",
+            "extra": "mean: 5.123818431800004 sec\nrounds: 5"
           }
         ]
       }
