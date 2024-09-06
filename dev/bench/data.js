@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725623756511,
+  "lastUpdate": 1725623773246,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "c158c6a660e5ff730b2dd9b344fef7119aa6c3af",
-          "message": "Increase reruns for flaky test_repeated_submit_same_iens to 10",
-          "timestamp": "2024-08-30T14:56:13+02:00",
-          "tree_id": "1c1ea45846068dd72def370d45fe25c8677d9011",
-          "url": "https://github.com/equinor/ert/commit/c158c6a660e5ff730b2dd9b344fef7119aa6c3af"
-        },
-        "date": 1725022718316,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18941171870428314,
-            "unit": "iter/sec",
-            "range": "stddev: 0.037374244479541595",
-            "extra": "mean: 5.279504387799989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.11295037800848402",
             "extra": "mean: 5.213213678600004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "56c5ffa6c40b60952e6bab94ed6d49caf5dba8d7",
+          "message": "Make event validation stricter\n\nAdd extra=\"forbid\" and strict=True to all the events\nAdd missing ensemble field for EESnapshot and EESnapshotUpdate",
+          "timestamp": "2024-09-06T13:53:37+02:00",
+          "tree_id": "1fa7751a442ad36f4bd103b8414e375c4c2964c0",
+          "url": "https://github.com/equinor/ert/commit/56c5ffa6c40b60952e6bab94ed6d49caf5dba8d7"
+        },
+        "date": 1725623772631,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1894550044807494,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03202817922393435",
+            "extra": "mean: 5.278298151799999 sec\nrounds: 5"
           }
         ]
       }
