@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725626139473,
+  "lastUpdate": 1725872084769,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "fde81ca904a087fef7aa93827de682c15289a2b1",
-          "message": "Remove false positiv runpath check",
-          "timestamp": "2024-09-02T12:43:13+02:00",
-          "tree_id": "2922acf417ce81beeb0ed43be76bf07b057e9384",
-          "url": "https://github.com/equinor/ert/commit/fde81ca904a087fef7aa93827de682c15289a2b1"
-        },
-        "date": 1725273941792,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19129256685611518,
-            "unit": "iter/sec",
-            "range": "stddev: 0.048609591483407606",
-            "extra": "mean: 5.227594654800003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03811742102473588",
             "extra": "mean: 5.176108358399995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "fe1af87d2e08ed86179c18b739a03ec1cbc258d1",
+          "message": "Refactor snapshots\n\nThis commit removes some of the excess classes (SnapshotBuilder,\nSnapshotDict) from snapshot.py. It also changes the pydantic classes to\nbe TypedDicts instead.",
+          "timestamp": "2024-09-09T10:52:17+02:00",
+          "tree_id": "ea082e7656cb8717e6dba8f057c2eecce7872ba9",
+          "url": "https://github.com/equinor/ert/commit/fe1af87d2e08ed86179c18b739a03ec1cbc258d1"
+        },
+        "date": 1725872084338,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1904577952206856,
+            "unit": "iter/sec",
+            "range": "stddev: 0.026167212911803298",
+            "extra": "mean: 5.250507068200011 sec\nrounds: 5"
           }
         ]
       }
