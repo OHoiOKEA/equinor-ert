@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725872084769,
+  "lastUpdate": 1725874086034,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "6d2094ebbc132d3618cd48f186c5638bc6a8d332",
-          "message": "Have restart weights stored in metadata json\n\nUpdate relative weights if restart toggled\r\nStore relative weights in metadata.json file",
-          "timestamp": "2024-09-02T14:24:09+02:00",
-          "tree_id": "422de6eb1218cc33fcdffc22db04a44531408cd8",
-          "url": "https://github.com/equinor/ert/commit/6d2094ebbc132d3618cd48f186c5638bc6a8d332"
-        },
-        "date": 1725279999285,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1882077836415455,
-            "unit": "iter/sec",
-            "range": "stddev: 0.043642575014206264",
-            "extra": "mean: 5.313276532200007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026167212911803298",
             "extra": "mean: 5.250507068200011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "ee02327ccaa8a3803777bc20ec77f3e50e792106",
+          "message": "Generate Ert manifest file using ensemble Experiment content",
+          "timestamp": "2024-09-09T11:25:36+02:00",
+          "tree_id": "81c1f0d8d8670b471538745bb536afe83b9c008d",
+          "url": "https://github.com/equinor/ert/commit/ee02327ccaa8a3803777bc20ec77f3e50e792106"
+        },
+        "date": 1725874085577,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1871587111795876,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030819401486568154",
+            "extra": "mean: 5.343058806599993 sec\nrounds: 5"
           }
         ]
       }
