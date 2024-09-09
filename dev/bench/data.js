@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725874086034,
+  "lastUpdate": 1725878802996,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "3e21e15bb10cc82af5f5d32697624be4656204f1",
-          "message": "Fix incorrect varname in test",
-          "timestamp": "2024-09-02T15:21:49+02:00",
-          "tree_id": "a0ebdcb1dd947f39bfe9d165fa9abb1051d5769f",
-          "url": "https://github.com/equinor/ert/commit/3e21e15bb10cc82af5f5d32697624be4656204f1"
-        },
-        "date": 1725283462354,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1931596818122975,
-            "unit": "iter/sec",
-            "range": "stddev: 0.034715315897166324",
-            "extra": "mean: 5.177063819000011 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030819401486568154",
             "extra": "mean: 5.343058806599993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "72bf09088eb96b1b43814da09d69604ba3280adf",
+          "message": "Everest remove report step from results gendata\n\nRemove report step from results gen data",
+          "timestamp": "2024-09-09T12:44:14+02:00",
+          "tree_id": "f82fdd9fba8cc91169c379a72d0ffa10e9274fe8",
+          "url": "https://github.com/equinor/ert/commit/72bf09088eb96b1b43814da09d69604ba3280adf"
+        },
+        "date": 1725878802364,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1925327284261417,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027473048584949245",
+            "extra": "mean: 5.193922135599996 sec\nrounds: 5"
           }
         ]
       }
