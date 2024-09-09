@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725878870299,
+  "lastUpdate": 1725882650229,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "de9d63ade2561186bae96854a82260346596884d",
-          "message": "Rename and refactor ert.shared.port_handler\n\nThis commit changes `port_handler.py` -> `net_utils.py` and cleans up\nthe functions in the file. `find_available_port` is now called\n`find_available_socket`, and only returns the socket. The caller can use\nthe socket object to get the attached hostname and port, so this is no\nlonger explicitly returned.",
-          "timestamp": "2024-09-03T08:31:27+02:00",
-          "tree_id": "1c07d95ce540223390020db61dd52dc90f11d708",
-          "url": "https://github.com/equinor/ert/commit/de9d63ade2561186bae96854a82260346596884d"
-        },
-        "date": 1725345240874,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18491892627216272,
-            "unit": "iter/sec",
-            "range": "stddev: 0.09763555061607619",
-            "extra": "mean: 5.407775289200009 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0173876618326775",
             "extra": "mean: 5.2983425995999935 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "225d6555cffdaa9d0a737f965a61b2e416153bb2",
+          "message": "Store & plot scaling factors\n\nSave & plot scaling factors",
+          "timestamp": "2024-09-09T13:48:14+02:00",
+          "tree_id": "db08bb673524932273025643e7168da8f03acdd8",
+          "url": "https://github.com/equinor/ert/commit/225d6555cffdaa9d0a737f965a61b2e416153bb2"
+        },
+        "date": 1725882649727,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19176436156271864,
+            "unit": "iter/sec",
+            "range": "stddev: 0.033529034717994795",
+            "extra": "mean: 5.2147332896000025 sec\nrounds: 5"
           }
         ]
       }
