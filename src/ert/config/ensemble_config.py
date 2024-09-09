@@ -17,7 +17,6 @@ from typing import (
 )
 
 import numpy as np
-import numpy.typing as npt
 
 from ert.field_utils import get_shape
 
@@ -55,7 +54,12 @@ class Refcase:
     start_date: datetime
     keys: List[str]
     dates: Sequence[datetime]
-    values: npt.NDArray[Any]
+    # values: npt.NDArray[Any]
+    values: List[Any]
+
+    def __post_init__(self):
+        if hasattr(self.values, "tolist"):
+            self.values = self.values.tolist()
 
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Refcase):
@@ -75,8 +79,12 @@ class Refcase:
 @dataclass
 class EnsembleConfig:
     grid_file: Optional[str] = None
-    response_configs: Dict[str, ResponseConfig] = field(default_factory=dict)
-    parameter_configs: Dict[str, ParameterConfig] = field(default_factory=dict)
+    response_configs: Dict[str, Union[SummaryConfig, GenDataConfig]] = field(
+        default_factory=dict
+    )
+    parameter_configs: Dict[str, Union[GenKwConfig, Field, SurfaceConfig]] = field(
+        default_factory=dict
+    )
     refcase: Optional[Refcase] = None
     eclbase: Optional[str] = None
 

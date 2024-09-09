@@ -4,13 +4,14 @@ import importlib
 import logging
 import os
 from collections import defaultdict
-from dataclasses import dataclass, field
+from dataclasses import field
 from datetime import datetime
 from os import path
 from pathlib import Path
 from typing import (
     Any,
     ClassVar,
+    DefaultDict,
     Dict,
     List,
     Optional,
@@ -24,6 +25,8 @@ from typing import (
 
 import xarray as xr
 from pydantic import ValidationError as PydanticValidationError
+from pydantic import field_validator
+from pydantic.dataclasses import dataclass
 from typing_extensions import Self
 
 from ert.plugins import ErtPluginManager
@@ -92,7 +95,9 @@ class ErtConfig:
     queue_config: QueueConfig = field(default_factory=QueueConfig)
     workflow_jobs: Dict[str, WorkflowJob] = field(default_factory=dict)
     workflows: Dict[str, Workflow] = field(default_factory=dict)
-    hooked_workflows: Dict[HookRuntime, List[Workflow]] = field(default_factory=dict)
+    hooked_workflows: DefaultDict[HookRuntime, List[Workflow]] = field(
+        default_factory=lambda: defaultdict(list)
+    )
     runpath_file: Path = Path(DEFAULT_RUNPATH_FILE)
     ert_templates: List[Tuple[str, str]] = field(default_factory=list)
     installed_forward_model_steps: Dict[str, ForwardModelStep] = field(
@@ -105,6 +110,13 @@ class ErtConfig:
     observation_config: List[
         Tuple[str, Union[HistoryValues, SummaryValues, GenObsValues]]
     ] = field(default_factory=list)
+
+    @field_validator("substitution_list", mode="before")
+    @classmethod
+    def convert_to_substitution_list(cls, v: Dict[str, str]) -> SubstitutionList:
+        if isinstance(v, SubstitutionList):
+            return v
+        return SubstitutionList(v)
 
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, ErtConfig):
@@ -231,7 +243,7 @@ class ErtConfig:
             errors.append(err)
 
         obs_config_file = config_dict.get(ConfigKeys.OBS_CONFIG)
-        obs_config_content = None
+        obs_config_content = []
         try:
             if obs_config_file:
                 if path.isfile(obs_config_file) and path.getsize(obs_config_file) == 0:
@@ -940,7 +952,7 @@ def _get_files_in_directory(job_path, errors):
 
 
 def _substitution_list_from_dict(config_dict) -> SubstitutionList:
-    subst_list = SubstitutionList()
+    subst_list = {}
 
     for key, val in config_dict.get("DEFINE", []):
         subst_list[key] = val
@@ -958,7 +970,7 @@ def _substitution_list_from_dict(config_dict) -> SubstitutionList:
     for key, val in config_dict.get("DATA_KW", []):
         subst_list[key] = val
 
-    return subst_list
+    return SubstitutionList(subst_list)
 
 
 @no_type_check
