@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725882650229,
+  "lastUpdate": 1725887172969,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "fc846ba125bf1ba3baaac96800ae109e4d93dc39",
-          "message": "Fix issues highlighted by pyright\n\nAdded one if that is actually needed and made a change to make pyright\nhappy even though it was not a real problem.",
-          "timestamp": "2024-09-03T12:36:54+02:00",
-          "tree_id": "1cf1ac0e39b661ff7311fe1b9a978332557acad9",
-          "url": "https://github.com/equinor/ert/commit/fc846ba125bf1ba3baaac96800ae109e4d93dc39"
-        },
-        "date": 1725359959901,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19095848690646863,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05292303776340517",
-            "extra": "mean: 5.236740279000008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.033529034717994795",
             "extra": "mean: 5.2147332896000025 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "fd5fa70e0fbc7875e0dd7d802f8121d10e491645",
+          "message": "Fix deprecation warning second argument of ws_handler",
+          "timestamp": "2024-09-09T15:02:46+02:00",
+          "tree_id": "84dfd72bfa7c8e54635e25405340f5a333b79cc0",
+          "url": "https://github.com/equinor/ert/commit/fd5fa70e0fbc7875e0dd7d802f8121d10e491645"
+        },
+        "date": 1725887172333,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.186177311230498,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025243677886965108",
+            "extra": "mean: 5.371223772600001 sec\nrounds: 5"
           }
         ]
       }
