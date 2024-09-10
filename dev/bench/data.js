@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725974105029,
+  "lastUpdate": 1725977211377,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "f2c5ca08adfb78e232dd3d7cdbafa17a25691ea9",
-          "message": "Catch FileNotFoundError in driver._execute_with_retry\n\nThis commit makes the drivers handle FileNotFound exceptions in `driver._execute_with_retry(...)` and `driver.poll()` for the various drivers. The driver will now return early and avoid retrying invalid shell commands.",
-          "timestamp": "2024-09-03T14:44:32+02:00",
-          "tree_id": "02792f6aebc7fdfc35720c10a66fa81c48e7cdb8",
-          "url": "https://github.com/equinor/ert/commit/f2c5ca08adfb78e232dd3d7cdbafa17a25691ea9"
-        },
-        "date": 1725367617161,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19214501530227393,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04321687666801048",
-            "extra": "mean: 5.204402510399996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030964671571169482",
             "extra": "mean: 5.284935846599995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "b85f6cfca78d2469ddde5df55c27287e5f53f73a",
+          "message": "Fix error in job dispatch's memory reporting\n\nUpdated the test so that it will not work if process is counted number\nof child processes times.",
+          "timestamp": "2024-09-10T16:04:04+02:00",
+          "tree_id": "99e643283e852eeac43db6b81ac6e7f3bdee4874",
+          "url": "https://github.com/equinor/ert/commit/b85f6cfca78d2469ddde5df55c27287e5f53f73a"
+        },
+        "date": 1725977210413,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18657445090693955,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04006369241290473",
+            "extra": "mean: 5.35979066340002 sec\nrounds: 5"
           }
         ]
       }
