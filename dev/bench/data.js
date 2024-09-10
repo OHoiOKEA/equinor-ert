@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725978852088,
+  "lastUpdate": 1725979223760,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "6cac4c0ef502a1468138515834120edecb62afe6",
-          "message": "Avoid deprecation warning from pytest-asyncio\n\nThis deprecation warning pops up from pytest-asyncio==0.24",
-          "timestamp": "2024-09-03T15:36:28+02:00",
-          "tree_id": "20df283c1d7c830d853bf9c5ee0f1017e44d2069",
-          "url": "https://github.com/equinor/ert/commit/6cac4c0ef502a1468138515834120edecb62afe6"
-        },
-        "date": 1725370739357,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19175925222453966,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04668515751125608",
-            "extra": "mean: 5.214872233799985 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03467182717563992",
             "extra": "mean: 5.314723118399991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sondreso@users.noreply.github.com",
+            "name": "Sondre Sortland",
+            "username": "sondreso"
+          },
+          "committer": {
+            "email": "sondreso@users.noreply.github.com",
+            "name": "Sondre Sortland",
+            "username": "sondreso"
+          },
+          "distinct": true,
+          "id": "5a83805c3c4b258abf43e95f153c4bd714d2bf4b",
+          "message": "Fix ert logo on PyPi",
+          "timestamp": "2024-09-10T16:37:54+02:00",
+          "tree_id": "72e6f89b6ff5de43cccdff8ac07325d9e2dfe5af",
+          "url": "https://github.com/equinor/ert/commit/5a83805c3c4b258abf43e95f153c4bd714d2bf4b"
+        },
+        "date": 1725979223141,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19015894527972554,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04030817900503131",
+            "extra": "mean: 5.258758658599999 sec\nrounds: 5"
           }
         ]
       }
