@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725977211377,
+  "lastUpdate": 1725978852088,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "8395bbf017a16e3eab024badf84dd907cf1eef78",
-          "message": "Delete unused fixture get_ensemble",
-          "timestamp": "2024-09-03T14:56:51+02:00",
-          "tree_id": "de84d5976d0d00e42d17118da2944a716a730228",
-          "url": "https://github.com/equinor/ert/commit/8395bbf017a16e3eab024badf84dd907cf1eef78"
-        },
-        "date": 1725368355025,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19467792518865204,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030571635833279327",
-            "extra": "mean: 5.136689221599999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04006369241290473",
             "extra": "mean: 5.35979066340002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sondreso@users.noreply.github.com",
+            "name": "Sondre Sortland",
+            "username": "sondreso"
+          },
+          "committer": {
+            "email": "sondreso@users.noreply.github.com",
+            "name": "Sondre Sortland",
+            "username": "sondreso"
+          },
+          "distinct": true,
+          "id": "27b73d74ea4588de11009e4a5aa9e3905e569240",
+          "message": "Update install instructions after c code removal",
+          "timestamp": "2024-09-10T16:31:36+02:00",
+          "tree_id": "7dfcb8c4df00024bcaf78449f748e25820ea2379",
+          "url": "https://github.com/equinor/ert/commit/27b73d74ea4588de11009e4a5aa9e3905e569240"
+        },
+        "date": 1725978851514,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18815655636658118,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03467182717563992",
+            "extra": "mean: 5.314723118399991 sec\nrounds: 5"
           }
         ]
       }
