@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725887172969,
+  "lastUpdate": 1725962135316,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "e1b0f3ea46791347c9d52810a20d7f206004d29b",
-          "message": "Don't return duplicate data from export tool\n\nHappens when there are multiple experiments that have ensembles with same names.",
-          "timestamp": "2024-09-03T13:06:53+02:00",
-          "tree_id": "94eb05b8a5fc242d93232da25b07d2c09cc958d3",
-          "url": "https://github.com/equinor/ert/commit/e1b0f3ea46791347c9d52810a20d7f206004d29b"
-        },
-        "date": 1725361764347,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1920436053976892,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04275056803361811",
-            "extra": "mean: 5.207150729799997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025243677886965108",
             "extra": "mean: 5.371223772600001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "e0e9d9760baa32b971121a5e1f0e149c810e1c7c",
+          "message": "Refactor Slurm error-handling",
+          "timestamp": "2024-09-10T11:53:00+02:00",
+          "tree_id": "c0b6336a7a589849cd8ef46f660935a535d08ce0",
+          "url": "https://github.com/equinor/ert/commit/e0e9d9760baa32b971121a5e1f0e149c810e1c7c"
+        },
+        "date": 1725962134777,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1931673207263527,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02056831507904121",
+            "extra": "mean: 5.176859089000016 sec\nrounds: 5"
           }
         ]
       }
