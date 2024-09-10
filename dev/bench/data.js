@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725979223760,
+  "lastUpdate": 1725982513700,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "a96c6f295768bd45694d74a59697fb29d347daa9",
-          "message": "Remove unused progress fixture",
-          "timestamp": "2024-09-03T15:47:06+02:00",
-          "tree_id": "689bc328bca8c27bfd700cf863f6dadf4606fd61",
-          "url": "https://github.com/equinor/ert/commit/a96c6f295768bd45694d74a59697fb29d347daa9"
-        },
-        "date": 1725371377526,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19295477038259673,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05631412951521444",
-            "extra": "mean: 5.182561685399998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04030817900503131",
             "extra": "mean: 5.258758658599999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "30b9246111296a591b9942e3f836122fc872b01c",
+          "message": "Avoid crashing while cleaning up tmp-directory",
+          "timestamp": "2024-09-10T17:32:36+02:00",
+          "tree_id": "eab23bc231e73deeaf72de6bde916b4d4dfeada7",
+          "url": "https://github.com/equinor/ert/commit/30b9246111296a591b9942e3f836122fc872b01c"
+        },
+        "date": 1725982513204,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19078430587281553,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05813957669161882",
+            "extra": "mean: 5.241521284600003 sec\nrounds: 5"
           }
         ]
       }
