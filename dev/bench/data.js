@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725962135316,
+  "lastUpdate": 1725973102477,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "89d13ad5e607d5dc452c8d650b1ca863b93ca9f5",
-          "message": "Fix bug checksum failures\n\nThis commit fixes the bug where multiple realizations try to read checksum\nat the same time, leading it to grind to a halt.\nThe issue was fixed by moving the forward_model_ok_lock up a level, so\nthat only one realization can call `verify_checksum` at a time. This\nalso solved the issue where jobs would be shown as stuck in pending even though\nall forward model steps had completed. This was probably due to\nchecksums all being checked and verified at the same time, which can be\nIO intensive.",
-          "timestamp": "2024-09-03T13:15:41+02:00",
-          "tree_id": "9b10364c5f0b04055c7b8784441beeb522e1df59",
-          "url": "https://github.com/equinor/ert/commit/89d13ad5e607d5dc452c8d650b1ca863b93ca9f5"
-        },
-        "date": 1725362296271,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18907019714521503,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05300772271942814",
-            "extra": "mean: 5.289040870000003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02056831507904121",
             "extra": "mean: 5.176859089000016 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "54e339cf257800aae33c4e23f995ec5241f74bbe",
+          "message": "Cleanup SETENV documentation\n\nLSF is not related to this.",
+          "timestamp": "2024-09-10T14:55:47+02:00",
+          "tree_id": "771e997167f1148a10493b6636bc35c09d7dc287",
+          "url": "https://github.com/equinor/ert/commit/54e339cf257800aae33c4e23f995ec5241f74bbe"
+        },
+        "date": 1725973102042,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19270266016400708,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04782572253017489",
+            "extra": "mean: 5.189341959000001 sec\nrounds: 5"
           }
         ]
       }
