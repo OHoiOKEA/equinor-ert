@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725973102477,
+  "lastUpdate": 1725974105029,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "d71be2ae0bf53055b00a785d0194f40659390330",
-          "message": "Delete unused fixture `default_ensemble`\n\nDelete unused fixture",
-          "timestamp": "2024-09-03T14:24:38+02:00",
-          "tree_id": "2524c3299814aff2929402c4c3deaffe4a91262a",
-          "url": "https://github.com/equinor/ert/commit/d71be2ae0bf53055b00a785d0194f40659390330"
-        },
-        "date": 1725366432074,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19072821192006684,
-            "unit": "iter/sec",
-            "range": "stddev: 0.07107997850810462",
-            "extra": "mean: 5.243062837600002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04782572253017489",
             "extra": "mean: 5.189341959000001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "6d0a6af761a4fba52b4bd0bbd7560599653bb3fd",
+          "message": "Include experiment name in ensemble selector",
+          "timestamp": "2024-09-10T15:12:33+02:00",
+          "tree_id": "776f033faf1365a77233e4319628c2baf4e127d7",
+          "url": "https://github.com/equinor/ert/commit/6d0a6af761a4fba52b4bd0bbd7560599653bb3fd"
+        },
+        "date": 1725974104414,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18921705561352062,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030964671571169482",
+            "extra": "mean: 5.284935846599995 sec\nrounds: 5"
           }
         ]
       }
