@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1725982513700,
+  "lastUpdate": 1726037281486,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "8e62a2d136c858073b06ca119c78cfbac84a63ce",
-          "message": "Log more usage statistics\n\nSince the string 'Peak memory use' is kept, this should be ok'ish with\nrespect to backwards compatible search statements in the log",
-          "timestamp": "2024-09-04T07:22:43+02:00",
-          "tree_id": "cec8810192384827f8bf020b21bb9c9ed3149380",
-          "url": "https://github.com/equinor/ert/commit/8e62a2d136c858073b06ca119c78cfbac84a63ce"
-        },
-        "date": 1725427508407,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19352092542370383,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04148932620199354",
-            "extra": "mean: 5.167399844800002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05813957669161882",
             "extra": "mean: 5.241521284600003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "c00cadd0ad9ccdd385745ea700dc79696e996fc5",
+          "message": "Rename Snapshot to EnsembleSnapshot\n\nRename ForwardModel to FMStepSnapshot\nFix references to job and forward model where it should be forward model step.",
+          "timestamp": "2024-09-11T08:45:25+02:00",
+          "tree_id": "dcca8ed058c22b261d3f686b285c82b1702199c4",
+          "url": "https://github.com/equinor/ert/commit/c00cadd0ad9ccdd385745ea700dc79696e996fc5"
+        },
+        "date": 1726037280609,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19482345633644774,
+            "unit": "iter/sec",
+            "range": "stddev: 0.062166852036857276",
+            "extra": "mean: 5.132852166799995 sec\nrounds: 5"
           }
         ]
       }
