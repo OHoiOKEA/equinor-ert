@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726047729930,
+  "lastUpdate": 1726055543990,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "1a93470b4aec334bfbf17d3a8bbf2554ae1193af",
-          "message": "Make figure snapshot tests faster",
-          "timestamp": "2024-09-04T12:26:49+02:00",
-          "tree_id": "1cb55d381c774f3a332d48ef0b10c3c54d2d9b5d",
-          "url": "https://github.com/equinor/ert/commit/1a93470b4aec334bfbf17d3a8bbf2554ae1193af"
-        },
-        "date": 1725445752369,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1923369544593418,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0413552417329648",
-            "extra": "mean: 5.199208871799987 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03402074528502555",
             "extra": "mean: 5.2604605330000025 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "1cd56d483001008b51df169c61d469cce932dd28",
+          "message": "Remove excess check_response call in std_dev_for_parameter\n\nThe `std_dev_for_parameter` method manually checks if the response's status_code is\n200 OK and decides what to do if it is not. Calling the `check_response`\nmethod raises an exception if it is not 200 OK, which is a valid\nresponse in this case.",
+          "timestamp": "2024-09-11T13:49:42+02:00",
+          "tree_id": "2527f6012a722365cea10bda02b7282f4c3f9b8f",
+          "url": "https://github.com/equinor/ert/commit/1cd56d483001008b51df169c61d469cce932dd28"
+        },
+        "date": 1726055543371,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1876858624708561,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020536324697251893",
+            "extra": "mean: 5.328051814000003 sec\nrounds: 5"
           }
         ]
       }
