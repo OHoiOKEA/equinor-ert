@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726055543990,
+  "lastUpdate": 1726124427274,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "be9a54a85cd5326cb8e239f064564ad437c27da4",
-          "message": "Fix typo fligure -> figure",
-          "timestamp": "2024-09-04T12:41:27+02:00",
-          "tree_id": "493704233598ed41714323a94dcd3e0f470e6544",
-          "url": "https://github.com/equinor/ert/commit/be9a54a85cd5326cb8e239f064564ad437c27da4"
-        },
-        "date": 1725446632701,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1883610128205445,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04787970305199948",
-            "extra": "mean: 5.308954252399997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020536324697251893",
             "extra": "mean: 5.328051814000003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "a7b09b714f18c1b224fb89e1e843f34548c94fd4",
+          "message": "Remove unused function from local_ensemble",
+          "timestamp": "2024-09-12T08:57:58+02:00",
+          "tree_id": "df54d6ade4167bc821203dace2e4e65856aaaab7",
+          "url": "https://github.com/equinor/ert/commit/a7b09b714f18c1b224fb89e1e843f34548c94fd4"
+        },
+        "date": 1726124426843,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18874232833940313,
+            "unit": "iter/sec",
+            "range": "stddev: 0.035508072033931457",
+            "extra": "mean: 5.298228589200005 sec\nrounds: 5"
           }
         ]
       }
