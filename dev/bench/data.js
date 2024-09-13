@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726216317270,
+  "lastUpdate": 1726235865515,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "cb5ea322fb6fc8a2577f6bd9e903df40f5e00ff3",
-          "message": "Use plot() instead of deprecated plot_date()\n\nplot_date() has been discouraged since matplotlib 3.5, and deprecated from 3.9. Instead\nwe use plot() directly, and the datatype of the first argument (the x-data) will\ndetermine the kind of plot.",
-          "timestamp": "2024-09-04T14:35:47+02:00",
-          "tree_id": "ded5cccca730804eed26c2a6da17007ace709e52",
-          "url": "https://github.com/equinor/ert/commit/cb5ea322fb6fc8a2577f6bd9e903df40f5e00ff3"
-        },
-        "date": 1725453492324,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18508683718288718,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04161998789890466",
-            "extra": "mean: 5.402869351599998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.050246017748829475",
             "extra": "mean: 5.220740190599997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "d347cb41773f4ac621067578af377034d700662f",
+          "message": "Use FORWARD_MODEL in poly-example\n\nNo need to use the keyword SIMULATION_JOB that no users use.",
+          "timestamp": "2024-09-13T15:55:11+02:00",
+          "tree_id": "cadbbd7e0e9c91daee1fefd9735187fef6a2cea8",
+          "url": "https://github.com/equinor/ert/commit/d347cb41773f4ac621067578af377034d700662f"
+        },
+        "date": 1726235864637,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1896100708718222,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03518910957376801",
+            "extra": "mean: 5.273981468399995 sec\nrounds: 5"
           }
         ]
       }
