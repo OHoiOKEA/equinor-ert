@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726212667523,
+  "lastUpdate": 1726216317270,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "0303a8ae343994cde6d0a949c3777643569862c5",
-          "message": "Add proper validation to load results manually tool",
-          "timestamp": "2024-09-04T13:57:58+02:00",
-          "tree_id": "b23cadd03dd801616217344174cb5fef6e0573bf",
-          "url": "https://github.com/equinor/ert/commit/0303a8ae343994cde6d0a949c3777643569862c5"
-        },
-        "date": 1725451224183,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19332835025283113,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04794355201067079",
-            "extra": "mean: 5.172547113199999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04428449788065644",
             "extra": "mean: 5.294323780600001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "d8b17e4c7d1211cea135341501856028b77cccce",
+          "message": "Add EnsemblePlot support for rate plotting drawing\n\n - exploits \"steps-pre\" drawing style\n - tests that draw_style is set correctly",
+          "timestamp": "2024-09-13T10:29:20+02:00",
+          "tree_id": "55cf0db5988b46734daa406b57329ec3a807c2f8",
+          "url": "https://github.com/equinor/ert/commit/d8b17e4c7d1211cea135341501856028b77cccce"
+        },
+        "date": 1726216316361,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19154372052463203,
+            "unit": "iter/sec",
+            "range": "stddev: 0.050246017748829475",
+            "extra": "mean: 5.220740190599997 sec\nrounds: 5"
           }
         ]
       }
