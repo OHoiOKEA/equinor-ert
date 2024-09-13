@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726124427274,
+  "lastUpdate": 1726212667523,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "08c3f6cfd6334dbe8bed2b84bdb1423b3971893c",
-          "message": "Only install hdf5 for python<3.10 on mac in github workflows",
-          "timestamp": "2024-09-04T13:22:50+02:00",
-          "tree_id": "7329444944c17155761b0a69d9527a0a794bfce6",
-          "url": "https://github.com/equinor/ert/commit/08c3f6cfd6334dbe8bed2b84bdb1423b3971893c"
-        },
-        "date": 1725449119773,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18889170659025373,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06508753217179183",
-            "extra": "mean: 5.294038674600006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.035508072033931457",
             "extra": "mean: 5.298228589200005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "c241244fb40d796f42b626788820831005ca9faf",
+          "message": "Make copy_directories error message readable",
+          "timestamp": "2024-09-13T09:28:36+02:00",
+          "tree_id": "c85b31325c356ad9c851127ea0adbd5af6ab1509",
+          "url": "https://github.com/equinor/ert/commit/c241244fb40d796f42b626788820831005ca9faf"
+        },
+        "date": 1726212666909,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18888153453407996,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04428449788065644",
+            "extra": "mean: 5.294323780600001 sec\nrounds: 5"
           }
         ]
       }
