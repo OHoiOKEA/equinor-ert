@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726469154736,
+  "lastUpdate": 1726471164307,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "0c23813e9e19962053afecaf6fac293fda5c40d7",
-          "message": "Avoid stack trace in ecl_run errors",
-          "timestamp": "2024-09-05T12:03:07Z",
-          "tree_id": "78b977855025f1c94393a4275e96fa12ade4e635",
-          "url": "https://github.com/equinor/ert/commit/0c23813e9e19962053afecaf6fac293fda5c40d7"
-        },
-        "date": 1725537938533,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.194085121175011,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05516166019526279",
-            "extra": "mean: 5.152378471599979 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026816969860805704",
             "extra": "mean: 5.233452136200003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "e1cda91a39a5da97045cfffa8a0e205cb07bcd42",
+          "message": "Fix typo existant -> existent\n\nexistant is French.",
+          "timestamp": "2024-09-16T09:16:54+02:00",
+          "tree_id": "8fd4ce39cc4fa2d4179d3cc87b7f15d2604847a9",
+          "url": "https://github.com/equinor/ert/commit/e1cda91a39a5da97045cfffa8a0e205cb07bcd42"
+        },
+        "date": 1726471163684,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19373920315032825,
+            "unit": "iter/sec",
+            "range": "stddev: 0.010347847376169044",
+            "extra": "mean: 5.161577954999996 sec\nrounds: 5"
           }
         ]
       }
