@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726485602944,
+  "lastUpdate": 1726486719352,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "2d21583bae5f52a367c3ea492b2b76bbf07608cc",
-          "message": "Fix bug manual update step does not stop progress bar indicator",
-          "timestamp": "2024-09-05T15:53:58+02:00",
-          "tree_id": "074f6db4883ed5f6d1500a554a9711c96156c8a0",
-          "url": "https://github.com/equinor/ert/commit/2d21583bae5f52a367c3ea492b2b76bbf07608cc"
-        },
-        "date": 1725544588341,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18885615548848841,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04821946818053506",
-            "extra": "mean: 5.295035247399994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.014655083543314096",
             "extra": "mean: 5.273720741199997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "9128cd2c29a3e03ef2c0de73e383288cf7ef23d7",
+          "message": "Improve pytest skip message for missing git-lfs",
+          "timestamp": "2024-09-16T13:36:02+02:00",
+          "tree_id": "9f30a2ffbd7b1b7bc8e127317c8f025ffe2b0d5a",
+          "url": "https://github.com/equinor/ert/commit/9128cd2c29a3e03ef2c0de73e383288cf7ef23d7"
+        },
+        "date": 1726486718868,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18672005252982402,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04512125597231378",
+            "extra": "mean: 5.355611175399997 sec\nrounds: 5"
           }
         ]
       }
