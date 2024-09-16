@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726489213962,
+  "lastUpdate": 1726490608014,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "fe1af87d2e08ed86179c18b739a03ec1cbc258d1",
-          "message": "Refactor snapshots\n\nThis commit removes some of the excess classes (SnapshotBuilder,\nSnapshotDict) from snapshot.py. It also changes the pydantic classes to\nbe TypedDicts instead.",
-          "timestamp": "2024-09-09T10:52:17+02:00",
-          "tree_id": "ea082e7656cb8717e6dba8f057c2eecce7872ba9",
-          "url": "https://github.com/equinor/ert/commit/fe1af87d2e08ed86179c18b739a03ec1cbc258d1"
-        },
-        "date": 1725872084338,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1904577952206856,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026167212911803298",
-            "extra": "mean: 5.250507068200011 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04215706264739716",
             "extra": "mean: 5.2427319807999995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "a24c64ad70fa843beadea40c7f32a309cc59c2da",
+          "message": "Log contents of custom forward model steps",
+          "timestamp": "2024-09-16T14:41:46+02:00",
+          "tree_id": "9350fca6b749957b24ce2a1029390f88363645f9",
+          "url": "https://github.com/equinor/ert/commit/a24c64ad70fa843beadea40c7f32a309cc59c2da"
+        },
+        "date": 1726490607242,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18843333086232553,
+            "unit": "iter/sec",
+            "range": "stddev: 0.014824416998436344",
+            "extra": "mean: 5.3069167509999975 sec\nrounds: 5"
           }
         ]
       }
