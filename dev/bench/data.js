@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726487016122,
+  "lastUpdate": 1726488080310,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "56c5ffa6c40b60952e6bab94ed6d49caf5dba8d7",
-          "message": "Make event validation stricter\n\nAdd extra=\"forbid\" and strict=True to all the events\nAdd missing ensemble field for EESnapshot and EESnapshotUpdate",
-          "timestamp": "2024-09-06T13:53:37+02:00",
-          "tree_id": "1fa7751a442ad36f4bd103b8414e375c4c2964c0",
-          "url": "https://github.com/equinor/ert/commit/56c5ffa6c40b60952e6bab94ed6d49caf5dba8d7"
-        },
-        "date": 1725623772631,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1894550044807494,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03202817922393435",
-            "extra": "mean: 5.278298151799999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03929731666290262",
             "extra": "mean: 5.2026488376000035 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "3173016f0e0c98b60e6afb9f805cdce21cbea9ed",
+          "message": "Move _ert_forward_model_runner to _ert.forward_model_runner\n\nThis should not be a problem as _ert does not autoimport anything in\n__init__.py",
+          "timestamp": "2024-09-16T13:59:27+02:00",
+          "tree_id": "94d696aa79bf403b9cd4dc4d1b171fbe406d21e4",
+          "url": "https://github.com/equinor/ert/commit/3173016f0e0c98b60e6afb9f805cdce21cbea9ed"
+        },
+        "date": 1726488079831,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1915556906102528,
+            "unit": "iter/sec",
+            "range": "stddev: 0.017429352810660218",
+            "extra": "mean: 5.220413952799982 sec\nrounds: 5"
           }
         ]
       }
