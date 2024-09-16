@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726471164307,
+  "lastUpdate": 1726471969337,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "e33136f1c94adf04749590561a89d7a5158c5317",
-          "message": "Get ensembles by id in dark storage\n\n Get ensembles by id in dark storage",
-          "timestamp": "2024-09-05T14:26:50+02:00",
-          "tree_id": "5a8d1025f477c53e0ca6c6eddf2946c6642def4d",
-          "url": "https://github.com/equinor/ert/commit/e33136f1c94adf04749590561a89d7a5158c5317"
-        },
-        "date": 1725539357630,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19422728056218924,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05259578635276615",
-            "extra": "mean: 5.148607328000002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.010347847376169044",
             "extra": "mean: 5.161577954999996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "dbf2ae633f0416b7e935e79c483ae05aeb72d279",
+          "message": "Improve experiment name validation",
+          "timestamp": "2024-09-16T09:30:22+02:00",
+          "tree_id": "55d39328afec7aae572aa5e00d86762a50ba0089",
+          "url": "https://github.com/equinor/ert/commit/dbf2ae633f0416b7e935e79c483ae05aeb72d279"
+        },
+        "date": 1726471968899,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19039023434069988,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030097739903150934",
+            "extra": "mean: 5.252370235599995 sec\nrounds: 5"
           }
         ]
       }
