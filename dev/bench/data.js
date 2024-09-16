@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726488799490,
+  "lastUpdate": 1726489213962,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "2392288535d38356e3ee2b119782307357ca5667",
-          "message": "Assert that last event in status_queue is an EndEvent",
-          "timestamp": "2024-09-06T14:33:13+02:00",
-          "tree_id": "59f172d541f65b794fde425a76ebc5f45e2f09d4",
-          "url": "https://github.com/equinor/ert/commit/2392288535d38356e3ee2b119782307357ca5667"
-        },
-        "date": 1725626138865,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19319533726089025,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03811742102473588",
-            "extra": "mean: 5.176108358399995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03555438575818033",
             "extra": "mean: 5.288196311799998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "0e48fbe49a977958207baf9114b4644c21b38a61",
+          "message": "Send codecov upload token secret to our own workflow",
+          "timestamp": "2024-09-16T14:18:10+02:00",
+          "tree_id": "1a20376f7b339287dd78db22f0fa318426d84db0",
+          "url": "https://github.com/equinor/ert/commit/0e48fbe49a977958207baf9114b4644c21b38a61"
+        },
+        "date": 1726489213539,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1907402483404097,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04215706264739716",
+            "extra": "mean: 5.2427319807999995 sec\nrounds: 5"
           }
         ]
       }
