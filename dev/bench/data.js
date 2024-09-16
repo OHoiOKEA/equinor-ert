@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726485263874,
+  "lastUpdate": 1726485602944,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "f60497ead0cf78938d2d0556c3b59605f6eaefee",
-          "message": "Use continuous update for target ensemble",
-          "timestamp": "2024-09-05T15:16:01+02:00",
-          "tree_id": "1f17d875cebdbdf8c0ad52be43191bb8a8d0af7d",
-          "url": "https://github.com/equinor/ert/commit/f60497ead0cf78938d2d0556c3b59605f6eaefee"
-        },
-        "date": 1725542312319,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1946394235375652,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0436176399777298",
-            "extra": "mean: 5.137705310800004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.023415417192334278",
             "extra": "mean: 5.260093159599995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "29a790fc6f3c8fadd2ca29e88c5b5b9c938992fd",
+          "message": "Add COV_CORE_CONTEXT to env_save exception",
+          "timestamp": "2024-09-16T13:17:23+02:00",
+          "tree_id": "eea4e70ec189d6b28dbbb484e69bf5b85c104053",
+          "url": "https://github.com/equinor/ert/commit/29a790fc6f3c8fadd2ca29e88c5b5b9c938992fd"
+        },
+        "date": 1726485601923,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1896194449940588,
+            "unit": "iter/sec",
+            "range": "stddev: 0.014655083543314096",
+            "extra": "mean: 5.273720741199997 sec\nrounds: 5"
           }
         ]
       }
