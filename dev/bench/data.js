@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726235865515,
+  "lastUpdate": 1726469154736,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "e5140388547d6a2842555000cbf1846236dc13e1",
-          "message": "Add default value for ERROR_MIN to docs",
-          "timestamp": "2024-09-05T12:03:41+02:00",
-          "tree_id": "e4c02023e430381d53dc841ba385bddc0d938276",
-          "url": "https://github.com/equinor/ert/commit/e5140388547d6a2842555000cbf1846236dc13e1"
-        },
-        "date": 1725530769705,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19281593610807116,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0723848096866378",
-            "extra": "mean: 5.186293312600009 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03518910957376801",
             "extra": "mean: 5.273981468399995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "aea8e671938e256d53f8186c86866553062c0ed3",
+          "message": "Fix general options overwriting queue options\n\nThis commit fixes the issue where the general options `MAX_RUNNING` and\n`SUBMIT_SLEEP` would have priority over the equivalent QUEUE_OPTIONS.\nIt also makes the options set in user config for those keywords take\nprecedence over what is set in site config.",
+          "timestamp": "2024-09-16T08:43:19+02:00",
+          "tree_id": "256b92c3ecba837e99f1ece25fcdaf7e77857131",
+          "url": "https://github.com/equinor/ert/commit/aea8e671938e256d53f8186c86866553062c0ed3"
+        },
+        "date": 1726469153888,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1910784648402455,
+            "unit": "iter/sec",
+            "range": "stddev: 0.026816969860805704",
+            "extra": "mean: 5.233452136200003 sec\nrounds: 5"
           }
         ]
       }
