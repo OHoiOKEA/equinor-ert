@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726490608014,
+  "lastUpdate": 1726492142493,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "ee02327ccaa8a3803777bc20ec77f3e50e792106",
-          "message": "Generate Ert manifest file using ensemble Experiment content",
-          "timestamp": "2024-09-09T11:25:36+02:00",
-          "tree_id": "81c1f0d8d8670b471538745bb536afe83b9c008d",
-          "url": "https://github.com/equinor/ert/commit/ee02327ccaa8a3803777bc20ec77f3e50e792106"
-        },
-        "date": 1725874085577,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1871587111795876,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030819401486568154",
-            "extra": "mean: 5.343058806599993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.014824416998436344",
             "extra": "mean: 5.3069167509999975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "d69bbe3de066954925f28dece0d67c3ae1946020",
+          "message": "Replace selected usage of SIMULATION_JOB with FORWARD_MODEL\n\nWherever there are no arguments passed directly from the config\nline, FORWARD_MODEL is used instead of SIMULATION_JOB.",
+          "timestamp": "2024-09-16T15:07:21+02:00",
+          "tree_id": "62b9d14623a154a09623ac0728f702aa3554fed9",
+          "url": "https://github.com/equinor/ert/commit/d69bbe3de066954925f28dece0d67c3ae1946020"
+        },
+        "date": 1726492142035,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19301247886640804,
+            "unit": "iter/sec",
+            "range": "stddev: 0.044412722157283605",
+            "extra": "mean: 5.181012159799996 sec\nrounds: 5"
           }
         ]
       }
