@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726492142493,
+  "lastUpdate": 1726510422297,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "72bf09088eb96b1b43814da09d69604ba3280adf",
-          "message": "Everest remove report step from results gendata\n\nRemove report step from results gen data",
-          "timestamp": "2024-09-09T12:44:14+02:00",
-          "tree_id": "f82fdd9fba8cc91169c379a72d0ffa10e9274fe8",
-          "url": "https://github.com/equinor/ert/commit/72bf09088eb96b1b43814da09d69604ba3280adf"
-        },
-        "date": 1725878802364,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1925327284261417,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027473048584949245",
-            "extra": "mean: 5.193922135599996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.044412722157283605",
             "extra": "mean: 5.181012159799996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "092a8618558ee7604bcb9023d674a97ce3184437",
+          "message": "Add RUF (ruff specific rules) to linting rules",
+          "timestamp": "2024-09-16T20:11:49+02:00",
+          "tree_id": "907f7c3ae7169f4d411a63396ea8d06c410a4213",
+          "url": "https://github.com/equinor/ert/commit/092a8618558ee7604bcb9023d674a97ce3184437"
+        },
+        "date": 1726510421776,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1881593226049552,
+            "unit": "iter/sec",
+            "range": "stddev: 0.039522254827142736",
+            "extra": "mean: 5.3146449836000045 sec\nrounds: 5"
           }
         ]
       }
