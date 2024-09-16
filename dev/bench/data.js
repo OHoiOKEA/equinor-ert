@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726486719352,
+  "lastUpdate": 1726487016122,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "0e8f31e12d80a7c8abe47a25f4ad1433c22860f0",
-          "message": "Remove unreachable code in test",
-          "timestamp": "2024-09-06T13:53:22+02:00",
-          "tree_id": "ac1ac0c5b00d1d853b5ccca2b358f25ff3abf790",
-          "url": "https://github.com/equinor/ert/commit/0e8f31e12d80a7c8abe47a25f4ad1433c22860f0"
-        },
-        "date": 1725623755940,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1918202593737818,
-            "unit": "iter/sec",
-            "range": "stddev: 0.11295037800848402",
-            "extra": "mean: 5.213213678600004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04512125597231378",
             "extra": "mean: 5.355611175399997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "9169dd3c485dfbe4d7b324c8a3df5e5eefc34613",
+          "message": "Remove unused flake8-matcher.json\n\n- removes unused flake8-matcher.json\n- change from pip to uv pip in github benchmark",
+          "timestamp": "2024-09-16T13:41:49+02:00",
+          "tree_id": "fa485e351a89d07b7598470a4ef179c1469dfd10",
+          "url": "https://github.com/equinor/ert/commit/9169dd3c485dfbe4d7b324c8a3df5e5eefc34613"
+        },
+        "date": 1726487015233,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19220978221188245,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03929731666290262",
+            "extra": "mean: 5.2026488376000035 sec\nrounds: 5"
           }
         ]
       }
