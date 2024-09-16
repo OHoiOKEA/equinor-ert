@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726471969337,
+  "lastUpdate": 1726485263874,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "feda.curic@gmail.com",
-            "name": "Feda Curic",
-            "username": "dafeda"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "63c6c9a2b3e044db49595e9bad8ee46f53c89f4d",
-          "message": "Delete get_ensemble_by_name from `LocalStorage`\n\nEnsemble names are only unique within a single experiment.",
-          "timestamp": "2024-09-05T14:55:23+02:00",
-          "tree_id": "49645f2932fd228f2a43f463c33b2ba181cbb0a9",
-          "url": "https://github.com/equinor/ert/commit/63c6c9a2b3e044db49595e9bad8ee46f53c89f4d"
-        },
-        "date": 1725541076081,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18484162627742487,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05188494379158667",
-            "extra": "mean: 5.410036798199997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030097739903150934",
             "extra": "mean: 5.252370235599995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "47c7f5f388140baa948cd33809c28024af1e5297",
+          "message": "Remove unused index_lists",
+          "timestamp": "2024-09-16T13:11:48+02:00",
+          "tree_id": "2cbe95133937c78e1287265f2d0d3f23138649d7",
+          "url": "https://github.com/equinor/ert/commit/47c7f5f388140baa948cd33809c28024af1e5297"
+        },
+        "date": 1726485263250,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1901107013998294,
+            "unit": "iter/sec",
+            "range": "stddev: 0.023415417192334278",
+            "extra": "mean: 5.260093159599995 sec\nrounds: 5"
           }
         ]
       }
