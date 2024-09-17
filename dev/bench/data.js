@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726571473409,
+  "lastUpdate": 1726571510465,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "6d0a6af761a4fba52b4bd0bbd7560599653bb3fd",
-          "message": "Include experiment name in ensemble selector",
-          "timestamp": "2024-09-10T15:12:33+02:00",
-          "tree_id": "776f033faf1365a77233e4319628c2baf4e127d7",
-          "url": "https://github.com/equinor/ert/commit/6d0a6af761a4fba52b4bd0bbd7560599653bb3fd"
-        },
-        "date": 1725974104414,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18921705561352062,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030964671571169482",
-            "extra": "mean: 5.284935846599995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04365400418875253",
             "extra": "mean: 5.2871446343999935 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "ab512a641a5d52160e7a77466bc700572dfa932a",
+          "message": "Call the name() function when logging\n\nself.name is not a property (and due to deprecation in 3.11\nnot adding the @property decorator).\n\nWithout this patch, the log emitted looks like:\n  2024-09-17 12:48:31,555 - ert.run_models.ensemble_experiment - ert_gui_simulation_thread - INFO - Running <bound method EnsembleExperiment.name of <class 'ert.run_models.ensemble_experiment.EnsembleExperiment'>>",
+          "timestamp": "2024-09-17T13:10:08+02:00",
+          "tree_id": "e9c62c79389abeabb6830d3468bd165cdaec8e04",
+          "url": "https://github.com/equinor/ert/commit/ab512a641a5d52160e7a77466bc700572dfa932a"
+        },
+        "date": 1726571509945,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19083023683317452,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0741787715204856",
+            "extra": "mean: 5.240259701999998 sec\nrounds: 5"
           }
         ]
       }
