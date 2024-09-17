@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726566079260,
+  "lastUpdate": 1726571473409,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "54e339cf257800aae33c4e23f995ec5241f74bbe",
-          "message": "Cleanup SETENV documentation\n\nLSF is not related to this.",
-          "timestamp": "2024-09-10T14:55:47+02:00",
-          "tree_id": "771e997167f1148a10493b6636bc35c09d7dc287",
-          "url": "https://github.com/equinor/ert/commit/54e339cf257800aae33c4e23f995ec5241f74bbe"
-        },
-        "date": 1725973102042,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19270266016400708,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04782572253017489",
-            "extra": "mean: 5.189341959000001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029872387022947193",
             "extra": "mean: 5.297554385000007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "13d3afaec888a0682bddc97d76c6f77f2ff5a0c9",
+          "message": "Strip newlines from strings read from disk\n\nOn poly case this would otherwise yield an empty line in the logs.",
+          "timestamp": "2024-09-17T13:09:26+02:00",
+          "tree_id": "69535c4754217a6b820d1e3fcf24a354bef19a15",
+          "url": "https://github.com/equinor/ert/commit/13d3afaec888a0682bddc97d76c6f77f2ff5a0c9"
+        },
+        "date": 1726571472978,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18913800721350685,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04365400418875253",
+            "extra": "mean: 5.2871446343999935 sec\nrounds: 5"
           }
         ]
       }
