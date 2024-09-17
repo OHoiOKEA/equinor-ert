@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726559012321,
+  "lastUpdate": 1726561151116,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "fd5fa70e0fbc7875e0dd7d802f8121d10e491645",
-          "message": "Fix deprecation warning second argument of ws_handler",
-          "timestamp": "2024-09-09T15:02:46+02:00",
-          "tree_id": "84dfd72bfa7c8e54635e25405340f5a333b79cc0",
-          "url": "https://github.com/equinor/ert/commit/fd5fa70e0fbc7875e0dd7d802f8121d10e491645"
-        },
-        "date": 1725887172333,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.186177311230498,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025243677886965108",
-            "extra": "mean: 5.371223772600001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03133209014212453",
             "extra": "mean: 5.259352965199997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "b125e02f87dea084bea94cbb0223715555cd2f72",
+          "message": "Combine _SummaryType and SummaryKeyType",
+          "timestamp": "2024-09-17T10:17:24+02:00",
+          "tree_id": "7a1cc4aacac19a89f8924968077697b6316d4c86",
+          "url": "https://github.com/equinor/ert/commit/b125e02f87dea084bea94cbb0223715555cd2f72"
+        },
+        "date": 1726561150204,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19095128596851005,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05817766511695838",
+            "extra": "mean: 5.236937761000002 sec\nrounds: 5"
           }
         ]
       }
