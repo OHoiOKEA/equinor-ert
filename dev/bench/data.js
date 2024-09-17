@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726510422297,
+  "lastUpdate": 1726558188626,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "7224861efaad777fecaac9724ceb0d69c849c1ea",
-          "message": "Propagate errors in opening storage to Suggestor",
-          "timestamp": "2024-09-09T12:45:22+02:00",
-          "tree_id": "ba50e4f009ac114e7d4765aafd0af4b35f8af7af",
-          "url": "https://github.com/equinor/ert/commit/7224861efaad777fecaac9724ceb0d69c849c1ea"
-        },
-        "date": 1725878869820,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1887382669583308,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0173876618326775",
-            "extra": "mean: 5.2983425995999935 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.039522254827142736",
             "extra": "mean: 5.3146449836000045 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "864047670708208ece2ccd7246ee4916e587abb0",
+          "message": "Implement a one-time retry of opening JOBS_FILE",
+          "timestamp": "2024-09-17T09:28:04+02:00",
+          "tree_id": "417721caeab3395a01f9c99d94ec318c6f38ec0e",
+          "url": "https://github.com/equinor/ert/commit/864047670708208ece2ccd7246ee4916e587abb0"
+        },
+        "date": 1726558188076,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19085880142182834,
+            "unit": "iter/sec",
+            "range": "stddev: 0.036928349386395026",
+            "extra": "mean: 5.2394754266000065 sec\nrounds: 5"
           }
         ]
       }
