@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726558188626,
+  "lastUpdate": 1726559012321,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "225d6555cffdaa9d0a737f965a61b2e416153bb2",
-          "message": "Store & plot scaling factors\n\nSave & plot scaling factors",
-          "timestamp": "2024-09-09T13:48:14+02:00",
-          "tree_id": "db08bb673524932273025643e7168da8f03acdd8",
-          "url": "https://github.com/equinor/ert/commit/225d6555cffdaa9d0a737f965a61b2e416153bb2"
-        },
-        "date": 1725882649727,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19176436156271864,
-            "unit": "iter/sec",
-            "range": "stddev: 0.033529034717994795",
-            "extra": "mean: 5.2147332896000025 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.036928349386395026",
             "extra": "mean: 5.2394754266000065 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "8401331cfa6a4a9ce0efdb941d217354986913fd",
+          "message": "Move run_args and run_paths fixtures to unit_tests",
+          "timestamp": "2024-09-17T09:41:47+02:00",
+          "tree_id": "9d3e0bde625e01a68cce9724d85a4e01287c13bc",
+          "url": "https://github.com/equinor/ert/commit/8401331cfa6a4a9ce0efdb941d217354986913fd"
+        },
+        "date": 1726559011522,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19013745732921597,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03133209014212453",
+            "extra": "mean: 5.259352965199997 sec\nrounds: 5"
           }
         ]
       }
