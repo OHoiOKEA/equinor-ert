@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726571510465,
+  "lastUpdate": 1726647898757,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "b85f6cfca78d2469ddde5df55c27287e5f53f73a",
-          "message": "Fix error in job dispatch's memory reporting\n\nUpdated the test so that it will not work if process is counted number\nof child processes times.",
-          "timestamp": "2024-09-10T16:04:04+02:00",
-          "tree_id": "99e643283e852eeac43db6b81ac6e7f3bdee4874",
-          "url": "https://github.com/equinor/ert/commit/b85f6cfca78d2469ddde5df55c27287e5f53f73a"
-        },
-        "date": 1725977210413,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18657445090693955,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04006369241290473",
-            "extra": "mean: 5.35979066340002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0741787715204856",
             "extra": "mean: 5.240259701999998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "2fd710c32e89aad9fe0b42c74996e033324add7a",
+          "message": "Log all settings for run-models",
+          "timestamp": "2024-09-18T10:23:04+02:00",
+          "tree_id": "09ab47c77271abb76edd69da4729c4cd6eb70780",
+          "url": "https://github.com/equinor/ert/commit/2fd710c32e89aad9fe0b42c74996e033324add7a"
+        },
+        "date": 1726647898342,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18482303125965754,
+            "unit": "iter/sec",
+            "range": "stddev: 0.10031683230607473",
+            "extra": "mean: 5.4105811012 sec\nrounds: 5"
           }
         ]
       }
