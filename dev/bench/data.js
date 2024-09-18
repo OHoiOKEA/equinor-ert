@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726660161937,
+  "lastUpdate": 1726668308601,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "sondreso@users.noreply.github.com",
-            "name": "Sondre Sortland",
-            "username": "sondreso"
-          },
-          "committer": {
-            "email": "sondreso@users.noreply.github.com",
-            "name": "Sondre Sortland",
-            "username": "sondreso"
-          },
-          "distinct": true,
-          "id": "5a83805c3c4b258abf43e95f153c4bd714d2bf4b",
-          "message": "Fix ert logo on PyPi",
-          "timestamp": "2024-09-10T16:37:54+02:00",
-          "tree_id": "72e6f89b6ff5de43cccdff8ac07325d9e2dfe5af",
-          "url": "https://github.com/equinor/ert/commit/5a83805c3c4b258abf43e95f153c4bd714d2bf4b"
-        },
-        "date": 1725979223141,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19015894527972554,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04030817900503131",
-            "extra": "mean: 5.258758658599999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0338400079828528",
             "extra": "mean: 5.234016448599999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "2e5aa92a7b3916aee3b99c0b8700545ac1408368",
+          "message": "Make pyproject.toml pretty again",
+          "timestamp": "2024-09-18T16:03:22+02:00",
+          "tree_id": "5774108d0cb712b382012bf6a2b5fd847cf08ca9",
+          "url": "https://github.com/equinor/ert/commit/2e5aa92a7b3916aee3b99c0b8700545ac1408368"
+        },
+        "date": 1726668308162,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18772948743388462,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027122602989860047",
+            "extra": "mean: 5.326813670399991 sec\nrounds: 5"
           }
         ]
       }
