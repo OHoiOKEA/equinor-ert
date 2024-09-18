@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726647898757,
+  "lastUpdate": 1726660161937,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "sondreso@users.noreply.github.com",
-            "name": "Sondre Sortland",
-            "username": "sondreso"
-          },
-          "committer": {
-            "email": "sondreso@users.noreply.github.com",
-            "name": "Sondre Sortland",
-            "username": "sondreso"
-          },
-          "distinct": true,
-          "id": "27b73d74ea4588de11009e4a5aa9e3905e569240",
-          "message": "Update install instructions after c code removal",
-          "timestamp": "2024-09-10T16:31:36+02:00",
-          "tree_id": "7dfcb8c4df00024bcaf78449f748e25820ea2379",
-          "url": "https://github.com/equinor/ert/commit/27b73d74ea4588de11009e4a5aa9e3905e569240"
-        },
-        "date": 1725978851514,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18815655636658118,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03467182717563992",
-            "extra": "mean: 5.314723118399991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.10031683230607473",
             "extra": "mean: 5.4105811012 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "c2dbbd881ffacb6d5519460f39bc716c4d8b80e2",
+          "message": "Remove unused mypy config",
+          "timestamp": "2024-09-18T13:47:24+02:00",
+          "tree_id": "62819bb284825d0dc9848f342cb09be7759002cf",
+          "url": "https://github.com/equinor/ert/commit/c2dbbd881ffacb6d5519460f39bc716c4d8b80e2"
+        },
+        "date": 1726660161366,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19105786346305448,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0338400079828528",
+            "extra": "mean: 5.234016448599999 sec\nrounds: 5"
           }
         ]
       }
