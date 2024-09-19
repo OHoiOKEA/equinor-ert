@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726754478991,
+  "lastUpdate": 1726757616331,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "d347cb41773f4ac621067578af377034d700662f",
-          "message": "Use FORWARD_MODEL in poly-example\n\nNo need to use the keyword SIMULATION_JOB that no users use.",
-          "timestamp": "2024-09-13T15:55:11+02:00",
-          "tree_id": "cadbbd7e0e9c91daee1fefd9735187fef6a2cea8",
-          "url": "https://github.com/equinor/ert/commit/d347cb41773f4ac621067578af377034d700662f"
-        },
-        "date": 1726235864637,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1896100708718222,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03518910957376801",
-            "extra": "mean: 5.273981468399995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030363240431631404",
             "extra": "mean: 5.386065073600008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "ce4149b7ddd27dedc635ae8be6c48b83b48b8ad9",
+          "message": "Change default experiment/ensemble to new_experiment/ensemble",
+          "timestamp": "2024-09-19T16:51:51+02:00",
+          "tree_id": "c23c59733c8bf5e2b44fed5f434d5e946425c8f7",
+          "url": "https://github.com/equinor/ert/commit/ce4149b7ddd27dedc635ae8be6c48b83b48b8ad9"
+        },
+        "date": 1726757615865,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18969895535984,
+            "unit": "iter/sec",
+            "range": "stddev: 0.036525157554994025",
+            "extra": "mean: 5.271510315399996 sec\nrounds: 5"
           }
         ]
       }
