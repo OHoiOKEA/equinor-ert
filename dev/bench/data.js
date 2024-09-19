@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726668308601,
+  "lastUpdate": 1726739675611,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "30b9246111296a591b9942e3f836122fc872b01c",
-          "message": "Avoid crashing while cleaning up tmp-directory",
-          "timestamp": "2024-09-10T17:32:36+02:00",
-          "tree_id": "eab23bc231e73deeaf72de6bde916b4d4dfeada7",
-          "url": "https://github.com/equinor/ert/commit/30b9246111296a591b9942e3f836122fc872b01c"
-        },
-        "date": 1725982513204,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19078430587281553,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05813957669161882",
-            "extra": "mean: 5.241521284600003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027122602989860047",
             "extra": "mean: 5.326813670399991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "27c4530764d044798fb53e9905c4cdb26491f8ee",
+          "message": "Improve logging of errors in callback",
+          "timestamp": "2024-09-19T11:52:45+02:00",
+          "tree_id": "f84de7ea6e88ffe370fbab005bf0720927f138db",
+          "url": "https://github.com/equinor/ert/commit/27c4530764d044798fb53e9905c4cdb26491f8ee"
+        },
+        "date": 1726739674972,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19015915885066437,
+            "unit": "iter/sec",
+            "range": "stddev: 0.038527372494432326",
+            "extra": "mean: 5.2587527523999995 sec\nrounds: 5"
           }
         ]
       }
