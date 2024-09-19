@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726749053829,
+  "lastUpdate": 1726752143147,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "c241244fb40d796f42b626788820831005ca9faf",
-          "message": "Make copy_directories error message readable",
-          "timestamp": "2024-09-13T09:28:36+02:00",
-          "tree_id": "c85b31325c356ad9c851127ea0adbd5af6ab1509",
-          "url": "https://github.com/equinor/ert/commit/c241244fb40d796f42b626788820831005ca9faf"
-        },
-        "date": 1726212666909,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18888153453407996,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04428449788065644",
-            "extra": "mean: 5.294323780600001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.021227801788652717",
             "extra": "mean: 5.377397490599992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "7bf375480e5d1af6ed8dced264d0f0e3d4f87123",
+          "message": "Add cpu_seconds to MemoryStatus report sent from the runner",
+          "timestamp": "2024-09-19T15:20:35+02:00",
+          "tree_id": "7d0a3f6ee5de32d98fb6a62639419a1b02361555",
+          "url": "https://github.com/equinor/ert/commit/7bf375480e5d1af6ed8dced264d0f0e3d4f87123"
+        },
+        "date": 1726752142677,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1851814783663811,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03185179798827049",
+            "extra": "mean: 5.400108093000005 sec\nrounds: 5"
           }
         ]
       }
