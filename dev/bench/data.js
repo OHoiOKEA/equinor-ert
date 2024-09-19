@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726739675611,
+  "lastUpdate": 1726741915303,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "c00cadd0ad9ccdd385745ea700dc79696e996fc5",
-          "message": "Rename Snapshot to EnsembleSnapshot\n\nRename ForwardModel to FMStepSnapshot\nFix references to job and forward model where it should be forward model step.",
-          "timestamp": "2024-09-11T08:45:25+02:00",
-          "tree_id": "dcca8ed058c22b261d3f686b285c82b1702199c4",
-          "url": "https://github.com/equinor/ert/commit/c00cadd0ad9ccdd385745ea700dc79696e996fc5"
-        },
-        "date": 1726037280609,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19482345633644774,
-            "unit": "iter/sec",
-            "range": "stddev: 0.062166852036857276",
-            "extra": "mean: 5.132852166799995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.038527372494432326",
             "extra": "mean: 5.2587527523999995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "6c602be0850531429dac8ebd2e549775c39b431f",
+          "message": "Add pyright settings\n\nThis will also turn on pyright/pylance for vscode users by default",
+          "timestamp": "2024-09-19T12:30:08+02:00",
+          "tree_id": "9ee811928dbcd13810ccef3fcbee3d071f64c95f",
+          "url": "https://github.com/equinor/ert/commit/6c602be0850531429dac8ebd2e549775c39b431f"
+        },
+        "date": 1726741914365,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18527167896658694,
+            "unit": "iter/sec",
+            "range": "stddev: 0.11034560031456579",
+            "extra": "mean: 5.397479018799987 sec\nrounds: 5"
           }
         ]
       }
