@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726752143147,
+  "lastUpdate": 1726754478991,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "d8b17e4c7d1211cea135341501856028b77cccce",
-          "message": "Add EnsemblePlot support for rate plotting drawing\n\n - exploits \"steps-pre\" drawing style\n - tests that draw_style is set correctly",
-          "timestamp": "2024-09-13T10:29:20+02:00",
-          "tree_id": "55cf0db5988b46734daa406b57329ec3a807c2f8",
-          "url": "https://github.com/equinor/ert/commit/d8b17e4c7d1211cea135341501856028b77cccce"
-        },
-        "date": 1726216316361,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19154372052463203,
-            "unit": "iter/sec",
-            "range": "stddev: 0.050246017748829475",
-            "extra": "mean: 5.220740190599997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03185179798827049",
             "extra": "mean: 5.400108093000005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "13e9a1c9ae416fafefb697a7158629f59f5ba2c0",
+          "message": "Add test for not mistaking E100 crashes for license",
+          "timestamp": "2024-09-19T15:59:24+02:00",
+          "tree_id": "67a9d0721ba75e308379b0d32b8bbdeb307a1786",
+          "url": "https://github.com/equinor/ert/commit/13e9a1c9ae416fafefb697a7158629f59f5ba2c0"
+        },
+        "date": 1726754478067,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18566429969469475,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030363240431631404",
+            "extra": "mean: 5.386065073600008 sec\nrounds: 5"
           }
         ]
       }
