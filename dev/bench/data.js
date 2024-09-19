@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726741915303,
+  "lastUpdate": 1726743818219,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "22e95fc95cc6fb37e779775de94009b4e2b1fefa",
-          "message": "Add 10.3.1 and 10.2.8 storages to migration tests",
-          "timestamp": "2024-09-11T11:39:37+02:00",
-          "tree_id": "e4e30bd2f99e3e203afe0e99d0ae651a925d9367",
-          "url": "https://github.com/equinor/ert/commit/22e95fc95cc6fb37e779775de94009b4e2b1fefa"
-        },
-        "date": 1726047729483,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19009742468872914,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03402074528502555",
-            "extra": "mean: 5.2604605330000025 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +897,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.11034560031456579",
             "extra": "mean: 5.397479018799987 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "82a563cc9806d491cc15d252a027933d509aaa87",
+          "message": "Sync obs counts with poly templates",
+          "timestamp": "2024-09-19T13:01:55+02:00",
+          "tree_id": "fd7e0a2674e6ac7de145b32ab429c8e928b5fd46",
+          "url": "https://github.com/equinor/ert/commit/82a563cc9806d491cc15d252a027933d509aaa87"
+        },
+        "date": 1726743817841,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18752175541615146,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04018870904827772",
+            "extra": "mean: 5.332714584399997 sec\nrounds: 5"
           }
         ]
       }
