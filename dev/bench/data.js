@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726743818219,
+  "lastUpdate": 1726743982379,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "1cd56d483001008b51df169c61d469cce932dd28",
-          "message": "Remove excess check_response call in std_dev_for_parameter\n\nThe `std_dev_for_parameter` method manually checks if the response's status_code is\n200 OK and decides what to do if it is not. Calling the `check_response`\nmethod raises an exception if it is not 200 OK, which is a valid\nresponse in this case.",
-          "timestamp": "2024-09-11T13:49:42+02:00",
-          "tree_id": "2527f6012a722365cea10bda02b7282f4c3f9b8f",
-          "url": "https://github.com/equinor/ert/commit/1cd56d483001008b51df169c61d469cce932dd28"
-        },
-        "date": 1726055543371,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1876858624708561,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020536324697251893",
-            "extra": "mean: 5.328051814000003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04018870904827772",
             "extra": "mean: 5.332714584399997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "6ba0e7875aab0d8808504b22326f15c844f92d24",
+          "message": "Add ForwardModelStepWarning class",
+          "timestamp": "2024-09-19T13:04:34+02:00",
+          "tree_id": "9e1caa37ef0942f022c5e6321432297caa73a3c9",
+          "url": "https://github.com/equinor/ert/commit/6ba0e7875aab0d8808504b22326f15c844f92d24"
+        },
+        "date": 1726743981792,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18390398874555386,
+            "unit": "iter/sec",
+            "range": "stddev: 0.029670179240674895",
+            "extra": "mean: 5.437619960399997 sec\nrounds: 5"
           }
         ]
       }
