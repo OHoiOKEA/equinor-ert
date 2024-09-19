@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726743982379,
+  "lastUpdate": 1726749053829,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "a7b09b714f18c1b224fb89e1e843f34548c94fd4",
-          "message": "Remove unused function from local_ensemble",
-          "timestamp": "2024-09-12T08:57:58+02:00",
-          "tree_id": "df54d6ade4167bc821203dace2e4e65856aaaab7",
-          "url": "https://github.com/equinor/ert/commit/a7b09b714f18c1b224fb89e1e843f34548c94fd4"
-        },
-        "date": 1726124426843,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18874232833940313,
-            "unit": "iter/sec",
-            "range": "stddev: 0.035508072033931457",
-            "extra": "mean: 5.298228589200005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029670179240674895",
             "extra": "mean: 5.437619960399997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "8fea58cbc5744950b737324ff286a8e4ee81aa55",
+          "message": "Compresss ecl-files",
+          "timestamp": "2024-09-19T14:29:04+02:00",
+          "tree_id": "23cca97611899e53274dcc663f3de7f518959d7f",
+          "url": "https://github.com/equinor/ert/commit/8fea58cbc5744950b737324ff286a8e4ee81aa55"
+        },
+        "date": 1726749053369,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18596356355431395,
+            "unit": "iter/sec",
+            "range": "stddev: 0.021227801788652717",
+            "extra": "mean: 5.377397490599992 sec\nrounds: 5"
           }
         ]
       }
