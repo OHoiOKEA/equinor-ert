@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726830808099,
+  "lastUpdate": 1726835218179,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "9128cd2c29a3e03ef2c0de73e383288cf7ef23d7",
-          "message": "Improve pytest skip message for missing git-lfs",
-          "timestamp": "2024-09-16T13:36:02+02:00",
-          "tree_id": "9f30a2ffbd7b1b7bc8e127317c8f025ffe2b0d5a",
-          "url": "https://github.com/equinor/ert/commit/9128cd2c29a3e03ef2c0de73e383288cf7ef23d7"
-        },
-        "date": 1726486718868,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18672005252982402,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04512125597231378",
-            "extra": "mean: 5.355611175399997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01890139251398858",
             "extra": "mean: 5.300155600400001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "22bd48cec8aa6e3b0ef400f19b56020ff1b69854",
+          "message": "Install everest test dependencies as well in komodo testing",
+          "timestamp": "2024-09-20T14:21:47+02:00",
+          "tree_id": "ae986915eaf9f36640cdc5bbb6c752077006cbd5",
+          "url": "https://github.com/equinor/ert/commit/22bd48cec8aa6e3b0ef400f19b56020ff1b69854"
+        },
+        "date": 1726835217368,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18950803362440993,
+            "unit": "iter/sec",
+            "range": "stddev: 0.013453825231478459",
+            "extra": "mean: 5.276821150399996 sec\nrounds: 5"
           }
         ]
       }
