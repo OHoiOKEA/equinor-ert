@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726830674811,
+  "lastUpdate": 1726830808099,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "29a790fc6f3c8fadd2ca29e88c5b5b9c938992fd",
-          "message": "Add COV_CORE_CONTEXT to env_save exception",
-          "timestamp": "2024-09-16T13:17:23+02:00",
-          "tree_id": "eea4e70ec189d6b28dbbb484e69bf5b85c104053",
-          "url": "https://github.com/equinor/ert/commit/29a790fc6f3c8fadd2ca29e88c5b5b9c938992fd"
-        },
-        "date": 1726485601923,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1896194449940588,
-            "unit": "iter/sec",
-            "range": "stddev: 0.014655083543314096",
-            "extra": "mean: 5.273720741199997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028706764124365118",
             "extra": "mean: 5.193951491999991 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "55b38b6c2648b1eef76b2f3fc4a3ec7f2e6e6800",
+          "message": "Remove deprecated pgk_resources",
+          "timestamp": "2024-09-20T13:11:38+02:00",
+          "tree_id": "80ca1e32bf57912de7d3357ce4871b2cc52b32c4",
+          "url": "https://github.com/equinor/ert/commit/55b38b6c2648b1eef76b2f3fc4a3ec7f2e6e6800"
+        },
+        "date": 1726830807176,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1886737060935589,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01890139251398858",
+            "extra": "mean: 5.300155600400001 sec\nrounds: 5"
           }
         ]
       }
