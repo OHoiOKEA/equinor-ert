@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726757616331,
+  "lastUpdate": 1726815240775,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "aea8e671938e256d53f8186c86866553062c0ed3",
-          "message": "Fix general options overwriting queue options\n\nThis commit fixes the issue where the general options `MAX_RUNNING` and\n`SUBMIT_SLEEP` would have priority over the equivalent QUEUE_OPTIONS.\nIt also makes the options set in user config for those keywords take\nprecedence over what is set in site config.",
-          "timestamp": "2024-09-16T08:43:19+02:00",
-          "tree_id": "256b92c3ecba837e99f1ece25fcdaf7e77857131",
-          "url": "https://github.com/equinor/ert/commit/aea8e671938e256d53f8186c86866553062c0ed3"
-        },
-        "date": 1726469153888,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1910784648402455,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026816969860805704",
-            "extra": "mean: 5.233452136200003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.036525157554994025",
             "extra": "mean: 5.271510315399996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "27648a79b38656a1baaefcd70622bf561377e0a8",
+          "message": "Add dark storage test for summary response",
+          "timestamp": "2024-09-20T08:52:14+02:00",
+          "tree_id": "30fca7e40d305a3bc93aa0dfd5af808b07eb5a58",
+          "url": "https://github.com/equinor/ert/commit/27648a79b38656a1baaefcd70622bf561377e0a8"
+        },
+        "date": 1726815240283,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18586072143326968,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0252466397722053",
+            "extra": "mean: 5.3803729603999955 sec\nrounds: 5"
           }
         ]
       }
