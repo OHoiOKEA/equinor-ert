@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726815945144,
+  "lastUpdate": 1726827468541,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "dbf2ae633f0416b7e935e79c483ae05aeb72d279",
-          "message": "Improve experiment name validation",
-          "timestamp": "2024-09-16T09:30:22+02:00",
-          "tree_id": "55d39328afec7aae572aa5e00d86762a50ba0089",
-          "url": "https://github.com/equinor/ert/commit/dbf2ae633f0416b7e935e79c483ae05aeb72d279"
-        },
-        "date": 1726471968899,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/unit_tests/analysis/test_es_update.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19039023434069988,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030097739903150934",
-            "extra": "mean: 5.252370235599995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.019243704791839417",
             "extra": "mean: 5.469657947600001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "a2d4279d344ff0c72668c00b9770ec9a877b9e1e",
+          "message": "Add missing test/everest for integration tests",
+          "timestamp": "2024-09-20T12:15:58+02:00",
+          "tree_id": "b740e3b8b65b632b8a8bb289be1de749384b05df",
+          "url": "https://github.com/equinor/ert/commit/a2d4279d344ff0c72668c00b9770ec9a877b9e1e"
+        },
+        "date": 1726827467626,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1864608782363171,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01871871317007825",
+            "extra": "mean: 5.363055293199994 sec\nrounds: 5"
           }
         ]
       }
