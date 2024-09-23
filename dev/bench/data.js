@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1726835218179,
+  "lastUpdate": 1727070514559,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "9169dd3c485dfbe4d7b324c8a3df5e5eefc34613",
-          "message": "Remove unused flake8-matcher.json\n\n- removes unused flake8-matcher.json\n- change from pip to uv pip in github benchmark",
-          "timestamp": "2024-09-16T13:41:49+02:00",
-          "tree_id": "fa485e351a89d07b7598470a4ef179c1469dfd10",
-          "url": "https://github.com/equinor/ert/commit/9169dd3c485dfbe4d7b324c8a3df5e5eefc34613"
-        },
-        "date": 1726487015233,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19220978221188245,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03929731666290262",
-            "extra": "mean: 5.2026488376000035 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.013453825231478459",
             "extra": "mean: 5.276821150399996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "d535c950e2be99bc4ad2cc41a5af145047a5550f",
+          "message": "Detect license trouble in slave Eclipse models\n\nIn a coupled reservoir simulation, there is a master\nEclipse process, which itself starts up Eclipse processes\nfor its slaves. If the master process fails due to license\ntrouble, it is caught by the existing code, but if the master\npasses but any of the slaves do not, the PRT files of the\nslaves must be parsed to deduce license failure or not.",
+          "timestamp": "2024-09-23T07:46:48+02:00",
+          "tree_id": "92440e378999987cd5a83b4e15db74f52694a6f7",
+          "url": "https://github.com/equinor/ert/commit/d535c950e2be99bc4ad2cc41a5af145047a5550f"
+        },
+        "date": 1727070513938,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18603312802049685,
+            "unit": "iter/sec",
+            "range": "stddev: 0.031581448709940216",
+            "extra": "mean: 5.375386688600008 sec\nrounds: 5"
           }
         ]
       }
