@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727070514559,
+  "lastUpdate": 1727084848864,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "3173016f0e0c98b60e6afb9f805cdce21cbea9ed",
-          "message": "Move _ert_forward_model_runner to _ert.forward_model_runner\n\nThis should not be a problem as _ert does not autoimport anything in\n__init__.py",
-          "timestamp": "2024-09-16T13:59:27+02:00",
-          "tree_id": "94d696aa79bf403b9cd4dc4d1b171fbe406d21e4",
-          "url": "https://github.com/equinor/ert/commit/3173016f0e0c98b60e6afb9f805cdce21cbea9ed"
-        },
-        "date": 1726488079831,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1915556906102528,
-            "unit": "iter/sec",
-            "range": "stddev: 0.017429352810660218",
-            "extra": "mean: 5.220413952799982 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.031581448709940216",
             "extra": "mean: 5.375386688600008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "6e125871a686a20c270565cf0923fea94cae557f",
+          "message": "Use default eq in ErtConfig",
+          "timestamp": "2024-09-23T11:45:36+02:00",
+          "tree_id": "2a4d37a82500dc022ce8e46e08fdb53f1064b785",
+          "url": "https://github.com/equinor/ert/commit/6e125871a686a20c270565cf0923fea94cae557f"
+        },
+        "date": 1727084848276,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18538580522000475,
+            "unit": "iter/sec",
+            "range": "stddev: 0.052172172669777445",
+            "extra": "mean: 5.394156250599986 sec\nrounds: 5"
           }
         ]
       }
