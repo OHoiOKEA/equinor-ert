@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727086514930,
+  "lastUpdate": 1727106290431,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "d69bbe3de066954925f28dece0d67c3ae1946020",
-          "message": "Replace selected usage of SIMULATION_JOB with FORWARD_MODEL\n\nWherever there are no arguments passed directly from the config\nline, FORWARD_MODEL is used instead of SIMULATION_JOB.",
-          "timestamp": "2024-09-16T15:07:21+02:00",
-          "tree_id": "62b9d14623a154a09623ac0728f702aa3554fed9",
-          "url": "https://github.com/equinor/ert/commit/d69bbe3de066954925f28dece0d67c3ae1946020"
-        },
-        "date": 1726492142035,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19301247886640804,
-            "unit": "iter/sec",
-            "range": "stddev: 0.044412722157283605",
-            "extra": "mean: 5.181012159799996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022182686869532786",
             "extra": "mean: 5.372722877000013 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "1ec2537ca53699e44c972d79bc430af7f42dfc76",
+          "message": "Fix broken benchmark",
+          "timestamp": "2024-09-23T17:42:57+02:00",
+          "tree_id": "68eb67af513223eb6a65f0a47da3d17895215272",
+          "url": "https://github.com/equinor/ert/commit/1ec2537ca53699e44c972d79bc430af7f42dfc76"
+        },
+        "date": 1727106290019,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18361998503143026,
+            "unit": "iter/sec",
+            "range": "stddev: 0.10043640925477887",
+            "extra": "mean: 5.446030288200001 sec\nrounds: 5"
           }
         ]
       }
