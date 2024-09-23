@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727084944034,
+  "lastUpdate": 1727086514930,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "a24c64ad70fa843beadea40c7f32a309cc59c2da",
-          "message": "Log contents of custom forward model steps",
-          "timestamp": "2024-09-16T14:41:46+02:00",
-          "tree_id": "9350fca6b749957b24ce2a1029390f88363645f9",
-          "url": "https://github.com/equinor/ert/commit/a24c64ad70fa843beadea40c7f32a309cc59c2da"
-        },
-        "date": 1726490607242,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18843333086232553,
-            "unit": "iter/sec",
-            "range": "stddev: 0.014824416998436344",
-            "extra": "mean: 5.3069167509999975 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03597261223724212",
             "extra": "mean: 5.325287051600003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "d7268158192229564523926a5e69707f48042aa5",
+          "message": "Remove python 3.12 x86-64 MacOS 14 build",
+          "timestamp": "2024-09-23T12:13:25+02:00",
+          "tree_id": "ef643b81256fd066e28c385516e62f0ce75c6024",
+          "url": "https://github.com/equinor/ert/commit/d7268158192229564523926a5e69707f48042aa5"
+        },
+        "date": 1727086514004,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18612536378544314,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022182686869532786",
+            "extra": "mean: 5.372722877000013 sec\nrounds: 5"
           }
         ]
       }
