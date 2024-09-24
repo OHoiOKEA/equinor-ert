@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727176636375,
+  "lastUpdate": 1727178472519,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "13d3afaec888a0682bddc97d76c6f77f2ff5a0c9",
-          "message": "Strip newlines from strings read from disk\n\nOn poly case this would otherwise yield an empty line in the logs.",
-          "timestamp": "2024-09-17T13:09:26+02:00",
-          "tree_id": "69535c4754217a6b820d1e3fcf24a354bef19a15",
-          "url": "https://github.com/equinor/ert/commit/13d3afaec888a0682bddc97d76c6f77f2ff5a0c9"
-        },
-        "date": 1726571472978,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18913800721350685,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04365400418875253",
-            "extra": "mean: 5.2871446343999935 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.029807242820583675",
             "extra": "mean: 5.408935341799998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "e01e6289835330b11624e5869e23685de474575f",
+          "message": "Update ert tests path\n\nFix komodo ert tests",
+          "timestamp": "2024-09-24T13:46:02+02:00",
+          "tree_id": "06245ed2ab2bce2555ce4db029e638c6293b1567",
+          "url": "https://github.com/equinor/ert/commit/e01e6289835330b11624e5869e23685de474575f"
+        },
+        "date": 1727178472035,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1830512512843246,
+            "unit": "iter/sec",
+            "range": "stddev: 0.016565256255565416",
+            "extra": "mean: 5.462950911199994 sec\nrounds: 5"
           }
         ]
       }
