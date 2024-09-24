@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727106290431,
+  "lastUpdate": 1727160461035,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "092a8618558ee7604bcb9023d674a97ce3184437",
-          "message": "Add RUF (ruff specific rules) to linting rules",
-          "timestamp": "2024-09-16T20:11:49+02:00",
-          "tree_id": "907f7c3ae7169f4d411a63396ea8d06c410a4213",
-          "url": "https://github.com/equinor/ert/commit/092a8618558ee7604bcb9023d674a97ce3184437"
-        },
-        "date": 1726510421776,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1881593226049552,
-            "unit": "iter/sec",
-            "range": "stddev: 0.039522254827142736",
-            "extra": "mean: 5.3146449836000045 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.10043640925477887",
             "extra": "mean: 5.446030288200001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "ba1ef0800026ce8745ed88a9152552155161fb8e",
+          "message": "Include tail of PRT file when ecl_run detect error count inconsistency",
+          "timestamp": "2024-09-24T08:45:54+02:00",
+          "tree_id": "e2a1dc9dca1fb670cf0fd57f8a0ff136a0333cca",
+          "url": "https://github.com/equinor/ert/commit/ba1ef0800026ce8745ed88a9152552155161fb8e"
+        },
+        "date": 1727160460563,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18555436282596585,
+            "unit": "iter/sec",
+            "range": "stddev: 0.013684588776505609",
+            "extra": "mean: 5.389256198400005 sec\nrounds: 5"
           }
         ]
       }
