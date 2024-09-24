@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727160689222,
+  "lastUpdate": 1727160742939,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "8401331cfa6a4a9ce0efdb941d217354986913fd",
-          "message": "Move run_args and run_paths fixtures to unit_tests",
-          "timestamp": "2024-09-17T09:41:47+02:00",
-          "tree_id": "9d3e0bde625e01a68cce9724d85a4e01287c13bc",
-          "url": "https://github.com/equinor/ert/commit/8401331cfa6a4a9ce0efdb941d217354986913fd"
-        },
-        "date": 1726559011522,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19013745732921597,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03133209014212453",
-            "extra": "mean: 5.259352965199997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0742594665432399",
             "extra": "mean: 5.5232880685999985 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "484381b9ae41242665f0615b71052a26c9546db7",
+          "message": "Fix flaky stateful storage test",
+          "timestamp": "2024-09-24T08:50:34+02:00",
+          "tree_id": "e57ba3630dd09a7e1388b77bff3e0b0d49c4d632",
+          "url": "https://github.com/equinor/ert/commit/484381b9ae41242665f0615b71052a26c9546db7"
+        },
+        "date": 1727160741953,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18553246693888809,
+            "unit": "iter/sec",
+            "range": "stddev: 0.026220831153749426",
+            "extra": "mean: 5.3898922193999965 sec\nrounds: 5"
           }
         ]
       }
