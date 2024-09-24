@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727167419125,
+  "lastUpdate": 1727176636375,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "eb3ce0053f4614e84eb9927f555fe6cdf15785bd",
-          "message": "Update README to include `git lfs install` step for testing",
-          "timestamp": "2024-09-17T11:39:30+02:00",
-          "tree_id": "152446e165b56df8ebb207fa552e448c96b9d3b0",
-          "url": "https://github.com/equinor/ert/commit/eb3ce0053f4614e84eb9927f555fe6cdf15785bd"
-        },
-        "date": 1726566078679,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18876634902163422,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029872387022947193",
-            "extra": "mean: 5.297554385000007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.11794920608802988",
             "extra": "mean: 5.431487147200005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "46b6781c5cf2ad0f6986c76c5ab4ed66e25e37c4",
+          "message": "Backup blockfs and print migration instructions",
+          "timestamp": "2024-09-24T11:15:24Z",
+          "tree_id": "7dd3ef85f34fd0b35f94a7169cc1331eb647f68d",
+          "url": "https://github.com/equinor/ert/commit/46b6781c5cf2ad0f6986c76c5ab4ed66e25e37c4"
+        },
+        "date": 1727176635916,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18487926677031008,
+            "unit": "iter/sec",
+            "range": "stddev: 0.029807242820583675",
+            "extra": "mean: 5.408935341799998 sec\nrounds: 5"
           }
         ]
       }
