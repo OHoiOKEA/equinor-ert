@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727160461035,
+  "lastUpdate": 1727160689222,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "864047670708208ece2ccd7246ee4916e587abb0",
-          "message": "Implement a one-time retry of opening JOBS_FILE",
-          "timestamp": "2024-09-17T09:28:04+02:00",
-          "tree_id": "417721caeab3395a01f9c99d94ec318c6f38ec0e",
-          "url": "https://github.com/equinor/ert/commit/864047670708208ece2ccd7246ee4916e587abb0"
-        },
-        "date": 1726558188076,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19085880142182834,
-            "unit": "iter/sec",
-            "range": "stddev: 0.036928349386395026",
-            "extra": "mean: 5.2394754266000065 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,36 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.013684588776505609",
             "extra": "mean: 5.389256198400005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve.s.kristiansen@webstep.no",
+            "name": "Yngve S. Kristiansen"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "a36efc5980f4b9d5d818e91b79905271ae267ace",
+          "message": "Remove blockfs support",
+          "timestamp": "2024-09-24T08:49:41+02:00",
+          "tree_id": "9e3380c2730e970877b46ff2ee11c12d03e16df8",
+          "url": "https://github.com/equinor/ert/commit/a36efc5980f4b9d5d818e91b79905271ae267ace"
+        },
+        "date": 1727160688777,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18105157427602223,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0742594665432399",
+            "extra": "mean: 5.5232880685999985 sec\nrounds: 5"
           }
         ]
       }
