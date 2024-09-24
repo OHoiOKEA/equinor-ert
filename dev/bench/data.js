@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727178472519,
+  "lastUpdate": 1727182285097,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "ab512a641a5d52160e7a77466bc700572dfa932a",
-          "message": "Call the name() function when logging\n\nself.name is not a property (and due to deprecation in 3.11\nnot adding the @property decorator).\n\nWithout this patch, the log emitted looks like:\n  2024-09-17 12:48:31,555 - ert.run_models.ensemble_experiment - ert_gui_simulation_thread - INFO - Running <bound method EnsembleExperiment.name of <class 'ert.run_models.ensemble_experiment.EnsembleExperiment'>>",
-          "timestamp": "2024-09-17T13:10:08+02:00",
-          "tree_id": "e9c62c79389abeabb6830d3468bd165cdaec8e04",
-          "url": "https://github.com/equinor/ert/commit/ab512a641a5d52160e7a77466bc700572dfa932a"
-        },
-        "date": 1726571509945,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19083023683317452,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0741787715204856",
-            "extra": "mean: 5.240259701999998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.016565256255565416",
             "extra": "mean: 5.462950911199994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "819a0f8ece03dff0f28158ade847c8949d832731",
+          "message": "Let ensemble evaluator evaluate NUM_CPU inconsistencies\n\nIf the forward model runner reports a cpu-time that exceeds\nduration times NUM_CPU, it implies that the user has misconfigured\nsomething, typically NUM_CPU, or that the forward model does not\nrespect NUM_CPU.",
+          "timestamp": "2024-09-24T14:49:30+02:00",
+          "tree_id": "9f3b0ad09e680b480d5b4f6fb7555e9502773719",
+          "url": "https://github.com/equinor/ert/commit/819a0f8ece03dff0f28158ade847c8949d832731"
+        },
+        "date": 1727182284139,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18433066859447916,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020744399884304286",
+            "extra": "mean: 5.425033216799989 sec\nrounds: 5"
           }
         ]
       }
