@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727258818073,
+  "lastUpdate": 1727269364884,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "8fea58cbc5744950b737324ff286a8e4ee81aa55",
-          "message": "Compresss ecl-files",
-          "timestamp": "2024-09-19T14:29:04+02:00",
-          "tree_id": "23cca97611899e53274dcc663f3de7f518959d7f",
-          "url": "https://github.com/equinor/ert/commit/8fea58cbc5744950b737324ff286a8e4ee81aa55"
-        },
-        "date": 1726749053369,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18596356355431395,
-            "unit": "iter/sec",
-            "range": "stddev: 0.021227801788652717",
-            "extra": "mean: 5.377397490599992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027950117261676018",
             "extra": "mean: 5.334313535800004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "e2d3a907bd26be7ddf36e88e9764f9cf648df85a",
+          "message": "Run all tests in test_komodo before returning error",
+          "timestamp": "2024-09-25T15:00:52+02:00",
+          "tree_id": "2185fc0cded82c5a253dd782f096c205db69ecdc",
+          "url": "https://github.com/equinor/ert/commit/e2d3a907bd26be7ddf36e88e9764f9cf648df85a"
+        },
+        "date": 1727269364420,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18611216722910903,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020482692868052658",
+            "extra": "mean: 5.373103837799993 sec\nrounds: 5"
           }
         ]
       }
