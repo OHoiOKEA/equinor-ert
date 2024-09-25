@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727251790297,
+  "lastUpdate": 1727254048096,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "82a563cc9806d491cc15d252a027933d509aaa87",
-          "message": "Sync obs counts with poly templates",
-          "timestamp": "2024-09-19T13:01:55+02:00",
-          "tree_id": "fd7e0a2674e6ac7de145b32ab429c8e928b5fd46",
-          "url": "https://github.com/equinor/ert/commit/82a563cc9806d491cc15d252a027933d509aaa87"
-        },
-        "date": 1726743817841,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18752175541615146,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04018870904827772",
-            "extra": "mean: 5.332714584399997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.024300322687147824",
             "extra": "mean: 5.3331284676 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "8ca2b4e06b4113e142d3f4e5370be01412bd9b23",
+          "message": "Fix flaky test\n\nIncrease the sleep time in the script to give us more time to register\nthe memory usage",
+          "timestamp": "2024-09-25T10:45:37+02:00",
+          "tree_id": "401740e3f0523014137759b8cb605e9651d26970",
+          "url": "https://github.com/equinor/ert/commit/8ca2b4e06b4113e142d3f4e5370be01412bd9b23"
+        },
+        "date": 1727254047220,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18940947510346795,
+            "unit": "iter/sec",
+            "range": "stddev: 0.024242202898337277",
+            "extra": "mean: 5.279566924800008 sec\nrounds: 5"
           }
         ]
       }
