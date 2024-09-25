@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727243273229,
+  "lastUpdate": 1727249251493,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "27c4530764d044798fb53e9905c4cdb26491f8ee",
-          "message": "Improve logging of errors in callback",
-          "timestamp": "2024-09-19T11:52:45+02:00",
-          "tree_id": "f84de7ea6e88ffe370fbab005bf0720927f138db",
-          "url": "https://github.com/equinor/ert/commit/27c4530764d044798fb53e9905c4cdb26491f8ee"
-        },
-        "date": 1726739674972,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19015915885066437,
-            "unit": "iter/sec",
-            "range": "stddev: 0.038527372494432326",
-            "extra": "mean: 5.2587527523999995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028010005736406343",
             "extra": "mean: 5.412878631799998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "21af32915792c103bab4bb6708e1cf861719aea8",
+          "message": "Remove redudant slot",
+          "timestamp": "2024-09-25T09:25:47+02:00",
+          "tree_id": "ad03729eac4dbff1e75cb86e871094df023c62ab",
+          "url": "https://github.com/equinor/ert/commit/21af32915792c103bab4bb6708e1cf861719aea8"
+        },
+        "date": 1727249251061,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18859853350153588,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03419744887548824",
+            "extra": "mean: 5.302268164199996 sec\nrounds: 5"
           }
         ]
       }
