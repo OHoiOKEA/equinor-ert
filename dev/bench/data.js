@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727184515922,
+  "lastUpdate": 1727242541511,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "c2dbbd881ffacb6d5519460f39bc716c4d8b80e2",
-          "message": "Remove unused mypy config",
-          "timestamp": "2024-09-18T13:47:24+02:00",
-          "tree_id": "62819bb284825d0dc9848f342cb09be7759002cf",
-          "url": "https://github.com/equinor/ert/commit/c2dbbd881ffacb6d5519460f39bc716c4d8b80e2"
-        },
-        "date": 1726660161366,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19105786346305448,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0338400079828528",
-            "extra": "mean: 5.234016448599999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.054600387251204044",
             "extra": "mean: 5.4039528893999975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "9a5ab894476062b1f4c3d3b13620b827dad8e431",
+          "message": "Avoid bsub retrying on known error messages\n\nContrary to earlier belief in the codebase, returncode 255\ndoes not only mean flaky ssh connection. In order to no retry\non known error scenarios, we must detect them explicitly by string\nmatcing.",
+          "timestamp": "2024-09-25T07:33:56+02:00",
+          "tree_id": "480d6ee7b1b49a8e25bfa449ddcb3c48341b99d5",
+          "url": "https://github.com/equinor/ert/commit/9a5ab894476062b1f4c3d3b13620b827dad8e431"
+        },
+        "date": 1727242541064,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18873613517583462,
+            "unit": "iter/sec",
+            "range": "stddev: 0.045284710480755185",
+            "extra": "mean: 5.2984024446000095 sec\nrounds: 5"
           }
         ]
       }
