@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727249251493,
+  "lastUpdate": 1727251790297,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "6c602be0850531429dac8ebd2e549775c39b431f",
-          "message": "Add pyright settings\n\nThis will also turn on pyright/pylance for vscode users by default",
-          "timestamp": "2024-09-19T12:30:08+02:00",
-          "tree_id": "9ee811928dbcd13810ccef3fcbee3d071f64c95f",
-          "url": "https://github.com/equinor/ert/commit/6c602be0850531429dac8ebd2e549775c39b431f"
-        },
-        "date": 1726741914365,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18527167896658694,
-            "unit": "iter/sec",
-            "range": "stddev: 0.11034560031456579",
-            "extra": "mean: 5.397479018799987 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03419744887548824",
             "extra": "mean: 5.302268164199996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5731434c730519bf525c1e9a0fb5736e07d9d965",
+          "message": "Mark all flaky tests as integration_tests",
+          "timestamp": "2024-09-25T08:08:03Z",
+          "tree_id": "b6a5475062f208958f467179506de445ee47f38a",
+          "url": "https://github.com/equinor/ert/commit/5731434c730519bf525c1e9a0fb5736e07d9d965"
+        },
+        "date": 1727251789896,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18750720258760564,
+            "unit": "iter/sec",
+            "range": "stddev: 0.024300322687147824",
+            "extra": "mean: 5.3331284676 sec\nrounds: 5"
           }
         ]
       }
