@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727242541511,
+  "lastUpdate": 1727243273229,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "2e5aa92a7b3916aee3b99c0b8700545ac1408368",
-          "message": "Make pyproject.toml pretty again",
-          "timestamp": "2024-09-18T16:03:22+02:00",
-          "tree_id": "5774108d0cb712b382012bf6a2b5fd847cf08ca9",
-          "url": "https://github.com/equinor/ert/commit/2e5aa92a7b3916aee3b99c0b8700545ac1408368"
-        },
-        "date": 1726668308162,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18772948743388462,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027122602989860047",
-            "extra": "mean: 5.326813670399991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -927,6 +896,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.045284710480755185",
             "extra": "mean: 5.2984024446000095 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "535e314d1494f1a26469e0f4671d85be91e64d3a",
+          "message": "Have ForwardModelRunner validate executable_file earlier\n\nThis commit fixes the issue where the ForwardModelRunner on the job_runner side would crash when validating the existence of a ForwardModelStep executable; causing the drivers to hang while waiting for a never coming return code from JobRunner.",
+          "timestamp": "2024-09-25T07:46:08+02:00",
+          "tree_id": "1fc742b9bc719e9ee752e3d0b29cfdda41e282e9",
+          "url": "https://github.com/equinor/ert/commit/535e314d1494f1a26469e0f4671d85be91e64d3a"
+        },
+        "date": 1727243272812,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18474458195406832,
+            "unit": "iter/sec",
+            "range": "stddev: 0.028010005736406343",
+            "extra": "mean: 5.412878631799998 sec\nrounds: 5"
           }
         ]
       }
