@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727254048096,
+  "lastUpdate": 1727258818073,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "6ba0e7875aab0d8808504b22326f15c844f92d24",
-          "message": "Add ForwardModelStepWarning class",
-          "timestamp": "2024-09-19T13:04:34+02:00",
-          "tree_id": "9e1caa37ef0942f022c5e6321432297caa73a3c9",
-          "url": "https://github.com/equinor/ert/commit/6ba0e7875aab0d8808504b22326f15c844f92d24"
-        },
-        "date": 1726743981792,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18390398874555386,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029670179240674895",
-            "extra": "mean: 5.437619960399997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.024242202898337277",
             "extra": "mean: 5.279566924800008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "e581b2e673e3a451d0acc650934feaadfd95dd79",
+          "message": "Extract common code paths in constructors",
+          "timestamp": "2024-09-25T12:05:09+02:00",
+          "tree_id": "80d5e92dd26b76134ed1bfdf571e6148fd5a5e89",
+          "url": "https://github.com/equinor/ert/commit/e581b2e673e3a451d0acc650934feaadfd95dd79"
+        },
+        "date": 1727258817609,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18746554608924518,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027950117261676018",
+            "extra": "mean: 5.334313535800004 sec\nrounds: 5"
           }
         ]
       }
