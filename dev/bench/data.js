@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727269364884,
+  "lastUpdate": 1727360482878,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "7bf375480e5d1af6ed8dced264d0f0e3d4f87123",
-          "message": "Add cpu_seconds to MemoryStatus report sent from the runner",
-          "timestamp": "2024-09-19T15:20:35+02:00",
-          "tree_id": "7d0a3f6ee5de32d98fb6a62639419a1b02361555",
-          "url": "https://github.com/equinor/ert/commit/7bf375480e5d1af6ed8dced264d0f0e3d4f87123"
-        },
-        "date": 1726752142677,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1851814783663811,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03185179798827049",
-            "extra": "mean: 5.400108093000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020482692868052658",
             "extra": "mean: 5.373103837799993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "53fe7c0e98290ca4480690d074eee754dbaa3be4",
+          "message": "Update erts .readthedocs.yml to point to new locations",
+          "timestamp": "2024-09-26T16:19:18+02:00",
+          "tree_id": "4ae8cdc395d66f39deda6c5051b7fec7681ed721",
+          "url": "https://github.com/equinor/ert/commit/53fe7c0e98290ca4480690d074eee754dbaa3be4"
+        },
+        "date": 1727360482030,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18611791337787142,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03053005201432209",
+            "extra": "mean: 5.372937950199992 sec\nrounds: 5"
           }
         ]
       }
