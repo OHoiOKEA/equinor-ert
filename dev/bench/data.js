@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727360482878,
+  "lastUpdate": 1727425483517,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "13e9a1c9ae416fafefb697a7158629f59f5ba2c0",
-          "message": "Add test for not mistaking E100 crashes for license",
-          "timestamp": "2024-09-19T15:59:24+02:00",
-          "tree_id": "67a9d0721ba75e308379b0d32b8bbdeb307a1786",
-          "url": "https://github.com/equinor/ert/commit/13e9a1c9ae416fafefb697a7158629f59f5ba2c0"
-        },
-        "date": 1726754478067,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18566429969469475,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030363240431631404",
-            "extra": "mean: 5.386065073600008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03053005201432209",
             "extra": "mean: 5.372937950199992 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "pieter.verveer@tno.nl",
+            "name": "Peter Verveer",
+            "username": "verveerpj"
+          },
+          "committer": {
+            "email": "pieter.verveer@tno.nl",
+            "name": "Peter Verveer",
+            "username": "verveerpj"
+          },
+          "distinct": true,
+          "id": "7843b2f116fa39d42106269a9299a7f17197b541",
+          "message": "Update everest dependencies",
+          "timestamp": "2024-09-27T10:22:49+02:00",
+          "tree_id": "d006d7bddd6ef62e2a5ca92ed36bab9199c7813f",
+          "url": "https://github.com/equinor/ert/commit/7843b2f116fa39d42106269a9299a7f17197b541"
+        },
+        "date": 1727425482950,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18181480196696212,
+            "unit": "iter/sec",
+            "range": "stddev: 0.010901361723764685",
+            "extra": "mean: 5.500102242399999 sec\nrounds: 5"
           }
         ]
       }
