@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727435811282,
+  "lastUpdate": 1727442111517,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "27648a79b38656a1baaefcd70622bf561377e0a8",
-          "message": "Add dark storage test for summary response",
-          "timestamp": "2024-09-20T08:52:14+02:00",
-          "tree_id": "30fca7e40d305a3bc93aa0dfd5af808b07eb5a58",
-          "url": "https://github.com/equinor/ert/commit/27648a79b38656a1baaefcd70622bf561377e0a8"
-        },
-        "date": 1726815240283,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18586072143326968,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0252466397722053",
-            "extra": "mean: 5.3803729603999955 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04039507474932694",
             "extra": "mean: 5.345626481800005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "3bc3a8890b65a6157e8ba6726d48f7d44e9e7b19",
+          "message": "Fix flaky memory test\n\nRegister only the memory allocations of the function we are trying to\ntest.",
+          "timestamp": "2024-09-27T14:59:56+02:00",
+          "tree_id": "b1df5d8ad00178c947c3f4b417600aa505772b82",
+          "url": "https://github.com/equinor/ert/commit/3bc3a8890b65a6157e8ba6726d48f7d44e9e7b19"
+        },
+        "date": 1727442110949,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18509989989214368,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02768088612784317",
+            "extra": "mean: 5.402488064999995 sec\nrounds: 5"
           }
         ]
       }
