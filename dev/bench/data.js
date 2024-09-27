@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727442111517,
+  "lastUpdate": 1727448805026,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "0742439d7e26e4faeeefdd19984586bc403f3728",
-          "message": "Copy everest test data",
-          "timestamp": "2024-09-20T09:03:58+02:00",
-          "tree_id": "b858b464fd638d2d683695aee0763375c36d1bf4",
-          "url": "https://github.com/equinor/ert/commit/0742439d7e26e4faeeefdd19984586bc403f3728"
-        },
-        "date": 1726815944546,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18282678909360028,
-            "unit": "iter/sec",
-            "range": "stddev: 0.019243704791839417",
-            "extra": "mean: 5.469657947600001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02768088612784317",
             "extra": "mean: 5.402488064999995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "30dba519abfa9bf1c375fdebd13ebd65bde8be45",
+          "message": "Use iens = 0 to avoid error with ensemble_size=1",
+          "timestamp": "2024-09-27T16:51:32+02:00",
+          "tree_id": "4d5fb5915c08ef38bfab3855f5941ec894565703",
+          "url": "https://github.com/equinor/ert/commit/30dba519abfa9bf1c375fdebd13ebd65bde8be45"
+        },
+        "date": 1727448804406,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18823510483728387,
+            "unit": "iter/sec",
+            "range": "stddev: 0.019859863436263135",
+            "extra": "mean: 5.312505341999997 sec\nrounds: 5"
           }
         ]
       }
