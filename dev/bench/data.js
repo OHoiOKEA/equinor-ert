@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727678889372,
+  "lastUpdate": 1727689560102,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "22bd48cec8aa6e3b0ef400f19b56020ff1b69854",
-          "message": "Install everest test dependencies as well in komodo testing",
-          "timestamp": "2024-09-20T14:21:47+02:00",
-          "tree_id": "ae986915eaf9f36640cdc5bbb6c752077006cbd5",
-          "url": "https://github.com/equinor/ert/commit/22bd48cec8aa6e3b0ef400f19b56020ff1b69854"
-        },
-        "date": 1726835217368,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18950803362440993,
-            "unit": "iter/sec",
-            "range": "stddev: 0.013453825231478459",
-            "extra": "mean: 5.276821150399996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03443220017896775",
             "extra": "mean: 5.352443641800017 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "86219529+AugustoMagalhaes@users.noreply.github.com",
+            "name": "AugustoMagalhaes",
+            "username": "AugustoMagalhaes"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e607feb6e67d877d346ee1ff67c2248acb4e8e26",
+          "message": "Group items in Experiment Panel's drop-down",
+          "timestamp": "2024-09-30T11:44:06+02:00",
+          "tree_id": "f048006e748fb092b78fda6b0ea979d5b2a734aa",
+          "url": "https://github.com/equinor/ert/commit/e607feb6e67d877d346ee1ff67c2248acb4e8e26"
+        },
+        "date": 1727689559509,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1872148217628717,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02208857042815493",
+            "extra": "mean: 5.341457426199997 sec\nrounds: 5"
           }
         ]
       }
