@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727689560102,
+  "lastUpdate": 1727697941721,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "d535c950e2be99bc4ad2cc41a5af145047a5550f",
-          "message": "Detect license trouble in slave Eclipse models\n\nIn a coupled reservoir simulation, there is a master\nEclipse process, which itself starts up Eclipse processes\nfor its slaves. If the master process fails due to license\ntrouble, it is caught by the existing code, but if the master\npasses but any of the slaves do not, the PRT files of the\nslaves must be parsed to deduce license failure or not.",
-          "timestamp": "2024-09-23T07:46:48+02:00",
-          "tree_id": "92440e378999987cd5a83b4e15db74f52694a6f7",
-          "url": "https://github.com/equinor/ert/commit/d535c950e2be99bc4ad2cc41a5af145047a5550f"
-        },
-        "date": 1727070513938,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18603312802049685,
-            "unit": "iter/sec",
-            "range": "stddev: 0.031581448709940216",
-            "extra": "mean: 5.375386688600008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02208857042815493",
             "extra": "mean: 5.341457426199997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "ca33dcaf3df559e0afa25f947b91f2382f2102f7",
+          "message": "Use wait_for_child for getting RunDialog in test",
+          "timestamp": "2024-09-30T14:03:44+02:00",
+          "tree_id": "76f4b8ea4d1ff94c304dd53d2e830a933ce4310b",
+          "url": "https://github.com/equinor/ert/commit/ca33dcaf3df559e0afa25f947b91f2382f2102f7"
+        },
+        "date": 1727697940771,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.17950119623206917,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03832964405473186",
+            "extra": "mean: 5.570993514200007 sec\nrounds: 5"
           }
         ]
       }
