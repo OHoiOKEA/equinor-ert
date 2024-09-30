@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727697941721,
+  "lastUpdate": 1727701621133,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "6e125871a686a20c270565cf0923fea94cae557f",
-          "message": "Use default eq in ErtConfig",
-          "timestamp": "2024-09-23T11:45:36+02:00",
-          "tree_id": "2a4d37a82500dc022ce8e46e08fdb53f1064b785",
-          "url": "https://github.com/equinor/ert/commit/6e125871a686a20c270565cf0923fea94cae557f"
-        },
-        "date": 1727084848276,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18538580522000475,
-            "unit": "iter/sec",
-            "range": "stddev: 0.052172172669777445",
-            "extra": "mean: 5.394156250599986 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03832964405473186",
             "extra": "mean: 5.570993514200007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "08253228ee547e757ddf8227f3ea2d01e7bc6c36",
+          "message": "Fix flaky kill_before_submit test for lsf",
+          "timestamp": "2024-09-30T13:05:12Z",
+          "tree_id": "4347636b88d0446e37e284b90dc0757ac883611f",
+          "url": "https://github.com/equinor/ert/commit/08253228ee547e757ddf8227f3ea2d01e7bc6c36"
+        },
+        "date": 1727701620678,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18836527547582324,
+            "unit": "iter/sec",
+            "range": "stddev: 0.019995285188180566",
+            "extra": "mean: 5.308834112199998 sec\nrounds: 5"
           }
         ]
       }
