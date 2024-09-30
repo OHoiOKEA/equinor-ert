@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727677873780,
+  "lastUpdate": 1727678653039,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "65eeaf56047119595eab69142752d04810d1cf38",
-          "message": "Mark config sections as optional if all members are also optional.",
-          "timestamp": "2024-09-20T13:09:28+02:00",
-          "tree_id": "d79a2fe785fbab8c788cb9abfe8094ef25d36d90",
-          "url": "https://github.com/equinor/ert/commit/65eeaf56047119595eab69142752d04810d1cf38"
-        },
-        "date": 1726830673234,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19253164022425986,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028706764124365118",
-            "extra": "mean: 5.193951491999991 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02992270539839856",
             "extra": "mean: 5.378072512800008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "pieter.verveer@tno.nl",
+            "name": "Peter Verveer",
+            "username": "verveerpj"
+          },
+          "committer": {
+            "email": "pieter.verveer@tno.nl",
+            "name": "Peter Verveer",
+            "username": "verveerpj"
+          },
+          "distinct": true,
+          "id": "03d3f9bc091770472ddacdda112a86d8cca8ceb4",
+          "message": "Remove the everest restart functionality\n\nThe restart functionality was added to support a research project.\nHowever it turned out to be unnecessary for that project. Since\nfunctionality should not be added for such a purpose only and the\ngeneral usefulness of the feature is unclear it should be removed.",
+          "timestamp": "2024-09-30T08:42:12+02:00",
+          "tree_id": "398682fe90ee0cecf0cdf43f5755acc5a706ef85",
+          "url": "https://github.com/equinor/ert/commit/03d3f9bc091770472ddacdda112a86d8cca8ceb4"
+        },
+        "date": 1727678652064,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18688883203459838,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02042839279381016",
+            "extra": "mean: 5.3507745172 sec\nrounds: 5"
           }
         ]
       }
