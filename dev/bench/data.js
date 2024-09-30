@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727678653039,
+  "lastUpdate": 1727678889372,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "55b38b6c2648b1eef76b2f3fc4a3ec7f2e6e6800",
-          "message": "Remove deprecated pgk_resources",
-          "timestamp": "2024-09-20T13:11:38+02:00",
-          "tree_id": "80ca1e32bf57912de7d3357ce4871b2cc52b32c4",
-          "url": "https://github.com/equinor/ert/commit/55b38b6c2648b1eef76b2f3fc4a3ec7f2e6e6800"
-        },
-        "date": 1726830807176,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1886737060935589,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01890139251398858",
-            "extra": "mean: 5.300155600400001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02042839279381016",
             "extra": "mean: 5.3507745172 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0e88cbd943bb30e40cac28392f4441896916fb75",
+          "message": "Add formatting to simulation mode helptext\n\n* Add formatting to simulation mode helptext\r\n* Emphasize realization-0 executed only",
+          "timestamp": "2024-09-30T06:46:27Z",
+          "tree_id": "852e905581016103fdf745e445d3fdcde4a120ce",
+          "url": "https://github.com/equinor/ert/commit/0e88cbd943bb30e40cac28392f4441896916fb75"
+        },
+        "date": 1727678888921,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18683055197265036,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03443220017896775",
+            "extra": "mean: 5.352443641800017 sec\nrounds: 5"
           }
         ]
       }
