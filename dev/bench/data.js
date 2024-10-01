@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727767798903,
+  "lastUpdate": 1727783559679,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "5ec387a39f7c016ee892d3172cad13e037f7a4b1",
-          "message": "Use ord in codepoints for text generators",
-          "timestamp": "2024-09-23T11:47:18+02:00",
-          "tree_id": "3dbca0df965f87ba12aa5f54650fbd8dfdd62a36",
-          "url": "https://github.com/equinor/ert/commit/5ec387a39f7c016ee892d3172cad13e037f7a4b1"
-        },
-        "date": 1727084943061,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18778330450741545,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03597261223724212",
-            "extra": "mean: 5.325287051600003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02097360588054806",
             "extra": "mean: 5.339820992599999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "9f8d73a6b4809a0384bda60632350d2123df7c0c",
+          "message": "Add select_wells forward model to everest documentation",
+          "timestamp": "2024-10-01T13:50:54+02:00",
+          "tree_id": "69c3b6ace890038f07e8815bf0274dac48ebd2b8",
+          "url": "https://github.com/equinor/ert/commit/9f8d73a6b4809a0384bda60632350d2123df7c0c"
+        },
+        "date": 1727783559218,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18799790716262854,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02343802976673656",
+            "extra": "mean: 5.3192081502000175 sec\nrounds: 5"
           }
         ]
       }
