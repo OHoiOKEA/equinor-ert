@@ -40,6 +40,7 @@ class AnalysisConfig:
     ies_module: IESSettings = field(default_factory=IESSettings)
     observation_settings: UpdateSettings = field(default_factory=UpdateSettings)
     num_iterations: int = 1
+    design_matrix: Optional[Path] = None
 
     @no_type_check
     @classmethod
@@ -78,6 +79,16 @@ class AnalysisConfig:
             )
 
         min_realization = min(min_realization, num_realization)
+        design_matrix = config_dict.get(ConfigKeys.DESIGN_MATRIX, None)
+        if design_matrix is not None and Path(design_matrix).suffix not in {
+            ".xlsx",
+            "xls",
+        }:
+            raise ConfigValidationError.with_context(
+                f"DESIGN_MATRIX must be of format .xls or .xslx; is {design_matrix!r}",
+                design_matrix,
+            )
+
         options: Dict[str, Dict[str, Any]] = {"STD_ENKF": {}, "IES_ENKF": {}}
         observation_settings: Dict[str, Any] = {
             "alpha": config_dict.get(ConfigKeys.ENKF_ALPHA, 3.0),
@@ -189,6 +200,7 @@ class AnalysisConfig:
             observation_settings=obs_settings,
             es_module=es_settings,
             ies_module=ies_settings,
+            design_matrix=design_matrix,
         )
         return config
 
