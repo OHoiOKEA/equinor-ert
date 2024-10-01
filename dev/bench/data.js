@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727701621133,
+  "lastUpdate": 1727767798903,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "cf230fb4503c7b6a1a9548d076a8764aef74c638",
-          "message": "Upload test results to codecov",
-          "timestamp": "2024-09-23T11:46:12+02:00",
-          "tree_id": "31cd1fad6d2c9d8e46824bac8bd5b4f12ae182a6",
-          "url": "https://github.com/equinor/ert/commit/cf230fb4503c7b6a1a9548d076a8764aef74c638"
-        },
-        "date": 1727084879441,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18794283172235418,
-            "unit": "iter/sec",
-            "range": "stddev: 0.045694601942696866",
-            "extra": "mean: 5.320766909999998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.019995285188180566",
             "extra": "mean: 5.308834112199998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "pieter.verveer@tno.nl",
+            "name": "Peter Verveer",
+            "username": "verveerpj"
+          },
+          "committer": {
+            "email": "pieter.verveer@tno.nl",
+            "name": "Peter Verveer",
+            "username": "verveerpj"
+          },
+          "distinct": true,
+          "id": "e92f558cf14e9c9823b557b3df05caefef49576f",
+          "message": "Fix the everest doc generator\n\nThe generator would only function within a\neditable install. The behavior is changed such\nthat it has to be run from within the ERT\nrepository, in one of the parent directories of\nthe file that is generated.",
+          "timestamp": "2024-10-01T09:28:08+02:00",
+          "tree_id": "19400423ca70b35501cab1c443788bd4c81a2d81",
+          "url": "https://github.com/equinor/ert/commit/e92f558cf14e9c9823b557b3df05caefef49576f"
+        },
+        "date": 1727767798460,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18727219533872286,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02097360588054806",
+            "extra": "mean: 5.339820992599999 sec\nrounds: 5"
           }
         ]
       }
