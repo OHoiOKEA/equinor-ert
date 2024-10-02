@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727869080177,
+  "lastUpdate": 1727873846614,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "b3a4ec773b88a4e8e302c7e245d377f433d7e4b3",
-          "message": "Fix flaky storage test",
-          "timestamp": "2024-09-24T13:26:42Z",
-          "tree_id": "86890435f8ecbb6f30809e8737bff4b2f1d46228",
-          "url": "https://github.com/equinor/ert/commit/b3a4ec773b88a4e8e302c7e245d377f433d7e4b3"
-        },
-        "date": 1727184515459,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1850497257223555,
-            "unit": "iter/sec",
-            "range": "stddev: 0.054600387251204044",
-            "extra": "mean: 5.4039528893999975 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.016647266940392005",
             "extra": "mean: 5.362236540400005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "61c648ae66276149095c246aa76f8961901b3d9c",
+          "message": "Avoid possible UnboundLocalError for end_event\n\nThe error has been observed to occur in the log. Not trying\nto display further error messages to why it is None.",
+          "timestamp": "2024-10-02T14:55:38+02:00",
+          "tree_id": "f5a31aec60604a3f78a6e04dff4dc050909b475a",
+          "url": "https://github.com/equinor/ert/commit/61c648ae66276149095c246aa76f8961901b3d9c"
+        },
+        "date": 1727873846190,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1868592787795706,
+            "unit": "iter/sec",
+            "range": "stddev: 0.021936015789073702",
+            "extra": "mean: 5.351620784 sec\nrounds: 5"
           }
         ]
       }
