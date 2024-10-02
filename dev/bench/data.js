@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727843236350,
+  "lastUpdate": 1727845566123,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "ba1ef0800026ce8745ed88a9152552155161fb8e",
-          "message": "Include tail of PRT file when ecl_run detect error count inconsistency",
-          "timestamp": "2024-09-24T08:45:54+02:00",
-          "tree_id": "e2a1dc9dca1fb670cf0fd57f8a0ff136a0333cca",
-          "url": "https://github.com/equinor/ert/commit/ba1ef0800026ce8745ed88a9152552155161fb8e"
-        },
-        "date": 1727160460563,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18555436282596585,
-            "unit": "iter/sec",
-            "range": "stddev: 0.013684588776505609",
-            "extra": "mean: 5.389256198400005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.019707281426563864",
             "extra": "mean: 5.341655323600008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0774438a2001706e8bebc34b2828604fa0c905a3",
+          "message": "Raise warning when summary key and no simulator job present in ert config",
+          "timestamp": "2024-10-02T08:04:20+03:00",
+          "tree_id": "3d9ad73c144e580d4d555344f934dd011cf147c8",
+          "url": "https://github.com/equinor/ert/commit/0774438a2001706e8bebc34b2828604fa0c905a3"
+        },
+        "date": 1727845565528,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18729011940057633,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030429482029387743",
+            "extra": "mean: 5.339309960399987 sec\nrounds: 5"
           }
         ]
       }
