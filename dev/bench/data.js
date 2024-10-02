@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727845566123,
+  "lastUpdate": 1727847438630,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "a36efc5980f4b9d5d818e91b79905271ae267ace",
-          "message": "Remove blockfs support",
-          "timestamp": "2024-09-24T08:49:41+02:00",
-          "tree_id": "9e3380c2730e970877b46ff2ee11c12d03e16df8",
-          "url": "https://github.com/equinor/ert/commit/a36efc5980f4b9d5d818e91b79905271ae267ace"
-        },
-        "date": 1727160688777,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18105157427602223,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0742594665432399",
-            "extra": "mean: 5.5232880685999985 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030429482029387743",
             "extra": "mean: 5.339309960399987 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "4321e49226c0019376d3f59dfd2c62a0e8630f6a",
+          "message": "Remove inconsistent whitespace in doc",
+          "timestamp": "2024-10-02T07:35:33+02:00",
+          "tree_id": "f6232f94a8eff636ef08397d4351e1a6558f757a",
+          "url": "https://github.com/equinor/ert/commit/4321e49226c0019376d3f59dfd2c62a0e8630f6a"
+        },
+        "date": 1727847438185,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18253663390872718,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030185089631895385",
+            "extra": "mean: 5.478352364599999 sec\nrounds: 5"
           }
         ]
       }
