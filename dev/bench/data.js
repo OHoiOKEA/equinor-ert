@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727861065251,
+  "lastUpdate": 1727866150798,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "46b6781c5cf2ad0f6986c76c5ab4ed66e25e37c4",
-          "message": "Backup blockfs and print migration instructions",
-          "timestamp": "2024-09-24T11:15:24Z",
-          "tree_id": "7dd3ef85f34fd0b35f94a7169cc1331eb647f68d",
-          "url": "https://github.com/equinor/ert/commit/46b6781c5cf2ad0f6986c76c5ab4ed66e25e37c4"
-        },
-        "date": 1727176635916,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18487926677031008,
-            "unit": "iter/sec",
-            "range": "stddev: 0.029807242820583675",
-            "extra": "mean: 5.408935341799998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025022137838814688",
             "extra": "mean: 5.445393519200008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5d4205d7ec76afe72b7db380e9b5287cfb3fd4df",
+          "message": "Turn unexpected fm errors into warnings",
+          "timestamp": "2024-10-02T10:46:12Z",
+          "tree_id": "c4abe97d985846dc81294149e98b8fa44d12e35b",
+          "url": "https://github.com/equinor/ert/commit/5d4205d7ec76afe72b7db380e9b5287cfb3fd4df"
+        },
+        "date": 1727866149950,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18175713363530718,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030335050358058474",
+            "extra": "mean: 5.501847327799988 sec\nrounds: 5"
           }
         ]
       }
