@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727873846614,
+  "lastUpdate": 1727875153838,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "9a5ab894476062b1f4c3d3b13620b827dad8e431",
-          "message": "Avoid bsub retrying on known error messages\n\nContrary to earlier belief in the codebase, returncode 255\ndoes not only mean flaky ssh connection. In order to no retry\non known error scenarios, we must detect them explicitly by string\nmatcing.",
-          "timestamp": "2024-09-25T07:33:56+02:00",
-          "tree_id": "480d6ee7b1b49a8e25bfa449ddcb3c48341b99d5",
-          "url": "https://github.com/equinor/ert/commit/9a5ab894476062b1f4c3d3b13620b827dad8e431"
-        },
-        "date": 1727242541064,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18873613517583462,
-            "unit": "iter/sec",
-            "range": "stddev: 0.045284710480755185",
-            "extra": "mean: 5.2984024446000095 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.021936015789073702",
             "extra": "mean: 5.351620784 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "8ff7299a22ca30c381a3dece5054cfc2cb45a916",
+          "message": "Update the everest egg snapshot",
+          "timestamp": "2024-10-02T15:17:28+02:00",
+          "tree_id": "4a3de0a39a4f6efdf402d599aa70a0b6d8b4ca46",
+          "url": "https://github.com/equinor/ert/commit/8ff7299a22ca30c381a3dece5054cfc2cb45a916"
+        },
+        "date": 1727875153388,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1884510515971437,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03484120036262807",
+            "extra": "mean: 5.306417722399999 sec\nrounds: 5"
           }
         ]
       }
