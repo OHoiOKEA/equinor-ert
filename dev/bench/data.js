@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727866583386,
+  "lastUpdate": 1727869080177,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "819a0f8ece03dff0f28158ade847c8949d832731",
-          "message": "Let ensemble evaluator evaluate NUM_CPU inconsistencies\n\nIf the forward model runner reports a cpu-time that exceeds\nduration times NUM_CPU, it implies that the user has misconfigured\nsomething, typically NUM_CPU, or that the forward model does not\nrespect NUM_CPU.",
-          "timestamp": "2024-09-24T14:49:30+02:00",
-          "tree_id": "9f3b0ad09e680b480d5b4f6fb7555e9502773719",
-          "url": "https://github.com/equinor/ert/commit/819a0f8ece03dff0f28158ade847c8949d832731"
-        },
-        "date": 1727182284139,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18433066859447916,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020744399884304286",
-            "extra": "mean: 5.425033216799989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.17680260559376898",
             "extra": "mean: 5.452324863000013 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "f6b86c6e7a2efa302bf42b0048f19295a6af99b2",
+          "message": "Fix ConfigWarning not calling class method of child classes\n\nThis commit fixes an issue where the parent class `ConfigWarning` has all methods decorated with `staticmethod`, rather than `classmethod`. The class methods should call the child class's method implementation where they are implemented.",
+          "timestamp": "2024-10-02T13:36:14+02:00",
+          "tree_id": "bc1dbb07a14c2411dea690e209df8797a4c18647",
+          "url": "https://github.com/equinor/ert/commit/f6b86c6e7a2efa302bf42b0048f19295a6af99b2"
+        },
+        "date": 1727869079581,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18648934870101858,
+            "unit": "iter/sec",
+            "range": "stddev: 0.016647266940392005",
+            "extra": "mean: 5.362236540400005 sec\nrounds: 5"
           }
         ]
       }
