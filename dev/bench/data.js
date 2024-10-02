@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727857385498,
+  "lastUpdate": 1727861065251,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "b9b23de63990b357248f631f95815a09fc44e7ec",
-          "message": "Refactor reading from contents\n\nMerges the code paths to avoid differing results. Also enables injecting site_config into `from_file_contents`.",
-          "timestamp": "2024-09-24T10:41:41+02:00",
-          "tree_id": "011a5d69bce3b6abb5cd438b8bf91851d85b16d0",
-          "url": "https://github.com/equinor/ert/commit/b9b23de63990b357248f631f95815a09fc44e7ec"
-        },
-        "date": 1727167418179,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18411163883827134,
-            "unit": "iter/sec",
-            "range": "stddev: 0.11794920608802988",
-            "extra": "mean: 5.431487147200005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025604651658065924",
             "extra": "mean: 5.367421833399999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "ad8bfc49ee89eb54f3e55406bab2f12897fb256e",
+          "message": "Shellcheck testkomodo.sh in github workflow",
+          "timestamp": "2024-10-02T11:22:37+02:00",
+          "tree_id": "11cba48fd15ea6e040211711eba4d9720884b847",
+          "url": "https://github.com/equinor/ert/commit/ad8bfc49ee89eb54f3e55406bab2f12897fb256e"
+        },
+        "date": 1727861064837,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1836414570359484,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025022137838814688",
+            "extra": "mean: 5.445393519200008 sec\nrounds: 5"
           }
         ]
       }
