@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727847438630,
+  "lastUpdate": 1727857385498,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "484381b9ae41242665f0615b71052a26c9546db7",
-          "message": "Fix flaky stateful storage test",
-          "timestamp": "2024-09-24T08:50:34+02:00",
-          "tree_id": "e57ba3630dd09a7e1388b77bff3e0b0d49c4d632",
-          "url": "https://github.com/equinor/ert/commit/484381b9ae41242665f0615b71052a26c9546db7"
-        },
-        "date": 1727160741953,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18553246693888809,
-            "unit": "iter/sec",
-            "range": "stddev: 0.026220831153749426",
-            "extra": "mean: 5.3898922193999965 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030185089631895385",
             "extra": "mean: 5.478352364599999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "18017c70deaef30b460c57a5f4d33abc63b27459",
+          "message": "Add support for design matrix keyword in ert config\n\n- Expects the format:\nDESIGN_MATRIX file.xlsx DESIGN_SHEET:design DEFAULT_SHEET:default\nwhere file.xlsx is an existing file.\n- Scaffolding for further support for reading parameter values from\ndesign matrix excel files.",
+          "timestamp": "2024-10-02T10:21:20+02:00",
+          "tree_id": "62fcb445307024188878c1faea404718096f8eb0",
+          "url": "https://github.com/equinor/ert/commit/18017c70deaef30b460c57a5f4d33abc63b27459"
+        },
+        "date": 1727857385054,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18630918736017232,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025604651658065924",
+            "extra": "mean: 5.367421833399999 sec\nrounds: 5"
           }
         ]
       }
