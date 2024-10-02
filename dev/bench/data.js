@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727803053957,
+  "lastUpdate": 1727843236350,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "1ec2537ca53699e44c972d79bc430af7f42dfc76",
-          "message": "Fix broken benchmark",
-          "timestamp": "2024-09-23T17:42:57+02:00",
-          "tree_id": "68eb67af513223eb6a65f0a47da3d17895215272",
-          "url": "https://github.com/equinor/ert/commit/1ec2537ca53699e44c972d79bc430af7f42dfc76"
-        },
-        "date": 1727106290019,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18361998503143026,
-            "unit": "iter/sec",
-            "range": "stddev: 0.10043640925477887",
-            "extra": "mean: 5.446030288200001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -928,6 +897,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025097139152714415",
             "extra": "mean: 5.272851717200001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "21bbca845aa1bf955498fa86bb44b5af6de5780d",
+          "message": "Extract common code path in test fixtures",
+          "timestamp": "2024-10-02T06:25:29+02:00",
+          "tree_id": "2971d86615aa6195b71d334b7f75d1a960253d02",
+          "url": "https://github.com/equinor/ert/commit/21bbca845aa1bf955498fa86bb44b5af6de5780d"
+        },
+        "date": 1727843235514,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18720788583679152,
+            "unit": "iter/sec",
+            "range": "stddev: 0.019707281426563864",
+            "extra": "mean: 5.341655323600008 sec\nrounds: 5"
           }
         ]
       }
