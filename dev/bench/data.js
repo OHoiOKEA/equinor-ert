@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727943729044,
+  "lastUpdate": 1727950640109,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "8ca2b4e06b4113e142d3f4e5370be01412bd9b23",
-          "message": "Fix flaky test\n\nIncrease the sleep time in the script to give us more time to register\nthe memory usage",
-          "timestamp": "2024-09-25T10:45:37+02:00",
-          "tree_id": "401740e3f0523014137759b8cb605e9651d26970",
-          "url": "https://github.com/equinor/ert/commit/8ca2b4e06b4113e142d3f4e5370be01412bd9b23"
-        },
-        "date": 1727254047220,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18940947510346795,
-            "unit": "iter/sec",
-            "range": "stddev: 0.024242202898337277",
-            "extra": "mean: 5.279566924800008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05319930517180732",
             "extra": "mean: 5.411363165800009 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "7c8fcc8ea0a30fb6047a48b6f1e049caf5363957",
+          "message": "Avoid logging void host information",
+          "timestamp": "2024-10-03T12:14:45+02:00",
+          "tree_id": "55c805881d3c0c9a0bd15092888f176c1e113527",
+          "url": "https://github.com/equinor/ert/commit/7c8fcc8ea0a30fb6047a48b6f1e049caf5363957"
+        },
+        "date": 1727950639263,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1889299854385165,
+            "unit": "iter/sec",
+            "range": "stddev: 0.021775402795100506",
+            "extra": "mean: 5.292966056599999 sec\nrounds: 5"
           }
         ]
       }
