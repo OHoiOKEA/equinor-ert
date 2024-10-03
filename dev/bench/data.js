@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727936532095,
+  "lastUpdate": 1727937967420,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "21af32915792c103bab4bb6708e1cf861719aea8",
-          "message": "Remove redudant slot",
-          "timestamp": "2024-09-25T09:25:47+02:00",
-          "tree_id": "ad03729eac4dbff1e75cb86e871094df023c62ab",
-          "url": "https://github.com/equinor/ert/commit/21af32915792c103bab4bb6708e1cf861719aea8"
-        },
-        "date": 1727249251061,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18859853350153588,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03419744887548824",
-            "extra": "mean: 5.302268164199996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0312886959198407",
             "extra": "mean: 5.425839177800015 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "4bba6954526cd83d8d4e8c80437dca96e807ace7",
+          "message": "Run everest tests before publishing to pypi",
+          "timestamp": "2024-10-03T08:44:19+02:00",
+          "tree_id": "1469974a9a0a17f1a8fee5e325a408762b7ab35c",
+          "url": "https://github.com/equinor/ert/commit/4bba6954526cd83d8d4e8c80437dca96e807ace7"
+        },
+        "date": 1727937967006,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18878709395689586,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01687470565973627",
+            "extra": "mean: 5.296972261400038 sec\nrounds: 5"
           }
         ]
       }
