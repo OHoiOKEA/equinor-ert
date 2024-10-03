@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727875153838,
+  "lastUpdate": 1727936532095,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "535e314d1494f1a26469e0f4671d85be91e64d3a",
-          "message": "Have ForwardModelRunner validate executable_file earlier\n\nThis commit fixes the issue where the ForwardModelRunner on the job_runner side would crash when validating the existence of a ForwardModelStep executable; causing the drivers to hang while waiting for a never coming return code from JobRunner.",
-          "timestamp": "2024-09-25T07:46:08+02:00",
-          "tree_id": "1fc742b9bc719e9ee752e3d0b29cfdda41e282e9",
-          "url": "https://github.com/equinor/ert/commit/535e314d1494f1a26469e0f4671d85be91e64d3a"
-        },
-        "date": 1727243272812,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18474458195406832,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028010005736406343",
-            "extra": "mean: 5.412878631799998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03484120036262807",
             "extra": "mean: 5.306417722399999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "f7cadbbd4cafa71d5fa28594037c6375a6683725",
+          "message": "Return with SIGTERM in mocked kill",
+          "timestamp": "2024-10-03T08:20:26+02:00",
+          "tree_id": "b743a7ca2ca94f6804dd0e4c1fa44d480b8eb44d",
+          "url": "https://github.com/equinor/ert/commit/f7cadbbd4cafa71d5fa28594037c6375a6683725"
+        },
+        "date": 1727936531614,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1843032878843019,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0312886959198407",
+            "extra": "mean: 5.425839177800015 sec\nrounds: 5"
           }
         ]
       }
