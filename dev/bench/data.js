@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727950640109,
+  "lastUpdate": 1727956027715,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "e581b2e673e3a451d0acc650934feaadfd95dd79",
-          "message": "Extract common code paths in constructors",
-          "timestamp": "2024-09-25T12:05:09+02:00",
-          "tree_id": "80d5e92dd26b76134ed1bfdf571e6148fd5a5e89",
-          "url": "https://github.com/equinor/ert/commit/e581b2e673e3a451d0acc650934feaadfd95dd79"
-        },
-        "date": 1727258817609,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18746554608924518,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027950117261676018",
-            "extra": "mean: 5.334313535800004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.021775402795100506",
             "extra": "mean: 5.292966056599999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "6d5c0a2ccc9503f4fd8e2471b88b1e9728137fde",
+          "message": "Add workflow step to upload images when image comparisson test fails",
+          "timestamp": "2024-10-03T13:45:21+02:00",
+          "tree_id": "72a536145e06e450e4c71a2ca24ec4c42d117724",
+          "url": "https://github.com/equinor/ert/commit/6d5c0a2ccc9503f4fd8e2471b88b1e9728137fde"
+        },
+        "date": 1727956027107,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1830090319507238,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03424107846866139",
+            "extra": "mean: 5.464211188600001 sec\nrounds: 5"
           }
         ]
       }
