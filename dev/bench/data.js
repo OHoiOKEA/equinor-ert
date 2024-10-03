@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727937967420,
+  "lastUpdate": 1727943729044,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "5731434c730519bf525c1e9a0fb5736e07d9d965",
-          "message": "Mark all flaky tests as integration_tests",
-          "timestamp": "2024-09-25T08:08:03Z",
-          "tree_id": "b6a5475062f208958f467179506de445ee47f38a",
-          "url": "https://github.com/equinor/ert/commit/5731434c730519bf525c1e9a0fb5736e07d9d965"
-        },
-        "date": 1727251789896,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18750720258760564,
-            "unit": "iter/sec",
-            "range": "stddev: 0.024300322687147824",
-            "extra": "mean: 5.3331284676 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01687470565973627",
             "extra": "mean: 5.296972261400038 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "59eb4f3465c8fc1c7c9eb883a9cd4de823d1dec0",
+          "message": "Fix capturing of ForwardModelStepWarning",
+          "timestamp": "2024-10-03T10:20:22+02:00",
+          "tree_id": "6189c86545335dd8acd770a5e5099fc63ec8bd5c",
+          "url": "https://github.com/equinor/ert/commit/59eb4f3465c8fc1c7c9eb883a9cd4de823d1dec0"
+        },
+        "date": 1727943728634,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1847963201435144,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05319930517180732",
+            "extra": "mean: 5.411363165800009 sec\nrounds: 5"
           }
         ]
       }
