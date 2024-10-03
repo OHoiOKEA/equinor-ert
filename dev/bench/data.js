@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727956027715,
+  "lastUpdate": 1727963480983,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "e2d3a907bd26be7ddf36e88e9764f9cf648df85a",
-          "message": "Run all tests in test_komodo before returning error",
-          "timestamp": "2024-09-25T15:00:52+02:00",
-          "tree_id": "2185fc0cded82c5a253dd782f096c205db69ecdc",
-          "url": "https://github.com/equinor/ert/commit/e2d3a907bd26be7ddf36e88e9764f9cf648df85a"
-        },
-        "date": 1727269364420,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18611216722910903,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020482692868052658",
-            "extra": "mean: 5.373103837799993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03424107846866139",
             "extra": "mean: 5.464211188600001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49289030+HakonSohoel@users.noreply.github.com",
+            "name": "Håkon Steinkopf Søhoel",
+            "username": "HakonSohoel"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "a342528ad815d97b51980825b305498d1dc82d9f",
+          "message": "Fix documentation for DeleteFile (#8861)",
+          "timestamp": "2024-10-03T15:48:51+02:00",
+          "tree_id": "463335e133d08c7ede6eeda8742b2cbd3c59aac3",
+          "url": "https://github.com/equinor/ert/commit/a342528ad815d97b51980825b305498d1dc82d9f"
+        },
+        "date": 1727963480096,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1828146696548976,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03350248370475247",
+            "extra": "mean: 5.470020550799984 sec\nrounds: 5"
           }
         ]
       }
