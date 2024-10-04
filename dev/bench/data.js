@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728027433330,
+  "lastUpdate": 1728029226082,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "pieter.verveer@tno.nl",
-            "name": "Peter Verveer",
-            "username": "verveerpj"
-          },
-          "committer": {
-            "email": "pieter.verveer@tno.nl",
-            "name": "Peter Verveer",
-            "username": "verveerpj"
-          },
-          "distinct": true,
-          "id": "7843b2f116fa39d42106269a9299a7f17197b541",
-          "message": "Update everest dependencies",
-          "timestamp": "2024-09-27T10:22:49+02:00",
-          "tree_id": "d006d7bddd6ef62e2a5ca92ed36bab9199c7813f",
-          "url": "https://github.com/equinor/ert/commit/7843b2f116fa39d42106269a9299a7f17197b541"
-        },
-        "date": 1727425482950,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18181480196696212,
-            "unit": "iter/sec",
-            "range": "stddev: 0.010901361723764685",
-            "extra": "mean: 5.500102242399999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.038200359042761076",
             "extra": "mean: 5.352746016599997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "508716916b72c9b07180c9340422d147824b0ad0",
+          "message": "Resolve flakyness in test_kill_before_submit\n\nSometimes the job actually starts on a compute node and sometimes\nit does not before it is removed/killed. In the the latter case, code\nprevious to this commit will fail as it asserts that the job script\nhas actually started to run.",
+          "timestamp": "2024-10-04T10:05:12+02:00",
+          "tree_id": "ee92d125162454fac400fc64a4cc2449f696e343",
+          "url": "https://github.com/equinor/ert/commit/508716916b72c9b07180c9340422d147824b0ad0"
+        },
+        "date": 1728029225109,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1876844960649245,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03659035974536127",
+            "extra": "mean: 5.328090604000005 sec\nrounds: 5"
           }
         ]
       }
