@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1727963480983,
+  "lastUpdate": 1728027433330,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "53fe7c0e98290ca4480690d074eee754dbaa3be4",
-          "message": "Update erts .readthedocs.yml to point to new locations",
-          "timestamp": "2024-09-26T16:19:18+02:00",
-          "tree_id": "4ae8cdc395d66f39deda6c5051b7fec7681ed721",
-          "url": "https://github.com/equinor/ert/commit/53fe7c0e98290ca4480690d074eee754dbaa3be4"
-        },
-        "date": 1727360482030,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18611791337787142,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03053005201432209",
-            "extra": "mean: 5.372937950199992 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03350248370475247",
             "extra": "mean: 5.470020550799984 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "8e0afc183ed633498df1c600d02d5aaf8803ab93",
+          "message": "Fix wrong workflow reference in build_and_test.yml",
+          "timestamp": "2024-10-04T09:35:20+02:00",
+          "tree_id": "df1a70037aa6959e8cf39ec3d8a54fe8068f5dab",
+          "url": "https://github.com/equinor/ert/commit/8e0afc183ed633498df1c600d02d5aaf8803ab93"
+        },
+        "date": 1728027432371,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1868199979783813,
+            "unit": "iter/sec",
+            "range": "stddev: 0.038200359042761076",
+            "extra": "mean: 5.352746016599997 sec\nrounds: 5"
           }
         ]
       }
