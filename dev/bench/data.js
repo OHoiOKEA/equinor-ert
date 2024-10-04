@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728030209454,
+  "lastUpdate": 1728039665559,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "3bc3a8890b65a6157e8ba6726d48f7d44e9e7b19",
-          "message": "Fix flaky memory test\n\nRegister only the memory allocations of the function we are trying to\ntest.",
-          "timestamp": "2024-09-27T14:59:56+02:00",
-          "tree_id": "b1df5d8ad00178c947c3f4b417600aa505772b82",
-          "url": "https://github.com/equinor/ert/commit/3bc3a8890b65a6157e8ba6726d48f7d44e9e7b19"
-        },
-        "date": 1727442110949,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18509989989214368,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02768088612784317",
-            "extra": "mean: 5.402488064999995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +898,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04474884386428596",
             "extra": "mean: 5.4264882481999965 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "810bda726444499f0bbc4f65f469936f61f90b49",
+          "message": "Avoid reserved ports in test_adaptive_localization\n\nThe default for localhost is 49152-51819",
+          "timestamp": "2024-10-04T12:59:11+02:00",
+          "tree_id": "45ca402ba6276e9d99c02fc85550d33d934ee1d0",
+          "url": "https://github.com/equinor/ert/commit/810bda726444499f0bbc4f65f469936f61f90b49"
+        },
+        "date": 1728039664563,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18444884501769301,
+            "unit": "iter/sec",
+            "range": "stddev: 0.037532253795009",
+            "extra": "mean: 5.421557396599996 sec\nrounds: 5"
           }
         ]
       }
