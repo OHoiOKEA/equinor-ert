@@ -1,38 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728041151492,
+  "lastUpdate": 1728151539132,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve.s.kristiansen@webstep.no",
-            "name": "Yngve S. Kristiansen"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "d6862e57d1b7bc23c6584ae137de4fb702a525fc",
-          "message": "Use one experiment per optimization",
-          "timestamp": "2024-09-30T08:29:25+02:00",
-          "tree_id": "9fd09e297613e984ab7024ca5881dcb1ab099bcd",
-          "url": "https://github.com/equinor/ert/commit/d6862e57d1b7bc23c6584ae137de4fb702a525fc"
-        },
-        "date": 1727677873319,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18594022256486195,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02992270539839856",
-            "extra": "mean: 5.378072512800008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -929,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01710987530043072",
             "extra": "mean: 5.350350030600003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "793d6352a2de0b6237fcceae4431a4ab8b650fde",
+          "message": "Remove unused folder",
+          "timestamp": "2024-10-05T20:03:48+02:00",
+          "tree_id": "b54d3e130b2d4062725ef7d89798161e6e1cf43a",
+          "url": "https://github.com/equinor/ert/commit/793d6352a2de0b6237fcceae4431a4ab8b650fde"
+        },
+        "date": 1728151538181,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18340763590186773,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0185114303886757",
+            "extra": "mean: 5.452335695200008 sec\nrounds: 5"
           }
         ]
       }
