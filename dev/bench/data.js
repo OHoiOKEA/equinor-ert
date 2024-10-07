@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728299271940,
+  "lastUpdate": 1728308113902,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "21bbca845aa1bf955498fa86bb44b5af6de5780d",
-          "message": "Extract common code path in test fixtures",
-          "timestamp": "2024-10-02T06:25:29+02:00",
-          "tree_id": "2971d86615aa6195b71d334b7f75d1a960253d02",
-          "url": "https://github.com/equinor/ert/commit/21bbca845aa1bf955498fa86bb44b5af6de5780d"
-        },
-        "date": 1727843235514,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18720788583679152,
-            "unit": "iter/sec",
-            "range": "stddev: 0.019707281426563864",
-            "extra": "mean: 5.341655323600008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03763164085307903",
             "extra": "mean: 5.3247870593999895 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "5cb1339c6df044dbba1be6bbce21c6fd8e82afaf",
+          "message": "Make histogram test not integration test & add mpl",
+          "timestamp": "2024-10-07T15:33:23+02:00",
+          "tree_id": "5082f9edf22486742feba874d6362360cb167e6c",
+          "url": "https://github.com/equinor/ert/commit/5cb1339c6df044dbba1be6bbce21c6fd8e82afaf"
+        },
+        "date": 1728308113319,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18673343207295307,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025515976681189538",
+            "extra": "mean: 5.355227443199993 sec\nrounds: 5"
           }
         ]
       }
