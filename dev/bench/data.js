@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728278588893,
+  "lastUpdate": 1728281280992,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "0e88cbd943bb30e40cac28392f4441896916fb75",
-          "message": "Add formatting to simulation mode helptext\n\n* Add formatting to simulation mode helptext\r\n* Emphasize realization-0 executed only",
-          "timestamp": "2024-09-30T06:46:27Z",
-          "tree_id": "852e905581016103fdf745e445d3fdcde4a120ce",
-          "url": "https://github.com/equinor/ert/commit/0e88cbd943bb30e40cac28392f4441896916fb75"
-        },
-        "date": 1727678888921,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18683055197265036,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03443220017896775",
-            "extra": "mean: 5.352443641800017 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.017690128999295073",
             "extra": "mean: 5.315470135600004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "7f3dfff895e62b26a161e66b14df98640cddcf89",
+          "message": "Make kill_before_submit more robust\n\nAlso clearify intention a little bit more. Remove outdated docs on flakyness",
+          "timestamp": "2024-10-07T08:06:10+02:00",
+          "tree_id": "683b9c0799078fde02b607cbaa58c3acf3f9b9ba",
+          "url": "https://github.com/equinor/ert/commit/7f3dfff895e62b26a161e66b14df98640cddcf89"
+        },
+        "date": 1728281280100,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18896900421437157,
+            "unit": "iter/sec",
+            "range": "stddev: 0.019741880301555714",
+            "extra": "mean: 5.291873152199992 sec\nrounds: 5"
           }
         ]
       }
