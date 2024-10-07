@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728289966456,
+  "lastUpdate": 1728299271940,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "523389fe368307f2e24305bd52404d106dfd2822",
-          "message": "Make sure run dialog is closed in gui test",
-          "timestamp": "2024-10-01T19:15:45+02:00",
-          "tree_id": "461c795095013a1d94055103b20e457fc572fba8",
-          "url": "https://github.com/equinor/ert/commit/523389fe368307f2e24305bd52404d106dfd2822"
-        },
-        "date": 1727803053392,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18965069636568915,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025097139152714415",
-            "extra": "mean: 5.272851717200001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01653408634098076",
             "extra": "mean: 5.320142760800013 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "80a06bec565878c86e5fb49610bd2ceaaa68c2eb",
+          "message": "Propagate and show exec_hosts in run_dialog if present",
+          "timestamp": "2024-10-07T13:06:03+02:00",
+          "tree_id": "c10c28836bec38648b65e1dbf260f6d85c1906ba",
+          "url": "https://github.com/equinor/ert/commit/80a06bec565878c86e5fb49610bd2ceaaa68c2eb"
+        },
+        "date": 1728299271488,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.187800937172628,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03763164085307903",
+            "extra": "mean: 5.3247870593999895 sec\nrounds: 5"
           }
         ]
       }
