@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728285109913,
+  "lastUpdate": 1728286103976,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "ca33dcaf3df559e0afa25f947b91f2382f2102f7",
-          "message": "Use wait_for_child for getting RunDialog in test",
-          "timestamp": "2024-09-30T14:03:44+02:00",
-          "tree_id": "76f4b8ea4d1ff94c304dd53d2e830a933ce4310b",
-          "url": "https://github.com/equinor/ert/commit/ca33dcaf3df559e0afa25f947b91f2382f2102f7"
-        },
-        "date": 1727697940771,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.17950119623206917,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03832964405473186",
-            "extra": "mean: 5.570993514200007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.026929034202781213",
             "extra": "mean: 5.3843853340000125 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "b505d333404a72e939cd3eafc8b53cb68ae3990c",
+          "message": "Fix circular import when importing test_ensemble_plot",
+          "timestamp": "2024-10-07T09:26:35+02:00",
+          "tree_id": "af8eb4c3070e667163b3e02dbe7bdc310eb5173d",
+          "url": "https://github.com/equinor/ert/commit/b505d333404a72e939cd3eafc8b53cb68ae3990c"
+        },
+        "date": 1728286103094,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18756483255338746,
+            "unit": "iter/sec",
+            "range": "stddev: 0.018896810524170422",
+            "extra": "mean: 5.3314898448000125 sec\nrounds: 5"
           }
         ]
       }
