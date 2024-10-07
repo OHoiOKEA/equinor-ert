@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728287375316,
+  "lastUpdate": 1728287713279,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "pieter.verveer@tno.nl",
-            "name": "Peter Verveer",
-            "username": "verveerpj"
-          },
-          "committer": {
-            "email": "pieter.verveer@tno.nl",
-            "name": "Peter Verveer",
-            "username": "verveerpj"
-          },
-          "distinct": true,
-          "id": "e92f558cf14e9c9823b557b3df05caefef49576f",
-          "message": "Fix the everest doc generator\n\nThe generator would only function within a\neditable install. The behavior is changed such\nthat it has to be run from within the ERT\nrepository, in one of the parent directories of\nthe file that is generated.",
-          "timestamp": "2024-10-01T09:28:08+02:00",
-          "tree_id": "19400423ca70b35501cab1c443788bd4c81a2d81",
-          "url": "https://github.com/equinor/ert/commit/e92f558cf14e9c9823b557b3df05caefef49576f"
-        },
-        "date": 1727767798460,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18727219533872286,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02097360588054806",
-            "extra": "mean: 5.339820992599999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.017638974323863688",
             "extra": "mean: 5.417888355199997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "59bc7746c238fc71605b238b4dc1bf0aecb071b7",
+          "message": "Fix timeout issue with macos-14-large",
+          "timestamp": "2024-10-07T09:53:31+02:00",
+          "tree_id": "7631d78059deabc4525d28fdffa4f070393d994e",
+          "url": "https://github.com/equinor/ert/commit/59bc7746c238fc71605b238b4dc1bf0aecb071b7"
+        },
+        "date": 1728287712881,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1884785530281463,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027046737656719545",
+            "extra": "mean: 5.305643448199996 sec\nrounds: 5"
           }
         ]
       }
