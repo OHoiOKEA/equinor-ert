@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728308113902,
+  "lastUpdate": 1728309024404,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "0774438a2001706e8bebc34b2828604fa0c905a3",
-          "message": "Raise warning when summary key and no simulator job present in ert config",
-          "timestamp": "2024-10-02T08:04:20+03:00",
-          "tree_id": "3d9ad73c144e580d4d555344f934dd011cf147c8",
-          "url": "https://github.com/equinor/ert/commit/0774438a2001706e8bebc34b2828604fa0c905a3"
-        },
-        "date": 1727845565528,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18729011940057633,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030429482029387743",
-            "extra": "mean: 5.339309960399987 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025515976681189538",
             "extra": "mean: 5.355227443199993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c258c76bc55d55ac17f1f5e35d6fd238c6b00924",
+          "message": "Move plottery to tools plot\n\nAs plot_api is used by both ert.gui.plottery and ert.gui.tools.plot, its\r\ncurrent location causes circular dependency problems. This PR moves\r\nplottery into ert.gui.tools.plot so that the only exposed symbol from\r\nert.gui.tools.plot is PlotTool.",
+          "timestamp": "2024-10-07T13:48:37Z",
+          "tree_id": "902dc5325cffe69439827fd5c0be55fa8ff914e1",
+          "url": "https://github.com/equinor/ert/commit/c258c76bc55d55ac17f1f5e35d6fd238c6b00924"
+        },
+        "date": 1728309023953,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18743922487910628,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03133363317028538",
+            "extra": "mean: 5.335062608400006 sec\nrounds: 5"
           }
         ]
       }
