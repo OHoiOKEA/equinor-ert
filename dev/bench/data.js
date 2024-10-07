@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728286103976,
+  "lastUpdate": 1728287375316,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "08253228ee547e757ddf8227f3ea2d01e7bc6c36",
-          "message": "Fix flaky kill_before_submit test for lsf",
-          "timestamp": "2024-09-30T13:05:12Z",
-          "tree_id": "4347636b88d0446e37e284b90dc0757ac883611f",
-          "url": "https://github.com/equinor/ert/commit/08253228ee547e757ddf8227f3ea2d01e7bc6c36"
-        },
-        "date": 1727701620678,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18836527547582324,
-            "unit": "iter/sec",
-            "range": "stddev: 0.019995285188180566",
-            "extra": "mean: 5.308834112199998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.018896810524170422",
             "extra": "mean: 5.3314898448000125 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "2ce1f415e411d39f68ade5962c1e6d67c0e86114",
+          "message": "Make sure run dialog is closed in gui test",
+          "timestamp": "2024-10-07T09:47:51+02:00",
+          "tree_id": "d1b17bcb1615312db254a9373d97c0078dc32e82",
+          "url": "https://github.com/equinor/ert/commit/2ce1f415e411d39f68ade5962c1e6d67c0e86114"
+        },
+        "date": 1728287374862,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18457375538944373,
+            "unit": "iter/sec",
+            "range": "stddev: 0.017638974323863688",
+            "extra": "mean: 5.417888355199997 sec\nrounds: 5"
           }
         ]
       }
