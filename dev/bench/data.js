@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728389554192,
+  "lastUpdate": 1728394407995,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "5d4205d7ec76afe72b7db380e9b5287cfb3fd4df",
-          "message": "Turn unexpected fm errors into warnings",
-          "timestamp": "2024-10-02T10:46:12Z",
-          "tree_id": "c4abe97d985846dc81294149e98b8fa44d12e35b",
-          "url": "https://github.com/equinor/ert/commit/5d4205d7ec76afe72b7db380e9b5287cfb3fd4df"
-        },
-        "date": 1727866149950,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18175713363530718,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030335050358058474",
-            "extra": "mean: 5.501847327799988 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0390148953980107",
             "extra": "mean: 5.212303691000005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "81fb0bd4a44a4142218c2e7a86e64d8763650290",
+          "message": "Add well trajectory everest doc entry.",
+          "timestamp": "2024-10-08T15:31:39+02:00",
+          "tree_id": "857cc9fc663c8d955324690b77e3dd4f53a0743f",
+          "url": "https://github.com/equinor/ert/commit/81fb0bd4a44a4142218c2e7a86e64d8763650290"
+        },
+        "date": 1728394407392,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18717497371377745,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0395001532332408",
+            "extra": "mean: 5.342594579600001 sec\nrounds: 5"
           }
         ]
       }
