@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728386931912,
+  "lastUpdate": 1728388287459,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "18017c70deaef30b460c57a5f4d33abc63b27459",
-          "message": "Add support for design matrix keyword in ert config\n\n- Expects the format:\nDESIGN_MATRIX file.xlsx DESIGN_SHEET:design DEFAULT_SHEET:default\nwhere file.xlsx is an existing file.\n- Scaffolding for further support for reading parameter values from\ndesign matrix excel files.",
-          "timestamp": "2024-10-02T10:21:20+02:00",
-          "tree_id": "62fcb445307024188878c1faea404718096f8eb0",
-          "url": "https://github.com/equinor/ert/commit/18017c70deaef30b460c57a5f4d33abc63b27459"
-        },
-        "date": 1727857385054,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18630918736017232,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025604651658065924",
-            "extra": "mean: 5.367421833399999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.013934349368832156",
             "extra": "mean: 5.439985609999996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "371eb58e8ccab70046346003c2e13791f61aa6e0",
+          "message": "Update pre-commit versions",
+          "timestamp": "2024-10-08T13:49:41+02:00",
+          "tree_id": "924f80f34d3b7fc4f1446652f3876bf5daf9378b",
+          "url": "https://github.com/equinor/ert/commit/371eb58e8ccab70046346003c2e13791f61aa6e0"
+        },
+        "date": 1728388286820,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19079747338218023,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0222789888644443",
+            "extra": "mean: 5.241159551399994 sec\nrounds: 5"
           }
         ]
       }
