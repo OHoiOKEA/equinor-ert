@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728388287459,
+  "lastUpdate": 1728389554192,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "ad8bfc49ee89eb54f3e55406bab2f12897fb256e",
-          "message": "Shellcheck testkomodo.sh in github workflow",
-          "timestamp": "2024-10-02T11:22:37+02:00",
-          "tree_id": "11cba48fd15ea6e040211711eba4d9720884b847",
-          "url": "https://github.com/equinor/ert/commit/ad8bfc49ee89eb54f3e55406bab2f12897fb256e"
-        },
-        "date": 1727861064837,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1836414570359484,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025022137838814688",
-            "extra": "mean: 5.445393519200008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0222789888644443",
             "extra": "mean: 5.241159551399994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "c98db945f4e5a692ab4b6699621674ae033db139",
+          "message": "Make sure that the last evaluator event is EETerminated\n\nThis introduces EnsembleEvaluator._complete_batch event, which is set\nevery time a batch is produced. When closing the ee server, we make sure\nthat the _complete_batch is set and thus preventing an events to be\nlost.\n\nThis behaviour is then tested in\ntest_ensure_multi_level_events_in_order, which was updated\ncorrespondighly.",
+          "timestamp": "2024-10-08T14:10:40+02:00",
+          "tree_id": "f994e3d23f82b1b3a932666f25e57c2b946709e5",
+          "url": "https://github.com/equinor/ert/commit/c98db945f4e5a692ab4b6699621674ae033db139"
+        },
+        "date": 1728389553598,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19185374822397297,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0390148953980107",
+            "extra": "mean: 5.212303691000005 sec\nrounds: 5"
           }
         ]
       }
