@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728394407995,
+  "lastUpdate": 1728453151503,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "398ce6ad2861eb3489dfce7965e58df30d0d2379",
-          "message": "Log LSF execution host to Azure",
-          "timestamp": "2024-10-02T12:54:32+02:00",
-          "tree_id": "829bc594d90260fdfebcca8352c9b3ca1477a51b",
-          "url": "https://github.com/equinor/ert/commit/398ce6ad2861eb3489dfce7965e58df30d0d2379"
-        },
-        "date": 1727866582324,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18340800028004453,
-            "unit": "iter/sec",
-            "range": "stddev: 0.17680260559376898",
-            "extra": "mean: 5.452324863000013 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0395001532332408",
             "extra": "mean: 5.342594579600001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "dan.sava42@gmail.com",
+            "name": "DanSava",
+            "username": "DanSava"
+          },
+          "committer": {
+            "email": "dan.sava42@gmail.com",
+            "name": "Dan Sava",
+            "username": "DanSava"
+          },
+          "distinct": true,
+          "id": "7651fff904686dffc684d0defd8bc71c80df8d75",
+          "message": "Run everest test in komodo",
+          "timestamp": "2024-10-09T07:50:44+02:00",
+          "tree_id": "fc3decd49ec988605ebfd1fa89d7022e2d336f7c",
+          "url": "https://github.com/equinor/ert/commit/7651fff904686dffc684d0defd8bc71c80df8d75"
+        },
+        "date": 1728453151100,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18945593454988038,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02711198504406583",
+            "extra": "mean: 5.278272239800003 sec\nrounds: 5"
           }
         ]
       }
