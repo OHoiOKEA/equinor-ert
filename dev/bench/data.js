@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728472512847,
+  "lastUpdate": 1728478546621,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "7c8fcc8ea0a30fb6047a48b6f1e049caf5363957",
-          "message": "Avoid logging void host information",
-          "timestamp": "2024-10-03T12:14:45+02:00",
-          "tree_id": "55c805881d3c0c9a0bd15092888f176c1e113527",
-          "url": "https://github.com/equinor/ert/commit/7c8fcc8ea0a30fb6047a48b6f1e049caf5363957"
-        },
-        "date": 1727950639263,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1889299854385165,
-            "unit": "iter/sec",
-            "range": "stddev: 0.021775402795100506",
-            "extra": "mean: 5.292966056599999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0359663590175562",
             "extra": "mean: 5.3459785732 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "2a917566dfd49ce2d306eacf6eac56e530763553",
+          "message": "Remove broadcasting of Eclipse stdout to multiple files\n\nErt tried to be consistent with the vendor provided eclrun and\nprovided multiple stdout files for Ert invocations when the vendor\nprovided eclrun was not in use. Now Ert should only use the vendor\nprovided eclrun for all Eclipse invocations, and it should not do\nanything on this subject as it is not Erts responsibility.\n\nSince vendor provided eclrun seemingly has changed behaviour, this\nresults in a breaking change for Ert users if they depend specifically\nfor the LOG or OUT files which are not there anymore.",
+          "timestamp": "2024-10-09T14:53:57+02:00",
+          "tree_id": "3df70c08aa78a8b38e6d75e5108f39afa8b1ffc3",
+          "url": "https://github.com/equinor/ert/commit/2a917566dfd49ce2d306eacf6eac56e530763553"
+        },
+        "date": 1728478546166,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1905574445407685,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0512964260327914",
+            "extra": "mean: 5.247761389800002 sec\nrounds: 5"
           }
         ]
       }
