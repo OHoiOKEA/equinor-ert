@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728457782455,
+  "lastUpdate": 1728458059550,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "61c648ae66276149095c246aa76f8961901b3d9c",
-          "message": "Avoid possible UnboundLocalError for end_event\n\nThe error has been observed to occur in the log. Not trying\nto display further error messages to why it is None.",
-          "timestamp": "2024-10-02T14:55:38+02:00",
-          "tree_id": "f5a31aec60604a3f78a6e04dff4dc050909b475a",
-          "url": "https://github.com/equinor/ert/commit/61c648ae66276149095c246aa76f8961901b3d9c"
-        },
-        "date": 1727873846190,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1868592787795706,
-            "unit": "iter/sec",
-            "range": "stddev: 0.021936015789073702",
-            "extra": "mean: 5.351620784 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.024041283295639006",
             "extra": "mean: 5.257376515199985 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "45c836436874a83ae42e44c121c131576ab6d2cc",
+          "message": "Remove unused help_text fm_step property\n\nIt says it is unused, and it seems correct that it is unused. No traces\nto be found in related repositories using this property",
+          "timestamp": "2024-10-09T09:12:30+02:00",
+          "tree_id": "3764012798446779d50011f93f667a66b21d09c2",
+          "url": "https://github.com/equinor/ert/commit/45c836436874a83ae42e44c121c131576ab6d2cc"
+        },
+        "date": 1728458058585,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19175930844834896,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0288873259804977",
+            "extra": "mean: 5.214870704799989 sec\nrounds: 5"
           }
         ]
       }
