@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728479021921,
+  "lastUpdate": 1728479430972,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "8e0afc183ed633498df1c600d02d5aaf8803ab93",
-          "message": "Fix wrong workflow reference in build_and_test.yml",
-          "timestamp": "2024-10-04T09:35:20+02:00",
-          "tree_id": "df1a70037aa6959e8cf39ec3d8a54fe8068f5dab",
-          "url": "https://github.com/equinor/ert/commit/8e0afc183ed633498df1c600d02d5aaf8803ab93"
-        },
-        "date": 1728027432371,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1868199979783813,
-            "unit": "iter/sec",
-            "range": "stddev: 0.038200359042761076",
-            "extra": "mean: 5.352746016599997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05213054551928841",
             "extra": "mean: 5.238135522799996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "2f0bc99b1025a708f4f15a2fb7484efb95299c91",
+          "message": "Use fm_step instead of job/joblist\n\nNot touching 'jobs.json', that would be breaking",
+          "timestamp": "2024-10-09T15:08:42+02:00",
+          "tree_id": "0208bb74eef88b510d82442c340ac290c84456dc",
+          "url": "https://github.com/equinor/ert/commit/2f0bc99b1025a708f4f15a2fb7484efb95299c91"
+        },
+        "date": 1728479430514,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1898754524869547,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04377838350459551",
+            "extra": "mean: 5.266610227400008 sec\nrounds: 5"
           }
         ]
       }
