@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728479430972,
+  "lastUpdate": 1728482881378,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "508716916b72c9b07180c9340422d147824b0ad0",
-          "message": "Resolve flakyness in test_kill_before_submit\n\nSometimes the job actually starts on a compute node and sometimes\nit does not before it is removed/killed. In the the latter case, code\nprevious to this commit will fail as it asserts that the job script\nhas actually started to run.",
-          "timestamp": "2024-10-04T10:05:12+02:00",
-          "tree_id": "ee92d125162454fac400fc64a4cc2449f696e343",
-          "url": "https://github.com/equinor/ert/commit/508716916b72c9b07180c9340422d147824b0ad0"
-        },
-        "date": 1728029225109,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1876844960649245,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03659035974536127",
-            "extra": "mean: 5.328090604000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04377838350459551",
             "extra": "mean: 5.266610227400008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "fc6244f995c4da1fc987a2261b4371e0dbbdfa12",
+          "message": "Rename forward-models to forward_models\n\nBetter to stick to underscore for consistency with the enforced\nunderscore in the python package hierarchy. Underscore is also\nconsistent with semeio.",
+          "timestamp": "2024-10-09T16:05:50+02:00",
+          "tree_id": "c4fb885364e9c4d5143eeda68ef33eff57d8e37b",
+          "url": "https://github.com/equinor/ert/commit/fc6244f995c4da1fc987a2261b4371e0dbbdfa12"
+        },
+        "date": 1728482880692,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18951521957256107,
+            "unit": "iter/sec",
+            "range": "stddev: 0.018180422187285068",
+            "extra": "mean: 5.276621066400014 sec\nrounds: 5"
           }
         ]
       }
