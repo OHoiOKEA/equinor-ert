@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728478546621,
+  "lastUpdate": 1728479018274,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "6d5c0a2ccc9503f4fd8e2471b88b1e9728137fde",
-          "message": "Add workflow step to upload images when image comparisson test fails",
-          "timestamp": "2024-10-03T13:45:21+02:00",
-          "tree_id": "72a536145e06e450e4c71a2ca24ec4c42d117724",
-          "url": "https://github.com/equinor/ert/commit/6d5c0a2ccc9503f4fd8e2471b88b1e9728137fde"
-        },
-        "date": 1727956027107,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1830090319507238,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03424107846866139",
-            "extra": "mean: 5.464211188600001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0512964260327914",
             "extra": "mean: 5.247761389800002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "ffacc3320b3190a2661686ad485350535eee7c9d",
+          "message": "Rename jobs to forward_models in snake_oil",
+          "timestamp": "2024-10-09T15:01:44+02:00",
+          "tree_id": "dc9fc41618f012b92f06f04911286e329dfa9518",
+          "url": "https://github.com/equinor/ert/commit/ffacc3320b3190a2661686ad485350535eee7c9d"
+        },
+        "date": 1728479017809,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18902635222655803,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06373258268565674",
+            "extra": "mean: 5.290267670200012 sec\nrounds: 5"
           }
         ]
       }
