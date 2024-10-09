@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728471057809,
+  "lastUpdate": 1728471955495,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "4bba6954526cd83d8d4e8c80437dca96e807ace7",
-          "message": "Run everest tests before publishing to pypi",
-          "timestamp": "2024-10-03T08:44:19+02:00",
-          "tree_id": "1469974a9a0a17f1a8fee5e325a408762b7ab35c",
-          "url": "https://github.com/equinor/ert/commit/4bba6954526cd83d8d4e8c80437dca96e807ace7"
-        },
-        "date": 1727937967006,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18878709395689586,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01687470565973627",
-            "extra": "mean: 5.296972261400038 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.018808425164219912",
             "extra": "mean: 5.358663295399998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "3e6ce6b4fc4b5ce99d62732d483ff1f3a4498e4a",
+          "message": "Handle inaccesible runpath gracefully",
+          "timestamp": "2024-10-09T13:04:02+02:00",
+          "tree_id": "30c95ac31ce3a2161ea26b909d853d63beaaf3da",
+          "url": "https://github.com/equinor/ert/commit/3e6ce6b4fc4b5ce99d62732d483ff1f3a4498e4a"
+        },
+        "date": 1728471954621,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1838253799521282,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06539516382651238",
+            "extra": "mean: 5.439945236400002 sec\nrounds: 5"
           }
         ]
       }
