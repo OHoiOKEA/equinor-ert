@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728479018274,
+  "lastUpdate": 1728479021921,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "49289030+HakonSohoel@users.noreply.github.com",
-            "name": "Håkon Steinkopf Søhoel",
-            "username": "HakonSohoel"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "a342528ad815d97b51980825b305498d1dc82d9f",
-          "message": "Fix documentation for DeleteFile (#8861)",
-          "timestamp": "2024-10-03T15:48:51+02:00",
-          "tree_id": "463335e133d08c7ede6eeda8742b2cbd3c59aac3",
-          "url": "https://github.com/equinor/ert/commit/a342528ad815d97b51980825b305498d1dc82d9f"
-        },
-        "date": 1727963480096,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1828146696548976,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03350248370475247",
-            "extra": "mean: 5.470020550799984 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06373258268565674",
             "extra": "mean: 5.290267670200012 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "e9a280d5449e53d89e16697dba2b0e58de30c495",
+          "message": "Fix docstring error\n\nThis is not only for RMS..",
+          "timestamp": "2024-10-09T15:01:57+02:00",
+          "tree_id": "2586b38b52a025419816664663d577630c65e41f",
+          "url": "https://github.com/equinor/ert/commit/e9a280d5449e53d89e16697dba2b0e58de30c495"
+        },
+        "date": 1728479021363,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19090762269271327,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05213054551928841",
+            "extra": "mean: 5.238135522799996 sec\nrounds: 5"
           }
         ]
       }
