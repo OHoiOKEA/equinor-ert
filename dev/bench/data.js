@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728468272703,
+  "lastUpdate": 1728471057809,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "f7cadbbd4cafa71d5fa28594037c6375a6683725",
-          "message": "Return with SIGTERM in mocked kill",
-          "timestamp": "2024-10-03T08:20:26+02:00",
-          "tree_id": "b743a7ca2ca94f6804dd0e4c1fa44d480b8eb44d",
-          "url": "https://github.com/equinor/ert/commit/f7cadbbd4cafa71d5fa28594037c6375a6683725"
-        },
-        "date": 1727936531614,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1843032878843019,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0312886959198407",
-            "extra": "mean: 5.425839177800015 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04206224178965344",
             "extra": "mean: 5.314836903000014 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "ca916d444979112a32d1add95bee0aa06bc66ec0",
+          "message": "Increase timeout of long running cli tests",
+          "timestamp": "2024-10-09T12:49:08+02:00",
+          "tree_id": "ac7d53df3fa32d07b090a3dbbcbdb9c0dc143dea",
+          "url": "https://github.com/equinor/ert/commit/ca916d444979112a32d1add95bee0aa06bc66ec0"
+        },
+        "date": 1728471057388,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18661370287221132,
+            "unit": "iter/sec",
+            "range": "stddev: 0.018808425164219912",
+            "extra": "mean: 5.358663295399998 sec\nrounds: 5"
           }
         ]
       }
