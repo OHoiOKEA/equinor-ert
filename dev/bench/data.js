@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728453151503,
+  "lastUpdate": 1728457782455,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "f6b86c6e7a2efa302bf42b0048f19295a6af99b2",
-          "message": "Fix ConfigWarning not calling class method of child classes\n\nThis commit fixes an issue where the parent class `ConfigWarning` has all methods decorated with `staticmethod`, rather than `classmethod`. The class methods should call the child class's method implementation where they are implemented.",
-          "timestamp": "2024-10-02T13:36:14+02:00",
-          "tree_id": "bc1dbb07a14c2411dea690e209df8797a4c18647",
-          "url": "https://github.com/equinor/ert/commit/f6b86c6e7a2efa302bf42b0048f19295a6af99b2"
-        },
-        "date": 1727869079581,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18648934870101858,
-            "unit": "iter/sec",
-            "range": "stddev: 0.016647266940392005",
-            "extra": "mean: 5.362236540400005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02711198504406583",
             "extra": "mean: 5.278272239800003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "4cdb34e54789a5a1cfa5a82f1fa0ab2465e76fcc",
+          "message": "Remove unused plugin code\n\nThis code is unused since 173ba862ab7e58c0abf1b56b5d50add9aca8b316",
+          "timestamp": "2024-10-09T09:07:49+02:00",
+          "tree_id": "f930890cf60e77df55ffec2f1c39e548dd13d82c",
+          "url": "https://github.com/equinor/ert/commit/4cdb34e54789a5a1cfa5a82f1fa0ab2465e76fcc"
+        },
+        "date": 1728457782014,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19020893731100047,
+            "unit": "iter/sec",
+            "range": "stddev: 0.024041283295639006",
+            "extra": "mean: 5.257376515199985 sec\nrounds: 5"
           }
         ]
       }
