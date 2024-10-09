@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728471955495,
+  "lastUpdate": 1728472512847,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "59eb4f3465c8fc1c7c9eb883a9cd4de823d1dec0",
-          "message": "Fix capturing of ForwardModelStepWarning",
-          "timestamp": "2024-10-03T10:20:22+02:00",
-          "tree_id": "6189c86545335dd8acd770a5e5099fc63ec8bd5c",
-          "url": "https://github.com/equinor/ert/commit/59eb4f3465c8fc1c7c9eb883a9cd4de823d1dec0"
-        },
-        "date": 1727943728634,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1847963201435144,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05319930517180732",
-            "extra": "mean: 5.411363165800009 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06539516382651238",
             "extra": "mean: 5.439945236400002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "16f3a130d1efc5bece2a9bdf3237e6b34ad00282",
+          "message": "Refactor everest tmpdir fixture",
+          "timestamp": "2024-10-09T13:12:58+02:00",
+          "tree_id": "18fa42a2ead59b044c918ca51541ee715e4ab3a0",
+          "url": "https://github.com/equinor/ert/commit/16f3a130d1efc5bece2a9bdf3237e6b34ad00282"
+        },
+        "date": 1728472512219,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18705649233483912,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0359663590175562",
+            "extra": "mean: 5.3459785732 sec\nrounds: 5"
           }
         ]
       }
