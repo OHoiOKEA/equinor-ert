@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728458059550,
+  "lastUpdate": 1728468272703,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "8ff7299a22ca30c381a3dece5054cfc2cb45a916",
-          "message": "Update the everest egg snapshot",
-          "timestamp": "2024-10-02T15:17:28+02:00",
-          "tree_id": "4a3de0a39a4f6efdf402d599aa70a0b6d8b4ca46",
-          "url": "https://github.com/equinor/ert/commit/8ff7299a22ca30c381a3dece5054cfc2cb45a916"
-        },
-        "date": 1727875153388,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1884510515971437,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03484120036262807",
-            "extra": "mean: 5.306417722399999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0288873259804977",
             "extra": "mean: 5.214870704799989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "86c01277e1fe7665d40e741c9a34655a903d49f5",
+          "message": "Have job_dispatch.py safely terminate child processes on exception",
+          "timestamp": "2024-10-09T12:02:44+02:00",
+          "tree_id": "952a9fa73f5d2c35e89003b68e32cfa95b940a8a",
+          "url": "https://github.com/equinor/ert/commit/86c01277e1fe7665d40e741c9a34655a903d49f5"
+        },
+        "date": 1728468272232,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18815252814917796,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04206224178965344",
+            "extra": "mean: 5.314836903000014 sec\nrounds: 5"
           }
         ]
       }
