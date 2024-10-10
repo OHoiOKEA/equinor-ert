@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728569187666,
+  "lastUpdate": 1728598022816,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "b505d333404a72e939cd3eafc8b53cb68ae3990c",
-          "message": "Fix circular import when importing test_ensemble_plot",
-          "timestamp": "2024-10-07T09:26:35+02:00",
-          "tree_id": "af8eb4c3070e667163b3e02dbe7bdc310eb5173d",
-          "url": "https://github.com/equinor/ert/commit/b505d333404a72e939cd3eafc8b53cb68ae3990c"
-        },
-        "date": 1728286103094,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18756483255338746,
-            "unit": "iter/sec",
-            "range": "stddev: 0.018896810524170422",
-            "extra": "mean: 5.3314898448000125 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06382708419633111",
             "extra": "mean: 5.3203876825999945 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "d1ac7cf8e4e31e9636e711162434d50db85bd9a5",
+          "message": "Support reading excel files from the DESIGN_MATRIX keyword\n\n- Adds functionality to the DesignMatrix dataclass for reading\ndesign matrix excel files into pandas dataframes, akin to design2params\nin semeio.",
+          "timestamp": "2024-10-11T00:05:10+02:00",
+          "tree_id": "da61f9047d1bcaa1749848f29a916608586d9b61",
+          "url": "https://github.com/equinor/ert/commit/d1ac7cf8e4e31e9636e711162434d50db85bd9a5"
+        },
+        "date": 1728598022217,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19142854799837322,
+            "unit": "iter/sec",
+            "range": "stddev: 0.014948794139153067",
+            "extra": "mean: 5.223881236400007 sec\nrounds: 5"
           }
         ]
       }
