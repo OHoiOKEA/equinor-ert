@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728553297699,
+  "lastUpdate": 1728555455454,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "793d6352a2de0b6237fcceae4431a4ab8b650fde",
-          "message": "Remove unused folder",
-          "timestamp": "2024-10-05T20:03:48+02:00",
-          "tree_id": "b54d3e130b2d4062725ef7d89798161e6e1cf43a",
-          "url": "https://github.com/equinor/ert/commit/793d6352a2de0b6237fcceae4431a4ab8b650fde"
-        },
-        "date": 1728151538181,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18340763590186773,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0185114303886757",
-            "extra": "mean: 5.452335695200008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.10671899536914627",
             "extra": "mean: 5.3736483783999915 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "3dfec31d697e8c2e2e1f0f5c896680c23102edf5",
+          "message": "Ensure missing runpath test is ran with plugins",
+          "timestamp": "2024-10-10T12:15:45+02:00",
+          "tree_id": "03f5827e549d76deff070154647352a030265988",
+          "url": "https://github.com/equinor/ert/commit/3dfec31d697e8c2e2e1f0f5c896680c23102edf5"
+        },
+        "date": 1728555454999,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1922494747450017,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022097404175557705",
+            "extra": "mean: 5.2015746795999975 sec\nrounds: 5"
           }
         ]
       }
