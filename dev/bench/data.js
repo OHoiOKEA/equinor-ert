@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728555455454,
+  "lastUpdate": 1728557395308,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "8b3667d5dc4f696a98d176e737550aa36e196ff6",
-          "message": "Pin hypothesis to <6.112.3 due to bug",
-          "timestamp": "2024-10-07T07:21:23+02:00",
-          "tree_id": "9e9a375b4e81bd64c474d10f1fccba144e0842d2",
-          "url": "https://github.com/equinor/ert/commit/8b3667d5dc4f696a98d176e737550aa36e196ff6"
-        },
-        "date": 1728278588021,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18813011351574857,
-            "unit": "iter/sec",
-            "range": "stddev: 0.017690128999295073",
-            "extra": "mean: 5.315470135600004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022097404175557705",
             "extra": "mean: 5.2015746795999975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "pieter.verveer@tno.nl",
+            "name": "Peter Verveer",
+            "username": "verveerpj"
+          },
+          "committer": {
+            "email": "pieter.verveer@tno.nl",
+            "name": "Peter Verveer",
+            "username": "verveerpj"
+          },
+          "distinct": true,
+          "id": "b9cfd468ae1f42c044882fa6f7fee3b1e71f1b67",
+          "message": "Refactor BatchSimulator",
+          "timestamp": "2024-10-10T12:48:04+02:00",
+          "tree_id": "030b27e8e55b1a5afd68128c2d8014d4861f8c24",
+          "url": "https://github.com/equinor/ert/commit/b9cfd468ae1f42c044882fa6f7fee3b1e71f1b67"
+        },
+        "date": 1728557394458,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1936476596849793,
+            "unit": "iter/sec",
+            "range": "stddev: 0.1223576322213484",
+            "extra": "mean: 5.164017998599997 sec\nrounds: 5"
           }
         ]
       }
