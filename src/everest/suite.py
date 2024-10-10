@@ -20,6 +20,7 @@ from seba_sqlite import SqliteStorage
 
 import everest
 from everest.config import EverestConfig
+from everest.optimizer.enopt_storage import EnOptStorage
 from everest.optimizer.everest2ropt import everest2ropt
 from everest.plugins.site_config_env import PluginSiteConfigEnv
 from everest.simulator import Simulator
@@ -399,6 +400,14 @@ class _EverestWorkflow(object):
         optimizer.add_observer(
             EventType.START_EVALUATION,
             partial(self._ropt_callback, optimizer=optimizer, simulator=simulator),
+        )
+
+        # Reads/writes results into storage
+        enopt_storage = EnOptStorage()
+        enopt_storage.observe_optimizer(
+            optimizer=optimizer,
+            storage_path=simulator.ert_config.ens_path,
+            experiment_id=simulator.experiment_id,
         )
 
         # The SqliteStorage object is used to store optimization results from

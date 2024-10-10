@@ -3,6 +3,7 @@ from collections import defaultdict
 from datetime import datetime
 from itertools import count
 from typing import Any, DefaultDict, Dict, List, Mapping, Optional, Tuple, Union
+from uuid import UUID
 
 import numpy as np
 from numpy import float64
@@ -41,6 +42,10 @@ class Simulator(BatchSimulator):
         self._cache: Optional[_SimulatorCache] = None
         if ever_config.simulator is not None and ever_config.simulator.enable_cache:
             self._cache = _SimulatorCache()
+
+    @property
+    def experiment_id(self) -> Optional[UUID]:
+        return self._experiment_id
 
     @staticmethod
     def _get_variables(
