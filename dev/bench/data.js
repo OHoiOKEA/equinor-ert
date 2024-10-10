@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728482881378,
+  "lastUpdate": 1728547444205,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "d1c3a8825e0ad09791fe091ea1121b2303609063",
-          "message": "Only use logger.exception for unexpected exceptions",
-          "timestamp": "2024-10-04T10:21:38+02:00",
-          "tree_id": "c835e40fd9c6b6506b3fc2186c679efea89abf47",
-          "url": "https://github.com/equinor/ert/commit/d1c3a8825e0ad09791fe091ea1121b2303609063"
-        },
-        "date": 1728030208832,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18428124309155317,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04474884386428596",
-            "extra": "mean: 5.4264882481999965 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.018180422187285068",
             "extra": "mean: 5.276621066400014 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "60844986+larsevj@users.noreply.github.com",
+            "name": "Lars Evje",
+            "username": "larsevj"
+          },
+          "distinct": true,
+          "id": "aa8ba9280606fde1dd333bc1870e47aaeeb61a97",
+          "message": "Pin ubuntu runner image in test_ert_with_slurm workflow",
+          "timestamp": "2024-10-10T10:02:18+02:00",
+          "tree_id": "837656a096949077f95c0c594243e8eeabc419df",
+          "url": "https://github.com/equinor/ert/commit/aa8ba9280606fde1dd333bc1870e47aaeeb61a97"
+        },
+        "date": 1728547443758,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19898962046750404,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02050515414584239",
+            "extra": "mean: 5.025387744599999 sec\nrounds: 5"
           }
         ]
       }
