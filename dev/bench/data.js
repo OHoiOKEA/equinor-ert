@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728632345424,
+  "lastUpdate": 1728637145374,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "a52cebfe34f58d25adabd0d42219ae5467833cce",
-          "message": "Save & load responses as parquet\n\nPolars&parquet for responses and scaling factors\r\n\r\n* Datetime reading past 2263 should now work, added test asserting that it does work. Datetimes are now also timezone-naive.\r\n* Enforced f32 precision for observations & responses, this will require observations to be at most `1.84e19` (should be way less in realistic cases, this is mostly relevant for tests)",
-          "timestamp": "2024-10-07T10:30:54+02:00",
-          "tree_id": "fc02c2e1e292c87b3a4f4887fd545c54e35a9879",
-          "url": "https://github.com/equinor/ert/commit/a52cebfe34f58d25adabd0d42219ae5467833cce"
-        },
-        "date": 1728289965517,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18796488082391716,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01653408634098076",
-            "extra": "mean: 5.320142760800013 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01525893073624097",
             "extra": "mean: 5.113479614199997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "072deccc96378ff71e79e4da54ee0c256c2dadd5",
+          "message": "Skip failing writes test on lsf\n\nCurrently does not work with the lsf setup",
+          "timestamp": "2024-10-11T10:57:13+02:00",
+          "tree_id": "1097cd048460b2ab3ee5149c0d1582bd494b452c",
+          "url": "https://github.com/equinor/ert/commit/072deccc96378ff71e79e4da54ee0c256c2dadd5"
+        },
+        "date": 1728637144510,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19402879829294423,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02062148947075118",
+            "extra": "mean: 5.1538741093999985 sec\nrounds: 5"
           }
         ]
       }
