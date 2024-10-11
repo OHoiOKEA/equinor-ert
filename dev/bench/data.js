@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728644762760,
+  "lastUpdate": 1728653722463,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "5cb1339c6df044dbba1be6bbce21c6fd8e82afaf",
-          "message": "Make histogram test not integration test & add mpl",
-          "timestamp": "2024-10-07T15:33:23+02:00",
-          "tree_id": "5082f9edf22486742feba874d6362360cb167e6c",
-          "url": "https://github.com/equinor/ert/commit/5cb1339c6df044dbba1be6bbce21c6fd8e82afaf"
-        },
-        "date": 1728308113319,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18673343207295307,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025515976681189538",
-            "extra": "mean: 5.355227443199993 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01765984201941471",
             "extra": "mean: 5.073579649200019 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "dad96eac337f33fcf51e190d5f72e37bda4f6ce9",
+          "message": "Give warning when memory usage is set in `LSF_RESOURCE`\n\nThis commit gives the user a deprecationwarning when trying to set\n`mem=...` in the `LSF_RESOURCE` resource string. This is preferred to be\nset in the new `REALIZATION_MEMORY` option.\n\nUsing `REALIZATION_MEMORY` over `LSF_RESOURCE`\n* Does not invalidate what we have set as LSF_RESOURCE through the site-config.\n* Better handling of memory units (i.e. better UX).\n* Makes Ert able to understand the parameter, to be able to compare with actual usage",
+          "timestamp": "2024-10-11T15:33:35+02:00",
+          "tree_id": "9a6eaf2c31251b06cd44be949160efb9f97e1db0",
+          "url": "https://github.com/equinor/ert/commit/dad96eac337f33fcf51e190d5f72e37bda4f6ce9"
+        },
+        "date": 1728653722062,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18924224453110722,
+            "unit": "iter/sec",
+            "range": "stddev: 0.07632587426322884",
+            "extra": "mean: 5.284232400000002 sec\nrounds: 5"
           }
         ]
       }
