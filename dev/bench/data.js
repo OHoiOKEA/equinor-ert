@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728653722463,
+  "lastUpdate": 1728654143953,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "c258c76bc55d55ac17f1f5e35d6fd238c6b00924",
-          "message": "Move plottery to tools plot\n\nAs plot_api is used by both ert.gui.plottery and ert.gui.tools.plot, its\r\ncurrent location causes circular dependency problems. This PR moves\r\nplottery into ert.gui.tools.plot so that the only exposed symbol from\r\nert.gui.tools.plot is PlotTool.",
-          "timestamp": "2024-10-07T13:48:37Z",
-          "tree_id": "902dc5325cffe69439827fd5c0be55fa8ff914e1",
-          "url": "https://github.com/equinor/ert/commit/c258c76bc55d55ac17f1f5e35d6fd238c6b00924"
-        },
-        "date": 1728309023953,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18743922487910628,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03133363317028538",
-            "extra": "mean: 5.335062608400006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.07632587426322884",
             "extra": "mean: 5.284232400000002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "391a25f7c4ed259eb79f69074b2b9df2455ff046",
+          "message": "Add DesignMatrixPanel to show DataFrame parameters in a table\n\n- Button to show the parameters is shown when design_matrix is present\n- Add test for design matrix show parameters button",
+          "timestamp": "2024-10-11T15:40:36+02:00",
+          "tree_id": "1cf97d6b6495c24cfdb9721c9d2600df88f87431",
+          "url": "https://github.com/equinor/ert/commit/391a25f7c4ed259eb79f69074b2b9df2455ff046"
+        },
+        "date": 1728654143543,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18949425373996195,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05106073852734194",
+            "extra": "mean: 5.277204876999986 sec\nrounds: 5"
           }
         ]
       }
