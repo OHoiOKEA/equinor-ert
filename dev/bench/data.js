@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728628670485,
+  "lastUpdate": 1728632345424,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "59bc7746c238fc71605b238b4dc1bf0aecb071b7",
-          "message": "Fix timeout issue with macos-14-large",
-          "timestamp": "2024-10-07T09:53:31+02:00",
-          "tree_id": "7631d78059deabc4525d28fdffa4f070393d994e",
-          "url": "https://github.com/equinor/ert/commit/59bc7746c238fc71605b238b4dc1bf0aecb071b7"
-        },
-        "date": 1728287712881,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1884785530281463,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027046737656719545",
-            "extra": "mean: 5.305643448199996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02570217605356537",
             "extra": "mean: 5.112004622999995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "2453a2c3450daa492a9e7579c7b848033705f06f",
+          "message": "Refactor and rename summary_block()\n\nThe logic for determining stable was not correct, if the summary\nfile was not stable after two reads, it would always timeout. Behaviour\nis not defined by tests.",
+          "timestamp": "2024-10-11T09:37:17+02:00",
+          "tree_id": "e0da27ae031f904640cb90cb02eeb6297c616be1",
+          "url": "https://github.com/equinor/ert/commit/2453a2c3450daa492a9e7579c7b848033705f06f"
+        },
+        "date": 1728632344862,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1955615501473843,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01525893073624097",
+            "extra": "mean: 5.113479614199997 sec\nrounds: 5"
           }
         ]
       }
