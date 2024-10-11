@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728637145374,
+  "lastUpdate": 1728644762760,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "80a06bec565878c86e5fb49610bd2ceaaa68c2eb",
-          "message": "Propagate and show exec_hosts in run_dialog if present",
-          "timestamp": "2024-10-07T13:06:03+02:00",
-          "tree_id": "c10c28836bec38648b65e1dbf260f6d85c1906ba",
-          "url": "https://github.com/equinor/ert/commit/80a06bec565878c86e5fb49610bd2ceaaa68c2eb"
-        },
-        "date": 1728299271488,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.187800937172628,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03763164085307903",
-            "extra": "mean: 5.3247870593999895 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02062148947075118",
             "extra": "mean: 5.1538741093999985 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "ed4ba121c910324a1a08a659ee08dd01bdcc6371",
+          "message": "Test empty gen_kw in plotapi",
+          "timestamp": "2024-10-11T13:04:17+02:00",
+          "tree_id": "68a67ccf3e1efda4f74408a897a83ca4c3742eb8",
+          "url": "https://github.com/equinor/ert/commit/ed4ba121c910324a1a08a659ee08dd01bdcc6371"
+        },
+        "date": 1728644762277,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19709949762150197,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01765984201941471",
+            "extra": "mean: 5.073579649200019 sec\nrounds: 5"
           }
         ]
       }
