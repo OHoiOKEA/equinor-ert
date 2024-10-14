@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728893900756,
+  "lastUpdate": 1728894841002,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "c98db945f4e5a692ab4b6699621674ae033db139",
-          "message": "Make sure that the last evaluator event is EETerminated\n\nThis introduces EnsembleEvaluator._complete_batch event, which is set\nevery time a batch is produced. When closing the ee server, we make sure\nthat the _complete_batch is set and thus preventing an events to be\nlost.\n\nThis behaviour is then tested in\ntest_ensure_multi_level_events_in_order, which was updated\ncorrespondighly.",
-          "timestamp": "2024-10-08T14:10:40+02:00",
-          "tree_id": "f994e3d23f82b1b3a932666f25e57c2b946709e5",
-          "url": "https://github.com/equinor/ert/commit/c98db945f4e5a692ab4b6699621674ae033db139"
-        },
-        "date": 1728389553598,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19185374822397297,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0390148953980107",
-            "extra": "mean: 5.212303691000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027854687021076085",
             "extra": "mean: 5.183421429999998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "f8d2f26ddfc93e72293bde35603b086085f2f21e",
+          "message": "Aggregate duplicate indices by mean in dark storage",
+          "timestamp": "2024-10-14T10:32:08+02:00",
+          "tree_id": "2646bafc04337985265f0c39b8b9c7191628db71",
+          "url": "https://github.com/equinor/ert/commit/f8d2f26ddfc93e72293bde35603b086085f2f21e"
+        },
+        "date": 1728894840546,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19084426924461123,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03560650566741526",
+            "extra": "mean: 5.239874395800001 sec\nrounds: 5"
           }
         ]
       }
