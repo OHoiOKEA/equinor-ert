@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728654143953,
+  "lastUpdate": 1728892329759,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "c304cd0996e8cb1f3df4882b77f6549fd3ecc34f",
-          "message": "Refactor and improve readability ecl_run tests\n\nRemove redundant code, and fix typo in fixture env\nvariable (that did not matter).\n\nUse pathlib.\n\nRemove redundant --num_cpu argument in test, only applies\nto legacy eclrun.",
-          "timestamp": "2024-10-08T13:26:52+02:00",
-          "tree_id": "a8c964e982f0286cb984e4fd82cf422b11edf5cc",
-          "url": "https://github.com/equinor/ert/commit/c304cd0996e8cb1f3df4882b77f6549fd3ecc34f"
-        },
-        "date": 1728386930973,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18382401566683568,
-            "unit": "iter/sec",
-            "range": "stddev: 0.013934349368832156",
-            "extra": "mean: 5.439985609999996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05106073852734194",
             "extra": "mean: 5.277204876999986 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "031e586e0cbdbf5a7ed8838d4f650565ca56322e",
+          "message": "Remove irrelavant scheduler environment checkbox",
+          "timestamp": "2024-10-14T09:50:17+02:00",
+          "tree_id": "c198d98eea205417a676683cdeabce622d37a4d0",
+          "url": "https://github.com/equinor/ert/commit/031e586e0cbdbf5a7ed8838d4f650565ca56322e"
+        },
+        "date": 1728892329338,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19095333465924488,
+            "unit": "iter/sec",
+            "range": "stddev: 0.013038809775689945",
+            "extra": "mean: 5.236881575200004 sec\nrounds: 5"
           }
         ]
       }
