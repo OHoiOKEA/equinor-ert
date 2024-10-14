@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728894841002,
+  "lastUpdate": 1728908043592,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "dan.sava42@gmail.com",
-            "name": "DanSava",
-            "username": "DanSava"
-          },
-          "committer": {
-            "email": "dan.sava42@gmail.com",
-            "name": "Dan Sava",
-            "username": "DanSava"
-          },
-          "distinct": true,
-          "id": "81fb0bd4a44a4142218c2e7a86e64d8763650290",
-          "message": "Add well trajectory everest doc entry.",
-          "timestamp": "2024-10-08T15:31:39+02:00",
-          "tree_id": "857cc9fc663c8d955324690b77e3dd4f53a0743f",
-          "url": "https://github.com/equinor/ert/commit/81fb0bd4a44a4142218c2e7a86e64d8763650290"
-        },
-        "date": 1728394407392,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18717497371377745,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0395001532332408",
-            "extra": "mean: 5.342594579600001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03560650566741526",
             "extra": "mean: 5.239874395800001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "3427fa998a04be987539ce0f8131e457d34c85eb",
+          "message": "Push out api and storage to fixture",
+          "timestamp": "2024-10-14T14:12:14+02:00",
+          "tree_id": "ba3dd4570ee9bd1994aa462d5e8d739153b681cb",
+          "url": "https://github.com/equinor/ert/commit/3427fa998a04be987539ce0f8131e457d34c85eb"
+        },
+        "date": 1728908043102,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19128317958313099,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03462373706735864",
+            "extra": "mean: 5.227851200399999 sec\nrounds: 5"
           }
         ]
       }
