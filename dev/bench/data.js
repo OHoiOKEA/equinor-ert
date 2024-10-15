@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728985913527,
+  "lastUpdate": 1728989385001,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "86c01277e1fe7665d40e741c9a34655a903d49f5",
-          "message": "Have job_dispatch.py safely terminate child processes on exception",
-          "timestamp": "2024-10-09T12:02:44+02:00",
-          "tree_id": "952a9fa73f5d2c35e89003b68e32cfa95b940a8a",
-          "url": "https://github.com/equinor/ert/commit/86c01277e1fe7665d40e741c9a34655a903d49f5"
-        },
-        "date": 1728468272232,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18815252814917796,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04206224178965344",
-            "extra": "mean: 5.314836903000014 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025663812483143037",
             "extra": "mean: 5.066825086199998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "10a02f64439fb1daf8bbeae020dc9b30e2c17885",
+          "message": "Remove remnant ext param in ert config dicts",
+          "timestamp": "2024-10-15T12:47:53+02:00",
+          "tree_id": "47ea7b97d85b6d5e2adc8c262c63ca1b42c5c59b",
+          "url": "https://github.com/equinor/ert/commit/10a02f64439fb1daf8bbeae020dc9b30e2c17885"
+        },
+        "date": 1728989384378,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19870741368675712,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0424418825080372",
+            "extra": "mean: 5.0325248638000115 sec\nrounds: 5"
           }
         ]
       }
