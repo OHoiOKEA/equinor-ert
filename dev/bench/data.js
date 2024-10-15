@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728989385001,
+  "lastUpdate": 1729001379360,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "ca916d444979112a32d1add95bee0aa06bc66ec0",
-          "message": "Increase timeout of long running cli tests",
-          "timestamp": "2024-10-09T12:49:08+02:00",
-          "tree_id": "ac7d53df3fa32d07b090a3dbbcbdb9c0dc143dea",
-          "url": "https://github.com/equinor/ert/commit/ca916d444979112a32d1add95bee0aa06bc66ec0"
-        },
-        "date": 1728471057388,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18661370287221132,
-            "unit": "iter/sec",
-            "range": "stddev: 0.018808425164219912",
-            "extra": "mean: 5.358663295399998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0424418825080372",
             "extra": "mean: 5.0325248638000115 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "distinct": true,
+          "id": "353edda58fe965573ecc59f84cd51c7511edfe4f",
+          "message": "Close Evaluator server for new connections earlier\n\nEnsemble evaluator accepted new connections while shutting down before\nthis commit",
+          "timestamp": "2024-10-15T16:07:53+02:00",
+          "tree_id": "40143c7b3bf527702e5a9028b074969c49e21917",
+          "url": "https://github.com/equinor/ert/commit/353edda58fe965573ecc59f84cd51c7511edfe4f"
+        },
+        "date": 1729001378947,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19282491738921737,
+            "unit": "iter/sec",
+            "range": "stddev: 0.016432556984370544",
+            "extra": "mean: 5.1860517485999935 sec\nrounds: 5"
           }
         ]
       }
