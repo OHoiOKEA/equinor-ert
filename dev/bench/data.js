@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728985852888,
+  "lastUpdate": 1728985913527,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "45c836436874a83ae42e44c121c131576ab6d2cc",
-          "message": "Remove unused help_text fm_step property\n\nIt says it is unused, and it seems correct that it is unused. No traces\nto be found in related repositories using this property",
-          "timestamp": "2024-10-09T09:12:30+02:00",
-          "tree_id": "3764012798446779d50011f93f667a66b21d09c2",
-          "url": "https://github.com/equinor/ert/commit/45c836436874a83ae42e44c121c131576ab6d2cc"
-        },
-        "date": 1728458058585,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19175930844834896,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0288873259804977",
-            "extra": "mean: 5.214870704799989 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028231534158079573",
             "extra": "mean: 5.150719308400005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d0f6c164044ac71723ba4421710770962efbf52c",
+          "message": "Initialize ErtConfig in everest_to_res (#8957)",
+          "timestamp": "2024-10-15T11:50:04+02:00",
+          "tree_id": "b9a2329827fe1b6b833b7c1ab7329e1269b31ac3",
+          "url": "https://github.com/equinor/ert/commit/d0f6c164044ac71723ba4421710770962efbf52c"
+        },
+        "date": 1728985912785,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19736225012456013,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025663812483143037",
+            "extra": "mean: 5.066825086199998 sec\nrounds: 5"
           }
         ]
       }
