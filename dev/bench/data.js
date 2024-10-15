@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1728914235269,
+  "lastUpdate": 1728985852888,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "4cdb34e54789a5a1cfa5a82f1fa0ab2465e76fcc",
-          "message": "Remove unused plugin code\n\nThis code is unused since 173ba862ab7e58c0abf1b56b5d50add9aca8b316",
-          "timestamp": "2024-10-09T09:07:49+02:00",
-          "tree_id": "f930890cf60e77df55ffec2f1c39e548dd13d82c",
-          "url": "https://github.com/equinor/ert/commit/4cdb34e54789a5a1cfa5a82f1fa0ab2465e76fcc"
-        },
-        "date": 1728457782014,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19020893731100047,
-            "unit": "iter/sec",
-            "range": "stddev: 0.024041283295639006",
-            "extra": "mean: 5.257376515199985 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.031755129353024776",
             "extra": "mean: 5.244922520000003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ynk@equinor.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "distinct": true,
+          "id": "5e356b7d9edc27a37ff554ad91fe3985a4852c5e",
+          "message": "Use only one fm shell script list",
+          "timestamp": "2024-10-15T11:49:05+02:00",
+          "tree_id": "dddc3723cf5d5b2ac17652c4267e72426bca0ad2",
+          "url": "https://github.com/equinor/ert/commit/5e356b7d9edc27a37ff554ad91fe3985a4852c5e"
+        },
+        "date": 1728985852356,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19414764038280224,
+            "unit": "iter/sec",
+            "range": "stddev: 0.028231534158079573",
+            "extra": "mean: 5.150719308400005 sec\nrounds: 5"
           }
         ]
       }
