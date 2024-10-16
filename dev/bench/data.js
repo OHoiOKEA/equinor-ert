@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729074860539,
+  "lastUpdate": 1729074886006,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "2a917566dfd49ce2d306eacf6eac56e530763553",
-          "message": "Remove broadcasting of Eclipse stdout to multiple files\n\nErt tried to be consistent with the vendor provided eclrun and\nprovided multiple stdout files for Ert invocations when the vendor\nprovided eclrun was not in use. Now Ert should only use the vendor\nprovided eclrun for all Eclipse invocations, and it should not do\nanything on this subject as it is not Erts responsibility.\n\nSince vendor provided eclrun seemingly has changed behaviour, this\nresults in a breaking change for Ert users if they depend specifically\nfor the LOG or OUT files which are not there anymore.",
-          "timestamp": "2024-10-09T14:53:57+02:00",
-          "tree_id": "3df70c08aa78a8b38e6d75e5108f39afa8b1ffc3",
-          "url": "https://github.com/equinor/ert/commit/2a917566dfd49ce2d306eacf6eac56e530763553"
-        },
-        "date": 1728478546166,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1905574445407685,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0512964260327914",
-            "extra": "mean: 5.247761389800002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03669609296555343",
             "extra": "mean: 5.025160073999984 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "5d02e9a5059ba5b6a511d81cf596d317d2e54329",
+          "message": "Give hint on REALIZATION_MEMORY on oom kills",
+          "timestamp": "2024-10-16T12:32:54+02:00",
+          "tree_id": "219bd798b72c51dcabbadc776909cc9d95d6dcd3",
+          "url": "https://github.com/equinor/ert/commit/5d02e9a5059ba5b6a511d81cf596d317d2e54329"
+        },
+        "date": 1729074885514,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19070203987550335,
+            "unit": "iter/sec",
+            "range": "stddev: 0.017921919017907583",
+            "extra": "mean: 5.243782398200006 sec\nrounds: 5"
           }
         ]
       }
