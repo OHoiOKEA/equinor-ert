@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729001379360,
+  "lastUpdate": 1729062259060,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "3e6ce6b4fc4b5ce99d62732d483ff1f3a4498e4a",
-          "message": "Handle inaccesible runpath gracefully",
-          "timestamp": "2024-10-09T13:04:02+02:00",
-          "tree_id": "30c95ac31ce3a2161ea26b909d853d63beaaf3da",
-          "url": "https://github.com/equinor/ert/commit/3e6ce6b4fc4b5ce99d62732d483ff1f3a4498e4a"
-        },
-        "date": 1728471954621,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1838253799521282,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06539516382651238",
-            "extra": "mean: 5.439945236400002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.016432556984370544",
             "extra": "mean: 5.1860517485999935 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2d4421beaf0b63cc2f7aa3fd04552b533d6634a7",
+          "message": "Initialize ert storage outside Simulator.start",
+          "timestamp": "2024-10-16T09:02:04+02:00",
+          "tree_id": "6fb411b8cd32d775b0b59f1af3df851d41aa4123",
+          "url": "https://github.com/equinor/ert/commit/2d4421beaf0b63cc2f7aa3fd04552b533d6634a7"
+        },
+        "date": 1729062258448,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19638801178142665,
+            "unit": "iter/sec",
+            "range": "stddev: 0.014422120604439747",
+            "extra": "mean: 5.091960506800012 sec\nrounds: 5"
           }
         ]
       }
