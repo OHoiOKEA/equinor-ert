@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729062259060,
+  "lastUpdate": 1729074860539,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "16f3a130d1efc5bece2a9bdf3237e6b34ad00282",
-          "message": "Refactor everest tmpdir fixture",
-          "timestamp": "2024-10-09T13:12:58+02:00",
-          "tree_id": "18fa42a2ead59b044c918ca51541ee715e4ab3a0",
-          "url": "https://github.com/equinor/ert/commit/16f3a130d1efc5bece2a9bdf3237e6b34ad00282"
-        },
-        "date": 1728472512219,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18705649233483912,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0359663590175562",
-            "extra": "mean: 5.3459785732 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.014422120604439747",
             "extra": "mean: 5.091960506800012 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "ace090c44568b92682a14d74780fe4d35889cd33",
+          "message": "Shift doc and plugins test up one level\n\nCategorizing these tests in an all directory seems pointless, was\nprobably an intention earlier but that is not valid anymore",
+          "timestamp": "2024-10-16T12:32:32+02:00",
+          "tree_id": "e222b0a7ceba499504962194bf6112dd46985ce0",
+          "url": "https://github.com/equinor/ert/commit/ace090c44568b92682a14d74780fe4d35889cd33"
+        },
+        "date": 1729074860094,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.198998635918877,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03669609296555343",
+            "extra": "mean: 5.025160073999984 sec\nrounds: 5"
           }
         ]
       }
