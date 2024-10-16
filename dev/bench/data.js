@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729074886006,
+  "lastUpdate": 1729082983366,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "ffacc3320b3190a2661686ad485350535eee7c9d",
-          "message": "Rename jobs to forward_models in snake_oil",
-          "timestamp": "2024-10-09T15:01:44+02:00",
-          "tree_id": "dc9fc41618f012b92f06f04911286e329dfa9518",
-          "url": "https://github.com/equinor/ert/commit/ffacc3320b3190a2661686ad485350535eee7c9d"
-        },
-        "date": 1728479017809,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18902635222655803,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06373258268565674",
-            "extra": "mean: 5.290267670200012 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.017921919017907583",
             "extra": "mean: 5.243782398200006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "stephan.dehoop@tno.nl",
+            "name": "Stephan de Hoop",
+            "username": "StephanDeHoop"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "45b9a36fb89ad839795830f1e7d37665ffbffd02",
+          "message": "Remove redundant/superseded Everest tests (#8954)\n\nRemove redundant Everest math_func tests and associated (unused) config files",
+          "timestamp": "2024-10-16T14:47:49+02:00",
+          "tree_id": "3008f6a4d1f6ddf0a846a1526956f7dcda871159",
+          "url": "https://github.com/equinor/ert/commit/45b9a36fb89ad839795830f1e7d37665ffbffd02"
+        },
+        "date": 1729082982738,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1976233120979619,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01287492253495804",
+            "extra": "mean: 5.0601317698000114 sec\nrounds: 5"
           }
         ]
       }
