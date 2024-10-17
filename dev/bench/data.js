@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729151873516,
+  "lastUpdate": 1729158082437,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "2f0bc99b1025a708f4f15a2fb7484efb95299c91",
-          "message": "Use fm_step instead of job/joblist\n\nNot touching 'jobs.json', that would be breaking",
-          "timestamp": "2024-10-09T15:08:42+02:00",
-          "tree_id": "0208bb74eef88b510d82442c340ac290c84456dc",
-          "url": "https://github.com/equinor/ert/commit/2f0bc99b1025a708f4f15a2fb7484efb95299c91"
-        },
-        "date": 1728479430514,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1898754524869547,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04377838350459551",
-            "extra": "mean: 5.266610227400008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030118471940152946",
             "extra": "mean: 5.160496580200004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "96b8fe11da8fdeaf83cd3608f80d86b993d67212",
+          "message": "Update type of usecols in _read_excel\n\nusecols takes str, list-like or callable\r\nUpdate outdated docstring.",
+          "timestamp": "2024-10-17T11:39:33+02:00",
+          "tree_id": "c8ce1ed81bb6d3241ae88a8adf0ef11890eba6ee",
+          "url": "https://github.com/equinor/ert/commit/96b8fe11da8fdeaf83cd3608f80d86b993d67212"
+        },
+        "date": 1729158081974,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1944061915561054,
+            "unit": "iter/sec",
+            "range": "stddev: 0.045912425825283924",
+            "extra": "mean: 5.1438690917999965 sec\nrounds: 5"
           }
         ]
       }
