@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729082983366,
+  "lastUpdate": 1729151873516,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "e9a280d5449e53d89e16697dba2b0e58de30c495",
-          "message": "Fix docstring error\n\nThis is not only for RMS..",
-          "timestamp": "2024-10-09T15:01:57+02:00",
-          "tree_id": "2586b38b52a025419816664663d577630c65e41f",
-          "url": "https://github.com/equinor/ert/commit/e9a280d5449e53d89e16697dba2b0e58de30c495"
-        },
-        "date": 1728479021363,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19090762269271327,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05213054551928841",
-            "extra": "mean: 5.238135522799996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01287492253495804",
             "extra": "mean: 5.0601317698000114 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "74e401e4e9fe06b61c8a4cf7ce2be067f89f8145",
+          "message": "Add runpath validation in gui load_results_manually\n\nThis commit adds runpath validation so the load button in\n`load_results_manually` will be disabled until the runpath exists, and\nthe user has the read/execute permissions.",
+          "timestamp": "2024-10-17T09:55:58+02:00",
+          "tree_id": "2a55f81587479d69319d527c2a68a4ae5c15d1ad",
+          "url": "https://github.com/equinor/ert/commit/74e401e4e9fe06b61c8a4cf7ce2be067f89f8145"
+        },
+        "date": 1729151873006,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19377980092784855,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030118471940152946",
+            "extra": "mean: 5.160496580200004 sec\nrounds: 5"
           }
         ]
       }
