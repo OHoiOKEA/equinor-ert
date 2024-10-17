@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729158082437,
+  "lastUpdate": 1729161432805,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "fc6244f995c4da1fc987a2261b4371e0dbbdfa12",
-          "message": "Rename forward-models to forward_models\n\nBetter to stick to underscore for consistency with the enforced\nunderscore in the python package hierarchy. Underscore is also\nconsistent with semeio.",
-          "timestamp": "2024-10-09T16:05:50+02:00",
-          "tree_id": "c4fb885364e9c4d5143eeda68ef33eff57d8e37b",
-          "url": "https://github.com/equinor/ert/commit/fc6244f995c4da1fc987a2261b4371e0dbbdfa12"
-        },
-        "date": 1728482880692,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18951521957256107,
-            "unit": "iter/sec",
-            "range": "stddev: 0.018180422187285068",
-            "extra": "mean: 5.276621066400014 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.045912425825283924",
             "extra": "mean: 5.1438690917999965 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "da9495dd4160acec5f89fc08de74980245b2db89",
+          "message": "Remove unused constants in tests",
+          "timestamp": "2024-10-17T12:35:25+02:00",
+          "tree_id": "a4a7e65dad9bab82d7142351bbc611bd3809328e",
+          "url": "https://github.com/equinor/ert/commit/da9495dd4160acec5f89fc08de74980245b2db89"
+        },
+        "date": 1729161432179,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19515692280696764,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027192462215222535",
+            "extra": "mean: 5.124081614 sec\nrounds: 5"
           }
         ]
       }
