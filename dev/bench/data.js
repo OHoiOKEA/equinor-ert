@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729250527062,
+  "lastUpdate": 1729250565545,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "pieter.verveer@tno.nl",
-            "name": "Peter Verveer",
-            "username": "verveerpj"
-          },
-          "committer": {
-            "email": "pieter.verveer@tno.nl",
-            "name": "Peter Verveer",
-            "username": "verveerpj"
-          },
-          "distinct": true,
-          "id": "b9cfd468ae1f42c044882fa6f7fee3b1e71f1b67",
-          "message": "Refactor BatchSimulator",
-          "timestamp": "2024-10-10T12:48:04+02:00",
-          "tree_id": "030b27e8e55b1a5afd68128c2d8014d4861f8c24",
-          "url": "https://github.com/equinor/ert/commit/b9cfd468ae1f42c044882fa6f7fee3b1e71f1b67"
-        },
-        "date": 1728557394458,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1936476596849793,
-            "unit": "iter/sec",
-            "range": "stddev: 0.1223576322213484",
-            "extra": "mean: 5.164017998599997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03301591048669666",
             "extra": "mean: 5.1364914397999994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "2a0fc2cea2fc21d3fca86674b4efb07409eb5d47",
+          "message": "Add validation for uninitialized ensembles in manual update and evaluate\nexperiment\n\nThis commit adds validation for the realizations specified by the user\nwhen trying to run `manual_update` or `evaluate_experiment`. The\nvalidator checks the selected ensemble if the specified realization(s)\nexists. If not, the field becomes red and a warning is displayed.\nThe commit also disables the realization field until an ensemble is\nselected.",
+          "timestamp": "2024-10-18T13:20:53+02:00",
+          "tree_id": "fd14dee002e7f72ce75758c45469f271183e9819",
+          "url": "https://github.com/equinor/ert/commit/2a0fc2cea2fc21d3fca86674b4efb07409eb5d47"
+        },
+        "date": 1729250564574,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1883622886711612,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0556866402866877",
+            "extra": "mean: 5.30891829279999 sec\nrounds: 5"
           }
         ]
       }
