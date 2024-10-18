@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729161432805,
+  "lastUpdate": 1729245202148,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "aa8ba9280606fde1dd333bc1870e47aaeeb61a97",
-          "message": "Pin ubuntu runner image in test_ert_with_slurm workflow",
-          "timestamp": "2024-10-10T10:02:18+02:00",
-          "tree_id": "837656a096949077f95c0c594243e8eeabc419df",
-          "url": "https://github.com/equinor/ert/commit/aa8ba9280606fde1dd333bc1870e47aaeeb61a97"
-        },
-        "date": 1728547443758,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19898962046750404,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02050515414584239",
-            "extra": "mean: 5.025387744599999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027192462215222535",
             "extra": "mean: 5.124081614 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "0ca8b0b178568e3f9a4e4ccafc241689bf0dc6c8",
+          "message": "Add torque support to Everest",
+          "timestamp": "2024-10-18T11:51:34+02:00",
+          "tree_id": "2622c1b24f81df13b638f98d09f1c2a409cbdd21",
+          "url": "https://github.com/equinor/ert/commit/0ca8b0b178568e3f9a4e4ccafc241689bf0dc6c8"
+        },
+        "date": 1729245201701,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19630230421221798,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04015064515022084",
+            "extra": "mean: 5.094183708199995 sec\nrounds: 5"
           }
         ]
       }
