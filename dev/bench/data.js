@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729250565545,
+  "lastUpdate": 1729250969164,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "06c6dc6e7221dc915e7519b92878a9258ef2ec14",
-          "message": "Fix run_dialog second progress bar hanging\n\nThis commit fixes the issue where an experiment failure would leave the second progress bar stuck in indeterminate state.\nNow, the second progress bar is invisible as long as there are no realizations or if all realizations are finished.",
-          "timestamp": "2024-10-10T14:53:56+02:00",
-          "tree_id": "a2094c1f656c308d01c48b1553f9be00a38768c6",
-          "url": "https://github.com/equinor/ert/commit/06c6dc6e7221dc915e7519b92878a9258ef2ec14"
-        },
-        "date": 1728564948776,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1843706245398457,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04356947910899278",
-            "extra": "mean: 5.423857528799999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0556866402866877",
             "extra": "mean: 5.30891829279999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9493b3ee4d5b1154d042b89a0152ab2e2fd9fc14",
+          "message": "Move everest workflow logic over to a baserunmodel",
+          "timestamp": "2024-10-18T13:27:36+02:00",
+          "tree_id": "dcd892ad83fab056c8111e5147cff344724e26b8",
+          "url": "https://github.com/equinor/ert/commit/9493b3ee4d5b1154d042b89a0152ab2e2fd9fc14"
+        },
+        "date": 1729250968649,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18870987926271138,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0165444202097893",
+            "extra": "mean: 5.299139631199995 sec\nrounds: 5"
           }
         ]
       }
