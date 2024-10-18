@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729248091965,
+  "lastUpdate": 1729249887280,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ynk@equinor.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "a06c9713f5a4d7e079d83296b9fc60567ddcfce1",
-          "message": "Sort observations and responses in _es_update",
-          "timestamp": "2024-10-10T11:39:50+02:00",
-          "tree_id": "faefdb0d0764ac0e0460bfa64a033fc4f3b557ae",
-          "url": "https://github.com/equinor/ert/commit/a06c9713f5a4d7e079d83296b9fc60567ddcfce1"
-        },
-        "date": 1728553297296,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.186093307485398,
-            "unit": "iter/sec",
-            "range": "stddev: 0.10671899536914627",
-            "extra": "mean: 5.3736483783999915 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.028100333542908845",
             "extra": "mean: 5.128413595399996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "e2ba5be4aafcccb1a4e2916986cb655a2e7fb6be",
+          "message": "Move template_render.py up two levels\n\nThe subdirectories serve no real purpose. There is not going\nto be a lot of other forward models in here.",
+          "timestamp": "2024-10-18T13:08:47+02:00",
+          "tree_id": "294bf4c17157d75942778a835df5bfc85159715c",
+          "url": "https://github.com/equinor/ert/commit/e2ba5be4aafcccb1a4e2916986cb655a2e7fb6be"
+        },
+        "date": 1729249886322,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19204070132624054,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03200357272658424",
+            "extra": "mean: 5.207229473200011 sec\nrounds: 5"
           }
         ]
       }
