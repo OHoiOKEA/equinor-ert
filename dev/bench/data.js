@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729249887280,
+  "lastUpdate": 1729250527062,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "3dfec31d697e8c2e2e1f0f5c896680c23102edf5",
-          "message": "Ensure missing runpath test is ran with plugins",
-          "timestamp": "2024-10-10T12:15:45+02:00",
-          "tree_id": "03f5827e549d76deff070154647352a030265988",
-          "url": "https://github.com/equinor/ert/commit/3dfec31d697e8c2e2e1f0f5c896680c23102edf5"
-        },
-        "date": 1728555454999,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1922494747450017,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022097404175557705",
-            "extra": "mean: 5.2015746795999975 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03200357272658424",
             "extra": "mean: 5.207229473200011 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "90efa9ad01be18da6169ba0c6d7ba7a7754bc35d",
+          "message": "Attempt to mitigate flaky cpu polling test",
+          "timestamp": "2024-10-18T13:20:13+02:00",
+          "tree_id": "9be9d3970fae129c7a080fe9816f6dc3bd13f332",
+          "url": "https://github.com/equinor/ert/commit/90efa9ad01be18da6169ba0c6d7ba7a7754bc35d"
+        },
+        "date": 1729250526129,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19468542130753305,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03301591048669666",
+            "extra": "mean: 5.1364914397999994 sec\nrounds: 5"
           }
         ]
       }
