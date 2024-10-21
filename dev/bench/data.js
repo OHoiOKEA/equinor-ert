@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729250969164,
+  "lastUpdate": 1729512995388,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "4c2902a7d20ce01a85743a92695a2020f22398aa",
-          "message": "Include site config when running missing runpath test",
-          "timestamp": "2024-10-10T16:04:34+02:00",
-          "tree_id": "24334de8cac4680362ae034a950c0401317dfd1b",
-          "url": "https://github.com/equinor/ert/commit/4c2902a7d20ce01a85743a92695a2020f22398aa"
-        },
-        "date": 1728569186820,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18795622794001263,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06382708419633111",
-            "extra": "mean: 5.3203876825999945 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0165444202097893",
             "extra": "mean: 5.299139631199995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d59ed13cf07d2e547d0a7be2399c2583510dae4d",
+          "message": "Use a concat instead of vstack in _es_update",
+          "timestamp": "2024-10-21T12:14:46Z",
+          "tree_id": "29f31e0d3465b64dce21ea3b65068b9e4bc4db2b",
+          "url": "https://github.com/equinor/ert/commit/d59ed13cf07d2e547d0a7be2399c2583510dae4d"
+        },
+        "date": 1729512994915,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18769809057957476,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04125128482700362",
+            "extra": "mean: 5.327704703400002 sec\nrounds: 5"
           }
         ]
       }
