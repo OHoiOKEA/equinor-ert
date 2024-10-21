@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729512995388,
+  "lastUpdate": 1729514552782,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "60844986+larsevj@users.noreply.github.com",
-            "name": "Lars Evje",
-            "username": "larsevj"
-          },
-          "distinct": true,
-          "id": "d1ac7cf8e4e31e9636e711162434d50db85bd9a5",
-          "message": "Support reading excel files from the DESIGN_MATRIX keyword\n\n- Adds functionality to the DesignMatrix dataclass for reading\ndesign matrix excel files into pandas dataframes, akin to design2params\nin semeio.",
-          "timestamp": "2024-10-11T00:05:10+02:00",
-          "tree_id": "da61f9047d1bcaa1749848f29a916608586d9b61",
-          "url": "https://github.com/equinor/ert/commit/d1ac7cf8e4e31e9636e711162434d50db85bd9a5"
-        },
-        "date": 1728598022217,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19142854799837322,
-            "unit": "iter/sec",
-            "range": "stddev: 0.014948794139153067",
-            "extra": "mean: 5.223881236400007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04125128482700362",
             "extra": "mean: 5.327704703400002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "ebc4d03badcf734a93f896ca1d4094121e0e4572",
+          "message": "Remove testing of execute bit of plugin-scripts\n\nThis test file became irrelevant after 173ba862ab7e58c0abf1b56b5d50add9aca8b316\nwhere no built-in forward models need the extra text file with the line\n\n  EXECUTABLE somescript.xx\n\nThe scripts in here still needs to be executable, but the responsibility\nfor verifying that is now on each forward model's integration test.",
+          "timestamp": "2024-10-21T14:40:45+02:00",
+          "tree_id": "809997a9d25c8e1b9e5e890cf7feeb479c37a3d4",
+          "url": "https://github.com/equinor/ert/commit/ebc4d03badcf734a93f896ca1d4094121e0e4572"
+        },
+        "date": 1729514552328,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19392590427860618,
+            "unit": "iter/sec",
+            "range": "stddev: 0.032901396673173613",
+            "extra": "mean: 5.156608673400006 sec\nrounds: 5"
           }
         ]
       }
