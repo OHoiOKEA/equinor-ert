@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729517520213,
+  "lastUpdate": 1729520043924,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "2453a2c3450daa492a9e7579c7b848033705f06f",
-          "message": "Refactor and rename summary_block()\n\nThe logic for determining stable was not correct, if the summary\nfile was not stable after two reads, it would always timeout. Behaviour\nis not defined by tests.",
-          "timestamp": "2024-10-11T09:37:17+02:00",
-          "tree_id": "e0da27ae031f904640cb90cb02eeb6297c616be1",
-          "url": "https://github.com/equinor/ert/commit/2453a2c3450daa492a9e7579c7b848033705f06f"
-        },
-        "date": 1728632344862,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1955615501473843,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01525893073624097",
-            "extra": "mean: 5.113479614199997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.030288368164369764",
             "extra": "mean: 5.1456962412 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "25088a75a2281cbf35c1534cb7c20a6bbe5127cb",
+          "message": "Update polars import to avoid warning",
+          "timestamp": "2024-10-21T14:12:00Z",
+          "tree_id": "37cd579009b9e1fddd45b40872906c69f136f081",
+          "url": "https://github.com/equinor/ert/commit/25088a75a2281cbf35c1534cb7c20a6bbe5127cb"
+        },
+        "date": 1729520043454,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19363018821352046,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02713754146325517",
+            "extra": "mean: 5.164483953799999 sec\nrounds: 5"
           }
         ]
       }
