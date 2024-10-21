@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729514552782,
+  "lastUpdate": 1729517520213,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "96dd8d81ad67304aa2bccaf89064883b0ca1dc09",
-          "message": "Only send analysis time updates every second",
-          "timestamp": "2024-10-11T08:35:59+02:00",
-          "tree_id": "86f6a4b70a4c3f5f2d93ace497a25d51a436e338",
-          "url": "https://github.com/equinor/ert/commit/96dd8d81ad67304aa2bccaf89064883b0ca1dc09"
-        },
-        "date": 1728628669626,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1956179764589389,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02570217605356537",
-            "extra": "mean: 5.112004622999995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.032901396673173613",
             "extra": "mean: 5.156608673400006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jparu@equinor.com",
+            "name": "xjules",
+            "username": "xjules"
+          },
+          "committer": {
+            "email": "jparu@equinor.com",
+            "name": "Julius Parulek",
+            "username": "xjules"
+          },
+          "distinct": true,
+          "id": "3b1587a2d6666ea323014cf7a529d481ea1581ca",
+          "message": "Adjust histogram boundaries when having constant distribution: min==max\n\n- Add test for plot histogram when having a constant distribution",
+          "timestamp": "2024-10-21T15:29:56+02:00",
+          "tree_id": "2416cde07a178faafac29d61aee6ef6bb51dcb7b",
+          "url": "https://github.com/equinor/ert/commit/3b1587a2d6666ea323014cf7a529d481ea1581ca"
+        },
+        "date": 1729517519329,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19433716121703978,
+            "unit": "iter/sec",
+            "range": "stddev: 0.030288368164369764",
+            "extra": "mean: 5.1456962412 sec\nrounds: 5"
           }
         ]
       }
