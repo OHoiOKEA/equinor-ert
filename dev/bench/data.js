@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729597793819,
+  "lastUpdate": 1729598970621,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "12d2b53e70fdd0341e208e120e3786ca07c2b998",
-          "message": "Give in full file path for polars write_parquet",
-          "timestamp": "2024-10-14T10:16:26+02:00",
-          "tree_id": "102b766cc878795d11ca0139f3396a47f55bd752",
-          "url": "https://github.com/equinor/ert/commit/12d2b53e70fdd0341e208e120e3786ca07c2b998"
-        },
-        "date": 1728893899897,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1929227660734505,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027854687021076085",
-            "extra": "mean: 5.183421429999998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0253880903021815",
             "extra": "mean: 5.069760713800008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49289030+HakonSohoel@users.noreply.github.com",
+            "name": "Håkon Steinkopf Søhoel",
+            "username": "HakonSohoel"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e55b1f9f0699ddd10f9980015c3976d6a7c074ff",
+          "message": "Improve error messages on test komodo failures (#9008)",
+          "timestamp": "2024-10-22T14:07:47+02:00",
+          "tree_id": "c2d427d09fefd04ccc90ba256ea2bf21df39b0ca",
+          "url": "https://github.com/equinor/ert/commit/e55b1f9f0699ddd10f9980015c3976d6a7c074ff"
+        },
+        "date": 1729598970229,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19401624917051807,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06932245215309367",
+            "extra": "mean: 5.154207465999997 sec\nrounds: 5"
           }
         ]
       }
