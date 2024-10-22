@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from queue import SimpleQueue
 from typing import TYPE_CHECKING, List, Optional
 
@@ -16,11 +17,14 @@ if TYPE_CHECKING:
     from ert.config import ErtConfig, QueueConfig
 
 
+logger = logging.getLogger(__name__)
+
+
 class EnsembleExperiment(BaseRunModel):
     """
     This workflow will create a new experiment and a new ensemble from
-    the user configuration. It will never overwrite existing ensembles, and
-    will always sample parameters.
+    the user configuration.<br>It will never overwrite existing ensembles, and
+    will always sample parameters.<br>
     """
 
     def __init__(
@@ -56,6 +60,7 @@ class EnsembleExperiment(BaseRunModel):
         evaluator_server_config: EvaluatorServerConfig,
         restart: bool = False,
     ) -> None:
+        self.log_at_startup()
         if not restart:
             self.experiment = self._storage.create_experiment(
                 name=self.experiment_name,
@@ -100,4 +105,8 @@ class EnsembleExperiment(BaseRunModel):
 
     @classmethod
     def description(cls) -> str:
-        return "Sample parameters → evaluate (N realizations)"
+        return "Sample parameters → evaluate all realizations"
+
+    @classmethod
+    def group(cls) -> Optional[str]:
+        return None

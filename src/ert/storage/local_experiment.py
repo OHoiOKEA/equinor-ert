@@ -8,16 +8,14 @@ from typing import TYPE_CHECKING, Any, Dict, Generator, List, Optional
 from uuid import UUID
 
 import numpy as np
-import xarray as xr
+import polars
 import xtgeo
 from pydantic import BaseModel
 
 from ert.config import (
     ExtParamConfig,
     Field,
-    GenDataConfig,
     GenKwConfig,
-    SummaryConfig,
     SurfaceConfig,
 )
 from ert.config.parsing.context_values import ContextBoolEncoder
@@ -36,11 +34,7 @@ _KNOWN_PARAMETER_TYPES = {
     ExtParamConfig.__name__: ExtParamConfig,
 }
 
-
-_KNOWN_RESPONSE_TYPES = {
-    SummaryConfig.__name__: SummaryConfig,
-    GenDataConfig.__name__: GenDataConfig,
-}
+from ert.config.responses_index import responses_index
 
 
 class _Index(BaseModel):
@@ -95,7 +89,7 @@ class LocalExperiment(BaseMode):
         *,
         parameters: Optional[List[ParameterConfig]] = None,
         responses: Optional[List[ResponseConfig]] = None,
-        observations: Optional[Dict[str, xr.Dataset]] = None,
+        observations: Optional[Dict[str, polars.DataFrame]] = None,
         simulation_arguments: Optional[Dict[Any, Any]] = None,
         name: Optional[str] = None,
     ) -> LocalExperiment:
@@ -114,7 +108,7 @@ class LocalExperiment(BaseMode):
             List of parameter configurations.
         responses : list of ResponseConfig, optional
             List of response configurations.
-        observations : dict of str: xr.Dataset, optional
+        observations : dict of str: polars.DataFrame, optional
             Observations dictionary.
         simulation_arguments : SimulationArguments, optional
             Simulation arguments for the experiment.
@@ -135,24 +129,32 @@ class LocalExperiment(BaseMode):
         for parameter in parameters or []:
             parameter.save_experiment_data(path)
             parameter_data.update({parameter.name: parameter.to_dict()})
-        with open(path / cls._parameter_file, "w", encoding="utf-8") as f:
-            json.dump(parameter_data, f, indent=2)
+        storage._write_transaction(
+            path / cls._parameter_file,
+            json.dumps(parameter_data, indent=2).encode("utf-8"),
+        )
 
         response_data = {}
         for response in responses or []:
-            response_data.update({response.name: response.to_dict()})
-        with open(path / cls._responses_file, "w", encoding="utf-8") as f:
-            json.dump(response_data, f, default=str, indent=2)
+            response_data.update({response.response_type: response.to_dict()})
+        storage._write_transaction(
+            path / cls._responses_file,
+            json.dumps(response_data, default=str, indent=2).encode("utf-8"),
+        )
 
         if observations:
             output_path = path / "observations"
             output_path.mkdir()
-            for obs_name, dataset in observations.items():
-                dataset.to_netcdf(output_path / f"{obs_name}", engine="scipy")
+            for response_type, dataset in observations.items():
+                storage._to_parquet_transaction(
+                    output_path / f"{response_type}", dataset
+                )
 
-        with open(path / cls._metadata_file, "w", encoding="utf-8") as f:
-            simulation_data = simulation_arguments if simulation_arguments else {}
-            json.dump(simulation_data, f, cls=ContextBoolEncoder)
+        simulation_data = simulation_arguments if simulation_arguments else {}
+        storage._write_transaction(
+            path / cls._metadata_file,
+            json.dumps(simulation_data, cls=ContextBoolEncoder).encode("utf-8"),
+        )
 
         return cls(storage, path, Mode.WRITE)
 
@@ -200,13 +202,36 @@ class LocalExperiment(BaseMode):
             ens for ens in self._storage.ensembles if ens.experiment_id == self.id
         )
 
+    def get_ensemble_by_name(self, name: str) -> LocalEnsemble:
+        """
+        Retrieves an ensemble by name.
+
+        Parameters
+        ----------
+        name : str
+            The name of the ensemble to retrieve.
+        Returns
+        -------
+        local_ensemble : LocalEnsemble
+            The ensemble associated with the given name.
+        """
+
+        for ens in self.ensembles:
+            if ens.name == name:
+                return ens
+        raise KeyError(f"Ensemble with name '{name}' not found")
+
     @property
     def metadata(self) -> Dict[str, Any]:
         path = self.mount_point / self._metadata_file
         if not path.exists():
-            raise ValueError(f"{str(self._metadata_file)} does not exist")
+            raise ValueError(f"{self._metadata_file!s} does not exist")
         with open(path, encoding="utf-8", mode="r") as f:
             return json.load(f)
+
+    @property
+    def relative_weights(self) -> str:
+        return self.metadata.get("weights", "")
 
     @property
     def name(self) -> str:
@@ -225,7 +250,7 @@ class LocalExperiment(BaseMode):
         info: Dict[str, Any]
         path = self.mount_point / self._parameter_file
         if not path.exists():
-            raise ValueError(f"{str(self._parameter_file)} does not exist")
+            raise ValueError(f"{self._parameter_file!s} does not exist")
         with open(path, encoding="utf-8", mode="r") as f:
             info = json.load(f)
         return info
@@ -235,7 +260,7 @@ class LocalExperiment(BaseMode):
         info: Dict[str, Any]
         path = self.mount_point / self._responses_file
         if not path.exists():
-            raise ValueError(f"{str(self._responses_file)} does not exist")
+            raise ValueError(f"{self._responses_file!s} does not exist")
         with open(path, encoding="utf-8", mode="r") as f:
             info = json.load(f)
         return info
@@ -269,22 +294,47 @@ class LocalExperiment(BaseMode):
             params[data["name"]] = _KNOWN_PARAMETER_TYPES[param_type](**data)
         return params
 
-    @cached_property
+    @property
     def response_configuration(self) -> Dict[str, ResponseConfig]:
-        params = {}
+        responses = {}
         for data in self.response_info.values():
-            param_type = data.pop("_ert_kind")
-            params[data["name"]] = _KNOWN_RESPONSE_TYPES[param_type](**data)
-        return params
+            ert_kind = data.pop("_ert_kind")
+            assert ert_kind in responses_index
+            response_cls = responses_index[ert_kind]
+            response_instance = response_cls(**data)
+            responses[response_instance.response_type] = response_instance
+
+        return responses
 
     @cached_property
     def update_parameters(self) -> List[str]:
         return [p.name for p in self.parameter_configuration.values() if p.update]
 
     @cached_property
-    def observations(self) -> Dict[str, xr.Dataset]:
+    def observations(self) -> Dict[str, polars.DataFrame]:
         observations = sorted(self.mount_point.glob("observations/*"))
         return {
-            observation.name: xr.open_dataset(observation, engine="scipy")
+            observation.name: polars.read_parquet(f"{observation}")
             for observation in observations
         }
+
+    @cached_property
+    def observation_keys(self) -> List[str]:
+        """
+        Gets all \"name\" values for all observations. I.e.,
+        the summary keyword, the gen_data observation name etc.
+        """
+        keys: List[str] = []
+        for df in self.observations.values():
+            keys.extend(df["observation_key"].unique())
+
+        return sorted(keys)
+
+    @cached_property
+    def response_key_to_response_type(self) -> Dict[str, str]:
+        mapping = {}
+        for config in self.response_configuration.values():
+            for key in config.keys:
+                mapping[key] = config.response_type
+
+        return mapping

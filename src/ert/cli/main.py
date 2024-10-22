@@ -13,7 +13,7 @@ from _ert.threading import ErtThread
 from ert.cli.monitor import Monitor
 from ert.cli.workflow import execute_workflow
 from ert.config import ErtConfig, QueueSystem
-from ert.ensemble_evaluator import EvaluatorServerConfig
+from ert.ensemble_evaluator import EndEvent, EvaluatorServerConfig
 from ert.mode_definitions import (
     ENSEMBLE_EXPERIMENT_MODE,
     ENSEMBLE_SMOOTHER_MODE,
@@ -34,10 +34,6 @@ class ErtCliError(Exception):
     pass
 
 
-class ErtTimeoutError(Exception):
-    pass
-
-
 def run_cli(args: Namespace, plugin_manager: Optional[ErtPluginManager] = None) -> None:
     ert_dir = os.path.abspath(os.path.dirname(args.config))
     os.chdir(ert_dir)
@@ -55,9 +51,7 @@ def run_cli(args: Namespace, plugin_manager: Optional[ErtPluginManager] = None) 
     logger = logging.getLogger(__name__)
     for fm_step_name, count in counter_fm_steps.items():
         logger.info(
-            "Config contains forward model step %s %d time(s)",
-            fm_step_name,
-            count,
+            f"Config contains forward model step {fm_step_name} {count} time(s)",
         )
 
     if not ert_config.observations and args.mode not in [
@@ -99,6 +93,8 @@ def run_cli(args: Namespace, plugin_manager: Optional[ErtPluginManager] = None) 
         raise ErtCliError(f"{args.mode} was not valid, failed with: {e}") from e
 
     if args.port_range is None and model.queue_system == QueueSystem.LOCAL:
+        # This is within the range for ephemeral ports as defined by
+        # most unix flavors https://en.wikipedia.org/wiki/Ephemeral_port
         args.port_range = range(49152, 51819)
 
     evaluator_server_config = EvaluatorServerConfig(custom_port_range=args.port_range)
@@ -125,13 +121,12 @@ def run_cli(args: Namespace, plugin_manager: Optional[ErtPluginManager] = None) 
     with contextlib.ExitStack() as exit_stack:
         out: TextIO
         if args.disable_monitoring:
-            out = exit_stack.enter_context(
-                open(os.devnull, "w", encoding="utf-8")  # noqa
-            )
+            out = exit_stack.enter_context(open(os.devnull, "w", encoding="utf-8"))
         else:
             out = sys.stderr
         monitor = Monitor(out=out, color_always=args.color_always)
         thread.start()
+        end_event: Optional[EndEvent] = None
         try:
             end_event = monitor.monitor(
                 status_queue, ert_config.analysis_config.log_path
@@ -143,7 +138,7 @@ def run_cli(args: Namespace, plugin_manager: Optional[ErtPluginManager] = None) 
     thread.join()
     storage.close()
 
-    if end_event.failed:
+    if end_event is not None and end_event.failed:
         # If monitor has not reported, give some info if the job failed
         msg = end_event.msg if args.disable_monitoring else ""
         raise ErtCliError(msg)

@@ -10,21 +10,22 @@ from qtpy.QtCore import Qt, Slot
 from qtpy.QtWidgets import QDockWidget, QMainWindow, QTabWidget, QWidget
 
 from ert.gui.ertwidgets import showWaitCursorWhileWaiting
-from ert.gui.plottery import PlotConfig, PlotContext
-from ert.gui.plottery.plots.cesp import CrossEnsembleStatisticsPlot
-from ert.gui.plottery.plots.distribution import DistributionPlot
-from ert.gui.plottery.plots.ensemble import EnsemblePlot
-from ert.gui.plottery.plots.gaussian_kde import GaussianKDEPlot
-from ert.gui.plottery.plots.histogram import HistogramPlot
-from ert.gui.plottery.plots.statistics import StatisticsPlot
-from ert.gui.plottery.plots.std_dev import StdDevPlot
-from ert.gui.tools.plot.plot_api import EnsembleObject, PlotApiKeyDefinition
 
 from .customize import PlotCustomizer
 from .data_type_keys_widget import DataTypeKeysWidget
-from .plot_api import PlotApi
+from .plot_api import EnsembleObject, PlotApi, PlotApiKeyDefinition
 from .plot_ensemble_selection_widget import EnsembleSelectionWidget
 from .plot_widget import PlotWidget
+from .plottery import PlotConfig, PlotContext
+from .plottery.plots import (
+    CrossEnsembleStatisticsPlot,
+    DistributionPlot,
+    EnsemblePlot,
+    GaussianKDEPlot,
+    HistogramPlot,
+    StatisticsPlot,
+    StdDevPlot,
+)
 
 CROSS_ENSEMBLE_STATISTICS = "Cross ensemble statistics"
 DISTRIBUTION = "Distribution"
@@ -106,7 +107,7 @@ class PlotWindow(QMainWindow):
             self._api = PlotApi()
             self._key_definitions = self._api.all_data_type_keys()
         except (RequestError, TimeoutError) as e:
-            logger.exception(e)
+            logger.exception(f"plot api request failed: {e}")
             open_error_dialog("Request failed", str(e))
             self._key_definitions = []
         QApplication.restoreOverrideCursor()
@@ -188,20 +189,20 @@ class PlotWindow(QMainWindow):
             for ensemble in selected_ensembles:
                 try:
                     ensemble_to_data_map[ensemble] = self._api.data_for_key(
-                        ensemble.name, key
+                        ensemble.id, key
                     )
                 except (RequestError, TimeoutError) as e:
-                    logger.exception(e)
+                    logger.exception(f"plot api request failed: {e}")
                     open_error_dialog("Request failed", f"{e}")
 
             observations = None
             if key_def.observations and selected_ensembles:
                 try:
                     observations = self._api.observations_for_key(
-                        [ensembles.name for ensembles in selected_ensembles], key
+                        [ensembles.id for ensembles in selected_ensembles], key
                     )
                 except (RequestError, TimeoutError) as e:
-                    logger.exception(e)
+                    logger.exception(f"plot api request failed: {e}")
                     open_error_dialog("Request failed", f"{e}")
 
             std_dev_images: Dict[str, npt.NDArray[np.float32]] = {}
@@ -218,10 +219,10 @@ class PlotWindow(QMainWindow):
                 for ensemble in selected_ensembles:
                     try:
                         std_dev_images[ensemble.name] = self._api.std_dev_for_parameter(
-                            key, ensemble.name, layer
+                            key, ensemble.id, layer
                         )
                     except (RequestError, TimeoutError) as e:
-                        logger.exception(e)
+                        logger.exception(f"plot api request failed: {e}")
                         open_error_dialog("Request failed", f"{e}")
             else:
                 plot_widget.showLayerWidget.emit(False)
@@ -237,11 +238,11 @@ class PlotWindow(QMainWindow):
                 try:
                     plot_context.history_data = self._api.history_data(
                         key,
-                        [e.name for e in plot_context.ensembles()],
+                        [e.id for e in plot_context.ensembles()],
                     )
 
                 except (RequestError, TimeoutError) as e:
-                    logger.exception(e)
+                    logger.exception(f"plot api request failed: {e}")
                     open_error_dialog("Request failed", f"{e}")
                     plot_context.history_data = None
 

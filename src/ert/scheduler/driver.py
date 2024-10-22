@@ -13,6 +13,10 @@ SIGNAL_OFFSET = 128
 """Bash and other shells add an offset of 128 to the signal value when a process exited due to a signal"""
 
 
+class FailedSubmit(RuntimeError):
+    pass
+
+
 class Driver(ABC):
     """Adapter for the HPC cluster."""
 
@@ -80,22 +84,27 @@ class Driver(ABC):
         retry_codes: Iterable[int] = (),
         accept_codes: Iterable[int] = (),
         stdin: Optional[bytes] = None,
-        retries: int = 1,
+        total_attempts: int = 1,
         retry_interval: float = 1.0,
         driverlogger: Optional[logging.Logger] = None,
-        exit_on_msgs: Iterable[str] = (),
+        return_on_msgs: Iterable[str] = (),
+        error_on_msgs: Iterable[str] = (),
         log_to_debug: Optional[bool] = True,
     ) -> Tuple[bool, str]:
         _logger = driverlogger or logging.getLogger(__name__)
         error_message: Optional[str] = None
 
-        for _ in range(retries):
-            process = await asyncio.create_subprocess_exec(
-                *cmd_with_args,
-                stdin=asyncio.subprocess.PIPE if stdin else None,
-                stdout=asyncio.subprocess.PIPE,
-                stderr=asyncio.subprocess.PIPE,
-            )
+        for _ in range(total_attempts):
+            try:
+                process = await asyncio.create_subprocess_exec(
+                    *cmd_with_args,
+                    stdin=asyncio.subprocess.PIPE if stdin else None,
+                    stdout=asyncio.subprocess.PIPE,
+                    stderr=asyncio.subprocess.PIPE,
+                )
+            except FileNotFoundError as e:
+                return (False, str(e))
+
             stdout, stderr = await process.communicate(stdin)
 
             assert process.returncode is not None
@@ -117,11 +126,16 @@ class Driver(ABC):
                             f'Command "{shlex.join(cmd_with_args)}" succeeded with {outputs}'
                         )
                     return True, stdout.decode(errors="ignore").strip()
-            elif exit_on_msgs and any(
-                exit_on_msg in stderr.decode(errors="ignore")
-                for exit_on_msg in exit_on_msgs
+            elif return_on_msgs and any(
+                return_on_msg in stderr.decode(errors="ignore")
+                for return_on_msg in return_on_msgs
             ):
                 return True, stderr.decode(errors="ignore").strip()
+            elif error_on_msgs and any(
+                error_on_msg in stderr.decode(errors="ignore")
+                for error_on_msg in error_on_msgs
+            ):
+                return False, stderr.decode(errors="ignore").strip()
             elif process.returncode in retry_codes:
                 error_message = outputs
             elif process.returncode in accept_codes:
@@ -139,7 +153,7 @@ class Driver(ABC):
 
             await asyncio.sleep(retry_interval)
         error_message = (
-            f'Command "{shlex.join(cmd_with_args)}" failed after {retries} retries '
+            f'Command "{shlex.join(cmd_with_args)}" failed after {total_attempts} attempts '
             f"with {outputs}"
         )
         _logger.error(error_message)

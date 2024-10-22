@@ -53,22 +53,25 @@ async def _write_responses_to_storage(
     for config in response_configs:
         try:
             start_time = time.perf_counter()
-            logger.debug(f"Starting to load response: {config.name}")
+            logger.debug(f"Starting to load response: {config.response_type}")
             ds = config.read_from_file(run_arg.runpath, run_arg.iens)
             await asyncio.sleep(0)
             logger.debug(
-                f"Loaded {config.name}",
+                f"Loaded {config.response_type}",
                 extra={"Time": f"{(time.perf_counter() - start_time):.4f}s"},
             )
             start_time = time.perf_counter()
-            run_arg.ensemble_storage.save_response(config.name, ds, run_arg.iens)
+            run_arg.ensemble_storage.save_response(
+                config.response_type, ds, run_arg.iens
+            )
             await asyncio.sleep(0)
             logger.debug(
-                f"Saved {config.name} to storage",
+                f"Saved {config.response_type} to storage",
                 extra={"Time": f"{(time.perf_counter() - start_time):.4f}s"},
             )
         except ValueError as err:
             errors.append(str(err))
+            logger.warning(f"Failed to write: {run_arg.iens}", exc_info=err)
     if errors:
         return LoadResult(LoadStatus.LOAD_FAILURE, "\n".join(errors))
     return LoadResult(LoadStatus.LOAD_SUCCESSFUL, "")
@@ -95,7 +98,7 @@ async def forward_model_ok(
             )
 
     except Exception as err:
-        logging.exception(f"Failed to load results for realization {run_arg.iens}")
+        logger.exception(f"Failed to load results for realization {run_arg.iens}")
         parameters_result = LoadResult(
             LoadStatus.LOAD_FAILURE,
             "Failed to load results for realization "

@@ -13,7 +13,7 @@ from .config_schema_item import (
 )
 from .history_source import HistorySource
 from .hook_runtime import HookRuntime
-from .queue_system import QueueSystem
+from .queue_system import QueueSystem, QueueSystemWithGeneric
 from .schema_dict import SchemaItemDict
 from .schema_item_type import SchemaItemType
 
@@ -175,7 +175,7 @@ def queue_option_keyword() -> SchemaItem:
         argc_min=2,
         argc_max=None,
         join_after=2,
-        type_map=[QueueSystem, SchemaItemType.STRING, SchemaItemType.STRING],
+        type_map=[QueueSystemWithGeneric, SchemaItemType.STRING, SchemaItemType.STRING],
         multi_occurrence=True,
     )
 
@@ -258,6 +258,20 @@ def install_job_directory_keyword() -> SchemaItem:
         kw=ConfigKeys.INSTALL_JOB_DIRECTORY,
         type_map=[SchemaItemType.PATH],
         multi_occurrence=True,
+    )
+
+
+def design_matrix_keyword() -> SchemaItem:
+    return SchemaItem(
+        kw=ConfigKeys.DESIGN_MATRIX,
+        argc_min=3,
+        argc_max=3,
+        type_map=[
+            SchemaItemType.EXISTING_PATH,
+            SchemaItemType.STRING,
+            SchemaItemType.STRING,
+        ],
+        multi_occurrence=False,
     )
 
 
@@ -345,6 +359,7 @@ def init_user_config_schema() -> ConfigSchemaDict:
         positive_int_keyword(ConfigKeys.NUM_CPU),
         positive_int_keyword(ConfigKeys.MAX_RUNNING),
         string_keyword(ConfigKeys.REALIZATION_MEMORY),
+        design_matrix_keyword(),
         queue_system_keyword(False),
         queue_option_keyword(),
         job_script_keyword(),

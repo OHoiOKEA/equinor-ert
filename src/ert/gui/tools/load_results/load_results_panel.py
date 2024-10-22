@@ -1,23 +1,26 @@
 from __future__ import annotations
 
-from qtpy.QtCore import Qt
-from qtpy.QtWidgets import QFormLayout, QMessageBox, QTextEdit, QWidget
+from qtpy.QtCore import Qt, Signal
+from qtpy.QtWidgets import QFormLayout, QMessageBox, QWidget
 
 from ert.gui.ertnotifier import ErtNotifier
 from ert.gui.ertwidgets import (
     ActiveRealizationsModel,
     EnsembleSelector,
     ErtMessageBox,
+    MultiLineStringBox,
     QApplication,
     StringBox,
     ValueModel,
 )
 from ert.libres_facade import LibresFacade
 from ert.run_models.base_run_model import captured_logs
-from ert.validation import IntegerArgument, RangeStringArgument
+from ert.validation import IntegerArgument, RangeStringArgument, RunPathArgument
 
 
 class LoadResultsPanel(QWidget):
+    panelConfigurationChanged = Signal()
+
     def __init__(self, facade: LibresFacade, notifier: ErtNotifier):
         self._facade = facade
         QWidget.__init__(self)
@@ -32,13 +35,18 @@ class LoadResultsPanel(QWidget):
 
         layout = QFormLayout()
 
-        run_path_text = QTextEdit()
-        run_path_text.setText(self.readCurrentRunPath())
-        run_path_text.setDisabled(True)
-        run_path_text.setFixedHeight(80)
+        self.run_path_text_model = ValueModel()
+        self._run_path_field = MultiLineStringBox(
+            self.run_path_text_model,  # type: ignore
+            default_string="",
+            readonly=True,
+        )
+        self._run_path_field.setValidator(RunPathArgument())
+        self._run_path_field.setObjectName("run_path_field_lrm")
+        self._run_path_field.setFixedHeight(80)
+        self._run_path_field.setText(self.readCurrentRunPath())
 
-        layout.addRow("Load data from current run path: ", run_path_text)
-
+        layout.addRow("Load data from current run path: ", self._run_path_field)
         ensemble_selector = EnsembleSelector(self._notifier)
         layout.addRow("Load into ensemble:", ensemble_selector)
         self._ensemble_selector = ensemble_selector
@@ -50,7 +58,10 @@ class LoadResultsPanel(QWidget):
             self._active_realizations_model,  # type: ignore
             "load_results_manually/Realizations",
         )
-        self._active_realizations_field.setValidator(RangeStringArgument())
+        self._active_realizations_field.setValidator(
+            RangeStringArgument(self._facade.get_ensemble_size()),
+        )
+        self._active_realizations_field.setObjectName("active_realizations_lrm")
         layout.addRow("Realizations to load:", self._active_realizations_field)
 
         self._iterations_model = ValueModel(0)  # type: ignore
@@ -59,9 +70,22 @@ class LoadResultsPanel(QWidget):
             "load_results_manually/iterations",
         )
         self._iterations_field.setValidator(IntegerArgument(from_value=0))
+        self._iterations_field.setObjectName("iterations_field_lrm")
         layout.addRow("Iteration to load:", self._iterations_field)
+        self._run_path_field.getValidationSupport().validationChanged.connect(
+            self.panelConfigurationChanged
+        )
+        self._active_realizations_field.getValidationSupport().validationChanged.connect(
+            self.panelConfigurationChanged
+        )
+        self._iterations_field.getValidationSupport().validationChanged.connect(
+            self.panelConfigurationChanged
+        )
 
         self.setLayout(layout)
+
+    def refresh(self) -> None:
+        self._run_path_field.refresh()
 
     def readCurrentRunPath(self) -> str:
         current_ensemble = self._notifier.current_ensemble_name
@@ -69,6 +93,13 @@ class LoadResultsPanel(QWidget):
         run_path = run_path.replace("<ERTCASE>", current_ensemble)
         run_path = run_path.replace("<ERT-CASE>", current_ensemble)
         return run_path
+
+    def isConfigurationValid(self) -> bool:
+        return (
+            self._run_path_field.isValid()
+            and self._active_realizations_field.isValid()
+            and self._iterations_field.isValid()
+        )
 
     def load(self) -> int:
         selected_ensemble = self._notifier.current_ensemble

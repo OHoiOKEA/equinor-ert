@@ -2,20 +2,18 @@ from __future__ import annotations
 
 from copy import copy
 from datetime import date
-from typing import TYPE_CHECKING, Any, Optional
+from typing import TYPE_CHECKING, Any, ClassVar, Optional
 
 from qtpy.QtGui import QDoubleValidator, QIntValidator
 from qtpy.QtWidgets import QLabel, QStackedWidget, QWidget
 
-from ert.gui.plottery import PlotContext
-from ert.gui.plottery.plot_limits import PlotLimits
-from ert.gui.tools.plot.widgets.clearable_line_edit import ClearableLineEdit
-from ert.gui.tools.plot.widgets.custom_date_edit import CustomDateEdit
+from ert.gui.tools.plot.plottery import PlotContext, PlotLimits
+from ert.gui.tools.plot.widgets import ClearableLineEdit, CustomDateEdit
 
 from .customization_view import CustomizationView
 
 if TYPE_CHECKING:
-    from ert.gui.plottery import PlotConfig
+    from ert.gui.tools.plot.plottery import PlotConfig
 
 
 class StackedInput(QStackedWidget):
@@ -38,11 +36,11 @@ class StackedInput(QStackedWidget):
 
 
 class LimitsStack(StackedInput):
-    FLOAT_AXIS = [
+    FLOAT_AXIS: ClassVar[list[str]] = [
         PlotContext.VALUE_AXIS,
         PlotContext.DENSITY_AXIS,
     ]
-    INT_AXIS = [PlotContext.INDEX_AXIS, PlotContext.COUNT_AXIS]
+    INT_AXIS: ClassVar[list[str]] = [PlotContext.INDEX_AXIS, PlotContext.COUNT_AXIS]
     NUMBER_AXIS = FLOAT_AXIS + INT_AXIS
 
     def __init__(self) -> None:

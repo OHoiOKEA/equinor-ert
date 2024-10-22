@@ -26,8 +26,8 @@ from qtpy.QtWidgets import (
 from ert.gui.model.real_list import RealListModel
 from ert.gui.model.snapshot import (
     CallbackStatusMessageRole,
+    FMStepColorHint,
     MemoryUsageRole,
-    RealJobColorHint,
     RealLabelHint,
 )
 from ert.shared.status.utils import byte_with_unit
@@ -103,9 +103,7 @@ class RealizationDelegate(QStyledItemDelegate):
         if painter is None:
             return
         text = index.data(RealLabelHint)
-        selected_color, finished_count, total_count = tuple(
-            index.data(RealJobColorHint)
-        )
+        selected_color, finished_count, total_count = tuple(index.data(FMStepColorHint))
 
         painter.save()
         painter.setRenderHint(QPainter.TextAntialiasing, True)

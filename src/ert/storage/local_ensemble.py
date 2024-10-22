@@ -15,7 +15,6 @@ import xarray as xr
 from pydantic import BaseModel
 from typing_extensions import deprecated
 
-from ert.config.gen_data_config import GenDataConfig
 from ert.config.gen_kw_config import GenKwConfig
 from ert.storage.mode import BaseMode, Mode, require_write
 
@@ -28,6 +27,9 @@ if TYPE_CHECKING:
     from ert.storage.local_storage import LocalStorage
 
 logger = logging.getLogger(__name__)
+
+import polars
+from polars.exceptions import ColumnNotFoundError
 
 
 class _Index(BaseModel):
@@ -44,6 +46,10 @@ class _Failure(BaseModel):
     type: RealizationStorageState
     message: str
     time: datetime
+
+
+def _escape_filename(filename: str) -> str:
+    return filename.replace("%", "%25").replace("/", "%2F")
 
 
 class LocalEnsemble(BaseMode):
@@ -140,8 +146,9 @@ class LocalEnsemble(BaseMode):
             started_at=datetime.now(),
         )
 
-        with open(path / "index.json", mode="w", encoding="utf-8") as f:
-            print(index.model_dump_json(), file=f)
+        storage._write_transaction(
+            path / "index.json", index.model_dump_json().encode("utf-8")
+        )
 
         return cls(storage, path, Mode.WRITE)
 
@@ -180,6 +187,10 @@ class LocalEnsemble(BaseMode):
     @property
     def experiment(self) -> LocalExperiment:
         return self._storage.get_experiment(self.experiment_id)
+
+    @property
+    def relative_weights(self) -> str:
+        return self._storage.get_experiment(self.experiment_id).relative_weights
 
     def get_realization_mask_without_failure(self) -> npt.NDArray[np.bool_]:
         """
@@ -262,7 +273,7 @@ class LocalEnsemble(BaseMode):
             return True
         path = self._realization_dir(realization)
         return all(
-            (path / f"{parameter}.nc").exists()
+            (path / (_escape_filename(parameter) + ".nc")).exists()
             for parameter in self.experiment.parameter_configuration
         )
 
@@ -290,11 +301,18 @@ class LocalEnsemble(BaseMode):
             return True
         path = self._realization_dir(realization)
 
+        def _has_response(_key: str) -> bool:
+            if _key in self.experiment.response_key_to_response_type:
+                _response_type = self.experiment.response_key_to_response_type[_key]
+                return (path / f"{_response_type}.parquet").exists()
+
+            return (path / f"{_key}.parquet").exists()
+
         if key:
-            return (path / f"{key}.nc").exists()
+            return _has_response(key)
 
         return all(
-            (path / f"{response}.nc").exists()
+            _has_response(response)
             for response in self.experiment.response_configuration
         )
 
@@ -314,7 +332,10 @@ class LocalEnsemble(BaseMode):
             i
             for i in range(self.ensemble_size)
             if all(
-                (self._realization_dir(i) / f"{parameter.name}.nc").exists()
+                (
+                    self._realization_dir(i)
+                    / (_escape_filename(parameter.name) + ".nc")
+                ).exists()
                 for parameter in self.experiment.parameter_configuration.values()
                 if not parameter.forward_init
             )
@@ -333,7 +354,7 @@ class LocalEnsemble(BaseMode):
             i
             for i in range(self.ensemble_size)
             if all(
-                (self._realization_dir(i) / f"{response}.nc").exists()
+                (self._realization_dir(i) / f"{response}.parquet").exists()
                 for response in self.experiment.response_configuration
             )
         ]
@@ -405,8 +426,9 @@ class LocalEnsemble(BaseMode):
         error = _Failure(
             type=failure_type, message=message if message else "", time=datetime.now()
         )
-        with open(filename, mode="w", encoding="utf-8") as f:
-            print(error.model_dump_json(), file=f)
+        self._storage._write_transaction(
+            filename, error.model_dump_json().encode("utf-8")
+        )
 
     def unset_failure(
         self,
@@ -496,14 +518,10 @@ class LocalEnsemble(BaseMode):
                 "summary",
                 tuple(self.get_realization_list_with_responses("summary")),
             )
-            return sorted(summary_data["name"].values)
-        except (ValueError, KeyError):
-            return []
 
-    def _get_gen_data_config(self, key: str) -> GenDataConfig:
-        config = self.experiment.response_configuration[key]
-        assert isinstance(config, GenDataConfig)
-        return config
+            return sorted(summary_data["response_key"].unique().to_list())
+        except (ValueError, KeyError, ColumnNotFoundError):
+            return []
 
     def _load_single_dataset(
         self,
@@ -512,7 +530,9 @@ class LocalEnsemble(BaseMode):
     ) -> xr.Dataset:
         try:
             return xr.open_dataset(
-                self.mount_point / f"realization-{realization}" / f"{group}.nc",
+                self.mount_point
+                / f"realization-{realization}"
+                / f"{_escape_filename(group)}.nc",
                 engine="scipy",
             )
         except FileNotFoundError as e:
@@ -533,7 +553,9 @@ class LocalEnsemble(BaseMode):
         if realizations is None:
             datasets = [
                 xr.open_dataset(p, engine="scipy")
-                for p in sorted(self.mount_point.glob(f"realization-*/{group}.nc"))
+                for p in sorted(
+                    self.mount_point.glob(f"realization-*/{_escape_filename(group)}.nc")
+                )
             ]
         else:
             datasets = [self._load_single_dataset(group, i) for i in realizations]
@@ -572,6 +594,21 @@ class LocalEnsemble(BaseMode):
         return xr.open_dataset(input_path, engine="scipy")
 
     @require_write
+    def save_observation_scaling_factors(self, dataset: polars.DataFrame) -> None:
+        self._storage._to_parquet_transaction(
+            self.mount_point / "observation_scaling_factors.parquet", dataset
+        )
+
+    def load_observation_scaling_factors(
+        self,
+    ) -> Optional[polars.DataFrame]:
+        ds_path = self.mount_point / "observation_scaling_factors.parquet"
+        if ds_path.exists():
+            return polars.read_parquet(ds_path)
+
+        return None
+
+    @require_write
     def save_cross_correlations(
         self,
         cross_correlations: npt.NDArray[np.float64],
@@ -587,10 +624,10 @@ class LocalEnsemble(BaseMode):
         }
         dataset = xr.Dataset(data_vars)
         file_path = os.path.join(self.mount_point, "corr_XY.nc")
-        dataset.to_netcdf(path=file_path, engine="scipy")
+        self._storage._to_netcdf_transaction(file_path, dataset)
 
     @lru_cache  # noqa: B019
-    def load_responses(self, key: str, realizations: Tuple[int]) -> xr.Dataset:
+    def load_responses(self, key: str, realizations: Tuple[int]) -> polars.DataFrame:
         """Load responses for key and realizations into xarray Dataset.
 
         For each given realization, response data is loaded from the NetCDF
@@ -605,20 +642,32 @@ class LocalEnsemble(BaseMode):
 
         Returns
         -------
-        responses : Dataset
-            Loaded xarray Dataset with responses.
+        responses : DataFrame
+            Loaded polars DataFrame with responses.
         """
 
-        if key not in self.experiment.response_configuration:
+        select_key = False
+        if key in self.experiment.response_configuration:
+            response_type = key
+        elif key not in self.experiment.response_key_to_response_type:
             raise ValueError(f"{key} is not a response")
+        else:
+            response_type = self.experiment.response_key_to_response_type[key]
+            select_key = True
+
         loaded = []
         for realization in realizations:
-            input_path = self._realization_dir(realization) / f"{key}.nc"
+            input_path = self._realization_dir(realization) / f"{response_type}.parquet"
             if not input_path.exists():
                 raise KeyError(f"No response for key {key}, realization: {realization}")
-            ds = xr.open_dataset(input_path, engine="scipy")
-            loaded.append(ds)
-        return xr.combine_nested(loaded, concat_dim="realization")
+            df = polars.read_parquet(input_path)
+
+            if select_key:
+                df = df.filter(polars.col("response_key") == key)
+
+            loaded.append(df)
+
+        return polars.concat(loaded) if loaded else polars.DataFrame()
 
     @deprecated("Use load_responses")
     def load_all_summary_data(
@@ -650,23 +699,28 @@ class LocalEnsemble(BaseMode):
         summary_keys = self.get_summary_keyset()
 
         try:
-            df = self.load_responses("summary", tuple(realizations)).to_dataframe(
-                dim_order=["time", "name", "realization"]
-            )
+            df_pl = self.load_responses("summary", tuple(realizations))
+
         except (ValueError, KeyError):
             return pd.DataFrame()
+        df_pl = df_pl.pivot(
+            on="response_key", index=["realization", "time"], sort_columns=True
+        )
+        df_pl = df_pl.rename({"time": "Date", "realization": "Realization"})
 
-        df = df.unstack(level="name")
-        df.columns = [col[1] for col in df.columns.values]
-        df.index = df.index.rename(
-            {"time": "Date", "realization": "Realization"}
-        ).reorder_levels(["Realization", "Date"])
+        df_pandas = (
+            df_pl.to_pandas()
+            .set_index(["Realization", "Date"])
+            .sort_values(by=["Date", "Realization"])
+        )
+
         if keys:
             summary_keys = sorted(
                 [key for key in keys if key in summary_keys]
             )  # ignore keys that doesn't exist
-            return df[summary_keys]
-        return df
+            return df_pandas[summary_keys]
+
+        return df_pandas
 
     def load_all_gen_kw_data(
         self,
@@ -773,43 +827,55 @@ class LocalEnsemble(BaseMode):
         if group not in self.experiment.parameter_configuration:
             raise ValueError(f"{group} is not registered to the experiment.")
 
-        path = self._realization_dir(realization) / f"{group}.nc"
+        path = self._realization_dir(realization) / f"{_escape_filename(group)}.nc"
         path.parent.mkdir(exist_ok=True)
 
-        dataset.expand_dims(realizations=[realization]).to_netcdf(path, engine="scipy")
+        self._storage._to_netcdf_transaction(
+            path, dataset.expand_dims(realizations=[realization])
+        )
 
     @require_write
-    def save_response(self, group: str, data: xr.Dataset, realization: int) -> None:
+    def save_response(
+        self, response_type: str, data: polars.DataFrame, realization: int
+    ) -> None:
         """
         Save dataset as response under group and realization index.
 
         Parameters
         ----------
-        group : str
-            Response group name for saving dataset.
+        response_type : str
+            A name for the type of response stored, e.g., "summary, or "gen_data".
         realization : int
             Realization index for saving group.
-        data : Dataset
-            Dataset to save.
+        data : polars DataFrame
+            polars DataFrame to save.
         """
 
-        if "values" not in data.variables:
+        if "values" not in data.columns:
             raise ValueError(
-                f"Dataset for response group '{group}' "
+                f"Dataset for response group '{response_type}' "
                 f"must contain a 'values' variable"
             )
 
-        if data["values"].size == 0:
+        if len(data) == 0:
             raise ValueError(
-                f"Responses {group} are empty. Cannot proceed with saving to storage."
+                f"Responses {response_type} are empty. Cannot proceed with saving to storage."
             )
 
-        if "realization" not in data.dims:
-            data = data.expand_dims({"realization": [realization]})
+        if "realization" not in data.columns:
+            data.insert_column(
+                0,
+                polars.Series(
+                    "realization", np.full(len(data), realization), dtype=polars.UInt16
+                ),
+            )
+
         output_path = self._realization_dir(realization)
         Path.mkdir(output_path, parents=True, exist_ok=True)
 
-        data.to_netcdf(output_path / f"{group}.nc", engine="scipy")
+        self._storage._to_parquet_transaction(
+            output_path / f"{response_type}.parquet", data
+        )
 
     def calculate_std_dev_for_parameter(self, parameter_group: str) -> xr.Dataset:
         if parameter_group not in self.experiment.parameter_configuration:
@@ -824,7 +890,7 @@ class LocalEnsemble(BaseMode):
         path = self._realization_dir(realization)
         return {
             e: RealizationStorageState.INITIALIZED
-            if (path / f"{e}.nc").exists()
+            if (path / (_escape_filename(e) + ".nc")).exists()
             else RealizationStorageState.UNDEFINED
             for e in self.experiment.parameter_configuration
         }
@@ -835,7 +901,7 @@ class LocalEnsemble(BaseMode):
         path = self._realization_dir(realization)
         return {
             e: RealizationStorageState.HAS_DATA
-            if (path / f"{e}.nc").exists()
+            if (path / f"{e}.parquet").exists()
             else RealizationStorageState.UNDEFINED
             for e in self.experiment.response_configuration
         }

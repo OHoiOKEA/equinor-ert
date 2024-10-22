@@ -1,6 +1,11 @@
+import os
+import shutil
+import subprocess
 from pathlib import Path
 from textwrap import dedent
-from typing import List, Optional, Type
+from typing import List, Literal, Optional, Type
+
+import yaml
 
 from ert import (
     ForwardModelStepDocumentation,
@@ -9,6 +14,7 @@ from ert import (
     ForwardModelStepValidationError,
     plugin,
 )
+from ert.plugins import ErtPluginManager
 
 
 class CarefulCopyFile(ForwardModelStepPlugin):
@@ -188,7 +194,7 @@ will *only* delete the link, and not the target.
             examples="""
             .. code-block:: bash
 
-                FORWARD_MODEL DELETE_FILE(<FILES>=path/file path/file2 path/fileN)
+                FORWARD_MODEL DELETE_FILE(<FILES>="path/file path/file2 path/fileN")
 """,
         )
 
@@ -201,7 +207,7 @@ class Eclipse100(ForwardModelStepPlugin):
                 str(
                     (
                         Path(__file__)
-                        / "../../../resources/forward-models/res/script/ecl100.py"
+                        / "../../../resources/forward_models/res/script/ecl100.py"
                     ).resolve()
                 ),
                 "<ECLBASE>",
@@ -214,10 +220,18 @@ class Eclipse100(ForwardModelStepPlugin):
             default_mapping={"<NUM_CPU>": 1, "<OPTS>": ""},
         )
 
-    def validate_pre_experiment(self, fm_step_json: ForwardModelStepJSON) -> None:
+    def validate_pre_experiment(self, _: ForwardModelStepJSON) -> None:
         if "<VERSION>" not in self.private_args:
             raise ForwardModelStepValidationError(
                 "Forward model step ECLIPSE100 must be given a VERSION argument"
+            )
+        version = self.private_args["<VERSION>"]
+        available_versions = _available_eclrun_versions(simulator="eclipse")
+
+        if available_versions and version not in available_versions:
+            raise ForwardModelStepValidationError(
+                f"Unavailable ECLIPSE100 version {version} current supported "
+                f"versions {available_versions}"
             )
 
     @staticmethod
@@ -251,7 +265,7 @@ class Eclipse300(ForwardModelStepPlugin):
                 str(
                     (
                         Path(__file__)
-                        / "../../../resources/forward-models/res/script/ecl300.py"
+                        / "../../../resources/forward_models/res/script/ecl300.py"
                     ).resolve()
                 ),
                 "<ECLBASE>",
@@ -263,6 +277,19 @@ class Eclipse300(ForwardModelStepPlugin):
             ],
             default_mapping={"<NUM_CPU>": 1, "<OPTS>": "", "<VERSION>": "version"},
         )
+
+    def validate_pre_experiment(self, _: ForwardModelStepJSON) -> None:
+        if "<VERSION>" not in self.private_args:
+            raise ForwardModelStepValidationError(
+                "Forward model step ECLIPSE300 must be given a VERSION argument"
+            )
+        version = self.private_args["<VERSION>"]
+        available_versions = _available_eclrun_versions(simulator="e300")
+        if available_versions and version not in available_versions:
+            raise ForwardModelStepValidationError(
+                f"Unavailable ECLIPSE300 version {version} current supported "
+                f"versions {available_versions}"
+            )
 
     @staticmethod
     def documentation() -> Optional[ForwardModelStepDocumentation]:
@@ -290,7 +317,7 @@ class Flow(ForwardModelStepPlugin):
                 str(
                     (
                         Path(__file__)
-                        / "../../../resources/forward-models/res/script/flow.py"
+                        / "../../../resources/forward_models/res/script/flow.py"
                     ).resolve()
                 ),
                 "<ECLBASE>",
@@ -494,7 +521,7 @@ class TemplateRender(ForwardModelStepPlugin):
                 str(
                     (
                         Path(__file__)
-                        / "../../../resources/forward-models/templating/script/template_render.py"
+                        / "../../../resources/forward_models/template_render.py"
                     ).resolve()
                 ),
                 "-i",
@@ -599,3 +626,39 @@ for fm_step_subclass in _UpperCaseFMSteps:
 @plugin(name="ert")
 def installable_forward_model_steps() -> List[Type[ForwardModelStepPlugin]]:
     return [*_UpperCaseFMSteps, *_LowerCaseFMSteps]
+
+
+def _available_eclrun_versions(simulator: Literal["eclipse", "e300"]) -> List[str]:
+    if shutil.which("eclrun") is None:
+        return []
+    pm = ErtPluginManager()
+    ecl_config_path = (
+        pm.get_ecl100_config_path()
+        if simulator == "eclipse"
+        else pm.get_ecl300_config_path()
+    )
+
+    if not ecl_config_path:
+        return []
+    eclrun_env = {"PATH": os.getenv("PATH", "")}
+
+    with open(ecl_config_path, encoding="utf-8") as f:
+        try:
+            config = yaml.safe_load(f)
+        except yaml.YAMLError as e:
+            raise ValueError(f"Failed parse: {ecl_config_path} as yaml") from e
+    ecl_install_path = config.get("eclrun_env", {}).get("PATH", "")
+    eclrun_env["PATH"] = eclrun_env["PATH"] + os.pathsep + ecl_install_path
+
+    try:
+        return (
+            subprocess.check_output(
+                ["eclrun", "--report-versions", simulator],
+                env=eclrun_env,
+            )
+            .decode("utf-8")
+            .strip()
+            .split(" ")
+        )
+    except subprocess.CalledProcessError:
+        return []

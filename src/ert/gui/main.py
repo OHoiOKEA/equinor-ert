@@ -3,10 +3,9 @@ from __future__ import annotations
 import logging
 import os
 import sys
-import warnings
 import webbrowser
 from signal import SIG_DFL, SIGINT, signal
-from typing import Optional, Tuple, cast
+from typing import Optional, Tuple
 
 if sys.version_info >= (3, 9):
     from importlib.resources import files
@@ -19,7 +18,11 @@ from qtpy.QtCore import QDir, Qt
 from qtpy.QtGui import QIcon
 from qtpy.QtWidgets import QApplication, QWidget
 
-from ert.config import ConfigValidationError, ConfigWarning, ErtConfig
+from ert.config import (
+    ErrorInfo,
+    ErtConfig,
+    capture_validation,
+)
 from ert.gui.main_window import ErtMainWindow
 from ert.gui.simulation import ExperimentPanel
 from ert.gui.tools.event_viewer import (
@@ -37,7 +40,7 @@ from ert.libres_facade import LibresFacade
 from ert.namespace import Namespace
 from ert.plugins import ErtPluginManager
 from ert.services import StorageService
-from ert.storage import Storage, open_storage
+from ert.storage import ErtStorageException, Storage, open_storage
 from ert.storage.local_storage import local_storage_set_ert_config
 
 from .suggestor import Suggestor
@@ -87,83 +90,57 @@ def _start_initial_gui_window(
     # Create logger inside function to make sure all handlers have been added to
     # the root-logger.
     logger = logging.getLogger(__name__)
-    error_messages = []
-    config_warnings = []
     ert_config = None
 
-    with warnings.catch_warnings(record=True) as all_warnings:
+    with capture_validation() as validation_messages:
+        ert_dir = os.path.abspath(os.path.dirname(args.config))
+        os.chdir(ert_dir)
+        # Changing current working directory means we need to update
+        # the config file to be the base name of the original config
+        args.config = os.path.basename(args.config)
+
+        ert_config = ErtConfig.with_plugins().from_file(args.config)
+
+        local_storage_set_ert_config(ert_config)
+    if ert_config is not None:
         try:
-            ert_dir = os.path.abspath(os.path.dirname(args.config))
-            os.chdir(ert_dir)
-            # Changing current working directory means we need to update
-            # the config file to be the base name of the original config
-            args.config = os.path.basename(args.config)
-
-            ert_config = ErtConfig.with_plugins().from_file(args.config)
-
-            local_storage_set_ert_config(ert_config)
-        except ConfigValidationError as error:
-            config_warnings = [
-                cast(ConfigWarning, w.message).info
-                for w in all_warnings
-                if w.category == ConfigWarning
-                and not cast(ConfigWarning, w.message).info.is_deprecation
-            ]
-            deprecations = [
-                cast(ConfigWarning, w.message).info
-                for w in all_warnings
-                if w.category == ConfigWarning
-                and cast(ConfigWarning, w.message).info.is_deprecation
-            ]
-            error_messages += error.errors
-            logger.info("Error in config file shown in gui: '%s'", str(error))
-            return (
-                Suggestor(
-                    error_messages,
-                    config_warnings,
-                    deprecations,
-                    None,
-                    (
-                        plugin_manager.get_help_links()
-                        if plugin_manager is not None
-                        else {}
-                    ),
-                ),
-                None,
+            storage = open_storage(ert_config.ens_path, mode="w")
+        except ErtStorageException as err:
+            validation_messages.errors.append(
+                ErrorInfo(f"Error opening storage in ENSPATH: {err}").set_context(
+                    ert_config.ens_path
+                )
             )
-    config_warnings = [
-        cast(ConfigWarning, w.message).info
-        for w in all_warnings
-        if w.category == ConfigWarning
-        and not cast(ConfigWarning, w.message).info.is_deprecation
-    ]
-    deprecations = [
-        cast(ConfigWarning, w.message).info
-        for w in all_warnings
-        if w.category == ConfigWarning
-        and cast(ConfigWarning, w.message).info.is_deprecation
-    ]
+    if validation_messages.errors:
+        logger.info(f"Error in config file shown in gui: {validation_messages.errors}")
+        return (
+            Suggestor(
+                validation_messages.errors,
+                validation_messages.warnings,
+                validation_messages.deprecations,
+                None,
+                (plugin_manager.get_help_links() if plugin_manager is not None else {}),
+            ),
+            None,
+        )
+    assert ert_config is not None
     counter_fm_steps = Counter(fms.name for fms in ert_config.forward_model_steps)
 
     for fm_step_name, count in counter_fm_steps.items():
         logger.info(
-            "Config contains forward model step %s %d time(s)",
-            fm_step_name,
-            count,
+            f"Config contains forward model step {fm_step_name} {count} time(s)",
         )
 
-    for wm in all_warnings:
-        if wm.category != ConfigWarning:
-            logger.warning(str(wm.message))
-    for msg in deprecations:
-        logger.info("Suggestion shown in gui '%s'", msg)
-    for msg in config_warnings:
-        logger.info("Warning shown in gui '%s'", msg)
-    storage = open_storage(ert_config.ens_path, mode="w")
+    for msg in validation_messages.deprecations:
+        logger.info(f"Suggestion shown in gui '{msg}'")
+    for msg in validation_messages.warnings:
+        logger.info(f"Warning shown in gui '{msg}'")
+
     _main_window = _setup_main_window(
         ert_config, args, log_handler, storage, plugin_manager
     )
-    if deprecations or config_warnings:
+
+    if validation_messages.warnings or validation_messages.deprecations:
 
         def continue_action() -> None:
             _main_window.show()
@@ -172,9 +149,9 @@ def _start_initial_gui_window(
             _main_window.adjustSize()
 
         suggestor = Suggestor(
-            error_messages,
-            config_warnings,
-            deprecations,
+            validation_messages.errors,
+            validation_messages.warnings,
+            validation_messages.deprecations,
             continue_action,
             plugin_manager.get_help_links() if plugin_manager is not None else {},
         )

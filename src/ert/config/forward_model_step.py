@@ -1,9 +1,10 @@
+from __future__ import annotations
+
 import logging
 from abc import abstractmethod
 from dataclasses import dataclass, field
 from typing import (
-    Dict,
-    List,
+    ClassVar,
     Literal,
     Optional,
     TypedDict,
@@ -12,6 +13,7 @@ from typing import (
 
 from typing_extensions import NotRequired, Unpack
 
+from ert.config.parsing.config_errors import ConfigWarning
 from ert.substitution_list import SubstitutionList
 
 from .parsing import (
@@ -27,6 +29,10 @@ class ForwardModelStepValidationError(Exception):
     Can be subtyped by the implementation of ForwardModelStepPlugin and
     thrown from `validate_pre_realization_run` or `validate_pre_experiment`.
     """
+
+
+class ForwardModelStepWarning(ConfigWarning):
+    pass
 
 
 class ForwardModelStepJSON(TypedDict):
@@ -52,22 +58,22 @@ class ForwardModelStepJSON(TypedDict):
         environment: Dictionary of environment variables to inject into the
             environment of the forward model step run
         exec_env: Dictionary of environment variables to inject into the execution
-            environment of RMS
+            environment of the forward model step.
         max_running_minutes: Maximum runtime in minutes. If the forward model step
             takes longer than this, the job is requested to be cancelled.
     """
 
     name: str
-    executable: List[str]
+    executable: list[str]
     target_file: str
     error_file: str
     start_file: str
     stdout: str
     stderr: str
     stdin: str
-    argList: List[str]
-    environment: Dict[str, str]
-    exec_env: Dict[str, str]
+    argList: list[str]
+    environment: dict[str, str]
+    exec_env: dict[str, str]
     max_running_minutes: int
 
 
@@ -79,9 +85,9 @@ class ForwardModelStepOptions(TypedDict, total=False):
     target_file: NotRequired[str]
     error_file: NotRequired[str]
     max_running_minutes: NotRequired[int]
-    environment: NotRequired[Dict[str, Union[str, int]]]
-    exec_env: NotRequired[Dict[str, Union[str, int]]]
-    default_mapping: NotRequired[Dict[str, Union[str, int]]]
+    environment: NotRequired[dict[str, Union[str, int]]]
+    exec_env: NotRequired[dict[str, Union[str, int]]]
+    default_mapping: NotRequired[dict[str, Union[str, int]]]
 
 
 @dataclass
@@ -133,13 +139,12 @@ class ForwardModelStep:
         environment: Dictionary representing environment variables to inject into the
             environment of the forward model step run
         exec_env: Dictionary of environment variables to inject into the execution
-            environment of RMS
+            environment of the forward model step.
         default_mapping: Default values for optional arguments provided by the user.
             For example { "A": "default_A" }
         private_args: A dictionary of user-provided keyword arguments.
             For example, if the user provides <A>=2, the dictionary will contain
             { "A": "2" }
-        help_text: Some meaningless old code we don't really need, not used anywhere
     """
 
     name: str
@@ -153,16 +158,15 @@ class ForwardModelStep:
     max_running_minutes: Optional[int] = None
     min_arg: Optional[int] = None
     max_arg: Optional[int] = None
-    arglist: List[str] = field(default_factory=list)
-    required_keywords: List[str] = field(default_factory=list)
-    arg_types: List[SchemaItemType] = field(default_factory=list)
-    environment: Dict[str, Union[int, str]] = field(default_factory=dict)
-    exec_env: Dict[str, Union[int, str]] = field(default_factory=dict)
-    default_mapping: Dict[str, Union[int, str]] = field(default_factory=dict)
+    arglist: list[str] = field(default_factory=list)
+    required_keywords: list[str] = field(default_factory=list)
+    arg_types: list[SchemaItemType] = field(default_factory=list)
+    environment: dict[str, Union[int, str]] = field(default_factory=dict)
+    exec_env: dict[str, Union[int, str]] = field(default_factory=dict)
+    default_mapping: dict[str, Union[int, str]] = field(default_factory=dict)
     private_args: SubstitutionList = field(default_factory=SubstitutionList)
-    help_text: str = ""
 
-    default_env = {
+    default_env: ClassVar[dict[str, str]] = {
         "_ERT_ITERATION_NUMBER": "<ITER>",
         "_ERT_REALIZATION_NUMBER": "<IENS>",
         "_ERT_RUNPATH": "<RUNPATH>",
@@ -210,7 +214,7 @@ class ForwardModelStep:
 
 class ForwardModelStepPlugin(ForwardModelStep):
     def __init__(
-        self, name: str, command: List[str], **kwargs: Unpack[ForwardModelStepOptions]
+        self, name: str, command: list[str], **kwargs: Unpack[ForwardModelStepOptions]
     ):
         if not kwargs:
             kwargs = ForwardModelStepOptions()
@@ -248,7 +252,6 @@ class ForwardModelStepPlugin(ForwardModelStep):
             exec_env=exec_env,
             default_mapping=default_mapping,
             private_args=SubstitutionList(),
-            help_text="",
         )
 
     @staticmethod

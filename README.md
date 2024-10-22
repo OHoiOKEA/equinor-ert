@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="src/ert/gui/resources/gui/img/ert_icon.svg" width="200">
+<img src="https://raw.githubusercontent.com/equinor/ert/main/src/ert/gui/resources/gui/img/ert_icon.svg" width="200">
 </h1>
 
 [![Build Status](https://github.com/equinor/ert/actions/workflows/build.yml/badge.svg)](https://github.com/equinor/ert/actions/workflows/build.yml)
@@ -23,7 +23,7 @@ $ pip install ert
 $ ert --help
 ```
 
-or, for the latest development version (requires Python development headers):
+or, for the latest development version:
 
 ``` sh
 $ pip install git+https://github.com/equinor/ert.git@main
@@ -32,23 +32,19 @@ $ ert --help
 
 For examples and help with configuration, see the [ert Documentation](https://ert.readthedocs.io/en/latest/getting_started/configuration/poly_new/guide.html#configuration-guide).
 
+# Everest™
+
+The primary goal of the Everest tool is to find *optimal* well
+planning and production strategies by utilizing an ensemble of
+reservoir models (e.g., an ensemble of geologically-consistent models).
+This will enable robust decisions about drilling schedule and well
+placement, in order to achieve results of significant practical value.
+
+```bash
+    pip install . "[everest]"
+```
+
 ## Developing
-
-ert was originally written in C/C++ but is now only Python.
-
-You might first want to make sure that some system level packages are installed
-before attempting setup:
-
-```
-- pip
-- python include headers
-- (python) venv
-- (python) setuptools
-- (python) wheel
-```
-
-It is left as an exercise to the reader to figure out how to install these on
-their respective system.
 
 To start developing the Python code, we suggest installing ert in editable mode
 into a [virtual environment](https://docs.python.org/3/library/venv.html) to
@@ -60,12 +56,12 @@ python3 -m venv my_virtualenv
 source my_virtualenv/bin/activate
 
 # Update build dependencies
-pip install --upgrade pip wheel setuptools
+pip install --upgrade pip
 
 # Download and install ert
 git clone https://github.com/equinor/ert
 cd ert
-pip install --editable .
+pip install --editable ".[dev, everest]"
 ```
 
 ### Test setup
@@ -73,15 +69,28 @@ pip install --editable .
 Additional development packages must be installed to run the test suite:
 
 ```sh
-pip install ".[dev]"
+pip install -e ".[dev, everest]"
 pytest tests/
+```
+
+There are many kinds of tests in the `tests` directory, while iterating on your
+code you can run a fast subset of the tests with
+
+```sh
+pytest -n logical tests/ert/unit_tests -m "not integration_tests"
 ```
 
 [Git LFS](https://git-lfs.com/) must be installed to get all the files. This is packaged as `git-lfs` on Ubuntu, Fedora or macOS Homebrew. For Equinor RGS node users, it is possible to use `git` from Red Hat Software Collections:
 ```sh
 source /opt/rh/rh-git227/enable
 ```
-test-data/block_storage is a submodule and must be checked out.
+
+If you have not used git-lfs before, you might have to make changes to your global Git config for git-lfs to work properly.
+```sh
+git lfs install
+```
+
+test-data/ert/block_storage is a submodule and must be checked out.
 ```sh
 git submodule update --init --recursive
 ```
@@ -91,6 +100,20 @@ If you checked out submodules without having git lfs installed, you can force gi
 git submodule foreach "git lfs pull"
 ```
 
+### Build documentation
+
+You can build the documentation after installation by running
+```bash
+pip install ".[dev]"
+sphinx-build -n -v -E -W ./docs/ert ./tmp/ert_docs
+```
+and then open the generated `./tmp/ert_docs/index.html` in a browser.
+
+To automatically reload on changes you may use
+
+```bash
+sphinx-autobuild docs docs/_build/html
+```
 
 ### Style requirements
 
@@ -108,7 +131,7 @@ As a simple test of your `ert` installation, you may try to run one of the
 examples, for instance:
 
 ```
-cd test-data/poly_example
+cd test-data/ert/poly_example
 # for non-gui trial run
 ert test_run poly.ert
 # for gui trial run
@@ -127,9 +150,9 @@ command `ulimit -a`. In order to increase maximum number of open files, run
 ## Example usage
 
 ### Basic ert test
-To test if ert itself is working, go to `test-data/poly_example` and start ert by running `poly.ert` with `ert gui`
+To test if ert itself is working, go to `test-data/ert/poly_example` and start ert by running `poly.ert` with `ert gui`
 ```
-cd test-data/poly_example
+cd test-data/ert/poly_example
 ert gui poly.ert
 ````
 This opens up the ert graphical user interface.

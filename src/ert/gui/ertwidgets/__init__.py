@@ -25,6 +25,7 @@ from .searchbox import SearchBox
 from .ensembleselector import EnsembleSelector
 from .checklist import CheckList
 from .stringbox import StringBox
+from .multilinestringbox import MultiLineStringBox
 from .listeditbox import ListEditBox
 from .customdialog import CustomDialog
 from .pathchooser import PathChooser
@@ -41,23 +42,24 @@ from .message_box import ErtMessageBox
 from .copy_button import CopyButton
 
 __all__ = [
-    "TextModel",
-    "ClosableDialog",
-    "AnalysisModuleEdit",
-    "SearchBox",
-    "EnsembleSelector",
     "ActiveRealizationsModel",
+    "AnalysisModuleEdit",
     "CheckList",
-    "StringBox",
-    "CopyableLabel",
-    "showWaitCursorWhileWaiting",
-    "ErtMessageBox",
-    "TargetEnsembleModel",
-    "ValueModel",
-    "PathModel",
-    "SelectableListModel",
-    "ListEditBox",
-    "CustomDialog",
-    "PathChooser",
+    "ClosableDialog",
     "CopyButton",
+    "CopyableLabel",
+    "CustomDialog",
+    "EnsembleSelector",
+    "ErtMessageBox",
+    "ListEditBox",
+    "MultiLineStringBox",
+    "PathChooser",
+    "PathModel",
+    "SearchBox",
+    "SelectableListModel",
+    "StringBox",
+    "TargetEnsembleModel",
+    "TextModel",
+    "ValueModel",
+    "showWaitCursorWhileWaiting",
 ]

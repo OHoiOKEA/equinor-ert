@@ -1,22 +1,23 @@
 from __future__ import annotations
 
 import asyncio
+import datetime
 import itertools
 import logging
 import shlex
 import stat
-import tempfile
 import time
 from dataclasses import dataclass
 from enum import Enum, auto
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 from typing import (
     Iterator,
     Optional,
     Tuple,
 )
 
-from .driver import SIGNAL_OFFSET, Driver
+from .driver import SIGNAL_OFFSET, Driver, FailedSubmit
 from .event import Event, FinishedEvent, StartedEvent
 
 SLURM_FAILED_EXIT_CODE_FETCH = SIGNAL_OFFSET + 66
@@ -154,8 +155,10 @@ class SlurmDriver(Driver):
             sbatch_with_args.append(f"--nodelist={self._include_hosts}")
         if self._exclude_hosts:
             sbatch_with_args.append(f"--exclude={self._exclude_hosts}")
-        if self._max_runtime:
-            sbatch_with_args.append(f"--time={self._max_runtime}")
+        if self._max_runtime and int(self._max_runtime):
+            sbatch_with_args.append(
+                f"--time={_seconds_to_slurm_time_format(self._max_runtime)}"
+            )
         if self._memory_per_cpu:
             sbatch_with_args.append(f"--mem-per-cpu={self._memory_per_cpu}")
         if self._queue_name:
@@ -184,19 +187,24 @@ class SlurmDriver(Driver):
             f"exec -a {shlex.quote(executable)} {executable} {shlex.join(args)}\n"
         )
         script_path: Optional[Path] = None
-        with tempfile.NamedTemporaryFile(
-            dir=runpath,
-            prefix=".slurm_submit_",
-            suffix=".sh",
-            mode="w",
-            encoding="utf-8",
-            delete=False,
-        ) as script_handle:
-            script_handle.write(script)
-            script_path = Path(script_handle.name)
+        try:
+            with NamedTemporaryFile(
+                dir=runpath,
+                prefix=".slurm_submit_",
+                suffix=".sh",
+                mode="w",
+                encoding="utf-8",
+                delete=False,
+            ) as script_handle:
+                script_handle.write(script)
+                script_path = Path(script_handle.name)
+        except OSError as err:
+            error_message = f"Could not create submit script: {err}"
+            self._job_error_message_by_iens[iens] = error_message
+            raise FailedSubmit(error_message) from err
         assert script_path is not None
         script_path.chmod(script_path.stat().st_mode | stat.S_IEXEC)
-        sbatch_with_args = self._submit_cmd(name, runpath, num_cpu) + [str(script_path)]
+        sbatch_with_args = [*self._submit_cmd(name, runpath, num_cpu), str(script_path)]
 
         if iens not in self._submit_locks:
             self._submit_locks[iens] = asyncio.Lock()
@@ -209,15 +217,15 @@ class SlurmDriver(Driver):
                 sbatch_with_args,
                 retry_on_empty_stdout=True,
                 retry_codes=(),
-                retries=self._sbatch_retries,
+                total_attempts=self._sbatch_retries,
                 retry_interval=self._sleep_time_between_cmd_retries,
             )
             if not process_success:
                 self._job_error_message_by_iens[iens] = process_message
-                raise RuntimeError(process_message)
+                raise FailedSubmit(process_message)
 
             if not process_message:
-                raise RuntimeError("sbatch returned empty jobid")
+                raise FailedSubmit("sbatch returned empty jobid")
             job_id = process_message
             logger.info(f"Realization {iens} accepted by SLURM, got id {job_id}")
 
@@ -256,14 +264,16 @@ class SlurmDriver(Driver):
             arguments = ["-h", "--format=%i %T"]
             if self._user:
                 arguments.append(f"--user={self._user}")
-
-            process = await asyncio.create_subprocess_exec(
-                str(self._squeue),
-                *arguments,
-                stdout=asyncio.subprocess.PIPE,
-                stderr=asyncio.subprocess.PIPE,
-            )
-
+            try:
+                process = await asyncio.create_subprocess_exec(
+                    str(self._squeue),
+                    *arguments,
+                    stdout=asyncio.subprocess.PIPE,
+                    stderr=asyncio.subprocess.PIPE,
+                )
+            except FileNotFoundError as e:
+                logger.error(str(e))
+                return
             stdout, stderr = await process.communicate()
             if process.returncode:
                 logger.warning(
@@ -421,6 +431,16 @@ def _parse_squeue_output(output: str) -> Iterator[Tuple[str, SqueueInfo]]:
         if line:
             id, status = line.split()
             yield id, SqueueInfo(JobStatus[status])
+
+
+def _seconds_to_slurm_time_format(seconds: float) -> str:
+    days = datetime.timedelta(seconds=int(seconds)).days
+    hhmmss = str(
+        datetime.timedelta(seconds=int(seconds)) - datetime.timedelta(days=days)
+    )
+    if days:
+        return f"{days}-{hhmmss}"
+    return hhmmss
 
 
 def _parse_scontrol_output(output: str) -> ScontrolInfo:

@@ -21,11 +21,17 @@ from typing import (
     MutableSequence,
     Optional,
     Union,
+    cast,
 )
 
 import numpy as np
-from cloudevents.http import CloudEvent
 
+from _ert.events import (
+    EESnapshot,
+    EESnapshotUpdate,
+    EETerminated,
+    Event,
+)
 from ert.analysis import (
     AnalysisEvent,
     AnalysisStatusEvent,
@@ -52,13 +58,8 @@ from ert.ensemble_evaluator.event import (
     FullSnapshotEvent,
     SnapshotUpdateEvent,
 )
-from ert.ensemble_evaluator.identifiers import (
-    EVTYPE_EE_SNAPSHOT,
-    EVTYPE_EE_SNAPSHOT_UPDATE,
-    EVTYPE_EE_TERMINATED,
-    STATUS,
-)
-from ert.ensemble_evaluator.snapshot import Snapshot
+from ert.ensemble_evaluator.identifiers import STATUS
+from ert.ensemble_evaluator.snapshot import EnsembleSnapshot
 from ert.ensemble_evaluator.state import (
     ENSEMBLE_STATE_CANCELLED,
     ENSEMBLE_STATE_FAILED,
@@ -167,7 +168,7 @@ class BaseRunModel(ABC):
         self.support_restart: bool = True
         self.ert_config = config
         self._storage = storage
-        self._context_env_keys: List[str] = []
+        self._context_env: Dict[str, str] = {}
         self.random_seed: int = _seed_sequence(random_seed)
         self.rng = np.random.default_rng(self.random_seed)
         self.substitution_list = config.substitution_list
@@ -177,8 +178,9 @@ class BaseRunModel(ABC):
             runpath_format=config.model_config.runpath_format_string,
             filename=str(config.runpath_file),
             substitution_list=self.substitution_list,
+            eclbase=config.model_config.eclbase_format_string,
         )
-        self._iter_snapshot: Dict[int, Snapshot] = {}
+        self._iter_snapshot: Dict[int, EnsembleSnapshot] = {}
         self._status_queue = status_queue
         self._end_queue: SimpleQueue[str] = SimpleQueue()
         # This holds state about the run model
@@ -187,6 +189,24 @@ class BaseRunModel(ABC):
         self.start_iteration = start_iteration
         self.validate()
 
+    def log_at_startup(self) -> None:
+        keys_to_drop = [
+            "_end_queue",
+            "_queue_config",
+            "_status_queue",
+            "_storage",
+            "ert_config",
+            "rng",
+            "run_paths",
+            "substitution_list",
+        ]
+        settings_dict = {
+            key: value
+            for key, value in self.__dict__.items()
+            if key not in keys_to_drop
+        }
+        logger.info(f"Running '{self.name()}' with settings {settings_dict}")
+
     @classmethod
     @abstractmethod
     def name(cls) -> str: ...
@@ -194,6 +214,14 @@ class BaseRunModel(ABC):
     @classmethod
     @abstractmethod
     def description(cls) -> str: ...
+
+    @classmethod
+    def group(cls) -> Optional[str]:
+        """Default value to prevent errors in children classes
+        since only EnsembleExperiment and EnsembleSmoother should
+        override it
+        """
+        return None
 
     def send_event(self, event: StatusEvents) -> None:
         self._status_queue.put(event)
@@ -271,7 +299,7 @@ class BaseRunModel(ABC):
         Will set an environment variable that will be available until the
         model run ends.
         """
-        self._context_env_keys.append(key)
+        self._context_env[key] = value
         os.environ[key] = value
 
     def _set_default_env_context(self) -> None:
@@ -286,9 +314,9 @@ class BaseRunModel(ABC):
         """
         Clean all previously environment variables set using set_env_key
         """
-        for key in self._context_env_keys:
+        for key in list(self._context_env.keys()):
+            self._context_env.pop(key)
             os.environ.pop(key, None)
-        self._context_env_keys = []
 
     def start_simulations_thread(
         self,
@@ -329,6 +357,7 @@ class BaseRunModel(ABC):
         finally:
             self._clean_env_context()
             self.stop_time = int(time.time())
+
             self.send_event(
                 EndEvent(
                     failed=failed,
@@ -363,38 +392,62 @@ class BaseRunModel(ABC):
             return round(time.time() - self.start_time)
         return self.stop_time - self.start_time
 
-    def _current_status(self) -> tuple[dict[str, int], float, int]:
+    def get_current_status(self) -> dict[str, int]:
+        status: dict[str, int] = defaultdict(int)
+        if self._iter_snapshot.keys():
+            current_iter = max(list(self._iter_snapshot.keys()))
+            all_realizations = self._iter_snapshot[current_iter].reals
+
+            if all_realizations:
+                for real in all_realizations.values():
+                    status[str(real["status"])] += 1
+
+        status["Finished"] += self.active_realizations.count(False)
+        return status
+
+    def get_memory_consumption(self) -> int:
+        max_memory_consumption: int = 0
+        if self._iter_snapshot.keys():
+            current_iter = max(list(self._iter_snapshot.keys()))
+            for fm in self._iter_snapshot[current_iter].get_all_fm_steps().values():
+                max_usage = fm.get("max_memory_usage", "0")
+                if max_usage:
+                    max_memory_consumption = max(int(max_usage), max_memory_consumption)
+
+        return max_memory_consumption
+
+    def _current_progress(self) -> tuple[float, int]:
         current_iter = max(list(self._iter_snapshot.keys()))
-        done_realizations = 0
+        done_realizations = self.active_realizations.count(False)
         all_realizations = self._iter_snapshot[current_iter].reals
         current_progress = 0.0
-        status: dict[str, int] = defaultdict(int)
-        realization_count = len(all_realizations)
+        realization_count = len(self.active_realizations)
 
         if all_realizations:
             for real in all_realizations.values():
-                status[str(real.status)] += 1
-
-                if real.status in [
+                if real["status"] in [
                     REALIZATION_STATE_FINISHED,
                     REALIZATION_STATE_FAILED,
                 ]:
                     done_realizations += 1
 
-            realization_progress = float(done_realizations) / len(all_realizations)
+            realization_progress = float(done_realizations) / len(
+                self.active_realizations
+            )
             current_progress = (
                 (current_iter + realization_progress) / self._total_iterations
                 if self._total_iterations != 1
                 else realization_progress
             )
 
-        return status, current_progress, realization_count
+        return current_progress, realization_count
 
-    def send_snapshot_event(self, event: CloudEvent, iteration: int) -> None:
-        if event["type"] == EVTYPE_EE_SNAPSHOT:
-            snapshot = Snapshot.from_nested_dict(event.data)
+    def send_snapshot_event(self, event: Event, iteration: int) -> None:
+        if type(event) is EESnapshot:
+            snapshot = EnsembleSnapshot.from_nested_dict(event.snapshot)
             self._iter_snapshot[iteration] = snapshot
-            status, current_progress, realization_count = self._current_status()
+            current_progress, realization_count = self._current_progress()
+            status = self.get_current_status()
             self.send_event(
                 FullSnapshotEvent(
                     iteration_label=f"Running forecast for iteration: {iteration}",
@@ -407,18 +460,19 @@ class BaseRunModel(ABC):
                     snapshot=copy.deepcopy(snapshot),
                 )
             )
-        elif event["type"] == EVTYPE_EE_SNAPSHOT_UPDATE:
+        elif type(event) is EESnapshotUpdate:
             if iteration not in self._iter_snapshot:
                 raise OutOfOrderSnapshotUpdateException(
-                    f"got {EVTYPE_EE_SNAPSHOT_UPDATE} without having stored "
+                    f"got snapshot update message without having stored "
                     f"snapshot for iter {iteration}"
                 )
-            snapshot = Snapshot()
-            snapshot.update_from_cloudevent(
+            snapshot = EnsembleSnapshot()
+            snapshot.update_from_event(
                 event, source_snapshot=self._iter_snapshot[iteration]
             )
             self._iter_snapshot[iteration].merge_snapshot(snapshot)
-            status, current_progress, realization_count = self._current_status()
+            current_progress, realization_count = self._current_progress()
+            status = self.get_current_status()
             self.send_event(
                 SnapshotUpdateEvent(
                     iteration_label=f"Running forecast for iteration: {iteration}",
@@ -440,12 +494,19 @@ class BaseRunModel(ABC):
             async with Monitor(ee_config.get_connection_info()) as monitor:
                 logger.debug("connected")
                 async for event in monitor.track(heartbeat_interval=0.1):
-                    if event is not None and event["type"] in (
-                        EVTYPE_EE_SNAPSHOT,
-                        EVTYPE_EE_SNAPSHOT_UPDATE,
+                    if type(event) in (
+                        EESnapshot,
+                        EESnapshotUpdate,
                     ):
-                        self.send_snapshot_event(event, iteration)
-                        if event.data.get(STATUS) in [
+                        event = cast(Union[EESnapshot, EESnapshotUpdate], event)
+                        await asyncio.get_running_loop().run_in_executor(
+                            None,
+                            self.send_snapshot_event,
+                            event,
+                            iteration,
+                        )
+
+                        if event.snapshot.get(STATUS) in [
                             ENSEMBLE_STATE_STOPPED,
                             ENSEMBLE_STATE_FAILED,
                         ]:
@@ -454,13 +515,13 @@ class BaseRunModel(ABC):
                             )
                             await monitor.signal_done()
 
-                        if event.data.get(STATUS) == ENSEMBLE_STATE_CANCELLED:
+                        if event.snapshot.get(STATUS) == ENSEMBLE_STATE_CANCELLED:
                             logger.debug(
                                 "observed evaluation cancelled event, exit drainer"
                             )
                             # Allow track() to emit an EndEvent.
                             return False
-                    elif event is not None and event["type"] == EVTYPE_EE_TERMINATED:
+                    elif type(event) is EETerminated:
                         logger.debug("got terminator event")
 
                     if not self._end_queue.empty():
@@ -470,8 +531,8 @@ class BaseRunModel(ABC):
                         logger.debug(
                             "Run model canceled - during evaluation - cancel sent"
                         )
-        except BaseException:
-            logger.exception("unexpected error: ")
+        except BaseException as e:
+            logger.exception(f"unexpected error: {e}")
             # We really don't know what happened...  shut down
             # the thread and get out of here. The monitor has
             # been stopped by the ctx-mgr
@@ -534,7 +595,7 @@ class BaseRunModel(ABC):
                 Realization(
                     active=run_arg.active,
                     iens=run_arg.iens,
-                    forward_models=self.ert_config.forward_model_steps,
+                    fm_steps=self.ert_config.forward_model_steps,
                     max_runtime=self.ert_config.analysis_config.max_runtime,
                     run_arg=run_arg,
                     num_cpu=self.ert_config.preferred_num_cpu,
@@ -554,7 +615,9 @@ class BaseRunModel(ABC):
     def paths(self) -> List[str]:
         run_paths = []
         active_realizations = np.where(self.active_realizations)[0]
-        for iteration in range(self.start_iteration, self._total_iterations):
+        for iteration in range(
+            self.start_iteration, self._total_iterations + self.start_iteration
+        ):
             run_paths.extend(self.run_paths.get_paths(active_realizations, iteration))
         return run_paths
 
@@ -610,6 +673,7 @@ class BaseRunModel(ABC):
             ensemble,
             self.ert_config,
             self.run_paths,
+            self._context_env,
         )
 
         self.run_workflows(HookRuntime.PRE_SIMULATION, self._storage, ensemble)
@@ -630,10 +694,12 @@ class BaseRunModel(ABC):
         logger.info(f"Experiment ran on QUEUESYSTEM: {self._queue_config.queue_system}")
         logger.info(f"Experiment ran with number of realizations: {self.ensemble_size}")
         logger.info(
-            f"Experiment run ended with number of realizations succeeding: {num_successful_realizations}"
+            f"Experiment run ended with number of realizations succeeding: "
+            f"{num_successful_realizations}"
         )
         logger.info(
-            f"Experiment run ended with number of realizations failing: {self.ensemble_size - num_successful_realizations}"
+            f"Experiment run ended with number of realizations failing: "
+            f"{self.ensemble_size - num_successful_realizations}"
         )
         logger.info(f"Experiment run finished in: {self.get_runtime()}s")
         self.run_workflows(HookRuntime.POST_SIMULATION, self._storage, ensemble)
@@ -701,7 +767,7 @@ class UpdateRunModel(BaseRunModel):
                 analysis_config=self.update_settings,
                 es_settings=self.es_settings,
                 parameters=prior.experiment.update_parameters,
-                observations=prior.experiment.observations.keys(),
+                observations=prior.experiment.observation_keys,
                 global_scaling=weight,
                 rng=self.rng,
                 progress_callback=functools.partial(

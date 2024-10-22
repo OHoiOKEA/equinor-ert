@@ -175,9 +175,8 @@ def _tree_to_dict(
     pre_defines: Defines,
     tree: Tree[Instruction],
     schema: SchemaItemDict,
-    site_config: Optional[ConfigDict] = None,
 ) -> ConfigDict:
-    config_dict = site_config if site_config else {}
+    config_dict = {}
     defines = pre_defines.copy()
     config_dict["DEFINE"] = defines  # type: ignore
 
@@ -264,7 +263,7 @@ def _substitute_args(
         raise ValueError(
             "Expected "
             "Union[FileContextToken, List[Tuple[FileContextToken]]], "
-            f"got {arg}"
+            f"got {type(arg)}"
         )
 
     return [
@@ -408,10 +407,9 @@ def _handle_includes(
         raise ConfigValidationError.from_collected(errors)
 
 
-def _parse_file(file: str) -> Tree[Instruction]:
+def _parse_contents(content: str, file: str) -> Tree[Instruction]:
+    file = os.path.normpath(os.path.abspath(file))
     try:
-        with open(file, encoding="utf-8") as f:
-            content = f.read()
         tree = _parser.parse(content + "\n")
         return (
             StringQuotationTransformer()
@@ -436,6 +434,13 @@ def _parse_file(file: str) -> Tree[Instruction]:
                 filename=file,
             )
         ) from e
+
+
+def read_file(file: str) -> str:
+    file = os.path.normpath(os.path.abspath(file))
+    try:
+        with open(file, encoding="utf-8") as f:
+            return f.read()
     except UnicodeDecodeError as e:
         error_words = str(e).split(" ")
         hex_str = error_words[error_words.index("byte") + 1]
@@ -480,14 +485,36 @@ def _parse_file(file: str) -> Tree[Instruction]:
         ) from e
 
 
+def _parse_file(file: str) -> Tree[Instruction]:
+    return _parse_contents(read_file(file), file)
+
+
 def parse(
     file: str,
     schema: SchemaItemDict,
-    site_config: Optional[ConfigDict] = None,
+    pre_defines: Optional[List[Tuple[str, str]]] = None,
+) -> ConfigDict:
+    return _transform_tree(_parse_file(file), file, schema, pre_defines)
+
+
+def parse_contents(
+    contents: str,
+    schema: SchemaItemDict,
+    file_name: str,
+    pre_defines: Optional[List[Tuple[str, str]]] = None,
+) -> ConfigDict:
+    return _transform_tree(
+        _parse_contents(contents, file_name), file_name, schema, pre_defines
+    )
+
+
+def _transform_tree(
+    tree: Tree[Instruction],
+    file: str,
+    schema: SchemaItemDict,
     pre_defines: Optional[List[Tuple[str, str]]] = None,
 ) -> ConfigDict:
     filepath = os.path.normpath(os.path.abspath(file))
-    tree = _parse_file(filepath)
     config_dir = os.path.dirname(filepath)
     config_file_name = os.path.basename(file)
     config_file_base = config_file_name.split(".")[0]
@@ -505,12 +532,9 @@ def parse(
     # add to this list
     _handle_includes(tree, pre_defines.copy(), filepath)
 
-    config_dict = _tree_to_dict(
+    return _tree_to_dict(
         config_file=file,
         pre_defines=pre_defines,
         tree=tree,
-        site_config=site_config,
         schema=schema,
     )
-
-    return config_dict

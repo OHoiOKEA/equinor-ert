@@ -4,8 +4,12 @@ import contextlib
 import json
 import logging
 import os
+import shutil
 from datetime import datetime
+from functools import cached_property
 from pathlib import Path
+from tempfile import NamedTemporaryFile
+from textwrap import dedent
 from types import TracebackType
 from typing import (
     TYPE_CHECKING,
@@ -21,6 +25,7 @@ from typing import (
 )
 from uuid import UUID, uuid4
 
+import polars
 import xarray as xr
 from filelock import FileLock, Timeout
 from pydantic import BaseModel, Field
@@ -41,7 +46,7 @@ if TYPE_CHECKING:
 
 logger = logging.getLogger(__name__)
 
-_LOCAL_STORAGE_VERSION = 6
+_LOCAL_STORAGE_VERSION = 7
 
 
 class _Migrations(BaseModel):
@@ -67,6 +72,9 @@ class LocalStorage(BaseMode):
     """
 
     LOCK_TIMEOUT = 5
+    EXPERIMENTS_PATH = "experiments"
+    ENSEMBLES_PATH = "ensembles"
+    SWAP_PATH = "swp"
 
     def __init__(
         self,
@@ -95,26 +103,36 @@ class LocalStorage(BaseMode):
         self._ensembles: Dict[UUID, LocalEnsemble]
         self._index: _Index
 
+        try:
+            version = _storage_version(self.path)
+        except FileNotFoundError as err:
+            # No index json, will have a problem if other components of storage exists
+            errors = []
+            if (self.path / self.EXPERIMENTS_PATH).exists():
+                errors.append(
+                    f"experiments path: {(self.path / self.EXPERIMENTS_PATH)}"
+                )
+            if (self.path / self.ENSEMBLES_PATH).exists():
+                errors.append(f"ensemble path: {self.path / self.ENSEMBLES_PATH}")
+            if errors:
+                raise ValueError(f"No index.json, but found: {errors}") from err
+            version = _LOCAL_STORAGE_VERSION
+
+        if version > _LOCAL_STORAGE_VERSION:
+            raise RuntimeError(
+                f"Cannot open storage '{self.path}': Storage version {version} is newer than the current version {_LOCAL_STORAGE_VERSION}, upgrade ert to continue, or run with a different ENSPATH"
+            )
         if self.can_write:
-            if not any(self.path.glob("*")):
-                # No point migrating if storage is empty
-                ignore_migration_check = True
             self._acquire_lock()
-            if not ignore_migration_check:
-                self._migrate()
+            if version < _LOCAL_STORAGE_VERSION and not ignore_migration_check:
+                self._migrate(version)
             self._index = self._load_index()
             self._ensure_fs_version_exists()
             self._save_index()
-        elif (version := _storage_version(self.path)) is not None:
-            if version < _LOCAL_STORAGE_VERSION:
-                raise RuntimeError(
-                    f"Cannot open storage '{self.path}' in read-only mode: Storage version {version} is too old. Run ert to initiate migration."
-                )
-            if version > _LOCAL_STORAGE_VERSION:
-                raise RuntimeError(
-                    f"Cannot open storage '{self.path}' in read-only mode: Storage version {version} is newer than the current version {_LOCAL_STORAGE_VERSION}, upgrade ert to continue, or run with a different ENSPATH"
-                )
-
+        elif version < _LOCAL_STORAGE_VERSION:
+            raise RuntimeError(
+                f"Cannot open storage '{self.path}' in read-only mode: Storage version {version} is too old. Run ert to initiate migration."
+            )
         self.refresh()
 
     def refresh(self) -> None:
@@ -147,6 +165,27 @@ class LocalStorage(BaseMode):
 
         return self._experiments[uuid]
 
+    def get_experiment_by_name(self, name: str) -> LocalExperiment:
+        """
+        Retrieves an experiment by name.
+        Parameters
+        ----------
+        name : str
+            The name of the experiment to retrieve.
+        Returns
+        -------
+        local_experiment : LocalExperiment
+            The experiment associated with the given name.
+        Raises
+        ------
+        KeyError
+            If no experiment with the given name is found.
+        """
+        for exp in self._experiments.values():
+            if exp.name == name:
+                return exp
+        raise KeyError(f"Experiment with name '{name}' not found")
+
     def get_ensemble(self, uuid: Union[UUID, str]) -> LocalEnsemble:
         """
         Retrieves an ensemble by UUID.
@@ -163,26 +202,6 @@ class LocalStorage(BaseMode):
         if isinstance(uuid, str):
             uuid = UUID(uuid)
         return self._ensembles[uuid]
-
-    def get_ensemble_by_name(self, name: str) -> LocalEnsemble:
-        """
-        Retrieves an ensemble by name.
-
-        Parameters
-        ----------
-        name : str
-            The name of the ensemble to retrieve.
-
-        Returns
-        -------
-        local_ensemble : LocalEnsemble
-            The ensemble associated with the given name.
-        """
-
-        for ens in self._ensembles.values():
-            if ens.name == name:
-                return ens
-        raise KeyError(f"Ensemble with name '{name}' not found")
 
     @property
     def experiments(self) -> Generator[LocalExperiment, None, None]:
@@ -228,10 +247,14 @@ class LocalStorage(BaseMode):
         }
 
     def _ensemble_path(self, ensemble_id: UUID) -> Path:
-        return self.path / "ensembles" / str(ensemble_id)
+        return self.path / self.ENSEMBLES_PATH / str(ensemble_id)
 
     def _experiment_path(self, experiment_id: UUID) -> Path:
-        return self.path / "experiments" / str(experiment_id)
+        return self.path / self.EXPERIMENTS_PATH / str(experiment_id)
+
+    @cached_property
+    def _swap_path(self) -> Path:
+        return self.path / self.SWAP_PATH
 
     def __enter__(self) -> LocalStorage:
         return self
@@ -292,7 +315,7 @@ class LocalStorage(BaseMode):
         self,
         parameters: Optional[List[ParameterConfig]] = None,
         responses: Optional[List[ResponseConfig]] = None,
-        observations: Optional[Dict[str, xr.Dataset]] = None,
+        observations: Optional[Dict[str, polars.DataFrame]] = None,
         simulation_arguments: Optional[Dict[Any, Any]] = None,
         name: Optional[str] = None,
     ) -> LocalExperiment:
@@ -305,7 +328,7 @@ class LocalStorage(BaseMode):
             The parameters for the experiment.
         responses : list of ResponseConfig, optional
             The responses for the experiment.
-        observations : dict of str to Dataset, optional
+        observations : dict of str to DataFrame, optional
             The observations for the experiment.
         simulation_arguments : SimulationArguments, optional
             The simulation arguments for the experiment.
@@ -431,35 +454,64 @@ class LocalStorage(BaseMode):
 
     @require_write
     def _save_index(self) -> None:
-        with open(self.path / "index.json", mode="w", encoding="utf-8") as f:
-            print(self._index.model_dump_json(indent=4), file=f)
+        self._write_transaction(
+            self.path / "index.json",
+            self._index.model_dump_json(indent=4).encode("utf-8"),
+        )
 
     @require_write
-    def _migrate(self) -> None:
+    def _migrate(self, version: int) -> None:
         from ert.storage.migration import (  # noqa: PLC0415
-            block_fs,
             to2,
             to3,
             to4,
             to5,
             to6,
+            to7,
         )
 
         try:
-            version = _storage_version(self.path)
-            assert isinstance(version, int)
             self._index = self._load_index()
             if version == 0:
-                self._release_lock()
-                block_fs.migrate(self.path)
-                self._acquire_lock()
-                self._add_migration_information(0, _LOCAL_STORAGE_VERSION, "block_fs")
-            elif version > _LOCAL_STORAGE_VERSION:
-                raise RuntimeError(
-                    f"Cannot migrate storage '{self.path}'. Storage version {version} is newer than the current version {_LOCAL_STORAGE_VERSION}, upgrade ert to continue, or run with a different ENSPATH"
+                # Make a backup of current storage,
+                # and initialize a new blank storage.
+                # And print a lengthy message explaining to the user how to
+                # migrate the blockfs storage
+                bkup_path = self.path / "_blockfs_backup"
+                dirs = set(os.listdir(self.path)) - {"storage.lock"}
+                os.mkdir(bkup_path)
+                for dir in dirs:
+                    shutil.move(self.path / dir, bkup_path / dir)
+
+                self._index = self._load_index()
+
+                logger.info("Blockfs storage backed up")
+                print(
+                    dedent(f"""
+                    Detected outdated storage (blockfs), which is no longer supported
+                    by ERT. Its contents are copied to:
+
+                    {self.path / '_ert_block_storage_backup'}
+
+                    In order to migrate this storage, do the following:
+
+                    (1) with ert version <= 10.3.*, open up the same ert config with:
+                    ENSPATH={self.path / '_ert_block_storage_backup'}
+
+                    (2) with current ert version, open up the same storage again.
+                    The contents of the storage should now be up-to-date, and you may
+                    copy the ensembles and experiments into the original folder @
+                     {self.path}.
+
+                    This is not guaranteed to work. Other than setting the custom
+                    ENSPATH, the ERT config should ideally be the same as it was
+                    when the old blockfs storage was created.
+                """)
                 )
+                return None
+
             elif version < _LOCAL_STORAGE_VERSION:
-                migrations = list(enumerate([to2, to3, to4, to5, to6], start=1))
+                migrations = list(enumerate([to2, to3, to4, to5, to6, to7], start=1))
                 for from_version, migration in migrations[version - 1 :]:
                     print(f"* Updating storage to version: {from_version+1}")
                     migration.migrate(self.path)
@@ -504,11 +556,50 @@ class LocalStorage(BaseMode):
         else:
             return experiment_name + "_0"
 
+    def _write_transaction(self, filename: str | os.PathLike[str], data: bytes) -> None:
+        """
+        Writes the data to the filename as a transaction.
 
-def _storage_version(path: Path) -> Optional[int]:
+        Guarantees to not leave half-written or empty files on disk if the write
+        fails or the process is killed.
+        """
+        self._swap_path.mkdir(parents=True, exist_ok=True)
+        with NamedTemporaryFile(dir=self._swap_path, delete=False) as f:
+            f.write(data)
+            os.rename(f.name, filename)
+
+    def _to_netcdf_transaction(
+        self, filename: str | os.PathLike[str], dataset: xr.Dataset
+    ) -> None:
+        """
+        Writes the dataset to the filename as a transaction.
+
+        Guarantees to not leave half-written or empty files on disk if the write
+        fails or the process is killed.
+        """
+        self._swap_path.mkdir(parents=True, exist_ok=True)
+        with NamedTemporaryFile(dir=self._swap_path, delete=False) as f:
+            dataset.to_netcdf(f, engine="scipy")
+            os.rename(f.name, filename)
+
+    def _to_parquet_transaction(
+        self, filename: str | os.PathLike[str], dataframe: polars.DataFrame
+    ) -> None:
+        """
+        Writes the dataset to the filename as a transaction.
+
+        Guarantees to not leave half-written or empty files on disk if the write
+        fails or the process is killed.
+        """
+        self._swap_path.mkdir(parents=True, exist_ok=True)
+        with NamedTemporaryFile(dir=self._swap_path, delete=False) as f:
+            dataframe.write_parquet(f.name)
+            os.rename(f.name, filename)
+
+
+def _storage_version(path: Path) -> int:
     if not path.exists():
-        logger.warning(f"Unknown storage version in '{path}'")
-        return None
+        return _LOCAL_STORAGE_VERSION
     try:
         with open(path / "index.json", encoding="utf-8") as f:
             return int(json.load(f)["version"])
@@ -517,8 +608,8 @@ def _storage_version(path: Path) -> Optional[int]:
     except FileNotFoundError:
         if _is_block_storage(path):
             return 0
-    logger.warning(f"Unknown storage version in '{path}'")
-    return None
+        else:
+            raise
 
 
 _migration_ert_config: Optional[ErtConfig] = None

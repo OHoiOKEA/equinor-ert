@@ -17,7 +17,7 @@ import yaml
 
 import ert.shared
 from _ert.threading import set_signal_handler
-from ert.cli.main import ErtCliError, ErtTimeoutError, run_cli
+from ert.cli.main import ErtCliError, run_cli
 from ert.config import ConfigValidationError, ErtConfig, lint_file
 from ert.logging import LOGGING_CONFIG
 from ert.mode_definitions import (
@@ -422,6 +422,12 @@ def get_ert_parser(parser: Optional[ArgumentParser] = None) -> ArgumentParser:
         "then only realizations 0,1,2,3,...,9 will be used to perform experiments "
         "while realizations 10,11, 12,...,49 will be excluded",
     )
+    ensemble_smoother_parser.add_argument(
+        "--experiment-name",
+        type=str,
+        default="es",
+        help="Name of the experiment",
+    )
 
     # iterative_ensemble_smoother_parser
     iterative_ensemble_smoother_description = (
@@ -482,6 +488,12 @@ def get_ert_parser(parser: Optional[ArgumentParser] = None) -> ArgumentParser:
         type=valid_num_iterations,
         required=False,
         help="The number of iterations to run.",
+    )
+    iterative_ensemble_smoother_parser.add_argument(
+        "--experiment-name",
+        type=str,
+        default="ies",
+        help="Name of the experiment",
     )
 
     # es_mda_parser
@@ -614,17 +626,7 @@ def ert_parser(parser: Optional[ArgumentParser], args: Sequence[str]) -> Namespa
 def log_process_usage() -> None:
     try:
         usage = resource.getrusage(resource.RUSAGE_SELF)
-
-        if sys.platform == "darwin":
-            # macOS apparently outputs the maxrss value as bytes rather than
-            # kilobytes as on Linux.
-            #
-            # https://stackoverflow.com/questions/59913657/strange-values-of-get-rusage-maxrss-on-macos-and-linux
-            rss_scale = 1000
-        else:
-            rss_scale = 1
-
-        maxrss = usage.ru_maxrss // rss_scale
+        max_rss = ert.shared.status.utils.get_ert_memory_usage()
 
         usage_dict: Dict[str, Union[int, float]] = {
             "User time": usage.ru_utime,
@@ -635,9 +637,9 @@ def log_process_usage() -> None:
             "Socket messages Received": usage.ru_msgrcv,
             "Signals received": usage.ru_nsignals,
             "Swaps": usage.ru_nswap,
-            "Peak memory use (kB)": maxrss,
+            "Peak memory use (KB)": max_rss,
         }
-        logger.info(f"Peak memory use: {maxrss} kB", extra=usage_dict)
+        logger.info(f"Ert process usage: {usage_dict}")
     except Exception as exc:
         logger.warning(
             f"Exception while trying to log ERT process resource usage: {exc}"
@@ -679,12 +681,12 @@ def main() -> None:
         with ErtPluginContext(logger=logging.getLogger()) as context:
             logger.info(f"Running ert with {args}")
             args.func(args, context.plugin_manager)
-    except (ErtCliError, ErtTimeoutError) as err:
-        logger.exception(str(err))
+    except ErtCliError as err:
+        logger.debug(str(err))
         sys.exit(str(err))
     except ConfigValidationError as err:
         err_msg = err.cli_message()
-        logger.exception(err_msg)
+        logger.debug(err_msg)
         sys.exit(err_msg)
     except BaseException as err:
         logger.exception(f'ERT crashed unexpectedly with "{err}"')

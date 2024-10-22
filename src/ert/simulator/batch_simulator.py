@@ -1,23 +1,34 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING, Any, Callable, Dict, List, Optional, Tuple, Union
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Callable,
+    Dict,
+    Iterable,
+    List,
+    Optional,
+    Tuple,
+    Union,
+)
 
 import numpy as np
 
-from ert.config import ErtConfig, ExtParamConfig, GenDataConfig
+from ert.config import ErtConfig, ExtParamConfig
 
 from .batch_simulator_context import BatchContext
 
 if TYPE_CHECKING:
-    from ert.storage import Ensemble, Storage
+    from ert.storage import Ensemble, Experiment
 
 
 class BatchSimulator:
     def __init__(
         self,
         ert_config: ErtConfig,
-        controls: Dict[str, List[str]],
-        results: List[str],
+        experiment: Experiment,
+        controls: Iterable[str],
+        results: Iterable[str],
         callback: Optional[Callable[[BatchContext], None]] = None,
     ):
         """Will create simulator which can be used to run multiple simulations.
@@ -88,24 +99,10 @@ class BatchSimulator:
             raise ValueError("The first argument must be valid ErtConfig instance")
 
         self.ert_config = ert_config
-        self.control_keys = set(controls.keys())
+        self.experiment = experiment
+        self.control_keys = set(controls)
         self.result_keys = set(results)
         self.callback = callback
-
-        ens_config = self.ert_config.ensemble_config
-        for control_name, variables in controls.items():
-            ens_config.addNode(
-                ExtParamConfig(
-                    name=control_name,
-                    input_keys=variables,
-                    output_file=control_name + ".json",
-                )
-            )
-
-        for key in results:
-            ens_config.addNode(
-                GenDataConfig(name=key, input_file=f"{key}_%d", report_steps=[0])
-            )
 
     def _setup_sim(
         self,
@@ -129,7 +126,7 @@ class BatchSimulator:
                         f"these suffixes: {missingsuffixes}"
                     )
                 for suffix in assignment:
-                    if suffix not in suffixes:  # type: ignore[comparison-overlap]
+                    if suffix not in suffixes:
                         raise KeyError(
                             f"Key {key} has suffixes {suffixes}. "
                             f"Can't find the requested suffix {suffix}"
@@ -167,7 +164,6 @@ class BatchSimulator:
         self,
         case_name: str,
         case_data: List[Tuple[int, Dict[str, Dict[str, Any]]]],
-        storage: Storage,
     ) -> BatchContext:
         """Start batch simulation, return a simulation context
 
@@ -226,12 +222,7 @@ class BatchSimulator:
         time, so when you have called the 'start' method you need to let that
         batch complete before you start a new batch.
         """
-        experiment = storage.create_experiment(
-            parameters=self.ert_config.ensemble_config.parameter_configuration,
-            responses=self.ert_config.ensemble_config.response_configuration,
-        )
-        ensemble = storage.create_ensemble(
-            experiment.id,
+        ensemble = self.experiment.create_ensemble(
             name=case_name,
             ensemble_size=self.ert_config.model_config.num_realizations,
         )

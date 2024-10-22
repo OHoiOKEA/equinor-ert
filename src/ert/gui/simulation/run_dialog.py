@@ -44,16 +44,16 @@ from ert.ensemble_evaluator import (
 from ert.ensemble_evaluator import identifiers as ids
 from ert.gui.ertnotifier import ErtNotifier
 from ert.gui.ertwidgets.message_box import ErtMessageBox
-from ert.gui.model.job_list import JobListProxyModel
+from ert.gui.model.fm_step_list import FMStepListProxyModel
 from ert.gui.model.snapshot import (
-    JOB_COLUMNS,
+    FM_STEP_COLUMNS,
     FileRole,
     IterNum,
     RealIens,
     SnapshotModel,
 )
 from ert.gui.tools.file import FileDialog
-from ert.gui.tools.plot.plot_tool import PlotTool
+from ert.gui.tools.plot import PlotTool
 from ert.run_models import (
     BaseRunModel,
     RunModelStatusEvent,
@@ -76,19 +76,19 @@ from .view import ProgressWidget, RealizationWidget, UpdateWidget
 _TOTAL_PROGRESS_TEMPLATE = "Total progress {total_progress}% — {iteration_label}"
 
 
-class JobOverview(QTableView):
+class FMStepOverview(QTableView):
     def __init__(self, snapshot_model: SnapshotModel, parent: QWidget | None) -> None:
         super().__init__(parent)
 
-        self._job_model = JobListProxyModel(self, 0, 0)
-        self._job_model.setSourceModel(snapshot_model)
+        self._fm_step_model = FMStepListProxyModel(self, 0, 0)
+        self._fm_step_model.setSourceModel(snapshot_model)
 
         self.setVerticalScrollMode(QAbstractItemView.ScrollPerItem)
         self.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.setSelectionMode(QAbstractItemView.SingleSelection)
 
-        self.clicked.connect(self._job_clicked)
-        self.setModel(self._job_model)
+        self.clicked.connect(self._fm_step_clicked)
+        self.setModel(self._fm_step_model)
 
         horizontal_header = self.horizontalHeader()
         assert horizontal_header is not None
@@ -116,10 +116,10 @@ class JobOverview(QTableView):
 
     @Slot(int, int)
     def set_realization(self, iter_: int, real: int) -> None:
-        self._job_model.set_real(iter_, real)
+        self._fm_step_model.set_real(iter_, real)
 
     @Slot(QModelIndex)
-    def _job_clicked(self, index: QModelIndex) -> None:
+    def _fm_step_clicked(self, index: QModelIndex) -> None:
         if not index.isValid():
             return
         selected_file = index.data(FileRole)
@@ -127,16 +127,16 @@ class JobOverview(QTableView):
         if file_dialog and file_dialog.isVisible():
             file_dialog.raise_()
         elif selected_file and file_has_content(selected_file):
-            job_name = index.siblingAtColumn(0).data()
+            fm_step_name = index.siblingAtColumn(0).data()
             FileDialog(
                 selected_file,
-                job_name,
+                fm_step_name,
                 index.row(),
                 index.data(RealIens),
                 index.data(IterNum),
                 self,
             )
-        elif JOB_COLUMNS[index.column()] == ids.ERROR and index.data():
+        elif FM_STEP_COLUMNS[index.column()] == ids.ERROR and index.data():
             error_dialog = QDialog(self)
             error_dialog.setWindowTitle("Error information")
             layout = QVBoxLayout(error_dialog)
@@ -158,7 +158,7 @@ class JobOverview(QTableView):
         if event:
             index = self.indexAt(event.pos())
             if index.isValid():
-                data_name = JOB_COLUMNS[index.column()]
+                data_name = FM_STEP_COLUMNS[index.column()]
                 if data_name in [ids.STDOUT, ids.STDERR] and file_has_content(
                     index.data(FileRole)
                 ):
@@ -171,7 +171,7 @@ class JobOverview(QTableView):
 
 class RunDialog(QDialog):
     simulation_done = Signal(bool, str)
-    on_run_model_event = Signal(object)
+    produce_clipboard_debug_info = Signal()
     _RUN_TIME_POLL_RATE = 1000
 
     def __init__(
@@ -194,6 +194,7 @@ class RunDialog(QDialog):
         self._run_model = run_model
         self._event_queue = event_queue
         self._notifier = notifier
+        self.fail_msg_box: Optional[ErtMessageBox] = None
 
         self._minimum_width = 1200
         self._minimum_height = 800
@@ -220,8 +221,9 @@ class RunDialog(QDialog):
         self._tab_widget.currentChanged.connect(self._current_tab_changed)
         self._snapshot_model.rowsInserted.connect(self.on_snapshot_new_iteration)
 
-        self._job_label = QLabel(self)
-        self._job_overview = JobOverview(self._snapshot_model, self)
+        self._fm_step_label = QLabel(self)
+        self._fm_step_label.setObjectName("fm_step_label")
+        self._fm_step_overview = FMStepOverview(self._snapshot_model, self)
 
         self.running_time = QLabel("")
         self.memory_usage = QLabel("")
@@ -234,8 +236,12 @@ class RunDialog(QDialog):
         self.kill_button = QPushButton("Terminate experiment")
         self.done_button = QPushButton("Done")
         self.done_button.setHidden(True)
-        self.restart_button = QPushButton("Restart")
+        self.restart_button = QPushButton("Rerun failed")
         self.restart_button.setHidden(True)
+        self.copy_debug_info_button = QPushButton("Debug Info")
+        self.copy_debug_info_button.setToolTip("Copies useful information to clipboard")
+        self.copy_debug_info_button.clicked.connect(self.produce_clipboard_debug_info)
+        self.copy_debug_info_button.setObjectName("copy_debug_info_button")
 
         size = 20
         spin_movie = QMovie("img:loading.gif")
@@ -254,6 +260,7 @@ class RunDialog(QDialog):
         button_layout.addStretch()
         button_layout.addWidget(self.memory_usage)
         button_layout.addStretch()
+        button_layout.addWidget(self.copy_debug_info_button)
         button_layout.addWidget(self.plot_button)
         button_layout.addWidget(self.kill_button)
         button_layout.addWidget(self.done_button)
@@ -281,13 +288,13 @@ class RunDialog(QDialog):
             }
          """)
 
-        self.job_frame = QFrame(self)
-        job_frame_layout = QVBoxLayout(self.job_frame)
-        job_frame_layout.setContentsMargins(0, 0, 0, 0)
-        job_frame_layout.addWidget(self._job_label)
-        job_frame_layout.addWidget(self._job_overview)
+        self.fm_step_frame = QFrame(self)
+        fm_step_frame_layout = QVBoxLayout(self.fm_step_frame)
+        fm_step_frame_layout.setContentsMargins(0, 0, 0, 0)
+        fm_step_frame_layout.addWidget(self._fm_step_label)
+        fm_step_frame_layout.addWidget(self._fm_step_overview)
 
-        adjustable_splitter_layout.addWidget(self.job_frame)
+        adjustable_splitter_layout.addWidget(self.fm_step_frame)
         layout.addWidget(adjustable_splitter_layout)
         layout.addWidget(button_widget_container)
 
@@ -301,11 +308,11 @@ class RunDialog(QDialog):
         self.setMinimumSize(self._minimum_width, self._minimum_height)
         self.finished.connect(self._on_finished)
 
-        self.on_run_model_event.connect(self._on_event)
+        self._restart = False
 
     def _current_tab_changed(self, index: int) -> None:
         widget = self._tab_widget.widget(index)
-        self.job_frame.setHidden(isinstance(widget, UpdateWidget))
+        self.fm_step_frame.setHidden(isinstance(widget, UpdateWidget))
 
     @Slot(QModelIndex, int, int)
     def on_snapshot_new_iteration(
@@ -332,10 +339,21 @@ class RunDialog(QDialog):
     def _select_real(self, index: QModelIndex) -> None:
         real = index.row()
         iter_ = index.model().get_iter()  # type: ignore
-        self._job_overview.set_realization(iter_, real)
-        self._job_label.setText(
+        exec_hosts = None
+
+        iter_node = self._snapshot_model.root.children.get(str(iter_), None)
+        if iter_node:
+            real_node = iter_node.children.get(str(real), None)
+            if real_node:
+                exec_hosts = real_node.data.exec_hosts
+
+        self._fm_step_overview.set_realization(iter_, real)
+        text = (
             f"Realization id {index.data(RealIens)} in iteration {index.data(IterNum)}"
         )
+        if exec_hosts and exec_hosts != "-":
+            text += f", assigned to host: {exec_hosts}"
+        self._fm_step_label.setText(text)
 
     def closeEvent(self, a0: Optional[QCloseEvent]) -> None:
         if not self._notifier.is_simulation_running:
@@ -344,8 +362,10 @@ class RunDialog(QDialog):
             a0.ignore()
 
     def run_experiment(self, restart: bool = False) -> None:
-        self._snapshot_model.reset()
-        self._tab_widget.clear()
+        self._restart = restart
+        if restart is False:
+            self._snapshot_model.reset()
+            self._tab_widget.clear()
 
         port_range = None
         if self._run_model.queue_system == QueueSystem.LOCAL:
@@ -399,11 +419,14 @@ class RunDialog(QDialog):
         self.kill_button.setHidden(True)
         self.restart_button.setVisible(self._run_model.has_failed_realizations())
         self.restart_button.setEnabled(self._run_model.support_restart)
-        self.update_total_progress(1.0, msg)
         self._notifier.set_is_simulation_running(False)
         if failed:
+            self.update_total_progress(1.0, "Failed")
             self.fail_msg_box = ErtMessageBox("ERT experiment failed!", msg, self)
-            self.fail_msg_box.exec_()
+            self.fail_msg_box.setModal(True)
+            self.fail_msg_box.show()
+        else:
+            self.update_total_progress(1.0, "Experiment completed.")
 
     @Slot()
     def _on_ticker(self) -> None:
@@ -425,7 +448,14 @@ class RunDialog(QDialog):
             self.done_button.setHidden(False)
         elif isinstance(event, FullSnapshotEvent):
             if event.snapshot is not None:
-                self._snapshot_model._add_snapshot(event.snapshot, str(event.iteration))
+                if self._restart:
+                    self._snapshot_model._update_snapshot(
+                        event.snapshot, str(event.iteration)
+                    )
+                else:
+                    self._snapshot_model._add_snapshot(
+                        event.snapshot, str(event.iteration)
+                    )
             self.update_total_progress(event.progress, event.iteration_label)
             self._progress_widget.update_progress(
                 event.status_count, event.realization_count
@@ -450,6 +480,7 @@ class RunDialog(QDialog):
             widget.begin(event)
 
         elif isinstance(event, RunModelUpdateEndEvent):
+            self._progress_widget.stop_waiting_progress_bar()
             if (widget := self._get_update_widget(event.iteration)) is not None:
                 widget.end(event)
 
@@ -516,6 +547,9 @@ class RunDialog(QDialog):
             self.done_button.setVisible(False)
             self.run_experiment(restart=True)
 
+    def get_runtime(self) -> int:
+        return self._run_model.get_runtime()
+
     def _on_finished(self) -> None:
         for file_dialog in self.findChildren(FileDialog):
             file_dialog.close()
@@ -525,6 +559,8 @@ class RunDialog(QDialog):
         # so call self.close() instead
         if a0 is not None and a0.key() == Qt.Key.Key_Escape:
             self.close()
+        elif a0 is not None and a0.key() == Qt.Key.Key_F1:
+            self.produce_clipboard_debug_info.emit()
         else:
             QDialog.keyPressEvent(self, a0)
 

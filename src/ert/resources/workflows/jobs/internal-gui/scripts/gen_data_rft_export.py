@@ -1,9 +1,10 @@
 import contextlib
+import json
 import os
-import re
 
 import numpy
 import pandas as pd
+import polars
 from qtpy.QtWidgets import QCheckBox
 
 from ert.config import CancelPluginException, ErtPlugin
@@ -60,29 +61,10 @@ class GenDataRFTCSVExportJob(ErtPlugin):
 
     Optional arguments:
 
-     ensemble_list: a comma separated list of ensembles to export (no spaces allowed)
+     ensemble_data_as_json: a comma separated list of ensembles to export (no spaces allowed)
                 if no list is provided the current ensemble is exported
 
-     infer_iteration: If True the script will try to infer the iteration number
-                by looking at the suffix of the ensemble name (i.e. default_2 = iteration 2)
-                If False the script will use the ordering of the ensemble list: the first
-                item will be iteration 0, the second item will be iteration 1...
     """
-
-    INFER_HELP = (
-        "<html>"
-        "If this is checked the iteration number will be inferred from the name i.e.:"
-        "<ul>"
-        "<li>ensemble_name -> iteration: 0</li>"
-        "<li>ensemble_name_0 -> iteration: 0</li>"
-        "<li>ensemble_name_2 -> iteration: 2</li>"
-        "<li>ensemble_0, ensemble_2, ensemble_5 -> iterations: 0, 2, 5</li>"
-        "</ul>"
-        "Leave this unchecked to set iteration number to the order of the listed ensembles:"
-        "<ul><li>ensemble_0, ensemble_2, ensemble_5 -> iterations: 0, 1, 2</li></ul>"
-        "<br/>"
-        "</html>"
-    )
 
     @staticmethod
     def getName():
@@ -92,52 +74,31 @@ class GenDataRFTCSVExportJob(ErtPlugin):
     def getDescription():
         return "Export gen_data RFT results into a single CSV file."
 
-    @staticmethod
-    def inferIterationNumber(ensemble_name):
-        pattern = re.compile("_([0-9]+$)")
-        match = pattern.search(ensemble_name)
-
-        if match is not None:
-            return int(match.group(1))
-        return 0
-
     def run(
         self,
         storage,
         workflow_args,
     ):
-        """The run method will export the RFT's for all wells and all ensembles.
+        """The run method will export the RFT's for all wells and all ensembles."""
 
-        The successful operation of this method hinges on two naming
-        conventions:
-
-          1. All the GEN_DATA RFT observations have key RFT_$WELL
-          2. The trajectory files are in $trajectory_path/$WELL.txt
-             or $trajectory_path/$WELL_R.txt
-
-        """
         output_file = workflow_args[0]
         trajectory_path = workflow_args[1]
-        ensemble_list = None if len(workflow_args) < 3 else workflow_args[2]
-        _ = True if len(workflow_args) < 4 else workflow_args[3]
-        drop_const_cols = False if len(workflow_args) < 5 else workflow_args[4]
+        ensemble_data_as_json = None if len(workflow_args) < 3 else workflow_args[2]
+        drop_const_cols = False if len(workflow_args) < 4 else bool(workflow_args[3])
 
-        wells = set()
+        ensemble_data_as_dict = (
+            json.loads(ensemble_data_as_json) if ensemble_data_as_json else {}
+        )
 
-        ensemble_names = []
-        if ensemble_list is not None:
-            ensemble_names = ensemble_list.split(",")
-
-        if len(ensemble_names) == 0:
+        if not ensemble_data_as_dict:
             raise UserWarning("No ensembles given to load from")
 
         data = []
-        for ensemble_name in ensemble_names:
-            ensemble_name = ensemble_name.strip()
-            ensemble_data = []
+        for ensemble_id, ensemble_info in ensemble_data_as_dict.items():
+            ensemble_name = ensemble_info["ensemble_name"]
 
             try:
-                ensemble = storage.get_ensemble_by_name(ensemble_name)
+                ensemble = storage.get_ensemble(ensemble_id)
             except KeyError as exc:
                 raise UserWarning(
                     f"The ensemble '{ensemble_name}' does not exist!"
@@ -148,83 +109,96 @@ class GenDataRFTCSVExportJob(ErtPlugin):
                     f"The ensemble '{ensemble_name}' does not have any data!"
                 )
 
-            obs = ensemble.experiment.observations
+            obs_df = ensemble.experiment.observations.get("gen_data")
             obs_keys = []
-            for key, _ in obs.items():
+            for key in ensemble.experiment.observation_keys:
                 if key.startswith("RFT_"):
                     obs_keys.append(key)
 
-            if len(obs_keys) == 0:
+            if len(obs_keys) == 0 or obs_df is None:
                 raise UserWarning(
                     "The config does not contain any"
                     " GENERAL_OBSERVATIONS starting with RFT_*"
                 )
 
             for obs_key in obs_keys:
-                well = obs_key.replace("RFT_", "")
-                wells.add(well)
-                obs_vector = obs[obs_key]
-                data_key = obs_vector.attrs["response"]
-                if len(obs_vector.report_step) == 1:
-                    report_step = obs_vector.report_step.values
-                    obs_node = obs_vector.sel(report_step=report_step)
-                else:
+                well_key = obs_key.replace("RFT_", "")
+
+                obs_df = obs_df.filter(polars.col("observation_key").eq(obs_key))
+                response_key = obs_df["response_key"].unique().to_list()[0]
+
+                if len(obs_df["report_step"].unique()) != 1:
                     raise UserWarning(
                         "GEN_DATA RFT CSV Export can only be used for observations "
                         "active for exactly one report step"
                     )
 
-                realizations = ensemble.get_realization_list_with_responses(data_key)
-                vals = ensemble.load_responses(data_key, tuple(realizations)).sel(
-                    report_step=report_step, drop=True
+                realizations = ensemble.get_realization_list_with_responses(
+                    response_key
                 )
-                index = pd.Index(vals.index.values, name="axis")
-                rft_data = pd.DataFrame(
-                    data=vals["values"].values.reshape(len(vals.realization), -1).T,
-                    index=index,
-                    columns=realizations,
-                )
-
-                realizations = ensemble.get_realization_list_with_responses()
+                responses = ensemble.load_responses(response_key, tuple(realizations))
+                joined = obs_df.join(
+                    responses,
+                    on=["response_key", "report_step", "index"],
+                    how="left",
+                ).drop("index", "report_step")
 
                 # Trajectory
-                trajectory_file = os.path.join(trajectory_path, f"{well}.txt")
+                trajectory_file = os.path.join(trajectory_path, f"{well_key}.txt")
                 if not os.path.isfile(trajectory_file):
-                    trajectory_file = os.path.join(trajectory_path, f"{well}_R.txt")
+                    trajectory_file = os.path.join(trajectory_path, f"{well_key}_R.txt")
 
                 arg = load_args(
                     trajectory_file, column_names=["utm_x", "utm_y", "md", "tvd"]
                 )
                 tvd_arg = arg["tvd"]
 
-                # Observations
-                for iens in realizations:
-                    realization_frame = pd.DataFrame(
-                        data={
-                            "TVD": tvd_arg,
-                            "Pressure": rft_data[iens],
-                            "ObsValue": obs_node["observations"].values[0],
-                            "ObsStd": obs_node["std"].values[0],
-                        },
-                        columns=["TVD", "Pressure", "ObsValue", "ObsStd"],
-                    )
+                all_realization_frames = joined.rename(
+                    {
+                        "realization": "Realization",
+                        "values": "Pressure",
+                        "observations": "ObsValue",
+                        "std": "ObsStd",
+                    }
+                ).with_columns(
+                    [
+                        polars.lit(well_key).alias("Well").cast(polars.String),
+                        polars.lit(ensemble.name).alias("Ensemble").cast(polars.String),
+                        polars.lit(ensemble.iteration)
+                        .alias("Iteration")
+                        .cast(polars.UInt8),
+                        polars.lit(tvd_arg).alias("TVD").cast(polars.Float32),
+                    ]
+                )
 
-                    realization_frame["Realization"] = iens
-                    realization_frame["Well"] = well
-                    realization_frame["Ensemble"] = ensemble_name
-                    realization_frame["Iteration"] = ensemble.iteration
+                data.append(all_realization_frames)
 
-                    ensemble_data.append(realization_frame)
+        frame = polars.concat(data)
 
-                data.append(pd.concat(ensemble_data))
+        cols_index = ["Well", "Ensemble", "Iteration"]
+        const_cols_right = ["ObsValue", "ObsStd"]
+        const_cols_left = [
+            col
+            for col in frame.columns
+            if (
+                col not in cols_index
+                and col not in const_cols_right
+                and frame[col].n_unique() == 1
+            )
+        ]
 
-        frame = pd.concat(data)
-        frame.set_index(["Realization", "Well", "Ensemble", "Iteration"], inplace=True)
-        if drop_const_cols:
-            frame = frame.loc[:, (frame != frame.iloc[0]).any()]
+        columns_to_export = [
+            "Realization",
+            *cols_index,
+            *(const_cols_left if not drop_const_cols else []),
+            *["Pressure"],
+            *(const_cols_right if not drop_const_cols else []),
+        ]
 
-        frame.to_csv(output_file)
-        well_list_str = ", ".join(list(wells))
+        to_export = frame.select(columns_to_export)
+
+        to_export.write_csv(output_file, include_header=True)
+        well_list_str = ", ".join(to_export["Well"].unique().to_list())
         export_info = (
             f"Exported RFT information for wells: {well_list_str} to: {output_file}"
         )
@@ -253,16 +227,17 @@ class GenDataRFTCSVExportJob(ErtPlugin):
         trajectory_chooser = PathChooser(trajectory_model)
         trajectory_chooser.setObjectName("trajectory_chooser")
 
-        all_ensemble_list = [ensemble.name for ensemble in storage.ensembles]
-        list_edit = ListEditBox(all_ensemble_list)
+        ensemble_with_data_dict = {
+            ensemble.id: ensemble.name
+            for ensemble in storage.ensembles
+            if ensemble.has_data()
+        }
+        list_edit = ListEditBox(ensemble_with_data_dict)
         list_edit.setObjectName("list_of_ensembles")
-
-        infer_iteration_check = QCheckBox()
-        infer_iteration_check.setChecked(True)
-        infer_iteration_check.setToolTip(GenDataRFTCSVExportJob.INFER_HELP)
 
         drop_const_columns_check = QCheckBox()
         drop_const_columns_check.setChecked(False)
+        drop_const_columns_check.setObjectName("drop_const_columns_check")
         drop_const_columns_check.setToolTip(
             "If checked, exclude columns whose value is the same for every entry"
         )
@@ -270,7 +245,6 @@ class GenDataRFTCSVExportJob(ErtPlugin):
         dialog.addLabeledOption("Output file path", output_path_chooser)
         dialog.addLabeledOption("Trajectory file", trajectory_chooser)
         dialog.addLabeledOption("List of ensembles to export", list_edit)
-        dialog.addLabeledOption("Infer iteration number", infer_iteration_check)
         dialog.addLabeledOption("Drop constant columns", drop_const_columns_check)
 
         dialog.addButtons()
@@ -278,13 +252,21 @@ class GenDataRFTCSVExportJob(ErtPlugin):
         success = dialog.showAndTell()
 
         if success:
-            ensemble_list = ",".join(list_edit.getItems())
+            ensemble_data_as_dict = {
+                str(ensemble.id): {
+                    "ensemble_name": ensemble.name,
+                    "experiment_name": ensemble.experiment.name,
+                }
+                for ensemble in storage.ensembles
+                if ensemble.name in list_edit.getItems().values()
+            }
             with contextlib.suppress(ValueError):
                 return [
                     output_path_model.getPath(),
                     trajectory_model.getPath(),
-                    ensemble_list,
-                    infer_iteration_check.isChecked(),
+                    json.dumps(
+                        ensemble_data_as_dict
+                    ),  # Return the ensemble list as a JSON string
                     drop_const_columns_check.isChecked(),
                 ]
 

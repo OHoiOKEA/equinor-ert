@@ -8,10 +8,10 @@ import re
 import shlex
 import shutil
 import stat
-import tempfile
 import time
 from dataclasses import dataclass
 from pathlib import Path
+from tempfile import NamedTemporaryFile
 from typing import (
     Dict,
     Iterable,
@@ -27,7 +27,7 @@ from typing import (
     get_args,
 )
 
-from .driver import SIGNAL_OFFSET, Driver
+from .driver import SIGNAL_OFFSET, Driver, FailedSubmit
 from .event import Event, FinishedEvent, StartedEvent
 
 _POLL_PERIOD = 2.0  # seconds
@@ -94,6 +94,7 @@ _STATE_ORDER: dict[Type[AnyJob], int] = {
 LSF_INFO_JSON_FILENAME = "lsf_info.json"
 FLAKY_SSH_RETURNCODE = 255
 JOB_ALREADY_FINISHED_BKILL_MSG = "Job has already finished"
+BSUB_FAILURE_MESSAGES = ("Job not submitted",)
 
 
 def _parse_jobs_dict(jobs: Mapping[str, JobState]) -> dict[str, AnyJob]:
@@ -108,14 +109,15 @@ class JobData:
     iens: int
     job_state: AnyJob
     submitted_timestamp: float
+    exec_hosts: str = "-"
 
 
 def parse_bjobs(bjobs_output: str) -> Dict[str, JobState]:
     data: Dict[str, JobState] = {}
     for line in bjobs_output.splitlines():
         tokens = line.split(sep="^")
-        if len(tokens) == 2:
-            job_id, job_state = tokens
+        if len(tokens) == 3:
+            job_id, job_state, _ = tokens
             if job_state not in get_args(JobState):
                 logger.error(
                     f"Unknown state {job_state} obtained from "
@@ -123,6 +125,16 @@ def parse_bjobs(bjobs_output: str) -> Dict[str, JobState]:
                 )
                 continue
             data[job_id] = cast(JobState, job_state)
+    return data
+
+
+def parse_bjobs_exec_hosts(bjobs_output: str) -> Dict[str, str]:
+    data: Dict[str, str] = {}
+    for line in bjobs_output.splitlines():
+        tokens = line.split(sep="^")
+        if len(tokens) == 3:
+            job_id, _, exec_hosts = tokens
+            data[job_id] = exec_hosts
     return data
 
 
@@ -297,31 +309,43 @@ class LsfDriver(Driver):
             f"exec -a {shlex.quote(executable)} {executable} {shlex.join(args)}\n"
         )
         script_path: Optional[Path] = None
-        with tempfile.NamedTemporaryFile(
-            dir=runpath,
-            prefix=".lsf_submit_",
-            suffix=".sh",
-            mode="w",
-            encoding="utf-8",
-            delete=False,
-        ) as script_handle:
-            script_handle.write(script)
-            script_path = Path(script_handle.name)
+        try:
+            with NamedTemporaryFile(
+                dir=runpath,
+                prefix=".lsf_submit_",
+                suffix=".sh",
+                mode="w",
+                encoding="utf-8",
+                delete=False,
+            ) as script_handle:
+                script_handle.write(script)
+                script_path = Path(script_handle.name)
+        except OSError as err:
+            error_message = f"Could not create submit script: {err}"
+            self._job_error_message_by_iens[iens] = error_message
+            raise FailedSubmit(error_message) from err
+
         assert script_path is not None
         script_path.chmod(script_path.stat().st_mode | stat.S_IEXEC)
 
-        bsub_with_args: list[str] = (
-            [str(self._bsub_cmd)]
-            + arg_queue_name
-            + arg_project_code
-            + ["-o", str(runpath / (name + ".LSF-stdout"))]
-            + ["-e", str(runpath / (name + ".LSF-stderr"))]
-            + ["-n", str(num_cpu)]
-            + self._build_resource_requirement_arg(
+        bsub_with_args: list[str] = [
+            str(self._bsub_cmd),
+            *arg_queue_name,
+            *arg_project_code,
+            "-o",
+            str(runpath / (name + ".LSF-stdout")),
+            "-e",
+            str(runpath / (name + ".LSF-stderr")),
+            "-n",
+            str(num_cpu),
+            *self._build_resource_requirement_arg(
                 realization_memory=realization_memory or 0
-            )
-            + ["-J", name, str(script_path), str(runpath)]
-        )
+            ),
+            "-J",
+            name,
+            str(script_path),
+            str(runpath),
+        ]
 
         if iens not in self._submit_locks:
             self._submit_locks[iens] = asyncio.Lock()
@@ -332,16 +356,17 @@ class LsfDriver(Driver):
                 bsub_with_args,
                 retry_on_empty_stdout=True,
                 retry_codes=(FLAKY_SSH_RETURNCODE,),
-                retries=self._bsub_retries,
+                total_attempts=self._bsub_retries,
                 retry_interval=self._sleep_time_between_cmd_retries,
+                error_on_msgs=BSUB_FAILURE_MESSAGES,
             )
             if not process_success:
                 self._job_error_message_by_iens[iens] = process_message
-                raise RuntimeError(process_message)
+                raise FailedSubmit(process_message)
 
             match = re.search("Job <([0-9]+)> is submitted to .*queue", process_message)
             if match is None:
-                raise RuntimeError(
+                raise FailedSubmit(
                     f"Could not understand '{process_message}' from bsub"
                 )
             job_id = match[1]
@@ -384,9 +409,9 @@ class LsfDriver(Driver):
             _, process_message = await self._execute_with_retry(
                 bkill_with_args,
                 retry_codes=(FLAKY_SSH_RETURNCODE,),
-                retries=3,
+                total_attempts=3,
                 retry_interval=self._sleep_time_between_cmd_retries,
-                exit_on_msgs=(JOB_ALREADY_FINISHED_BKILL_MSG),
+                return_on_msgs=(JOB_ALREADY_FINISHED_BKILL_MSG),
             )
             await asyncio.create_subprocess_shell(
                 f"sleep {self._sleep_time_between_bkills}; {self._bkill_cmd} -s SIGKILL {job_id}",
@@ -409,15 +434,20 @@ class LsfDriver(Driver):
                 await asyncio.sleep(self._poll_period)
                 continue
             current_jobids = list(self._jobs.keys())
-            process = await asyncio.create_subprocess_exec(
-                str(self._bjobs_cmd),
-                "-noheader",
-                "-o",
-                "jobid stat delimiter='^'",
-                *current_jobids,
-                stdout=asyncio.subprocess.PIPE,
-                stderr=asyncio.subprocess.PIPE,
-            )
+
+            try:
+                process = await asyncio.create_subprocess_exec(
+                    str(self._bjobs_cmd),
+                    "-noheader",
+                    "-o",
+                    "jobid stat exec_host delimiter='^'",
+                    *current_jobids,
+                    stdout=asyncio.subprocess.PIPE,
+                    stderr=asyncio.subprocess.PIPE,
+                )
+            except FileNotFoundError as e:
+                logger.error(str(e))
+                return
 
             stdout, stderr = await process.communicate()
             if process.returncode:
@@ -427,6 +457,9 @@ class LsfDriver(Driver):
                     f"bjobs gave returncode {process.returncode} and error {stderr.decode()}"
                 )
             bjobs_states = _parse_jobs_dict(parse_bjobs(stdout.decode(errors="ignore")))
+            self.update_and_log_exec_hosts(
+                parse_bjobs_exec_hosts(stdout.decode(errors="ignore"))
+            )
 
             job_ids_found_in_bjobs_output = set(bjobs_states.keys())
             if (
@@ -473,17 +506,22 @@ class LsfDriver(Driver):
         event: Optional[Event] = None
         if isinstance(new_state, RunningJob):
             logger.debug(f"Realization {iens} is running")
-            event = StartedEvent(iens=iens)
+            event = StartedEvent(iens=iens, exec_hosts=self._jobs[job_id].exec_hosts)
         elif isinstance(new_state, FinishedJobFailure):
             logger.info(f"Realization {iens} (LSF-id: {self._iens2jobid[iens]}) failed")
             exit_code = await self._get_exit_code(job_id)
-            event = FinishedEvent(iens=iens, returncode=exit_code)
-
+            event = FinishedEvent(
+                iens=iens,
+                returncode=exit_code,
+                exec_hosts=self._jobs[job_id].exec_hosts,
+            )
         elif isinstance(new_state, FinishedJobSuccess):
             logger.info(
                 f"Realization {iens} (LSF-id: {self._iens2jobid[iens]}) succeeded"
             )
-            event = FinishedEvent(iens=iens, returncode=0)
+            event = FinishedEvent(
+                iens=iens, returncode=0, exec_hosts=self._jobs[job_id].exec_hosts
+            )
 
         if event:
             if isinstance(event, FinishedEvent):
@@ -496,7 +534,7 @@ class LsfDriver(Driver):
         success, output = await self._execute_with_retry(
             [f"{self._bjobs_cmd}", "-o exit_code", "-noheader", f"{job_id}"],
             retry_codes=(FLAKY_SSH_RETURNCODE,),
-            retries=3,
+            total_attempts=3,
             retry_interval=self._sleep_time_between_cmd_retries,
         )
 
@@ -514,7 +552,7 @@ class LsfDriver(Driver):
         success, output = await self._execute_with_retry(
             [f"{self._bhist_cmd}", "-l", "-n2", f"{job_id}"],
             retry_codes=(FLAKY_SSH_RETURNCODE,),
-            retries=3,
+            total_attempts=3,
             retry_interval=self._sleep_time_between_cmd_retries,
         )
 
@@ -534,7 +572,7 @@ class LsfDriver(Driver):
         _, process_message = await self._execute_with_retry(
             bhist_with_args,
             retry_codes=(FLAKY_SSH_RETURNCODE,),
-            retries=3,
+            total_attempts=3,
             retry_interval=self._sleep_time_between_cmd_retries,
             log_to_debug=False,
         )
@@ -592,6 +630,14 @@ class LsfDriver(Driver):
         self._bhist_cache = data
         self._bhist_cache_timestamp = time.time()
         return _parse_jobs_dict(jobs)
+
+    def update_and_log_exec_hosts(self, bjobs_exec_hosts: Dict[str, str]) -> None:
+        for job_id, exec_hosts in bjobs_exec_hosts.items():
+            if self._jobs[job_id].exec_hosts == "-" and exec_hosts != "-":
+                logger.info(
+                    f"Realization {self._jobs[job_id].iens} was assigned to host: {exec_hosts}"
+                )
+                self._jobs[job_id].exec_hosts = exec_hosts
 
     def _build_resource_requirement_arg(self, realization_memory: int) -> List[str]:
         resource_requirement_string = build_resource_requirement_string(

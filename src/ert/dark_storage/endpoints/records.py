@@ -1,6 +1,6 @@
 import io
-from itertools import chain
 from typing import Any, Dict, List, Mapping, Union
+from urllib.parse import unquote
 from uuid import UUID, uuid4
 
 import numpy as np
@@ -14,8 +14,8 @@ from ert.dark_storage.common import (
     ensemble_parameters,
     gen_data_keys,
     get_observation_keys_for_response,
-    get_observation_name,
     get_observations_for_obs_keys,
+    response_key_to_displayed_key,
 )
 from ert.dark_storage.enkf import get_storage
 from ert.storage import Storage
@@ -35,10 +35,12 @@ async def get_record_observations(
     ensemble_id: UUID,
     response_name: str,
 ) -> List[js.ObservationOut]:
+    response_name = unquote(response_name)
     ensemble = storage.get_ensemble(ensemble_id)
     obs_keys = get_observation_keys_for_response(ensemble, response_name)
     obss = get_observations_for_obs_keys(ensemble, obs_keys)
 
+    obss.sort(key=lambda x: x["name"])
     if not obss:
         return []
 
@@ -46,11 +48,12 @@ async def get_record_observations(
         js.ObservationOut(
             id=uuid4(),
             userdata={},
-            errors=list(chain.from_iterable([obs["errors"] for obs in obss])),
-            values=list(chain.from_iterable([obs["values"] for obs in obss])),
-            x_axis=list(chain.from_iterable([obs["x_axis"] for obs in obss])),
-            name=get_observation_name(ensemble, obs_keys),
+            errors=obs["errors"],
+            values=obs["values"],
+            x_axis=obs["x_axis"],
+            name=obs["name"],
         )
+        for obs in obss
     ]
 
 
@@ -73,6 +76,7 @@ async def get_ensemble_record(
     ensemble_id: UUID,
     accept: Annotated[Union[str, None], Header()] = None,
 ) -> Any:
+    name = unquote(name)
     dataframe = data_for_key(storage.get_ensemble(ensemble_id), name)
     media_type = accept if accept is not None else "text/csv"
     if media_type == "application/x-parquet":
@@ -111,15 +115,23 @@ def get_ensemble_responses(
     ensemble = storage.get_ensemble(ensemble_id)
 
     response_names_with_observations = set()
-    for dataset in ensemble.experiment.observations.values():
-        if dataset.attrs["response"] == "summary" and "name" in dataset.coords:
-            response_name = dataset.name.values.flatten()[0]
-            response_names_with_observations.add(response_name)
-        else:
-            response_name = dataset.attrs["response"]
-            if "report_step" in dataset.coords:
-                report_step = dataset.report_step.values.flatten()[0]
-            response_names_with_observations.add(response_name + "@" + str(report_step))
+    observations = ensemble.experiment.observations
+
+    for (
+        response_type,
+        response_config,
+    ) in ensemble.experiment.response_configuration.items():
+        if response_type in observations:
+            obs_ds = observations[response_type]
+            display_key_fn = response_key_to_displayed_key[response_type]
+            obs_with_responses = (
+                obs_ds.select(["response_key", *response_config.primary_key])
+                .map_rows(display_key_fn)
+                .unique()
+                .to_series()
+                .to_list()
+            )
+            response_names_with_observations.update(set(obs_with_responses))
 
     for name in ensemble.get_summary_keyset():
         response_map[str(name)] = js.RecordOut(
@@ -144,6 +156,7 @@ def get_ensemble_responses(
 def get_std_dev(
     *, storage: Storage = DEFAULT_STORAGE, ensemble_id: UUID, key: str, z: int
 ) -> Response:
+    key = unquote(key)
     ensemble = storage.get_ensemble(ensemble_id)
     try:
         da = ensemble.calculate_std_dev_for_parameter(key)["values"]

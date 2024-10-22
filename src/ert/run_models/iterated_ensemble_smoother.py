@@ -101,7 +101,7 @@ class IteratedEnsembleSmoother(BaseRunModel):
                 posterior_storage,
                 self.sies_smoother,
                 parameters=prior_storage.experiment.update_parameters,
-                observations=prior_storage.experiment.observations.keys(),
+                observations=prior_storage.experiment.observation_keys,
                 update_settings=self.update_settings,
                 analysis_config=self.analysis_config,
                 sies_step_length=self.sies_step_length,
@@ -120,11 +120,7 @@ class IteratedEnsembleSmoother(BaseRunModel):
     def run_experiment(
         self, evaluator_server_config: EvaluatorServerConfig, restart: bool = False
     ) -> None:
-        log_msg = (
-            f"Running SIES for {self._total_iterations} "
-            f'iteration{"s" if (self._total_iterations != 1) else ""}.'
-        )
-        logger.info(log_msg)
+        self.log_at_startup()
 
         target_ensemble_format = self.target_ensemble_format
         experiment = self._storage.create_experiment(
@@ -174,7 +170,7 @@ class IteratedEnsembleSmoother(BaseRunModel):
 
             posterior = self._storage.create_ensemble(
                 experiment,
-                name=target_ensemble_format % (prior_iter + 1),  # noqa
+                name=target_ensemble_format % (prior_iter + 1),
                 ensemble_size=prior.ensemble_size,
                 iteration=prior_iter + 1,
                 prior_ensemble=prior,
@@ -229,4 +225,4 @@ class IteratedEnsembleSmoother(BaseRunModel):
 
     @classmethod
     def description(cls) -> str:
-        return "Sample parameters → [Evaluate → update] for N iterations"
+        return "Sample parameters → [evaluate → update] several iterations"

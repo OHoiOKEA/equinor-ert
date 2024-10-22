@@ -92,7 +92,7 @@ async def _submit_and_run_jobqueue(
             continue
         realization = Realization(
             iens=run_arg.iens,
-            forward_models=[],
+            fm_steps=[],
             active=True,
             max_runtime=max_runtime,
             run_arg=run_arg,
@@ -139,17 +139,24 @@ class BatchContext:
             runpath_format=ert_config.model_config.runpath_format_string,
             filename=str(ert_config.runpath_file),
             substitution_list=global_substitutions,
+            eclbase=ert_config.model_config.eclbase_format_string,
         )
         self.run_args = create_run_arguments(
             run_paths,
             self.mask,
             ensemble=self.ensemble,
         )
+        context_env = {
+            "_ERT_EXPERIMENT_ID": str(self.ensemble.experiment_id),
+            "_ERT_ENSEMBLE_ID": str(self.ensemble.id),
+            "_ERT_SIMULATION_MODE": "batch_simulation",
+        }
         create_run_path(
             self.run_args,
             self.ensemble,
             ert_config,
             run_paths,
+            context_env,
         )
         for workflow in ert_config.hooked_workflows[HookRuntime.PRE_SIMULATION]:
             WorkflowRunner(workflow, None, self.ensemble).run_blocking()
@@ -244,7 +251,7 @@ class BatchContext:
             d = {}
             for key in self.result_keys:
                 data = self.ensemble.load_responses(key, (sim_id,))
-                d[key] = data["values"].values.flatten()
+                d[key] = data["values"].to_numpy()
             res.append(d)
 
         return res
@@ -298,7 +305,7 @@ class BatchContext:
                 (job2.name, job2.start_time, job2.end_time, job2.status, job2.error_msg),
                 (jobN.name, jobN.start_time, jobN.end_time, jobN.status, jobN.error_msg)
             ]
-        """  # noqa
+        """
         try:
             run_arg = self.run_args[iens]
         except IndexError as e:

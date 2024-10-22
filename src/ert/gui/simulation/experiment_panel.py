@@ -1,18 +1,22 @@
 from __future__ import annotations
 
+import os
+import platform
 from collections import OrderedDict
+from dataclasses import fields
+from datetime import datetime
+from pathlib import Path
 from queue import SimpleQueue
-from typing import TYPE_CHECKING, Any, List, Type
+from typing import TYPE_CHECKING, Any, Dict, List, Type
 
 from qtpy.QtCore import QSize, Qt, Signal
-from qtpy.QtGui import QIcon
+from qtpy.QtGui import QIcon, QStandardItemModel
 from qtpy.QtWidgets import (
     QAction,
     QApplication,
     QCheckBox,
     QFrame,
     QHBoxLayout,
-    QLabel,
     QMessageBox,
     QStackedWidget,
     QStyle,
@@ -21,10 +25,16 @@ from qtpy.QtWidgets import (
     QWidget,
 )
 
+import ert.shared
 from ert.gui.ertnotifier import ErtNotifier
-from ert.run_models import BaseRunModel, StatusEvents, create_model
+from ert.run_models import BaseRunModel, SingleTestRun, StatusEvents, create_model
+from ert.shared.status.utils import (
+    byte_with_unit,
+    format_running_time,
+    get_ert_memory_usage,
+)
 
-from ..ertwidgets.combobox_with_description import QComboBoxWithDescription
+from .combobox_with_description import QComboBoxWithDescription
 from .ensemble_experiment_panel import EnsembleExperimentPanel
 from .ensemble_smoother_panel import EnsembleSmootherPanel
 from .evaluate_ensemble_panel import EvaluateEnsemblePanel
@@ -38,8 +48,15 @@ from .single_test_run_panel import SingleTestRunPanel
 if TYPE_CHECKING:
     from ert.config import ErtConfig
 
-EXPERIMENT_READY_TO_RUN_BUTTON_MESSAGE = "Run Experiment"
-EXPERIMENT_IS_RUNNING_BUTTON_MESSAGE = "Experiment running..."
+EXPERIMENT_IS_MANUAL_UPDATE_MESSAGE = "Execute Selected"
+
+
+def create_md_table(kv: Dict[str, str], output: str) -> str:
+    for k, v in kv.items():
+        v = v.replace("_", r"\_")
+        output += f"| {k} | {v} |\n"
+    output += "\n"
+    return output
 
 
 class ExperimentPanel(QWidget):
@@ -71,9 +88,6 @@ class ExperimentPanel(QWidget):
         experiment_type_layout = QHBoxLayout()
         experiment_type_layout.addSpacing(10)
         experiment_type_layout.addWidget(
-            QLabel("Experiment type:"), 0, Qt.AlignmentFlag.AlignVCenter
-        )
-        experiment_type_layout.addWidget(
             self._experiment_type_combo, 0, Qt.AlignmentFlag.AlignVCenter
         )
 
@@ -81,11 +95,34 @@ class ExperimentPanel(QWidget):
 
         self.run_button = QToolButton()
         self.run_button.setObjectName("run_experiment")
-        self.run_button.setText(EXPERIMENT_READY_TO_RUN_BUTTON_MESSAGE)
         self.run_button.setIcon(QIcon("img:play_circle.svg"))
+        self.run_button.setToolTip(EXPERIMENT_IS_MANUAL_UPDATE_MESSAGE)
         self.run_button.setIconSize(QSize(32, 32))
         self.run_button.clicked.connect(self.run_experiment)
-        self.run_button.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextBesideIcon)
+        self.run_button.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonIconOnly)
+        self.run_button.setMinimumWidth(60)
+        self.run_button.setMinimumHeight(40)
+        self.run_button.setStyleSheet(
+            """
+            QToolButton {
+            border-radius: 10px;
+            background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #f0f0f0,
+                stop:1 #d9d9d9
+            );
+            border: 1px solid #bfbfbf;
+            padding: 5px;
+            }
+            QToolButton:hover {
+                background-color: qlineargradient(
+                x1:0, y1:0, x2:0, y2:1,
+                stop:0 #d8d8d8,
+                stop:1 #c3c3c3
+            );
+            }
+        """
+        )
 
         experiment_type_layout.addWidget(self.run_button)
         experiment_type_layout.addStretch(1)
@@ -105,8 +142,9 @@ class ExperimentPanel(QWidget):
             SingleTestRunPanel(run_path, notifier),
             True,
         )
+        analysis_config = config.analysis_config
         self.addExperimentConfigPanel(
-            EnsembleExperimentPanel(ensemble_size, run_path, notifier),
+            EnsembleExperimentPanel(analysis_config, ensemble_size, run_path, notifier),
             True,
         )
         self.addExperimentConfigPanel(
@@ -117,19 +155,15 @@ class ExperimentPanel(QWidget):
         experiment_type_valid = bool(
             config.ensemble_config.parameter_configs and config.observations
         )
-        analysis_config = config.analysis_config
-        self.addExperimentConfigPanel(
-            EnsembleSmootherPanel(analysis_config, run_path, notifier, ensemble_size),
-            experiment_type_valid,
-        )
-        self.addExperimentConfigPanel(
-            ManualUpdatePanel(ensemble_size, run_path, notifier, analysis_config),
-            experiment_type_valid,
-        )
+
         self.addExperimentConfigPanel(
             MultipleDataAssimilationPanel(
                 analysis_config, run_path, notifier, ensemble_size
             ),
+            experiment_type_valid,
+        )
+        self.addExperimentConfigPanel(
+            EnsembleSmootherPanel(analysis_config, run_path, notifier, ensemble_size),
             experiment_type_valid,
         )
         self.addExperimentConfigPanel(
@@ -138,7 +172,10 @@ class ExperimentPanel(QWidget):
             ),
             experiment_type_valid,
         )
-
+        self.addExperimentConfigPanel(
+            ManualUpdatePanel(ensemble_size, run_path, notifier, analysis_config),
+            experiment_type_valid,
+        )
         self.setLayout(layout)
 
     def addExperimentConfigPanel(
@@ -148,16 +185,25 @@ class ExperimentPanel(QWidget):
         self._experiment_stack.addWidget(panel)
         experiment_type = panel.get_experiment_type()
         self._experiment_widgets[experiment_type] = panel
-        self._experiment_type_combo.addItem(
-            experiment_type.name(), experiment_type.description()
+        self._experiment_type_combo.addDescriptionItem(
+            experiment_type.name(),
+            experiment_type.description(),
+            experiment_type.group(),
         )
 
         if not mode_enabled:
             item_count = self._experiment_type_combo.count() - 1
-            sim_item = self._experiment_type_combo.model().item(item_count)  # type: ignore
+            model = self._experiment_type_combo.model()
+            assert isinstance(model, QStandardItemModel)
+            sim_item = model.item(item_count)
+            assert sim_item is not None
             sim_item.setEnabled(False)
             sim_item.setToolTip("Both observations and parameters must be defined")
-            sim_item.setIcon(self.style().standardIcon(QStyle.SP_MessageBoxWarning))  # type: ignore
+            style = self.style()
+            assert style is not None
+            sim_item.setIcon(
+                style.standardIcon(QStyle.StandardPixmap.SP_MessageBoxWarning)
+            )
 
         panel.simulationConfigurationChanged.connect(self.validationStatusChanged)
         self.experiment_type_changed.connect(panel.experimentTypeChanged)
@@ -198,6 +244,8 @@ class ExperimentPanel(QWidget):
                 self, "ERROR: Failed to create experiment", (str(e)), QMessageBox.Ok
             )
             return
+
+        self._model = model
 
         QApplication.restoreOverrideCursor()
         if model.check_if_runpath_exists():
@@ -263,13 +311,13 @@ class ExperimentPanel(QWidget):
             self.parent(),  # type: ignore
             output_path=self.config.analysis_config.log_path,
         )
+        dialog.produce_clipboard_debug_info.connect(self.populate_clipboard_debug_info)
+
         self.run_button.setEnabled(False)
-        self.run_button.setText(EXPERIMENT_IS_RUNNING_BUTTON_MESSAGE)
         dialog.run_experiment()
         dialog.show()
 
         def exit_handler() -> None:
-            self.run_button.setText(EXPERIMENT_READY_TO_RUN_BUTTON_MESSAGE)
             self.run_button.setEnabled(True)
             self.toggleExperimentType()
             self._notifier.emitErtChange()
@@ -286,7 +334,68 @@ class ExperimentPanel(QWidget):
 
     def validationStatusChanged(self) -> None:
         widget = self._experiment_widgets[self.get_current_experiment_type()]
+        widgets = QApplication.topLevelWidgets()
+        is_run_dialog_open = False
+        for w in widgets:
+            if isinstance(w, RunDialog) and w.isVisible():
+                is_run_dialog_open = True
+                break
         self.run_button.setEnabled(
-            self.run_button.text() == EXPERIMENT_READY_TO_RUN_BUTTON_MESSAGE
-            and widget.isConfigurationValid()
+            not is_run_dialog_open and widget.isConfigurationValid()
         )
+
+    def populate_clipboard_debug_info(self) -> None:
+        kv = {"**Platform**": "", ":-----": ":-----"}
+        kv["Date"] = datetime.now().isoformat(" ", "seconds")
+        kv["OS"] = (
+            platform.system() + " " + platform.release() + " " + platform.machine()
+        )
+        kv["Hostname"] = ert.shared.get_machine_name()
+        kv["Komodo release"] = os.environ.get("KOMODO_RELEASE", "")
+        kv["Python version"] = platform.python_version()
+
+        kv["**Ensemble**"] = ""
+        queue_system = self.config.queue_config.queue_system
+        kv["Queue"] = queue_system.name.capitalize()
+        kv["Simulation mode"] = self.get_current_experiment_type().name()
+        kv["Config file"] = str(Path(self._config_file).absolute())
+        kv["Storage path"] = self.config.ens_path
+        kv["Run path"] = str(self.config.model_config.runpath_format_string)
+        kv["Ensemble size"] = str(self.config.model_config.num_realizations)
+
+        if self.config.queue_config.realization_memory > 0:
+            kv["Realization memory"] = byte_with_unit(
+                self.config.queue_config.realization_memory
+            )
+
+        if self.config.queue_config.max_submit > 1:
+            kv["Max submit"] = str(self.config.queue_config.max_submit)
+        if self.config.queue_config.stop_long_running:
+            kv["Stop long running"] = str(self.config.queue_config.stop_long_running)
+
+        queue_opts = self.config.queue_config.queue_options
+
+        if isinstance(self.get_current_experiment_type(), SingleTestRun):
+            queue_opts = self.config.queue_config.queue_options_test_run
+
+        for field in fields(queue_opts):
+            field_value = getattr(queue_opts, field.name)
+            if field_value is not None:
+                kv[field.name.replace("_", " ").capitalize()] = str(field_value)
+
+        kv["**Status**"] = ""
+        kv["Running time"] = (
+            format_running_time(self._model.get_runtime()).split(":")[1].strip()
+        )
+        kv["Ert max memory"] = byte_with_unit(get_ert_memory_usage())
+        kv["Forward model max memory"] = byte_with_unit(
+            self._model.get_memory_consumption()
+        )
+
+        for status, count in self._model.get_current_status().items():
+            kv[status] = str(count)
+
+        output = create_md_table(kv, "")
+        clipboard = QApplication.clipboard()
+        if clipboard:
+            clipboard.setText(output)

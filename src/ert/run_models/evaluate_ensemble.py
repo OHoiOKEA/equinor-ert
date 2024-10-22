@@ -1,12 +1,13 @@
 from __future__ import annotations
 
+import logging
 from typing import TYPE_CHECKING, List, Optional
 from uuid import UUID
 
 import numpy as np
 
 from ert.ensemble_evaluator import EvaluatorServerConfig
-from ert.storage import Ensemble, Storage
+from ert.storage import Storage
 
 from ..run_arg import create_run_arguments
 from . import BaseRunModel
@@ -18,16 +19,16 @@ if TYPE_CHECKING:
 
     from .base_run_model import StatusEvents
 
+logger = logging.getLogger(__name__)
+
 
 # pylint: disable=too-many-arguments
 class EvaluateEnsemble(BaseRunModel):
     """
-    This workflow will evaluate ensembles which have parameters, but no
-    simulation has been performed, so there are no responses. This can
-    be used in instances where the parameters are sampled manually, or
-    after performing a manual update step. This will always read parameter
-    and response configuration from the stored ensemble, and will not
-    reflect any changes to the user configuration on disk.
+    This workflow will evaluate ensembles which have parameters, but no simulation has been performed, so there are no responses.<br>
+    This can be used in instances where the parameters are sampled manually, or after performing a manual update step.<br>
+    The workflow will always read parameter and response configuration from the stored ensemble,<br>
+    and will not reflect any changes to the user configuration on disk.<br>
     """
 
     def __init__(
@@ -41,27 +42,27 @@ class EvaluateEnsemble(BaseRunModel):
         queue_config: QueueConfig,
         status_queue: SimpleQueue[StatusEvents],
     ):
+        try:
+            self.ensemble = storage.get_ensemble(UUID(ensemble_id))
+        except KeyError as err:
+            raise ValueError(f"No ensemble: {ensemble_id}") from err
         super().__init__(
             config,
             storage,
             queue_config,
             status_queue,
-            start_iteration=0,
+            start_iteration=self.ensemble.iteration,
             total_iterations=1,
             active_realizations=active_realizations,
             minimum_required_realizations=minimum_required_realizations,
             random_seed=random_seed,
         )
-        self.ensemble_id = ensemble_id
 
     def run_experiment(
         self, evaluator_server_config: EvaluatorServerConfig, restart: bool = False
     ) -> None:
-        ensemble_id = self.ensemble_id
-        ensemble_uuid = UUID(ensemble_id)
-        ensemble = self._storage.get_ensemble(ensemble_uuid)
-        assert isinstance(ensemble, Ensemble)
-
+        self.log_at_startup()
+        ensemble = self.ensemble
         experiment = ensemble.experiment
         self.set_env_key("_ERT_EXPERIMENT_ID", str(experiment.id))
         self.set_env_key("_ERT_ENSEMBLE_ID", str(ensemble.id))
@@ -85,4 +86,4 @@ class EvaluateEnsemble(BaseRunModel):
 
     @classmethod
     def description(cls) -> str:
-        return "Take existing ensemble parameters → evaluate"
+        return "Use existing parameters → evaluate"

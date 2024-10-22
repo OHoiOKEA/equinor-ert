@@ -18,6 +18,7 @@ from typing import (
 
 import iterative_ensemble_smoother as ies
 import numpy as np
+import polars
 import psutil
 from iterative_ensemble_smoother.experimental import (
     AdaptiveESMDA,
@@ -65,6 +66,8 @@ T = TypeVar("T")
 
 
 class TimedIterator(Generic[T]):
+    SEND_FREQUENCY = 1.0  # seconds
+
     def __init__(
         self, iterable: Sequence[T], callback: Callable[[AnalysisEvent], None]
     ) -> None:
@@ -72,6 +75,7 @@ class TimedIterator(Generic[T]):
         self._iterable = iterable
         self._callback = callback
         self._index = 0
+        self._last_send_time = 0.0
 
     def __iter__(self) -> Self:
         return self
@@ -87,11 +91,14 @@ class TimedIterator(Generic[T]):
             estimated_remaining_time = (elapsed_time / (self._index)) * (
                 len(self._iterable) - self._index
             )
-            self._callback(
-                AnalysisTimeEvent(
-                    remaining_time=estimated_remaining_time, elapsed_time=elapsed_time
+            if elapsed_time - self._last_send_time > self.SEND_FREQUENCY:
+                self._callback(
+                    AnalysisTimeEvent(
+                        remaining_time=estimated_remaining_time,
+                        elapsed_time=elapsed_time,
+                    )
                 )
-            )
+                self._last_send_time = elapsed_time
 
         self._index += 1
         return result
@@ -139,77 +146,79 @@ def _get_observations_and_responses(
     ensemble: Ensemble,
     selected_observations: Iterable[str],
     iens_active_index: npt.NDArray[np.int_],
-) -> Tuple[
-    npt.NDArray[np.float64],
-    npt.NDArray[np.float64],
-    npt.NDArray[np.float64],
-    npt.NDArray[np.str_],
-    npt.NDArray[np.str_],
-]:
+) -> polars.DataFrame:
     """Fetches and aligns selected observations with their corresponding simulated responses from an ensemble."""
-    filtered_responses = []
-    observation_keys = []
-    observation_values = []
-    observation_errors = []
-    indexes = []
-    observations = ensemble.experiment.observations
-    for obs in selected_observations:
-        observation = observations[obs]
-        group = observation.attrs["response"]
-        all_responses = ensemble.load_responses(group, tuple(iens_active_index))
-        if "time" in observation.coords:
-            all_responses = all_responses.reindex(
-                time=observation.time,
-                method="nearest",
+    observations_by_type = ensemble.experiment.observations
+
+    dfs = []
+    for (
+        response_type,
+        response_cls,
+    ) in ensemble.experiment.response_configuration.items():
+        if response_type not in observations_by_type:
+            continue
+
+        observations_for_type = observations_by_type[response_type].filter(
+            polars.col("observation_key").is_in(list(selected_observations))
+        )
+        responses_for_type = ensemble.load_responses(
+            response_type, realizations=tuple(iens_active_index)
+        )
+
+        # Note that if there are duplicate entries for one
+        # response at one index, they are aggregated together
+        # with "mean" by default
+        pivoted = responses_for_type.pivot(
+            on="realization",
+            index=["response_key", *response_cls.primary_key],
+            aggregate_function="mean",
+        )
+
+        # We need to either assume that if there is a time column
+        # we will approx-join that, or we could specify in response configs
+        # that there is a column that requires an approx "asof" join.
+        # Suggest we simplify and assume that there is always only
+        # one "time" column, which we will reindex towards the response dataset
+        # with a given resolution
+        if "time" in pivoted:
+            joined = observations_for_type.join_asof(
+                pivoted,
+                by=["response_key", *response_cls.primary_key],
+                on="time",
                 tolerance="1s",
             )
-        try:
-            observations_and_responses = observation.merge(all_responses, join="left")
-        except KeyError as e:
-            raise ErtAnalysisError(
-                f"Mismatched index for: "
-                f"Observation: {obs} attached to response: {group}"
-            ) from e
-
-        observation_keys.append([obs] * observations_and_responses["observations"].size)
-
-        if group == "summary":
-            indexes.append(
-                [
-                    np.datetime_as_string(e, unit="s")
-                    for e in observations_and_responses["time"].data
-                ]
-            )
         else:
-            indexes.append(
-                [
-                    f"{e[0]}, {e[1]}"
-                    for e in zip(
-                        list(observations_and_responses["report_step"].data)
-                        * len(observations_and_responses["index"].data),
-                        observations_and_responses["index"].data,
-                    )
-                ]
+            joined = observations_for_type.join(
+                pivoted,
+                how="left",
+                on=["response_key", *response_cls.primary_key],
             )
 
-        observation_values.append(
-            observations_and_responses["observations"].data.ravel()
+        joined = (
+            joined.with_columns(
+                polars.concat_str(response_cls.primary_key, separator=", ").alias(
+                    "__tmp_index_key__"  # Avoid potential collisions w/ primary key
+                )
+            )
+            .drop(response_cls.primary_key)
+            .rename({"__tmp_index_key__": "index"})
         )
-        observation_errors.append(observations_and_responses["std"].data.ravel())
 
-        filtered_responses.append(
-            observations_and_responses["values"]
-            .transpose(..., "realization")
-            .values.reshape((-1, len(observations_and_responses.realization)))
+        first_columns = [
+            "response_key",
+            "index",
+            "observation_key",
+            "observations",
+            "std",
+        ]
+        joined = joined.select(
+            first_columns + [c for c in joined.columns if c not in first_columns]
         )
+
+        dfs.append(joined)
+
     ensemble.load_responses.cache_clear()
-    return (
-        np.concatenate(filtered_responses),
-        np.concatenate(observation_values),
-        np.concatenate(observation_errors),
-        np.concatenate(observation_keys),
-        np.concatenate(indexes),
-    )
+    return polars.concat(dfs)
 
 
 def _expand_wildcards(
@@ -251,11 +260,28 @@ def _load_observations_and_responses(
         List[ObservationAndResponseSnapshot],
     ],
 ]:
-    S, observations, errors, obs_keys, indexes = _get_observations_and_responses(
+    # cols: response_key, index, observation_key, observations, std, *[1, ...nreals]
+    observations_and_responses = _get_observations_and_responses(
         ensemble,
         selected_observations,
         iens_active_index,
     )
+
+    observations_and_responses = observations_and_responses.sort(
+        by=["observation_key", "index"]
+    )
+
+    S = observations_and_responses.select(
+        observations_and_responses.columns[5:]
+    ).to_numpy()
+    observations = (
+        observations_and_responses.select("observations").to_numpy().reshape((-1,))
+    )
+    errors = observations_and_responses.select("std").to_numpy().reshape((-1,))
+    obs_keys = (
+        observations_and_responses.select("observation_key").to_numpy().reshape((-1,))
+    )
+    indexes = observations_and_responses.select("index").to_numpy().reshape((-1,))
 
     # Inflating measurement errors by a factor sqrt(global_std_scaling) as shown
     # in for example evensen2018 - Analysis of iterative ensemble smoothers for
@@ -272,6 +298,8 @@ def _load_observations_and_responses(
     obs_mask = np.logical_and(ens_mean_mask, ens_std_mask)
 
     if auto_scale_observations:
+        scaling_factors_dfs = []
+
         for input_group in auto_scale_observations:
             group = _expand_wildcards(obs_keys, input_group)
             logger.info(f"Scaling observation group: {group}")
@@ -283,6 +311,20 @@ def _load_observations_and_responses(
                 S[obs_group_mask], scaled_errors[obs_group_mask]
             )
             scaling[obs_group_mask] *= scaling_factors
+
+            scaling_factors_dfs.append(
+                polars.DataFrame(
+                    {
+                        "input_group": [", ".join(input_group)] * len(scaling_factors),
+                        "index": indexes[obs_group_mask],
+                        "obs_key": obs_keys[obs_group_mask],
+                        "scaling_factor": polars.Series(
+                            scaling_factors, dtype=polars.Float32
+                        ),
+                    }
+                )
+            )
+
             progress_callback(
                 AnalysisDataEvent(
                     name="Auto scale: " + ", ".join(input_group),
@@ -306,6 +348,12 @@ def _load_observations_and_responses(
                     ),
                 )
             )
+
+        scaling_factors_df = polars.concat(scaling_factors_dfs)
+        ensemble.save_observation_scaling_factors(scaling_factors_df)
+
+        # Recompute with updated scales
+        scaled_errors = errors * scaling
 
     update_snapshot = []
     for (

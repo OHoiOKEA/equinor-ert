@@ -6,7 +6,7 @@ from typing import Optional, cast
 
 from qtpy.QtGui import QColor
 
-from ert.ensemble_evaluator.snapshot import ForwardModel
+from ert.ensemble_evaluator.snapshot import FMStepSnapshot
 
 
 @dataclass
@@ -40,14 +40,12 @@ class _Node(ABC):
 class RootNode(_Node):
     parent: None = field(default=None, init=False)
     children: dict[str, IterNode] = field(default_factory=dict)
-    children_list: list[IterNode] = field(default_factory=list)
     max_memory_usage: Optional[int] = None
 
     def add_child(self, node: _Node) -> None:
         node = cast(IterNode, node)
         node.parent = self
         self.children[node.id_] = node
-        self.children_list.append(node)
 
 
 @dataclass
@@ -61,27 +59,24 @@ class IterNode(_Node):
     parent: Optional[RootNode] = None
     data: IterNodeData = field(default_factory=IterNodeData)
     children: dict[str, RealNode] = field(default_factory=dict)
-    children_list: list[RealNode] = field(default_factory=list)
 
     def add_child(self, node: _Node) -> None:
         node = cast(RealNode, node)
         node.parent = self
         self.children[node.id_] = node
-        self.children_list.append(node)
 
 
 @dataclass
 class RealNodeData:
     status: Optional[str] = None
     active: Optional[bool] = False
-    forward_model_step_status_color_by_id: dict[str, QColor] = field(
-        default_factory=dict
-    )
+    fm_step_status_color_by_id: dict[str, QColor] = field(default_factory=dict)
     real_status_color: Optional[QColor] = None
     current_memory_usage: Optional[int] = None
     max_memory_usage: Optional[int] = None
+    exec_hosts: Optional[str] = None
     stderr: Optional[str] = None
-    callback_status_message: Optional[str] = None
+    message: Optional[str] = None
 
 
 @dataclass
@@ -89,19 +84,17 @@ class RealNode(_Node):
     parent: Optional[IterNode] = None
     data: RealNodeData = field(default_factory=RealNodeData)
     children: dict[str, ForwardModelStepNode] = field(default_factory=dict)
-    children_list: list[ForwardModelStepNode] = field(default_factory=list)
 
     def add_child(self, node: _Node) -> None:
         node = cast(ForwardModelStepNode, node)
         node.parent = self
         self.children[node.id_] = node
-        self.children_list.append(node)
 
 
 @dataclass
 class ForwardModelStepNode(_Node):
     parent: Optional[RealNode]
-    data: ForwardModel = field(default_factory=lambda: ForwardModel())  # noqa: PLW0108
+    data: FMStepSnapshot = field(default_factory=lambda: FMStepSnapshot())  # noqa: PLW0108
 
-    def add_child(self, _: _Node) -> None:
+    def add_child(self, node: _Node) -> None:
         pass

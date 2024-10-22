@@ -8,15 +8,13 @@ The API is typically meant used as part of workflows.
 
 from __future__ import annotations
 
-from datetime import datetime
-from typing import TYPE_CHECKING, List, Optional, Union
+from typing import TYPE_CHECKING, List, Optional
 
 import numpy as np
 import pandas as pd
+import polars
 
 if TYPE_CHECKING:
-    import numpy.typing as npt
-
     from ert.storage import Ensemble
 
 
@@ -29,17 +27,13 @@ class MeasuredData:
         self,
         ensemble: Ensemble,
         keys: Optional[List[str]] = None,
-        index_lists: Optional[List[List[Union[int, datetime]]]] = None,
     ):
         if keys is None:
-            keys = sorted(ensemble.experiment.observations.keys())
+            keys = sorted(ensemble.experiment.observation_keys)
         if not keys:
             raise ObservationError("No observation keys provided")
-        if index_lists is not None and len(index_lists) != len(keys):
-            raise ValueError("index list must be same length as observations keys")
 
         self._set_data(self._get_data(ensemble, keys))
-        self._set_data(self.filter_on_column_index(keys, index_lists))
 
     @property
     def data(self) -> pd.DataFrame:
@@ -64,7 +58,7 @@ class MeasuredData:
         standard deviations as-is."""
         pre_index = self.data.index
         post_index = list(self.data.dropna(axis=0, how="all").index)
-        drop_index = set(pre_index) - set(post_index + ["STD", "OBS"])
+        drop_index = set(pre_index) - {*post_index, "STD", "OBS"}
         self._set_data(self.data.drop(index=drop_index))
 
     def get_simulated_data(self) -> pd.DataFrame:
@@ -97,102 +91,94 @@ class MeasuredData:
         observed standard deviation will be named STD.
         """
 
-        measured_data = []
-        observations = ensemble.experiment.observations
+        observations_by_type = ensemble.experiment.observations
+
+        dfs = []
+
         for key in observation_keys:
-            obs = observations.get(key)
-            if not obs:
+            if key not in ensemble.experiment.observation_keys:
                 raise ObservationError(
                     f"No observation: {key} in ensemble: {ensemble.name}"
                 )
-            group = obs.attrs["response"]
-            try:
-                response = ensemble.load_responses(
-                    group,
-                    tuple(ensemble.get_realization_list_with_responses()),
+
+        for (
+            response_type,
+            response_cls,
+        ) in ensemble.experiment.response_configuration.items():
+            observations_for_type = observations_by_type[response_type].filter(
+                polars.col("observation_key").is_in(observation_keys)
+            )
+            responses_for_type = ensemble.load_responses(
+                response_type,
+                realizations=tuple(
+                    ensemble.get_realization_list_with_responses(response_type)
+                ),
+            )
+
+            # Note that if there are duplicate entries for one
+            # response at one index, they are aggregated together
+            # with "mean" by default
+            pivoted = responses_for_type.pivot(
+                on="realization",
+                index=["response_key", *response_cls.primary_key],
+                aggregate_function="mean",
+            )
+
+            if "time" in pivoted:
+                joined = observations_for_type.join_asof(
+                    pivoted,
+                    by=["response_key", *response_cls.primary_key],
+                    on="time",
+                    tolerance="1s",
                 )
-                _msg = f"No response loaded for observation key: {key}"
-                if not response:
-                    raise ResponseError(_msg)
-            except KeyError as e:
-                raise ResponseError(_msg) from e
-            ds = obs.merge(
-                response,
-                join="left",
-            )
-            data = np.vstack(
-                [
-                    ds.observations.values.ravel(),
-                    ds["std"].values.ravel(),
-                    ds["values"].values.reshape(len(ds.realization), -1),
-                ]
-            )
-
-            if "time" in ds.coords:
-                ds = ds.rename(time="key_index")
-                ds = ds.assign_coords({"name": [key]})
-
-                data_index = []
-                for observation_date in obs.time.values:
-                    if observation_date in response.indexes["time"]:
-                        data_index.append(
-                            response.indexes["time"].get_loc(observation_date)
-                        )
-                    else:
-                        data_index.append(np.nan)
-
-                index_vals = ds.observations.coords.to_index(
-                    ["name", "key_index"]
-                ).values
-
             else:
-                ds = ds.expand_dims({"name": [key]})
-                ds = ds.rename(index="key_index")
-                data_index = ds.key_index.values
-                index_vals = ds.observations.coords.to_index().droplevel("report_step")
+                joined = observations_for_type.join(
+                    pivoted,
+                    how="left",
+                    on=["response_key", *response_cls.primary_key],
+                )
 
-            index_vals = [
-                (name, data_i, i) for i, (name, data_i) in zip(data_index, index_vals)
-            ]
-            measured_data.append(
-                pd.DataFrame(
-                    data,
-                    index=("OBS", "STD") + tuple(ds.realization.values),
-                    columns=pd.MultiIndex.from_tuples(
-                        index_vals,
-                        names=[None, "key_index", "data_index"],
-                    ),
+            joined = joined.sort(by="observation_key").with_columns(
+                polars.concat_str(response_cls.primary_key, separator=", ").alias(
+                    "key_index"
                 )
             )
 
-        return pd.concat(measured_data, axis=1)
+            # Put key_index column 1st
+            joined = joined[["key_index", *joined.columns[:-1]]]
+            joined = joined.drop(*response_cls.primary_key)
 
-    def filter_on_column_index(
-        self,
-        obs_keys: List[str],
-        index_lists: Optional[List[List[Union[int, datetime]]]] = None,
-    ) -> pd.DataFrame:
-        if index_lists is None or all(index_list is None for index_list in index_lists):
-            return self.data
-        names = self.data.columns.get_level_values(0)
-        data_index = self.data.columns.get_level_values("key_index")
-        cond = self._create_condition(names, data_index, obs_keys, index_lists)
-        return self.data.iloc[:, cond]
+            if not joined.is_empty():
+                dfs.append(joined)
 
-    @staticmethod
-    def _create_condition(
-        names: pd.Index,
-        data_index: pd.Index,
-        obs_keys: List[str],
-        index_lists: List[List[Union[int, datetime]]],
-    ) -> "npt.NDArray[np.bool_]":
-        conditions = []
-        for obs_key, index_list in zip(obs_keys, index_lists):
-            if index_list is not None:
-                index_cond = [data_index == index for index in index_list]
-                index_cond = np.logical_or.reduce(index_cond)
-                conditions.append(np.logical_and(index_cond, (names == obs_key)))
-        return np.logical_or.reduce(conditions)
+        df = polars.concat(dfs)
+        df = df.rename(
+            {
+                "observations": "OBS",
+                "std": "STD",
+            }
+        )
+
+        pddf = df.to_pandas()[
+            [
+                "observation_key",
+                "key_index",
+                "OBS",
+                "STD",
+                *df.columns[5:],
+            ]
+        ]
+
+        # Pandas differentiates vs int and str keys.
+        # Legacy-wise we use int keys for realizations
+        pddf.rename(
+            columns={str(k): int(k) for k in range(ensemble.ensemble_size)},
+            inplace=True,
+        )
+
+        pddf = pddf.set_index(["observation_key", "key_index"]).transpose()
+
+        return pddf
 
 
 class ObservationError(Exception):

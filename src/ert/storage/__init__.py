@@ -28,16 +28,25 @@ EnsembleReader = LocalEnsemble
 EnsembleAccessor = LocalEnsemble
 
 
+class ErtStorageException(Exception):
+    pass
+
+
 def open_storage(
     path: Union[str, os.PathLike[str]], mode: Union[ModeLiteral, Mode] = "r"
 ) -> Storage:
-    return LocalStorage(Path(path), Mode(mode))
+    try:
+        return LocalStorage(Path(path), Mode(mode))
+    except Exception as err:
+        raise ErtStorageException(
+            f"Failed to open storage: {path} with error: {err}"
+        ) from err
 
 
 __all__ = [
     "Ensemble",
     "Experiment",
-    "Storage",
     "Mode",
+    "Storage",
     "open_storage",
 ]

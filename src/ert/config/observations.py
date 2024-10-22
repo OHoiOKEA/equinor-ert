@@ -1,9 +1,11 @@
 import os
+from dataclasses import dataclass
 from datetime import datetime, timedelta
+from pathlib import Path
 from typing import TYPE_CHECKING, Dict, Iterator, List, Optional, Tuple, Union
 
 import numpy as np
-import xarray as xr
+import polars
 
 from ert.validation import rangestring_to_list
 
@@ -32,16 +34,37 @@ DEFAULT_TIME_DELTA = timedelta(seconds=30)
 
 def history_key(key: str) -> str:
     keyword, *rest = key.split(":")
-    return ":".join([keyword + "H"] + rest)
+    return ":".join([keyword + "H", *rest])
 
 
+@dataclass
 class EnkfObs:
-    def __init__(self, obs_vectors: Dict[str, ObsVector], obs_time: List[datetime]):
-        self.obs_vectors = obs_vectors
-        self.obs_time = obs_time
-        self.datasets: Dict[str, xr.Dataset] = {
-            name: obs.to_dataset([]) for name, obs in sorted(self.obs_vectors.items())
-        }
+    obs_vectors: Dict[str, ObsVector]
+    obs_time: List[datetime]
+
+    def __post_init__(self) -> None:
+        grouped: Dict[str, List[polars.DataFrame]] = {}
+        for vec in self.obs_vectors.values():
+            if vec.observation_type == EnkfObservationImplementationType.SUMMARY_OBS:
+                if "summary" not in grouped:
+                    grouped["summary"] = []
+
+                grouped["summary"].append(vec.to_dataset([]))
+
+            elif vec.observation_type == EnkfObservationImplementationType.GEN_OBS:
+                if "gen_data" not in grouped:
+                    grouped["gen_data"] = []
+
+                grouped["gen_data"].append(vec.to_dataset([]))
+
+        datasets: Dict[str, polars.DataFrame] = {}
+
+        for name, dfs in grouped.items():
+            non_empty_dfs = [df for df in dfs if not df.is_empty()]
+            if len(non_empty_dfs) > 0:
+                datasets[name] = polars.concat(non_empty_dfs).sort("observation_key")
+
+        self.datasets = datasets
 
     def __len__(self) -> int:
         return len(self.obs_vectors)
@@ -58,8 +81,12 @@ class EnkfObs:
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, EnkfObs):
             return False
+
+        if self.datasets.keys() != other.datasets.keys():
+            return False
+
         # Datasets contains the full observations, so if they are equal, everything is
-        return self.datasets == other.datasets
+        return all(self.datasets[k].equals(other.datasets[k]) for k in self.datasets)
 
     def getTypedKeylist(
         self, observation_implementation_type: EnkfObservationImplementationType
@@ -378,12 +405,11 @@ class EnkfObs:
         time_map: List[datetime],
         has_refcase: bool,
     ) -> Dict[str, ObsVector]:
-        state_kw = general_observation.data
-        if not ensemble_config.hasNodeGenData(state_kw):
+        response_key = general_observation.data
+        if not ensemble_config.hasNodeGenData(response_key):
             ConfigWarning.warn(
-                f"Ensemble key {state_kw} does not exist"
-                f" - ignoring observation {obs_key}",
-                state_kw,
+                f"No GEN_DATA with name: {response_key} found - ignoring observation {obs_key}",
+                response_key,
             )
             return {}
 
@@ -399,28 +425,26 @@ class EnkfObs:
                 general_observation, obs_key, time_map, has_refcase
             )
 
-        config_node = ensemble_config.getNode(state_kw)
-        if not isinstance(config_node, GenDataConfig):
+        gen_data_config = ensemble_config.response_configs.get("gen_data", None)
+        assert isinstance(gen_data_config, GenDataConfig)
+        if response_key not in gen_data_config.keys:
             ConfigWarning.warn(
-                f"{state_kw} has implementation type:"
-                f"'{type(config_node)}' - "
-                f"expected:'GEN_DATA' in observation:{obs_key}."
-                "The observation will be ignored",
-                obs_key,
+                f"Observation {obs_key} on GEN_DATA key {response_key}, but GEN_DATA"
+                f" key {response_key} is non-existing"
             )
             return {}
 
-        response_report_steps = (
-            [] if config_node.report_steps is None else config_node.report_steps
-        )
+        _, report_steps = gen_data_config.get_args_for_key(response_key)
+
+        response_report_steps = [] if report_steps is None else report_steps
         if (restart is None and response_report_steps) or (
             restart is not None and restart not in response_report_steps
         ):
             ConfigWarning.warn(
-                f"The GEN_DATA node:{state_kw} is not configured to load from"
+                f"The GEN_DATA node:{response_key} is not configured to load from"
                 f" report step:{restart} for the observation:{obs_key}"
                 " - The observation will be ignored",
-                state_kw,
+                response_key,
             )
             return {}
 
@@ -438,7 +462,7 @@ class EnkfObs:
                 obs_key: ObsVector(
                     EnkfObservationImplementationType.GEN_OBS,
                     obs_key,
-                    config_node.name,
+                    response_key,
                     {
                         restart: cls._create_gen_obs(
                             (
@@ -461,3 +485,7 @@ class EnkfObs:
 
     def __repr__(self) -> str:
         return f"EnkfObs({self.obs_vectors}, {self.obs_time})"
+
+    def write_to_folder(self, dest: Path) -> None:
+        for name, dataset in self.datasets.items():
+            dataset.write_parquet(dest / name)

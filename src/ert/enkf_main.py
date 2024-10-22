@@ -6,11 +6,18 @@ import os
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import TYPE_CHECKING, Dict, Iterable, List, Mapping, Optional, Union
+from typing import TYPE_CHECKING, Any, Dict, Iterable, List, Mapping, Optional, Union
 
+import orjson
 from numpy.random import SeedSequence
 
-from .config import ParameterConfig
+from .config import (
+    ExtParamConfig,
+    Field,
+    GenKwConfig,
+    ParameterConfig,
+    SurfaceConfig,
+)
 from .run_arg import RunArg
 from .runpaths import Runpaths
 
@@ -105,6 +112,27 @@ def _generate_parameter_files(
     _value_export_json(run_path, export_base_name, exports)
 
 
+def _manifest_to_json(ensemble: Ensemble, iens: int = 0) -> Dict[str, Any]:
+    manifest = {}
+    # Add expected parameter files to manifest
+    for param_config in ensemble.experiment.parameter_configuration.values():
+        assert isinstance(
+            param_config,
+            (ExtParamConfig, GenKwConfig, Field, SurfaceConfig),
+        )
+        if param_config.forward_init and param_config.forward_init_file is not None:
+            file_path = param_config.forward_init_file.replace("%d", str(iens))
+            manifest[param_config.name] = file_path
+        elif param_config.output_file is not None and not param_config.forward_init:
+            manifest[param_config.name] = str(param_config.output_file)
+    # Add expected response files to manifest
+    for respons_config in ensemble.experiment.response_configuration.values():
+        for input_file in respons_config.expected_input_files:
+            manifest[f"{respons_config.response_type}_{input_file}"] = input_file
+
+    return manifest
+
+
 def _seed_sequence(seed: Optional[int]) -> int:
     # Set up RNG
     if seed is None:
@@ -157,7 +185,10 @@ def create_run_path(
     ensemble: Ensemble,
     ert_config: ErtConfig,
     runpaths: Runpaths,
+    context_env: Optional[Dict[str, str]] = None,
 ) -> None:
+    if context_env is None:
+        context_env = {}
     t = time.perf_counter()
     substitution_list = ert_config.substitution_list
     runpaths.set_ert_ensemble(ensemble.name)
@@ -201,18 +232,17 @@ def create_run_path(
 
             path = run_path / "jobs.json"
             _backup_if_existing(path)
-            with open(run_path / "jobs.json", mode="w", encoding="utf-8") as fptr:
-                forward_model_output = ert_config.forward_model_data_to_json(
-                    run_arg.run_id,
-                    run_arg.iens,
-                    ensemble.iteration,
+            forward_model_output = ert_config.forward_model_data_to_json(
+                run_arg.run_id, run_arg.iens, ensemble.iteration, context_env
+            )
+            with open(run_path / "jobs.json", mode="wb") as fptr:
+                fptr.write(
+                    orjson.dumps(forward_model_output, option=orjson.OPT_NON_STR_KEYS)
                 )
-
-                json.dump(forward_model_output, fptr)
             # Write MANIFEST file to runpath use to avoid NFS sync issues
-            with open(run_path / "manifest.json", mode="w", encoding="utf-8") as fptr:
-                data = ert_config.manifest_to_json(run_arg.iens, run_arg.itr)
-                json.dump(data, fptr)
+            data = _manifest_to_json(ensemble, run_arg.iens)
+            with open(run_path / "manifest.json", mode="wb") as fptr:
+                fptr.write(orjson.dumps(data, option=orjson.OPT_NON_STR_KEYS))
 
     runpaths.write_runpath_list(
         [ensemble.iteration], [real.iens for real in run_args if real.active]

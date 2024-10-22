@@ -1,6 +1,6 @@
 import asyncio
+import datetime
 import logging
-import pickle
 import traceback
 from contextlib import asynccontextmanager, contextmanager
 from http import HTTPStatus
@@ -14,38 +14,44 @@ from typing import (
     Iterable,
     List,
     Optional,
+    Sequence,
     Set,
     Tuple,
+    Type,
+    Union,
+    get_args,
 )
 
-import cloudevents.exceptions
-import cloudpickle
 import websockets
-from cloudevents.conversion import to_json
-from cloudevents.http import CloudEvent, from_json
+from pydantic_core._pydantic_core import ValidationError
 from websockets.datastructures import Headers, HeadersLike
 from websockets.exceptions import ConnectionClosedError
-from websockets.legacy.server import WebSocketServerProtocol
+from websockets.server import WebSocketServerProtocol
 
+from _ert.events import (
+    EESnapshot,
+    EESnapshotUpdate,
+    EETerminated,
+    EEUserCancel,
+    EEUserDone,
+    EnsembleCancelled,
+    EnsembleFailed,
+    EnsembleStarted,
+    EnsembleSucceeded,
+    Event,
+    FMEvent,
+    ForwardModelStepChecksum,
+    RealizationEvent,
+    dispatch_event_from_json,
+    event_from_json,
+    event_to_json,
+)
 from ert.ensemble_evaluator import identifiers as ids
-from ert.serialization import evaluator_marshaller, evaluator_unmarshaller
 
+from ._ensemble import FMStepSnapshot
 from ._ensemble import LegacyEnsemble as Ensemble
 from .config import EvaluatorServerConfig
-from .identifiers import (
-    EVGROUP_FM_ALL,
-    EVTYPE_EE_SNAPSHOT,
-    EVTYPE_EE_SNAPSHOT_UPDATE,
-    EVTYPE_EE_TERMINATED,
-    EVTYPE_EE_USER_CANCEL,
-    EVTYPE_EE_USER_DONE,
-    EVTYPE_ENSEMBLE_CANCELLED,
-    EVTYPE_ENSEMBLE_FAILED,
-    EVTYPE_ENSEMBLE_STARTED,
-    EVTYPE_ENSEMBLE_SUCCEEDED,
-    EVTYPE_FORWARD_MODEL_CHECKSUM,
-)
-from .snapshot import Snapshot
+from .snapshot import EnsembleSnapshot
 from .state import (
     ENSEMBLE_STATE_CANCELLED,
     ENSEMBLE_STATE_FAILED,
@@ -54,7 +60,7 @@ from .state import (
 
 logger = logging.getLogger(__name__)
 
-EVENT_HANDLER = Callable[[List[CloudEvent]], Awaitable[None]]
+EVENT_HANDLER = Callable[[List[Event]], Awaitable[None]]
 
 
 class EnsembleEvaluator:
@@ -67,11 +73,9 @@ class EnsembleEvaluator:
         self._clients: Set[WebSocketServerProtocol] = set()
         self._dispatchers_connected: asyncio.Queue[None] = asyncio.Queue()
 
-        self._events: asyncio.Queue[CloudEvent] = asyncio.Queue()
-        self._messages_to_send: asyncio.Queue[str] = asyncio.Queue()
+        self._events: asyncio.Queue[Event] = asyncio.Queue()
+        self._events_to_send: asyncio.Queue[Event] = asyncio.Queue()
         self._manifest_queue: asyncio.Queue[Any] = asyncio.Queue()
-
-        self._result = None
 
         self._ee_tasks: List[asyncio.Task[None]] = []
         self._server_started: asyncio.Event = asyncio.Event()
@@ -79,32 +83,31 @@ class EnsembleEvaluator:
 
         # batching section
         self._batch_processing_queue: asyncio.Queue[
-            List[Tuple[EVENT_HANDLER, CloudEvent]]
+            List[Tuple[EVENT_HANDLER, Event]]
         ] = asyncio.Queue()
         self._max_batch_size: int = 500
         self._batching_interval: int = 2
+        self._complete_batch: asyncio.Event = asyncio.Event()
 
     async def _publisher(self) -> None:
         while True:
-            msg = await self._messages_to_send.get()
+            event = await self._events_to_send.get()
             await asyncio.gather(
-                *[client.send(msg) for client in self._clients],
+                *[client.send(event_to_json(event)) for client in self._clients],
                 return_exceptions=True,
             )
-            self._messages_to_send.task_done()
+            self._events_to_send.task_done()
 
-    async def _append_message(self, snapshot_update_event: Snapshot) -> None:
-        message = self._create_cloud_message(
-            EVTYPE_EE_SNAPSHOT_UPDATE,
-            snapshot_update_event.to_dict(),
+    async def _append_message(self, snapshot_update_event: EnsembleSnapshot) -> None:
+        event = EESnapshotUpdate(
+            snapshot=snapshot_update_event.to_dict(), ensemble=self._ensemble.id_
         )
-        if message:
-            await self._messages_to_send.put(message)
+        await self._events_to_send.put(event)
 
     async def _process_event_buffer(self) -> None:
         while True:
             batch = await self._batch_processing_queue.get()
-            function_to_events_map: Dict[EVENT_HANDLER, List[CloudEvent]] = {}
+            function_to_events_map: Dict[EVENT_HANDLER, List[Event]] = {}
             for func, event in batch:
                 if func not in function_to_events_map:
                     function_to_events_map[func] = []
@@ -116,62 +119,75 @@ class EnsembleEvaluator:
             self._batch_processing_queue.task_done()
 
     async def _batch_events_into_buffer(self) -> None:
-        event_handler: Dict[str, EVENT_HANDLER] = {}
+        event_handler: Dict[Type[Event], EVENT_HANDLER] = {}
 
-        def set_event_handler(event_types: Set[str], function: Any) -> None:
+        def set_event_handler(event_types: Set[Type[Event]], func: Any) -> None:
             for event_type in event_types:
-                event_handler[event_type] = function
+                event_handler[event_type] = func
 
-        set_event_handler(EVGROUP_FM_ALL, self._fm_handler)
-        set_event_handler({EVTYPE_ENSEMBLE_STARTED}, self._started_handler)
-        set_event_handler({EVTYPE_ENSEMBLE_SUCCEEDED}, self._stopped_handler)
-        set_event_handler({EVTYPE_ENSEMBLE_CANCELLED}, self._cancelled_handler)
-        set_event_handler({EVTYPE_ENSEMBLE_FAILED}, self._failed_handler)
+        set_event_handler(
+            set(get_args(Union[FMEvent, RealizationEvent])), self._fm_handler
+        )
+        set_event_handler({EnsembleStarted}, self._started_handler)
+        set_event_handler({EnsembleSucceeded}, self._stopped_handler)
+        set_event_handler({EnsembleCancelled}, self._cancelled_handler)
+        set_event_handler({EnsembleFailed}, self._failed_handler)
 
         while True:
-            batch: List[Tuple[EVENT_HANDLER, CloudEvent]] = []
+            batch: List[Tuple[EVENT_HANDLER, Event]] = []
             start_time = asyncio.get_running_loop().time()
             while (
                 len(batch) < self._max_batch_size
                 and asyncio.get_running_loop().time() - start_time
                 < self._batching_interval
             ):
+                self._complete_batch.clear()
                 try:
                     event = await asyncio.wait_for(self._events.get(), timeout=0.1)
-                    function = event_handler[event["type"]]
+                    function = event_handler[type(event)]
                     batch.append((function, event))
                     self._events.task_done()
                 except asyncio.TimeoutError:
                     continue
+            self._complete_batch.set()
             await self._batch_processing_queue.put(batch)
 
-    async def _fm_handler(self, events: List[CloudEvent]) -> None:
+    async def _fm_handler(
+        self, events: Sequence[Union[FMEvent, RealizationEvent]]
+    ) -> None:
         await self._append_message(self.ensemble.update_snapshot(events))
 
-    async def _started_handler(self, events: List[CloudEvent]) -> None:
+    async def _started_handler(self, events: Sequence[EnsembleStarted]) -> None:
         if self.ensemble.status != ENSEMBLE_STATE_FAILED:
             await self._append_message(self.ensemble.update_snapshot(events))
 
-    async def _stopped_handler(self, events: List[CloudEvent]) -> None:
+    async def _stopped_handler(self, events: Sequence[EnsembleSucceeded]) -> None:
         if self.ensemble.status == ENSEMBLE_STATE_FAILED:
             return
 
-        self._result = events[0].data  # normal termination
         max_memory_usage = -1
-        for job in self.ensemble.snapshot.get_all_forward_models().values():
-            memory_usage = job.get(ids.MAX_MEMORY_USAGE) or "-1"
+        for (real_id, _), fm_step in self.ensemble.snapshot.get_all_fm_steps().items():
+            # Infer max memory usage
+            memory_usage = fm_step.get(ids.MAX_MEMORY_USAGE) or "-1"
             max_memory_usage = max(int(memory_usage), max_memory_usage)
+
+            if cpu_message := detect_overspent_cpu(
+                self.ensemble.reals[int(real_id)].num_cpu, real_id, fm_step
+            ):
+                logger.warning(cpu_message)
+
         logger.info(
             f"Ensemble ran with maximum memory usage for a single realization job: {max_memory_usage}"
         )
+
         await self._append_message(self.ensemble.update_snapshot(events))
 
-    async def _cancelled_handler(self, events: List[CloudEvent]) -> None:
+    async def _cancelled_handler(self, events: Sequence[EnsembleCancelled]) -> None:
         if self.ensemble.status != ENSEMBLE_STATE_FAILED:
             await self._append_message(self.ensemble.update_snapshot(events))
             self.stop()
 
-    async def _failed_handler(self, events: List[CloudEvent]) -> None:
+    async def _failed_handler(self, events: Sequence[EnsembleFailed]) -> None:
         if self.ensemble.status in (
             ENSEMBLE_STATE_STOPPED,
             ENSEMBLE_STATE_CANCELLED,
@@ -182,44 +198,13 @@ class EnsembleEvaluator:
         # create a fake event because that's currently the only
         # api for setting state in the ensemble
         if len(events) == 0:
-            events = [self._create_cloud_event(EVTYPE_ENSEMBLE_FAILED)]
+            events = [EnsembleFailed(ensemble=self.ensemble.id_)]
         await self._append_message(self.ensemble.update_snapshot(events))
         self._signal_cancel()  # let ensemble know it should stop
 
     @property
     def ensemble(self) -> Ensemble:
         return self._ensemble
-
-    def _create_cloud_event(
-        self,
-        event_type: str,
-        data: Optional[Dict[str, Any]] = None,
-        extra_attrs: Optional[Dict[str, Any]] = None,
-    ) -> CloudEvent:
-        """Returns a CloudEvent with the given properties"""
-        if extra_attrs is None:
-            extra_attrs = {}
-
-        attrs = {
-            "type": event_type,
-            "source": f"/ert/ensemble/{self.ensemble.id_}",
-        }
-        attrs.update(extra_attrs)
-        return CloudEvent(
-            attrs,
-            data,
-        )
-
-    def _create_cloud_message(
-        self,
-        event_type: str,
-        data: Optional[Dict[str, Any]] = None,
-        extra_attrs: Optional[Dict[str, Any]] = None,
-        data_marshaller: Optional[Callable[[Any], Any]] = evaluator_marshaller,
-    ) -> str:
-        """Creates the CloudEvent and returns the serialized json-string"""
-        event = self._create_cloud_event(event_type, data, extra_attrs)
-        return to_json(event, data_marshaller=data_marshaller).decode()
 
     @contextmanager
     def store_client(
@@ -232,21 +217,19 @@ class EnsembleEvaluator:
     async def handle_client(self, websocket: WebSocketServerProtocol) -> None:
         with self.store_client(websocket):
             current_snapshot_dict = self._ensemble.snapshot.to_dict()
-            event = self._create_cloud_message(
-                EVTYPE_EE_SNAPSHOT, current_snapshot_dict
+            event: Event = EESnapshot(
+                snapshot=current_snapshot_dict, ensemble=self.ensemble.id_
             )
-            await websocket.send(event)
+            await websocket.send(event_to_json(event))
 
-            async for message in websocket:
-                client_event = from_json(
-                    message, data_unmarshaller=evaluator_unmarshaller
-                )
-                logger.debug(f"got message from client: {client_event}")
-                if client_event["type"] == EVTYPE_EE_USER_CANCEL:
+            async for raw_msg in websocket:
+                event = event_from_json(raw_msg)
+                logger.debug(f"got message from client: {event}")
+                if type(event) is EEUserCancel:
                     logger.debug(f"Client {websocket.remote_address} asked to cancel.")
                     self._signal_cancel()
 
-                elif client_event["type"] == EVTYPE_EE_USER_DONE:
+                elif type(event) is EEUserDone:
                     logger.debug(f"Client {websocket.remote_address} signalled done.")
                     self.stop()
 
@@ -260,28 +243,21 @@ class EnsembleEvaluator:
     async def handle_dispatch(self, websocket: WebSocketServerProtocol) -> None:
         async with self.count_dispatcher():
             try:
-                async for msg in websocket:
+                async for raw_msg in websocket:
                     try:
-                        event = from_json(msg, data_unmarshaller=evaluator_unmarshaller)
-                    except cloudevents.exceptions.DataUnmarshallerError:
-                        event = from_json(msg, data_unmarshaller=pickle.loads)
-                    if self._get_ens_id(event["source"]) != self.ensemble.id_:
-                        logger.info(
-                            "Got event from evaluator "
-                            f"{self._get_ens_id(event['source'])} "
-                            f"with source {event['source']}, "
-                            f"ignoring since I am {self.ensemble.id_}"
-                        )
-                        continue
-                    try:
-                        if event["type"] == EVTYPE_FORWARD_MODEL_CHECKSUM:
+                        event = dispatch_event_from_json(raw_msg)
+                        if event.ensemble != self.ensemble.id_:
+                            logger.info(
+                                "Got event from evaluator "
+                                f"{event.ensemble}. "
+                                f"Ignoring since I am {self.ensemble.id_}"
+                            )
+                            continue
+                        if type(event) is ForwardModelStepChecksum:
                             await self.forward_checksum(event)
                         else:
                             await self._events.put(event)
-                    except BaseException as ex:
-                        # Exceptions include asyncio.InvalidStateError, and
-                        # anything that self._*_handler() can raise (updates
-                        # snapshots)
+                    except ValidationError as ex:
                         logger.warning(
                             "cannot handle event - "
                             f"closing connection to dispatcher: {ex}"
@@ -291,10 +267,7 @@ class EnsembleEvaluator:
                         )
                         return
 
-                    if event["type"] in [
-                        EVTYPE_ENSEMBLE_SUCCEEDED,
-                        EVTYPE_ENSEMBLE_FAILED,
-                    ]:
+                    if type(event) in [EnsembleSucceeded, EnsembleFailed]:
                         return
             except ConnectionClosedError as connection_error:
                 # Dispatchers may close the connection abruptly in the case of
@@ -302,26 +275,16 @@ class EnsembleEvaluator:
                 #  * job being killed due to MAX_RUNTIME
                 #  * job being killed by user
                 logger.error(
-                    f"a dispatcher abruptly closed a websocket: {str(connection_error)}"
+                    f"a dispatcher abruptly closed a websocket: {connection_error!s}"
                 )
 
-    async def forward_checksum(self, event: CloudEvent) -> None:
-        forward_event = CloudEvent(
-            {
-                "type": EVTYPE_FORWARD_MODEL_CHECKSUM,
-                "source": f"/ert/ensemble/{self.ensemble.id_}",
-            },
-            {event["run_path"]: event.data},
-        )
+    async def forward_checksum(self, event: Event) -> None:
         # clients still need to receive events via ws
-        await self._messages_to_send.put(
-            to_json(forward_event, data_marshaller=evaluator_marshaller).decode()
-        )
-        await self._manifest_queue.put(forward_event)
+        await self._events_to_send.put(event)
+        await self._manifest_queue.put(event)
 
-    async def connection_handler(
-        self, websocket: WebSocketServerProtocol, path: str
-    ) -> None:
+    async def connection_handler(self, websocket: WebSocketServerProtocol) -> None:
+        path = websocket.path
         elements = path.split("/")
         if elements[1] == "client":
             await self.handle_client(websocket)
@@ -350,9 +313,10 @@ class EnsembleEvaluator:
             ping_timeout=60,
             ping_interval=60,
             close_timeout=60,
-        ):
+        ) as server:
             self._server_started.set()
             await self._server_done.wait()
+            server.close(close_connections=False)
             if self._dispatchers_connected is not None:
                 logger.debug(
                     f"Got done signal. {self._dispatchers_connected.qsize()} "
@@ -367,24 +331,14 @@ class EnsembleEvaluator:
             else:
                 logger.debug("Got done signal. No dispatchers connected")
 
-            terminated_attrs: Dict[str, str] = {}
-            terminated_data = None
-            if self._result:
-                terminated_attrs["datacontenttype"] = "application/octet-stream"
-                terminated_data = cloudpickle.dumps(self._result)
-
             logger.debug("Sending termination-message to clients...")
 
-            message = self._create_cloud_message(
-                EVTYPE_EE_TERMINATED,
-                data=terminated_data,
-                extra_attrs=terminated_attrs,
-                data_marshaller=cloudpickle.dumps,
-            )
-            await self._messages_to_send.put(message)
             await self._events.join()
+            await self._complete_batch.wait()
             await self._batch_processing_queue.join()
-            await self._messages_to_send.join()
+            event = EETerminated(ensemble=self._ensemble.id_)
+            await self._events_to_send.put(event)
+            await self._events_to_send.join()
         logger.debug("Async server exiting.")
 
     def stop(self) -> None:
@@ -486,3 +440,24 @@ class EnsembleEvaluator:
     def _get_ens_id(source: str) -> str:
         # the ens_id will be found at /ert/ensemble/ens_id/...
         return source.split("/")[3]
+
+
+def detect_overspent_cpu(num_cpu: int, real_id: str, fm_step: FMStepSnapshot) -> str:
+    """Produces a message warning about misconfiguration of NUM_CPU if
+    so is detected. Returns an empty string if everything is ok."""
+    now = datetime.datetime.now()
+    duration = (
+        (fm_step.get(ids.END_TIME) or now) - (fm_step.get(ids.START_TIME) or now)
+    ).total_seconds()
+    if duration <= 0:
+        return ""
+    cpu_seconds = fm_step.get(ids.CPU_SECONDS) or 0.0
+    parallelization_obtained = cpu_seconds / duration
+    if parallelization_obtained > num_cpu:
+        return (
+            f"Misconfigured NUM_CPU, forward model step '{fm_step.get(ids.NAME)}' for "
+            f"realization {real_id} spent {cpu_seconds} cpu seconds "
+            f"with wall clock duration {duration:.1f} seconds, "
+            f"a factor of {parallelization_obtained:.2f}, while NUM_CPU was {num_cpu}."
+        )
+    return ""

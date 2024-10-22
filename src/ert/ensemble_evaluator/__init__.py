@@ -1,25 +1,23 @@
-from ._ensemble import ForwardModelStep, Realization
 from ._ensemble import LegacyEnsemble as Ensemble
+from ._ensemble import Realization
 from ._wait_for_evaluator import wait_for_evaluator
 from .config import EvaluatorServerConfig
 from .evaluator import EnsembleEvaluator
 from .event import EndEvent, FullSnapshotEvent, SnapshotUpdateEvent
 from .monitor import Monitor
-from .snapshot import ForwardModel, RealizationSnapshot, Snapshot, SnapshotDict
+from .snapshot import EnsembleSnapshot, FMStepSnapshot, RealizationSnapshot
 
-__all__ = (
+__all__ = [
     "EndEvent",
     "Ensemble",
     "EnsembleEvaluator",
+    "EnsembleSnapshot",
     "EvaluatorServerConfig",
-    "ForwardModelStep",
+    "FMStepSnapshot",
     "FullSnapshotEvent",
     "Monitor",
-    "Snapshot",
+    "Realization",
+    "RealizationSnapshot",
     "SnapshotUpdateEvent",
     "wait_for_evaluator",
-    "RealizationSnapshot",
-    "SnapshotDict",
-    "ForwardModel",
-    "Realization",
-)
+]

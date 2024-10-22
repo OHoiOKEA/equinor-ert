@@ -18,7 +18,7 @@ from ert.ensemble_evaluator.state import REAL_STATE_TO_COLOR
 class ProgressWidget(QFrame):
     def __init__(self) -> None:
         QWidget.__init__(self)
-        self.setFixedHeight(60)
+        self.setFixedHeight(70)
 
         self._vertical_layout = QVBoxLayout(self)
         self._vertical_layout.setContentsMargins(0, 0, 0, 0)
@@ -28,6 +28,9 @@ class ProgressWidget(QFrame):
         self._waiting_progress_bar = QProgressBar(self)
         self._waiting_progress_bar.setRange(0, 0)
         self._waiting_progress_bar.setFixedHeight(30)
+        waiting_progress_bar_size_policy = self._waiting_progress_bar.sizePolicy()
+        waiting_progress_bar_size_policy.setRetainSizeWhenHidden(True)
+        self._waiting_progress_bar.setSizePolicy(waiting_progress_bar_size_policy)
         self._vertical_layout.addWidget(self._waiting_progress_bar)
 
         self._progress_frame = QFrame(self)
@@ -52,6 +55,9 @@ class ProgressWidget(QFrame):
 
         for state, color in REAL_STATE_TO_COLOR.items():
             label = QLabel(self)
+            label_size_policy = label.sizePolicy()
+            label_size_policy.setRetainSizeWhenHidden(True)
+            label.setSizePolicy(label_size_policy)
             label.setVisible(False)
             label.setObjectName(f"progress_{state}")
             label.setStyleSheet(f"background-color : {QColor(*color).name()}")
@@ -74,7 +80,6 @@ class ProgressWidget(QFrame):
     def repaint_components(self) -> None:
         if self._realization_count > 0:
             full_width = self.width()
-            self._waiting_progress_bar.setVisible(False)
 
             for state, label in self._progress_label_map.items():
                 label.setVisible(True)
@@ -87,9 +92,19 @@ class ProgressWidget(QFrame):
                     f" {state} ({self._status.get(state,0)}/{self._realization_count})"
                 )
 
+    def stop_waiting_progress_bar(self) -> None:
+        self._waiting_progress_bar.setVisible(False)
+
+    def start_waiting_progress_bar(self) -> None:
+        self._waiting_progress_bar.setVisible(True)
+
     def update_progress(self, status: dict[str, int], realization_count: int) -> None:
         self._status = status
         self._realization_count = realization_count
+        if status.get("Finished", 0) < self._realization_count:
+            self.start_waiting_progress_bar()
+        else:
+            self.stop_waiting_progress_bar()
         self.repaint_components()
 
     def resizeEvent(self, a0: Any, event: Any = None) -> None:

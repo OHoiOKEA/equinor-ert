@@ -121,7 +121,7 @@ class ErtScript:
             arg_type = argument_types[index] if index < len(argument_types) else str
 
             if arg_value is not None:
-                arguments.append(arg_type(arg_value))  # type: ignore
+                arguments.append(arg_type(arg_value))
             else:
                 arguments.append(None)
         fixtures["workflow_args"] = arguments
@@ -158,7 +158,7 @@ class ErtScript:
             return uw.args[0]
         except Exception as e:
             full_trace = "".join(traceback.format_exception(*sys.exc_info()))
-            self.output_stack_trace(f"{str(e)}\n{full_trace}")
+            self.output_stack_trace(f"{e!s}\n{full_trace}")
             return None
         finally:
             self.cleanup()
