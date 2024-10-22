@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729597415497,
+  "lastUpdate": 1729597793819,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "031e586e0cbdbf5a7ed8838d4f650565ca56322e",
-          "message": "Remove irrelavant scheduler environment checkbox",
-          "timestamp": "2024-10-14T09:50:17+02:00",
-          "tree_id": "c198d98eea205417a676683cdeabce622d37a4d0",
-          "url": "https://github.com/equinor/ert/commit/031e586e0cbdbf5a7ed8838d4f650565ca56322e"
-        },
-        "date": 1728892329338,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19095333465924488,
-            "unit": "iter/sec",
-            "range": "stddev: 0.013038809775689945",
-            "extra": "mean: 5.236881575200004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02079041411306449",
             "extra": "mean: 5.117856880400007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "12ffdba9baa36707b83e67af9d8b72533010f7ab",
+          "message": "Remove duplicate eclbase",
+          "timestamp": "2024-10-22T13:48:10+02:00",
+          "tree_id": "3c376e4766eb1190fb62b7069a1097b437948a5b",
+          "url": "https://github.com/equinor/ert/commit/12ffdba9baa36707b83e67af9d8b72533010f7ab"
+        },
+        "date": 1729597793408,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19724796818871085,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0253880903021815",
+            "extra": "mean: 5.069760713800008 sec\nrounds: 5"
           }
         ]
       }
