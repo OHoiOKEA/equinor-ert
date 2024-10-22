@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729595082798,
+  "lastUpdate": 1729595744061,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "dad96eac337f33fcf51e190d5f72e37bda4f6ce9",
-          "message": "Give warning when memory usage is set in `LSF_RESOURCE`\n\nThis commit gives the user a deprecationwarning when trying to set\n`mem=...` in the `LSF_RESOURCE` resource string. This is preferred to be\nset in the new `REALIZATION_MEMORY` option.\n\nUsing `REALIZATION_MEMORY` over `LSF_RESOURCE`\n* Does not invalidate what we have set as LSF_RESOURCE through the site-config.\n* Better handling of memory units (i.e. better UX).\n* Makes Ert able to understand the parameter, to be able to compare with actual usage",
-          "timestamp": "2024-10-11T15:33:35+02:00",
-          "tree_id": "9a6eaf2c31251b06cd44be949160efb9f97e1db0",
-          "url": "https://github.com/equinor/ert/commit/dad96eac337f33fcf51e190d5f72e37bda4f6ce9"
-        },
-        "date": 1728653722062,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18924224453110722,
-            "unit": "iter/sec",
-            "range": "stddev: 0.07632587426322884",
-            "extra": "mean: 5.284232400000002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.032170723283778686",
             "extra": "mean: 5.132712957000007 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "e741d4bd5630808b64515d3b80eecf3fd5986ac6",
+          "message": "Use more realistic values in example in doc\n\nMin and max are applied after the output-transformation. For a permeability field this implies that\nhas some implications on what is a realistic value interval.",
+          "timestamp": "2024-10-22T13:13:56+02:00",
+          "tree_id": "fd0a56ece227de438f95cda7ee07f0b7eca96f6b",
+          "url": "https://github.com/equinor/ert/commit/e741d4bd5630808b64515d3b80eecf3fd5986ac6"
+        },
+        "date": 1729595743482,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19151760924554168,
+            "unit": "iter/sec",
+            "range": "stddev: 0.038190962221120194",
+            "extra": "mean: 5.22145198 sec\nrounds: 5"
           }
         ]
       }
