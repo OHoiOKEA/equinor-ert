@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729595744061,
+  "lastUpdate": 1729597415497,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "391a25f7c4ed259eb79f69074b2b9df2455ff046",
-          "message": "Add DesignMatrixPanel to show DataFrame parameters in a table\n\n- Button to show the parameters is shown when design_matrix is present\n- Add test for design matrix show parameters button",
-          "timestamp": "2024-10-11T15:40:36+02:00",
-          "tree_id": "1cf97d6b6495c24cfdb9721c9d2600df88f87431",
-          "url": "https://github.com/equinor/ert/commit/391a25f7c4ed259eb79f69074b2b9df2455ff046"
-        },
-        "date": 1728654143543,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18949425373996195,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05106073852734194",
-            "extra": "mean: 5.277204876999986 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.038190962221120194",
             "extra": "mean: 5.22145198 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "67e1ffced403c809c364f8d2d912b76a54b84afa",
+          "message": "Fix bug with time format for Slurms max_runtime\n\nErt provided the number of seconds as a float to Slurms sbatch command,\nwhich is wrong.  Add a helper function to format the timedelta properly.\n\nFloating point part is ignored by rounding down to nearest second.",
+          "timestamp": "2024-10-22T13:41:39+02:00",
+          "tree_id": "704ebec26ef7a440ca9d3ecbf928a251e64312db",
+          "url": "https://github.com/equinor/ert/commit/67e1ffced403c809c364f8d2d912b76a54b84afa"
+        },
+        "date": 1729597414510,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1953942877593406,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02079041411306449",
+            "extra": "mean: 5.117856880400007 sec\nrounds: 5"
           }
         ]
       }
