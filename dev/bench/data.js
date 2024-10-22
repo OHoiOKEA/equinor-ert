@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729594226635,
+  "lastUpdate": 1729595082798,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "ed4ba121c910324a1a08a659ee08dd01bdcc6371",
-          "message": "Test empty gen_kw in plotapi",
-          "timestamp": "2024-10-11T13:04:17+02:00",
-          "tree_id": "68a67ccf3e1efda4f74408a897a83ca4c3742eb8",
-          "url": "https://github.com/equinor/ert/commit/ed4ba121c910324a1a08a659ee08dd01bdcc6371"
-        },
-        "date": 1728644762277,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19709949762150197,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01765984201941471",
-            "extra": "mean: 5.073579649200019 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03552516271295124",
             "extra": "mean: 5.187338268600001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ac3dada674fa4abb76583f464bb653da3d7b8afd",
+          "message": "Fix read_from_file error propagation",
+          "timestamp": "2024-10-22T13:02:50+02:00",
+          "tree_id": "6d92349e6ef3b6d04cfeb066d337b2a8b8b6c7de",
+          "url": "https://github.com/equinor/ert/commit/ac3dada674fa4abb76583f464bb653da3d7b8afd"
+        },
+        "date": 1729595081855,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19482874035186354,
+            "unit": "iter/sec",
+            "range": "stddev: 0.032170723283778686",
+            "extra": "mean: 5.132712957000007 sec\nrounds: 5"
           }
         ]
       }
