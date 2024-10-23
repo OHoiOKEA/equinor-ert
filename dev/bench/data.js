@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729675674370,
+  "lastUpdate": 1729688107065,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "59d80e704899f099f914476b9d0c37940025a19c",
-          "message": "Remove unused # type: ignore",
-          "timestamp": "2024-10-14T15:55:27+02:00",
-          "tree_id": "b9402e510b3d7cdbfeacd7067ed1c014338a9546",
-          "url": "https://github.com/equinor/ert/commit/59d80e704899f099f914476b9d0c37940025a19c"
-        },
-        "date": 1728914234823,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19066058577353387,
-            "unit": "iter/sec",
-            "range": "stddev: 0.031755129353024776",
-            "extra": "mean: 5.244922520000003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022488232962698966",
             "extra": "mean: 5.083806914000002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "2c94d3998d836c4d8cdbaadd3bfcb69687824344",
+          "message": "Combine dicts instead of mutating user environment variables",
+          "timestamp": "2024-10-23T14:53:19+02:00",
+          "tree_id": "0f3d47dc6ea9003ae2e600fee01ab1643ddaee89",
+          "url": "https://github.com/equinor/ert/commit/2c94d3998d836c4d8cdbaadd3bfcb69687824344"
+        },
+        "date": 1729688106617,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1939357410306562,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05402769067520159",
+            "extra": "mean: 5.1563471214000005 sec\nrounds: 5"
           }
         ]
       }
