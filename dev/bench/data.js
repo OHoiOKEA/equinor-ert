@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729688107065,
+  "lastUpdate": 1729688423369,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ynk@equinor.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "distinct": true,
-          "id": "5e356b7d9edc27a37ff554ad91fe3985a4852c5e",
-          "message": "Use only one fm shell script list",
-          "timestamp": "2024-10-15T11:49:05+02:00",
-          "tree_id": "dddc3723cf5d5b2ac17652c4267e72426bca0ad2",
-          "url": "https://github.com/equinor/ert/commit/5e356b7d9edc27a37ff554ad91fe3985a4852c5e"
-        },
-        "date": 1728985852356,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19414764038280224,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028231534158079573",
-            "extra": "mean: 5.150719308400005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05402769067520159",
             "extra": "mean: 5.1563471214000005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "a867d6299a55d8c723f197270c4ac77478ffecc6",
+          "message": "Rename substitution_list",
+          "timestamp": "2024-10-23T14:58:38+02:00",
+          "tree_id": "83454b8da9b7fe21b93d27997c85a4c2b3e7dbcb",
+          "url": "https://github.com/equinor/ert/commit/a867d6299a55d8c723f197270c4ac77478ffecc6"
+        },
+        "date": 1729688422807,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19411612255803504,
+            "unit": "iter/sec",
+            "range": "stddev: 0.043336876267412866",
+            "extra": "mean: 5.1515556092 sec\nrounds: 5"
           }
         ]
       }
