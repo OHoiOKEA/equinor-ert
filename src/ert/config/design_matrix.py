@@ -29,10 +29,12 @@ class DesignMatrix:
     xls_filename: Path
     design_sheet: str
     default_sheet: str
-    num_realizations: Optional[int] = None
-    active_realizations: Optional[List[bool]] = None
-    design_matrix_df: Optional[pd.DataFrame] = None
-    parameter_configuration: Optional[Dict[str, ParameterConfig]] = None
+
+    def __post_init__(self) -> None:
+        self.num_realizations: Optional[int] = None
+        self.active_realizations: Optional[List[bool]] = None
+        self.design_matrix_df: Optional[pd.DataFrame] = None
+        self.parameter_configuration: Optional[Dict[str, ParameterConfig]] = None
 
     @classmethod
     def from_config_list(cls, config_list: List[str]) -> "DesignMatrix":
@@ -189,7 +191,7 @@ class DesignMatrix:
             errors.append("Duplicate parameter names found in design sheet")
         empties = [
             f"Realization {design_matrix.index[i]}, column {design_matrix.columns[j]}"
-            for i, j in zip(*np.where(pd.isna(design_matrix)))
+            for i, j in zip(*np.where(pd.isna(design_matrix)), strict=False)
         ]
         if len(empties) > 0:
             errors.append(f"Design matrix contains empty cells {empties}")
@@ -219,7 +221,7 @@ class DesignMatrix:
             raise ValueError("Defaults sheet must have at least two columns")
         empty_cells = [
             f"Row {default_df.index[i]}, column {default_df.columns[j]}"
-            for i, j in zip(*np.where(pd.isna(default_df)))
+            for i, j in zip(*np.where(pd.isna(default_df)), strict=False)
         ]
         if len(empty_cells) > 0:
             raise ValueError(f"Default sheet contains empty cells {empty_cells}")
