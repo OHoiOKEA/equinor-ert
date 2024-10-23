@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729598970621,
+  "lastUpdate": 1729672756351,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "f8d2f26ddfc93e72293bde35603b086085f2f21e",
-          "message": "Aggregate duplicate indices by mean in dark storage",
-          "timestamp": "2024-10-14T10:32:08+02:00",
-          "tree_id": "2646bafc04337985265f0c39b8b9c7191628db71",
-          "url": "https://github.com/equinor/ert/commit/f8d2f26ddfc93e72293bde35603b086085f2f21e"
-        },
-        "date": 1728894840546,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19084426924461123,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03560650566741526",
-            "extra": "mean: 5.239874395800001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06932245215309367",
             "extra": "mean: 5.154207465999997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "933b009a38778e6e3f9e2eda7bed3d4e7e26a05c",
+          "message": "Use pathlib and jobs are forward_models in test_shell",
+          "timestamp": "2024-10-23T10:37:26+02:00",
+          "tree_id": "416f3b64f5656bef53e7134685dad494c8695c9c",
+          "url": "https://github.com/equinor/ert/commit/933b009a38778e6e3f9e2eda7bed3d4e7e26a05c"
+        },
+        "date": 1729672755868,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1918227462557748,
+            "unit": "iter/sec",
+            "range": "stddev: 0.044983638261839966",
+            "extra": "mean: 5.213146092 sec\nrounds: 5"
           }
         ]
       }
