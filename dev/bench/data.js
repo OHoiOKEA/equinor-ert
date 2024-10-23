@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729672756351,
+  "lastUpdate": 1729675674370,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "3427fa998a04be987539ce0f8131e457d34c85eb",
-          "message": "Push out api and storage to fixture",
-          "timestamp": "2024-10-14T14:12:14+02:00",
-          "tree_id": "ba3dd4570ee9bd1994aa462d5e8d739153b681cb",
-          "url": "https://github.com/equinor/ert/commit/3427fa998a04be987539ce0f8131e457d34c85eb"
-        },
-        "date": 1728908043102,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19128317958313099,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03462373706735864",
-            "extra": "mean: 5.227851200399999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.044983638261839966",
             "extra": "mean: 5.213146092 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "sted@equinor.com",
+            "name": "StephanDeHoop",
+            "username": "StephanDeHoop"
+          },
+          "committer": {
+            "email": "stephan.dehoop@tno.nl",
+            "name": "Stephan de Hoop",
+            "username": "StephanDeHoop"
+          },
+          "distinct": true,
+          "id": "ca44e00531609e31384be0bf860cec5a53fe354f",
+          "message": "Index ert config dictionary with Ert ConfigKeys instead of hardcoded strings",
+          "timestamp": "2024-10-23T11:25:53+02:00",
+          "tree_id": "f77a78827ec63b655000afbb8a36f38987974016",
+          "url": "https://github.com/equinor/ert/commit/ca44e00531609e31384be0bf860cec5a53fe354f"
+        },
+        "date": 1729675673897,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19670298595451333,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022488232962698966",
+            "extra": "mean: 5.083806914000002 sec\nrounds: 5"
           }
         ]
       }
