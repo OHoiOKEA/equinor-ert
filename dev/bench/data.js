@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729759568579,
+  "lastUpdate": 1729771537125,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "10a02f64439fb1daf8bbeae020dc9b30e2c17885",
-          "message": "Remove remnant ext param in ert config dicts",
-          "timestamp": "2024-10-15T12:47:53+02:00",
-          "tree_id": "47ea7b97d85b6d5e2adc8c262c63ca1b42c5c59b",
-          "url": "https://github.com/equinor/ert/commit/10a02f64439fb1daf8bbeae020dc9b30e2c17885"
-        },
-        "date": 1728989384378,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19870741368675712,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0424418825080372",
-            "extra": "mean: 5.0325248638000115 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02264973751484774",
             "extra": "mean: 5.207868335400008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "64bbc7e9a6d8523c4f1fbf7b85cd62f4fdcdc8bc",
+          "message": "Explain why we read from excel twice (#8985)",
+          "timestamp": "2024-10-24T14:03:47+02:00",
+          "tree_id": "d26ba923e436139efc8f37cd19d7eb182f276f06",
+          "url": "https://github.com/equinor/ert/commit/64bbc7e9a6d8523c4f1fbf7b85cd62f4fdcdc8bc"
+        },
+        "date": 1729771536697,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1931968652160416,
+            "unit": "iter/sec",
+            "range": "stddev: 0.017827173489572357",
+            "extra": "mean: 5.176067421600004 sec\nrounds: 5"
           }
         ]
       }
