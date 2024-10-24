@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729771537125,
+  "lastUpdate": 1729781896427,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jholba@equinor.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "committer": {
-            "email": "jon.holba@gmail.com",
-            "name": "Jon Holba",
-            "username": "JHolba"
-          },
-          "distinct": true,
-          "id": "353edda58fe965573ecc59f84cd51c7511edfe4f",
-          "message": "Close Evaluator server for new connections earlier\n\nEnsemble evaluator accepted new connections while shutting down before\nthis commit",
-          "timestamp": "2024-10-15T16:07:53+02:00",
-          "tree_id": "40143c7b3bf527702e5a9028b074969c49e21917",
-          "url": "https://github.com/equinor/ert/commit/353edda58fe965573ecc59f84cd51c7511edfe4f"
-        },
-        "date": 1729001378947,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19282491738921737,
-            "unit": "iter/sec",
-            "range": "stddev: 0.016432556984370544",
-            "extra": "mean: 5.1860517485999935 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.017827173489572357",
             "extra": "mean: 5.176067421600004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e4445c29418280245c488b76f2eb77905d423a84",
+          "message": "Remove src/everest/suite.py\n\nMove all suite.py logic to runmodel",
+          "timestamp": "2024-10-24T14:56:25Z",
+          "tree_id": "75b46c3ac88798841e33472708127811bc86bd55",
+          "url": "https://github.com/equinor/ert/commit/e4445c29418280245c488b76f2eb77905d423a84"
+        },
+        "date": 1729781895492,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19011233607673825,
+            "unit": "iter/sec",
+            "range": "stddev: 0.05330463844037119",
+            "extra": "mean: 5.260047930799994 sec\nrounds: 5"
           }
         ]
       }
