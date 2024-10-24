@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729688423369,
+  "lastUpdate": 1729759568579,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "d0f6c164044ac71723ba4421710770962efbf52c",
-          "message": "Initialize ErtConfig in everest_to_res (#8957)",
-          "timestamp": "2024-10-15T11:50:04+02:00",
-          "tree_id": "b9a2329827fe1b6b833b7c1ab7329e1269b31ac3",
-          "url": "https://github.com/equinor/ert/commit/d0f6c164044ac71723ba4421710770962efbf52c"
-        },
-        "date": 1728985912785,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19736225012456013,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025663812483143037",
-            "extra": "mean: 5.066825086199998 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.043336876267412866",
             "extra": "mean: 5.1515556092 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "a6301093b809a062bb57897708e7f25890a0a2e8",
+          "message": "Rename Job to ForwardModelStep\n\nPlus follow-up in test code and filenames",
+          "timestamp": "2024-10-24T10:44:20+02:00",
+          "tree_id": "f6f72ff4e2d0c2b699be80906ae2051c620baeab",
+          "url": "https://github.com/equinor/ert/commit/a6301093b809a062bb57897708e7f25890a0a2e8"
+        },
+        "date": 1729759568083,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19201714321435348,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02264973751484774",
+            "extra": "mean: 5.207868335400008 sec\nrounds: 5"
           }
         ]
       }
