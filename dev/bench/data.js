@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729856300066,
+  "lastUpdate": 1729863793866,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "e5a183d4c29aa2d48534d6f06c1d5311c2046500",
-          "message": "Fix flaky ensemble_evaluator unit test\n\nThis commit sets the `evaluator._max_batching_size` to the number of events we send, and `evaluator._batching_interval` to 10. This should fix the flaky test, which was caused by the batching putting the events in two different batches.",
-          "timestamp": "2024-10-18T12:39:41+02:00",
-          "tree_id": "57c43f6e96ad0c8909b41f7439cabc226caf21fe",
-          "url": "https://github.com/equinor/ert/commit/e5a183d4c29aa2d48534d6f06c1d5311c2046500"
-        },
-        "date": 1729248091112,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19499207335714192,
-            "unit": "iter/sec",
-            "range": "stddev: 0.028100333542908845",
-            "extra": "mean: 5.128413595399996 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.012601071653031523",
             "extra": "mean: 5.209143978800006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "6153918c77dafc202ee06dc480e13247e524d5fc",
+          "message": "Add REALIZATION_MEMORY to init_site_config_schema",
+          "timestamp": "2024-10-25T15:41:23+02:00",
+          "tree_id": "90fc273273560fa96b3d993764cb49f5da95fec9",
+          "url": "https://github.com/equinor/ert/commit/6153918c77dafc202ee06dc480e13247e524d5fc"
+        },
+        "date": 1729863793431,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1941259824763436,
+            "unit": "iter/sec",
+            "range": "stddev: 0.009284204484327508",
+            "extra": "mean: 5.151293954800002 sec\nrounds: 5"
           }
         ]
       }
