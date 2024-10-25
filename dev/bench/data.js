@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729781896427,
+  "lastUpdate": 1729834836618,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "2d4421beaf0b63cc2f7aa3fd04552b533d6634a7",
-          "message": "Initialize ert storage outside Simulator.start",
-          "timestamp": "2024-10-16T09:02:04+02:00",
-          "tree_id": "6fb411b8cd32d775b0b59f1af3df851d41aa4123",
-          "url": "https://github.com/equinor/ert/commit/2d4421beaf0b63cc2f7aa3fd04552b533d6634a7"
-        },
-        "date": 1729062258448,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19638801178142665,
-            "unit": "iter/sec",
-            "range": "stddev: 0.014422120604439747",
-            "extra": "mean: 5.091960506800012 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.05330463844037119",
             "extra": "mean: 5.260047930799994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "cbaaca9ef2d832056cf7d52837e33f5025a5cc32",
+          "message": "Relax requirement for flaky cpu multiprocess test",
+          "timestamp": "2024-10-25T07:38:49+02:00",
+          "tree_id": "191c4f89459b87192ffeb3161235c9f42a287cd4",
+          "url": "https://github.com/equinor/ert/commit/cbaaca9ef2d832056cf7d52837e33f5025a5cc32"
+        },
+        "date": 1729834836189,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1962221030109983,
+            "unit": "iter/sec",
+            "range": "stddev: 0.035813684194860675",
+            "extra": "mean: 5.096265836799995 sec\nrounds: 5"
           }
         ]
       }
