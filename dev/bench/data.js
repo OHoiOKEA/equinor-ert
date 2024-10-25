@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729856186020,
+  "lastUpdate": 1729856300066,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "0ca8b0b178568e3f9a4e4ccafc241689bf0dc6c8",
-          "message": "Add torque support to Everest",
-          "timestamp": "2024-10-18T11:51:34+02:00",
-          "tree_id": "2622c1b24f81df13b638f98d09f1c2a409cbdd21",
-          "url": "https://github.com/equinor/ert/commit/0ca8b0b178568e3f9a4e4ccafc241689bf0dc6c8"
-        },
-        "date": 1729245201701,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19630230421221798,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04015064515022084",
-            "extra": "mean: 5.094183708199995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03662637749407317",
             "extra": "mean: 5.165926736599994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ynk@equinor.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "da45b440fc623d1b08344d4025404b9cf4649a17",
+          "message": "Use baserunmodel in test_egg_simulation",
+          "timestamp": "2024-10-25T13:36:28+02:00",
+          "tree_id": "0106657564e1f3a965ecb07c1982add52ffaa050",
+          "url": "https://github.com/equinor/ert/commit/da45b440fc623d1b08344d4025404b9cf4649a17"
+        },
+        "date": 1729856299191,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19197012101599906,
+            "unit": "iter/sec",
+            "range": "stddev: 0.012601071653031523",
+            "extra": "mean: 5.209143978800006 sec\nrounds: 5"
           }
         ]
       }
