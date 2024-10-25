@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729852487397,
+  "lastUpdate": 1729856186020,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "da9495dd4160acec5f89fc08de74980245b2db89",
-          "message": "Remove unused constants in tests",
-          "timestamp": "2024-10-17T12:35:25+02:00",
-          "tree_id": "a4a7e65dad9bab82d7142351bbc611bd3809328e",
-          "url": "https://github.com/equinor/ert/commit/da9495dd4160acec5f89fc08de74980245b2db89"
-        },
-        "date": 1729161432179,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19515692280696764,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027192462215222535",
-            "extra": "mean: 5.124081614 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02336097942772396",
             "extra": "mean: 5.244614482600002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "78890c9669bcfa33a35e1f8b4806cec7ce78989f",
+          "message": "Move tool buttons to side pane",
+          "timestamp": "2024-10-25T13:34:32+02:00",
+          "tree_id": "1937cd11f6c4ea5fa03c95f1238a91a40ccfb9a2",
+          "url": "https://github.com/equinor/ert/commit/78890c9669bcfa33a35e1f8b4806cec7ce78989f"
+        },
+        "date": 1729856185429,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1935761095710312,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03662637749407317",
+            "extra": "mean: 5.165926736599994 sec\nrounds: 5"
           }
         ]
       }
