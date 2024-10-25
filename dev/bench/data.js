@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729848814354,
+  "lastUpdate": 1729849779659,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "74e401e4e9fe06b61c8a4cf7ce2be067f89f8145",
-          "message": "Add runpath validation in gui load_results_manually\n\nThis commit adds runpath validation so the load button in\n`load_results_manually` will be disabled until the runpath exists, and\nthe user has the read/execute permissions.",
-          "timestamp": "2024-10-17T09:55:58+02:00",
-          "tree_id": "2a55f81587479d69319d527c2a68a4ae5c15d1ad",
-          "url": "https://github.com/equinor/ert/commit/74e401e4e9fe06b61c8a4cf7ce2be067f89f8145"
-        },
-        "date": 1729151873006,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19377980092784855,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030118471940152946",
-            "extra": "mean: 5.160496580200004 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.017640519150798045",
             "extra": "mean: 5.249449707000008 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "f1edebb09f43790ad06b60630d22e08b0e314e6b",
+          "message": "Change job to forward model step\n\nStill many like these to go. Not changing the string job in the outputted\nXML file.",
+          "timestamp": "2024-10-25T11:47:56+02:00",
+          "tree_id": "8e35c5b10680a91d753369c90cfda8cd60817032",
+          "url": "https://github.com/equinor/ert/commit/f1edebb09f43790ad06b60630d22e08b0e314e6b"
+        },
+        "date": 1729849779231,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19386792041583306,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02303164856804989",
+            "extra": "mean: 5.158150960999995 sec\nrounds: 5"
           }
         ]
       }
