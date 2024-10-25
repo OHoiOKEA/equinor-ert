@@ -6,7 +6,6 @@ from typing import TYPE_CHECKING, List, Optional
 
 import numpy as np
 
-from ert.config.design_matrix import DESIGN_MATRIX_GROUP
 from ert.enkf_main import sample_prior, save_design_matrix_to_ensemble
 from ert.ensemble_evaluator import EvaluatorServerConfig
 from ert.storage import Ensemble, Experiment, Storage
@@ -66,20 +65,10 @@ class EnsembleExperiment(BaseRunModel):
         # to the experiment parameters and set new active realizations
         parameters_config = self.ert_config.ensemble_config.parameter_configuration
         if self.ert_config.analysis_config.design_matrix is not None:
-            if (
-                self.ert_config.analysis_config.design_matrix.parameter_configuration
-                is None
-            ):
-                self.ert_config.analysis_config.design_matrix.read_design_matrix()
-            assert (
-                self.ert_config.analysis_config.design_matrix.parameter_configuration
-                is not None
+            parameters_config = self.ert_config.analysis_config.design_matrix.merge_with_existing_parameters(
+                parameters_config
             )
-            parameters_config.append(
-                self.ert_config.analysis_config.design_matrix.parameter_configuration[
-                    DESIGN_MATRIX_GROUP
-                ]
-            )
+
             assert (
                 self.ert_config.analysis_config.design_matrix.active_realizations
                 is not None
@@ -119,7 +108,7 @@ class EnsembleExperiment(BaseRunModel):
             is not None
         ):
             save_design_matrix_to_ensemble(
-                self.ert_config.analysis_config.design_matrix.design_matrix_df,
+                self.ert_config.analysis_config.design_matrix,
                 self.ensemble,
                 np.where(self.active_realizations)[0],
             )

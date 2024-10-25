@@ -282,13 +282,9 @@ def test_save_parameters_to_storage_from_design_dataframe(
         )
         if expect_error:
             with pytest.raises(KeyError):
-                save_design_matrix_to_ensemble(
-                    design_matrix.design_matrix_df, ensemble, reals
-                )
+                save_design_matrix_to_ensemble(design_matrix, ensemble, reals)
         else:
-            save_design_matrix_to_ensemble(
-                design_matrix.design_matrix_df, ensemble, reals
-            )
+            save_design_matrix_to_ensemble(design_matrix, ensemble, reals)
             params = ensemble.load_parameters(DESIGN_MATRIX_GROUP)["values"]
             all(params.names.values == ["a", "b", "c"])
             np.testing.assert_array_almost_equal(params[:, 0], a_values)

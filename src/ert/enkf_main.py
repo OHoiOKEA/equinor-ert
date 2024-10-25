@@ -13,13 +13,11 @@ import xarray as xr
 from numpy.random import SeedSequence
 
 from .config import ExtParamConfig, Field, GenKwConfig, ParameterConfig, SurfaceConfig
-from .config.design_matrix import DESIGN_MATRIX_GROUP
+from .config.design_matrix import DESIGN_MATRIX_GROUP, DesignMatrix
 from .run_arg import RunArg
 from .runpaths import Runpaths
 
 if TYPE_CHECKING:
-    import pandas as pd
-
     from .config import ErtConfig
     from .storage import Ensemble
 
@@ -147,13 +145,15 @@ def _seed_sequence(seed: Optional[int]) -> int:
 
 
 def save_design_matrix_to_ensemble(
-    design_matrix_df: pd.DataFrame,
+    design_matrix: DesignMatrix,
     ensemble: Ensemble,
     active_realizations: Iterable[int],
 ) -> None:
-    assert not design_matrix_df.empty
+    assert design_matrix.design_matrix_df is not None
+    assert not design_matrix.design_matrix_df.empty
+    assert design_matrix.parameter_configuration is not None
     for realization_nr in active_realizations:
-        row = design_matrix_df.loc[realization_nr][DESIGN_MATRIX_GROUP]
+        row = design_matrix.design_matrix_df.loc[realization_nr][DESIGN_MATRIX_GROUP]
         ds = xr.Dataset(
             {
                 "values": ("names", list(row.values)),
@@ -161,7 +161,11 @@ def save_design_matrix_to_ensemble(
                 "names": list(row.keys()),
             }
         )
-        ensemble.save_parameters(DESIGN_MATRIX_GROUP, realization_nr, ds)
+        ensemble.save_parameters(
+            design_matrix.parameter_configuration[DESIGN_MATRIX_GROUP].name,
+            realization_nr,
+            ds,
+        )
 
 
 def sample_prior(
@@ -184,12 +188,11 @@ def sample_prior(
         parameters = list(parameter_configs.keys())
     for parameter in parameters:
         config_node = parameter_configs[parameter]
-        if (
-            config_node.forward_init
-            or config_node.name == DESIGN_MATRIX_GROUP
-            or config_node.disabled
-        ):
+        if config_node.forward_init:
             continue
+        if isinstance(config_node, GenKwConfig) and config_node.disabled:
+            continue
+
         for realization_nr in active_realizations:
             ds = config_node.sample_or_load(
                 realization_nr,

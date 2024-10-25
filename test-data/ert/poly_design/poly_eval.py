@@ -4,7 +4,7 @@ import json
 
 def _load_coeffs(filename):
     with open(filename, encoding="utf-8") as f:
-        return json.load(f)["DESIGN_MATRIX"]
+        return json.load(f)["COEFFS"]
 
 
 def _evaluate(coeffs, x):

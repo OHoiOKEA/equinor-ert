@@ -70,18 +70,37 @@ class DesignMatrix:
         )
 
     def merge_with_existing_parameters(
-        self, existing_parameters: Dict[str, ParameterConfig]
-    ) -> Dict[str, ParameterConfig]:
+        self, existing_parameters: List[ParameterConfig]
+    ) -> List[ParameterConfig]:
+        if self.parameter_configuration is None:
+            self.read_design_matrix()
+
+        if self.parameter_configuration is None or not isinstance(
+            self.parameter_configuration[DESIGN_MATRIX_GROUP], GenKwConfig
+        ):
+            return
+
+        new_param_config: List[ParameterConfig] = []
         design_keys = self.parameter_configuration[DESIGN_MATRIX_GROUP].getKeyWords()
-        for parameter_group_name, genkw_group in existing_parameters.items():
+        design_group_added = False
+        for genkw_group in existing_parameters:
+            if not isinstance(genkw_group, GenKwConfig):
+                new_param_config += [genkw_group]
+                continue
             existing_keys = genkw_group.getKeyWords()
             if set(design_keys).issubset(set(existing_keys)):
-                self.parameter_configuration[parameter_group_name] = (
-                    self.parameter_configuration[DESIGN_MATRIX_GROUP]
-                )
-                genkw_group.disabled = True
+                self.parameter_configuration[
+                    DESIGN_MATRIX_GROUP
+                ].name = genkw_group.name
+                new_param_config += [self.parameter_configuration[DESIGN_MATRIX_GROUP]]
+                design_group_added = True
             elif set(design_keys) & set(existing_keys):
                 raise ConfigValidationError("overlapping parameter names")
+            else:
+                new_param_config += [genkw_group]
+        if not design_group_added:
+            new_param_config += [self.parameter_configuration[DESIGN_MATRIX_GROUP]]
+        return new_param_config
 
     def read_design_matrix(
         self,
@@ -142,6 +161,7 @@ class DesignMatrix:
             output_file=None,
             transform_function_definitions=transform_function_definitions,
             update=False,
+            disabled=True,
         )
 
         design_matrix_df.columns = pd.MultiIndex.from_product(
