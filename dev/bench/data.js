@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729841600081,
+  "lastUpdate": 1729845616135,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "5d02e9a5059ba5b6a511d81cf596d317d2e54329",
-          "message": "Give hint on REALIZATION_MEMORY on oom kills",
-          "timestamp": "2024-10-16T12:32:54+02:00",
-          "tree_id": "219bd798b72c51dcabbadc776909cc9d95d6dcd3",
-          "url": "https://github.com/equinor/ert/commit/5d02e9a5059ba5b6a511d81cf596d317d2e54329"
-        },
-        "date": 1729074885514,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19070203987550335,
-            "unit": "iter/sec",
-            "range": "stddev: 0.017921919017907583",
-            "extra": "mean: 5.243782398200006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03581412812085479",
             "extra": "mean: 5.104385885999994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "e8bc17637567d732fd9953f1219459f5979a14cb",
+          "message": "Add _verify_checksum lock in job.py\n\nThis removes the usage of `forward_model_ok_lock` when sleeping until\nchecksum_path exists.",
+          "timestamp": "2024-10-25T10:38:23+02:00",
+          "tree_id": "aea816ae1be430bb5b7fc0832059354c1335658e",
+          "url": "https://github.com/equinor/ert/commit/e8bc17637567d732fd9953f1219459f5979a14cb"
+        },
+        "date": 1729845615523,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19340771605481585,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020332726045675133",
+            "extra": "mean: 5.170424533200003 sec\nrounds: 5"
           }
         ]
       }
