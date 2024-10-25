@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729834836618,
+  "lastUpdate": 1729841600081,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "ace090c44568b92682a14d74780fe4d35889cd33",
-          "message": "Shift doc and plugins test up one level\n\nCategorizing these tests in an all directory seems pointless, was\nprobably an intention earlier but that is not valid anymore",
-          "timestamp": "2024-10-16T12:32:32+02:00",
-          "tree_id": "e222b0a7ceba499504962194bf6112dd46985ce0",
-          "url": "https://github.com/equinor/ert/commit/ace090c44568b92682a14d74780fe4d35889cd33"
-        },
-        "date": 1729074860094,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.198998635918877,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03669609296555343",
-            "extra": "mean: 5.025160073999984 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.035813684194860675",
             "extra": "mean: 5.096265836799995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "2cb3ea0602eb34b551f7712447aa846310ab1beb",
+          "message": "Fix run_dialog second progress bar hanging\n\nThis commit fixes the issue where an immediate experiment failure would leave the second progress bar stuck in indeterminate state.\nThe commit also makes the total progress bar turn red on immediate\nfailures.",
+          "timestamp": "2024-10-25T09:31:30+02:00",
+          "tree_id": "95b4c80a7796a4f5ddef906fe93237951b7cec6e",
+          "url": "https://github.com/equinor/ert/commit/2cb3ea0602eb34b551f7712447aa846310ab1beb"
+        },
+        "date": 1729841599594,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1959099531919678,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03581412812085479",
+            "extra": "mean: 5.104385885999994 sec\nrounds: 5"
           }
         ]
       }
