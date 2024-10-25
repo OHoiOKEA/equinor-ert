@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729845616135,
+  "lastUpdate": 1729848814354,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "stephan.dehoop@tno.nl",
-            "name": "Stephan de Hoop",
-            "username": "StephanDeHoop"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "45b9a36fb89ad839795830f1e7d37665ffbffd02",
-          "message": "Remove redundant/superseded Everest tests (#8954)\n\nRemove redundant Everest math_func tests and associated (unused) config files",
-          "timestamp": "2024-10-16T14:47:49+02:00",
-          "tree_id": "3008f6a4d1f6ddf0a846a1526956f7dcda871159",
-          "url": "https://github.com/equinor/ert/commit/45b9a36fb89ad839795830f1e7d37665ffbffd02"
-        },
-        "date": 1729082982738,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1976233120979619,
-            "unit": "iter/sec",
-            "range": "stddev: 0.01287492253495804",
-            "extra": "mean: 5.0601317698000114 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.020332726045675133",
             "extra": "mean: 5.170424533200003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "d24eb135b2b5c0b6fcd6f76ae3e69fc863cbed70",
+          "message": "Fix <= .to3 migrations causing .to7 gendata migration failure",
+          "timestamp": "2024-10-25T11:31:46+02:00",
+          "tree_id": "6356c2d18aea9d75b460603cdeeb0f776e59fc77",
+          "url": "https://github.com/equinor/ert/commit/d24eb135b2b5c0b6fcd6f76ae3e69fc863cbed70"
+        },
+        "date": 1729848813877,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19049615784803603,
+            "unit": "iter/sec",
+            "range": "stddev: 0.017640519150798045",
+            "extra": "mean: 5.249449707000008 sec\nrounds: 5"
           }
         ]
       }
