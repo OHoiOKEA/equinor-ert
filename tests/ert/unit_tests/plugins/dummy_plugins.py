@@ -9,6 +9,11 @@ def help_links():
 
 
 @plugin(name="dummy")
+def forward_model_configuration():
+    return {"FLOW": {"mpipath": "/foo"}}
+
+
+@plugin(name="dummy")
 def ecl100_config_path():
     return "/dummy/path/ecl100_config.yml"
 
