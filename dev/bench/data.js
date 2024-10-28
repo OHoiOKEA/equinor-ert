@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730121427734,
+  "lastUpdate": 1730127534262,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "ebc4d03badcf734a93f896ca1d4094121e0e4572",
-          "message": "Remove testing of execute bit of plugin-scripts\n\nThis test file became irrelevant after 173ba862ab7e58c0abf1b56b5d50add9aca8b316\nwhere no built-in forward models need the extra text file with the line\n\n  EXECUTABLE somescript.xx\n\nThe scripts in here still needs to be executable, but the responsibility\nfor verifying that is now on each forward model's integration test.",
-          "timestamp": "2024-10-21T14:40:45+02:00",
-          "tree_id": "809997a9d25c8e1b9e5e890cf7feeb479c37a3d4",
-          "url": "https://github.com/equinor/ert/commit/ebc4d03badcf734a93f896ca1d4094121e0e4572"
-        },
-        "date": 1729514552328,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19392590427860618,
-            "unit": "iter/sec",
-            "range": "stddev: 0.032901396673173613",
-            "extra": "mean: 5.156608673400006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.027442864283646434",
             "extra": "mean: 5.160689166399999 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "35415b90a37933a4d775e58de8952efec6bbef7a",
+          "message": "Fix issue where progress_widget was indeterminate on fail",
+          "timestamp": "2024-10-28T15:57:04+01:00",
+          "tree_id": "ed4dd0927c0f9585c149acf5083be679bf6cecae",
+          "url": "https://github.com/equinor/ert/commit/35415b90a37933a4d775e58de8952efec6bbef7a"
+        },
+        "date": 1730127533804,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19392976601901643,
+            "unit": "iter/sec",
+            "range": "stddev: 0.06309643027021318",
+            "extra": "mean: 5.156505989400006 sec\nrounds: 5"
           }
         ]
       }
