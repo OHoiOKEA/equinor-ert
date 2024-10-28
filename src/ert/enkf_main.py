@@ -9,11 +9,12 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any, Dict, Iterable, List, Mapping, Optional, Union
 
 import orjson
+import pandas as pd
 import xarray as xr
 from numpy.random import SeedSequence
 
 from .config import ExtParamConfig, Field, GenKwConfig, ParameterConfig, SurfaceConfig
-from .config.design_matrix import DESIGN_MATRIX_GROUP, DesignMatrix
+from .config.design_matrix import DESIGN_MATRIX_GROUP
 from .run_arg import RunArg
 from .runpaths import Runpaths
 
@@ -145,15 +146,14 @@ def _seed_sequence(seed: Optional[int]) -> int:
 
 
 def save_design_matrix_to_ensemble(
-    design_matrix: DesignMatrix,
+    design_matrix_df: pd.DataFrame,
     ensemble: Ensemble,
     active_realizations: Iterable[int],
+    design_group_name: str = DESIGN_MATRIX_GROUP,
 ) -> None:
-    assert design_matrix.design_matrix_df is not None
-    assert not design_matrix.design_matrix_df.empty
-    assert design_matrix.parameter_configuration is not None
+    assert not design_matrix_df.empty
     for realization_nr in active_realizations:
-        row = design_matrix.design_matrix_df.loc[realization_nr][DESIGN_MATRIX_GROUP]
+        row = design_matrix_df.loc[realization_nr][DESIGN_MATRIX_GROUP]
         ds = xr.Dataset(
             {
                 "values": ("names", list(row.values)),
@@ -162,7 +162,7 @@ def save_design_matrix_to_ensemble(
             }
         )
         ensemble.save_parameters(
-            design_matrix.parameter_configuration[DESIGN_MATRIX_GROUP].name,
+            design_group_name,
             realization_nr,
             ds,
         )
@@ -173,6 +173,7 @@ def sample_prior(
     active_realizations: Iterable[int],
     parameters: Optional[List[str]] = None,
     random_seed: Optional[int] = None,
+    design_matrix_df: Optional[pd.DataFrame] = None,
 ) -> None:
     """This function is responsible for getting the prior into storage,
     in the case of GEN_KW we sample the data and store it, and if INIT_FILES
@@ -190,12 +191,13 @@ def sample_prior(
         config_node = parameter_configs[parameter]
         if config_node.forward_init:
             continue
-        if (
-            isinstance(config_node, GenKwConfig)
-            and config_node.design_matrix is not None
-        ):
+        if isinstance(config_node, GenKwConfig) and config_node.design_matrix_init:
+            if design_matrix_df is None:
+                raise ValueError(
+                    "Design matrix DataFrame is required for design matrix parameters"
+                )
             save_design_matrix_to_ensemble(
-                config_node.design_matrix, ensemble, active_realizations
+                design_matrix_df, ensemble, active_realizations, config_node.name
             )
             continue
 

@@ -64,18 +64,14 @@ class EnsembleExperiment(BaseRunModel):
         # If design matrix is present, we append design matrix parameters
         # to the experiment parameters and set new active realizations
         parameters_config = self.ert_config.ensemble_config.parameter_configuration
-        if self.ert_config.analysis_config.design_matrix is not None:
-            parameters_config = self.ert_config.analysis_config.design_matrix.merge_with_existing_parameters(
+        design_matrix = self.ert_config.analysis_config.design_matrix
+        if design_matrix is not None:
+            parameters_config = design_matrix.merge_with_existing_parameters(
                 parameters_config
             )
 
-            assert (
-                self.ert_config.analysis_config.design_matrix.active_realizations
-                is not None
-            )
-            self.active_realizations = (
-                self.ert_config.analysis_config.design_matrix.active_realizations
-            )
+            assert design_matrix.active_realizations is not None
+            self.active_realizations = design_matrix.active_realizations
         if not restart:
             self.experiment = self._storage.create_experiment(
                 name=self.experiment_name,
@@ -107,6 +103,9 @@ class EnsembleExperiment(BaseRunModel):
             self.ensemble,
             np.where(self.active_realizations)[0],
             random_seed=self.random_seed,
+            design_matrix_df=(
+                design_matrix.design_matrix_df if design_matrix is not None else None
+            ),
         )
 
         self._evaluate_and_postprocess(
