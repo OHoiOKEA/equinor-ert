@@ -61,7 +61,7 @@ class EnsembleExperiment(BaseRunModel):
         restart: bool = False,
     ) -> None:
         self.log_at_startup()
-        # If design matrix is present, we append design matrix parameters
+        # If design matrix is present, we try to merge design matrix parameters
         # to the experiment parameters and set new active realizations
         parameters_config = self.ert_config.ensemble_config.parameter_configuration
         design_matrix = self.ert_config.analysis_config.design_matrix
