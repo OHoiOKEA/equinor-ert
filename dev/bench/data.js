@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730114523450,
+  "lastUpdate": 1730116865634,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "2a0fc2cea2fc21d3fca86674b4efb07409eb5d47",
-          "message": "Add validation for uninitialized ensembles in manual update and evaluate\nexperiment\n\nThis commit adds validation for the realizations specified by the user\nwhen trying to run `manual_update` or `evaluate_experiment`. The\nvalidator checks the selected ensemble if the specified realization(s)\nexists. If not, the field becomes red and a warning is displayed.\nThe commit also disables the realization field until an ensemble is\nselected.",
-          "timestamp": "2024-10-18T13:20:53+02:00",
-          "tree_id": "fd14dee002e7f72ce75758c45469f271183e9819",
-          "url": "https://github.com/equinor/ert/commit/2a0fc2cea2fc21d3fca86674b4efb07409eb5d47"
-        },
-        "date": 1729250564574,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1883622886711612,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0556866402866877",
-            "extra": "mean: 5.30891829279999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.007437132816061756",
             "extra": "mean: 5.263058605599997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "be7944328a24ca610c257400d061f0b07ddc2e82",
+          "message": "Document and rename parameter example test",
+          "timestamp": "2024-10-28T12:59:11+01:00",
+          "tree_id": "5339beced9e70677448956b9357fbb21f2062ed3",
+          "url": "https://github.com/equinor/ert/commit/be7944328a24ca610c257400d061f0b07ddc2e82"
+        },
+        "date": 1730116864640,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19476859788683057,
+            "unit": "iter/sec",
+            "range": "stddev: 0.025877925974135355",
+            "extra": "mean: 5.134297883999994 sec\nrounds: 5"
           }
         ]
       }
