@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730116865634,
+  "lastUpdate": 1730120645757,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "9493b3ee4d5b1154d042b89a0152ab2e2fd9fc14",
-          "message": "Move everest workflow logic over to a baserunmodel",
-          "timestamp": "2024-10-18T13:27:36+02:00",
-          "tree_id": "dcd892ad83fab056c8111e5147cff344724e26b8",
-          "url": "https://github.com/equinor/ert/commit/9493b3ee4d5b1154d042b89a0152ab2e2fd9fc14"
-        },
-        "date": 1729250968649,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18870987926271138,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0165444202097893",
-            "extra": "mean: 5.299139631199995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.025877925974135355",
             "extra": "mean: 5.134297883999994 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "4e71f3909396a1dcf1461a58c7c89e66f526c005",
+          "message": "Remove unused function get_response_names",
+          "timestamp": "2024-10-28T14:02:15+01:00",
+          "tree_id": "caa9d3ba7aa8c165d23d08937d95e9d5c68e10d0",
+          "url": "https://github.com/equinor/ert/commit/4e71f3909396a1dcf1461a58c7c89e66f526c005"
+        },
+        "date": 1730120645184,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1943314539023445,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0294680785811469",
+            "extra": "mean: 5.145847365000009 sec\nrounds: 5"
           }
         ]
       }
