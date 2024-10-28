@@ -99,7 +99,9 @@ class DesignMatrix:
                 new_param_config += [self.parameter_configuration[DESIGN_MATRIX_GROUP]]
                 design_group_added = True
             elif set(design_keys) & set(existing_keys):
-                raise ConfigValidationError("overlapping parameter names")
+                raise ConfigValidationError(
+                    "Overlapping parameter names found in design matrix!"
+                )
             else:
                 new_param_config += [genkw_group]
         if not design_group_added:
