@@ -78,7 +78,7 @@ class DesignMatrix:
         if self.parameter_configuration is None or not isinstance(
             self.parameter_configuration[DESIGN_MATRIX_GROUP], GenKwConfig
         ):
-            return
+            return existing_parameters
 
         new_param_config: List[ParameterConfig] = []
         if isinstance(self.parameter_configuration[DESIGN_MATRIX_GROUP], GenKwConfig):
