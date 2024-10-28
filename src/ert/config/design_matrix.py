@@ -81,7 +81,11 @@ class DesignMatrix:
             return
 
         new_param_config: List[ParameterConfig] = []
-        design_keys = self.parameter_configuration[DESIGN_MATRIX_GROUP].getKeyWords()
+        if isinstance(self.parameter_configuration[DESIGN_MATRIX_GROUP], GenKwConfig):
+            design_keys = self.parameter_configuration[
+                DESIGN_MATRIX_GROUP
+            ].getKeyWords()
+
         design_group_added = False
         for genkw_group in existing_parameters:
             if not isinstance(genkw_group, GenKwConfig):
@@ -161,7 +165,7 @@ class DesignMatrix:
             output_file=None,
             transform_function_definitions=transform_function_definitions,
             update=False,
-            disabled=True,
+            design_matrix=self,
         )
 
         design_matrix_df.columns = pd.MultiIndex.from_product(

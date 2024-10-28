@@ -190,7 +190,13 @@ def sample_prior(
         config_node = parameter_configs[parameter]
         if config_node.forward_init:
             continue
-        if isinstance(config_node, GenKwConfig) and config_node.disabled:
+        if (
+            isinstance(config_node, GenKwConfig)
+            and config_node.design_matrix is not None
+        ):
+            save_design_matrix_to_ensemble(
+                config_node.design_matrix, ensemble, active_realizations
+            )
             continue
 
         for realization_nr in active_realizations:

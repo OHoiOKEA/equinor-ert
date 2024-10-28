@@ -34,6 +34,8 @@ if TYPE_CHECKING:
 
     from ert.storage import Ensemble
 
+    from .design_matrix import DesignMatrix
+
 _logger = logging.getLogger(__name__)
 
 
@@ -73,6 +75,7 @@ class GenKwConfig(ParameterConfig):
     transform_function_definitions: List[TransformFunctionDefinition]
     forward_init_file: Optional[str] = None
     disabled: Optional[bool] = False
+    design_matrix: Optional[DesignMatrix] = None
 
     def __post_init__(self) -> None:
         self.transform_functions: List[TransformFunction] = []

@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING, List, Optional
 
 import numpy as np
 
-from ert.enkf_main import sample_prior, save_design_matrix_to_ensemble
+from ert.enkf_main import sample_prior
 from ert.ensemble_evaluator import EvaluatorServerConfig
 from ert.storage import Ensemble, Experiment, Storage
 
@@ -102,16 +102,7 @@ class EnsembleExperiment(BaseRunModel):
             np.array(self.active_realizations, dtype=bool),
             ensemble=self.ensemble,
         )
-        if (
-            self.ert_config.analysis_config.design_matrix is not None
-            and self.ert_config.analysis_config.design_matrix.design_matrix_df
-            is not None
-        ):
-            save_design_matrix_to_ensemble(
-                self.ert_config.analysis_config.design_matrix,
-                self.ensemble,
-                np.where(self.active_realizations)[0],
-            )
+
         sample_prior(
             self.ensemble,
             np.where(self.active_realizations)[0],
