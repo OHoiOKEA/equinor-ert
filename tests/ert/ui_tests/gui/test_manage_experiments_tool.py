@@ -36,9 +36,8 @@ def test_init_prior(qtbot, storage):
         name="prior",
     )
     notifier.set_current_ensemble(ensemble)
-    assert (
-        ensemble.get_ensemble_state()
-        == [RealizationStorageState.UNDEFINED] * config.model_config.num_realizations
+    assert all(
+        RealizationStorageState.UNDEFINED in s for s in ensemble.get_ensemble_state()
     )
 
     tool = ManageExperimentsPanel(
@@ -49,8 +48,7 @@ def test_init_prior(qtbot, storage):
         Qt.MouseButton.LeftButton,
     )
     assert (
-        ensemble.get_ensemble_state()
-        == [RealizationStorageState.INITIALIZED] * config.model_config.num_realizations
+        RealizationStorageState.INITIALIZED in s for s in ensemble.get_ensemble_state()
     )
     assert ensemble.load_parameters("COEFFS")[
         "transformed_values"

@@ -312,7 +312,9 @@ def test_ensemble_no_parameters(storage):
         ensemble_size=2,
         name="prior",
     )
-    assert ensemble.get_ensemble_state() == [RealizationStorageState.HAS_DATA] * 2
+    assert all(
+        RealizationStorageState.HAS_DATA in s for s in ensemble.get_ensemble_state()
+    )
 
 
 def test_get_unique_experiment_name(snake_oil_storage):
@@ -789,9 +791,9 @@ class StatefulStorageTest(RuleBasedStateMachine):
         model_ensemble = Ensemble(ensemble.id)
         model_experiment.ensembles[ensemble.id] = model_ensemble
 
-        assert (
-            ensemble.get_ensemble_state()
-            == [RealizationStorageState.UNDEFINED] * ensemble_size
+        assert all(
+            (RealizationStorageState.UNDEFINED in s)
+            for s in ensemble.get_ensemble_state()
         )
         assert np.all(np.logical_not(ensemble.get_realization_mask_with_responses()))
 
@@ -812,16 +814,16 @@ class StatefulStorageTest(RuleBasedStateMachine):
         model_ensemble = Ensemble(ensemble.id)
         model_experiment = self.model[experiment_id]
         model_experiment.ensembles[ensemble.id] = model_ensemble
-        state = [RealizationStorageState.PARENT_FAILURE] * size
+        state = [{RealizationStorageState.PARENT_FAILURE}] * size
         iens = 0
         if (
             list(prior.response_values.keys())
             == [r.name for r in model_experiment.responses]
             and iens not in prior.failure_messages
-            and prior_ensemble.get_ensemble_state()[iens]
-            != RealizationStorageState.PARENT_FAILURE
+            and RealizationStorageState.PARENT_FAILURE
+            not in prior_ensemble.get_ensemble_state()[iens]
         ):
-            state[iens] = RealizationStorageState.UNDEFINED
+            state[iens].add(RealizationStorageState.UNDEFINED)
         assert ensemble.get_ensemble_state() == state
 
         return model_ensemble
