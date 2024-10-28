@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730120645757,
+  "lastUpdate": 1730121427734,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "d59ed13cf07d2e547d0a7be2399c2583510dae4d",
-          "message": "Use a concat instead of vstack in _es_update",
-          "timestamp": "2024-10-21T12:14:46Z",
-          "tree_id": "29f31e0d3465b64dce21ea3b65068b9e4bc4db2b",
-          "url": "https://github.com/equinor/ert/commit/d59ed13cf07d2e547d0a7be2399c2583510dae4d"
-        },
-        "date": 1729512994915,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.18769809057957476,
-            "unit": "iter/sec",
-            "range": "stddev: 0.04125128482700362",
-            "extra": "mean: 5.327704703400002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0294680785811469",
             "extra": "mean: 5.145847365000009 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "5f07ccbac6954f27c8f63b51b56799512f05dbe2",
+          "message": "Add reference to refcase section in summary keyword",
+          "timestamp": "2024-10-28T14:15:12+01:00",
+          "tree_id": "22b8d17c2de7a3154aa5321bf2bffe35cc147812",
+          "url": "https://github.com/equinor/ert/commit/5f07ccbac6954f27c8f63b51b56799512f05dbe2"
+        },
+        "date": 1730121426770,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19377256946819402,
+            "unit": "iter/sec",
+            "range": "stddev: 0.027442864283646434",
+            "extra": "mean: 5.160689166399999 sec\nrounds: 5"
           }
         ]
       }
