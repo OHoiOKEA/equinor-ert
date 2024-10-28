@@ -227,7 +227,7 @@ class LocalEnsemble(BaseMode):
                 bool(
                     {
                         RealizationStorageState.PARAMETERS_LOADED,
-                        RealizationStorageState.HAS_DATA,
+                        RealizationStorageState.RESPONSES_LOADED,
                     }.intersection(state)
                 )
                 for state in self.get_ensemble_state()
@@ -253,7 +253,7 @@ class LocalEnsemble(BaseMode):
 
         return np.array(
             [
-                RealizationStorageState.HAS_DATA in state
+                RealizationStorageState.RESPONSES_LOADED in state
                 for state in self.get_ensemble_state()
             ]
         )
@@ -499,7 +499,7 @@ class LocalEnsemble(BaseMode):
                 assert failure
                 _state.add(failure.type)
             if _responses_exist_for_realization(realization):
-                _state.add(RealizationStorageState.HAS_DATA)
+                _state.add(RealizationStorageState.RESPONSES_LOADED)
             if _parameters_exist_for_realization(realization):
                 _state.add(RealizationStorageState.PARAMETERS_LOADED)
 
@@ -908,7 +908,7 @@ class LocalEnsemble(BaseMode):
     ) -> Dict[str, RealizationStorageState]:
         path = self._realization_dir(realization)
         return {
-            e: RealizationStorageState.HAS_DATA
+            e: RealizationStorageState.RESPONSES_LOADED
             if (path / f"{e}.parquet").exists()
             else RealizationStorageState.UNDEFINED
             for e in self.experiment.response_configuration

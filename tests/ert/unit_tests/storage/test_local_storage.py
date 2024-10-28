@@ -313,7 +313,8 @@ def test_ensemble_no_parameters(storage):
         name="prior",
     )
     assert all(
-        RealizationStorageState.HAS_DATA in s for s in ensemble.get_ensemble_state()
+        RealizationStorageState.RESPONSES_LOADED in s
+        for s in ensemble.get_ensemble_state()
     )
 
 
