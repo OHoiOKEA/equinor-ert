@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1729863793866,
+  "lastUpdate": 1730099074119,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "e2ba5be4aafcccb1a4e2916986cb655a2e7fb6be",
-          "message": "Move template_render.py up two levels\n\nThe subdirectories serve no real purpose. There is not going\nto be a lot of other forward models in here.",
-          "timestamp": "2024-10-18T13:08:47+02:00",
-          "tree_id": "294bf4c17157d75942778a835df5bfc85159715c",
-          "url": "https://github.com/equinor/ert/commit/e2ba5be4aafcccb1a4e2916986cb655a2e7fb6be"
-        },
-        "date": 1729249886322,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19204070132624054,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03200357272658424",
-            "extra": "mean: 5.207229473200011 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.009284204484327508",
             "extra": "mean: 5.151293954800002 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "sondreso@users.noreply.github.com",
+            "name": "Sondre Sortland",
+            "username": "sondreso"
+          },
+          "distinct": true,
+          "id": "9817d757bb1fca85a57bc7e41e82ee77480060c4",
+          "message": "Fix missing realization type in Simulation label",
+          "timestamp": "2024-10-28T08:02:38+01:00",
+          "tree_id": "8d53645c2dab19b5f2aa9f45f6183231026bb856",
+          "url": "https://github.com/equinor/ert/commit/9817d757bb1fca85a57bc7e41e82ee77480060c4"
+        },
+        "date": 1730099073237,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19199768515057153,
+            "unit": "iter/sec",
+            "range": "stddev: 0.024688980666410815",
+            "extra": "mean: 5.208396128400006 sec\nrounds: 5"
           }
         ]
       }
