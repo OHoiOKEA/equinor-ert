@@ -81,10 +81,10 @@ class DesignMatrix:
             return existing_parameters
 
         new_param_config: List[ParameterConfig] = []
-        if isinstance(self.parameter_configuration[DESIGN_MATRIX_GROUP], GenKwConfig):
-            design_keys = self.parameter_configuration[
-                DESIGN_MATRIX_GROUP
-            ].getKeyWords()
+
+        design_parameter_group = self.parameter_configuration[DESIGN_MATRIX_GROUP]
+        if isinstance(design_parameter_group, GenKwConfig):
+            design_keys = design_parameter_group.getKeyWords()
 
         design_group_added = False
         for genkw_group in existing_parameters:
@@ -93,10 +93,8 @@ class DesignMatrix:
                 continue
             existing_keys = genkw_group.getKeyWords()
             if set(design_keys).issubset(set(existing_keys)):
-                self.parameter_configuration[
-                    DESIGN_MATRIX_GROUP
-                ].name = genkw_group.name
-                new_param_config += [self.parameter_configuration[DESIGN_MATRIX_GROUP]]
+                design_parameter_group.name = genkw_group.name
+                new_param_config += [design_parameter_group]
                 design_group_added = True
             elif set(design_keys) & set(existing_keys):
                 raise ConfigValidationError(
@@ -105,7 +103,7 @@ class DesignMatrix:
             else:
                 new_param_config += [genkw_group]
         if not design_group_added:
-            new_param_config += [self.parameter_configuration[DESIGN_MATRIX_GROUP]]
+            new_param_config += [design_parameter_group]
         return new_param_config
 
     def read_design_matrix(
