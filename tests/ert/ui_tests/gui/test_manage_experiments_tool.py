@@ -104,8 +104,8 @@ def test_that_init_updates_the_info_tab(qtbot, storage):
     # Change back to first tab
     tool.setCurrentIndex(0)
     ensemble_widget._currentTabChanged(1)
-    assert "INITIALIZED" in html_edit.toPlainText()
-    assert not "RealizationStorageState.INITIALIZED" in html_edit.toPlainText()
+    assert "PARAMETERS_LOADED" in html_edit.toPlainText()
+    assert not "RealizationStorageState.PARAMETERS_LOADED" in html_edit.toPlainText()
 
     # select the observation
     storage_info_widget = tool._storage_info_widget
@@ -374,11 +374,14 @@ def test_realization_view(
 
     realization_widget = tool._storage_info_widget._content_layout.currentWidget()
 
-    assert realization_widget._state_label.text() == "Realization state: HAS_DATA"
-    assert {"gen_data - HAS_DATA", "summary - HAS_DATA"}.issubset(
+    assert (
+        realization_widget._state_label.text()
+        == "Realization state: PARAMETERS_LOADED, RESPONSES_LOADED"
+    )
+    assert {"gen_data - RESPONSES_LOADED", "summary - RESPONSES_LOADED"}.issubset(
         set(realization_widget._response_text_edit.toPlainText().splitlines())
     )
     assert (
         realization_widget._parameter_text_edit.toPlainText()
-        == "\nSNAKE_OIL_PARAM - INITIALIZED\n"
+        == "\nSNAKE_OIL_PARAM - PARAMETERS_LOADED\n"
     )
