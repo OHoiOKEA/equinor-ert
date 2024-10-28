@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730099074119,
+  "lastUpdate": 1730114523450,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "90efa9ad01be18da6169ba0c6d7ba7a7754bc35d",
-          "message": "Attempt to mitigate flaky cpu polling test",
-          "timestamp": "2024-10-18T13:20:13+02:00",
-          "tree_id": "9be9d3970fae129c7a080fe9816f6dc3bd13f332",
-          "url": "https://github.com/equinor/ert/commit/90efa9ad01be18da6169ba0c6d7ba7a7754bc35d"
-        },
-        "date": 1729250526129,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19468542130753305,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03301591048669666",
-            "extra": "mean: 5.1364914397999994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.024688980666410815",
             "extra": "mean: 5.208396128400006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "9b5c9332f6b494fd499872ef73c0012aead5dbdc",
+          "message": "Add some detached <-> scheduler edge cases",
+          "timestamp": "2024-10-28T12:19:55+01:00",
+          "tree_id": "b3e621c703106dc9ac97ff439eca4695e2e6bbd4",
+          "url": "https://github.com/equinor/ert/commit/9b5c9332f6b494fd499872ef73c0012aead5dbdc"
+        },
+        "date": 1730114522518,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1900035844054597,
+            "unit": "iter/sec",
+            "range": "stddev: 0.007437132816061756",
+            "extra": "mean: 5.263058605599997 sec\nrounds: 5"
           }
         ]
       }
