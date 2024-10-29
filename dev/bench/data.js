@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730199456857,
+  "lastUpdate": 1730204988169,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "committer": {
-            "email": "frodeaarstad@gmail.com",
-            "name": "Frode Aarstad",
-            "username": "frode-aarstad"
-          },
-          "distinct": true,
-          "id": "b17e43949ce97c3f06994cc4080027af35e730dd",
-          "message": "Use plugin functionality to document forward models in Everest",
-          "timestamp": "2024-10-22T11:48:41+01:00",
-          "tree_id": "ac6cb378095883f5f9d3d3d56dfebdc9d01ab0ce",
-          "url": "https://github.com/equinor/ert/commit/b17e43949ce97c3f06994cc4080027af35e730dd"
-        },
-        "date": 1729594226170,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19277709457530473,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03552516271295124",
-            "extra": "mean: 5.187338268600001 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.041276735662446135",
             "extra": "mean: 5.121709123200003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "132ca3c741bc8f22f75d5d7cabb58a281150a3d4",
+          "message": "Brush up test_ert_config\n\nTest code should not be changed by this commit, this is only cleanup\nlike:\n* String whitespace formatting for ert config files\n* Usage of pathlib\n* Expand some test names\n* Use fixture for changing to tmp_path",
+          "timestamp": "2024-10-29T13:27:59+01:00",
+          "tree_id": "a6d300e35fdb7981f5f05bcf1eb66eae4189c259",
+          "url": "https://github.com/equinor/ert/commit/132ca3c741bc8f22f75d5d7cabb58a281150a3d4"
+        },
+        "date": 1730204987732,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19161156412727617,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022541461883642793",
+            "extra": "mean: 5.2188916914000005 sec\nrounds: 5"
           }
         ]
       }
