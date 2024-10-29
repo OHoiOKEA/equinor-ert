@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730127534262,
+  "lastUpdate": 1730199043671,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "jparu@equinor.com",
-            "name": "xjules",
-            "username": "xjules"
-          },
-          "committer": {
-            "email": "jparu@equinor.com",
-            "name": "Julius Parulek",
-            "username": "xjules"
-          },
-          "distinct": true,
-          "id": "3b1587a2d6666ea323014cf7a529d481ea1581ca",
-          "message": "Adjust histogram boundaries when having constant distribution: min==max\n\n- Add test for plot histogram when having a constant distribution",
-          "timestamp": "2024-10-21T15:29:56+02:00",
-          "tree_id": "2416cde07a178faafac29d61aee6ef6bb51dcb7b",
-          "url": "https://github.com/equinor/ert/commit/3b1587a2d6666ea323014cf7a529d481ea1581ca"
-        },
-        "date": 1729517519329,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19433716121703978,
-            "unit": "iter/sec",
-            "range": "stddev: 0.030288368164369764",
-            "extra": "mean: 5.1456962412 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.06309643027021318",
             "extra": "mean: 5.156505989400006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "97478fa435c02f85dad9c08d2c8093ea2095ec45",
+          "message": "Rename job to step in runner\n\n(many more of these to go)",
+          "timestamp": "2024-10-29T11:48:52+01:00",
+          "tree_id": "21db265927b3d4ee87c56c5863da8229403fe914",
+          "url": "https://github.com/equinor/ert/commit/97478fa435c02f85dad9c08d2c8093ea2095ec45"
+        },
+        "date": 1730199043049,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19343216531706073,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0163780745251296",
+            "extra": "mean: 5.169771006600007 sec\nrounds: 5"
           }
         ]
       }
