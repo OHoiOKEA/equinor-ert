@@ -9,15 +9,12 @@ from pathlib import Path
 from typing import TYPE_CHECKING, Any, Dict, Iterable, List, Mapping, Optional, Union
 
 import orjson
+import pandas as pd
+import xarray as xr
 from numpy.random import SeedSequence
 
-from .config import (
-    ExtParamConfig,
-    Field,
-    GenKwConfig,
-    ParameterConfig,
-    SurfaceConfig,
-)
+from .config import ExtParamConfig, Field, GenKwConfig, ParameterConfig, SurfaceConfig
+from .config.design_matrix import DESIGN_MATRIX_GROUP
 from .run_arg import RunArg
 from .runpaths import Runpaths
 
@@ -148,17 +145,42 @@ def _seed_sequence(seed: Optional[int]) -> int:
     return int_seed
 
 
+def save_design_matrix_to_ensemble(
+    design_matrix_df: pd.DataFrame,
+    ensemble: Ensemble,
+    active_realizations: Iterable[int],
+    design_group_name: str = DESIGN_MATRIX_GROUP,
+) -> None:
+    assert not design_matrix_df.empty
+    for realization_nr in active_realizations:
+        row = design_matrix_df.loc[realization_nr][DESIGN_MATRIX_GROUP]
+        ds = xr.Dataset(
+            {
+                "values": ("names", list(row.values)),
+                "transformed_values": ("names", list(row.values)),
+                "names": list(row.keys()),
+            }
+        )
+        ensemble.save_parameters(
+            design_group_name,
+            realization_nr,
+            ds,
+        )
+
+
 def sample_prior(
     ensemble: Ensemble,
     active_realizations: Iterable[int],
     parameters: Optional[List[str]] = None,
     random_seed: Optional[int] = None,
+    design_matrix_df: Optional[pd.DataFrame] = None,
 ) -> None:
     """This function is responsible for getting the prior into storage,
     in the case of GEN_KW we sample the data and store it, and if INIT_FILES
     are used without FORWARD_INIT we load files and store them. If FORWARD_INIT
     is set the state is set to INITIALIZED, but no parameters are saved to storage
-    until after the forward model has completed.
+    until after the forward model has completed. If parameters come from the DESIGN_MATRIX_GROUP
+    they are handled separately via save_design_matrix_to_ensemble.
     """
     random_seed = _seed_sequence(random_seed)
     t = time.perf_counter()
@@ -169,6 +191,19 @@ def sample_prior(
         config_node = parameter_configs[parameter]
         if config_node.forward_init:
             continue
+        if (
+            isinstance(config_node, GenKwConfig)
+            and config_node.init_source == "design_matrix"
+        ):
+            if design_matrix_df is None:
+                raise ValueError(
+                    "Design matrix DataFrame is required for design matrix parameters"
+                )
+            save_design_matrix_to_ensemble(
+                design_matrix_df, ensemble, active_realizations, config_node.name
+            )
+            continue
+
         for realization_nr in active_realizations:
             ds = config_node.sample_or_load(
                 realization_nr,

@@ -14,6 +14,7 @@ from typing import (
     Callable,
     Dict,
     List,
+    Literal,
     Optional,
     TypedDict,
     overload,
@@ -33,6 +34,7 @@ if TYPE_CHECKING:
     import numpy.typing as npt
 
     from ert.storage import Ensemble
+
 
 _logger = logging.getLogger(__name__)
 
@@ -72,6 +74,7 @@ class GenKwConfig(ParameterConfig):
     output_file: Optional[str]
     transform_function_definitions: List[TransformFunctionDefinition]
     forward_init_file: Optional[str] = None
+    init_source: Literal["sample", "forward_init", "design_matrix"] = "sample"
 
     def __post_init__(self) -> None:
         self.transform_functions: List[TransformFunction] = []

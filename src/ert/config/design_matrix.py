@@ -11,15 +11,10 @@ from pandas.api.types import is_integer_dtype
 from ert.config.gen_kw_config import GenKwConfig, TransformFunctionDefinition
 
 from ._option_dict import option_dict
-from .parsing import (
-    ConfigValidationError,
-    ErrorInfo,
-)
+from .parsing import ConfigValidationError, ErrorInfo
 
 if TYPE_CHECKING:
-    from ert.config import (
-        ParameterConfig,
-    )
+    from ert.config import ParameterConfig
 
 DESIGN_MATRIX_GROUP = "DESIGN_MATRIX"
 
@@ -73,6 +68,43 @@ class DesignMatrix:
             design_sheet=design_sheet,
             default_sheet=default_sheet,
         )
+
+    def merge_with_existing_parameters(
+        self, existing_parameters: List[ParameterConfig]
+    ) -> List[ParameterConfig]:
+        if self.parameter_configuration is None:
+            self.read_design_matrix()
+
+        if self.parameter_configuration is None or not isinstance(
+            self.parameter_configuration[DESIGN_MATRIX_GROUP], GenKwConfig
+        ):
+            return existing_parameters
+
+        new_param_config: List[ParameterConfig] = []
+
+        design_parameter_group = self.parameter_configuration[DESIGN_MATRIX_GROUP]
+        if isinstance(design_parameter_group, GenKwConfig):
+            design_keys = design_parameter_group.getKeyWords()
+
+        design_group_added = False
+        for genkw_group in existing_parameters:
+            if not isinstance(genkw_group, GenKwConfig):
+                new_param_config += [genkw_group]
+                continue
+            existing_keys = genkw_group.getKeyWords()
+            if set(design_keys).issubset(set(existing_keys)):
+                design_parameter_group.name = genkw_group.name
+                new_param_config += [design_parameter_group]
+                design_group_added = True
+            elif set(design_keys) & set(existing_keys):
+                raise ConfigValidationError(
+                    "Overlapping parameter names found in design matrix!"
+                )
+            else:
+                new_param_config += [genkw_group]
+        if not design_group_added:
+            new_param_config += [design_parameter_group]
+        return new_param_config
 
     def read_design_matrix(
         self,
@@ -136,6 +168,7 @@ class DesignMatrix:
             output_file=None,
             transform_function_definitions=transform_function_definitions,
             update=False,
+            init_source="design_matrix",
         )
 
         design_matrix_df.columns = pd.MultiIndex.from_product(
