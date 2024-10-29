@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730211611416,
+  "lastUpdate": 1730212876477,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "12ffdba9baa36707b83e67af9d8b72533010f7ab",
-          "message": "Remove duplicate eclbase",
-          "timestamp": "2024-10-22T13:48:10+02:00",
-          "tree_id": "3c376e4766eb1190fb62b7069a1097b437948a5b",
-          "url": "https://github.com/equinor/ert/commit/12ffdba9baa36707b83e67af9d8b72533010f7ab"
-        },
-        "date": 1729597793408,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19724796818871085,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0253880903021815",
-            "extra": "mean: 5.069760713800008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022965478674225173",
             "extra": "mean: 5.240372569599993 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "28763a6551f19eadb9cc4675baa9d2f405f10921",
+          "message": "Increment storage version\n\nPut polars migration into separate version\r\ndue to 2024.10 ERT being still xarray",
+          "timestamp": "2024-10-29T15:39:24+01:00",
+          "tree_id": "07a9b8692b3231f1ae013ae1797bc907651db3a6",
+          "url": "https://github.com/equinor/ert/commit/28763a6551f19eadb9cc4675baa9d2f405f10921"
+        },
+        "date": 1730212875866,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.18802466468712978,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0342248591953596",
+            "extra": "mean: 5.318451181200004 sec\nrounds: 5"
           }
         ]
       }
