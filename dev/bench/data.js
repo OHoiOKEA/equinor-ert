@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730205826004,
+  "lastUpdate": 1730208454248,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "e741d4bd5630808b64515d3b80eecf3fd5986ac6",
-          "message": "Use more realistic values in example in doc\n\nMin and max are applied after the output-transformation. For a permeability field this implies that\nhas some implications on what is a realistic value interval.",
-          "timestamp": "2024-10-22T13:13:56+02:00",
-          "tree_id": "fd0a56ece227de438f95cda7ee07f0b7eca96f6b",
-          "url": "https://github.com/equinor/ert/commit/e741d4bd5630808b64515d3b80eecf3fd5986ac6"
-        },
-        "date": 1729595743482,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19151760924554168,
-            "unit": "iter/sec",
-            "range": "stddev: 0.038190962221120194",
-            "extra": "mean: 5.22145198 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02587151582979508",
             "extra": "mean: 5.160215435600003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "e397968a49c1d71fcd6cd6d8576bfa844265b9ab",
+          "message": "Make test fixture minimum_case really minimal",
+          "timestamp": "2024-10-29T14:25:46+01:00",
+          "tree_id": "d66b372d6ff87a46e1ea37d10b85d15cddac7ed3",
+          "url": "https://github.com/equinor/ert/commit/e397968a49c1d71fcd6cd6d8576bfa844265b9ab"
+        },
+        "date": 1730208453777,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19237271209429074,
+            "unit": "iter/sec",
+            "range": "stddev: 0.11566210336350013",
+            "extra": "mean: 5.198242459200003 sec\nrounds: 5"
           }
         ]
       }
