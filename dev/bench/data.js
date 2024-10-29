@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730204988169,
+  "lastUpdate": 1730205826004,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "ac3dada674fa4abb76583f464bb653da3d7b8afd",
-          "message": "Fix read_from_file error propagation",
-          "timestamp": "2024-10-22T13:02:50+02:00",
-          "tree_id": "6d92349e6ef3b6d04cfeb066d337b2a8b8b6c7de",
-          "url": "https://github.com/equinor/ert/commit/ac3dada674fa4abb76583f464bb653da3d7b8afd"
-        },
-        "date": 1729595081855,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19482874035186354,
-            "unit": "iter/sec",
-            "range": "stddev: 0.032170723283778686",
-            "extra": "mean: 5.132712957000007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.022541461883642793",
             "extra": "mean: 5.2188916914000005 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "d329f1c446df7bb1345cafd33ee23134e552bf19",
+          "message": "Have run simulation button disabled when running",
+          "timestamp": "2024-10-29T13:42:00+01:00",
+          "tree_id": "59991235bbb691166758394ed26c7feb8a2fc7f5",
+          "url": "https://github.com/equinor/ert/commit/d329f1c446df7bb1345cafd33ee23134e552bf19"
+        },
+        "date": 1730205825532,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19379035865461405,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02587151582979508",
+            "extra": "mean: 5.160215435600003 sec\nrounds: 5"
           }
         ]
       }
