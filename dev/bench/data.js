@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730208454248,
+  "lastUpdate": 1730211611416,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "67e1ffced403c809c364f8d2d912b76a54b84afa",
-          "message": "Fix bug with time format for Slurms max_runtime\n\nErt provided the number of seconds as a float to Slurms sbatch command,\nwhich is wrong.  Add a helper function to format the timedelta properly.\n\nFloating point part is ignored by rounding down to nearest second.",
-          "timestamp": "2024-10-22T13:41:39+02:00",
-          "tree_id": "704ebec26ef7a440ca9d3ecbf928a251e64312db",
-          "url": "https://github.com/equinor/ert/commit/67e1ffced403c809c364f8d2d912b76a54b84afa"
-        },
-        "date": 1729597414510,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1953942877593406,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02079041411306449",
-            "extra": "mean: 5.117856880400007 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.11566210336350013",
             "extra": "mean: 5.198242459200003 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "andrli@equinor.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "committer": {
+            "email": "114403625+andreas-el@users.noreply.github.com",
+            "name": "Andreas Eknes Lie",
+            "username": "andreas-el"
+          },
+          "distinct": true,
+          "id": "0aa55b414ca0e121f357a53590c0582148131813",
+          "message": "Detect dark_mode in sidepanel",
+          "timestamp": "2024-10-29T15:18:14+01:00",
+          "tree_id": "36342805c14fdd5d593bb272e3d7047deb616710",
+          "url": "https://github.com/equinor/ert/commit/0aa55b414ca0e121f357a53590c0582148131813"
+        },
+        "date": 1730211610478,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19082612671494306,
+            "unit": "iter/sec",
+            "range": "stddev: 0.022965478674225173",
+            "extra": "mean: 5.240372569599993 sec\nrounds: 5"
           }
         ]
       }
