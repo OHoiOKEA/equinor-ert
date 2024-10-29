@@ -14,6 +14,7 @@ from typing import (
     Callable,
     Dict,
     List,
+    Literal,
     Optional,
     TypedDict,
     overload,
@@ -73,8 +74,7 @@ class GenKwConfig(ParameterConfig):
     output_file: Optional[str]
     transform_function_definitions: List[TransformFunctionDefinition]
     forward_init_file: Optional[str] = None
-    disabled: Optional[bool] = False
-    design_matrix_init: Optional[bool] = False
+    init_source: Literal["sample", "forward_init", "design_matrix"] = "sample"
 
     def __post_init__(self) -> None:
         self.transform_functions: List[TransformFunction] = []

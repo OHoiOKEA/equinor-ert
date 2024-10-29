@@ -191,7 +191,10 @@ def sample_prior(
         config_node = parameter_configs[parameter]
         if config_node.forward_init:
             continue
-        if isinstance(config_node, GenKwConfig) and config_node.design_matrix_init:
+        if (
+            isinstance(config_node, GenKwConfig)
+            and config_node.init_source == "design_matrix"
+        ):
             if design_matrix_df is None:
                 raise ValueError(
                     "Design matrix DataFrame is required for design matrix parameters"

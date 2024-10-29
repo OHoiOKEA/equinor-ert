@@ -165,7 +165,7 @@ class DesignMatrix:
             output_file=None,
             transform_function_definitions=transform_function_definitions,
             update=False,
-            design_matrix_init=True,
+            init_source="design_matrix",
         )
 
         design_matrix_df.columns = pd.MultiIndex.from_product(
