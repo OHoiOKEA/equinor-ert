@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730212876477,
+  "lastUpdate": 1730290929071,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "49289030+HakonSohoel@users.noreply.github.com",
-            "name": "Håkon Steinkopf Søhoel",
-            "username": "HakonSohoel"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "e55b1f9f0699ddd10f9980015c3976d6a7c074ff",
-          "message": "Improve error messages on test komodo failures (#9008)",
-          "timestamp": "2024-10-22T14:07:47+02:00",
-          "tree_id": "c2d427d09fefd04ccc90ba256ea2bf21df39b0ca",
-          "url": "https://github.com/equinor/ert/commit/e55b1f9f0699ddd10f9980015c3976d6a7c074ff"
-        },
-        "date": 1729598970229,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19401624917051807,
-            "unit": "iter/sec",
-            "range": "stddev: 0.06932245215309367",
-            "extra": "mean: 5.154207465999997 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0342248591953596",
             "extra": "mean: 5.318451181200004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "f9347350ae9c409d19872101e1a6479a20ed9eea",
+          "message": "Show obs counts correctly summary panel",
+          "timestamp": "2024-10-30T13:20:14+01:00",
+          "tree_id": "b510a8ab6abf4c337865c195d3e43363bf32d9ca",
+          "url": "https://github.com/equinor/ert/commit/f9347350ae9c409d19872101e1a6479a20ed9eea"
+        },
+        "date": 1730290928464,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1938469715755869,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02412473537954339",
+            "extra": "mean: 5.158708396999998 sec\nrounds: 5"
           }
         ]
       }
