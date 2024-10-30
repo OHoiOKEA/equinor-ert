@@ -21,8 +21,21 @@ class RunArg:
     runpath: str
     job_name: str
     active: bool = True
+    runpaths: Optional[Runpaths] = None
     # Below here is legacy related to Everest
     queue_index: Optional[int] = None
+
+    def __post_init__(self) -> None:
+        if self.runpaths is None:
+            self.runpaths = Runpaths(self.job_name, self.runpath)
+
+    def file_in_runpath(self, filename: str) -> str:
+        assert self.runpaths is not None
+        if "%d" in filename:
+            filename = filename % self.iens  # noqa
+        return self.runpaths.runpath_file(
+            filename, realization=self.iens, iteration=self.itr
+        )
 
 
 def create_run_arguments(
@@ -47,7 +60,8 @@ def create_run_arguments(
                 iteration,
                 run_path,
                 job_name,
-                active,
+                runpaths=runpaths,
+                active=active,
             )
         )
     return run_args

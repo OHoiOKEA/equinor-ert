@@ -6,7 +6,17 @@ import os
 import time
 from datetime import datetime
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Dict, Iterable, List, Mapping, Optional, Union
+from typing import (
+    TYPE_CHECKING,
+    Any,
+    Callable,
+    Dict,
+    Iterable,
+    List,
+    Mapping,
+    Optional,
+    Union,
+)
 
 import orjson
 from numpy.random import SeedSequence
@@ -77,8 +87,7 @@ def _value_export_json(
 def _generate_parameter_files(
     parameter_configs: Iterable[ParameterConfig],
     export_base_name: str,
-    run_path: Path,
-    iens: int,
+    runarg: RunArg,
     fs: Ensemble,
     iteration: int,
 ) -> None:
@@ -103,16 +112,18 @@ def _generate_parameter_files(
         # model has completed.
         if node.forward_init and iteration == 0:
             continue
-        export_values = node.write_to_runpath(Path(run_path), iens, fs)
+        export_values = node.write_to_runpath(runarg.file_in_runpath, runarg.iens, fs)
         if export_values:
             exports.update(export_values)
         continue
 
-    _value_export_txt(run_path, export_base_name, exports)
-    _value_export_json(run_path, export_base_name, exports)
+    _value_export_txt(Path(runarg.runpath), export_base_name, exports)
+    _value_export_json(Path(runarg.runpath), export_base_name, exports)
 
 
-def _manifest_to_json(ensemble: Ensemble, iens: int = 0) -> Dict[str, Any]:
+def _manifest_to_json(
+    ensemble: Ensemble, file_in_runpath: Callable[[str], str], iens: int
+) -> Dict[str, Any]:
     manifest = {}
     # Add expected parameter files to manifest
     for param_config in ensemble.experiment.parameter_configuration.values():
@@ -120,15 +131,16 @@ def _manifest_to_json(ensemble: Ensemble, iens: int = 0) -> Dict[str, Any]:
             param_config,
             (ExtParamConfig, GenKwConfig, Field, SurfaceConfig),
         )
-        if param_config.forward_init and param_config.forward_init_file is not None:
+        if param_config.forward_init and ensemble.iteration == 0:
+            assert param_config.forward_init_file is not None
             file_path = param_config.forward_init_file.replace("%d", str(iens))
-            manifest[param_config.name] = file_path
-        elif param_config.output_file is not None and not param_config.forward_init:
-            manifest[param_config.name] = str(param_config.output_file)
+            manifest[param_config.name] = file_in_runpath(file_path)
     # Add expected response files to manifest
     for respons_config in ensemble.experiment.response_configuration.values():
         for input_file in respons_config.expected_input_files:
-            manifest[f"{respons_config.response_type}_{input_file}"] = input_file
+            manifest[f"{respons_config.response_type}_{input_file}"] = file_in_runpath(
+                input_file
+            )
 
     return manifest
 
@@ -165,12 +177,22 @@ def sample_prior(
     parameter_configs = ensemble.experiment.parameter_configuration
     if parameters is None:
         parameters = list(parameter_configs.keys())
+
+    def file_in_config_path(real: int) -> Callable[[str], str]:
+        def inner(filename: str) -> str:
+            if "%d" in filename:
+                filename = filename % real  # noqa
+            return filename.replace("<IENS>", str(real)).replace("<ITER>", "0")
+
+        return inner
+
     for parameter in parameters:
         config_node = parameter_configs[parameter]
         if config_node.forward_init:
             continue
         for realization_nr in active_realizations:
             ds = config_node.sample_or_load(
+                file_in_config_path(realization_nr),
                 realization_nr,
                 random_seed=random_seed,
                 ensemble_size=ensemble.ensemble_size,
@@ -224,8 +246,7 @@ def create_run_path(
             _generate_parameter_files(
                 ensemble.experiment.parameter_configuration.values(),
                 model_config.gen_kw_export_name,
-                run_path,
-                run_arg.iens,
+                run_arg,
                 ensemble,
                 ensemble.iteration,
             )
@@ -240,7 +261,7 @@ def create_run_path(
                     orjson.dumps(forward_model_output, option=orjson.OPT_NON_STR_KEYS)
                 )
             # Write MANIFEST file to runpath use to avoid NFS sync issues
-            data = _manifest_to_json(ensemble, run_arg.iens)
+            data = _manifest_to_json(ensemble, run_arg.file_in_runpath, run_arg.iens)
             with open(run_path / "manifest.json", mode="wb") as fptr:
                 fptr.write(orjson.dumps(data, option=orjson.OPT_NON_STR_KEYS))
 

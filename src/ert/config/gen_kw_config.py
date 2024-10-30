@@ -234,10 +234,14 @@ class GenKwConfig(ParameterConfig):
             raise ConfigValidationError.from_collected(errors)
 
     def sample_or_load(
-        self, real_nr: int, random_seed: int, ensemble_size: int
+        self,
+        file_in_config_path: Callable[[str], str],
+        real_nr: int,
+        random_seed: int,
+        ensemble_size: int,
     ) -> xr.Dataset:
         if self.forward_init_file:
-            return self.read_from_runpath(Path(), real_nr)
+            return self.read_from_runpath(file_in_config_path)
 
         _logger.info(f"Sampling parameter {self.name} for realization {real_nr}")
         keys = [e.name for e in self.transform_functions]
@@ -256,18 +260,13 @@ class GenKwConfig(ParameterConfig):
             }
         )
 
-    def read_from_runpath(
-        self,
-        run_path: Path,
-        real_nr: int,
-    ) -> xr.Dataset:
+    def read_from_runpath(self, file_in_runpath: Callable[[str], str]) -> xr.Dataset:
         keys = [e.name for e in self.transform_functions]
         if not self.forward_init_file:
             raise ValueError("loading gen_kw values requires forward_init_file")
 
         parameter_value = self._values_from_file(
-            real_nr,
-            self.forward_init_file,
+            file_in_runpath(self.forward_init_file),
             keys,
         )
 
@@ -281,10 +280,10 @@ class GenKwConfig(ParameterConfig):
 
     def write_to_runpath(
         self,
-        run_path: Path,
+        file_in_runpath: Callable[[str], str],
         real_nr: int,
         ensemble: Ensemble,
-    ) -> Dict[str, Dict[str, float]]:
+    ) -> Optional[Dict[str, Dict[str, float]]]:
         array = ensemble.load_parameters(self.name, real_nr)["transformed_values"]
         assert isinstance(array, xr.DataArray)
         if not array.size == len(self.transform_functions):
@@ -305,7 +304,7 @@ class GenKwConfig(ParameterConfig):
             target_file = self.output_file
             if target_file.startswith("/"):
                 target_file = target_file[1:]
-            (run_path / target_file).parent.mkdir(exist_ok=True, parents=True)
+            Path(file_in_runpath(target_file)).parent.mkdir(exist_ok=True, parents=True)
             template_file_path = (
                 ensemble.experiment.mount_point / Path(self.template_file).name
             )
@@ -313,7 +312,7 @@ class GenKwConfig(ParameterConfig):
                 template = f.read()
             for key, value in data.items():
                 template = template.replace(f"<{key}>", f"{value:.6g}")
-            with open(run_path / target_file, "w", encoding="utf-8") as f:
+            with open(file_in_runpath(target_file), "w", encoding="utf-8") as f:
                 f.write(template)
 
         if log10_data:
@@ -383,10 +382,7 @@ class GenKwConfig(ParameterConfig):
         return array
 
     @staticmethod
-    def _values_from_file(
-        realization: int, name_format: str, keys: List[str]
-    ) -> npt.NDArray[np.double]:
-        file_name = name_format % realization
+    def _values_from_file(file_name: str, keys: List[str]) -> npt.NDArray[np.double]:
         df = pd.read_csv(file_name, sep=r"\s+", header=None)
         # This means we have a key: value mapping in the
         # file otherwise it is just a list of values
