@@ -4,7 +4,7 @@ import ssl
 from typing import Any, AnyStr, Optional, Union
 
 from typing_extensions import Self
-from websockets.client import WebSocketClientProtocol, connect
+from websockets.asyncio.client import ClientConnection, connect
 from websockets.datastructures import Headers
 from websockets.exceptions import (
     ConnectionClosedError,
@@ -74,14 +74,14 @@ class Client:
 
         self._max_retries = max_retries
         self._timeout_multiplier = timeout_multiplier
-        self.websocket: Optional[WebSocketClientProtocol] = None
+        self.websocket: Optional[ClientConnection] = None
         self.loop = new_event_loop()
 
-    async def get_websocket(self) -> WebSocketClientProtocol:
+    async def get_websocket(self) -> ClientConnection:
         return await connect(
             self.url,
             ssl=self._ssl_context,
-            extra_headers=self._extra_headers,
+            additional_headers=self._extra_headers,
             open_timeout=60,
             ping_timeout=60,
             ping_interval=60,
