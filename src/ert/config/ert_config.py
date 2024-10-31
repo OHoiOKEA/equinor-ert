@@ -439,6 +439,17 @@ class ErtConfig:
                 path.join(config_dir, content_dict[ConfigKeys.RUNPATH_FILE])
             )
 
+    @staticmethod
+    def _uppercase_subkeys_and_stringify_subvalues(
+        nested_dict: Dict[str, Dict[str, Any]],
+    ) -> Dict[str, Dict[str, str]]:
+        fixed_dict: dict[str, dict[str, str]] = {}
+        for key, value in nested_dict.items():
+            fixed_dict[key] = {
+                subkey.upper(): str(subvalue) for subkey, subvalue in value.items()
+            }
+        return fixed_dict
+
     @classmethod
     def read_site_config(cls) -> ConfigDict:
         site_config_file = site_config_location()
@@ -748,6 +759,9 @@ class ErtConfig:
 
         job_list_errors = []
         job_list: List[ForwardModelStepJSON] = []
+        env_pr_fm_step = cls._uppercase_subkeys_and_stringify_subvalues(
+            ErtPluginManager().get_forward_model_configuration()
+        )
         for idx, fm_step in enumerate(forward_model_steps):
             substituter = Substituter(fm_step)
             fm_step_json = {
@@ -771,7 +785,9 @@ class ErtConfig:
                     handle_default(fm_step, substituter.substitute(arg))
                     for arg in fm_step.arglist
                 ],
-                "environment": substituter.filter_env_dict(fm_step.environment),
+                "environment": substituter.filter_env_dict(
+                    dict(env_pr_fm_step.get(fm_step.name, {}), **fm_step.environment)
+                ),
                 "exec_env": substituter.filter_env_dict(fm_step.exec_env),
                 "max_running_minutes": fm_step.max_running_minutes,
             }
