@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730375847038,
+  "lastUpdate": 1730382843622,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "cbaaca9ef2d832056cf7d52837e33f5025a5cc32",
-          "message": "Relax requirement for flaky cpu multiprocess test",
-          "timestamp": "2024-10-25T07:38:49+02:00",
-          "tree_id": "191c4f89459b87192ffeb3161235c9f42a287cd4",
-          "url": "https://github.com/equinor/ert/commit/cbaaca9ef2d832056cf7d52837e33f5025a5cc32"
-        },
-        "date": 1729834836189,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1962221030109983,
-            "unit": "iter/sec",
-            "range": "stddev: 0.035813684194860675",
-            "extra": "mean: 5.096265836799995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.013230070044671145",
             "extra": "mean: 5.020958905800001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "d29493050df0077131058fe80d04d9b2576944fe",
+          "message": "Change button text `Debug Info`->`Copy Debug Info`\n\nThe button text was misleading, as it could be interpreted as \"show debug info\" instead of it copying the debug info to the clipboard.",
+          "timestamp": "2024-10-31T14:52:16+01:00",
+          "tree_id": "11e229cf8aa2273fe817ee6bb8bbcd2662d3547a",
+          "url": "https://github.com/equinor/ert/commit/d29493050df0077131058fe80d04d9b2576944fe"
+        },
+        "date": 1730382843163,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19291091671620175,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0268233687214356",
+            "extra": "mean: 5.183739816400004 sec\nrounds: 5"
           }
         ]
       }
