@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730372673077,
+  "lastUpdate": 1730372708150,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "a6301093b809a062bb57897708e7f25890a0a2e8",
-          "message": "Rename Job to ForwardModelStep\n\nPlus follow-up in test code and filenames",
-          "timestamp": "2024-10-24T10:44:20+02:00",
-          "tree_id": "f6f72ff4e2d0c2b699be80906ae2051c620baeab",
-          "url": "https://github.com/equinor/ert/commit/a6301093b809a062bb57897708e7f25890a0a2e8"
-        },
-        "date": 1729759568083,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19201714321435348,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02264973751484774",
-            "extra": "mean: 5.207868335400008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.021636133729286657",
             "extra": "mean: 5.206505532799997 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "aac8f804ffc6ffa25bb7127ade296f2f0aac3952",
+          "message": "Remove function only called in test",
+          "timestamp": "2024-10-31T12:03:18+01:00",
+          "tree_id": "0021ef19fea09eaac61b6b4e7406d6db63efa941",
+          "url": "https://github.com/equinor/ert/commit/aac8f804ffc6ffa25bb7127ade296f2f0aac3952"
+        },
+        "date": 1730372707382,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19671715994098707,
+            "unit": "iter/sec",
+            "range": "stddev: 0.0388839294678522",
+            "extra": "mean: 5.0834406124 sec\nrounds: 5"
           }
         ]
       }
