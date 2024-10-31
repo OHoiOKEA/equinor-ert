@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730382843622,
+  "lastUpdate": 1730385692370,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "2cb3ea0602eb34b551f7712447aa846310ab1beb",
-          "message": "Fix run_dialog second progress bar hanging\n\nThis commit fixes the issue where an immediate experiment failure would leave the second progress bar stuck in indeterminate state.\nThe commit also makes the total progress bar turn red on immediate\nfailures.",
-          "timestamp": "2024-10-25T09:31:30+02:00",
-          "tree_id": "95b4c80a7796a4f5ddef906fe93237951b7cec6e",
-          "url": "https://github.com/equinor/ert/commit/2cb3ea0602eb34b551f7712447aa846310ab1beb"
-        },
-        "date": 1729841599594,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1959099531919678,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03581412812085479",
-            "extra": "mean: 5.104385885999994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.0268233687214356",
             "extra": "mean: 5.183739816400004 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "yngve-sk@users.noreply.github.com",
+            "name": "Yngve S. Kristiansen",
+            "username": "yngve-sk"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c077aad7c74ce1d48e26dc1703545263a4d6f152",
+          "message": "Make plot_api return all observations for response",
+          "timestamp": "2024-10-31T14:39:37Z",
+          "tree_id": "e633ef272ba93fc496b2ddc23ad75338c0221864",
+          "url": "https://github.com/equinor/ert/commit/c077aad7c74ce1d48e26dc1703545263a4d6f152"
+        },
+        "date": 1730385691493,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19462632084366618,
+            "unit": "iter/sec",
+            "range": "stddev: 0.01928909080231142",
+            "extra": "mean: 5.138051193000001 sec\nrounds: 5"
           }
         ]
       }
