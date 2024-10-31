@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730359980568,
+  "lastUpdate": 1730363314920,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "sted@equinor.com",
-            "name": "StephanDeHoop",
-            "username": "StephanDeHoop"
-          },
-          "committer": {
-            "email": "stephan.dehoop@tno.nl",
-            "name": "Stephan de Hoop",
-            "username": "StephanDeHoop"
-          },
-          "distinct": true,
-          "id": "ca44e00531609e31384be0bf860cec5a53fe354f",
-          "message": "Index ert config dictionary with Ert ConfigKeys instead of hardcoded strings",
-          "timestamp": "2024-10-23T11:25:53+02:00",
-          "tree_id": "f77a78827ec63b655000afbb8a36f38987974016",
-          "url": "https://github.com/equinor/ert/commit/ca44e00531609e31384be0bf860cec5a53fe354f"
-        },
-        "date": 1729675673897,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19670298595451333,
-            "unit": "iter/sec",
-            "range": "stddev: 0.022488232962698966",
-            "extra": "mean: 5.083806914000002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.041257105184121186",
             "extra": "mean: 5.149578287200006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "c4e136546fa7f03090110e8dac1647c95e0f58b8",
+          "message": "Log runtime for individual forward model steps\n\nThis is meant for making statistics pr forward model step name.\n\nWhile testing on poly_example and local queue, there\nis some odd occurences of the logged message that start_time\nis None, this is not believed to happen often in production.",
+          "timestamp": "2024-10-31T09:26:43+01:00",
+          "tree_id": "d4651fd3a80f2f0fe8fa630d1418271291a22cb0",
+          "url": "https://github.com/equinor/ert/commit/c4e136546fa7f03090110e8dac1647c95e0f58b8"
+        },
+        "date": 1730363313927,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19573123415225843,
+            "unit": "iter/sec",
+            "range": "stddev: 0.013071220862864061",
+            "extra": "mean: 5.109046618599995 sec\nrounds: 5"
           }
         ]
       }
