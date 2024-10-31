@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730363314920,
+  "lastUpdate": 1730371414878,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "2c94d3998d836c4d8cdbaadd3bfcb69687824344",
-          "message": "Combine dicts instead of mutating user environment variables",
-          "timestamp": "2024-10-23T14:53:19+02:00",
-          "tree_id": "0f3d47dc6ea9003ae2e600fee01ab1643ddaee89",
-          "url": "https://github.com/equinor/ert/commit/2c94d3998d836c4d8cdbaadd3bfcb69687824344"
-        },
-        "date": 1729688106617,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1939357410306562,
-            "unit": "iter/sec",
-            "range": "stddev: 0.05402769067520159",
-            "extra": "mean: 5.1563471214000005 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.013071220862864061",
             "extra": "mean: 5.109046618599995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "feda.curic@gmail.com",
+            "name": "Feda Curic",
+            "username": "dafeda"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "40c833805eae51f790d20d3bde1038c40b6a27a2",
+          "message": "Test field update using heat equation instead of poly",
+          "timestamp": "2024-10-31T11:41:44+01:00",
+          "tree_id": "6e6c5e9c3692347b9b511c126d5e02136b700280",
+          "url": "https://github.com/equinor/ert/commit/40c833805eae51f790d20d3bde1038c40b6a27a2"
+        },
+        "date": 1730371414413,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19560114247813806,
+            "unit": "iter/sec",
+            "range": "stddev: 0.020794376431325683",
+            "extra": "mean: 5.112444576399997 sec\nrounds: 5"
           }
         ]
       }
