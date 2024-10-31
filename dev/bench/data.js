@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730290929071,
+  "lastUpdate": 1730359980568,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "933b009a38778e6e3f9e2eda7bed3d4e7e26a05c",
-          "message": "Use pathlib and jobs are forward_models in test_shell",
-          "timestamp": "2024-10-23T10:37:26+02:00",
-          "tree_id": "416f3b64f5656bef53e7134685dad494c8695c9c",
-          "url": "https://github.com/equinor/ert/commit/933b009a38778e6e3f9e2eda7bed3d4e7e26a05c"
-        },
-        "date": 1729672755868,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1918227462557748,
-            "unit": "iter/sec",
-            "range": "stddev: 0.044983638261839966",
-            "extra": "mean: 5.213146092 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.02412473537954339",
             "extra": "mean: 5.158708396999998 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "levje@equinor.com",
+            "name": "larsevj",
+            "username": "larsevj"
+          },
+          "committer": {
+            "email": "ejah@equinor.com",
+            "name": "Eivind Jahren",
+            "username": "eivindjahren"
+          },
+          "distinct": true,
+          "id": "98576cc8ad12e751a19340e8fa350ef08ed3ee59",
+          "message": "Increase sleep in memory profile test from 0.1 -> 0.15",
+          "timestamp": "2024-10-31T08:31:09+01:00",
+          "tree_id": "4c6ccb8737b71f6d7b3377f7515303b6d5b27f26",
+          "url": "https://github.com/equinor/ert/commit/98576cc8ad12e751a19340e8fa350ef08ed3ee59"
+        },
+        "date": 1730359979652,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19419065877406683,
+            "unit": "iter/sec",
+            "range": "stddev: 0.041257105184121186",
+            "extra": "mean: 5.149578287200006 sec\nrounds: 5"
           }
         ]
       }
