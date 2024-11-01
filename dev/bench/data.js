@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730457264291,
+  "lastUpdate": 1730461282345,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ynk@equinor.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "distinct": true,
-          "id": "da45b440fc623d1b08344d4025404b9cf4649a17",
-          "message": "Use baserunmodel in test_egg_simulation",
-          "timestamp": "2024-10-25T13:36:28+02:00",
-          "tree_id": "0106657564e1f3a965ecb07c1982add52ffaa050",
-          "url": "https://github.com/equinor/ert/commit/da45b440fc623d1b08344d4025404b9cf4649a17"
-        },
-        "date": 1729856299191,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19197012101599906,
-            "unit": "iter/sec",
-            "range": "stddev: 0.012601071653031523",
-            "extra": "mean: 5.209143978800006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03869466312127469",
             "extra": "mean: 5.087378898599996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "044db5aec48bbda9839cf197c7faac5c8e72a058",
+          "message": "Revert \"Increase sleep in memory profile test from 0.1 -> 0.15\"\n\nThis reverts commit 98576cc8ad12e751a19340e8fa350ef08ed3ee59.\n\nChanging the sleep time affects the rate of memory allocation,\nwhich the assert further down depends on.",
+          "timestamp": "2024-11-01T12:39:24+01:00",
+          "tree_id": "b13dbc3fab2b8f853aa8b692b223d51e71a795bc",
+          "url": "https://github.com/equinor/ert/commit/044db5aec48bbda9839cf197c7faac5c8e72a058"
+        },
+        "date": 1730461281432,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19200743007680682,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04340572702924938",
+            "extra": "mean: 5.2081317873999975 sec\nrounds: 5"
           }
         ]
       }
