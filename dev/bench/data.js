@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730450501823,
+  "lastUpdate": 1730454797261,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "havb@equinor.com",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "f1edebb09f43790ad06b60630d22e08b0e314e6b",
-          "message": "Change job to forward model step\n\nStill many like these to go. Not changing the string job in the outputted\nXML file.",
-          "timestamp": "2024-10-25T11:47:56+02:00",
-          "tree_id": "8e35c5b10680a91d753369c90cfda8cd60817032",
-          "url": "https://github.com/equinor/ert/commit/f1edebb09f43790ad06b60630d22e08b0e314e6b"
-        },
-        "date": 1729849779231,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19386792041583306,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02303164856804989",
-            "extra": "mean: 5.158150960999995 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.021090395544056846",
             "extra": "mean: 5.188125722599989 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "eide.oyvind87@gmail.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "committer": {
+            "email": "44577479+oyvindeide@users.noreply.github.com",
+            "name": "Øyvind Eide",
+            "username": "oyvindeide"
+          },
+          "distinct": true,
+          "id": "67ac195545097204906b1f9a1dfce531a4a745b0",
+          "message": "Update docs path",
+          "timestamp": "2024-11-01T10:51:26+01:00",
+          "tree_id": "f656a0e906a4acf753e0767cf8b456bfbbfa224e",
+          "url": "https://github.com/equinor/ert/commit/67ac195545097204906b1f9a1dfce531a4a745b0"
+        },
+        "date": 1730454796832,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1935736941597423,
+            "unit": "iter/sec",
+            "range": "stddev: 0.04787168965994167",
+            "extra": "mean: 5.165991197000006 sec\nrounds: 5"
           }
         ]
       }
