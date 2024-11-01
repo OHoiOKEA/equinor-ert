@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730461282345,
+  "lastUpdate": 1730467418870,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "levje@equinor.com",
-            "name": "larsevj",
-            "username": "larsevj"
-          },
-          "committer": {
-            "email": "berland@pvv.ntnu.no",
-            "name": "Håvard Berland",
-            "username": "berland"
-          },
-          "distinct": true,
-          "id": "6153918c77dafc202ee06dc480e13247e524d5fc",
-          "message": "Add REALIZATION_MEMORY to init_site_config_schema",
-          "timestamp": "2024-10-25T15:41:23+02:00",
-          "tree_id": "90fc273273560fa96b3d993764cb49f5da95fec9",
-          "url": "https://github.com/equinor/ert/commit/6153918c77dafc202ee06dc480e13247e524d5fc"
-        },
-        "date": 1729863793431,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1941259824763436,
-            "unit": "iter/sec",
-            "range": "stddev: 0.009284204484327508",
-            "extra": "mean: 5.151293954800002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04340572702924938",
             "extra": "mean: 5.2081317873999975 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "7ee89c18b36844c0e4c3ba0f886ecccdc1d7e552",
+          "message": "Mitigate flakiness in memory profiling\n\nAnd add some explanation for further debugging",
+          "timestamp": "2024-11-01T14:21:48+01:00",
+          "tree_id": "99e7dbc9660f1203352392ac251f9504a719f21a",
+          "url": "https://github.com/equinor/ert/commit/7ee89c18b36844c0e4c3ba0f886ecccdc1d7e552"
+        },
+        "date": 1730467418469,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19083839842672864,
+            "unit": "iter/sec",
+            "range": "stddev: 0.034027747519319154",
+            "extra": "mean: 5.2400355916000025 sec\nrounds: 5"
           }
         ]
       }
