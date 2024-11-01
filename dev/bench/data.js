@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730385692370,
+  "lastUpdate": 1730443587417,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "JONAK@equinor.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "committer": {
-            "email": "107626001+jonathan-eq@users.noreply.github.com",
-            "name": "Jonathan Karlsen",
-            "username": "jonathan-eq"
-          },
-          "distinct": true,
-          "id": "e8bc17637567d732fd9953f1219459f5979a14cb",
-          "message": "Add _verify_checksum lock in job.py\n\nThis removes the usage of `forward_model_ok_lock` when sleeping until\nchecksum_path exists.",
-          "timestamp": "2024-10-25T10:38:23+02:00",
-          "tree_id": "aea816ae1be430bb5b7fc0832059354c1335658e",
-          "url": "https://github.com/equinor/ert/commit/e8bc17637567d732fd9953f1219459f5979a14cb"
-        },
-        "date": 1729845615523,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19340771605481585,
-            "unit": "iter/sec",
-            "range": "stddev: 0.020332726045675133",
-            "extra": "mean: 5.170424533200003 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.01928909080231142",
             "extra": "mean: 5.138051193000001 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "8c312f2c2552203f62156054223c160f613bdd83",
+          "message": "Fix logging of step runtime statistics\n\nThis had to be moved to _ensemble.py as the state inside _snapshot.py\nonly had information about steps that fell into the same batching\nwindow, thus long lasting steps would have start_time=None",
+          "timestamp": "2024-11-01T07:44:34+01:00",
+          "tree_id": "62f20f1cd653ea7548f2c3321ab7f63a7dd62ef4",
+          "url": "https://github.com/equinor/ert/commit/8c312f2c2552203f62156054223c160f613bdd83"
+        },
+        "date": 1730443586578,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.193994606010088,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03415446621832291",
+            "extra": "mean: 5.154782499199996 sec\nrounds: 5"
           }
         ]
       }
