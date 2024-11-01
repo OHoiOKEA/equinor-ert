@@ -815,9 +815,7 @@ class StatefulStorageTest(RuleBasedStateMachine):
         model_smry_config = next(
             config for config in model_experiment.responses if config.name == "summary"
         )
-        model_smry_config.keys = sorted(
-            set(model_smry_config.keys).union(response_keys)
-        )
+        model_smry_config.keys = sorted(response_keys)
         model_smry_config.has_finalized_keys = True
 
     @rule(model_ensemble=ensembles)
