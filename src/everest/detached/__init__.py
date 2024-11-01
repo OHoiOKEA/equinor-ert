@@ -14,8 +14,10 @@ import requests
 from seba_sqlite.exceptions import ObjectNotFoundError
 from seba_sqlite.snapshot import SebaSnapshot
 
-from ert import BatchContext, BatchSimulator, JobState
 from ert.config import ErtConfig, QueueSystem
+from ert.scheduler import LocalDriver
+from ert.scheduler.driver import FailedSubmit
+from ert.scheduler.event import StartedEvent
 from everest.config import EverestConfig
 from everest.config_keys import ConfigKeys as CK
 from everest.simulator import JOB_FAILURE, JOB_SUCCESS, Status
@@ -56,7 +58,7 @@ _server = None
 _context = None
 
 
-def start_server(config: EverestConfig, ert_config: ErtConfig, storage):
+async def start_server(config: EverestConfig) -> None:
     """
     Start an Everest server running the optimization defined in the config
     """
@@ -78,14 +80,6 @@ def start_server(config: EverestConfig, ert_config: ErtConfig, storage):
         log_level=logging.INFO,
     )
 
-    global _server  # noqa: PLW0603
-    global _context  # noqa: PLW0603
-    if _context and _context.running():
-        raise RuntimeError(
-            "Starting two instances of everest server "
-            "in the same process is not allowed!"
-        )
-
     try:
         _save_running_config(config)
     except (OSError, LookupError) as e:
@@ -93,33 +87,14 @@ def start_server(config: EverestConfig, ert_config: ErtConfig, storage):
             "Failed to save optimization config: {}".format(e)
         )
 
-    experiment = storage.create_experiment(
-        name=f"DetachedEverest@{datetime.now().strftime('%Y-%m-%d@%H:%M:%S')}",
-        parameters=[],
-        responses=[],
-    )
-
-    _server = BatchSimulator(
-        experiment=experiment,
-        perferred_num_cpu=ert_config.preferred_num_cpu,
-        runpath_file=str(ert_config.runpath_file),
-        user_config_file=ert_config.user_config_file,
-        env_vars=ert_config.env_vars,
-        forward_model_steps=ert_config.forward_model_steps,
-        parameter_configurations=ert_config.ensemble_config.parameter_configs,
-        queue_config=ert_config.queue_config,
-        model_config=ert_config.model_config,
-        analysis_config=ert_config.analysis_config,
-        hooked_workflows=ert_config.hooked_workflows,
-        substitutions=ert_config.substitutions,
-        templates=ert_config.ert_templates,
-        controls={},
-        results=[],
-    )
-
-    _context = _server.start("dispatch_server", [(0, {})])
-
-    return _context
+    driver = LocalDriver()
+    try:
+        await driver.submit(0, "everserver", "--config-file", config.config_file)
+    except FailedSubmit as err:
+        raise ValueError(f"Failed to submit Everserver with error: {err}") from err
+    status = await driver.event_queue.get()
+    if not isinstance(status, StartedEvent):
+        raise ValueError(f"Everserver not started as expected, got status: {status}")
 
 
 def _save_running_config(config: EverestConfig):
@@ -127,21 +102,6 @@ def _save_running_config(config: EverestConfig):
     assert config.config_file is not None
     save_config_path = os.path.join(config.output_dir, config.config_file)
     config.dump(save_config_path)
-
-
-def context_stop_and_wait():
-    global _context  # noqa: PLW0602
-    if _context:
-        _context.stop()
-        while _context.running():
-            time.sleep(1)
-
-
-def wait_for_context():
-    global _context  # noqa: PLW0602
-    if _context and _context.running():
-        while _context.running():
-            time.sleep(1)
 
 
 def stop_server(config: EverestConfig, retries: int = 5):
@@ -172,9 +132,7 @@ def extract_errors_from_file(path: str):
     return re.findall(r"(Error \w+.*)", content)
 
 
-def wait_for_server(
-    config: EverestConfig, timeout: int, context: Optional[BatchContext] = None
-) -> None:
+def wait_for_server(config: EverestConfig, timeout: int) -> None:
     """
     Checks everest server has started _HTTP_REQUEST_RETRY times. Waits
     progressively longer between each check.
@@ -195,33 +153,6 @@ def wait_for_server(
                 raise SystemExit(
                     "Failed to start Everest with error:\n{}".format(status["message"])
                 )
-            # Job queueing may fail:
-            if context is not None and context.has_job_failed(0):
-                job_progress = context.job_progress(0)
-
-                if job_progress is not None:
-                    path = context.job_progress(0).steps[0].std_err_file
-                    for err in extract_errors_from_file(path):
-                        update_everserver_status(
-                            config, ServerStatus.failed, message=err
-                        )
-                        logging.error(err)
-                    raise SystemExit("Failed to start Everest server.")
-                else:
-                    try:
-                        state = context.get_job_state(0)
-
-                        if state == JobState.WAITING:
-                            # Job did fail, but is now in WAITING
-                            logging.error(
-                                "Race condition in wait_for_server, job did fail but is now in WAITING"
-                            )
-                    except IndexError as e:
-                        # Job is no longer registered in scheduler
-                        logging.error(
-                            f"Race condition in wait_for_server, failed job removed from scheduler\n{e}"
-                        )
-                        raise SystemExit("Failed to start Everest server.") from e
 
             sleep_time = sleep_time_increment * (2**retry_count)
             time.sleep(sleep_time)
