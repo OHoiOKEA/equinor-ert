@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730469665831,
+  "lastUpdate": 1730469902867,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "committer": {
-            "email": "ejah@equinor.com",
-            "name": "Eivind Jahren",
-            "username": "eivindjahren"
-          },
-          "distinct": true,
-          "id": "be7944328a24ca610c257400d061f0b07ddc2e82",
-          "message": "Document and rename parameter example test",
-          "timestamp": "2024-10-28T12:59:11+01:00",
-          "tree_id": "5339beced9e70677448956b9357fbb21f2062ed3",
-          "url": "https://github.com/equinor/ert/commit/be7944328a24ca610c257400d061f0b07ddc2e82"
-        },
-        "date": 1730116864640,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19476859788683057,
-            "unit": "iter/sec",
-            "range": "stddev: 0.025877925974135355",
-            "extra": "mean: 5.134297883999994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03155378385903209",
             "extra": "mean: 5.267693318999977 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "committer": {
+            "email": "frodeaarstad@gmail.com",
+            "name": "Frode Aarstad",
+            "username": "frode-aarstad"
+          },
+          "distinct": true,
+          "id": "1488d88244f4b2bb2cd165a7197fd0846c1b701a",
+          "message": "Remove ert_config from batch sim",
+          "timestamp": "2024-11-01T15:03:13+01:00",
+          "tree_id": "0806b0089def2c042be2389c9d12d06ee60aaae7",
+          "url": "https://github.com/equinor/ert/commit/1488d88244f4b2bb2cd165a7197fd0846c1b701a"
+        },
+        "date": 1730469902449,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1926733180812877,
+            "unit": "iter/sec",
+            "range": "stddev: 0.017998264994396853",
+            "extra": "mean: 5.190132240199995 sec\nrounds: 5"
           }
         ]
       }
