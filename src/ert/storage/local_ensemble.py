@@ -311,8 +311,8 @@ class LocalEnsemble(BaseMode):
             return _has_response(key)
 
         return all(
-            _has_response(response)
-            for response in self.experiment.response_configuration
+            _has_response(response) if len(config.keys) > 0 else True
+            for response, config in self.experiment.response_configuration.items()
         )
 
     def is_initalized(self) -> List[int]:

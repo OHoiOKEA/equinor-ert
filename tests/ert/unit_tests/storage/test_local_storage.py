@@ -815,8 +815,10 @@ class StatefulStorageTest(RuleBasedStateMachine):
         model_smry_config = next(
             config for config in model_experiment.responses if config.name == "summary"
         )
-        model_smry_config.keys = sorted(response_keys)
-        model_smry_config.has_finalized_keys = True
+
+        if not model_smry_config.has_finalized_keys:
+            model_smry_config.keys = sorted(response_keys)
+            model_smry_config.has_finalized_keys = True
 
     @rule(model_ensemble=ensembles)
     def get_responses(self, model_ensemble: Ensemble):
@@ -880,7 +882,11 @@ class StatefulStorageTest(RuleBasedStateMachine):
         iens = 0
         if (
             list(prior.response_values.keys())
-            == [r.name for r in model_experiment.responses]
+            == [
+                r.name
+                for r in model_experiment.responses
+                if (r.has_finalized_keys and len(r.keys) > 0)
+            ]
             and iens not in prior.failure_messages
             and prior_ensemble.get_ensemble_state()[iens]
             != RealizationStorageState.PARENT_FAILURE
