@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730467418870,
+  "lastUpdate": 1730467673627,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "andrli@equinor.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "sondreso@users.noreply.github.com",
-            "name": "Sondre Sortland",
-            "username": "sondreso"
-          },
-          "distinct": true,
-          "id": "9817d757bb1fca85a57bc7e41e82ee77480060c4",
-          "message": "Fix missing realization type in Simulation label",
-          "timestamp": "2024-10-28T08:02:38+01:00",
-          "tree_id": "8d53645c2dab19b5f2aa9f45f6183231026bb856",
-          "url": "https://github.com/equinor/ert/commit/9817d757bb1fca85a57bc7e41e82ee77480060c4"
-        },
-        "date": 1730099073237,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19199768515057153,
-            "unit": "iter/sec",
-            "range": "stddev: 0.024688980666410815",
-            "extra": "mean: 5.208396128400006 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.034027747519319154",
             "extra": "mean: 5.2400355916000025 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "49289030+HakonSohoel@users.noreply.github.com",
+            "name": "Håkon Steinkopf Søhoel",
+            "username": "HakonSohoel"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "c34060ca08b824c1e5dbedd21cca552dff98b796",
+          "message": "Improve logging with open telemetry traces (#9083)\n\nAdd a span processor through the add_span_processor pluggin hook\r\nto export trace information to e.g. azure\r\n---------\r\n\r\nCo-authored-by: Andreas Eknes Lie <andrli@equinor.com>",
+          "timestamp": "2024-11-01T14:25:59+01:00",
+          "tree_id": "a4b2c2ab5e5967b8505c052d41534d985e8bde95",
+          "url": "https://github.com/equinor/ert/commit/c34060ca08b824c1e5dbedd21cca552dff98b796"
+        },
+        "date": 1730467673141,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.1939554861378494,
+            "unit": "iter/sec",
+            "range": "stddev: 0.02633452409202933",
+            "extra": "mean: 5.1558221935999935 sec\nrounds: 5"
           }
         ]
       }
