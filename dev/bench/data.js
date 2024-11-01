@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730454797261,
+  "lastUpdate": 1730454850191,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "cdee9290d42d9fb11ccc6fc4d0efdd6e6d71069f",
-          "message": "Handle empty responses in MeasuredData\n\nreturn empty df for measureddata w/o responses",
-          "timestamp": "2024-10-25T10:32:56Z",
-          "tree_id": "c7e14aeb0418c9056c888620b1c51c8ccff6e6f3",
-          "url": "https://github.com/equinor/ert/commit/cdee9290d42d9fb11ccc6fc4d0efdd6e6d71069f"
-        },
-        "date": 1729852486911,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19067178404012128,
-            "unit": "iter/sec",
-            "range": "stddev: 0.02336097942772396",
-            "extra": "mean: 5.244614482600002 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.04787168965994167",
             "extra": "mean: 5.165991197000006 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "havb@equinor.com",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "committer": {
+            "email": "berland@pvv.ntnu.no",
+            "name": "Håvard Berland",
+            "username": "berland"
+          },
+          "distinct": true,
+          "id": "6454d3a8a8163665b7a39d4d4cc77f867b38b8e5",
+          "message": "Skip logging of short fm steps\n\nThere are more short forward model time steps than we want the logging\nsystem to handle.",
+          "timestamp": "2024-11-01T10:52:13+01:00",
+          "tree_id": "5b6c02efe727ff0f0ad7d7511a14bf8d659b1b76",
+          "url": "https://github.com/equinor/ert/commit/6454d3a8a8163665b7a39d4d4cc77f867b38b8e5"
+        },
+        "date": 1730454849177,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19433471679065184,
+            "unit": "iter/sec",
+            "range": "stddev: 0.006063808994274784",
+            "extra": "mean: 5.145760965999995 sec\nrounds: 5"
           }
         ]
       }
