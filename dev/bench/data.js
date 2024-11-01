@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730469902867,
+  "lastUpdate": 1730470639828,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "4e71f3909396a1dcf1461a58c7c89e66f526c005",
-          "message": "Remove unused function get_response_names",
-          "timestamp": "2024-10-28T14:02:15+01:00",
-          "tree_id": "caa9d3ba7aa8c165d23d08937d95e9d5c68e10d0",
-          "url": "https://github.com/equinor/ert/commit/4e71f3909396a1dcf1461a58c7c89e66f526c005"
-        },
-        "date": 1730120645184,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1943314539023445,
-            "unit": "iter/sec",
-            "range": "stddev: 0.0294680785811469",
-            "extra": "mean: 5.145847365000009 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.017998264994396853",
             "extra": "mean: 5.190132240199995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jholba@equinor.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "sondreso@users.noreply.github.com",
+            "name": "Sondre Sortland",
+            "username": "sondreso"
+          },
+          "distinct": true,
+          "id": "90d11ec9604f2d3b4b2a12cd90ba19ec58fbf1ca",
+          "message": "Make scheduler execute yield during spawning of realizations\n\nStarting the realizations in scheduler was blocking all other async tasks\nfrom running. Nothing could connect to ensemble evaluator during this.\nUnder heavy load this could cause Monitor to time out and fail. Now we will\nsleep(0) between each time we create a new subprocess. This will allow\nother asyncio tasks to run.",
+          "timestamp": "2024-11-01T15:15:27+01:00",
+          "tree_id": "5fd69702e1f912ba4c614ab240104c1f7b93c28b",
+          "url": "https://github.com/equinor/ert/commit/90d11ec9604f2d3b4b2a12cd90ba19ec58fbf1ca"
+        },
+        "date": 1730470638886,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19423774875696875,
+            "unit": "iter/sec",
+            "range": "stddev: 0.035257273320927464",
+            "extra": "mean: 5.148329850400012 sec\nrounds: 5"
           }
         ]
       }
