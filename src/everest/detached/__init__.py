@@ -15,7 +15,8 @@ from seba_sqlite.exceptions import ObjectNotFoundError
 from seba_sqlite.snapshot import SebaSnapshot
 
 from ert.config import ErtConfig, QueueSystem
-from ert.scheduler import LocalDriver
+from ert.config.queue_config import LocalQueueOptions
+from ert.scheduler import create_driver
 from ert.scheduler.driver import FailedSubmit
 from ert.scheduler.event import StartedEvent
 from everest.config import EverestConfig
@@ -87,7 +88,7 @@ async def start_server(config: EverestConfig) -> None:
             "Failed to save optimization config: {}".format(e)
         )
 
-    driver = LocalDriver()
+    driver = create_driver(LocalQueueOptions())
     try:
         await driver.submit(0, "everserver", "--config-file", config.config_file)
     except FailedSubmit as err:

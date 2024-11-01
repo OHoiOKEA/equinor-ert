@@ -15,21 +15,21 @@ from .scheduler import Scheduler
 from .slurm_driver import SlurmDriver
 
 if TYPE_CHECKING:
-    from ert.config.queue_config import QueueConfig
+    from ert.config.queue_config import QueueConfig, QueueOptions
 
 
-def create_driver(config: QueueConfig) -> Driver:
-    if config.queue_system == QueueSystem.LOCAL:
-        return LocalDriver(**config.queue_options.driver_options)
-    elif config.queue_system == QueueSystem.TORQUE:
-        return OpenPBSDriver(**config.queue_options.driver_options)
-    elif config.queue_system == QueueSystem.LSF:
-        return LsfDriver(**config.queue_options.driver_options)
-    elif config.queue_system == QueueSystem.SLURM:
+def create_driver(queue_options: QueueOptions) -> Driver:
+    if queue_options.type == QueueSystem.LOCAL.lower():
+        return LocalDriver()
+    elif queue_options.type == QueueSystem.TORQUE.lower():
+        return OpenPBSDriver(**queue_options.driver_options)
+    elif queue_options.type == QueueSystem.LSF.lower():
+        return LsfDriver(**queue_options.driver_options)
+    elif queue_options.type == QueueSystem.SLURM.lower():
         return SlurmDriver(
             **dict(
                 {"user": getpwuid(getuid()).pw_name},
-                **config.queue_options.driver_options,
+                **queue_options.driver_options,
             )
         )
     else:
@@ -41,6 +41,7 @@ def create_driver(config: QueueConfig) -> Driver:
 __all__ = [
     "Driver",
     "JobState",
+    "QueueConfig",
     "Scheduler",
     "create_driver",
 ]
