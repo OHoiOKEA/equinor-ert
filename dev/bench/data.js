@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730443587417,
+  "lastUpdate": 1730450501823,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "yngve-sk@users.noreply.github.com",
-            "name": "Yngve S. Kristiansen",
-            "username": "yngve-sk"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "d24eb135b2b5c0b6fcd6f76ae3e69fc863cbed70",
-          "message": "Fix <= .to3 migrations causing .to7 gendata migration failure",
-          "timestamp": "2024-10-25T11:31:46+02:00",
-          "tree_id": "6356c2d18aea9d75b460603cdeeb0f776e59fc77",
-          "url": "https://github.com/equinor/ert/commit/d24eb135b2b5c0b6fcd6f76ae3e69fc863cbed70"
-        },
-        "date": 1729848813877,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19049615784803603,
-            "unit": "iter/sec",
-            "range": "stddev: 0.017640519150798045",
-            "extra": "mean: 5.249449707000008 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.03415446621832291",
             "extra": "mean: 5.154782499199996 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "JONAK@equinor.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "committer": {
+            "email": "107626001+jonathan-eq@users.noreply.github.com",
+            "name": "Jonathan Karlsen",
+            "username": "jonathan-eq"
+          },
+          "distinct": true,
+          "id": "3b1db99eb00cc8c783063eed20c2e53fa13ec991",
+          "message": "Have CopyDebugInfoButton change text to `Copied...` on click\n\nThis commit refactors the copydebuginfobutton in run_dialog.py into its own class, and makes it change text `Copy Debug Info\" -> `Copied...` when clicked while running the callback passed to it. After one second, it changes it text back to `Copy Debug Info`.",
+          "timestamp": "2024-11-01T09:39:47+01:00",
+          "tree_id": "4cc66a61a1f773952099a0ca34dc6a49bc637258",
+          "url": "https://github.com/equinor/ert/commit/3b1db99eb00cc8c783063eed20c2e53fa13ec991"
+        },
+        "date": 1730450500938,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19274783485756736,
+            "unit": "iter/sec",
+            "range": "stddev: 0.021090395544056846",
+            "extra": "mean: 5.188125722599989 sec\nrounds: 5"
           }
         ]
       }
