@@ -187,8 +187,8 @@ and environment variables are exposed in the form 'os.NAME', for example:
         evaluated.
 """,
     )
-    server: Optional[ServerConfig] = Field(
-        default=None,
+    server: ServerConfig = Field(
+        default_factory=ServerConfig,
         description="""Defines Everest server settings, i.e., which queue system,
             queue name and queue options are used for the everest server.
             The main reason for changing this section is situations where everest

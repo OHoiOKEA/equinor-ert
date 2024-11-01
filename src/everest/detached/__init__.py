@@ -14,8 +14,8 @@ import requests
 from seba_sqlite.exceptions import ObjectNotFoundError
 from seba_sqlite.snapshot import SebaSnapshot
 
-from ert.config import ErtConfig, QueueSystem
-from ert.config.queue_config import LocalQueueOptions
+from ert.config import QueueSystem
+from ert.config.queue_config import QueueOptions
 from ert.scheduler import create_driver
 from ert.scheduler.driver import FailedSubmit
 from ert.scheduler.event import StartedEvent
@@ -29,7 +29,6 @@ from everest.strings import (
     OPT_PROGRESS_ID,
     SIM_PROGRESS_ENDPOINT,
     SIM_PROGRESS_ID,
-    SIMULATION_DIR,
     STOP_ENDPOINT,
 )
 from everest.util import configure_logger
@@ -59,7 +58,7 @@ _server = None
 _context = None
 
 
-async def start_server(config: EverestConfig) -> None:
+async def start_server(config: EverestConfig, queue_options: QueueOptions) -> None:
     """
     Start an Everest server running the optimization defined in the config
     """
@@ -88,7 +87,7 @@ async def start_server(config: EverestConfig) -> None:
             "Failed to save optimization config: {}".format(e)
         )
 
-    driver = create_driver(LocalQueueOptions())
+    driver = create_driver(queue_options)
     try:
         await driver.submit(0, "everserver", "--config-file", config.config_file)
     except FailedSubmit as err:
@@ -441,51 +440,17 @@ def _find_res_queue_system(config: EverestConfig):
 
 
 def generate_everserver_ert_config(config: EverestConfig, debug_mode: bool = False):
-    assert config.config_directory is not None
-    assert config.config_file is not None
-
-    site_config = ErtConfig.read_site_config()
-    abs_everest_config = os.path.join(config.config_directory, config.config_file)
-    detached_node_dir = config.detached_node_dir
-    simulation_path = os.path.join(detached_node_dir, SIMULATION_DIR)
     queue_system = _find_res_queue_system(config)
-    arg_list = ["--config-file", abs_everest_config]
-    if debug_mode:
-        arg_list.append("--debug")
 
-    everserver_config = {} if site_config is None else site_config
-    everserver_config.update(
-        {
-            "RUNPATH": simulation_path,
-            "JOBNAME": EVEREST_SERVER_CONFIG,
-            "NUM_REALIZATIONS": 1,
-            "MAX_SUBMIT": 1,
-            "ENSPATH": os.path.join(detached_node_dir, EVEREST_SERVER_CONFIG),
-            "RUNPATH_FILE": os.path.join(detached_node_dir, ".res_runpath_list"),
-        }
-    )
-    install_job = everserver_config.get("INSTALL_JOB", [])
-    install_job.append((EVEREST_SERVER_CONFIG, _EVERSERVER_JOB_PATH))
-    everserver_config["INSTALL_JOB"] = install_job
-
-    simulation_job = everserver_config.get("SIMULATION_JOB", [])
-    simulation_job.append([EVEREST_SERVER_CONFIG, *arg_list])
-    everserver_config["SIMULATION_JOB"] = simulation_job
-
+    queue_options = {}
     if queue_system in _QUEUE_SYSTEMS:
-        everserver_config["QUEUE_SYSTEM"] = queue_system
         queue_options = _generate_queue_options(
             config,
             _QUEUE_SYSTEMS[queue_system]["options"],
             _QUEUE_SYSTEMS[queue_system]["name"],
             queue_system,
         )
-        if queue_options:
-            everserver_config.setdefault("QUEUE_OPTION", []).extend(queue_options)
-    else:
-        everserver_config["QUEUE_SYSTEM"] = queue_system
-
-    return everserver_config
+    return QueueOptions.create_queue_options(queue_system, queue_options, True)
 
 
 def _query_server(cert, auth, endpoint):

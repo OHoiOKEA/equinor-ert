@@ -9,7 +9,7 @@ import requests
 
 from ert import JobState
 from ert.config import ErtConfig, QueueSystem
-from ert.storage import open_storage
+from ert.config.queue_config import LocalQueueOptions
 from everest.config import EverestConfig
 from everest.config.server_config import ServerConfig
 from everest.config.simulator_config import SimulatorConfig
@@ -20,14 +20,12 @@ from everest.detached import (
     ServerStatus,
     _find_res_queue_system,
     _generate_queue_options,
-    context_stop_and_wait,
     everserver_status,
     generate_everserver_ert_config,
     server_is_running,
     start_server,
     stop_server,
     update_everserver_status,
-    wait_for_context,
     wait_for_server,
     wait_for_server_to_stop,
 )
@@ -68,58 +66,50 @@ def test_https_requests(copy_math_func_test_data_to_tmp):
 
     expected_server_status = ServerStatus.never_run
     assert expected_server_status == everserver_status(everest_config)["status"]
-    wait_for_context()
-    ert_config = ErtConfig.with_plugins().from_dict(
-        generate_everserver_ert_config(everest_config)
-    )
     makedirs_if_needed(everest_config.output_dir, roll_if_exists=True)
-    with open_storage(ert_config.ens_path, "w") as storage:
-        start_server(everest_config, ert_config, storage)
-        try:
-            wait_for_server(everest_config, 120)
-        except SystemExit as e:
-            context_stop_and_wait()
-            raise e
+    start_server(everest_config, LocalQueueOptions())
+    try:
+        wait_for_server(everest_config, 120)
+    except SystemExit as e:
+        raise e
 
+    server_status = everserver_status(everest_config)
+    assert ServerStatus.running == server_status["status"]
+
+    url, cert, auth = everest_config.server_context
+    result = requests.get(url, verify=cert, auth=auth, proxies=PROXY)
+    assert result.status_code == 200  # Request has succeeded
+
+    # Test http request fail
+    url = url.replace("https", "http")
+    with pytest.raises(Exception):  # noqa B017
+        response = requests.get(url, verify=cert, auth=auth, proxies=PROXY)
+        response.raise_for_status()
+
+    # Test request with wrong password fails
+    url, cert, _ = everest_config.server_context
+    usr = "admin"
+    password = "wrong_password"
+    with pytest.raises(Exception):  # noqa B017
+        result = requests.get(url, verify=cert, auth=(usr, password), proxies=PROXY)
+        result.raise_for_status()
+
+    # Test stopping server
+    assert server_is_running(*everest_config.server_context)
+
+    if stop_server(everest_config):
+        wait_for_server_to_stop(everest_config, 60)
         server_status = everserver_status(everest_config)
-        assert ServerStatus.running == server_status["status"]
 
-        url, cert, auth = everest_config.server_context
-        result = requests.get(url, verify=cert, auth=auth, proxies=PROXY)
-        assert result.status_code == 200  # Request has succeeded
-
-        # Test http request fail
-        url = url.replace("https", "http")
-        with pytest.raises(Exception):  # noqa B017
-            response = requests.get(url, verify=cert, auth=auth, proxies=PROXY)
-            response.raise_for_status()
-
-        # Test request with wrong password fails
-        url, cert, _ = everest_config.server_context
-        usr = "admin"
-        password = "wrong_password"
-        with pytest.raises(Exception):  # noqa B017
-            result = requests.get(url, verify=cert, auth=(usr, password), proxies=PROXY)
-            result.raise_for_status()
-
-        # Test stopping server
-        assert server_is_running(*everest_config.server_context)
-
-        if stop_server(everest_config):
-            wait_for_server_to_stop(everest_config, 60)
-            context_stop_and_wait()
-            server_status = everserver_status(everest_config)
-
-            # Possible the case completed while waiting for the server to stop
-            assert server_status["status"] in [
-                ServerStatus.stopped,
-                ServerStatus.completed,
-            ]
-            assert not server_is_running(*everest_config.server_context)
-        else:
-            context_stop_and_wait()
-            server_status = everserver_status(everest_config)
-            assert ServerStatus.stopped == server_status["status"]
+        # Possible the case completed while waiting for the server to stop
+        assert server_status["status"] in [
+            ServerStatus.stopped,
+            ServerStatus.completed,
+        ]
+        assert not server_is_running(*everest_config.server_context)
+    else:
+        server_status = everserver_status(everest_config)
+        assert ServerStatus.stopped == server_status["status"]
 
 
 def test_server_status(copy_math_func_test_data_to_tmp):
