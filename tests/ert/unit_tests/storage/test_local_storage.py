@@ -818,6 +818,7 @@ class StatefulStorageTest(RuleBasedStateMachine):
         model_smry_config.keys = sorted(
             set(model_smry_config.keys).union(response_keys)
         )
+        model_smry_config.has_finalized_keys = True
 
     @rule(model_ensemble=ensembles)
     def get_responses(self, model_ensemble: Ensemble):
