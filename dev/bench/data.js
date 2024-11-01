@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730454850191,
+  "lastUpdate": 1730457264291,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "114403625+andreas-el@users.noreply.github.com",
-            "name": "Andreas Eknes Lie",
-            "username": "andreas-el"
-          },
-          "committer": {
-            "email": "noreply@github.com",
-            "name": "GitHub",
-            "username": "web-flow"
-          },
-          "distinct": true,
-          "id": "78890c9669bcfa33a35e1f8b4806cec7ce78989f",
-          "message": "Move tool buttons to side pane",
-          "timestamp": "2024-10-25T13:34:32+02:00",
-          "tree_id": "1937cd11f6c4ea5fa03c95f1238a91a40ccfb9a2",
-          "url": "https://github.com/equinor/ert/commit/78890c9669bcfa33a35e1f8b4806cec7ce78989f"
-        },
-        "date": 1729856185429,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.1935761095710312,
-            "unit": "iter/sec",
-            "range": "stddev: 0.03662637749407317",
-            "extra": "mean: 5.165926736599994 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.006063808994274784",
             "extra": "mean: 5.145760965999995 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "jon.holba@gmail.com",
+            "name": "Jon Holba",
+            "username": "JHolba"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "66aa073a0831991022c17dff7a5fd09688298e37",
+          "message": "Use maxprocesses=2 for cli tests\n\nCo-authored-by: Eivind Jahren <ejah@equinor.com>",
+          "timestamp": "2024-11-01T11:32:36+01:00",
+          "tree_id": "2262601ceb4df8b82c20f24d137caf1c9f2e402a",
+          "url": "https://github.com/equinor/ert/commit/66aa073a0831991022c17dff7a5fd09688298e37"
+        },
+        "date": 1730457263680,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19656487553447052,
+            "unit": "iter/sec",
+            "range": "stddev: 0.03869466312127469",
+            "extra": "mean: 5.087378898599996 sec\nrounds: 5"
           }
         ]
       }
