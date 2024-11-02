@@ -17,6 +17,7 @@ from ert.callbacks import forward_model_ok
 from ert.constant_filenames import ERROR_file
 from ert.load_status import LoadStatus
 from ert.storage.realization_storage_state import RealizationStorageState
+from ert.trace import tracer
 
 from .driver import Driver, FailedSubmit
 
@@ -57,6 +58,8 @@ class Job:
     Instances of this class represent a single job as submitted to a job scheduler
     (LSF, PBS, SLURM, etc.)
     """
+
+    DEFAULT_CHECKSUM_TIMEOUT = 120
 
     def __init__(self, scheduler: Scheduler, real: Realization) -> None:
         self.real = real
@@ -147,30 +150,31 @@ class Job:
         checksum_lock: asyncio.Lock,
         max_submit: int = 1,
     ) -> None:
-        self._requested_max_submit = max_submit
-        for attempt in range(max_submit):
-            await self._submit_and_run_once(sem)
+        with tracer.start_as_current_span(f"{__name__}.run.realization_{self.iens}"):
+            self._requested_max_submit = max_submit
+            for attempt in range(max_submit):
+                await self._submit_and_run_once(sem)
 
-            if self.returncode.cancelled() or self._scheduler._cancelled:
-                break
+                if self.returncode.cancelled() or self._scheduler._cancelled:
+                    break
 
-            if self.returncode.result() == 0:
-                if self._scheduler._manifest_queue is not None:
-                    await self._verify_checksum(checksum_lock)
-                async with forward_model_ok_lock:
-                    await self._handle_finished_forward_model()
-                break
+                if self.returncode.result() == 0:
+                    if self._scheduler._manifest_queue is not None:
+                        await self._verify_checksum(checksum_lock)
+                    async with forward_model_ok_lock:
+                        await self._handle_finished_forward_model()
+                    break
 
-            if attempt < max_submit - 1:
-                message = (
-                    f"Realization {self.iens} failed, "
-                    f"resubmitting for attempt {attempt+2} of {max_submit}"
-                )
-                logger.warning(message)
-                self.returncode = asyncio.Future()
-                self.started.clear()
-            else:
-                await self._send(JobState.FAILED)
+                if attempt < max_submit - 1:
+                    message = (
+                        f"Realization {self.iens} failed, "
+                        f"resubmitting for attempt {attempt+2} of {max_submit}"
+                    )
+                    logger.warning(message)
+                    self.returncode = asyncio.Future()
+                    self.started.clear()
+                else:
+                    await self._send(JobState.FAILED)
 
     async def _max_runtime_task(self) -> None:
         assert self.real.max_runtime is not None
@@ -186,8 +190,10 @@ class Job:
         self.returncode.cancel()
 
     async def _verify_checksum(
-        self, checksum_lock: asyncio.Lock, timeout: int = 120
+        self, checksum_lock: asyncio.Lock, timeout: Optional[int] = None
     ) -> None:
+        if timeout is None:
+            timeout = self.DEFAULT_CHECKSUM_TIMEOUT
         # Wait for job runpath to be in the checksum dictionary
         runpath = self.real.run_arg.runpath
         while runpath not in self._scheduler.checksum:
