@@ -316,7 +316,7 @@ class LocalEnsemble(BaseMode):
         )
 
         if not is_expecting_any_responses:
-            return False
+            return True
 
         non_empty_response_configs = [
             response
