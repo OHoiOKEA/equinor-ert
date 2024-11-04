@@ -310,10 +310,21 @@ class LocalEnsemble(BaseMode):
         if key:
             return _has_response(key)
 
-        return all(
-            _has_response(response) if len(config.keys) > 0 else True
-            for response, config in self.experiment.response_configuration.items()
+        is_expecting_any_responses = any(
+            bool(config.keys)
+            for config in self.experiment.response_configuration.values()
         )
+
+        if not is_expecting_any_responses:
+            return False
+
+        non_empty_response_configs = [
+            response
+            for response, config in self.experiment.response_configuration.items()
+            if bool(config.keys)
+        ]
+
+        return all(_has_response(response) for response in non_empty_response_configs)
 
     def is_initalized(self) -> List[int]:
         """
