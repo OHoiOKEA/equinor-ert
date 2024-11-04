@@ -768,9 +768,23 @@ class StatefulStorageTest(RuleBasedStateMachine):
                 parameter_data["values"],
             )
 
-    @rule(
-        model_ensemble=ensembles,
-        summary_data=summaries(
+    @rule(model_ensemble=ensembles, data=st.data())
+    def save_summary(self, model_ensemble: Ensemble, data):
+        storage_ensemble = self.storage.get_ensemble(model_ensemble.uuid)
+        storage_experiment = storage_ensemble.experiment
+
+        # Enforce the summary data to respect the
+        # scheme outlined in the response configs
+        smry_config = storage_experiment.response_configuration["summary"]
+
+        expected_summary_keys = (
+            st.just(smry_config.keys)
+            if smry_config.has_finalized_keys
+            else st.lists(summary_variables(), min_size=1)
+        )
+
+        summaries_strategy = summaries(
+            summary_keys=expected_summary_keys,
             start_date=st.datetimes(
                 min_value=datetime.strptime("1969-1-1", "%Y-%m-%d"),
                 max_value=datetime.strptime("2010-1-1", "%Y-%m-%d"),
@@ -785,11 +799,9 @@ class StatefulStorageTest(RuleBasedStateMachine):
                 min_size=2,
                 max_size=10,
             ),
-        ),
-    )
-    def save_summary(self, model_ensemble: Ensemble, summary_data):
-        storage_ensemble = self.storage.get_ensemble(model_ensemble.uuid)
-        storage_experiment = storage_ensemble.experiment
+        )
+        summary_data = data.draw(summaries_strategy)
+
         responses = storage_experiment.response_configuration.values()
         summary_configs = [p for p in responses if isinstance(p, SummaryConfig)]
         assume(summary_configs)
