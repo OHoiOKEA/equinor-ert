@@ -6,7 +6,7 @@ import os
 from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
-from typing import TYPE_CHECKING, Dict, List, Optional, Tuple, Union
+from typing import TYPE_CHECKING, Dict, List, Optional, Set, Tuple, Union
 from uuid import UUID
 
 import numpy as np
@@ -204,11 +204,10 @@ class LocalEnsemble(BaseMode):
 
         return np.array(
             [
-                e
-                not in [
+                not {
                     RealizationStorageState.PARENT_FAILURE,
                     RealizationStorageState.LOAD_FAILURE,
-                ]
+                }.intersection(e)
                 for e in self.get_ensemble_state()
             ]
         )
@@ -225,8 +224,13 @@ class LocalEnsemble(BaseMode):
 
         return np.array(
             [
-                self._parameters_exist_for_realization(i)
-                for i in range(self.ensemble_size)
+                bool(
+                    {
+                        RealizationStorageState.PARAMETERS_LOADED,
+                        RealizationStorageState.RESPONSES_LOADED,
+                    }.intersection(state)
+                )
+                for state in self.get_ensemble_state()
             ]
         )
 
@@ -249,71 +253,9 @@ class LocalEnsemble(BaseMode):
 
         return np.array(
             [
-                self._responses_exist_for_realization(i, key)
-                for i in range(self.ensemble_size)
+                RealizationStorageState.RESPONSES_LOADED in state
+                for state in self.get_ensemble_state()
             ]
-        )
-
-    def _parameters_exist_for_realization(self, realization: int) -> bool:
-        """
-        Returns true if all parameters in the experiment have
-        all been saved in the ensemble. If no parameters, return True
-
-        Parameters
-        ----------
-        realization : int
-            Realization index.
-
-        Returns
-        -------
-        exists : bool
-            True if parameters exist for realization.
-        """
-        if not self.experiment.parameter_configuration:
-            return True
-        path = self._realization_dir(realization)
-        return all(
-            (path / (_escape_filename(parameter) + ".nc")).exists()
-            for parameter in self.experiment.parameter_configuration
-        )
-
-    def _responses_exist_for_realization(
-        self, realization: int, key: Optional[str] = None
-    ) -> bool:
-        """
-        Returns true if there are responses in the experiment and they have
-        all been saved in the ensemble
-
-        Parameters
-        ----------
-        realization : int
-            Realization index.
-        key : str, optional
-            Response key to filter realizations. If None, all responses are considered.
-
-        Returns
-        -------
-        exists : bool
-            True if responses exist for realization.
-        """
-
-        if not self.experiment.response_configuration:
-            return True
-        path = self._realization_dir(realization)
-
-        def _has_response(_key: str) -> bool:
-            if _key in self.experiment.response_key_to_response_type:
-                _response_type = self.experiment.response_key_to_response_type[_key]
-                return (path / f"{_response_type}.parquet").exists()
-
-            return (path / f"{_key}.parquet").exists()
-
-        if key:
-            return _has_response(key)
-
-        return all(
-            _has_response(response)
-            for response in self.experiment.response_configuration
         )
 
     def is_initalized(self) -> List[int]:
@@ -478,7 +420,12 @@ class LocalEnsemble(BaseMode):
             )
         return None
 
-    def get_ensemble_state(self) -> List[RealizationStorageState]:
+    def refresh_ensemble_state(self) -> None:
+        self.get_ensemble_state.cache_clear()
+        self.get_ensemble_state()
+
+    @lru_cache  # noqa: B019
+    def get_ensemble_state(self) -> List[Set[RealizationStorageState]]:
         """
         Retrieve the state of each realization within ensemble.
 
@@ -488,17 +435,83 @@ class LocalEnsemble(BaseMode):
             List of realization states.
         """
 
-        def _find_state(realization: int) -> RealizationStorageState:
+        def _parameters_exist_for_realization(realization: int) -> bool:
+            """
+            Returns true if all parameters in the experiment have
+            all been saved in the ensemble. If no parameters, return True
+
+            Parameters
+            ----------
+            realization : int
+                Realization index.
+
+            Returns
+            -------
+            exists : bool
+                True if parameters exist for realization.
+            """
+            if not self.experiment.parameter_configuration:
+                return True
+            path = self._realization_dir(realization)
+            return all(
+                (path / (_escape_filename(parameter) + ".nc")).exists()
+                for parameter in self.experiment.parameter_configuration
+            )
+
+        def _responses_exist_for_realization(
+            realization: int, key: Optional[str] = None
+        ) -> bool:
+            """
+            Returns true if there are responses in the experiment and they have
+            all been saved in the ensemble
+
+            Parameters
+            ----------
+            realization : int
+                Realization index.
+            key : str, optional
+                Response key to filter realizations. If None, all responses are considered.
+
+            Returns
+            -------
+            exists : bool
+                True if responses exist for realization.
+            """
+
+            if not self.experiment.response_configuration:
+                return True
+            path = self._realization_dir(realization)
+
+            def _has_response(_key: str) -> bool:
+                if _key in self.experiment.response_key_to_response_type:
+                    _response_type = self.experiment.response_key_to_response_type[_key]
+                    return (path / f"{_response_type}.parquet").exists()
+
+                return (path / f"{_key}.parquet").exists()
+
+            if key:
+                return _has_response(key)
+
+            return all(
+                _has_response(response)
+                for response in self.experiment.response_configuration
+            )
+
+        def _find_state(realization: int) -> Set[RealizationStorageState]:
+            _state = set()
             if self.has_failure(realization):
                 failure = self.get_failure(realization)
                 assert failure
-                return failure.type
-            if self._responses_exist_for_realization(realization):
-                return RealizationStorageState.HAS_DATA
-            if self._parameters_exist_for_realization(realization):
-                return RealizationStorageState.INITIALIZED
-            else:
-                return RealizationStorageState.UNDEFINED
+                _state.add(failure.type)
+            if _responses_exist_for_realization(realization):
+                _state.add(RealizationStorageState.RESPONSES_LOADED)
+            if _parameters_exist_for_realization(realization):
+                _state.add(RealizationStorageState.PARAMETERS_LOADED)
+
+            if len(_state) == 0:
+                _state.add(RealizationStorageState.UNDEFINED)
+
+            return _state
 
         return [_find_state(i) for i in range(self.ensemble_size)]
 
@@ -889,7 +902,7 @@ class LocalEnsemble(BaseMode):
     ) -> Dict[str, RealizationStorageState]:
         path = self._realization_dir(realization)
         return {
-            e: RealizationStorageState.INITIALIZED
+            e: RealizationStorageState.PARAMETERS_LOADED
             if (path / (_escape_filename(e) + ".nc")).exists()
             else RealizationStorageState.UNDEFINED
             for e in self.experiment.parameter_configuration
@@ -900,7 +913,7 @@ class LocalEnsemble(BaseMode):
     ) -> Dict[str, RealizationStorageState]:
         path = self._realization_dir(realization)
         return {
-            e: RealizationStorageState.HAS_DATA
+            e: RealizationStorageState.RESPONSES_LOADED
             if (path / f"{e}.parquet").exists()
             else RealizationStorageState.UNDEFINED
             for e in self.experiment.response_configuration

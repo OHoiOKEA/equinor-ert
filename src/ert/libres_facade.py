@@ -151,6 +151,7 @@ class LibresFacade:
             run_args,
             realisations,
         )
+        ensemble.refresh_ensemble_state()
         _logger.debug(
             f"load_from_forward_model() time_used {(time.perf_counter() - t):.4f}s"
         )
