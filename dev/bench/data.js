@@ -1,39 +1,8 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1730470639828,
+  "lastUpdate": 1730715133260,
   "repoUrl": "https://github.com/equinor/ert",
   "entries": {
     "Python Benchmark with pytest-benchmark": [
-      {
-        "commit": {
-          "author": {
-            "email": "eide.oyvind87@gmail.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "committer": {
-            "email": "44577479+oyvindeide@users.noreply.github.com",
-            "name": "Øyvind Eide",
-            "username": "oyvindeide"
-          },
-          "distinct": true,
-          "id": "5f07ccbac6954f27c8f63b51b56799512f05dbe2",
-          "message": "Add reference to refcase section in summary keyword",
-          "timestamp": "2024-10-28T14:15:12+01:00",
-          "tree_id": "22b8d17c2de7a3154aa5321bf2bffe35cc147812",
-          "url": "https://github.com/equinor/ert/commit/5f07ccbac6954f27c8f63b51b56799512f05dbe2"
-        },
-        "date": 1730121426770,
-        "tool": "pytest",
-        "benches": [
-          {
-            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
-            "value": 0.19377256946819402,
-            "unit": "iter/sec",
-            "range": "stddev: 0.027442864283646434",
-            "extra": "mean: 5.160689166399999 sec\nrounds: 5"
-          }
-        ]
-      },
       {
         "commit": {
           "author": {
@@ -930,6 +899,37 @@ window.BENCHMARK_DATA = {
             "unit": "iter/sec",
             "range": "stddev: 0.035257273320927464",
             "extra": "mean: 5.148329850400012 sec\nrounds: 5"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "pieter.verveer@tno.nl",
+            "name": "Peter Verveer",
+            "username": "verveerpj"
+          },
+          "committer": {
+            "email": "pieter.verveer@tno.nl",
+            "name": "Peter Verveer",
+            "username": "verveerpj"
+          },
+          "distinct": true,
+          "id": "8c679c1f3753359fdf656db36faa5721e182a865",
+          "message": "Update ropt dependency to 0.9",
+          "timestamp": "2024-11-04T11:10:22+01:00",
+          "tree_id": "213486ade147c9856172d5a8c2d4b11b20381248",
+          "url": "https://github.com/equinor/ert/commit/8c679c1f3753359fdf656db36faa5721e182a865"
+        },
+        "date": 1730715132812,
+        "tool": "pytest",
+        "benches": [
+          {
+            "name": "tests/ert/performance_tests/test_analysis.py::test_and_benchmark_adaptive_localization_with_fields",
+            "value": 0.19240231102079516,
+            "unit": "iter/sec",
+            "range": "stddev: 0.028166166099757847",
+            "extra": "mean: 5.1974427682000055 sec\nrounds: 5"
           }
         ]
       }
