@@ -12,7 +12,7 @@ from everest.config import EverestConfig
 from everest.detached import (
     ServerStatus,
     everserver_status,
-    generate_everserver_ert_config,
+    generate_everserver_config,
     server_is_running,
     start_server,
     wait_for_server,
@@ -98,7 +98,7 @@ async def run_everest(options):
             logger.info("Everest forward model contains job {}".format(job_name))
 
         makedirs_if_needed(options.config.output_dir, roll_if_exists=True)
-        server_config = generate_everserver_ert_config(options.config)
+        server_config = generate_everserver_config(options.config)
         await start_server(options.config, server_config)
         print("Waiting for server ...")
         wait_for_server(options.config, timeout=600)

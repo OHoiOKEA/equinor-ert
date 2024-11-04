@@ -21,7 +21,7 @@ from everest.detached import (
     _find_res_queue_system,
     _generate_queue_options,
     everserver_status,
-    generate_everserver_ert_config,
+    generate_everserver_config,
     server_is_running,
     start_server,
     stop_server,
@@ -265,7 +265,7 @@ def _get_reference_config():
 
 def test_detached_mode_config_base(copy_math_func_test_data_to_tmp):
     everest_config, reference = _get_reference_config()
-    ert_config = generate_everserver_ert_config(everest_config)
+    ert_config = generate_everserver_config(everest_config)
 
     assert ert_config is not None
     assert ert_config == reference
@@ -290,7 +290,7 @@ def test_everserver_queue_config_equal_to_run_config(
     if name is not None:
         simulator_config.update({"name": name})
     everest_config.simulator = SimulatorConfig(**simulator_config)
-    server_ert_config = generate_everserver_ert_config(everest_config)
+    server_ert_config = generate_everserver_config(everest_config)
     ert_config = _everest_to_ert_config_dict(everest_config)
 
     server_queue_option = server_ert_config["QUEUE_OPTION"]
@@ -313,7 +313,7 @@ def test_everserver_queue_config_equal_to_run_config(
 
 def test_detached_mode_config_debug(copy_math_func_test_data_to_tmp):
     everest_config, reference = _get_reference_config()
-    ert_config = generate_everserver_ert_config(everest_config, debug_mode=True)
+    ert_config = generate_everserver_config(everest_config, debug_mode=True)
 
     reference["SIMULATION_JOB"][0].append("--debug")
 
@@ -329,7 +329,7 @@ def test_detached_mode_config_only_sim(copy_math_func_test_data_to_tmp, queue_sy
     queue_options = [(queue_system.upper(), "MAX_RUNNING", 1)]
     reference.setdefault("QUEUE_OPTION", []).extend(queue_options)
     everest_config.simulator = SimulatorConfig(**{CK.QUEUE_SYSTEM: queue_system})
-    ert_config = generate_everserver_ert_config(everest_config)
+    ert_config = generate_everserver_config(everest_config)
     assert ert_config is not None
     assert ert_config == reference
 
@@ -343,7 +343,7 @@ def test_detached_mode_config_error(copy_math_func_test_data_to_tmp):
 
     everest_config.server = ServerConfig(name="server", queue_system="lsf")
     with pytest.raises(ValueError):
-        generate_everserver_ert_config(everest_config)
+        generate_everserver_config(everest_config)
 
 
 def test_detached_mode_config_queue_name(copy_math_func_test_data_to_tmp):
@@ -357,7 +357,7 @@ def test_detached_mode_config_queue_name(copy_math_func_test_data_to_tmp):
     everest_config.simulator = SimulatorConfig(queue_system="lsf")
     everest_config.server = ServerConfig(queue_system="lsf", name=queue_name)
 
-    ert_config = generate_everserver_ert_config(everest_config)
+    ert_config = generate_everserver_config(everest_config)
     assert ert_config is not None
     assert ert_config == reference
 

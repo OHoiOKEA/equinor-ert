@@ -439,7 +439,7 @@ def _find_res_queue_system(config: EverestConfig):
     return QueueSystem(queue_system.upper())
 
 
-def generate_everserver_ert_config(config: EverestConfig, debug_mode: bool = False):
+def generate_everserver_config(config: EverestConfig, debug_mode: bool = False):
     queue_system = _find_res_queue_system(config)
 
     queue_options = {}
