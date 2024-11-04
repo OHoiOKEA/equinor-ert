@@ -5,7 +5,7 @@ import re
 import shutil
 from abc import abstractmethod
 from dataclasses import asdict, dataclass, field, fields
-from typing import Any, Dict, List, Mapping, Optional, no_type_check
+from typing import Any, Dict, List, Literal, Mapping, Optional, no_type_check
 
 import pydantic
 from typing_extensions import Annotated
@@ -27,6 +27,7 @@ NonEmptyString = Annotated[str, pydantic.StringConstraints(min_length=1)]
 
 @pydantic.dataclasses.dataclass(config={"extra": "forbid", "validate_assignment": True})
 class QueueOptions:
+    type: Literal["lsf", "local", "slurm", "torque"] = "None"
     max_running: pydantic.NonNegativeInt = 0
     submit_sleep: pydantic.NonNegativeFloat = 0.0
     project_code: Optional[str] = None
@@ -79,6 +80,8 @@ class QueueOptions:
 
 @pydantic.dataclasses.dataclass
 class LocalQueueOptions(QueueOptions):
+    type: Literal["local"] = "local"
+
     @property
     def driver_options(self) -> Dict[str, Any]:
         return {}
@@ -86,6 +89,7 @@ class LocalQueueOptions(QueueOptions):
 
 @pydantic.dataclasses.dataclass
 class LsfQueueOptions(QueueOptions):
+    type: Literal["lsf"] = "lsf"
     bhist_cmd: Optional[NonEmptyString] = None
     bjobs_cmd: Optional[NonEmptyString] = None
     bkill_cmd: Optional[NonEmptyString] = None
@@ -107,6 +111,7 @@ class LsfQueueOptions(QueueOptions):
 
 @pydantic.dataclasses.dataclass
 class TorqueQueueOptions(QueueOptions):
+    type: Literal["torque"] = "torque"
     qsub_cmd: Optional[NonEmptyString] = None
     qstat_cmd: Optional[NonEmptyString] = None
     qdel_cmd: Optional[NonEmptyString] = None
@@ -141,6 +146,7 @@ class TorqueQueueOptions(QueueOptions):
 
 @pydantic.dataclasses.dataclass
 class SlurmQueueOptions(QueueOptions):
+    type: Literal["slurm"] = "slurm"
     sbatch: NonEmptyString = "sbatch"
     scancel: NonEmptyString = "scancel"
     scontrol: NonEmptyString = "scontrol"

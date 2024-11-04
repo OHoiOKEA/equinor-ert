@@ -6,10 +6,11 @@ from unittest.mock import patch
 import pytest
 
 from ert.config import ErtConfig
+from ert.config.queue_config import LocalQueueOptions
 from ert.run_models.everest_run_model import EverestRunModel
 from ert.storage import open_storage
 from everest.config import EverestConfig
-from everest.detached import generate_everserver_ert_config, start_server
+from everest.detached import start_server
 from everest.simulator.everest_to_ert import _everest_to_ert_config_dict
 from everest.strings import (
     DEFAULT_OUTPUT_DIR,
@@ -74,12 +75,8 @@ def test_everest_output(start_mock, copy_mocked_test_data_to_tmp):
 
     assert "storage" not in initial_folders
     assert DETACHED_NODE_DIR not in initial_folders
-    ert_config = ErtConfig.with_plugins().from_dict(
-        generate_everserver_ert_config(config)
-    )
     makedirs_if_needed(config.output_dir, roll_if_exists=True)
-    with open_storage(ert_config.ens_path, "w") as storage:
-        start_server(config, ert_config, storage)
+    start_server(config, LocalQueueOptions())
     start_mock.assert_called_once()
 
     (path, folders, files) = next(os.walk(config_folder))
@@ -97,8 +94,7 @@ def test_everest_output(start_mock, copy_mocked_test_data_to_tmp):
     # Check storage folder no longer created in the config folder
     assert "storage" not in final_folders
     makedirs_if_needed(config.output_dir, roll_if_exists=True)
-    with open_storage(ert_config.ens_path, "w") as storage:
-        start_server(config, ert_config, storage)
+    start_server(config, LocalQueueOptions())
     assert start_mock.call_count == 2
     final_files = os.listdir(config_folder)
 
@@ -110,12 +106,8 @@ def test_everest_output(start_mock, copy_mocked_test_data_to_tmp):
 def test_save_running_config(start_mock, copy_math_func_test_data_to_tmp):
     file_name = "config_minimal.yml"
     config = EverestConfig.load_file(file_name)
-    ert_config = ErtConfig.with_plugins().from_dict(
-        generate_everserver_ert_config(config)
-    )
     makedirs_if_needed(config.output_dir, roll_if_exists=True)
-    with open_storage(ert_config.ens_path, "w") as storage:
-        start_server(config, ert_config, storage)
+    start_server(config, LocalQueueOptions())
     start_mock.assert_called_once()
 
     saved_config_path = os.path.join(config.output_dir, file_name)

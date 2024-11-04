@@ -34,8 +34,8 @@ as RMS and Eclipse.
         Examples to set memory requirement is:
         * rusage[mem=1000]""",
     )
-    queue_system: Optional[Literal["lsf", "local", "slurm"]] = Field(
-        None,
+    queue_system: Literal["lsf", "local", "slurm"] = Field(
+        "local",
         description="Defines which queue system the everest server runs on.",
     )
     model_config = ConfigDict(
