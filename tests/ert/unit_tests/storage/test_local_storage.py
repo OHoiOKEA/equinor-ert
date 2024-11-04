@@ -108,6 +108,61 @@ def test_that_saving_empty_responses_fails_nicely(tmp_path):
             ensemble.save_response("RESPONSE", empty_data, 0)
 
 
+def test_that_saving_response_updates_configs(tmp_path):
+    with open_storage(tmp_path, mode="w") as storage:
+        experiment = storage.create_experiment(
+            responses=[SummaryConfig(keys=["*", "FOPR"], input_files=["not_relevant"])]
+        )
+        ensemble = storage.create_ensemble(
+            experiment, ensemble_size=1, iteration=0, name="prior"
+        )
+
+        summary_df = polars.DataFrame(
+            {
+                "response_key": ["FOPR", "FOPT:OP1", "FOPR:OP3", "FLAP", "F*"],
+                "time": polars.Series(
+                    [datetime(2000, 1, i) for i in range(1, 6)]
+                ).dt.cast_time_unit("ms"),
+                "values": polars.Series(
+                    [0.0, 1.0, 2.0, 3.0, 4.0], dtype=polars.Float32
+                ),
+            }
+        )
+
+        mapping_before = experiment.response_key_to_response_type
+        smry_config_before = experiment.response_configuration["summary"]
+
+        assert not ensemble.experiment._has_finalized_response_keys("summary")
+        ensemble.save_response("summary", summary_df, 0)
+
+        assert ensemble.experiment._has_finalized_response_keys("summary")
+        assert ensemble.experiment.response_key_to_response_type == {
+            "FOPR:OP3": "summary",
+            "F*": "summary",
+            "FLAP": "summary",
+            "FOPR": "summary",
+            "FOPT:OP1": "summary",
+        }
+        assert ensemble.experiment.response_type_to_response_keys == {
+            "summary": ["F*", "FLAP", "FOPR", "FOPR:OP3", "FOPT:OP1"]
+        }
+
+        mapping_after = experiment.response_key_to_response_type
+        smry_config_after = experiment.response_configuration["summary"]
+
+        assert set(mapping_before) == set()
+        assert set(smry_config_before.keys) == {"*", "FOPR"}
+
+        assert set(mapping_after) == {"F*", "FOPR", "FOPT:OP1", "FOPR:OP3", "FLAP"}
+        assert set(smry_config_after.keys) == {
+            "FOPR",
+            "FOPT:OP1",
+            "FOPR:OP3",
+            "FLAP",
+            "F*",
+        }
+
+
 def test_that_saving_empty_parameters_fails_nicely(tmp_path):
     with open_storage(tmp_path, mode="w") as storage:
         experiment = storage.create_experiment()
@@ -548,6 +603,7 @@ class Experiment:
     observations: Dict[str, polars.DataFrame] = field(default_factory=dict)
 
 
+# @reproduce_failure("6.112.2", b"AXicY2BgZCAHMIL0ARE/mM2ASjKiMUCK+SD6eBkYAAYxADg=")
 class StatefulStorageTest(RuleBasedStateMachine):
     """
     This test runs several commands against storage and
@@ -713,9 +769,27 @@ class StatefulStorageTest(RuleBasedStateMachine):
                 parameter_data["values"],
             )
 
-    @rule(
-        model_ensemble=ensembles,
-        summary_data=summaries(
+    @rule(model_ensemble=ensembles, data=st.data())
+    def save_summary(self, model_ensemble: Ensemble, data):
+        storage_ensemble = self.storage.get_ensemble(model_ensemble.uuid)
+        storage_experiment = storage_ensemble.experiment
+
+        # Enforce the summary data to respect the
+        # scheme outlined in the response configs
+        smry_config = storage_experiment.response_configuration.get("summary")
+
+        if not smry_config:
+            assume(False)
+            raise AssertionError()
+
+        expected_summary_keys = (
+            st.just(smry_config.keys)
+            if smry_config.has_finalized_keys
+            else st.lists(summary_variables(), min_size=1)
+        )
+
+        summaries_strategy = summaries(
+            summary_keys=expected_summary_keys,
             start_date=st.datetimes(
                 min_value=datetime.strptime("1969-1-1", "%Y-%m-%d"),
                 max_value=datetime.strptime("2010-1-1", "%Y-%m-%d"),
@@ -730,11 +804,9 @@ class StatefulStorageTest(RuleBasedStateMachine):
                 min_size=2,
                 max_size=10,
             ),
-        ),
-    )
-    def save_summary(self, model_ensemble: Ensemble, summary_data):
-        storage_ensemble = self.storage.get_ensemble(model_ensemble.uuid)
-        storage_experiment = storage_ensemble.experiment
+        )
+        summary_data = data.draw(summaries_strategy)
+
         responses = storage_experiment.response_configuration.values()
         summary_configs = [p for p in responses if isinstance(p, SummaryConfig)]
         assume(summary_configs)
@@ -753,6 +825,17 @@ class StatefulStorageTest(RuleBasedStateMachine):
         storage_ensemble.save_response(summary.response_type, ds, iens)
 
         model_ensemble.response_values[summary.name] = ds
+
+        model_experiment = self.model[storage_experiment.id]
+        response_keys = set(ds["response_key"].unique())
+
+        model_smry_config = next(
+            config for config in model_experiment.responses if config.name == "summary"
+        )
+
+        if not model_smry_config.has_finalized_keys:
+            model_smry_config.keys = sorted(response_keys)
+            model_smry_config.has_finalized_keys = True
 
     @rule(model_ensemble=ensembles)
     def get_responses(self, model_ensemble: Ensemble):
@@ -789,11 +872,24 @@ class StatefulStorageTest(RuleBasedStateMachine):
         model_ensemble = Ensemble(ensemble.id)
         model_experiment.ensembles[ensemble.id] = model_ensemble
 
-        assert (
-            ensemble.get_ensemble_state()
-            == [RealizationStorageState.UNDEFINED] * ensemble_size
+        is_expecting_responses = any(
+            len(config.keys) for config in model_experiment.responses
         )
-        assert np.all(np.logical_not(ensemble.get_realization_mask_with_responses()))
+
+        if is_expecting_responses:
+            assert (
+                ensemble.get_ensemble_state()
+                == [RealizationStorageState.UNDEFINED] * ensemble_size
+            )
+            assert np.all(
+                np.logical_not(ensemble.get_realization_mask_with_responses())
+            )
+        else:
+            assert (
+                ensemble.get_ensemble_state()
+                == [RealizationStorageState.HAS_DATA] * ensemble_size
+            )
+            assert np.all(ensemble.get_realization_mask_with_responses())
 
         return model_ensemble
 
@@ -812,17 +908,34 @@ class StatefulStorageTest(RuleBasedStateMachine):
         model_ensemble = Ensemble(ensemble.id)
         model_experiment = self.model[experiment_id]
         model_experiment.ensembles[ensemble.id] = model_ensemble
-        state = [RealizationStorageState.PARENT_FAILURE] * size
-        iens = 0
-        if (
-            list(prior.response_values.keys())
-            == [r.name for r in model_experiment.responses]
-            and iens not in prior.failure_messages
-            and prior_ensemble.get_ensemble_state()[iens]
+
+        expected_posterior_state = RealizationStorageState.PARENT_FAILURE
+        prior_keys = list(prior.response_values.keys())
+
+        is_expecting_responses = (
+            sum(len(config.keys) for config in model_experiment.responses) > 0
+        )
+
+        if not is_expecting_responses:
+            # Expect a HAS_DATA no matter what
+            expected_posterior_state = RealizationStorageState.HAS_DATA
+        elif (
+            bool(prior_keys)
+            and (
+                prior_keys
+                == [
+                    r.name
+                    for r in model_experiment.responses
+                    if (r.has_finalized_keys and len(r.keys) > 0)
+                ]
+            )
+        ) or (
+            0 not in prior.failure_messages
+            and prior_ensemble.get_ensemble_state()[0]
             != RealizationStorageState.PARENT_FAILURE
         ):
-            state[iens] = RealizationStorageState.UNDEFINED
-        assert ensemble.get_ensemble_state() == state
+            expected_posterior_state = RealizationStorageState.UNDEFINED
+        assert ensemble.get_ensemble_state()[0] == expected_posterior_state
 
         return model_ensemble
 
