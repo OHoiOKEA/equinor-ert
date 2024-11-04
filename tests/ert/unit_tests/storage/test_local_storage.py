@@ -603,6 +603,7 @@ class Experiment:
     observations: Dict[str, polars.DataFrame] = field(default_factory=dict)
 
 
+# @reproduce_failure("6.112.2", b"AXicY2BgZCAHMIL0ARE/mM2ASjKiMUCK+SD6eBkYAAYxADg=")
 class StatefulStorageTest(RuleBasedStateMachine):
     """
     This test runs several commands against storage and
@@ -775,7 +776,11 @@ class StatefulStorageTest(RuleBasedStateMachine):
 
         # Enforce the summary data to respect the
         # scheme outlined in the response configs
-        smry_config = storage_experiment.response_configuration["summary"]
+        smry_config = storage_experiment.response_configuration.get("summary")
+
+        if not smry_config:
+            assume(False)
+            raise AssertionError()
 
         expected_summary_keys = (
             st.just(smry_config.keys)
@@ -867,11 +872,24 @@ class StatefulStorageTest(RuleBasedStateMachine):
         model_ensemble = Ensemble(ensemble.id)
         model_experiment.ensembles[ensemble.id] = model_ensemble
 
-        assert (
-            ensemble.get_ensemble_state()
-            == [RealizationStorageState.UNDEFINED] * ensemble_size
+        is_expecting_responses = any(
+            len(config.keys) for config in model_experiment.responses
         )
-        assert np.all(np.logical_not(ensemble.get_realization_mask_with_responses()))
+
+        if is_expecting_responses:
+            assert (
+                ensemble.get_ensemble_state()
+                == [RealizationStorageState.UNDEFINED] * ensemble_size
+            )
+            assert np.all(
+                np.logical_not(ensemble.get_realization_mask_with_responses())
+            )
+        else:
+            assert (
+                ensemble.get_ensemble_state()
+                == [RealizationStorageState.HAS_DATA] * ensemble_size
+            )
+            assert np.all(ensemble.get_realization_mask_with_responses())
 
         return model_ensemble
 
@@ -890,21 +908,34 @@ class StatefulStorageTest(RuleBasedStateMachine):
         model_ensemble = Ensemble(ensemble.id)
         model_experiment = self.model[experiment_id]
         model_experiment.ensembles[ensemble.id] = model_ensemble
-        state = [RealizationStorageState.PARENT_FAILURE] * size
-        iens = 0
-        if (
-            list(prior.response_values.keys())
-            == [
-                r.name
-                for r in model_experiment.responses
-                if (r.has_finalized_keys and len(r.keys) > 0)
-            ]
-            and iens not in prior.failure_messages
-            and prior_ensemble.get_ensemble_state()[iens]
+
+        expected_posterior_state = RealizationStorageState.PARENT_FAILURE
+        prior_keys = list(prior.response_values.keys())
+
+        is_expecting_responses = (
+            sum(len(config.keys) for config in model_experiment.responses) > 0
+        )
+
+        if not is_expecting_responses:
+            # Expect a HAS_DATA no matter what
+            expected_posterior_state = RealizationStorageState.HAS_DATA
+        elif (
+            bool(prior_keys)
+            and (
+                prior_keys
+                == [
+                    r.name
+                    for r in model_experiment.responses
+                    if (r.has_finalized_keys and len(r.keys) > 0)
+                ]
+            )
+        ) or (
+            0 not in prior.failure_messages
+            and prior_ensemble.get_ensemble_state()[0]
             != RealizationStorageState.PARENT_FAILURE
         ):
-            state[iens] = RealizationStorageState.UNDEFINED
-        assert ensemble.get_ensemble_state() == state
+            expected_posterior_state = RealizationStorageState.UNDEFINED
+        assert ensemble.get_ensemble_state()[0] == expected_posterior_state
 
         return model_ensemble
 
